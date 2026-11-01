@@ -1,0 +1,95 @@
+---
+id: "art-exoplanet-transit"
+slug: "when-starlight-dims"
+version: 1
+publishedDate: "2026.03"
+status: "published"
+isEditorialCover: true
+isEditorialPick: true
+format: "interactive_simulation"
+formatBadgeText: "互動模擬實驗"
+seriesId: "series-habitable-worlds"
+seriesOrder: 1
+title: "當星光暗了一點"
+subtitle: "系外行星凌日法：我們如何從萬億公里外的光芒眨眼，量測未知異星的半徑？"
+topicIds:
+  - "topic-astrophysics"
+  - "topic-optics-geometry"
+tags:
+  - "系外行星"
+  - "凌日法"
+  - "克卜勒望遠鏡"
+  - "光度曲線"
+  - "幾何光學"
+  - "天文物理"
+summary: "當一顆遙遠行星自恆星盤面掠過，星光會產生不到百分之一的微弱暗化。天文學家如何憑藉這條細緻的光度曲線，揭開幾百光年外異星的軌道、大小乃至大氣成分？"
+leadParagraph: "在漆黑的宇宙長夜中，恆星通常只是微小的光點。但當一顆圍繞它運行的行星碰巧從地球視線與恆星中央穿過時，會暫時遮蔽一部分的星盤表面——這就是「凌日」（Transit）。這眨眼般的微小光變，成為當代人類發現超過四千顆系外行星的關鍵幾何鑰匙。"
+quoteLead: "在千億顆閃爍的星辰中，有些微弱的光芒每隔數天或數月，就會極為規律地黯淡數個小時，隨後再度復原。這不是恆星本身的疲憊，而是一顆孤獨運行的世界，剛剛自我們與它的母恆星之間無聲穿過。"
+authors:
+  - name: "MIRARI 科學組"
+    role: "文"
+  - name: "系外行星研究員"
+    role: "審訂"
+references:
+  - id: "ref-charbonneau-2000"
+    citation: "Charbonneau, D., et al. (2000). \"Detection of Planetary Transits Across a Sun-like Star.\" The Astrophysical Journal Letters, 529(1), L45."
+  - id: "ref-seager-2003"
+    citation: "Seager, S., & Mallén-Ornelas, G. (2003). \"A Unique Solution of Planet and Star Parameters from an Extrasolar Planet Transit Light Curve.\" The Astrophysical Journal, 585(2), 1038."
+  - id: "ref-mandel-2002"
+    citation: "Mandel, K., & Agol, E. (2002). \"Analytic Light Curves for Planetary Transit Searches.\" The Astrophysical Journal Letters, 580(2), L171."
+  - id: "ref-nasa-exoplanet"
+    citation: "NASA Exoplanet Archive (2024). Confirmed Transiting Planets Database."
+interactiveComponent: "TransitSimulator"
+---
+
+# 一、千億星辰中的幾何巧合
+
+在太陽系之外，尋找系外行星（Exoplanet）最直觀的困難在於：恆星實在太過耀眼，而圍繞它公轉的行星不但體積微小，本身更不發光，僅僅反射極為微弱的星光。若將母恆星比作高功率探照燈，行星就像在數公里外圍繞探照燈飛舞的微小飛蛾。直接以光學望遠鏡拍攝行星的直接成像法，在絕大多數情況下都會被強烈光暈淹沒。
+
+然而，幾何學為我們留下了一扇精密的視窗。如果一個系外行星系統的公轉軌道平面，恰好幾乎與我們地球觀測者的視線平行，那麼在公轉的某一特定相位，行星就會直接穿過恆星圓盤與我們之間。這項現象即被稱為「凌日」（Transit）。
+
+並非所有系外行星都能從地球上看到凌日。一條半徑為 a 的圓軌道凌日幾何機率大約為：
+
+$$P_{transit} \approx \frac{R_* + R_p}{a} \approx \frac{R_*}{a}$$
+
+對於緊貼恆星運行的熱木星（軌道半徑僅 0.05 AU），凌日機率可達 10%；但對於距離類太陽恆星 1 AU 的類地行星，凌日機率驟降至僅約 0.5%。這正是為什麼克卜勒（Kepler）望遠鏡必須同時監測數以十萬計的恆星，才能捕捉到足夠多的凌日事件。
+
+# 二、親手量測：恆星光度曲線模擬
+
+凌日最直接的物理觀測量是「光度曲線」（Light Curve）——即恆星光通量隨時間變化的連續記錄。在下方互動實驗中，你可以切換不同行星尺度或手動拖動滑桿，觀察恆星空間投影與即時光度變化的嚴密對應：
+
+<InteractiveExperiment id="TransitSimulator" />
+
+# 三、凌日深度：從星光變暗推求行星半徑
+
+在最基本的均勻圓盤模型中，恆星被視為一個表面亮度處處相等的圓形發光盤面，其總光通量正比於其可見圓盤面積：$F_0 \propto \pi R_*^2$。
+
+當一個半徑為 Rp 的不透光行星圓盤完全進入恆星盤面內時，它所遮擋的光通量即為自身投影截面積：ΔF ∝ π Rp²。
+
+$$\frac{\Delta F}{F_0} = \left(\frac{R_p}{R_*}\right)^2$$
+
+凌日深度 (Transit Depth) 等於行星半徑與恆星半徑比值的平方。
+
+木星型行星（Jupiter-like）：木星半徑約為太陽的 1/10 ($R_p / R_* \approx 0.1$)。代入公式後，凌日深度約為 $(0.1)^2 = 0.01$，即恆星亮度會下降約 1.0%（10,000 ppm）。這在地面中型望遠鏡即可清晰辨識。
+
+地球型岩石行星（Earth-like）：地球半徑僅為太陽的 1/109 (Rp / R* ≈ 0.0091)。代入公式後，凌日深度僅約 0.0084%（84 ppm），唯有在太空無大氣擾動的環境下才能精確鎖定。
+
+這說明了為何「行星半徑只是變成 2 倍，星光變暗幅度卻會變成 4 倍」：因為光度下降量取決於二維截面積（平方關係），而非一維長度。
+
+# 四、觀測細節：恆星周邊昏暗效應
+
+若仔細檢視克卜勒或韋伯望遠鏡的真實觀測曲線，會發現底部並不是一條平直線，而是呈現一條圓滑的 U 型曲線。
+
+恆星大氣光學厚度：為何邊緣看起來比中心暗？
+
+恆星是由高溫電漿構成的球體，並無固態表面。當我們直視恆星中心時，視線垂直切入，能穿透到較深、溫度較高、輻射強度較強的光球深層；而當視線切向恆星邊緣時，由於斜向穿透，光線到達相同光學厚度所對應的物理深度較淺，我們看見的是較高層、溫度較低的氣體層。
+
+這種「中心亮、邊緣暗」的現象稱為周邊昏暗效應（Limb Darkening）。因此，當行星穿過恆星正中心時遮擋了最明亮的核心，導致恆星光通量在中央食時刻達到最低點，產生平滑的 U 型曲線。
+
+# 五、延伸：用星光穿透外星大氣
+
+凌日法的潛力不僅止於測量幾何半徑。當行星掠過恆星前方時，其外緣稀薄的大氣層也會被背後的恆星光芒穿透。
+
+如果大氣中含有水蒸氣（H2O）、二氧化碳（CO2）或甲烷（CH4），這些分子會在特定紅外波長產生吸收。在這些波長下，行星大氣顯得不透明，使得行星看起來微幅「變大」，凌日深度加深。
+
+透過分析不同波長下的凌日深度微差，韋伯太空望遠鏡（JWST）得以為數百光年外的世界繪製出「透射光譜」，揭示外星大氣的化學組成。

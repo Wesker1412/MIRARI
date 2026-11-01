@@ -83,6 +83,75 @@ export interface Article {
   knowledgePoints: KnowledgePoint[];
 }
 
+// ─── Article Author & Citation Metadata ────────────────────────
+export interface ArticleAuthor {
+  name: string;
+  role: string;
+}
+
+export interface CitationReference {
+  id: string;
+  citation: string;
+  doi?: string;
+  url?: string;
+}
+
+// ─── Automated Original Text Evidence (無人工編寫句子清單) ────────
+export interface SentenceEvidence {
+  sentenceId: string;
+  articleId: string;
+  sectionId: string;
+  sectionTitle: string;
+  paragraphIndex: number;
+  exactQuote: string;
+  charStart: number;
+  charEnd: number;
+  contentHash: string;
+  contextNote?: string;
+}
+
+export interface ArticleSection {
+  id: string;
+  title: string;
+  level: number;
+  paragraphs: string[];
+  sentences: SentenceEvidence[];
+  formulas: string[];
+  interactiveComponentId?: string;
+}
+
+// ─── Article Document (包含解析後正文結構的完整模型) ─────────────
+export interface ArticleDocument extends Article {
+  version: number;
+  contentHash: string;
+  authors: ArticleAuthor[];
+  references: CitationReference[];
+  quoteLead?: string;
+  interactiveComponent?: string;
+  sections: ArticleSection[];
+  totalWordCount?: number;
+  lastIndexedAt?: string;
+}
+
+export interface SearchIndexEntry {
+  articleId: string;
+  slug: string;
+  title: string;
+  subtitle: string;
+  summary: string;
+  status: ArticleStatus;
+  topicIds: string[];
+  tags: string[];
+  formatBadgeText: string;
+  isEditorialCover?: boolean;
+  isEditorialPick?: boolean;
+  isResearchHighlight?: boolean;
+  isClassicFoundation?: boolean;
+  tokens: string[];
+  contentHash: string;
+}
+
+// ─── MIRARI Mascot & Recommendation ─────────────────────────────
 export type MascotState = 'idle' | 'thinking' | 'excited' | 'pointing';
 
 export interface AIRecommendation {
@@ -90,4 +159,12 @@ export interface AIRecommendation {
   curatorReply: string;
   recommendedArticles: Article[];
   suggestedTags: string[];
+}
+
+export interface EvidenceSearchResult {
+  query: string;
+  answer: string;
+  confidence: number;
+  evidence: SentenceEvidence | null;
+  secondaryEvidence?: SentenceEvidence | null;
 }

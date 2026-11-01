@@ -1,0 +1,102 @@
+[
+  {
+    "id": "art-jwst-supermassive-blackhole",
+    "slug": "jwst-early-blackhole-accretion",
+    "title": "早期宇宙「超重黑洞」異常吸積特徵",
+    "subtitle": "韋伯太空望遠鏡最新光譜觀測對傳統星系演化模型的衝擊",
+    "topicIds": ["topic-astrophysics", "topic-cosmology"],
+    "format": "research_brief",
+    "formatBadgeText": "期刊研究解讀",
+    "status": "in_preparation",
+    "isResearchHighlight": true,
+    "journalReference": {
+      "journal": "Nature Astronomy",
+      "year": 2024,
+      "doi": "10.1038/s41550-024-02201-x"
+    },
+    "summary": "紅移 z > 10 的早期宇宙中，為何已存在數十億太陽質量的超大質量黑洞？最新研究提出重種子黑洞直接坍縮與超愛丁頓吸積的新論證。",
+    "leadParagraph": "傳統天體物理學認為，黑洞需要經過數億年吸積恆星殘骸才能長成龐然大物。然而韋伯望遠鏡傳回的光譜數據顯示，大爆炸後僅四億年的星系中心，早已矗立著過於巨大的黑洞。",
+    "tags": ["韋伯望遠鏡", "超重黑洞", "早期宇宙", "愛丁頓極限"]
+  },
+  {
+    "id": "art-hydride-superconductor",
+    "slug": "high-pressure-hydride-phase",
+    "title": "百萬大氣壓下的量子奇景：富氫材料相變機制",
+    "subtitle": "從金剛石壓砧到電子-聲子耦合強度的高壓物理實驗解讀",
+    "topicIds": ["topic-condensed-matter", "topic-quantum-mechanics"],
+    "format": "research_brief",
+    "formatBadgeText": "高壓物理專題",
+    "status": "in_preparation",
+    "isResearchHighlight": true,
+    "journalReference": {
+      "journal": "Science",
+      "year": 2024,
+      "doi": "10.1126/science.abg0123"
+    },
+    "summary": "在超過 150 GPa 的超高壓環境下，氫原子晶格如何展現異常強烈的電子-聲子相互作用？",
+    "leadParagraph": "高壓物理學正如同一把極限之錘，迫使電子突破原有的化學鍵軌域配置。透過金剛石壓砧技術，科學家正逼近室溫超導電性的物理極限。",
+    "tags": ["富氫化合物", "高壓物理", "金剛石壓砧", "凝聚態物理"]
+  },
+  {
+    "id": "art-brain-predictive-coding",
+    "slug": "brain-predictive-processing-perception",
+    "title": "大腦如何編織時間的知覺？",
+    "subtitle": "預測編碼理論視角下的神經動態與主觀時間流逝感",
+    "topicIds": ["topic-neuroscience"],
+    "format": "research_brief",
+    "formatBadgeText": "認知神經解讀",
+    "status": "in_preparation",
+    "isResearchHighlight": true,
+    "journalReference": {
+      "journal": "Neuron",
+      "year": 2024,
+      "doi": "10.1016/j.neuron.2024.03.011"
+    },
+    "summary": "為什麼驚險瞬間感覺時間變慢？神經科學家以多重振盪節律為基礎，拆解大腦如何由下而上統合感官預測誤差。",
+    "leadParagraph": "我們所感知的「當下」，並非外界真實時間的直接錄影，而是大腦根據過去經驗不斷向前預測的貝氏推論模型。",
+    "tags": ["大腦感知", "預測編碼", "時間知覺", "神經科學"]
+  },
+  {
+    "id": "art-second-law-entropy",
+    "slug": "second-law-time-arrow-entropy",
+    "title": "麥克斯韋妖與時間之箭：熱力學第二定律的本質",
+    "subtitle": "從微觀統計相空間到資訊熵的百年思辨",
+    "topicIds": ["topic-thermodynamics-statistical"],
+    "format": "longform_essay",
+    "formatBadgeText": "經典思想實驗",
+    "status": "in_preparation",
+    "isClassicFoundation": true,
+    "summary": "為什麼打碎的杯子無法自發復原？如果存在一個能追蹤每個分子運動的微小精靈，能否逆轉時間之流？從波茲曼到蘭道爾原理，重新理解物理世界最嚴酷的單向定律。",
+    "leadParagraph": "熱力學第二定律是整個物理學中最具哲學重量的法則之一：在封閉系統中，熵（無序度）永遠傾向於增加。它為無方向性的牛頓力學與量子力學，刻下了唯一不可逆的時間箭頭。",
+    "tags": ["熱力學第二定律", "熵增", "時間之箭", "麥克斯韋妖", "統計力學"]
+  },
+  {
+    "id": "art-quantum-measurement-paradox",
+    "slug": "quantum-measurement-problem",
+    "title": "薛丁格的貓之後：量子測量難題的現代詮釋",
+    "subtitle": "哥本哈根、多世界理論與量子去相干的實驗檢驗",
+    "topicIds": ["topic-quantum-mechanics"],
+    "format": "longform_essay",
+    "formatBadgeText": "量子哲學基石",
+    "status": "in_preparation",
+    "isClassicFoundation": true,
+    "summary": "測量到底在何時發生？波函數坍縮是真實的物理過程，還是觀測者知識的更新？解讀現代量子資訊科學如何透過環境去相干重新審視這個經典謎題。",
+    "leadParagraph": "在量子力學誕生一世紀後，「測量問題」依然是科學界最迷人且具爭議的思想風暴中心。微觀疊加態究竟是如何在巨觀世界中轉化為確定的現實？",
+    "tags": ["量子測量", "薛丁格的貓", "量子去相干", "多世界詮釋"]
+  },
+  {
+    "id": "art-series-habitable-worlds",
+    "slug": "hunting-habitable-worlds-overview",
+    "title": "尋找第二個地球：系外行星巡天三十年紀實",
+    "subtitle": "從首顆熱木星 51 Pegasi b 到宜居帶岩石世界的探索史詩",
+    "topicIds": ["topic-astrophysics"],
+    "format": "visual_story",
+    "formatBadgeText": "系列專題特輯",
+    "status": "in_preparation",
+    "seriesId": "series-habitable-worlds",
+    "seriesOrder": 0,
+    "summary": "回顧人類走出太陽系、驗證萬億異星世界的三十年觀測長征。本系列將陸續推出凌日幾何、徑向速度微擺法及直接成像特輯。",
+    "leadParagraph": "1995 年，瑞士天文學家馬約爾與奎洛茲宣布在飛馬座 51 發現了一顆質量約為木星一半、公轉週期僅 4.2 天的行星。這個在當時看似不可思議的「熱木星」，拉開了人類尋找異星世界的壯麗序幕。",
+    "tags": ["系外行星", "51 Pegasi b", "克卜勒望遠鏡", "宜居帶", "巡天歷史"]
+  }
+]

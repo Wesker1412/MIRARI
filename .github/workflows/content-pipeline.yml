@@ -1,0 +1,70 @@
+name: MIRARI Content Publishing & Knowledge Index Pipeline
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'content/articles/**'
+      - 'src/data/supplementaryArticles.json'
+      - 'scripts/build-knowledge-index.js'
+      - 'scripts/lib/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'content/articles/**'
+  workflow_dispatch:
+
+jobs:
+  validate-and-index:
+    name: Validate, Extract & Incrementally Index
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Restore Incremental Vector Cache
+        uses: actions/cache@v4
+        with:
+          path: .mirari-cache
+          key: mirari-knowledge-cache-${{ runner.os }}-${{ hashFiles('content/articles/**') }}
+          restore-keys: |
+            mirari-knowledge-cache-${{ runner.os }}-
+            mirari-knowledge-cache-
+
+      - name: Run Automated Knowledge Index Pipeline
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          echo "Executing automated article verification & knowledge indexing..."
+          npm run build:content
+
+      - name: Verify Indexing Integrity & Schema
+        run: |
+          node -e "
+            const fs = require('fs');
+            const articles = JSON.parse(fs.readFileSync('src/data/generated/articles-manifest.json', 'utf8'));
+            const evidence = JSON.parse(fs.readFileSync('src/data/generated/evidence-index.json', 'utf8'));
+            const search = JSON.parse(fs.readFileSync('src/data/generated/search-index.json', 'utf8'));
+            console.log('✓ Articles indexed:', articles.length);
+            console.log('✓ Evidence records:', Object.keys(evidence).length);
+            console.log('✓ Search entries:', search.length);
+            if (articles.length === 0 || Object.keys(evidence).length === 0) {
+              throw new Error('Pipeline failed: Empty index generated');
+            }
+          "
+
+      - name: Production Build Check
+        run: npm run build
