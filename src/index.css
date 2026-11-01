@@ -29,24 +29,28 @@
   background: #B8B0A0;
 }
 
-/* Gentle, elegant knowledge highlight - no flashing neon */
-@keyframes softKnowledgeFocus {
-  0% {
-    background-color: rgba(194, 65, 12, 0.12);
-    border-color: rgba(194, 65, 12, 0.6);
-  }
-  60% {
-    background-color: rgba(194, 65, 12, 0.06);
-    border-color: rgba(194, 65, 12, 0.3);
-  }
-  100% {
-    background-color: transparent;
-    border-color: transparent;
-  }
+/* ─── Exact Text Evidence Highlight ───────────────────────────────── */
+/* Refined, quiet, non-flashing inline marker that wraps strictly around words */
+.exact-text-highlight {
+  background-color: #FEF08A; /* Warm soft yellow highlighter */
+  color: #15171B;
+  border-radius: 3px;
+  padding: 1px 3px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  border-bottom: 2px solid #D97706;
+  font-weight: 500;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-.knowledge-highlight {
-  animation: softKnowledgeFocus 3.5s ease-out forwards;
-  border-radius: 0.75rem;
-  transition: all 0.4s ease;
+.exact-text-highlight-secondary {
+  background-color: #E0F2FE; /* Soft blue for secondary formula / data quote */
+  color: #0369A1;
+  border-radius: 3px;
+  padding: 1px 3px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  border-bottom: 2px solid #0284C7;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
 }
