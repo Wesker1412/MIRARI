@@ -1,62 +1,26 @@
-import React, { useState } from 'react';
+import React from 'react';
 import type { Article } from '../../types';
 import { TOPICS } from '../../data/topics';
 import { TransitSimulator } from './TransitSimulator';
-import { CompanionDock } from '../mascot/CompanionDock';
-import type { EvidenceSearchResult } from '../../services/articleEvidenceService';
 
 interface ArticleViewProps {
   article: Article;
   onBackToHome: () => void;
   onOpenArticleBySlug: (slug: string) => void;
+  activeSentenceId: string | null;
+  activeSecondaryId: string | null;
+  evidenceNote: string | null;
+  onClearHighlight: () => void;
 }
 
 export const ArticleView: React.FC<ArticleViewProps> = ({
   article,
   onBackToHome,
+  activeSentenceId,
+  activeSecondaryId,
+  evidenceNote,
+  onClearHighlight,
 }) => {
-  const [activeSentenceId, setActiveSentenceId] = useState<string | null>(null);
-  const [activeSecondaryId, setActiveSecondaryId] = useState<string | null>(null);
-  const [evidenceNote, setEvidenceNote] = useState<string | null>(null);
-
-  // Frontend Exact Text Verification & Scrolling
-  const handleEvidenceFound = (result: EvidenceSearchResult) => {
-    if (!result.evidence) {
-      setActiveSentenceId(null);
-      setActiveSecondaryId(null);
-      setEvidenceNote(null);
-      return;
-    }
-
-    const primaryId = result.evidence.sentenceId;
-    const secondaryId = result.secondaryEvidence?.sentenceId || null;
-
-    // Verify element actually exists in DOM before highlighting
-    const elem = document.getElementById(primaryId);
-    if (elem) {
-      // Verify text presence with whitespace normalization
-      const normContent = (elem.textContent || '').replace(/\s+/g, ' ').trim();
-      const normQuote = result.evidence.exactQuote.replace(/\s+/g, ' ').trim();
-      const textMatches = normContent.includes(normQuote.slice(0, 10));
-      if (textMatches) {
-        setActiveSentenceId(primaryId);
-        setActiveSecondaryId(secondaryId);
-        setEvidenceNote(result.evidence.contextNote || '支持回答之原文依據');
-
-        // Center the exact sentence smoothly in viewport
-        elem.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      } else {
-        console.warn('Text evidence validation failed: content mismatch');
-      }
-    }
-  };
-
-  const handleClearHighlight = () => {
-    setActiveSentenceId(null);
-    setActiveSecondaryId(null);
-    setEvidenceNote(null);
-  };
-
   const getHighlightClass = (id: string) => {
     if (activeSentenceId === id) {
       return 'exact-text-highlight';
@@ -90,7 +54,7 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
             <div className="flex items-center space-x-2 bg-amber-50 border border-amber-300 text-amber-900 px-3 py-1 rounded-lg text-xs font-sans animate-fade-in">
               <span>已定位：{evidenceNote || '原文句子'}</span>
               <button
-                onClick={handleClearHighlight}
+                onClick={onClearHighlight}
                 className="hover:underline font-medium text-amber-950 ml-1"
                 title="清除標記"
               >
@@ -325,13 +289,6 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
           </section>
         </article>
       </main>
-
-      {/* ─── Minimalist 3D Mascot Reading Companion ─────────────────── */}
-      <CompanionDock
-        onEvidenceFound={handleEvidenceFound}
-        onClearHighlight={handleClearHighlight}
-        hasActiveHighlight={!!activeSentenceId}
-      />
     </div>
   );
 };

@@ -3,8 +3,6 @@ import type { Article } from '../../types';
 import { TOPICS, getTopicArticleCount } from '../../data/topics';
 import { ARTICLES } from '../../data/articles';
 import { EDITORIAL_SERIES } from '../../data/series';
-import { MirariMascot3D } from '../mascot/MirariMascot3D';
-import { AIExplorer } from './AIExplorer';
 
 interface HomePageProps {
   onSelectArticle: (article: Article) => void;
@@ -151,18 +149,14 @@ export const HomePage: React.FC<HomePageProps> = ({ onSelectArticle, onExploreTo
                 </div>
               </div>
 
-              {/* Ambient Floating Mascot Emblem */}
-              <div className="absolute -bottom-8 -right-4 w-24 h-24 sm:w-28 sm:h-28 pointer-events-auto select-none">
-                <MirariMascot3D size="hero" state="idle" interactive={true} />
-              </div>
+              {/* Anchor placeholder for the persistent global MIRARI mascot */}
+              <div
+                id="mirari-hero-anchor"
+                className="absolute -bottom-8 -right-4 w-28 h-28 sm:w-36 sm:h-36 pointer-events-none select-none"
+              />
             </div>
           </div>
         </div>
-      </section>
-
-      {/* ─── Natural Language Exploration Strip ─────────────────────── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AIExplorer onSelectArticle={handleArticleClick} />
       </section>
 
       {/* ─── Research Monitor (最新研究追蹤) ───────────────────────── */}

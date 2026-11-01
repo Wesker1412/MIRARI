@@ -5,7 +5,7 @@ import type { MascotState } from '../../types';
 
 interface MirariMascot3DProps {
   state?: MascotState;
-  size?: 'hero' | 'companion' | 'compact' | 'showcase';
+  size?: 'hero' | 'companion' | 'compact' | 'showcase' | 'full';
   interactive?: boolean;
   onClick?: () => void;
   className?: string;
@@ -156,8 +156,10 @@ export const MirariMascot3D: React.FC<MirariMascot3DProps> = ({
     let isBlinking = false;
     let blinkProgress = 0;
 
-    // ─── Visibility Optimization (Intersection Observer) ─────────
+    // ─── Visibility Optimization (Intersection Observer & Page Visibility) ─
     let isVisible = true;
+    let isPageVisible = !document.hidden;
+
     const observer = new IntersectionObserver(
       (entries) => {
         isVisible = entries[0].isIntersecting;
@@ -166,6 +168,11 @@ export const MirariMascot3D: React.FC<MirariMascot3DProps> = ({
     );
     observer.observe(container);
 
+    const handleVisibilityChange = () => {
+      isPageVisible = !document.hidden;
+    };
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
     // ─── Animation Loop ──────────────────────────────────────────
     let animId: number;
     let lastTime = performance.now();
@@ -173,7 +180,7 @@ export const MirariMascot3D: React.FC<MirariMascot3DProps> = ({
 
     const animate = (currentTime: number) => {
       animId = requestAnimationFrame(animate);
-      if (!isVisible) return; // Pause GPU rendering when scrolled out of view
+      if (!isVisible || !isPageVisible) return; // Pause GPU rendering when scrolled out or tab hidden
 
       const dt = Math.min((currentTime - lastTime) / 1000, 0.1);
       lastTime = currentTime;
@@ -289,27 +296,39 @@ export const MirariMascot3D: React.FC<MirariMascot3DProps> = ({
 
     animId = requestAnimationFrame(animate);
 
-    // ─── Resize Handler ──────────────────────────────────────────
-    const handleResize = () => {
-      if (!container) return;
-      const w = container.clientWidth;
-      const h = container.clientHeight;
+    // ─── Continuous Smooth Resize Observer ─────────────────────────
+    const handleUpdateDimensions = (w: number, h: number) => {
       if (w > 0 && h > 0) {
         camera.aspect = w / h;
         camera.updateProjectionMatrix();
         renderer.setSize(w, h);
       }
     };
-    window.addEventListener('resize', handleResize);
+
+    const resizeObserver = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        const { width: w, height: h } = entry.contentRect;
+        handleUpdateDimensions(w, h);
+      }
+    });
+    resizeObserver.observe(container);
+
+    const handleWindowResize = () => {
+      if (!container) return;
+      handleUpdateDimensions(container.clientWidth, container.clientHeight);
+    };
+    window.addEventListener('resize', handleWindowResize);
 
     // ─── Cleanup ─────────────────────────────────────────────────
     return () => {
       cancelAnimationFrame(animId);
       observer.disconnect();
+      resizeObserver.disconnect();
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
       if (interactive) {
         window.removeEventListener('mousemove', handleMouseMove);
       }
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('resize', handleWindowResize);
       renderer.dispose();
       if (container.contains(renderer.domElement)) {
         container.removeChild(renderer.domElement);
@@ -319,7 +338,9 @@ export const MirariMascot3D: React.FC<MirariMascot3DProps> = ({
 
   // Size styling classes
   const sizeClasses =
-    size === 'hero'
+    size === 'full'
+      ? 'w-full h-full'
+      : size === 'hero'
       ? 'w-28 h-28 sm:w-36 sm:h-36'
       : size === 'showcase'
       ? 'w-64 h-64 sm:w-72 sm:h-72'
