@@ -87,3 +87,9 @@ jobs:
               throw new Error('Build error: evidence-index.json is empty');
             }
           "
+
+      - name: Deploy to Vercel (if VERCEL_TOKEN configured)
+        if: github.ref == 'refs/heads/main' && env.VERCEL_TOKEN != ''
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: npx vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }} --yes

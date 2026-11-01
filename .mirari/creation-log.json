@@ -1,12 +1,12 @@
 {
-  "lastRunTimestamp": "2026-11-02T03:10:00.000Z",
+  "lastRunTimestamp": "2026-11-01T19:10:00.000Z",
   "scheduledCron": "0 1 * * *",
   "timezone": "Asia/Taipei (UTC+8)",
-  "creationModel": "pro-reasoning-engine",
+  "creationModel": "gemini-2.5-pro",
   "runs": [
     {
-      "runId": "mirari-auto-run-20261102-0900",
-      "timestamp": "2026-11-02T03:10:00.000Z",
+      "runId": "mirari-auto-run-20261101-1910",
+      "timestamp": "2026-11-01T19:10:00.000Z",
       "targetCount": 3,
       "succeededCount": 3,
       "failedCount": 0,

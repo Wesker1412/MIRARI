@@ -78,10 +78,12 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
                   </React.Fragment>
                 ))
               ) : (
+                <span>文／MIRARI 科學組</span>
+              )}
+              {article.publishedDate && (
                 <>
-                  <span>文／MIRARI 科學組</span>
                   <span>·</span>
-                  <span>審訂／系外行星研究員</span>
+                  <span>發布於 {article.publishedDate}</span>
                 </>
               )}
             </div>

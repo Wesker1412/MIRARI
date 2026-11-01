@@ -2,7 +2,7 @@
 id: "art-chaos-double-pendulum"
 slug: "chaos-double-pendulum-lyapunov"
 version: 1
-publishedDate: "2026.03"
+publishedDate: "2026-11-02"
 status: "published"
 isEditorialCover: false
 isEditorialPick: true
@@ -20,15 +20,14 @@ tags:
   - "非線性動力學"
   - "李雅普諾夫指數"
   - "相空間"
-  - "經典力學"
+  - "哈密頓力學"
+  - "KAM理論"
 summary: "將兩根剛性擺桿首尾相接，物理定律依然是經典力學中完全確定的牛頓方程式。然而，只要初始釋放角度存在十萬分之一弧度的微小擾動，兩條運動軌跡便會在短短數秒內徹底分道揚鑣。本篇透過四階龍格-庫塔數值解，拆解確定性系統走向渾沌的數學本質。"
 leadParagraph: "在拉普拉斯的古典機械宇宙觀中，只要獲知全宇宙所有微粒當前的坐標與動量，未來便能如同過去一般精確預言。然而，雙擺（Double Pendulum）這一結構極其簡潔的力學系統，卻打破了決定論與可預測性之間的必然等號。系統完全遵循確定性的拉格朗日方程式，卻因非線性耦合產生對初始條件的極端敏感性。"
 quoteLead: "決定論與可預測性在非線性領域徹底分離：一個系統可以 100% 遵循無隨機項的物理定律，但只要其相空間軌跡具備正的李雅普諾夫指數，人類在有限測量精度下的長期預測便宣告破產。"
 authors:
   - name: "MIRARI 物理組"
     role: "撰文"
-  - name: "非線性動力學研究組"
-    role: "審訂"
 references:
   - id: "ref-shinbrot-1992"
     citation: "Shinbrot, T., Grebogi, C., Wisdom, J., & Yorke, J. A. (1992). \"Chaos in a double pendulum.\" American Journal of Physics, 60(6), 491-499. doi:10.1119/1.16860"
@@ -39,9 +38,9 @@ references:
 interactiveComponent: "DoublePendulumSimulator"
 narrativeStyle: "first_principles"
 interactiveType: "phase_space"
-creationModel: "pro-reasoning-engine"
+creationModel: "gemini-2.5-pro"
 feedbackId: "fb-art-chaos-double-pendulum"
-createdAt: "2026-11-02T03:00:00Z"
+createdAt: "2026-11-01T19:00:00Z"
 ---
 
 # 一、從單擺的和諧到雙擺的失序
@@ -74,8 +73,12 @@ $$|\delta \mathbf{Z}(t)| \approx |\delta \mathbf{Z}(0)| e^{\lambda t}$$
 
 這導致了「李雅普諾夫時間」（Lyapunov Time）概念的誕生：即系統誤差擴大一倍或一個數量級所需的典型時間尺度。對於實驗室尺度的大角度雙擺，李雅普諾夫時間通常僅為數百毫秒。即使使用世界最精密的雷射干涉儀將初值測量推進至納米尺度，預言地平線（Predictability Horizon）也僅能向後延展數秒。
 
-# 四、不可預測不等於沒有結構
+# 四、保守系統的幾何結構：劉維爾定理與 KAM 理論
 
-雙擺的渾沌並不等同於毫無規律的白雜訊。在幾何上，雙擺在四維相空間中的軌跡被禁錮在能量守恆約束的三維超曲面上，並形成具有碎形維度的「奇異吸子」（Strange Attractor）特徵結構。
+雙擺的渾沌並不等同於毫無規律的白雜訊，更不能與耗散系統中的奇異吸子混為一談。在無摩擦阻尼的理想力學模型中，雙擺是一個嚴格能量守恆的保守哈密頓系統（Conservative Hamiltonian System）。
 
-即使單一軌跡無法在長時域內精確預測，整個系統的能量景觀與龐加萊截面（Poincaré Section）依然展現出極致的幾何對稱與拓撲美感。雙擺以最簡潔的機械構件揭示了一條深刻的自然法則：宇宙的複雜與隨機，並非來自外在雜訊的干擾，而是深植於物理定律最本質的非線性幾何之中。
+根據統計力學與分析力學的核心基石——劉維爾定理（Liouville's Theorem），保守系統在相空間中的相體積隨時間演化保持嚴格不變（$\nabla \cdot \mathbf{v} = 0$）。因此，保守雙擺系統根本不存在相空間體積收縮的「吸子」（Attractor），無論是平凡平衡點吸子、極限環還是碎形維度的奇異吸子，它們皆只存在於具備能量耗散的非保守系統（如洛倫茲氣象對流模型）中。
+
+在保守雙擺中，軌跡被嚴格限制在總能量守恆的三維等能超曲面上。根據柯爾莫哥洛夫-阿諾德-莫澤定理（KAM 定理），當非線性擾動增強時，可積系統的擬週期不變環面（KAM 環面）會逐漸在共振區域破裂，形成由穩定規則島（Islands of Stability）與渾沌海洋（Chaotic Sea）交錯糾纏的龐加萊截面（Poincaré Section）。
+
+即使單一軌跡無法在長時域內精確預測，整個系統在相空間的同宿切纏（Homoclinic Tangle）依然展現出極致的幾何對稱與拓撲美感。雙擺以最簡潔的機械構件揭示了一條深刻的自然法則：宇宙的複雜與隨機，並非來自外在雜訊的干擾，而是深植於物理定律最本質的非線性幾何之中。

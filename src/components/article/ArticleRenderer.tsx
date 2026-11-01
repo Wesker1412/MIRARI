@@ -1,10 +1,143 @@
 import React from 'react';
+import katex from 'katex';
 import type { ArticleDocument, ArticleSection, SentenceEvidence } from '../../types';
 import { getInteractiveComponent } from '../interactive/registry';
 
 interface ArticleRendererProps {
   document: ArticleDocument;
   getHighlightClass: (sentenceId: string) => string;
+}
+
+/**
+ * Safely render LaTeX using KaTeX
+ */
+function renderMathToHtml(latex: string, displayMode: boolean): string {
+  try {
+    return katex.renderToString(latex, {
+      displayMode,
+      throwOnError: false,
+      output: 'htmlAndMathml',
+      strict: false,
+    });
+  } catch (err) {
+    console.warn('KaTeX render error:', err);
+    return latex;
+  }
+}
+
+interface InlineToken {
+  type: 'text' | 'math' | 'bold' | 'code';
+  content: string;
+}
+
+/**
+ * Robust inline tokenizer for LaTeX ($...$), Bold (**...**), and Code (`...`)
+ * Preserves escaped dollar signs and never breaks on unmatched symbols.
+ */
+function parseInlineTokens(text: string): InlineToken[] {
+  const tokens: InlineToken[] = [];
+  let i = 0;
+  let currentText = '';
+
+  while (i < text.length) {
+    // Escaped dollar: \$
+    if (text[i] === '\\' && text[i + 1] === '$') {
+      currentText += '$';
+      i += 2;
+      continue;
+    }
+
+    // Inline math: $...$
+    if (text[i] === '$') {
+      const nextDollar = text.indexOf('$', i + 1);
+      if (nextDollar !== -1) {
+        if (currentText) {
+          tokens.push({ type: 'text', content: currentText });
+          currentText = '';
+        }
+        const mathExpr = text.slice(i + 1, nextDollar);
+        tokens.push({ type: 'math', content: mathExpr });
+        i = nextDollar + 1;
+        continue;
+      }
+    }
+
+    // Bold: **...**
+    if (text[i] === '*' && text[i + 1] === '*') {
+      const nextStars = text.indexOf('**', i + 2);
+      if (nextStars !== -1) {
+        if (currentText) {
+          tokens.push({ type: 'text', content: currentText });
+          currentText = '';
+        }
+        const boldExpr = text.slice(i + 2, nextStars);
+        tokens.push({ type: 'bold', content: boldExpr });
+        i = nextStars + 2;
+        continue;
+      }
+    }
+
+    // Code: `...`
+    if (text[i] === '`') {
+      const nextBacktick = text.indexOf('`', i + 1);
+      if (nextBacktick !== -1) {
+        if (currentText) {
+          tokens.push({ type: 'text', content: currentText });
+          currentText = '';
+        }
+        const codeExpr = text.slice(i + 1, nextBacktick);
+        tokens.push({ type: 'code', content: codeExpr });
+        i = nextBacktick + 1;
+        continue;
+      }
+    }
+
+    currentText += text[i];
+    i++;
+  }
+
+  if (currentText) {
+    tokens.push({ type: 'text', content: currentText });
+  }
+
+  return tokens;
+}
+
+/**
+ * Render parsed inline tokens into React nodes
+ */
+function renderInlineContent(text: string): React.ReactNode {
+  const tokens = parseInlineTokens(text);
+  return tokens.map((tok, idx) => {
+    switch (tok.type) {
+      case 'math':
+        return (
+          <span
+            key={idx}
+            className="inline-math px-0.5 align-baseline"
+            dangerouslySetInnerHTML={{ __html: renderMathToHtml(tok.content, false) }}
+          />
+        );
+      case 'bold':
+        return (
+          <strong key={idx} className="font-semibold text-mirari-ink">
+            {renderInlineContent(tok.content)}
+          </strong>
+        );
+      case 'code':
+        return (
+          <code
+            key={idx}
+            className="font-mono text-xs px-1.5 py-0.5 bg-mirari-paper border border-mirari-line rounded text-mirari-ink"
+          >
+            {tok.content}
+          </code>
+        );
+      case 'text':
+      default:
+        return <React.Fragment key={idx}>{tok.content}</React.Fragment>;
+    }
+  });
 }
 
 export const ArticleRenderer: React.FC<ArticleRendererProps> = ({
@@ -17,7 +150,7 @@ export const ArticleRenderer: React.FC<ArticleRendererProps> = ({
       {document.quoteLead && (
         <div className="my-8 pl-5 border-l-2 border-mirari-amber py-1">
           <p className="font-serif text-base sm:text-lg text-mirari-ink leading-relaxed italic">
-            「{document.quoteLead}」
+            「{renderInlineContent(document.quoteLead)}」
           </p>
         </div>
       )}
@@ -49,17 +182,24 @@ export const ArticleRenderer: React.FC<ArticleRendererProps> = ({
               }
             }
 
-            // Check if paragraph is a standalone display math block
-            if (paraText.startsWith('$$') && paraText.endsWith('$$')) {
-              const formula = paraText.slice(2, -2).trim();
+            // Check if paragraph is a standalone display math block: $$...$$ or \[...\]
+            const isDisplayMath =
+              (paraText.startsWith('$$') && paraText.endsWith('$$')) ||
+              (paraText.startsWith('\\[') && paraText.endsWith('\\]'));
+
+            if (isDisplayMath) {
+              const formula = paraText.startsWith('$$')
+                ? paraText.slice(2, -2).trim()
+                : paraText.slice(2, -2).trim();
               return (
                 <div
                   key={pIdx}
-                  className="my-5 py-4 text-center border-y border-mirari-line bg-mirari-paper rounded-xl overflow-x-auto"
+                  className="my-6 py-5 px-4 bg-mirari-paper border-y border-mirari-line rounded-xl overflow-x-auto text-center"
                 >
-                  <div className="font-mono text-lg sm:text-2xl font-bold text-mirari-ink tracking-wider px-4">
-                    {formula}
-                  </div>
+                  <div
+                    className="inline-block min-w-full text-base sm:text-lg text-mirari-ink"
+                    dangerouslySetInnerHTML={{ __html: renderMathToHtml(formula, true) }}
+                  />
                 </div>
               );
             }
@@ -78,7 +218,7 @@ export const ArticleRenderer: React.FC<ArticleRendererProps> = ({
                       id={sent.sentenceId}
                       className={`transition-colors duration-300 ${getHighlightClass(sent.sentenceId)}`}
                     >
-                      {sent.exactQuote}{' '}
+                      {renderInlineContent(sent.exactQuote)}{' '}
                     </span>
                   ))}
                 </p>
@@ -88,7 +228,7 @@ export const ArticleRenderer: React.FC<ArticleRendererProps> = ({
             // Fallback paragraph
             return (
               <p key={pIdx} className="leading-relaxed">
-                {paraText}
+                {renderInlineContent(paraText)}
               </p>
             );
           })}
