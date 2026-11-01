@@ -76,7 +76,7 @@ export function queryMockAIRecommendation(query: string): AIRecommendation {
     normalized.includes('論文') ||
     normalized.includes('近期')
   ) {
-    const researchArticles = ARTICLES.filter((a) => a.category === 'research');
+    const researchArticles = ARTICLES.filter((a) => a.isResearchHighlight);
 
     return {
       query,

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import type { Article } from '../../types';
+import { TOPICS } from '../../data/topics';
 import { TransitSimulator } from './TransitSimulator';
 import { CompanionDock } from '../mascot/CompanionDock';
 import type { EvidenceSearchResult } from '../../services/articleEvidenceService';
@@ -117,9 +118,14 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
         {/* Header */}
         <header className="space-y-4 pb-8 border-b border-mirari-line">
           <div className="flex items-center space-x-2 text-xs font-sans text-mirari-amber">
-            <span className="font-semibold tracking-wider">宇宙與天文</span>
+            <span className="font-semibold tracking-wider">
+              {article.topicIds
+                .map((id) => TOPICS.find((t) => t.id === id)?.nameZh)
+                .filter(Boolean)
+                .join(' · ') || '科學專題'}
+            </span>
             <span className="text-mirari-dim">·</span>
-            <span className="text-mirari-dim">系外行星觀測</span>
+            <span className="text-mirari-dim">{article.formatBadgeText}</span>
           </div>
 
           <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-mirari-ink leading-[1.2]">
@@ -136,7 +142,7 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
               <span>·</span>
               <span>審訂／系外行星研究員</span>
             </div>
-            <span>精選專題</span>
+            <span>{article.formatBadgeText}</span>
           </div>
         </header>
 

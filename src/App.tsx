@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { HomePage } from './components/home/HomePage';
 import { ArticleView } from './components/article/ArticleView';
 import { ARTICLES } from './data/articles';
-import type { Article, DomainId } from './types';
+import type { Article } from './types';
 
 export function App() {
   const [currentView, setCurrentView] = useState<'home' | 'article'>('home');
@@ -26,9 +26,8 @@ export function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleExploreDomain = (_domainId: DomainId) => {
-    // Smooth scroll down to domain section
-    const elem = document.getElementById('science-domains');
+  const handleExploreTopic = (_topicId: string) => {
+    const elem = document.getElementById('explore-topics');
     if (elem) {
       elem.scrollIntoView({ behavior: 'smooth' });
     }
@@ -39,7 +38,7 @@ export function App() {
       {currentView === 'home' ? (
         <HomePage
           onSelectArticle={handleSelectArticle}
-          onExploreDomain={handleExploreDomain}
+          onExploreTopic={handleExploreTopic}
         />
       ) : (
         <ArticleView

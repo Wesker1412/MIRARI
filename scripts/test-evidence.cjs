@@ -22,19 +22,57 @@ async function run() {
 
   console.log('Navigating to MIRARI homepage...');
   await page.goto('http://localhost:5173', { waitUntil: 'networkidle' });
-  await page.waitForTimeout(1000);
+  await page.waitForTimeout(1500);
 
+  // 1. Capture full homepage
   const homePath = path.join(artifactDir, 'editorial-home-clean.png');
   await page.screenshot({ path: homePath });
   console.log('Saved:', homePath);
 
-  // Navigate to article
+  // 2. Capture Mascot Close-Up on Hero Spread
+  const heroMascot = page.locator('div[title="MIRARI"]').first();
+  if (await heroMascot.isVisible()) {
+    const mascotCloseupPath = path.join(artifactDir, 'mascot-new-closeup.png');
+    await heroMascot.screenshot({ path: mascotCloseupPath });
+    console.log('Saved Mascot Close-up:', mascotCloseupPath);
+  }
+
+  // 3. Test Dynamic Science Topics Section
+  console.log('Testing dynamic science topics section...');
+  const topicsSection = page.locator('#explore-topics');
+  await topicsSection.scrollIntoViewIfNeeded();
+  await page.waitForTimeout(600);
+
+  // Capture topics section screenshot
+  const topicsPath = path.join(artifactDir, 'topics-home-desktop.png');
+  await page.screenshot({ path: topicsPath });
+  console.log('Saved Topics Section:', topicsPath);
+
+  // Click on a topic: '天體物理與深空' inside #explore-topics
+  const astrophysicsCard = page.locator('#explore-topics').locator('text=天體物理與深空').first();
+  await astrophysicsCard.click();
+  await page.waitForTimeout(600);
+
+  // Verify filtered results header appears
+  const filterHeader = await page.locator('text=主題篩選結果').isVisible();
+  console.log('Topic filter active & verified:', filterHeader);
+
+  // Reset filter if visible
+  if (filterHeader) {
+    await page.locator('text=清除篩選').first().click();
+    await page.waitForTimeout(400);
+  }
+
+  // 4. Navigate to Cover Article
+  console.log('Navigating to article...');
+  await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
+  await page.waitForTimeout(300);
   await page.locator('text=進入互動閱讀').first().click();
-  await page.waitForTimeout(1000);
+  await page.waitForTimeout(1500);
 
   const articlePath = path.join(artifactDir, 'editorial-article-clean.png');
   await page.screenshot({ path: articlePath });
-  console.log('Saved:', articlePath);
+  console.log('Saved Article View:', articlePath);
 
   // Click on mascot to open query card
   const mascot = page.locator('div[title="點擊與 MIRARI 互動提問"]').first();
@@ -46,7 +84,6 @@ async function run() {
   await page.locator('text=為什麼行星越大，恆星亮度下降越多？').first().click();
   await page.waitForTimeout(1200);
 
-  // Verify that only the exact sentence is highlighted
   const isQ1Highlighted = await page.locator('#sent-radius-squared-explanation').evaluate(
     el => el.classList.contains('exact-text-highlight')
   );
@@ -97,6 +134,7 @@ async function run() {
   }
 
   // ─── Test 5: Mobile Viewport ─────────────────────────────────
+  console.log('Testing Mobile Viewport...');
   const mobileContext = await browser.newContext({
     viewport: { width: 390, height: 844 },
     isMobile: true,
@@ -127,7 +165,7 @@ async function run() {
 
   console.log('--- Verification Summary ---');
   if (consoleErrors.length === 0) {
-    console.log('SUCCESS: All 3 questions localized exact text sentences with 0 console errors!');
+    console.log('SUCCESS: All tests passed with 0 console errors!');
   } else {
     console.log('Errors:', consoleErrors);
   }

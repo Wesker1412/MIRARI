@@ -113,7 +113,7 @@ export const AIExplorer: React.FC<AIExplorerProps> = ({ onSelectArticle }) => {
                 <div>
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-[11px] font-sans text-mirari-amber font-medium">
-                      {article.topicBadge}
+                      {article.formatBadgeText}
                     </span>
                     {article.status === 'in_preparation' ? (
                       <span className="text-[10px] text-mirari-dim bg-mirari-surfaceAlt px-2 py-0.5 rounded border border-mirari-line">
