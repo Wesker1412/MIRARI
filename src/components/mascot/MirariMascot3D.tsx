@@ -405,7 +405,7 @@ export const MirariMascot3D: React.FC<MirariMascot3DProps> = ({
       onMouseLeave={() => setIsHovered(false)}
       onClick={onClick}
       style={{ cursor: interactive ? 'pointer' : 'default' }}
-      title={tooltipText || 'AI 吉祥物 MIRARI（點擊互動）'}
+      title={tooltipText || 'MIRARI'}
     >
       {/* 3D WebGL Canvas Container */}
       <div ref={containerRef} className="w-full h-full pointer-events-auto" />
@@ -413,8 +413,8 @@ export const MirariMascot3D: React.FC<MirariMascot3DProps> = ({
       {/* Fallback 2D Representation if WebGL is unavailable */}
       {!webglSupported && (
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-mirari-amber/20 via-white/80 to-mirari-cyan/30 flex items-center justify-center shadow-lg border border-white/20">
-            <span className="text-2xl font-serif text-mirari-bg font-bold">✨</span>
+          <div className="w-24 h-24 rounded-full bg-mirari-paper border border-mirari-line flex items-center justify-center shadow-lg">
+            <span className="font-serif text-lg text-mirari-ink font-bold tracking-widest">MIRARI</span>
           </div>
         </div>
       )}

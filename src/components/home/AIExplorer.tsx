@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Search, ArrowRight } from 'lucide-react';
 import { queryMockAIRecommendation } from '../../services/aiRecommendationService';
 import type { AIRecommendation, Article } from '../../types';
 
@@ -51,20 +50,19 @@ export const AIExplorer: React.FC<AIExplorerProps> = ({ onSelectArticle }) => {
       {/* Natural Language Input Form */}
       <form onSubmit={handleSubmit} className="max-w-2xl mx-auto">
         <div className="relative flex items-center rounded-2xl border border-mirari-border bg-mirari-paper p-1.5 focus-within:border-mirari-ink transition duration-200">
-          <Search className="w-4 h-4 text-mirari-dim ml-3 shrink-0" />
           <input
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="例如：可以親手操作的天文文章、黑洞、大腦時間感..."
-            className="w-full bg-transparent px-3 py-2 text-sm text-mirari-ink placeholder-mirari-dim focus:outline-none font-sans"
+            className="w-full bg-transparent px-4 py-2 text-sm text-mirari-ink placeholder-mirari-dim focus:outline-none font-sans"
           />
           <button
             type="submit"
             disabled={!query.trim() || isSearching}
-            className="shrink-0 rounded-xl bg-mirari-ink px-4 py-2 text-xs font-medium text-white hover:bg-black active:scale-95 transition disabled:opacity-40"
+            className="shrink-0 rounded-xl bg-mirari-ink px-5 py-2 text-xs font-medium text-white hover:bg-black active:scale-95 transition disabled:opacity-40 font-sans"
           >
-            {isSearching ? '尋找中...' : '探索'}
+            {isSearching ? '尋找中...' : '搜尋'}
           </button>
         </div>
       </form>
@@ -135,12 +133,11 @@ export const AIExplorer: React.FC<AIExplorerProps> = ({ onSelectArticle }) => {
                   </p>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-mirari-line/60 flex items-center justify-between text-xs text-mirari-dim">
+                <div className="mt-4 pt-3 border-t border-mirari-line/60 flex items-center justify-between text-xs text-mirari-dim font-sans">
                   <span>{article.status === 'published' ? '正式發布' : '選題籌備'}</span>
-                  <div className="flex items-center space-x-1 text-mirari-ink font-medium">
-                    <span>{article.status === 'published' ? '閱讀全文' : '查看概要'}</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                  </div>
+                  <span className="text-mirari-ink font-medium hover:text-mirari-amber transition">
+                    {article.status === 'published' ? '閱讀全文' : '查看概要'}
+                  </span>
                 </div>
               </div>
             ))}

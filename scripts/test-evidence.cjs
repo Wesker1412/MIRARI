@@ -20,13 +20,21 @@ async function run() {
   });
   page.on('pageerror', err => consoleErrors.push(err.message));
 
-  console.log('Navigating to MIRARI article...');
+  console.log('Navigating to MIRARI homepage...');
   await page.goto('http://localhost:5173', { waitUntil: 'networkidle' });
   await page.waitForTimeout(1000);
+
+  const homePath = path.join(artifactDir, 'editorial-home-clean.png');
+  await page.screenshot({ path: homePath });
+  console.log('Saved:', homePath);
 
   // Navigate to article
   await page.locator('text=進入互動閱讀').first().click();
   await page.waitForTimeout(1000);
+
+  const articlePath = path.join(artifactDir, 'editorial-article-clean.png');
+  await page.screenshot({ path: articlePath });
+  console.log('Saved:', articlePath);
 
   // Click on mascot to open query card
   const mascot = page.locator('div[title="點擊與 MIRARI 互動提問"]').first();
@@ -78,7 +86,7 @@ async function run() {
 
   // ─── Test 4: Clear Highlight ─────────────────────────────────
   console.log('Testing Clear Highlight...');
-  const clearBtn = page.locator('button[title="清除高亮"]').first();
+  const clearBtn = page.locator('button[title="清除標記"], button:has-text("清除")').first();
   if (await clearBtn.isVisible()) {
     await clearBtn.click();
     await page.waitForTimeout(500);
@@ -108,7 +116,7 @@ async function run() {
   await mobilePage.waitForTimeout(1200);
 
   // Close mobile sheet
-  await mobilePage.locator('button[title="關閉"]').first().click();
+  await mobilePage.locator('button:has-text("關閉")').first().click();
   await mobilePage.waitForTimeout(600);
 
   const mobileEvidencePath = path.join(artifactDir, 'evidence-mobile-highlight.png');

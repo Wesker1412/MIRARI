@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { X, Send, CornerDownRight, Quote } from 'lucide-react';
 import { MirariMascot3D } from './MirariMascot3D';
 import type { MascotState } from '../../types';
 import { searchArticleEvidence, type EvidenceSearchResult } from '../../services/articleEvidenceService';
@@ -128,10 +127,9 @@ export const CompanionDock: React.FC<CompanionDockProps> = ({
                 )}
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="p-1 rounded-lg text-mirari-dim hover:text-mirari-ink hover:bg-mirari-surfaceAlt transition"
-                  title="關閉"
+                  className="text-xs text-mirari-dim hover:text-mirari-ink px-2 py-1 rounded-md hover:bg-mirari-surfaceAlt transition"
                 >
-                  <X className="w-4 h-4" />
+                  關閉
                 </button>
               </div>
             </div>
@@ -148,10 +146,12 @@ export const CompanionDock: React.FC<CompanionDockProps> = ({
                     <button
                       key={idx}
                       onClick={() => handleQuery(q.query)}
-                      className="text-left text-xs text-mirari-muted hover:text-mirari-ink bg-mirari-paper hover:bg-mirari-surfaceAlt border border-mirari-line px-3 py-2 rounded-xl transition flex items-center justify-between group"
+                      className="text-left text-xs text-mirari-muted hover:text-mirari-ink bg-mirari-paper hover:bg-mirari-surfaceAlt border border-mirari-line px-3 py-2.5 rounded-xl transition flex items-center justify-between group"
                     >
                       <span className="line-clamp-1">{q.label}</span>
-                      <CornerDownRight className="w-3.5 h-3.5 text-mirari-dim group-hover:text-mirari-amber shrink-0 ml-1.5 transition-colors" />
+                      <span className="text-[11px] text-mirari-dim group-hover:text-mirari-amber shrink-0 ml-2 transition-colors">
+                        提問
+                      </span>
                     </button>
                   ))}
                 </div>
@@ -160,7 +160,7 @@ export const CompanionDock: React.FC<CompanionDockProps> = ({
               {/* Status / Answer Box */}
               {isThinking && (
                 <div className="p-3.5 rounded-xl bg-mirari-paper border border-mirari-line text-xs text-mirari-muted flex items-center space-x-2 animate-pulse">
-                  <span className="w-2 h-2 rounded-full bg-mirari-amber" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-mirari-amber" />
                   <span>正在理解問題並比對文章原文...</span>
                 </div>
               )}
@@ -174,9 +174,8 @@ export const CompanionDock: React.FC<CompanionDockProps> = ({
                   {/* Exact Quote Card */}
                   {currentResult.evidence && (
                     <div className="mt-2 pt-2 border-t border-amber-200/50 space-y-1">
-                      <div className="flex items-center space-x-1.5 text-[11px] text-amber-800 font-medium">
-                        <Quote className="w-3 h-3 text-amber-600 shrink-0" />
-                        <span>已在原文精確標記相關句子：</span>
+                      <div className="text-[11px] text-amber-800 font-medium">
+                        已在原文精確標記支持句：
                       </div>
                       <p className="text-[11px] text-slate-700 italic bg-amber-100/60 p-2 rounded-lg border border-amber-300/40 leading-relaxed font-sans">
                         「{currentResult.evidence.exactQuote}」
@@ -194,14 +193,14 @@ export const CompanionDock: React.FC<CompanionDockProps> = ({
                     value={userInput}
                     onChange={(e) => setUserInput(e.target.value)}
                     placeholder="輸入任何關於此文章的問題..."
-                    className="flex-1 bg-transparent text-xs text-mirari-ink placeholder-mirari-dim focus:outline-none"
+                    className="flex-1 bg-transparent text-xs text-mirari-ink placeholder-mirari-dim focus:outline-none font-sans"
                   />
                   <button
                     type="submit"
                     disabled={!userInput.trim() || isThinking}
-                    className="p-1.5 rounded-lg bg-mirari-amber text-white hover:bg-amber-700 disabled:opacity-40 transition"
+                    className="px-3 py-1 rounded-lg bg-mirari-amber text-white text-xs font-sans font-medium hover:bg-amber-700 disabled:opacity-40 transition"
                   >
-                    <Send className="w-3.5 h-3.5" />
+                    提問
                   </button>
                 </div>
               </form>

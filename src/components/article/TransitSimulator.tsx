@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Play, Pause, RotateCcw } from 'lucide-react';
 
 interface TransitSimulatorProps {
   onParameterChange?: (params: { radiusRatio: number; transitDepthPercent: number }) => void;
@@ -470,18 +469,16 @@ export const TransitSimulator: React.FC<TransitSimulatorProps> = ({ onParameterC
                 <button
                   type="button"
                   onClick={() => setIsPlaying(!isPlaying)}
-                  className="p-1 rounded bg-mirari-paper border border-mirari-line hover:text-mirari-ink transition"
-                  title={isPlaying ? '暫停' : '播放'}
+                  className="px-2 py-0.5 rounded text-[11px] font-sans bg-mirari-paper border border-mirari-line hover:text-mirari-ink transition"
                 >
-                  {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
+                  {isPlaying ? '暫停' : '播放'}
                 </button>
                 <button
                   type="button"
                   onClick={() => setTime(-1.0)}
-                  className="p-1 rounded bg-mirari-paper border border-mirari-line hover:text-mirari-ink transition"
-                  title="重設起點"
+                  className="px-2 py-0.5 rounded text-[11px] font-sans bg-mirari-paper border border-mirari-line hover:text-mirari-ink transition"
                 >
-                  <RotateCcw className="w-3.5 h-3.5" />
+                  重設
                 </button>
               </div>
             </div>

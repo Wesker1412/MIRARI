@@ -1,17 +1,4 @@
 import React, { useState } from 'react';
-import {
-  ArrowRight,
-  Sliders,
-  Telescope,
-  Atom,
-  FlaskConical,
-  Dna,
-  Binary,
-  Brain,
-  Cpu,
-  X,
-  Clock,
-} from 'lucide-react';
 import type { Article, DomainId } from '../../types';
 import { DOMAINS } from '../../data/domains';
 import { ARTICLES } from '../../data/articles';
@@ -37,27 +24,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onSelectArticle, onExploreDo
       onSelectArticle(article);
     } else {
       setPrepArticleModal(article);
-    }
-  };
-
-  const getDomainIcon = (iconName: string) => {
-    switch (iconName) {
-      case 'Telescope':
-        return <Telescope className="w-4 h-4" />;
-      case 'Atom':
-        return <Atom className="w-4 h-4" />;
-      case 'FlaskConical':
-        return <FlaskConical className="w-4 h-4" />;
-      case 'Dna':
-        return <Dna className="w-4 h-4" />;
-      case 'Binary':
-        return <Binary className="w-4 h-4" />;
-      case 'Brain':
-        return <Brain className="w-4 h-4" />;
-      case 'Cpu':
-        return <Cpu className="w-4 h-4" />;
-      default:
-        return <Atom className="w-4 h-4" />;
     }
   };
 
@@ -127,11 +93,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onSelectArticle, onExploreDo
               <div className="pt-2 flex flex-wrap items-center gap-4">
                 <button
                   onClick={() => onSelectArticle(coverArticle)}
-                  className="inline-flex items-center space-x-2.5 rounded-xl bg-mirari-ink px-6 py-3.5 text-sm font-medium text-white shadow-sm hover:bg-black active:scale-95 transition"
+                  className="inline-flex items-center rounded-xl bg-mirari-ink px-6 py-3.5 text-sm font-medium text-white shadow-sm hover:bg-black active:scale-95 transition font-sans"
                 >
-                  <Sliders className="w-4 h-4 text-mirari-amber" />
-                  <span>進入互動閱讀</span>
-                  <ArrowRight className="w-4 h-4" />
+                  進入互動閱讀
                 </button>
 
                 <div className="text-xs text-mirari-dim font-sans">
@@ -165,9 +129,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onSelectArticle, onExploreDo
 
                 <div className="mt-4 flex items-center justify-between text-xs text-slate-400 font-sans">
                   <span>點選直接體驗幾何光度實驗</span>
-                  <span className="text-white group-hover:text-amber-400 flex items-center space-x-1 font-medium transition">
-                    <span>開始探索</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                  <span className="text-white group-hover:text-amber-400 font-medium transition">
+                    開始探索
                   </span>
                 </div>
               </div>
@@ -229,9 +192,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onSelectArticle, onExploreDo
                   </p>
                 </div>
 
-                <div className="mt-5 pt-3 border-t border-mirari-line/60 flex items-center justify-between text-xs text-mirari-dim">
-                  <span>查看題綱概要</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform text-mirari-ink" />
+                <div className="mt-5 pt-3 border-t border-mirari-line/60 flex items-center justify-between text-xs text-mirari-dim font-sans">
+                  <span>題綱概要</span>
+                  <span className="text-mirari-ink font-medium group-hover:text-mirari-amber transition">查看詳情</span>
                 </div>
               </article>
             ))}
@@ -277,9 +240,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onSelectArticle, onExploreDo
                   </p>
                 </div>
 
-                <div className="mt-5 pt-3 border-t border-mirari-line/60 flex items-center justify-between text-xs text-mirari-dim">
-                  <span>查看選題方向</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform text-mirari-ink" />
+                <div className="mt-5 pt-3 border-t border-mirari-line/60 flex items-center justify-between text-xs text-mirari-dim font-sans">
+                  <span>選題方向</span>
+                  <span className="text-mirari-ink font-medium group-hover:text-mirari-amber transition">查看詳情</span>
                 </div>
               </article>
             ))}
@@ -301,14 +264,14 @@ export const HomePage: React.FC<HomePageProps> = ({ onSelectArticle, onExploreDo
 
           {/* Domain Cards Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-            {DOMAINS.map((domain) => (
+            {DOMAINS.map((domain, idx) => (
               <div
                 key={domain.id}
                 onClick={() => {
                   setSelectedDomain(domain.id === selectedDomain ? 'all' : domain.id);
                   onExploreDomain(domain.id);
                 }}
-                className={`p-5 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between ${
+                className={`p-5 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between group ${
                   selectedDomain === domain.id
                     ? 'border-mirari-amber bg-white shadow-md ring-1 ring-mirari-amber/20'
                     : 'border-mirari-line bg-white hover:border-mirari-border hover:shadow-sm'
@@ -316,26 +279,28 @@ export const HomePage: React.FC<HomePageProps> = ({ onSelectArticle, onExploreDo
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="p-2 rounded-xl bg-mirari-paper text-mirari-ink border border-mirari-line">
-                      {getDomainIcon(domain.iconName)}
+                    <span className="text-xs font-mono font-bold text-mirari-dim">
+                      {String(idx + 1).padStart(2, '0')}
                     </span>
-                    <span className="text-[11px] font-mono text-mirari-dim">
+                    <span className="text-[11px] font-mono text-mirari-dim uppercase tracking-wider">
                       {domain.nameEn}
                     </span>
                   </div>
 
-                  <h3 className="font-serif text-base font-bold text-mirari-ink">
+                  <h3 className="font-serif text-lg font-bold text-mirari-ink group-hover:text-mirari-amber transition">
                     {domain.nameZh}
                   </h3>
 
-                  <p className="mt-1 text-xs text-mirari-muted line-clamp-2 leading-relaxed font-sans">
+                  <p className="mt-2 text-xs text-mirari-muted line-clamp-2 leading-relaxed font-sans">
                     {domain.tagline}
                   </p>
                 </div>
 
-                <div className="mt-4 pt-2 border-t border-mirari-line/60 text-[11px] font-sans text-mirari-dim flex items-center justify-between">
-                  <span>{selectedDomain === domain.id ? '篩選中' : '檢視專案'}</span>
-                  <ArrowRight className="w-3 h-3" />
+                <div className="mt-5 pt-3 border-t border-mirari-line/60 text-[11px] font-sans text-mirari-dim flex items-center justify-between">
+                  <span>{domain.articleCount} 篇內容</span>
+                  <span className={`font-medium transition ${selectedDomain === domain.id ? 'text-mirari-amber' : 'text-mirari-ink group-hover:text-mirari-amber'}`}>
+                    {selectedDomain === domain.id ? '篩選中' : '瀏覽篇章'}
+                  </span>
                 </div>
               </div>
             ))}
@@ -400,10 +365,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onSelectArticle, onExploreDo
             </div>
             <button
               onClick={() => handleArticleClick(seriesArticle)}
-              className="shrink-0 px-5 py-2.5 rounded-xl border border-mirari-line bg-mirari-paper hover:bg-mirari-surfaceAlt text-xs font-sans font-medium text-mirari-ink transition flex items-center space-x-1.5"
+              className="shrink-0 px-5 py-2.5 rounded-xl border border-mirari-line bg-mirari-paper hover:bg-mirari-surfaceAlt text-xs font-sans font-medium text-mirari-ink transition"
             >
-              <span>查看系列規劃</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              查看系列規劃
             </button>
           </div>
         </div>
@@ -428,14 +392,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onSelectArticle, onExploreDo
           <div className="relative w-full max-w-lg rounded-3xl bg-white border border-mirari-border shadow-2xl p-6 sm:p-8 space-y-4">
             <button
               onClick={() => setPrepArticleModal(null)}
-              className="absolute top-5 right-5 p-1.5 rounded-lg text-mirari-dim hover:text-mirari-ink hover:bg-mirari-surfaceAlt transition"
+              className="absolute top-5 right-5 px-2.5 py-1 rounded-lg text-xs font-sans text-mirari-dim hover:text-mirari-ink hover:bg-mirari-surfaceAlt transition"
             >
-              <X className="w-4 h-4" />
+              關閉
             </button>
 
-            <div className="flex items-center space-x-2 text-xs font-sans text-mirari-amber font-semibold">
-              <Clock className="w-3.5 h-3.5" />
-              <span>選題籌備中</span>
+            <div className="text-xs font-mono text-mirari-amber font-semibold uppercase tracking-wider">
+              選題籌備中
             </div>
 
             <h3 className="font-serif text-xl sm:text-2xl font-bold text-mirari-ink">
@@ -468,10 +431,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onSelectArticle, onExploreDo
                   setPrepArticleModal(null);
                   onSelectArticle(coverArticle);
                 }}
-                className="w-full sm:w-auto px-4 py-2 rounded-xl bg-mirari-ink text-white text-xs font-sans font-medium hover:bg-black transition flex items-center justify-center space-x-1.5"
+                className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-mirari-ink text-white text-xs font-sans font-medium hover:bg-black transition"
               >
-                <span>先看精選互動特輯《當星光暗了一點》</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                先看精選特輯《當星光暗了一點》
               </button>
             </div>
           </div>

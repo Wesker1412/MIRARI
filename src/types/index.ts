@@ -13,7 +13,6 @@ export interface Domain {
   nameEn: string;
   tagline: string;
   description: string;
-  iconName: string;
   accentColor: string;
   articleCount: number;
 }

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { ArrowLeft, Share2, BookOpen, X, CheckCircle2 } from 'lucide-react';
 import type { Article } from '../../types';
 import { TransitSimulator } from './TransitSimulator';
 import { CompanionDock } from '../mascot/CompanionDock';
@@ -74,10 +73,9 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
         <div className="flex items-center space-x-4">
           <button
             onClick={onBackToHome}
-            className="flex items-center space-x-1.5 text-xs font-sans text-mirari-muted hover:text-mirari-ink transition px-2.5 py-1.5 rounded-lg border border-mirari-line hover:border-mirari-border"
+            className="text-xs font-sans text-mirari-muted hover:text-mirari-ink transition px-3 py-1.5 rounded-lg border border-mirari-line hover:border-mirari-border"
           >
-            <ArrowLeft className="w-3.5 h-3.5" />
-            <span>首頁</span>
+            返回首頁
           </button>
           <div className="h-4 w-[1px] bg-mirari-line hidden sm:block" />
           <span className="font-serif text-sm font-semibold text-mirari-ink truncate max-w-[240px] sm:max-w-md hidden sm:inline-block">
@@ -88,15 +86,14 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
         <div className="flex items-center space-x-3">
           {/* Active Highlight Dismiss Button in Top Bar */}
           {activeSentenceId && (
-            <div className="flex items-center space-x-2 bg-amber-50 border border-amber-300 text-amber-900 px-2.5 py-1 rounded-lg text-xs font-sans animate-fade-in">
-              <CheckCircle2 className="w-3.5 h-3.5 text-amber-600" />
+            <div className="flex items-center space-x-2 bg-amber-50 border border-amber-300 text-amber-900 px-3 py-1 rounded-lg text-xs font-sans animate-fade-in">
               <span>已定位：{evidenceNote || '原文句子'}</span>
               <button
                 onClick={handleClearHighlight}
-                className="hover:bg-amber-200/60 p-0.5 rounded transition"
-                title="清除高亮"
+                className="hover:underline font-medium text-amber-950 ml-1"
+                title="清除標記"
               >
-                <X className="w-3 h-3" />
+                清除
               </button>
             </div>
           )}
@@ -108,10 +105,9 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
                 alert('已複製文章連結至剪貼簿');
               }
             }}
-            className="p-1.5 text-mirari-dim hover:text-mirari-ink rounded-lg border border-mirari-line hover:border-mirari-border transition"
-            title="分享文章"
+            className="px-3 py-1.5 text-xs font-sans text-mirari-dim hover:text-mirari-ink rounded-lg border border-mirari-line hover:border-mirari-border transition"
           >
-            <Share2 className="w-4 h-4" />
+            複製連結
           </button>
         </div>
       </header>
@@ -302,9 +298,8 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
 
           {/* References */}
           <section className="pt-8 mt-12 border-t border-mirari-line space-y-3">
-            <div className="flex items-center space-x-2 text-xs font-sans text-mirari-dim">
-              <BookOpen className="w-3.5 h-3.5" />
-              <span className="font-semibold uppercase tracking-wider">參考文獻</span>
+            <div className="text-xs font-sans text-mirari-dim font-semibold uppercase tracking-wider">
+              參考文獻
             </div>
 
             <ol className="list-decimal list-inside space-y-2 text-xs text-mirari-muted font-mono leading-relaxed">
