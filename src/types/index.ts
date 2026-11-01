@@ -19,6 +19,7 @@ export interface Domain {
 }
 
 export type ArticleCategory = 'cover' | 'research' | 'classic' | 'series';
+export type ArticleStatus = 'published' | 'in_preparation';
 
 export interface KnowledgePoint {
   id: string;
@@ -36,14 +37,13 @@ export interface Article {
   subtitle: string;
   category: ArticleCategory;
   domainId: DomainId;
-  publishedDate: string;
-  issueNumber: string;
+  status: ArticleStatus;
+  publishedDate?: string;
+  topicBadge?: string;
   coverImage?: string;
   isInteractive: boolean;
-  isEditorialDemo?: boolean; // For research briefings not yet peer-verified
   journalReference?: {
     journal: string;
-    doi: string;
     year: number;
   };
   summary: string;

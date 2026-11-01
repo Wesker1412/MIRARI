@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, ChevronDown, Sparkles, Navigation, Send, ArrowRight, Layers } from 'lucide-react';
+import { X, Send, ArrowRight, CornerDownRight } from 'lucide-react';
 import { MirariMascot3D } from './MirariMascot3D';
 import type { MascotState, KnowledgePoint } from '../../types';
 
@@ -9,361 +9,265 @@ interface CompanionDockProps {
   onOpenArticleBySlug?: (slug: string) => void;
 }
 
-interface MessageItem {
-  id: string;
-  sender: 'mirari' | 'user';
-  text: string;
+interface QAReply {
+  query: string;
+  answer: string;
   knowledgeId?: string;
   actionText?: string;
-  actionTarget?: string;
 }
 
 export const CompanionDock: React.FC<CompanionDockProps> = ({
-  knowledgePoints,
   onNavigateToKnowledge,
-  onOpenArticleBySlug: _onOpenArticleBySlug,
 }) => {
-  const [isOpen, setIsOpen] = useState<boolean>(
-    typeof window !== 'undefined' ? window.innerWidth > 640 : true
-  );
-  const [isMinimized, setIsMinimized] = useState<boolean>(
-    typeof window !== 'undefined' ? window.innerWidth <= 640 : false
-  );
-  const [showKnowledgeList, setShowKnowledgeList] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const [mascotState, setMascotState] = useState<MascotState>('idle');
   const [userInput, setUserInput] = useState<string>('');
-  const [messages, setMessages] = useState<MessageItem[]>([
-    {
-      id: 'welcome',
-      sender: 'mirari',
-      text: '你好！我是 MIRARI 陪讀精靈。在閱讀這篇《當星光暗了一點》時，有任何公式、物理概念或模擬器操作不解，隨時點選下方問題或直接問我喔！✨',
-    },
-  ]);
+  const [currentReply, setCurrentReply] = useState<QAReply | null>(null);
+  const [isThinking, setIsThinking] = useState<boolean>(false);
 
-  // Suggested quick questions
-  const sampleQuestions = [
+  // Quick concept exploration questions
+  const quickQuestions: {
+    label: string;
+    query: string;
+    knowledgeId: string;
+    answer: string;
+    actionText: string;
+  }[] = [
     {
       label: '為什麼行星越大，恆星亮度下降越多？',
       query: '為什麼行星越大，恆星亮度下降越多？',
       knowledgeId: 'kp-transit-depth',
-      reply:
-        '因為當行星掠過恆星前方時，遮擋的光通量正比於行星投影面積 π·Rp²！當行星半徑變為 2 倍，遮蔽面積就會變成 4 倍，恆星亮度下降幅度（凌日深度 ΔF）也會擴大為 4 倍。讓我帶你到對應的公式段落與實驗！',
-      actionText: '前往「凌日深度與行星半徑公式」段落',
+      answer:
+        '因為行星遮擋的光量正比於它的二維截面積（π·Rp²）。當行星半徑變為 2 倍時，遮蔽面積會擴大為 4 倍，因此光度下降深度 ΔF 也隨之變為 4 倍。',
+      actionText: '查看公式與推導段落',
     },
     {
-      label: '帶我去看光度曲線模擬器',
-      query: '帶我去看光度曲線模擬器',
+      label: '跳至即時光度模擬器',
+      query: '跳至即時光度模擬器',
       knowledgeId: 'kp-transit-simulator',
-      reply:
-        '沒問題！這篇文章配備了雙視角天文物理實驗室，可以手動調節行星半徑與撞擊參數，即時觀察光通量變化。我們這就出發！',
-      actionText: '捲動至「即時模擬器」',
+      answer:
+        '已為你定位至模擬器。你可以親手拖動行星半徑比 Rp/R* 與撞擊參數 b，觀察空間投影與光度曲線的即時聯動。',
+      actionText: '前往模擬實驗區',
     },
     {
       label: '為什麼真實的光度曲線底部是 U 型？',
       query: '為什麼真實的光度曲線底部是 U 型？',
       knowledgeId: 'kp-limb-darkening',
-      reply:
-        '這是因為恆星大氣的「周邊昏暗效應（Limb Darkening）」！恆星中心視線穿透較深、溫度較高而明亮；邊緣視線穿透較淺、溫度較低而略暗。當行星穿過中心時遮擋了最亮區域，因此曲線呈現圓滑的 U 型。',
-      actionText: '查看「周邊昏暗效應」解說',
-    },
-    {
-      label: '凌日法如何探測外星大氣？',
-      query: '凌日法如何探測外星大氣？',
-      knowledgeId: 'kp-spectroscopy',
-      reply:
-        '當星光穿過行星大氣的微薄外緣時，大氣中的水蒸氣、二氧化碳或甲烷會吸收特定波長光線。韋伯望遠鏡就是藉由分析這圈光環的透射光譜來「嗅」出大氣成分的！',
-      actionText: '前往「大氣透射光譜」專題',
+      answer:
+        '這是由於恆星的「周邊昏暗效應」。恆星中心視線穿透較深、溫度較高而明亮；邊緣視線穿透較淺而較暗。當行星穿過中心時遮擋了最明亮區域，使曲線底部形成圓滑的 U 型。',
+      actionText: '查看周邊昏暗解說',
     },
   ];
 
-  const handleAskQuestion = (item: (typeof sampleQuestions)[0]) => {
-    // 1. User message
-    const userMsg: MessageItem = {
-      id: Date.now().toString(),
-      sender: 'user',
-      text: item.query,
-    };
-
-    // 2. Switch mascot to thinking state
+  const handleAskQuestion = (item: (typeof quickQuestions)[0]) => {
+    setIsThinking(true);
     setMascotState('thinking');
+    setCurrentReply(null);
 
-    // 3. Companion answers & navigates
     setTimeout(() => {
-      const mirariMsg: MessageItem = {
-        id: (Date.now() + 1).toString(),
-        sender: 'mirari',
-        text: item.reply,
+      setIsThinking(false);
+      setCurrentReply({
+        query: item.query,
+        answer: item.answer,
         knowledgeId: item.knowledgeId,
         actionText: item.actionText,
-      };
-
-      setMessages((prev) => [...prev, userMsg, mirariMsg]);
+      });
       setMascotState('excited');
 
-      // Scroll and highlight target knowledge point
       if (item.knowledgeId) {
         onNavigateToKnowledge(item.knowledgeId);
       }
 
-      // Revert to idle after celebration
       setTimeout(() => setMascotState('idle'), 2500);
-    }, 600);
+    }, 450);
   };
 
   const handleCustomSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!userInput.trim()) return;
 
-    const input = userInput.trim();
+    const query = userInput.trim();
     setUserInput('');
-
-    const userMsg: MessageItem = {
-      id: Date.now().toString(),
-      sender: 'user',
-      text: input,
-    };
-    setMessages((prev) => [...prev, userMsg]);
+    setIsThinking(true);
     setMascotState('thinking');
+    setCurrentReply(null);
 
     setTimeout(() => {
-      let reply = '這是一個非常精采的科學思考點！';
+      setIsThinking(false);
+      let answer = '這是一個很有啟發性的問題！在系外行星凌日法中，光度的微弱變化蘊含著行星幾何與大氣的關鍵密碼。';
       let targetKid = 'kp-transit-depth';
-      let actionLabel = '查看相關科學段落';
+      let actionLabel = '前往相關段落';
 
-      if (input.includes('大') || input.includes('半徑') || input.includes('下降') || input.includes('公式')) {
-        reply =
-          '行星半徑越大，投影遮蔽截面積（π·Rp²）就越大，恆星光度下降就越顯著！公式為 ΔF/F0 = (Rp / R*)²。';
+      if (query.includes('大') || query.includes('半徑') || query.includes('下降') || query.includes('公式')) {
+        answer =
+          '行星半徑越大，投影遮蔽截面積（π·Rp²）就越大，光度下降深度與半徑比呈平方關係：ΔF/F₀ = (Rp / R*)²。';
         targetKid = 'kp-transit-depth';
         actionLabel = '前往公式段落';
-      } else if (input.includes('模擬') || input.includes('操作') || input.includes('實驗')) {
-        reply = '這就帶你前往文章中的雙視角光度曲線模擬器，親自調整行星參數！';
+      } else if (query.includes('模擬') || query.includes('操作') || query.includes('實驗')) {
+        answer = '為你跳轉至文中的即時模擬器，可手動調節行星半徑與公轉時間軸。';
         targetKid = 'kp-transit-simulator';
         actionLabel = '前往模擬器';
-      } else if (input.includes('昏暗') || input.includes('邊緣') || input.includes('假設')) {
-        reply =
-          '真實恆星有周邊昏暗效應，使得光度曲線呈現平滑的 U 型。模型簡化了光球層的溫度梯度。';
+      } else if (query.includes('昏暗') || query.includes('邊緣') || query.includes('假設')) {
+        answer =
+          '真實恆星大氣光學厚度隨視角改變，產生中心亮、邊緣暗的周邊昏暗現象，使曲線呈現柔和的 U 型。';
         targetKid = 'kp-limb-darkening';
         actionLabel = '查看模型假設';
-      } else if (input.includes('推薦') || input.includes('黑洞') || input.includes('其他')) {
-        reply =
-          '如果想探索更極端的天體，推薦閱讀本期最新研究解讀《韋伯望遠鏡觀測早期宇宙超重黑洞異常吸積》！';
-        targetKid = '';
+      } else if (query.includes('大氣') || query.includes('光譜') || query.includes('水') || query.includes('韋伯')) {
+        answer =
+          '當星光穿透行星稀薄的大氣層外緣時，特定化學分子會吸收特定波長光線，藉由光譜分析即可探測異星大氣成分。';
+        targetKid = 'kp-spectroscopy';
+        actionLabel = '前往大氣光譜段落';
       }
 
-      const mirariMsg: MessageItem = {
-        id: (Date.now() + 1).toString(),
-        sender: 'mirari',
-        text: reply,
-        knowledgeId: targetKid || undefined,
-        actionText: targetKid ? actionLabel : undefined,
-      };
-
-      setMessages((prev) => [...prev, mirariMsg]);
+      setCurrentReply({
+        query,
+        answer,
+        knowledgeId: targetKid,
+        actionText: actionLabel,
+      });
       setMascotState('excited');
 
       if (targetKid) {
         onNavigateToKnowledge(targetKid);
       }
 
-      setTimeout(() => setMascotState('idle'), 2000);
-    }, 700);
+      setTimeout(() => setMascotState('idle'), 2500);
+    }, 500);
   };
 
-  // If minimized completely to floating pill
-  if (isMinimized) {
-    return (
-      <div className="fixed bottom-6 right-6 z-50 animate-bounce-subtle">
-        <button
-          onClick={() => setIsMinimized(false)}
-          className="flex items-center space-x-2.5 rounded-full border border-mirari-amber/40 bg-mirari-surface/90 px-4 py-2.5 text-xs font-medium text-white shadow-xl backdrop-blur-md hover:border-mirari-amber transition group"
-        >
-          <div className="relative w-6 h-6">
-            <span className="absolute inset-0 rounded-full bg-mirari-amber/20 animate-ping" />
-            <div className="w-6 h-6 rounded-full bg-mirari-amber/30 border border-mirari-amber flex items-center justify-center text-[10px]">
-              ✨
-            </div>
-          </div>
-          <span className="font-serif tracking-wider">喚出 MIRARI 陪讀</span>
-        </button>
-      </div>
-    );
-  }
-
   return (
-    <aside
-      aria-label="MIRARI AI 陪讀伴侶"
-      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 max-w-[calc(100vw-2rem)] sm:max-w-sm w-88 transition-all duration-300"
-    >
-      {/* Companion Card */}
-      <div className="relative rounded-2xl border border-mirari-border/80 bg-mirari-surface/95 shadow-2xl backdrop-blur-xl overflow-hidden flex flex-col">
-        {/* Top Header */}
-        <div className="flex items-center justify-between border-b border-mirari-border px-4 py-2.5 bg-mirari-card/70">
-          <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="font-serif text-sm font-semibold text-white tracking-wide">
-              MIRARI 陪讀精靈
-            </span>
-            <span className="rounded bg-mirari-amber/20 px-1.5 py-0.5 text-[10px] font-mono text-mirari-amber">
-              AI COMPANION
-            </span>
-          </div>
-
-          <div className="flex items-center space-x-1">
-            {knowledgePoints && knowledgePoints.length > 0 && (
-              <button
-                onClick={() => setShowKnowledgeList(!showKnowledgeList)}
-                className={`p-1 rounded transition text-xs flex items-center space-x-1 ${
-                  showKnowledgeList
-                    ? 'text-mirari-amber bg-mirari-amber/20'
-                    : 'text-mirari-muted hover:text-white'
-                }`}
-                title="知識點快速目錄"
-              >
-                <Layers className="w-3.5 h-3.5" />
-              </button>
-            )}
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="p-1 text-mirari-muted hover:text-white rounded transition"
-              title={isOpen ? '收起對話' : '展開對話'}
-            >
-              <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? '' : 'rotate-180'}`} />
-            </button>
-            <button
-              onClick={() => setIsMinimized(true)}
-              className="p-1 text-mirari-muted hover:text-white rounded transition"
-              title="最小化為角標"
-            >
-              <X className="w-4 h-4" />
-            </button>
-          </div>
-        </div>
-
-        {/* Knowledge Points quick drop panel */}
-        {showKnowledgeList && (
-          <div className="p-3 bg-mirari-card/90 border-b border-mirari-border space-y-1.5 text-xs animate-fade-in">
-            <span className="text-[10px] font-mono text-mirari-dim uppercase block">
-              點擊快速定位知識點：
-            </span>
-            <div className="flex flex-col space-y-1">
-              {knowledgePoints.map((kp) => (
-                <button
-                  key={kp.id}
-                  onClick={() => {
-                    onNavigateToKnowledge(kp.targetElementId);
-                    setShowKnowledgeList(false);
-                  }}
-                  className="text-left px-2 py-1 rounded bg-mirari-surface hover:bg-mirari-border text-mirari-text hover:text-white transition flex items-center justify-between"
-                >
-                  <span className="truncate">{kp.title}</span>
-                  <ArrowRight className="w-3 h-3 text-mirari-amber shrink-0 ml-1" />
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Mascot + Status Showcase bar */}
-        <div className="flex items-center px-4 py-2 bg-gradient-to-r from-mirari-card/40 via-mirari-bg/30 to-mirari-surface">
-          <div
-            className="w-16 h-16 shrink-0 relative cursor-pointer"
-            onClick={() => setMascotState('excited')}
-            title="點擊戳戳 MIRARI！"
-          >
+    <>
+      {/* ─── Default State: Only the 3D Mascot at corner ─────────────── */}
+      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 select-none">
+        <div
+          onClick={() => setIsOpen(!isOpen)}
+          className="relative cursor-pointer transition-transform hover:scale-105 active:scale-95 group"
+          title={isOpen ? '收起提問' : '點擊與 MIRARI 互動提問'}
+        >
+          {/* Subtle soft backdrop disc */}
+          <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/80 border border-mirari-line shadow-md backdrop-blur-sm flex items-center justify-center p-1">
             <MirariMascot3D size="companion" state={mascotState} interactive={true} />
           </div>
-          <div className="ml-3 flex-1">
-            <div className="flex items-center space-x-1.5 text-xs text-mirari-muted font-mono">
-              <Sparkles className="w-3 h-3 text-mirari-amber" />
-              <span>
-                {mascotState === 'thinking'
-                  ? 'MIRARI 正在思考物理機制...'
-                  : mascotState === 'excited'
-                  ? '找到了！帶你飛往知識點 ✨'
-                  : '陪同閱讀中 · 隨時可提問'}
+
+          {/* Tiny gentle hover prompt (Desktop only) */}
+          {!isOpen && (
+            <div className="hidden sm:block absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+              <span className="text-[11px] font-sans bg-mirari-ink text-white px-2.5 py-1 rounded-full whitespace-nowrap shadow-md">
+                點擊提問
               </span>
             </div>
-            <p className="text-[11px] text-mirari-dim mt-0.5 line-clamp-1">
-              點擊精靈或下方按鈕，可平滑引導至關鍵知識點
-            </p>
-          </div>
+          )}
         </div>
-
-        {/* Expandable Chat & Question Area */}
-        {isOpen && (
-          <div className="flex flex-col max-h-80 sm:max-h-96">
-            {/* Messages Scroll Area */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-3 text-xs">
-              {messages.map((m) => (
-                <div
-                  key={m.id}
-                  className={`flex flex-col ${
-                    m.sender === 'user' ? 'items-end' : 'items-start'
-                  }`}
-                >
-                  <div
-                    className={`max-w-[88%] rounded-2xl p-3 leading-relaxed ${
-                      m.sender === 'user'
-                        ? 'bg-mirari-cyan/15 text-white border border-mirari-cyan/30 rounded-tr-none'
-                        : 'bg-mirari-card text-mirari-text border border-mirari-border rounded-tl-none shadow-sm'
-                    }`}
-                  >
-                    <p>{m.text}</p>
-                    {m.knowledgeId && m.actionText && (
-                      <button
-                        onClick={() => onNavigateToKnowledge(m.knowledgeId!)}
-                        className="mt-2.5 inline-flex items-center space-x-1.5 text-[11px] font-mono text-mirari-amber hover:text-mirari-amberGlow bg-mirari-amber/10 border border-mirari-amber/30 px-2.5 py-1 rounded-lg transition"
-                      >
-                        <Navigation className="w-3 h-3" />
-                        <span>{m.actionText}</span>
-                        <ArrowRight className="w-3 h-3" />
-                      </button>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Quick Interactive Prompt Chips */}
-            <div className="border-t border-mirari-border/70 p-3 bg-mirari-card/20 space-y-1.5">
-              <span className="text-[10px] font-mono uppercase tracking-wider text-mirari-dim block">
-                探索推薦提問：
-              </span>
-              <div className="flex flex-col space-y-1.5">
-                {sampleQuestions.map((q, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => handleAskQuestion(q)}
-                    className="text-left text-[11px] text-mirari-muted hover:text-white bg-mirari-surface hover:bg-mirari-border/60 border border-mirari-border/70 px-2.5 py-1.5 rounded-lg transition flex items-center justify-between group"
-                  >
-                    <span className="line-clamp-1">{q.label}</span>
-                    <Sparkles className="w-3 h-3 text-mirari-amber opacity-60 group-hover:opacity-100 shrink-0 ml-1.5" />
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Input Bar */}
-            <form onSubmit={handleCustomSubmit} className="border-t border-mirari-border p-2.5 flex items-center space-x-2 bg-mirari-surface">
-              <input
-                type="text"
-                placeholder="詢問這篇文章的任何科學概念..."
-                value={userInput}
-                onChange={(e) => setUserInput(e.target.value)}
-                className="flex-1 bg-mirari-bg border border-mirari-border text-xs text-white placeholder-mirari-dim rounded-xl px-3 py-2 focus:outline-none focus:border-mirari-cyan/60"
-              />
-              <button
-                type="submit"
-                disabled={!userInput.trim()}
-                className="p-2 rounded-xl bg-mirari-cyan/20 border border-mirari-cyan/40 text-mirari-cyan hover:bg-mirari-cyan/30 disabled:opacity-40 disabled:cursor-not-allowed transition"
-                title="發送問題"
-              >
-                <Send className="w-3.5 h-3.5" />
-              </button>
-            </form>
-          </div>
-        )}
       </div>
-    </aside>
+
+      {/* ─── Expanded State: Sleek Editorial Query Card ──────────────── */}
+      {isOpen && (
+        <>
+          {/* Mobile backdrop overlay to close on click outside */}
+          <div
+            className="fixed inset-0 bg-mirari-ink/20 z-40 sm:hidden"
+            onClick={() => setIsOpen(false)}
+          />
+
+          <div
+            className={`fixed z-50 transition-all duration-300
+              /* Mobile: Slide-up Bottom Sheet */
+              inset-x-0 bottom-0 sm:inset-x-auto
+              /* Desktop: Anchored Card beside mascot */
+              sm:bottom-24 sm:right-6 sm:w-96
+              bg-white border-t sm:border border-mirari-border shadow-2xl rounded-t-3xl sm:rounded-2xl overflow-hidden
+            `}
+          >
+            {/* Header bar */}
+            <div className="flex items-center justify-between px-5 py-3.5 border-b border-mirari-line bg-mirari-paper/50">
+              <div className="flex items-center space-x-2">
+                <span className="font-serif text-sm font-semibold text-mirari-ink">
+                  隨文提問
+                </span>
+                <span className="text-[11px] text-mirari-dim font-sans">
+                  · 點選概念快速定位
+                </span>
+              </div>
+              <button
+                onClick={() => setIsOpen(false)}
+                className="p-1 rounded-lg text-mirari-dim hover:text-mirari-ink hover:bg-mirari-surfaceAlt transition"
+                title="關閉"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            {/* Content Body */}
+            <div className="p-5 space-y-4 max-h-[70vh] sm:max-h-[460px] overflow-y-auto">
+              {/* Quick suggestion chips */}
+              <div className="space-y-1.5">
+                <span className="text-[11px] text-mirari-dim font-sans block">
+                  常見問題：
+                </span>
+                <div className="flex flex-col space-y-1.5">
+                  {quickQuestions.map((q, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => handleAskQuestion(q)}
+                      className="text-left text-xs text-mirari-muted hover:text-mirari-ink bg-mirari-paper hover:bg-mirari-surfaceAlt border border-mirari-line px-3 py-2 rounded-xl transition flex items-center justify-between group"
+                    >
+                      <span className="line-clamp-1">{q.label}</span>
+                      <CornerDownRight className="w-3.5 h-3.5 text-mirari-dim group-hover:text-mirari-amber shrink-0 ml-1.5 transition-colors" />
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Status / Answer Box */}
+              {isThinking && (
+                <div className="p-3.5 rounded-xl bg-mirari-paper border border-mirari-line text-xs text-mirari-muted flex items-center space-x-2 animate-pulse">
+                  <span className="w-2 h-2 rounded-full bg-mirari-amber" />
+                  <span>正在檢索相關物理概念...</span>
+                </div>
+              )}
+
+              {currentReply && !isThinking && (
+                <div className="p-4 rounded-xl bg-mirari-amberLight/60 border border-mirari-amber/20 space-y-2.5 animate-fade-in">
+                  <div className="text-xs font-medium text-mirari-ink leading-relaxed">
+                    {currentReply.answer}
+                  </div>
+                  {currentReply.knowledgeId && currentReply.actionText && (
+                    <button
+                      onClick={() => {
+                        onNavigateToKnowledge(currentReply.knowledgeId!);
+                      }}
+                      className="inline-flex items-center space-x-1.5 text-xs font-sans text-mirari-amber hover:text-amber-800 font-medium transition"
+                    >
+                      <span>{currentReply.actionText}</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </button>
+                  )}
+                </div>
+              )}
+
+              {/* Input Form */}
+              <form onSubmit={handleCustomSubmit} className="pt-1">
+                <div className="flex items-center space-x-2 border border-mirari-line focus-within:border-mirari-amber rounded-xl px-3 py-1.5 bg-mirari-paper transition">
+                  <input
+                    type="text"
+                    value={userInput}
+                    onChange={(e) => setUserInput(e.target.value)}
+                    placeholder="詢問這篇文章的任何概念..."
+                    className="flex-1 bg-transparent text-xs text-mirari-ink placeholder-mirari-dim focus:outline-none"
+                  />
+                  <button
+                    type="submit"
+                    disabled={!userInput.trim() || isThinking}
+                    className="p-1.5 rounded-lg bg-mirari-amber text-white hover:bg-amber-700 disabled:opacity-40 transition"
+                  >
+                    <Send className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </>
+      )}
+    </>
   );
 };

@@ -35,7 +35,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-mirari-bg font-sans selection:bg-mirari-amber/30 selection:text-white">
+    <div className="min-h-screen bg-mirari-paper font-sans selection:bg-mirari-amber/20 selection:text-mirari-ink">
       {currentView === 'home' ? (
         <HomePage
           onSelectArticle={handleSelectArticle}
