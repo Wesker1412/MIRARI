@@ -1,48 +1,78 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Outlet,
+  useLocation,
+  useNavigate,
+  matchPath,
+} from 'react-router-dom';
 import { HomePage } from './components/home/HomePage';
-import { ArticleView } from './components/article/ArticleView';
+import { ArticlePage } from './components/pages/ArticlePage';
+import { SeriesPage } from './components/pages/SeriesPage';
+import { NotFoundPage } from './components/pages/NotFoundPage';
 import { GlobalMascotOverlay } from './components/mascot/GlobalMascotOverlay';
-import { ARTICLES } from './data/articles';
+import { ARTICLES, getArticleBySlug } from './data/articles';
 import type { Article } from './types';
 import type { EvidenceSearchResult } from './services/articleEvidenceService';
 
-export function App() {
-  const [currentView, setCurrentView] = useState<'home' | 'article'>('home');
-  const [currentArticle, setCurrentArticle] = useState<Article>(ARTICLES[0]); // default to cover story
+// Automatically scroll smoothly to top on route changes (unless anchored with a hash)
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    if (!window.location.hash) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [pathname]);
+  return null;
+}
+
+// Persistent Layout: Houses the single Three.js Mascot across all routes
+function AppLayout() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Text highlight state for article reading & mascot evidence locating
   const [activeSentenceId, setActiveSentenceId] = useState<string | null>(null);
   const [activeSecondaryId, setActiveSecondaryId] = useState<string | null>(null);
   const [evidenceNote, setEvidenceNote] = useState<string | null>(null);
 
+  // Clear highlight on route change if leaving article view
+  useEffect(() => {
+    if (!location.pathname.startsWith('/articles/')) {
+      setActiveSentenceId(null);
+      setActiveSecondaryId(null);
+      setEvidenceNote(null);
+    }
+  }, [location.pathname]);
+
+  // Determine view mode for Mascot (home vs article/other)
+  const isHome = location.pathname === '/';
+  const currentView: 'home' | 'article' = isHome ? 'home' : 'article';
+
+  // Find active article if on /articles/:slug
+  const articleMatch = matchPath('/articles/:slug', location.pathname);
+  const currentArticle = articleMatch?.params.slug
+    ? getArticleBySlug(articleMatch.params.slug) || ARTICLES[0]
+    : ARTICLES[0];
+
   const handleSelectArticle = (article: Article) => {
-    setCurrentArticle(article);
-    setCurrentView('article');
+    navigate(`/articles/${article.slug}`);
     setActiveSentenceId(null);
     setActiveSecondaryId(null);
     setEvidenceNote(null);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleOpenArticleBySlug = (slug: string) => {
-    const found = ARTICLES.find((a) => a.slug === slug);
-    if (found) {
-      handleSelectArticle(found);
-    }
+    navigate(`/articles/${slug}`);
   };
 
-  const handleBackToHome = () => {
-    setCurrentView('home');
+  const handleClearHighlight = useCallback(() => {
     setActiveSentenceId(null);
     setActiveSecondaryId(null);
     setEvidenceNote(null);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const handleExploreTopic = (_topicId: string) => {
-    const elem = document.getElementById('explore-topics');
-    if (elem) {
-      elem.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  }, []);
 
   // Frontend Exact Text Verification & Scrolling
   const handleEvidenceFound = useCallback((result: EvidenceSearchResult) => {
@@ -59,7 +89,6 @@ export function App() {
     // Verify element actually exists in DOM before highlighting
     const elem = document.getElementById(primaryId);
     if (elem) {
-      // Verify text presence with whitespace normalization
       const normContent = (elem.textContent || '').replace(/\s+/g, ' ').trim();
       const normQuote = result.evidence.exactQuote.replace(/\s+/g, ' ').trim();
       const textMatches = normContent.includes(normQuote.slice(0, 10));
@@ -67,19 +96,11 @@ export function App() {
         setActiveSentenceId(primaryId);
         setActiveSecondaryId(secondaryId);
         setEvidenceNote(result.evidence.contextNote || '支持回答之原文依據');
-
-        // Center the exact sentence smoothly in viewport
         elem.scrollIntoView({ behavior: 'smooth', block: 'center' });
       } else {
         console.warn('Text evidence validation failed: content mismatch');
       }
     }
-  }, []);
-
-  const handleClearHighlight = useCallback(() => {
-    setActiveSentenceId(null);
-    setActiveSecondaryId(null);
-    setEvidenceNote(null);
   }, []);
 
   return (
@@ -94,24 +115,48 @@ export function App() {
         hasActiveHighlight={!!activeSentenceId}
       />
 
-      {/* ─── Page Views ──────────────────────────────────────────────── */}
-      {currentView === 'home' ? (
-        <HomePage
-          onSelectArticle={handleSelectArticle}
-          onExploreTopic={handleExploreTopic}
-        />
-      ) : (
-        <ArticleView
-          article={currentArticle}
-          onBackToHome={handleBackToHome}
-          onOpenArticleBySlug={handleOpenArticleBySlug}
-          activeSentenceId={activeSentenceId}
-          activeSecondaryId={activeSecondaryId}
-          evidenceNote={evidenceNote}
-          onClearHighlight={handleClearHighlight}
-        />
-      )}
+      {/* ─── Router Outlet with Shared Context ────────────────────────── */}
+      <Outlet
+        context={{
+          activeSentenceId,
+          activeSecondaryId,
+          evidenceNote,
+          handleClearHighlight,
+          handleOpenArticleBySlug,
+          handleSelectArticle,
+        }}
+      />
     </div>
+  );
+}
+
+function HomeRouteWrapper() {
+  const navigate = useNavigate();
+  return (
+    <HomePage
+      onSelectArticle={(article) => navigate(`/articles/${article.slug}`)}
+      onSelectSeries={(series) => navigate(`/series/${series.slug}`)}
+      onExploreTopic={(_topicId) => {
+        const elem = document.getElementById('explore-topics');
+        if (elem) elem.scrollIntoView({ behavior: 'smooth' });
+      }}
+    />
+  );
+}
+
+export function App() {
+  return (
+    <BrowserRouter>
+      <ScrollToTop />
+      <Routes>
+        <Route element={<AppLayout />}>
+          <Route path="/" element={<HomeRouteWrapper />} />
+          <Route path="/articles/:slug" element={<ArticlePage />} />
+          <Route path="/series/:slug" element={<SeriesPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -6,13 +6,15 @@
   "scripts": {
     "dev": "vite",
     "build:content": "node scripts/build-knowledge-index.js",
-    "build": "node scripts/build-knowledge-index.js && tsc -b && vite build",
+    "prerender": "node scripts/prerender-static-routes.js",
+    "build": "node scripts/build-knowledge-index.js && tsc -b && vite build && node scripts/prerender-static-routes.js",
     "lint": "oxlint",
     "preview": "vite preview"
   },
   "dependencies": {
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
+    "react-router-dom": "^7.18.5",
     "three": "^0.187.0"
   },
   "devDependencies": {

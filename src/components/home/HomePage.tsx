@@ -1,15 +1,22 @@
 import React, { useState } from 'react';
-import type { Article } from '../../types';
+import type { Article, Series } from '../../types';
 import { TOPICS, getTopicArticleCount } from '../../data/topics';
 import { ARTICLES } from '../../data/articles';
 import { EDITORIAL_SERIES } from '../../data/series';
+import { useSEO } from '../seo/useSEO';
 
 interface HomePageProps {
   onSelectArticle: (article: Article) => void;
   onExploreTopic?: (topicId: string) => void;
+  onSelectSeries?: (series: Series) => void;
 }
 
-export const HomePage: React.FC<HomePageProps> = ({ onSelectArticle, onExploreTopic }) => {
+export const HomePage: React.FC<HomePageProps> = ({
+  onSelectArticle,
+  onExploreTopic,
+  onSelectSeries,
+}) => {
+  useSEO(); // Reset to default home SEO when mounting home view
   const [selectedTopicId, setSelectedTopicId] = useState<string | 'all'>('all');
   const [prepArticleModal, setPrepArticleModal] = useState<Article | null>(null);
 
@@ -509,7 +516,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onSelectArticle, onExploreTo
                 </p>
               </div>
               <button
-                onClick={() => handleArticleClick(seriesArticle)}
+                onClick={() => {
+                  if (onSelectSeries && primarySeries) {
+                    onSelectSeries(primarySeries);
+                  } else {
+                    handleArticleClick(seriesArticle);
+                  }
+                }}
                 className="shrink-0 px-5 py-2.5 rounded-xl border border-mirari-line bg-mirari-paper hover:bg-mirari-surfaceAlt text-xs font-sans font-medium text-mirari-ink transition"
               >
                 {isSeriesReady ? '探索系列文章' : '查看策劃大綱'}

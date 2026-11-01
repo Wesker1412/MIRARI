@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import type { Article, ArticleDocument } from '../../types';
 import { TOPICS } from '../../data/topics';
 import { ArticleRenderer } from './ArticleRenderer';
+import { useSEO } from '../seo/useSEO';
 
 interface ArticleViewProps {
   article: Article;
@@ -21,6 +22,58 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
   evidenceNote,
   onClearHighlight,
 }) => {
+  const [isCopied, setIsCopied] = useState<boolean>(false);
+
+  // Sync SEO metadata with article details
+  useSEO({
+    title: article.title,
+    description: article.summary || article.leadParagraph,
+    canonicalUrl:
+      typeof window !== 'undefined'
+        ? `${window.location.origin}/articles/${article.slug}`
+        : `https://mirari.science/articles/${article.slug}`,
+    ogType: 'article',
+    publishedTime: article.publishedDate,
+  });
+
+  const handleCopyLink = () => {
+    const fullUrl =
+      typeof window !== 'undefined'
+        ? `${window.location.origin}/articles/${article.slug}`
+        : `https://mirari.science/articles/${article.slug}`;
+
+    if (navigator.clipboard) {
+      navigator.clipboard
+        .writeText(fullUrl)
+        .then(() => {
+          setIsCopied(true);
+          setTimeout(() => setIsCopied(false), 2000);
+        })
+        .catch(() => {
+          fallbackCopy(fullUrl);
+        });
+    } else {
+      fallbackCopy(fullUrl);
+    }
+  };
+
+  const fallbackCopy = (text: string) => {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.opacity = '0';
+    document.body.appendChild(textArea);
+    textArea.select();
+    try {
+      document.execCommand('copy');
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 2000);
+    } catch (err) {
+      console.warn('Copy failed:', err);
+    }
+    document.body.removeChild(textArea);
+  };
+
   const getHighlightClass = (id: string) => {
     if (activeSentenceId === id) {
       return 'exact-text-highlight';
@@ -66,15 +119,15 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
           )}
 
           <button
-            onClick={() => {
-              if (navigator.clipboard) {
-                navigator.clipboard.writeText(window.location.href);
-                alert('已複製文章連結至剪貼簿');
-              }
-            }}
-            className="px-3 py-1.5 text-xs font-sans text-mirari-dim hover:text-mirari-ink rounded-lg border border-mirari-line hover:border-mirari-border transition"
+            onClick={handleCopyLink}
+            className={`px-3 py-1.5 text-xs font-sans rounded-lg border transition ${
+              isCopied
+                ? 'bg-emerald-50 border-emerald-300 text-emerald-800 font-medium'
+                : 'text-mirari-dim hover:text-mirari-ink border-mirari-line hover:border-mirari-border'
+            }`}
+            title="複製完整文章分享網址"
           >
-            複製連結
+            {isCopied ? '已複製文章網址' : '複製連結'}
           </button>
         </div>
       </header>
