@@ -94,6 +94,9 @@ export const MirariMascot3D: React.FC<MirariMascot3DProps> = ({
 
     // Node references for animation
     let bodyGroup: THREE.Object3D | null = null;
+    let sproutGroup: THREE.Object3D | null = null;
+    let capeGroup: THREE.Object3D | null = null;
+    let broochGroup: THREE.Object3D | null = null;
     let leftEar: THREE.Object3D | null = null;
     let rightEar: THREE.Object3D | null = null;
     let leftEyelid: THREE.Object3D | null = null;
@@ -104,6 +107,9 @@ export const MirariMascot3D: React.FC<MirariMascot3DProps> = ({
 
     function bindHierarchy(rootObj: THREE.Object3D) {
       bodyGroup = rootObj.getObjectByName('BodyGroup') || rootObj;
+      sproutGroup = rootObj.getObjectByName('SproutGroup') || null;
+      capeGroup = rootObj.getObjectByName('CapeGroup') || null;
+      broochGroup = rootObj.getObjectByName('BroochGroup') || null;
       leftEar = rootObj.getObjectByName('LeftEarGroup') || null;
       rightEar = rootObj.getObjectByName('RightEarGroup') || null;
       leftEyelid = rootObj.getObjectByName('LeftEyelid') || null;
@@ -149,6 +155,14 @@ export const MirariMascot3D: React.FC<MirariMascot3DProps> = ({
     if (interactive) {
       window.addEventListener('mousemove', handleMouseMove, { passive: true });
     }
+
+    // Inspection & Photography gaze setter
+    (window as any).__mirariSetGaze = (x: number, y: number) => {
+      targetLookX = x;
+      targetLookY = y;
+      currentLookX = x;
+      currentLookY = y;
+    };
 
     // ─── Blinking System ─────────────────────────────────────────
     let blinkTimer = 0;
@@ -285,7 +299,43 @@ export const MirariMascot3D: React.FC<MirariMascot3DProps> = ({
         }
       }
 
-      // 6. Gentle Tail Swish
+      // 6. Sprout & Twin Leaves Secondary Animation
+      if (sproutGroup) {
+        const sproutSway = Math.sin(clockTime * 2.2) * 0.05;
+        const sproutLag = currentLookX * 0.06;
+        if (currentState === 'thinking') {
+          sproutGroup.rotation.z = 0.12 + sproutSway;
+          sproutGroup.rotation.x = 0.08 + Math.sin(clockTime * 1.8) * 0.03;
+        } else if (currentState === 'excited') {
+          sproutGroup.rotation.z = sproutSway + Math.sin(clockTime * 6.0) * 0.1;
+          sproutGroup.rotation.x = Math.sin(clockTime * 5.0) * 0.06;
+        } else {
+          sproutGroup.rotation.z = sproutSway - sproutLag;
+          sproutGroup.rotation.x = Math.sin(clockTime * 1.8) * 0.04 - currentLookY * 0.04;
+        }
+      }
+
+      // 7. Starry Cape Floating Motion
+      if (capeGroup) {
+        const capeFloat = Math.sin(clockTime * 2.0 - 0.4) * 0.03;
+        if (currentState === 'excited') {
+          capeGroup.rotation.x = 0.08 + Math.sin(clockTime * 5.0) * 0.05;
+        } else {
+          capeGroup.rotation.x = 0.04 + capeFloat;
+        }
+      }
+
+      // 8. Brooch Crystal Gentle Emissive Pulse
+      if (broochGroup) {
+        const crystal = broochGroup.getObjectByName('BroochCrystal') as THREE.Mesh | undefined;
+        if (crystal && crystal.material) {
+          const mat = crystal.material as THREE.MeshStandardMaterial;
+          const pulse = 0.65 + Math.sin(clockTime * 2.5) * 0.35;
+          mat.emissiveIntensity = currentState === 'excited' ? 1.4 : currentState === 'thinking' ? 1.0 : pulse;
+        }
+      }
+
+      // 9. Gentle Tail Swish
       if (tailGroup) {
         const tailSway = Math.sin(clockTime * 2.4 - 0.8) * 0.28;
         tailGroup.rotation.y = tailSway;
@@ -328,6 +378,7 @@ export const MirariMascot3D: React.FC<MirariMascot3DProps> = ({
       if (interactive) {
         window.removeEventListener('mousemove', handleMouseMove);
       }
+      delete (window as any).__mirariSetGaze;
       window.removeEventListener('resize', handleWindowResize);
       renderer.dispose();
       if (container.contains(renderer.domElement)) {

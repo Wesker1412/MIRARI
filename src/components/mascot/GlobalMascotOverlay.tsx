@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { MirariMascot3D } from './MirariMascot3D';
+import { RoundBottomFlaskFrame } from './RoundBottomFlaskFrame';
 import type { MascotState, Article, AIRecommendation } from '../../types';
 import { queryMockAIRecommendation } from '../../services/aiRecommendationService';
 import { searchArticleEvidence, type EvidenceSearchResult } from '../../services/articleEvidenceService';
@@ -57,9 +58,10 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
   const hasMovedBeyondThresholdRef = useRef<boolean>(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Mascot dimensions based on view
+  // Mascot dimensions based on view (Round-Bottom Flask aspect ratio 100:120)
   const isHomeView = currentView === 'home';
-  const mascotDimension = isHomeView ? 116 : 80;
+  const mascotWidth = isHomeView ? 116 : 80;
+  const mascotHeight = isHomeView ? 138 : 96;
 
   // ─── Default Anchor Calculation ──────────────────────────────────
   const getDefaultAnchorPosition = useCallback((): Position => {
@@ -75,24 +77,24 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
         // If anchor is within or near viewport, snap to it
         if (rect.top > -50 && rect.top < h) {
           return {
-            x: Math.max(margin, Math.min(w - mascotDimension - margin, rect.left)),
-            y: Math.max(margin, Math.min(h - mascotDimension - margin, rect.top)),
+            x: Math.max(margin, Math.min(w - mascotWidth - margin, rect.left)),
+            y: Math.max(margin, Math.min(h - mascotHeight - margin, rect.top)),
           };
         }
       }
       // Default floating hero position (prominently placed on right)
       return {
-        x: Math.max(margin, w - mascotDimension - (w > 1024 ? 80 : 32)),
-        y: Math.max(margin, Math.min(h - mascotDimension - margin, 240)),
+        x: Math.max(margin, w - mascotWidth - (w > 1024 ? 80 : 32)),
+        y: Math.max(margin, Math.min(h - mascotHeight - margin, 240)),
       };
     } else {
       // Article view default companion anchor: bottom-right corner
       return {
-        x: Math.max(margin, w - mascotDimension - 24),
-        y: Math.max(margin, h - mascotDimension - 24),
+        x: Math.max(margin, w - mascotWidth - 24),
+        y: Math.max(margin, h - mascotHeight - 24),
       };
     }
-  }, [isHomeView, mascotDimension]);
+  }, [isHomeView, mascotWidth, mascotHeight]);
 
   // Synchronize position on mount or view switch if not custom dragged
   useEffect(() => {
@@ -101,8 +103,8 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
         const saved = localStorage.getItem(STORAGE_KEY_POS);
         if (saved) {
           const parsed = JSON.parse(saved);
-          const clampedX = Math.max(16, Math.min(window.innerWidth - mascotDimension - 16, parsed.x));
-          const clampedY = Math.max(16, Math.min(window.innerHeight - mascotDimension - 16, parsed.y));
+          const clampedX = Math.max(16, Math.min(window.innerWidth - mascotWidth - 16, parsed.x));
+          const clampedY = Math.max(16, Math.min(window.innerHeight - mascotHeight - 16, parsed.y));
           setPosition({ x: clampedX, y: clampedY });
           return;
         }
@@ -114,15 +116,15 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
     // Otherwise calculate default anchor
     const pos = getDefaultAnchorPosition();
     setPosition(pos);
-  }, [currentView, hasCustomPos, getDefaultAnchorPosition, mascotDimension]);
+  }, [currentView, hasCustomPos, getDefaultAnchorPosition, mascotWidth, mascotHeight]);
 
   // Recalculate on window resize & scroll (when unpinned)
   useEffect(() => {
     const handleResize = () => {
       if (hasCustomPos) {
         setPosition((prev) => ({
-          x: Math.max(16, Math.min(window.innerWidth - mascotDimension - 16, prev.x)),
-          y: Math.max(16, Math.min(window.innerHeight - mascotDimension - 16, prev.y)),
+          x: Math.max(16, Math.min(window.innerWidth - mascotWidth - 16, prev.x)),
+          y: Math.max(16, Math.min(window.innerHeight - mascotHeight - 16, prev.y)),
         }));
       } else {
         setPosition(getDefaultAnchorPosition());
@@ -142,7 +144,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [hasCustomPos, isHomeView, getDefaultAnchorPosition, mascotDimension]);
+  }, [hasCustomPos, isHomeView, getDefaultAnchorPosition, mascotWidth, mascotHeight]);
 
   // ─── Proactive Home Greeting & Search Pull-out ───────────────────
   useEffect(() => {
@@ -200,9 +202,9 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
       const rawY = dragStartMascotPosRef.current.y + dy;
 
       const minX = 16;
-      const maxX = window.innerWidth - mascotDimension - 16;
+      const maxX = window.innerWidth - mascotWidth - 16;
       const minY = 16;
-      const maxY = window.innerHeight - mascotDimension - 16;
+      const maxY = window.innerHeight - mascotHeight - 16;
 
       const clampedX = Math.max(minX, Math.min(maxX, rawX));
       const clampedY = Math.max(minY, Math.min(maxY, rawY));
@@ -315,7 +317,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
   // ─── Floating Panel Position Calculation (Desktop) ───────────────
   const panelWidth = 420;
   const estimatedPanelHeight = 520;
-  const isNearRight = position.x + mascotDimension / 2 > window.innerWidth / 2;
+  const isNearRight = position.x + mascotWidth / 2 > window.innerWidth / 2;
 
   // Horizontal position
   let panelLeft: number | undefined;
@@ -325,7 +327,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
     const rawRight = window.innerWidth - position.x + 16;
     panelRight = Math.max(16, Math.min(window.innerWidth - panelWidth - 16, rawRight));
   } else {
-    const rawLeft = position.x + mascotDimension + 16;
+    const rawLeft = position.x + mascotWidth + 16;
     panelLeft = Math.max(16, Math.min(window.innerWidth - panelWidth - 16, rawLeft));
   }
 
@@ -351,8 +353,8 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
         onMouseLeave={() => setIsHovered(false)}
         style={{
           transform: `translate3d(${position.x}px, ${position.y}px, 0)`,
-          width: `${mascotDimension}px`,
-          height: `${mascotDimension}px`,
+          width: `${mascotWidth}px`,
+          height: `${mascotHeight}px`,
           touchAction: 'none',
         }}
         className={`fixed top-0 left-0 z-50 select-none cursor-grab active:cursor-grabbing ${
@@ -360,14 +362,22 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
         }`}
         title={isPanelOpen ? '點擊收起面板，長按可自由拖曳' : '點擊展開對話，長按可自由拖曳'}
       >
-        {/* Subtle disc backdrop for clean readability on any background */}
-        <div className="relative w-full h-full rounded-full bg-white/90 border border-mirari-line shadow-md backdrop-blur-sm flex items-center justify-center p-1.5 group">
-          {/* THE SINGLE 3D WebGL MASCOT */}
-          <MirariMascot3D
-            size="full"
+        {/* Laboratory Round-Bottom Flask (圓底燒瓶) Container Frame */}
+        <div className="relative w-full h-full flex items-center justify-center group">
+          {/* Refined Glass Flask Frame (Lip Rim, Neck, Spherical Bulb & Highlights) */}
+          <RoundBottomFlaskFrame
+            isHovered={isHovered}
             state={mascotState}
-            interactive={false} // Outer container handles pointer events & gaze
           />
+
+          {/* THE SINGLE 3D WebGL MASCOT (Star-seed Sprite / 星種精靈) */}
+          <div className="relative z-10 w-full h-full flex items-center justify-center pt-2">
+            <MirariMascot3D
+              size="full"
+              state={mascotState}
+              interactive={true} // Responsive gaze tracking
+            />
+          </div>
 
           {/* Hover Status Indicator / Hint (Desktop) */}
           {!isPanelOpen && !isDragging && isHovered && (
