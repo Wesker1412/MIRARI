@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0D14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #232D42;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3B4A6B;
+}
+
+/* AI Spotlight pulse animation for targeted knowledge points */
+@keyframes targetSpotlight {
+  0% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.6);
+    background-color: rgba(245, 158, 11, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 35px 8px rgba(245, 158, 11, 0.35);
+    background-color: rgba(245, 158, 11, 0.22);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+    background-color: transparent;
+  }
+}
+
+.knowledge-highlight {
+  animation: targetSpotlight 3s ease-out forwards;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+/* Fine editorial borders */
+.editorial-border-b {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.editorial-border-t {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
