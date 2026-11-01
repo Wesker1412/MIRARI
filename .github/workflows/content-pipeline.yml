@@ -1,29 +1,20 @@
-name: MIRARI Content Publishing & Knowledge Index Pipeline
+name: MIRARI Technical Verification & Build Pipeline
 
 on:
   push:
     branches: [ main ]
-    paths:
-      - 'content/articles/**'
-      - 'src/data/supplementaryArticles.json'
-      - 'scripts/build-knowledge-index.js'
-      - 'scripts/lib/**'
   pull_request:
     branches: [ main ]
-    paths:
-      - 'content/articles/**'
   workflow_dispatch:
 
 jobs:
-  validate-and-index:
-    name: Validate, Extract & Incrementally Index
+  validate-and-build:
+    name: Validate Schema, Integrity & Production Build
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 2
 
       - name: Setup Node.js Environment
         uses: actions/setup-node@v4
@@ -34,37 +25,65 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Restore Incremental Vector Cache
-        uses: actions/cache@v4
-        with:
-          path: .mirari-cache
-          key: mirari-knowledge-cache-${{ runner.os }}-${{ hashFiles('content/articles/**') }}
-          restore-keys: |
-            mirari-knowledge-cache-${{ runner.os }}-
-            mirari-knowledge-cache-
-
-      - name: Run Automated Knowledge Index Pipeline
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      - name: Validate Article Schemas & Slug Uniqueness
         run: |
-          echo "Executing automated article verification & knowledge indexing..."
-          npm run build:content
+          node -e "
+            const fs = require('fs');
+            const path = require('path');
+            const articlesDir = 'content/articles';
+            const files = fs.readdirSync(articlesDir).filter(f => f.endsWith('.mdx') || f.endsWith('.md'));
+            const ids = new Set();
+            const slugs = new Set();
 
-      - name: Verify Indexing Integrity & Schema
+            console.log('Validating', files.length, 'article documents...');
+            for (const file of files) {
+              const content = fs.readFileSync(path.join(articlesDir, file), 'utf8');
+              const idMatch = content.match(/id:\s*[\"']([^\"']+)[\"']/);
+              const slugMatch = content.match(/slug:\s*[\"']([^\"']+)[\"']/);
+              const titleMatch = content.match(/title:\s*[\"']([^\"']+)[\"']/);
+              const refMatch = content.includes('references:');
+
+              if (!idMatch || !slugMatch || !titleMatch) {
+                throw new Error('Article ' + file + ' missing mandatory frontmatter (id, slug, or title)');
+              }
+              const id = idMatch[1];
+              const slug = slugMatch[1];
+
+              if (ids.has(id)) {
+                throw new Error('Duplicate article ID detected: ' + id + ' in ' + file);
+              }
+              if (slugs.has(slug)) {
+                throw new Error('Duplicate article slug detected: ' + slug + ' in ' + file);
+              }
+              ids.add(id);
+              slugs.add(slug);
+
+              if (!refMatch) {
+                throw new Error('Article ' + file + ' missing mandatory references citation list');
+              }
+            }
+            console.log('✓ All', files.length, 'articles have unique IDs, stable slugs, and valid citation lists.');
+          "
+
+      - name: Build Knowledge Index, TypeScript & Static Prerender
+        run: npm run build
+
+      - name: Verify Indexing & Manifest Integrity
         run: |
           node -e "
             const fs = require('fs');
             const articles = JSON.parse(fs.readFileSync('src/data/generated/articles-manifest.json', 'utf8'));
             const evidence = JSON.parse(fs.readFileSync('src/data/generated/evidence-index.json', 'utf8'));
             const search = JSON.parse(fs.readFileSync('src/data/generated/search-index.json', 'utf8'));
-            console.log('✓ Articles indexed:', articles.length);
-            console.log('✓ Evidence records:', Object.keys(evidence).length);
-            console.log('✓ Search entries:', search.length);
-            if (articles.length === 0 || Object.keys(evidence).length === 0) {
-              throw new Error('Pipeline failed: Empty index generated');
+
+            console.log('✓ Total compiled articles:', articles.length);
+            console.log('✓ Total evidence indexed articles:', Object.keys(evidence).length);
+            console.log('✓ Search index entries:', search.length);
+
+            if (articles.length === 0) {
+              throw new Error('Build error: articles-manifest.json is empty');
+            }
+            if (Object.keys(evidence).length === 0) {
+              throw new Error('Build error: evidence-index.json is empty');
             }
           "
-
-      - name: Production Build Check
-        run: npm run build

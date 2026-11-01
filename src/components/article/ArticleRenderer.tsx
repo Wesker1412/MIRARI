@@ -35,7 +35,9 @@ export const ArticleRenderer: React.FC<ArticleRendererProps> = ({
             // Check if paragraph is an embedded interactive component
             if (paraText.includes('<InteractiveExperiment')) {
               const match = paraText.match(/id=["']([^"']+)["']/);
-              const compId = match ? match[1] : section.interactiveComponentId || 'TransitSimulator';
+              const compId = match
+                ? match[1]
+                : section.interactiveComponentId || document.interactiveComponent || 'TransitSimulator';
               const compMeta = getInteractiveComponent(compId);
               if (compMeta) {
                 const Component = compMeta.component;

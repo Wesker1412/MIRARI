@@ -70,41 +70,7 @@ export const HomePage: React.FC<HomePageProps> = ({
   };
 
   return (
-    <div className="min-h-screen bg-mirari-paper text-mirari-ink">
-      {/* ─── Top Editorial Masthead ───────────────────────────────── */}
-      <header className="border-b border-mirari-line bg-mirari-paper/95 sticky top-0 z-40 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between py-4">
-            <div className="flex items-baseline space-x-4">
-              <span className="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-mirari-ink">
-                MIRARI
-              </span>
-              <span className="text-xs text-mirari-dim hidden sm:inline-block font-sans border-l border-mirari-line pl-3">
-                探索科學的互動數位雜誌
-              </span>
-            </div>
-
-            <nav className="flex items-center space-x-4 sm:space-x-6 text-xs font-sans text-mirari-muted">
-              <a href="#cover-story" className="hover:text-mirari-ink transition">
-                封面故事
-              </a>
-              <a href="#editorial-picks" className="hover:text-mirari-ink transition">
-                編輯精選
-              </a>
-              <a href="#research-monitor" className="hover:text-mirari-ink transition">
-                研究追蹤
-              </a>
-              <a href="#classic-foundations" className="hover:text-mirari-ink transition">
-                思想實驗
-              </a>
-              <a href="#explore-topics" className="hover:text-mirari-ink transition hidden sm:inline-block">
-                科學主題
-              </a>
-            </nav>
-          </div>
-        </div>
-      </header>
-
+    <div className="bg-mirari-paper text-mirari-ink">
       {/* ─── Cover Feature Spread (Hero Magazine Cover) ────────────── */}
       <section id="cover-story" className="border-b border-mirari-line py-10 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -531,19 +497,6 @@ export const HomePage: React.FC<HomePageProps> = ({
           </div>
         </section>
       )}
-
-      {/* ─── Footer ─────────────────────────────────────────────────── */}
-      <footer className="border-t border-mirari-line py-8 bg-mirari-paper text-xs text-mirari-dim font-sans">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center space-x-2">
-            <span className="font-serif font-bold text-mirari-ink text-sm">MIRARI</span>
-            <span>· 探索科學的互動數位雜誌</span>
-          </div>
-          <div>
-            © 2026 MIRARI. 版權所有。
-          </div>
-        </div>
-      </footer>
 
       {/* ─── In Preparation Article Modal ───────────────────────────── */}
       {prepArticleModal && (

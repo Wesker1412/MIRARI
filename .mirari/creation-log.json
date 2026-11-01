@@ -1,0 +1,67 @@
+{
+  "lastRunTimestamp": "2026-11-02T03:10:00.000Z",
+  "scheduledCron": "0 1 * * *",
+  "timezone": "Asia/Taipei (UTC+8)",
+  "creationModel": "pro-reasoning-engine",
+  "runs": [
+    {
+      "runId": "mirari-auto-run-20261102-0900",
+      "timestamp": "2026-11-02T03:10:00.000Z",
+      "targetCount": 3,
+      "succeededCount": 3,
+      "failedCount": 0,
+      "articles": [
+        {
+          "id": "art-chaos-double-pendulum",
+          "slug": "chaos-double-pendulum-lyapunov",
+          "title": "渾沌的邊界：雙擺與確定性系統的不可預測性",
+          "discipline": "非線性動力學與渾沌理論",
+          "interactiveComponent": "DoublePendulumSimulator",
+          "interactiveType": "phase_space",
+          "narrativeStyle": "first_principles",
+          "status": "published",
+          "sources": [
+            "Shinbrot et al. (1992) Am. J. Phys.",
+            "Strogatz (2018) Nonlinear Dynamics and Chaos",
+            "Levien & Tan (1993) Am. J. Phys."
+          ],
+          "verificationPassed": true
+        },
+        {
+          "id": "art-neuron-action-potential",
+          "slug": "action-potential-hodgkin-huxley",
+          "title": "神經元的數位之火：動作電位的全或無定律與離子閘門",
+          "discipline": "生物物理學與神經電生理",
+          "interactiveComponent": "ActionPotentialSimulator",
+          "interactiveType": "circuit_oscilloscope",
+          "narrativeStyle": "depth_narrative",
+          "status": "published",
+          "sources": [
+            "Hodgkin & Huxley (1952) J. Physiol.",
+            "Kandel et al. (2021) Principles of Neural Science",
+            "Bean (2007) Nat. Rev. Neurosci."
+          ],
+          "verificationPassed": true
+        },
+        {
+          "id": "art-maxwells-demon-entropy",
+          "slug": "maxwells-demon-landauer-entropy",
+          "title": "穿過微觀閘門的幽靈：麥克斯韋妖與資訊的熱力學代價",
+          "discipline": "統計物理學與資訊理論",
+          "interactiveComponent": "MaxwellDemonSimulator",
+          "interactiveType": "particle_system",
+          "narrativeStyle": "thought_experiment",
+          "status": "published",
+          "sources": [
+            "Maxwell (1871) Theory of Heat",
+            "Landauer (1961) IBM J. Res. Dev.",
+            "Bennett (1982) Int. J. Theor. Phys.",
+            "Toyabe et al. (2010) Nat. Phys."
+          ],
+          "verificationPassed": true
+        }
+      ],
+      "unpassedTopics": []
+    }
+  ]
+}

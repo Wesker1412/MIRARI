@@ -1,0 +1,96 @@
+---
+id: "art-maxwells-demon-entropy"
+slug: "maxwells-demon-landauer-entropy"
+version: 1
+publishedDate: "2026.03"
+status: "published"
+isEditorialCover: false
+isEditorialPick: true
+isClassicFoundation: true
+format: "interactive_simulation"
+formatBadgeText: "熱力學碰撞實驗"
+title: "穿過微觀閘門的幽靈：麥克斯韋妖與資訊的熱力學代價"
+subtitle: "為什麼單純「知道」分子的快慢就能換取有用功？從思維悖論到蘭道爾原理的世紀解答"
+topicIds:
+  - "topic-thermodynamics"
+  - "topic-information-theory"
+tags:
+  - "麥克斯韋妖"
+  - "熱力學第二定律"
+  - "資訊熵"
+  - "蘭道爾原理"
+  - "統計物理"
+  - "不可逆計算"
+summary: "1867 年，麥克斯韋提出了一個挑戰熱力學第二定律的經典假想幽靈：一個能夠精確觀測每個分子速度的微觀智能，只需無摩擦地開關閘門，便能在不消耗任何功的情況下使系統溫差自發增大。一個多世紀以來，從斯齊拉德、蘭道爾到貝內特，物理學家最終發現：資訊不是虛無的概念，抹除資訊必然伴隨真實的能量耗散。"
+leadParagraph: "熱力學第二定律宣告了宇宙的單向命運：孤立系統的總熵永不自發減少，熱量絕無法自發地從低溫物體流向高溫物體而不引起其他變化。然而，十九世紀最卓越的理論物理學家詹姆斯·克拉克·麥克斯韋（James Clerk Maxwell）卻指出了一道看似無法迴避的漏洞——如果我們引入一個具備微觀認知能力的「智能操作者」，第二定律是否會輕易瓦解？"
+quoteLead: "資訊是物理的（Information is Physical）：獲取分子的速度資訊固然能暫時降低氣體的熱力學熵，但當智能實體有限的記憶體被清空以準備下一輪測量時，蘭道爾極限必然迫使其向環境釋放至少 $k_B T \\ln 2$ 的熱量，將宇宙的總熵增忠實補齊。"
+authors:
+  - name: "MIRARI 理論物理組"
+    role: "撰文"
+  - name: "量子資訊與統計力學研究組"
+    role: "審訂"
+references:
+  - id: "ref-maxwell-1871"
+    citation: "Maxwell, J. C. (1871). Theory of Heat. Longmans, Green, and Co."
+  - id: "ref-landauer-1961"
+    citation: "Landauer, R. (1961). \"Irreversibility and heat generation in the computing process.\" IBM Journal of Research and Development, 5(3), 183-191. doi:10.1147/rd.53.0183"
+  - id: "ref-bennett-1982"
+    citation: "Bennett, C. H. (1982). \"The thermodynamics of computation—a review.\" International Journal of Theoretical Physics, 21(12), 905-940. doi:10.1007/BF02084158"
+  - id: "ref-toyabe-2010"
+    citation: "Toyabe, S., Sagawa, T., Ueda, M., Muneyuki, E., & Sano, M. (2010). \"Experimental demonstration of information-to-energy conversion and validation of the generalized Jarzynski equality.\" Nature Physics, 6(12), 988-992. doi:10.1038/nphys1821"
+interactiveComponent: "MaxwellDemonSimulator"
+narrativeStyle: "thought_experiment"
+interactiveType: "particle_system"
+creationModel: "pro-reasoning-engine"
+feedbackId: "fb-art-maxwells-demon-entropy"
+createdAt: "2026-11-02T03:00:00Z"
+---
+
+# 一、打破時間之箭的微觀幽靈
+
+設想一個完全絕熱封閉的箱子，被中央一堵隔板分為左（A）、右（B）兩個等容積腔室，內部充滿處於熱平衡狀態的理想氣體分子。根據麥克斯韋-波茲曼速率分佈，分子的動能並非整齊劃一，而是呈現鐘形偏斜的分佈——有些運動極快，有些則相對遲緩。
+
+麥克斯韋構想了一個駐守在隔板微小開孔處的微型智能（後被開爾文勳爵戲稱為「麥克斯韋妖」）。妖的任務極其單純：
+1. 當看到左室中的高速分子朝閘門飛來時，開門放它進入右室；
+2. 當看到右室中的低速分子朝閘門飛來時，開門放它進入左室；
+3. 其餘情況則關閉閘門，讓分子彈回。
+
+由於閘門被假設為質量無限輕、運動無摩擦，妖開關閘門本身不需要對分子做任何機械功。然而，在經過一段時間的篩選後，右室的高速分子濃度愈來愈高，左室的低速分子愈來愈多。兩個最初溫度相同的腔室，竟自發產生了顯著的溫差 $\Delta T = T_R - T_L > 0$！這意味著我們可以藉由溫差驅動熱機對外做功，製造出第二類永動機。
+
+第二定律難道只是一條對無知者的統計妥協，只要掌握足夠的微觀資訊就能隨意逾越嗎？
+
+# 二、親手操作：麥克斯韋妖粒子碰撞實驗
+
+在下方物理模擬中，我們在二維絕熱腔室中建立了數十顆剛性碰撞微粒。紅色代表高於平均動能的高速分子，藍色代表低溫分子。中央微觀閘門由自動妖演算法接管：
+
+<InteractiveExperiment id="MaxwellDemonSimulator" />
+
+觀察兩側等效溫度的變化：隨著自動妖不斷進行速度篩選，右側溫度攀升、左側冷卻，氣體系統的熱力學熵 $\Delta S_{gas}$ 明顯下降。然而，請特別留意下方「蘭道爾原理即時核算」面板：妖每做一次篩選判斷，其記憶庫便增加 1 個位元（bit）的資訊佔用。
+
+# 三、斯齊拉德引擎與資訊的物理化
+
+為拆解這個悖論，匈牙利物理學家利奧·斯齊拉德（Leo Szilard）於 1929 年提出了著名的單分子熱機模型。斯齊拉德證明，即使箱內只有一顆分子，妖若想抽取熱量並轉化為功，首先必須進行「測量」以確定分子到底位於左側還是右側。
+
+獲取這「左或右」的 1 位元二進位資訊，使妖能夠消除系統位置的不確定性。在等溫膨脹做功 $W = k_B T \ln 2$ 的過程中，氣體熵減少了：
+
+$$\Delta S_{gas} = -k_B \ln 2$$
+
+早期物理學家（如萊昂·布里淵）曾試圖將代價歸咎於「測量過程」——例如妖必須發射光子照射分子才能看清其位置，而光子的散射與吸收會耗散熱量。但這一解釋在 1970 年代被查爾斯·貝內特（Charles Bennett）推翻：理論上，物理測量可以透過可逆計算的方式進行，能耗在極限下可以趨近於零。
+
+真正的熱力學代價，隱藏在一個更幽深的地方：**記憶抹除**。
+
+# 四、蘭道爾極限：抹除資訊的熱力學代價
+
+1961 年，IBM 物理學家羅爾夫·蘭道爾（Rolf Landauer）提出了奠定現代資訊熱力學基石的論斷：「資訊是物理的」（Information is Physical）。任何邏輯上不可逆的操作（例如將記憶體重置為 0），都必然對應著物理相空間體積的壓縮。
+
+設妖的記憶體容量有限。在進行了 $N$ 次分子分類後，妖的記憶庫被填滿。若想讓熱機持續運轉，妖必須將記錄「重置」，以便開始下一輪測量。蘭道爾證明，在環境溫度 $T$ 下，**抹除 1 位元未知資訊，必然要向環境散發至少下列大小的熱量**：
+
+$$Q_{dissipated} \ge k_B T \ln 2 \approx 2.87 \times 10^{-21}\ \text{J (在室溫 300 K)}$$
+
+相應地，環境中必然產生至少 $\Delta S_{env} \ge +k_B \ln 2$ 的熵增。
+
+當我們將氣體分子與麥克斯韋妖的記憶系統視為一個完整的複合封閉系統時，總熵變為：
+
+$$\Delta S_{total} = \Delta S_{gas} + \Delta S_{demon} + \Delta S_{env} \ge 0$$
+
+麥克斯韋妖並沒有推翻熱力學第二定律。它只不過是將微觀氣體的熱力學熵，暫時轉移並編碼成了自己記憶體中的資訊熵；而當這段資訊最終被抹除回歸虛無時，熱力學定律毫不留情地收回了全部代價。

@@ -1,5 +1,1317 @@
 [
   {
+    "id": "art-neuron-action-potential",
+    "slug": "action-potential-hodgkin-huxley",
+    "version": 1,
+    "publishedDate": "2026.03",
+    "status": "published",
+    "isEditorialCover": false,
+    "isEditorialPick": true,
+    "isResearchHighlight": true,
+    "format": "interactive_simulation",
+    "formatBadgeText": "電生理示波實驗",
+    "title": "神經元的數位之火：動作電位的全或無定律與離子閘門",
+    "subtitle": "從巨大烏賊軸突到萬億神經迴路，霍奇金與赫胥黎如何用四條非線性微分方程解密生命的電信號？",
+    "topicIds": [
+      "topic-neuroscience",
+      "topic-biophysics"
+    ],
+    "tags": [
+      "動作電位",
+      "神經科學",
+      "霍奇金赫胥黎",
+      "離子通道",
+      "全或無定律",
+      "生物物理"
+    ],
+    "summary": "人類大腦所有的知覺、記憶與思維，底層皆由數以千億計的神經元膜電位脈衝編織而成。1952 年，霍奇金與赫胥黎藉由大烏賊巨軸突實驗，建立了生物物理學史上最精闢的數學模型。本篇透過即時數值示波器，揭開鈉離子快速激發與鉀離子延遲復極如何誕生數位化的生命電信號。",
+    "leadParagraph": "神經系統傳遞信號的方式與日常電子設備截然不同。細胞膜並非金屬導線，而是由磷脂雙分子層構成的微型電容器，厚度僅約 5 奈米。當刺激電流未達臨界點時，細胞膜僅表現出微弱的被動電位衰減；但一旦跨過約 -55 毫伏特的閾值，一場由電壓門控離子通道引爆的正反饋鏈式反應便不可逆地觸發——這就是神經元的「全或無」（All-or-None）定律。",
+    "quoteLead": "生命的思考以數位脈衝的形式跳動：神經元不在乎刺激究竟超過閾值多少，只要閾值被越過，釋放出的動作電位振幅與波形便恆定如一；資訊的豐富性，全由脈衝的發放頻率而非單個波幅的大小來編碼。",
+    "authors": [
+      {
+        "name": "MIRARI 生命科學組",
+        "role": "撰文"
+      },
+      {
+        "name": "電生理與計算神經研究組",
+        "role": "審訂"
+      }
+    ],
+    "references": [
+      {
+        "id": "ref-hodgkin-1952",
+        "citation": "Hodgkin, A. L., & Huxley, A. F. (1952). \"A quantitative description of membrane current and its application to conduction and excitation in nerve.\" The Journal of Physiology, 117(4), 500-544. doi:10.1113/jphysiol.1952.sp004764"
+      },
+      {
+        "id": "ref-kandel-2021",
+        "citation": "Kandel, E. R., Koester, J. D., Mack, S. H., & Siegelbaum, S. A. (2021). Principles of Neural Science (6th ed.). McGraw Hill."
+      },
+      {
+        "id": "ref-bean-2007",
+        "citation": "Bean, B. P. (2007). \"The action potential in mammalian central neurons.\" Nature Reviews Neuroscience, 8(6), 451-465. doi:10.1038/nrn2148"
+      }
+    ],
+    "interactiveComponent": "ActionPotentialSimulator",
+    "narrativeStyle": "depth_narrative",
+    "interactiveType": "circuit_oscilloscope",
+    "creationModel": "pro-reasoning-engine",
+    "feedbackId": "fb-art-neuron-action-potential",
+    "createdAt": "2026-11-02T03:00:00Z",
+    "contentHash": "d81ead3cf8d520b336caac83e28b5465f2a2737275e360345bf7aefe724a2376",
+    "sections": [
+      {
+        "id": "sec-1-6b1dc2",
+        "title": "一、跨膜電位與能士特平衡",
+        "level": 1,
+        "paragraphs": [
+          "細胞內外的離子濃度存在著懸殊的非對稱分佈。在靜止狀態下，神經元內部的鉀離子（$K^+$）濃度約為細胞外的 20 至 30 倍，而細胞外的鈉離子（$Na^+$）與氯離子（$Cl^-$）濃度則遠高於胞內。",
+          "這種化學濃度梯度藉由鈉鉀幫浦（$Na^+/K^+$ ATPase）持續水解 ATP 逆向維持。當單一離子受濃度驅使向外擴散時，留下的負電荷會逐漸累積產生反向電場，當化學擴散力與靜電引力精確抗衡時，系統達到能士特平衡電位（Nernst Potential）：",
+          "$$E_{ion} = \\frac{RT}{zF} \\ln \\frac{[ion]_{out}}{[ion]_{in}}$$",
+          "在哺乳動物神經元中，鈉離子平衡電位 $E_{Na} \\approx +50\\text{ mV}$，而鉀離子平衡電位 $E_K \\approx -77\\text{ mV}$。由於靜止膜對鉀離子的通透性遠高於鈉離子，靜止膜電位被牢牢釘在靠近鉀平衡點的 $-65\\text{ mV}$ 附近。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-31478560",
+            "articleId": "art-neuron-action-potential",
+            "sectionId": "sec-1-6b1dc2",
+            "sectionTitle": "一、跨膜電位與能士特平衡",
+            "paragraphIndex": 0,
+            "exactQuote": "細胞內外的離子濃度存在著懸殊的非對稱分佈。",
+            "charStart": 0,
+            "charEnd": 21,
+            "contentHash": "31478560fb84f183d3274ee99a71890f0165ea636a7918170985f33136aa7b88",
+            "contextNote": "一、跨膜電位與能士特平衡 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-ac17d36f",
+            "articleId": "art-neuron-action-potential",
+            "sectionId": "sec-1-6b1dc2",
+            "sectionTitle": "一、跨膜電位與能士特平衡",
+            "paragraphIndex": 0,
+            "exactQuote": "在靜止狀態下，神經元內部的鉀離子（$K^+$）濃度約為細胞外的 20 至 30 倍，而細胞外的鈉離子（$Na^+$）與氯離子（$Cl^-$）濃度則遠高於胞內。",
+            "charStart": 22,
+            "charEnd": 101,
+            "contentHash": "ac17d36fa419a55fbf159dca86c74ac6bf9ea04dc44539861ecea543cd6c0aad",
+            "contextNote": "一、跨膜電位與能士特平衡 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-082cbd9c",
+            "articleId": "art-neuron-action-potential",
+            "sectionId": "sec-1-6b1dc2",
+            "sectionTitle": "一、跨膜電位與能士特平衡",
+            "paragraphIndex": 1,
+            "exactQuote": "這種化學濃度梯度藉由鈉鉀幫浦（$Na^+/K^+$ ATPase）持續水解 ATP 逆向維持。",
+            "charStart": 204,
+            "charEnd": 251,
+            "contentHash": "082cbd9c30240d2e4d281ff5230c99b755c9c5743a10ecf351843819d144de30",
+            "contextNote": "一、跨膜電位與能士特平衡 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-6ff4a3ce",
+            "articleId": "art-neuron-action-potential",
+            "sectionId": "sec-1-6b1dc2",
+            "sectionTitle": "一、跨膜電位與能士特平衡",
+            "paragraphIndex": 1,
+            "exactQuote": "當單一離子受濃度驅使向外擴散時，留下的負電荷會逐漸累積產生反向電場，當化學擴散力與靜電引力精確抗衡時，系統達到能士特平衡電位（Nernst Potential）：",
+            "charStart": 252,
+            "charEnd": 333,
+            "contentHash": "6ff4a3ce5fb75b0438ed313ddc109646a96955e29f55662208efaba351480294",
+            "contextNote": "一、跨膜電位與能士特平衡 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-eb4223a6",
+            "articleId": "art-neuron-action-potential",
+            "sectionId": "sec-1-6b1dc2",
+            "sectionTitle": "一、跨膜電位與能士特平衡",
+            "paragraphIndex": 3,
+            "exactQuote": "在哺乳動物神經元中，鈉離子平衡電位 $E_{Na} \\approx +50\\text{ mV}$，而鉀離子平衡電位 $E_K \\approx -77\\text{ mV}$。",
+            "charStart": 464,
+            "charEnd": 550,
+            "contentHash": "eb4223a69bd69523023bc468312f5d534721d53e4202c8077a5f0dd80c36dcac",
+            "contextNote": "一、跨膜電位與能士特平衡 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-95a4eb81",
+            "articleId": "art-neuron-action-potential",
+            "sectionId": "sec-1-6b1dc2",
+            "sectionTitle": "一、跨膜電位與能士特平衡",
+            "paragraphIndex": 3,
+            "exactQuote": "由於靜止膜對鉀離子的通透性遠高於鈉離子，靜止膜電位被牢牢釘在靠近鉀平衡點的 $-65\\text{ mV}$ 附近。",
+            "charStart": 551,
+            "charEnd": 608,
+            "contentHash": "95a4eb817795326b8cfb500a45313d349c396c6487c85eb81dd813ded0cff10b",
+            "contextNote": "一、跨膜電位與能士特平衡 · 第 4 段"
+          }
+        ],
+        "formulas": [
+          "$$E_{ion} = \\frac{RT}{zF} \\ln \\frac{[ion]_{out}}{[ion]_{in}}$$"
+        ],
+        "interactiveComponentId": null
+      },
+      {
+        "id": "sec-2-5d21b6",
+        "title": "二、親手量測：動作電位示波器模擬",
+        "level": 1,
+        "paragraphs": [
+          "在下方即時數值示波器中，我們完整實作了霍奇金與赫胥黎（Hodgkin-Huxley）四元非線性微分方程組。上方藍色跡線為跨膜電位 $V_m(t)$，下方三條彩色曲線則實時描繪鈉通道激發門控 $m$（橘色）、失活門控 $h$（綠色）與鉀通道延遲門控 $n$（紫色）的機率演化：",
+          "<InteractiveExperiment id=\"ActionPotentialSimulator\" />",
+          "請嘗試調節左側的「刺激電流強度」：\n1. 當電流設為 $6\\ \\mu\\text{A/cm}^2$ 時，膜電位僅被動抬升數毫伏特後便衰減恢復，無法引爆脈衝；\n2. 當電流微增至 $8\\ \\mu\\text{A/cm}^2$ 跨越閥值時，高達 $100\\text{ mV}$ 的尖銳峰值瞬間爆發！\n3. 您亦可點擊開關加入河豚毒素（TTX）阻斷鈉通道，觀察動作電位如何徹底熄滅。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-b494b269",
+            "articleId": "art-neuron-action-potential",
+            "sectionId": "sec-2-5d21b6",
+            "sectionTitle": "二、親手量測：動作電位示波器模擬",
+            "paragraphIndex": 0,
+            "exactQuote": "在下方即時數值示波器中，我們完整實作了霍奇金與赫胥黎（Hodgkin-Huxley）四元非線性微分方程組。",
+            "charStart": 754,
+            "charEnd": 807,
+            "contentHash": "b494b269672f126d9c9c8280573646b002b5b7676ae58bc0f5eb03a9bb3b97d4",
+            "contextNote": "二、親手量測：動作電位示波器模擬 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-6446b418",
+            "articleId": "art-neuron-action-potential",
+            "sectionId": "sec-2-5d21b6",
+            "sectionTitle": "二、親手量測：動作電位示波器模擬",
+            "paragraphIndex": 0,
+            "exactQuote": "上方藍色跡線為跨膜電位 $V_m(t)$，下方三條彩色曲線則實時描繪鈉通道激發門控 $m$（橘色）、失活門控 $h$（綠色）與鉀通道延遲門控 $n$（紫色）的機率演化：",
+            "charStart": 808,
+            "charEnd": 892,
+            "contentHash": "6446b4187dcacea2e560339adbc9b9999c1c24c62f3a474eec422ab5b052d623",
+            "contextNote": "二、親手量測：動作電位示波器模擬 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-49cf21cc",
+            "articleId": "art-neuron-action-potential",
+            "sectionId": "sec-2-5d21b6",
+            "sectionTitle": "二、親手量測：動作電位示波器模擬",
+            "paragraphIndex": 2,
+            "exactQuote": "請嘗試調節左側的「刺激電流強度」：\n1. 當電流設為 $6\\ \\mu\\text{A/cm}^2$ 時，膜電位僅被動抬升數毫伏特後便衰減恢復，無法引爆脈衝；\n2. 當電流微增至 $8\\ \\mu\\text{A/cm}^2$ 跨越閥值時，高達 $100\\text{ mV}$ 的尖銳峰值瞬間爆發！",
+            "charStart": 1032,
+            "charEnd": 1177,
+            "contentHash": "49cf21cc50384a490d3f2f3a46eac6ada482cffe1bfe8c08e016c2e71ee07275",
+            "contextNote": "二、親手量測：動作電位示波器模擬 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-63657d40",
+            "articleId": "art-neuron-action-potential",
+            "sectionId": "sec-2-5d21b6",
+            "sectionTitle": "二、親手量測：動作電位示波器模擬",
+            "paragraphIndex": 2,
+            "exactQuote": "3. 您亦可點擊開關加入河豚毒素（TTX）阻斷鈉通道，觀察動作電位如何徹底熄滅。",
+            "charStart": 1178,
+            "charEnd": 1218,
+            "contentHash": "63657d4061eb43f0780b5f984ec547bbd58bc860d32d9a9a30c079adef4e9b1a",
+            "contextNote": "二、親手量測：動作電位示波器模擬 · 第 3 段"
+          }
+        ],
+        "formulas": [],
+        "interactiveComponentId": "ActionPotentialSimulator"
+      },
+      {
+        "id": "sec-3-c96acf",
+        "title": "三、四元微分方程的精確交響",
+        "level": 1,
+        "paragraphs": [
+          "霍奇金與赫胥黎將細胞膜等效為一個並聯電路：脂質雙層為膜電容 $C_m$，而各離子通道則是受跨膜電壓調控的非線性可變電阻。總跨膜電流守恆方程式為：",
+          "$$C_m \\frac{dV}{dt} = I_{ext} - \\bar{g}_{Na} m^3 h (V - E_{Na}) - \\bar{g}_K n^4 (V - E_K) - g_L (V - E_L)$$",
+          "整個動作電位的產生過程，本質上是一場毫秒級的離子電導交響樂：",
+          "1. **去極化觸發（0 ~ 1 ms）**：外部去極化刺激使電壓門控鈉通道的 $m$ 閘門感應電場迅速開啟，鈉電導 $g_{Na} \\propto m^3$ 劇增。帶正電的鈉離子如洪水般湧入胞內，使電位向 $E_{Na}$ 狂飆，形成自我增益的正反饋。\n2. **峰值與失活（1 ~ 2 ms）**：隨著電位反轉為正，鈉通道的 $h$ 閘門延遲關閉，阻斷鈉離子流入；同時延遲整流鉀通道的 $n$ 閘門逐漸開啟，鉀電導 $g_K \\propto n^4$ 達至峰值。\n3. **快速復極化與超極化（2 ~ 4 ms）**：大量鉀離子在巨大電化學推力下迅速奔向胞外，將膜電位強行拉回負值。由於鉀通道關閉存在時間延遲，膜電位一度跌破靜止電位，接近 $E_K$，形成短暫的「超極化」（Hyperpolarization）。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-5e9b1337",
+            "articleId": "art-neuron-action-potential",
+            "sectionId": "sec-3-c96acf",
+            "sectionTitle": "三、四元微分方程的精確交響",
+            "paragraphIndex": 0,
+            "exactQuote": "霍奇金與赫胥黎將細胞膜等效為一個並聯電路：脂質雙層為膜電容 $C_m$，而各離子通道則是受跨膜電壓調控的非線性可變電阻。",
+            "charStart": 1407,
+            "charEnd": 1467,
+            "contentHash": "5e9b13373c7d49338d54c344eacb9ed664a4b733b076b6e818e12db9392e3c23",
+            "contextNote": "三、四元微分方程的精確交響 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-478214c3",
+            "articleId": "art-neuron-action-potential",
+            "sectionId": "sec-3-c96acf",
+            "sectionTitle": "三、四元微分方程的精確交響",
+            "paragraphIndex": 0,
+            "exactQuote": "總跨膜電流守恆方程式為：",
+            "charStart": 1468,
+            "charEnd": 1480,
+            "contentHash": "478214c3b2823f160e6a5416370697a60064c0b247323cf7a083bbab5d5ceaf4",
+            "contextNote": "三、四元微分方程的精確交響 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-ce8be08f",
+            "articleId": "art-neuron-action-potential",
+            "sectionId": "sec-3-c96acf",
+            "sectionTitle": "三、四元微分方程的精確交響",
+            "paragraphIndex": 2,
+            "exactQuote": "整個動作電位的產生過程，本質上是一場毫秒級的離子電導交響樂：",
+            "charStart": 1555,
+            "charEnd": 1585,
+            "contentHash": "ce8be08f74e4be45fe855eb5b3278b056a9b792aa241c29d23e279415ba2b621",
+            "contextNote": "三、四元微分方程的精確交響 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-99243f18",
+            "articleId": "art-neuron-action-potential",
+            "sectionId": "sec-3-c96acf",
+            "sectionTitle": "三、四元微分方程的精確交響",
+            "paragraphIndex": 3,
+            "exactQuote": "1. **去極化觸發（0 ~ 1 ms）**：外部去極化刺激使電壓門控鈉通道的 $m$ 閘門感應電場迅速開啟，鈉電導 $g_{Na} \\propto m^3$ 劇增。",
+            "charStart": 1618,
+            "charEnd": 1701,
+            "contentHash": "99243f18f24bec61d999dc4aae50434d8bed35aa3b302282884e8bd5ed19e87d",
+            "contextNote": "三、四元微分方程的精確交響 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-4a25433c",
+            "articleId": "art-neuron-action-potential",
+            "sectionId": "sec-3-c96acf",
+            "sectionTitle": "三、四元微分方程的精確交響",
+            "paragraphIndex": 3,
+            "exactQuote": "帶正電的鈉離子如洪水般湧入胞內，使電位向 $E_{Na}$ 狂飆，形成自我增益的正反饋。",
+            "charStart": 1702,
+            "charEnd": 1746,
+            "contentHash": "4a25433c584cbec2f0bfd752e0e69f00c3f88a29bc59c313f5d955931707fc4c",
+            "contextNote": "三、四元微分方程的精確交響 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-586f8ad1",
+            "articleId": "art-neuron-action-potential",
+            "sectionId": "sec-3-c96acf",
+            "sectionTitle": "三、四元微分方程的精確交響",
+            "paragraphIndex": 3,
+            "exactQuote": "2. **峰值與失活（1 ~ 2 ms）**：隨著電位反轉為正，鈉通道的 $h$ 閘門延遲關閉，阻斷鈉離子流入；同時延遲整流鉀通道的 $n$ 閘門逐漸開啟，鉀電導 $g_K \\propto n^4$ 達至峰值。",
+            "charStart": 1747,
+            "charEnd": 1852,
+            "contentHash": "586f8ad1c824b4422d59be3b1d2d77eb7d3e142f720e46e809fb8fe4b28d59cd",
+            "contextNote": "三、四元微分方程的精確交響 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-4da47c1e",
+            "articleId": "art-neuron-action-potential",
+            "sectionId": "sec-3-c96acf",
+            "sectionTitle": "三、四元微分方程的精確交響",
+            "paragraphIndex": 3,
+            "exactQuote": "3. **快速復極化與超極化（2 ~ 4 ms）**：大量鉀離子在巨大電化學推力下迅速奔向胞外，將膜電位強行拉回負值。",
+            "charStart": 1853,
+            "charEnd": 1912,
+            "contentHash": "4da47c1e2bb994207a2c107253adae3548584ed34e37431c435db89a7b8f176c",
+            "contextNote": "三、四元微分方程的精確交響 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-e15608ac",
+            "articleId": "art-neuron-action-potential",
+            "sectionId": "sec-3-c96acf",
+            "sectionTitle": "三、四元微分方程的精確交響",
+            "paragraphIndex": 3,
+            "exactQuote": "由於鉀通道關閉存在時間延遲，膜電位一度跌破靜止電位，接近 $E_K$，形成短暫的「超極化」（Hyperpolarization）。",
+            "charStart": 1913,
+            "charEnd": 1978,
+            "contentHash": "e15608acf1a5231d20daabefe440e2c52ea7a9a6554f03925c5cd9d009aa3c37",
+            "contextNote": "三、四元微分方程的精確交響 · 第 4 段"
+          }
+        ],
+        "formulas": [
+          "$$C_m \\frac{dV}{dt} = I_{ext} - \\bar{g}_{Na} m^3 h (V - E_{Na}) - \\bar{g}_K n^4 (V - E_K) - g_L (V - E_L)$$"
+        ],
+        "interactiveComponentId": null
+      },
+      {
+        "id": "sec-4-4e06aa",
+        "title": "四、全或無定律與不反應期",
+        "level": 1,
+        "paragraphs": [
+          "這項機制決定了神經傳導的兩大核心特性：",
+          "其一是**全或無定律（All-or-None Law）**。因為鈉通道的開啟具備正反饋閾值，一旦膜電位越過臨界點，後續的去極化規模便由通道本身的內生電導率決定，與原先刺激的微小差異無關。這使神經脈衝在沿著數米長的坐骨神經軸突傳遞時，信號不會隨距離衰減或變形，具備極強的抗雜訊能力。",
+          "其二是**不反應期（Refractory Period）**。在脈衝剛結束的數毫秒內，鈉通道的 $h$ 閘門尚未自失活狀態復原，神經元處於絕對無法再次放電的絕對不反應期。這一機制確保了神經衝動只能沿著軸突單向傳導，絕不回流，並為神經系統的最高發放頻率設定了天然的物理上限。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-86ec716c",
+            "articleId": "art-neuron-action-potential",
+            "sectionId": "sec-4-4e06aa",
+            "sectionTitle": "四、全或無定律與不反應期",
+            "paragraphIndex": 0,
+            "exactQuote": "這項機制決定了神經傳導的兩大核心特性：",
+            "charStart": 2339,
+            "charEnd": 2358,
+            "contentHash": "86ec716c90739313c96b77bbd984561275cb11300eac19cbf1dd68c24c4cbcb6",
+            "contextNote": "四、全或無定律與不反應期 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-a6b91fd9",
+            "articleId": "art-neuron-action-potential",
+            "sectionId": "sec-4-4e06aa",
+            "sectionTitle": "四、全或無定律與不反應期",
+            "paragraphIndex": 1,
+            "exactQuote": "其一是**全或無定律（All-or-None Law）**。",
+            "charStart": 2380,
+            "charEnd": 2410,
+            "contentHash": "a6b91fd9c9ec084350f8dd4b0772f582dc5aee4feb9ed448052614bdd0199c2f",
+            "contextNote": "四、全或無定律與不反應期 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-9763c2a9",
+            "articleId": "art-neuron-action-potential",
+            "sectionId": "sec-4-4e06aa",
+            "sectionTitle": "四、全或無定律與不反應期",
+            "paragraphIndex": 1,
+            "exactQuote": "因為鈉通道的開啟具備正反饋閾值，一旦膜電位越過臨界點，後續的去極化規模便由通道本身的內生電導率決定，與原先刺激的微小差異無關。",
+            "charStart": 2411,
+            "charEnd": 2474,
+            "contentHash": "9763c2a9d87e83fa5a55dbc6edfb83e0a9742b7cc300c646219b6397a72eb6d8",
+            "contextNote": "四、全或無定律與不反應期 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-b524ce90",
+            "articleId": "art-neuron-action-potential",
+            "sectionId": "sec-4-4e06aa",
+            "sectionTitle": "四、全或無定律與不反應期",
+            "paragraphIndex": 1,
+            "exactQuote": "這使神經脈衝在沿著數米長的坐骨神經軸突傳遞時，信號不會隨距離衰減或變形，具備極強的抗雜訊能力。",
+            "charStart": 2475,
+            "charEnd": 2522,
+            "contentHash": "b524ce90ddfd26fa91d1ae2a4a53075d5881fc352cd2e03381624d2e95881bfd",
+            "contextNote": "四、全或無定律與不反應期 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-223a059e",
+            "articleId": "art-neuron-action-potential",
+            "sectionId": "sec-4-4e06aa",
+            "sectionTitle": "四、全或無定律與不反應期",
+            "paragraphIndex": 2,
+            "exactQuote": "其二是**不反應期（Refractory Period）**。",
+            "charStart": 2665,
+            "charEnd": 2696,
+            "contentHash": "223a059e35dfe31a06f7cb372aa67878627c44e78555bdc92da2a9ec5a3f2820",
+            "contextNote": "四、全或無定律與不反應期 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-131b9eeb",
+            "articleId": "art-neuron-action-potential",
+            "sectionId": "sec-4-4e06aa",
+            "sectionTitle": "四、全或無定律與不反應期",
+            "paragraphIndex": 2,
+            "exactQuote": "在脈衝剛結束的數毫秒內，鈉通道的 $h$ 閘門尚未自失活狀態復原，神經元處於絕對無法再次放電的絕對不反應期。",
+            "charStart": 2697,
+            "charEnd": 2751,
+            "contentHash": "131b9eeb4deccf60309d7d979c8cc99baf50ca4a6d589548f70ad02589a21119",
+            "contextNote": "四、全或無定律與不反應期 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-b7e275db",
+            "articleId": "art-neuron-action-potential",
+            "sectionId": "sec-4-4e06aa",
+            "sectionTitle": "四、全或無定律與不反應期",
+            "paragraphIndex": 2,
+            "exactQuote": "這一機制確保了神經衝動只能沿著軸突單向傳導，絕不回流，並為神經系統的最高發放頻率設定了天然的物理上限。",
+            "charStart": 2752,
+            "charEnd": 2803,
+            "contentHash": "b7e275db72c61e90bf4a41c858bd0da26ba92621c40cab79923623de5b8c8cfe",
+            "contextNote": "四、全或無定律與不反應期 · 第 3 段"
+          }
+        ],
+        "formulas": [],
+        "interactiveComponentId": null
+      }
+    ],
+    "totalWordCount": 1629,
+    "lastIndexedAt": "2026-11-01T19:13:36.227Z"
+  },
+  {
+    "id": "art-chaos-double-pendulum",
+    "slug": "chaos-double-pendulum-lyapunov",
+    "version": 1,
+    "publishedDate": "2026.03",
+    "status": "published",
+    "isEditorialCover": false,
+    "isEditorialPick": true,
+    "isClassicFoundation": true,
+    "format": "interactive_simulation",
+    "formatBadgeText": "動力學數值實驗",
+    "title": "渾沌的邊界：雙擺與確定性系統的不可預測性",
+    "subtitle": "為什麼由牛頓定律精確支配的簡單物理系統，會在數秒之內走向無法預言的隨機性？",
+    "topicIds": [
+      "topic-nonlinear-chaos",
+      "topic-thermodynamics"
+    ],
+    "tags": [
+      "雙擺",
+      "渾沌理論",
+      "非線性動力學",
+      "李雅普諾夫指數",
+      "相空間",
+      "經典力學"
+    ],
+    "summary": "將兩根剛性擺桿首尾相接，物理定律依然是經典力學中完全確定的牛頓方程式。然而，只要初始釋放角度存在十萬分之一弧度的微小擾動，兩條運動軌跡便會在短短數秒內徹底分道揚鑣。本篇透過四階龍格-庫塔數值解，拆解確定性系統走向渾沌的數學本質。",
+    "leadParagraph": "在拉普拉斯的古典機械宇宙觀中，只要獲知全宇宙所有微粒當前的坐標與動量，未來便能如同過去一般精確預言。然而，雙擺（Double Pendulum）這一結構極其簡潔的力學系統，卻打破了決定論與可預測性之間的必然等號。系統完全遵循確定性的拉格朗日方程式，卻因非線性耦合產生對初始條件的極端敏感性。",
+    "quoteLead": "決定論與可預測性在非線性領域徹底分離：一個系統可以 100% 遵循無隨機項的物理定律，但只要其相空間軌跡具備正的李雅普諾夫指數，人類在有限測量精度下的長期預測便宣告破產。",
+    "authors": [
+      {
+        "name": "MIRARI 物理組",
+        "role": "撰文"
+      },
+      {
+        "name": "非線性動力學研究組",
+        "role": "審訂"
+      }
+    ],
+    "references": [
+      {
+        "id": "ref-shinbrot-1992",
+        "citation": "Shinbrot, T., Grebogi, C., Wisdom, J., & Yorke, J. A. (1992). \"Chaos in a double pendulum.\" American Journal of Physics, 60(6), 491-499. doi:10.1119/1.16860"
+      },
+      {
+        "id": "ref-strogatz-2018",
+        "citation": "Strogatz, S. H. (2018). Nonlinear Dynamics and Chaos: With Applications to Physics, Biology, Chemistry, and Engineering (2nd ed.). CRC Press."
+      },
+      {
+        "id": "ref-levien-1993",
+        "citation": "Levien, R. B., & Tan, S. M. (1993). \"Double pendulum: An experiment in chaos.\" American Journal of Physics, 61(11), 1038-1044. doi:10.1119/1.17335"
+      }
+    ],
+    "interactiveComponent": "DoublePendulumSimulator",
+    "narrativeStyle": "first_principles",
+    "interactiveType": "phase_space",
+    "creationModel": "pro-reasoning-engine",
+    "feedbackId": "fb-art-chaos-double-pendulum",
+    "createdAt": "2026-11-02T03:00:00Z",
+    "contentHash": "cb71aca88a95b822681298431ccd4525bac2d438fbc674e3ae5f9addb850833d",
+    "sections": [
+      {
+        "id": "sec-1-9b398a",
+        "title": "一、從單擺的和諧到雙擺的失序",
+        "level": 1,
+        "paragraphs": [
+          "單擺是古典物理學最優雅的基石之一。當單擺的擺角維持在微小幅度時，回復力與位移呈線性比例，運動方程退化為簡諧震盪，擺動週期僅由擺長與重力加速度決定，與振幅無關。即使考慮大角度擺動，單擺的相空間軌跡依然是封閉且平滑的橢圓形軌道。",
+          "然而，一旦我們在第一根擺桿的末端樞紐上，懸掛第二根可自由旋轉的擺桿，這個雙自由度力學系統的相空間維度便立即由二維躍升至四維：",
+          "$$(\\theta_1, \\theta_2, p_{\\theta_1}, p_{\\theta_2})$$",
+          "第二根擺桿的瞬時重力力矩與離心力，會即時反作用於第一根擺桿；同時，第一根擺桿的角加速度又為第二根擺桿提供動態變化的旋轉樞軸。這種雙向反饋摧毀了運動方程的線性疊加性，使拉格朗日運動方程式呈現高度非線性的三角函數耦合。",
+          "在低能量狀態下（初始角度極小），系統表現為兩種簡正模（Normal Modes）的平穩疊加；但只要初始釋放角度增大到臨界能量閾值以上，系統便跨過分岔點（Bifurcation Point），規則運動徹底瓦解。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-7de6b156",
+            "articleId": "art-chaos-double-pendulum",
+            "sectionId": "sec-1-9b398a",
+            "sectionTitle": "一、從單擺的和諧到雙擺的失序",
+            "paragraphIndex": 0,
+            "exactQuote": "單擺是古典物理學最優雅的基石之一。",
+            "charStart": 0,
+            "charEnd": 17,
+            "contentHash": "7de6b1564d998077f5b75094a1d99a5df51a55720d9425451179aff73fc5cac0",
+            "contextNote": "一、從單擺的和諧到雙擺的失序 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-2adc7f07",
+            "articleId": "art-chaos-double-pendulum",
+            "sectionId": "sec-1-9b398a",
+            "sectionTitle": "一、從單擺的和諧到雙擺的失序",
+            "paragraphIndex": 0,
+            "exactQuote": "當單擺的擺角維持在微小幅度時，回復力與位移呈線性比例，運動方程退化為簡諧震盪，擺動週期僅由擺長與重力加速度決定，與振幅無關。",
+            "charStart": 18,
+            "charEnd": 80,
+            "contentHash": "2adc7f07d1608455e0f74d5575254e7668d140ba1cb0fb484fbc10df1d80762d",
+            "contextNote": "一、從單擺的和諧到雙擺的失序 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-bd0e901e",
+            "articleId": "art-chaos-double-pendulum",
+            "sectionId": "sec-1-9b398a",
+            "sectionTitle": "一、從單擺的和諧到雙擺的失序",
+            "paragraphIndex": 0,
+            "exactQuote": "即使考慮大角度擺動，單擺的相空間軌跡依然是封閉且平滑的橢圓形軌道。",
+            "charStart": 81,
+            "charEnd": 114,
+            "contentHash": "bd0e901ea24f3221f8a6441ecc9aa5c07e22fd1bdd215aa425e4727c24893c68",
+            "contextNote": "一、從單擺的和諧到雙擺的失序 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-6cba4368",
+            "articleId": "art-chaos-double-pendulum",
+            "sectionId": "sec-1-9b398a",
+            "sectionTitle": "一、從單擺的和諧到雙擺的失序",
+            "paragraphIndex": 1,
+            "exactQuote": "然而，一旦我們在第一根擺桿的末端樞紐上，懸掛第二根可自由旋轉的擺桿，這個雙自由度力學系統的相空間維度便立即由二維躍升至四維：",
+            "charStart": 229,
+            "charEnd": 291,
+            "contentHash": "6cba436818a3d90584619ca5d2bc635664b96154c16093c727bba5a5a5659733",
+            "contextNote": "一、從單擺的和諧到雙擺的失序 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-74f09f61",
+            "articleId": "art-chaos-double-pendulum",
+            "sectionId": "sec-1-9b398a",
+            "sectionTitle": "一、從單擺的和諧到雙擺的失序",
+            "paragraphIndex": 3,
+            "exactQuote": "第二根擺桿的瞬時重力力矩與離心力，會即時反作用於第一根擺桿；同時，第一根擺桿的角加速度又為第二根擺桿提供動態變化的旋轉樞軸。",
+            "charStart": 356,
+            "charEnd": 418,
+            "contentHash": "74f09f616407e4cc23f3dffae691f5376408607acc3d0b407f8cb7fd8f406a8c",
+            "contextNote": "一、從單擺的和諧到雙擺的失序 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-3f0702cc",
+            "articleId": "art-chaos-double-pendulum",
+            "sectionId": "sec-1-9b398a",
+            "sectionTitle": "一、從單擺的和諧到雙擺的失序",
+            "paragraphIndex": 3,
+            "exactQuote": "這種雙向反饋摧毀了運動方程的線性疊加性，使拉格朗日運動方程式呈現高度非線性的三角函數耦合。",
+            "charStart": 419,
+            "charEnd": 464,
+            "contentHash": "3f0702cc05eaa5d23de71ef13b9007a2b675158dc6aba4052f9a33277272a5a0",
+            "contextNote": "一、從單擺的和諧到雙擺的失序 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-ec98a9a4",
+            "articleId": "art-chaos-double-pendulum",
+            "sectionId": "sec-1-9b398a",
+            "sectionTitle": "一、從單擺的和諧到雙擺的失序",
+            "paragraphIndex": 4,
+            "exactQuote": "在低能量狀態下（初始角度極小），系統表現為兩種簡正模（Normal Modes）的平穩疊加；但只要初始釋放角度增大到臨界能量閾值以上，系統便跨過分岔點（Bifurcation Point），規則運動徹底瓦解。",
+            "charStart": 574,
+            "charEnd": 678,
+            "contentHash": "ec98a9a4f16258ff5d797ea21ae8727705f006caa417b557aa145450bd9ca37f",
+            "contextNote": "一、從單擺的和諧到雙擺的失序 · 第 5 段"
+          }
+        ],
+        "formulas": [
+          "$$(\\theta_1, \\theta_2, p_{\\theta_1}, p_{\\theta_2})$$"
+        ],
+        "interactiveComponentId": null
+      },
+      {
+        "id": "sec-2-c5585e",
+        "title": "二、親手驗證：相相分離與李雅普諾夫發散",
+        "level": 1,
+        "paragraphs": [
+          "在下方數值模擬實驗中，我們採用四階龍格-庫塔法（RK4）對精確拉格朗日方程進行即時微步積分。畫布中同時呈現了兩隻雙擺：深藍色為基準軌道 A，金色為施加了微小角度擾動 $\\Delta \\theta_0$ 的對比軌道 B。",
+          "<InteractiveExperiment id=\"DoublePendulumSimulator\" />",
+          "請嘗試將初始角度設為 90° 並啟動模擬。在最初的 1 至 2 秒內，兩隻擺桿幾乎完全重合；但隨著能量在兩臂間劇烈交換，兩者在相空間中的歐氏距離將呈現指數量級的急劇膨脹。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-67fc64f4",
+            "articleId": "art-chaos-double-pendulum",
+            "sectionId": "sec-2-c5585e",
+            "sectionTitle": "二、親手驗證：相相分離與李雅普諾夫發散",
+            "paragraphIndex": 0,
+            "exactQuote": "在下方數值模擬實驗中，我們採用四階龍格-庫塔法（RK4）對精確拉格朗日方程進行即時微步積分。",
+            "charStart": 785,
+            "charEnd": 831,
+            "contentHash": "67fc64f402abef1b98db005879efa0e038ef7bfb717e142ecd090d09178869fb",
+            "contextNote": "二、親手驗證：相相分離與李雅普諾夫發散 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-5e27fc1a",
+            "articleId": "art-chaos-double-pendulum",
+            "sectionId": "sec-2-c5585e",
+            "sectionTitle": "二、親手驗證：相相分離與李雅普諾夫發散",
+            "paragraphIndex": 0,
+            "exactQuote": "畫布中同時呈現了兩隻雙擺：深藍色為基準軌道 A，金色為施加了微小角度擾動 $\\Delta \\theta_0$ 的對比軌道 B。",
+            "charStart": 832,
+            "charEnd": 895,
+            "contentHash": "5e27fc1a39ad1843ec777ea80a92777806e6d3362e2dd8442902c5d47f4d7fe6",
+            "contextNote": "二、親手驗證：相相分離與李雅普諾夫發散 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-581301c5",
+            "articleId": "art-chaos-double-pendulum",
+            "sectionId": "sec-2-c5585e",
+            "sectionTitle": "二、親手驗證：相相分離與李雅普諾夫發散",
+            "paragraphIndex": 2,
+            "exactQuote": "請嘗試將初始角度設為 90° 並啟動模擬。",
+            "charStart": 1007,
+            "charEnd": 1028,
+            "contentHash": "581301c5e1baa3e13141311165d1d8a70f3945c33f9a1ebb93c7ee76eb8583af",
+            "contextNote": "二、親手驗證：相相分離與李雅普諾夫發散 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-5464df06",
+            "articleId": "art-chaos-double-pendulum",
+            "sectionId": "sec-2-c5585e",
+            "sectionTitle": "二、親手驗證：相相分離與李雅普諾夫發散",
+            "paragraphIndex": 2,
+            "exactQuote": "在最初的 1 至 2 秒內，兩隻擺桿幾乎完全重合；但隨著能量在兩臂間劇烈交換，兩者在相空間中的歐氏距離將呈現指數量級的急劇膨脹。",
+            "charStart": 1029,
+            "charEnd": 1093,
+            "contentHash": "5464df064e3eafb6ca392a74bf9317bec146ace817b37965f7982b76bf4ee358",
+            "contextNote": "二、親手驗證：相相分離與李雅普諾夫發散 · 第 3 段"
+          }
+        ],
+        "formulas": [],
+        "interactiveComponentId": "DoublePendulumSimulator"
+      },
+      {
+        "id": "sec-3-d6b7ce",
+        "title": "三、確定性隨機與李雅普諾夫指數",
+        "level": 1,
+        "paragraphs": [
+          "這種對初值的極端敏感依賴性，是渾沌（Chaos）的核心數學判據。設系統在四維相空間中的初始微小分離向量為 $\\delta \\mathbf{Z}(0)$，隨時間演化的發散速率可用最大李雅普諾夫指數（Maximal Lyapunov Exponent, $\\lambda$）刻畫：",
+          "$$|\\delta \\mathbf{Z}(t)| \\approx |\\delta \\mathbf{Z}(0)| e^{\\lambda t}$$",
+          "若 $\\lambda \\le 0$，鄰近軌道隨時間衰減或保持等距，系統維持可預測的穩定態或準週期態；而當 $\\lambda > 0$ 時，相空間中任意微小的測量不確定度，都會隨時間呈幾何級數放大。",
+          "這導致了「李雅普諾夫時間」（Lyapunov Time）概念的誕生：即系統誤差擴大一倍或一個數量級所需的典型時間尺度。對於實驗室尺度的大角度雙擺，李雅普諾夫時間通常僅為數百毫秒。即使使用世界最精密的雷射干涉儀將初值測量推進至納米尺度，預言地平線（Predictability Horizon）也僅能向後延展數秒。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-168642da",
+            "articleId": "art-chaos-double-pendulum",
+            "sectionId": "sec-3-d6b7ce",
+            "sectionTitle": "三、確定性隨機與李雅普諾夫指數",
+            "paragraphIndex": 0,
+            "exactQuote": "這種對初值的極端敏感依賴性，是渾沌（Chaos）的核心數學判據。",
+            "charStart": 1181,
+            "charEnd": 1213,
+            "contentHash": "168642da801d133bbc9a7b27c7feed7ed3d6bfe1435f76adeda1de5ab2a950b0",
+            "contextNote": "三、確定性隨機與李雅普諾夫指數 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-84f1a171",
+            "articleId": "art-chaos-double-pendulum",
+            "sectionId": "sec-3-d6b7ce",
+            "sectionTitle": "三、確定性隨機與李雅普諾夫指數",
+            "paragraphIndex": 0,
+            "exactQuote": "設系統在四維相空間中的初始微小分離向量為 $\\delta \\mathbf{Z}(0)$，隨時間演化的發散速率可用最大李雅普諾夫指數（Maximal Lyapunov Exponent, $\\lambda$）刻畫：",
+            "charStart": 1214,
+            "charEnd": 1320,
+            "contentHash": "84f1a171fe939e3855a806f896d9c8baabbc8140f1d3658300c227366605b076",
+            "contextNote": "三、確定性隨機與李雅普諾夫指數 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-d20a8da2",
+            "articleId": "art-chaos-double-pendulum",
+            "sectionId": "sec-3-d6b7ce",
+            "sectionTitle": "三、確定性隨機與李雅普諾夫指數",
+            "paragraphIndex": 2,
+            "exactQuote": "若 $\\lambda \\le 0$，鄰近軌道隨時間衰減或保持等距，系統維持可預測的穩定態或準週期態；而當 $\\lambda > 0$ 時，相空間中任意微小的測量不確定度，都會隨時間呈幾何級數放大。",
+            "charStart": 1461,
+            "charEnd": 1559,
+            "contentHash": "d20a8da212e714ebf9c3325cbdf3488f1ff7b9073b9a70dffd065c8c8788be7e",
+            "contextNote": "三、確定性隨機與李雅普諾夫指數 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-8a18b582",
+            "articleId": "art-chaos-double-pendulum",
+            "sectionId": "sec-3-d6b7ce",
+            "sectionTitle": "三、確定性隨機與李雅普諾夫指數",
+            "paragraphIndex": 3,
+            "exactQuote": "這導致了「李雅普諾夫時間」（Lyapunov Time）概念的誕生：即系統誤差擴大一倍或一個數量級所需的典型時間尺度。",
+            "charStart": 1660,
+            "charEnd": 1719,
+            "contentHash": "8a18b58259e5c2ebdc7338c8084b234e004703e378a10a8832344f7211b64ef0",
+            "contextNote": "三、確定性隨機與李雅普諾夫指數 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-030f1a5d",
+            "articleId": "art-chaos-double-pendulum",
+            "sectionId": "sec-3-d6b7ce",
+            "sectionTitle": "三、確定性隨機與李雅普諾夫指數",
+            "paragraphIndex": 3,
+            "exactQuote": "對於實驗室尺度的大角度雙擺，李雅普諾夫時間通常僅為數百毫秒。",
+            "charStart": 1720,
+            "charEnd": 1750,
+            "contentHash": "030f1a5d103f30fa9a0d5e6ab7a537c741d2b0991b7b07d94b4d03f8920b19a7",
+            "contextNote": "三、確定性隨機與李雅普諾夫指數 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-7b2db330",
+            "articleId": "art-chaos-double-pendulum",
+            "sectionId": "sec-3-d6b7ce",
+            "sectionTitle": "三、確定性隨機與李雅普諾夫指數",
+            "paragraphIndex": 3,
+            "exactQuote": "即使使用世界最精密的雷射干涉儀將初值測量推進至納米尺度，預言地平線（Predictability Horizon）也僅能向後延展數秒。",
+            "charStart": 1751,
+            "charEnd": 1818,
+            "contentHash": "7b2db3303db74ae0d22c66c70922d14baba087fbb87f8c5b87cd3802e990b9f0",
+            "contextNote": "三、確定性隨機與李雅普諾夫指數 · 第 4 段"
+          }
+        ],
+        "formulas": [
+          "$$|\\delta \\mathbf{Z}(t)| \\approx |\\delta \\mathbf{Z}(0)| e^{\\lambda t}$$"
+        ],
+        "interactiveComponentId": null
+      },
+      {
+        "id": "sec-4-69f4e9",
+        "title": "四、不可預測不等於沒有結構",
+        "level": 1,
+        "paragraphs": [
+          "雙擺的渾沌並不等同於毫無規律的白雜訊。在幾何上，雙擺在四維相空間中的軌跡被禁錮在能量守恆約束的三維超曲面上，並形成具有碎形維度的「奇異吸子」（Strange Attractor）特徵結構。",
+          "即使單一軌跡無法在長時域內精確預測，整個系統的能量景觀與龐加萊截面（Poincaré Section）依然展現出極致的幾何對稱與拓撲美感。雙擺以最簡潔的機械構件揭示了一條深刻的自然法則：宇宙的複雜與隨機，並非來自外在雜訊的干擾，而是深植於物理定律最本質的非線性幾何之中。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-e2e22a37",
+            "articleId": "art-chaos-double-pendulum",
+            "sectionId": "sec-4-69f4e9",
+            "sectionTitle": "四、不可預測不等於沒有結構",
+            "paragraphIndex": 0,
+            "exactQuote": "雙擺的渾沌並不等同於毫無規律的白雜訊。",
+            "charStart": 1977,
+            "charEnd": 1996,
+            "contentHash": "e2e22a371c403279306d94634c5de47dff12dafcf54ddf92bb556ced2915da0e",
+            "contextNote": "四、不可預測不等於沒有結構 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-45523c06",
+            "articleId": "art-chaos-double-pendulum",
+            "sectionId": "sec-4-69f4e9",
+            "sectionTitle": "四、不可預測不等於沒有結構",
+            "paragraphIndex": 0,
+            "exactQuote": "在幾何上，雙擺在四維相空間中的軌跡被禁錮在能量守恆約束的三維超曲面上，並形成具有碎形維度的「奇異吸子」（Strange Attractor）特徵結構。",
+            "charStart": 1997,
+            "charEnd": 2072,
+            "contentHash": "45523c06a20f6e0b5befb3fd347acb08e177bd5995472cd740f94140bb2e2e62",
+            "contextNote": "四、不可預測不等於沒有結構 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-1f8ffa95",
+            "articleId": "art-chaos-double-pendulum",
+            "sectionId": "sec-4-69f4e9",
+            "sectionTitle": "四、不可預測不等於沒有結構",
+            "paragraphIndex": 1,
+            "exactQuote": "即使單一軌跡無法在長時域內精確預測，整個系統的能量景觀與龐加萊截面（Poincaré Section）依然展現出極致的幾何對稱與拓撲美感。",
+            "charStart": 2169,
+            "charEnd": 2238,
+            "contentHash": "1f8ffa958d3db3a12f021458487125dc9e9cba3131a5019d3a2d2cdacd04460a",
+            "contextNote": "四、不可預測不等於沒有結構 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-b53721a1",
+            "articleId": "art-chaos-double-pendulum",
+            "sectionId": "sec-4-69f4e9",
+            "sectionTitle": "四、不可預測不等於沒有結構",
+            "paragraphIndex": 1,
+            "exactQuote": "雙擺以最簡潔的機械構件揭示了一條深刻的自然法則：宇宙的複雜與隨機，並非來自外在雜訊的干擾，而是深植於物理定律最本質的非線性幾何之中。",
+            "charStart": 2239,
+            "charEnd": 2305,
+            "contentHash": "b53721a1d5c89baa22cd47aedd84faa17cc46e5b56e54735414b5e2156486ff9",
+            "contextNote": "四、不可預測不等於沒有結構 · 第 2 段"
+          }
+        ],
+        "formulas": [],
+        "interactiveComponentId": null
+      }
+    ],
+    "totalWordCount": 1402,
+    "lastIndexedAt": "2026-11-01T19:13:36.232Z"
+  },
+  {
+    "id": "art-maxwells-demon-entropy",
+    "slug": "maxwells-demon-landauer-entropy",
+    "version": 1,
+    "publishedDate": "2026.03",
+    "status": "published",
+    "isEditorialCover": false,
+    "isEditorialPick": true,
+    "isClassicFoundation": true,
+    "format": "interactive_simulation",
+    "formatBadgeText": "熱力學碰撞實驗",
+    "title": "穿過微觀閘門的幽靈：麥克斯韋妖與資訊的熱力學代價",
+    "subtitle": "為什麼單純「知道」分子的快慢就能換取有用功？從思維悖論到蘭道爾原理的世紀解答",
+    "topicIds": [
+      "topic-thermodynamics",
+      "topic-information-theory"
+    ],
+    "tags": [
+      "麥克斯韋妖",
+      "熱力學第二定律",
+      "資訊熵",
+      "蘭道爾原理",
+      "統計物理",
+      "不可逆計算"
+    ],
+    "summary": "1867 年，麥克斯韋提出了一個挑戰熱力學第二定律的經典假想幽靈：一個能夠精確觀測每個分子速度的微觀智能，只需無摩擦地開關閘門，便能在不消耗任何功的情況下使系統溫差自發增大。一個多世紀以來，從斯齊拉德、蘭道爾到貝內特，物理學家最終發現：資訊不是虛無的概念，抹除資訊必然伴隨真實的能量耗散。",
+    "leadParagraph": "熱力學第二定律宣告了宇宙的單向命運：孤立系統的總熵永不自發減少，熱量絕無法自發地從低溫物體流向高溫物體而不引起其他變化。然而，十九世紀最卓越的理論物理學家詹姆斯·克拉克·麥克斯韋（James Clerk Maxwell）卻指出了一道看似無法迴避的漏洞——如果我們引入一個具備微觀認知能力的「智能操作者」，第二定律是否會輕易瓦解？",
+    "quoteLead": "資訊是物理的（Information is Physical）：獲取分子的速度資訊固然能暫時降低氣體的熱力學熵，但當智能實體有限的記憶體被清空以準備下一輪測量時，蘭道爾極限必然迫使其向環境釋放至少 $k_B T \\\\ln 2$ 的熱量，將宇宙的總熵增忠實補齊。",
+    "authors": [
+      {
+        "name": "MIRARI 理論物理組",
+        "role": "撰文"
+      },
+      {
+        "name": "量子資訊與統計力學研究組",
+        "role": "審訂"
+      }
+    ],
+    "references": [
+      {
+        "id": "ref-maxwell-1871",
+        "citation": "Maxwell, J. C. (1871). Theory of Heat. Longmans, Green, and Co."
+      },
+      {
+        "id": "ref-landauer-1961",
+        "citation": "Landauer, R. (1961). \"Irreversibility and heat generation in the computing process.\" IBM Journal of Research and Development, 5(3), 183-191. doi:10.1147/rd.53.0183"
+      },
+      {
+        "id": "ref-bennett-1982",
+        "citation": "Bennett, C. H. (1982). \"The thermodynamics of computation—a review.\" International Journal of Theoretical Physics, 21(12), 905-940. doi:10.1007/BF02084158"
+      },
+      {
+        "id": "ref-toyabe-2010",
+        "citation": "Toyabe, S., Sagawa, T., Ueda, M., Muneyuki, E., & Sano, M. (2010). \"Experimental demonstration of information-to-energy conversion and validation of the generalized Jarzynski equality.\" Nature Physics, 6(12), 988-992. doi:10.1038/nphys1821"
+      }
+    ],
+    "interactiveComponent": "MaxwellDemonSimulator",
+    "narrativeStyle": "thought_experiment",
+    "interactiveType": "particle_system",
+    "creationModel": "pro-reasoning-engine",
+    "feedbackId": "fb-art-maxwells-demon-entropy",
+    "createdAt": "2026-11-02T03:00:00Z",
+    "contentHash": "9c5418a757e56e92a5a8178bcdb46d9214893521ba882cc4e89fc7014a888ed1",
+    "sections": [
+      {
+        "id": "sec-1-ff468e",
+        "title": "一、打破時間之箭的微觀幽靈",
+        "level": 1,
+        "paragraphs": [
+          "設想一個完全絕熱封閉的箱子，被中央一堵隔板分為左（A）、右（B）兩個等容積腔室，內部充滿處於熱平衡狀態的理想氣體分子。根據麥克斯韋-波茲曼速率分佈，分子的動能並非整齊劃一，而是呈現鐘形偏斜的分佈——有些運動極快，有些則相對遲緩。",
+          "麥克斯韋構想了一個駐守在隔板微小開孔處的微型智能（後被開爾文勳爵戲稱為「麥克斯韋妖」）。妖的任務極其單純：\n1. 當看到左室中的高速分子朝閘門飛來時，開門放它進入右室；\n2. 當看到右室中的低速分子朝閘門飛來時，開門放它進入左室；\n3. 其餘情況則關閉閘門，讓分子彈回。",
+          "由於閘門被假設為質量無限輕、運動無摩擦，妖開關閘門本身不需要對分子做任何機械功。然而，在經過一段時間的篩選後，右室的高速分子濃度愈來愈高，左室的低速分子愈來愈多。兩個最初溫度相同的腔室，竟自發產生了顯著的溫差 $\\Delta T = T_R - T_L > 0$！這意味著我們可以藉由溫差驅動熱機對外做功，製造出第二類永動機。",
+          "第二定律難道只是一條對無知者的統計妥協，只要掌握足夠的微觀資訊就能隨意逾越嗎？"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-d9e5f2df",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-1-ff468e",
+            "sectionTitle": "一、打破時間之箭的微觀幽靈",
+            "paragraphIndex": 0,
+            "exactQuote": "設想一個完全絕熱封閉的箱子，被中央一堵隔板分為左（A）、右（B）兩個等容積腔室，內部充滿處於熱平衡狀態的理想氣體分子。",
+            "charStart": 0,
+            "charEnd": 59,
+            "contentHash": "d9e5f2df963a44ab0cd7d006aff49a100a2281ccbe384c9d6d839c79a92fc4e9",
+            "contextNote": "一、打破時間之箭的微觀幽靈 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-8d410ccb",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-1-ff468e",
+            "sectionTitle": "一、打破時間之箭的微觀幽靈",
+            "paragraphIndex": 0,
+            "exactQuote": "根據麥克斯韋-波茲曼速率分佈，分子的動能並非整齊劃一，而是呈現鐘形偏斜的分佈——有些運動極快，有些則相對遲緩。",
+            "charStart": 60,
+            "charEnd": 115,
+            "contentHash": "8d410ccb34301df9aca187ac8679848742f520b1ffea8a7e01e0d2b1fb1137d0",
+            "contextNote": "一、打破時間之箭的微觀幽靈 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-84b4853e",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-1-ff468e",
+            "sectionTitle": "一、打破時間之箭的微觀幽靈",
+            "paragraphIndex": 1,
+            "exactQuote": "麥克斯韋構想了一個駐守在隔板微小開孔處的微型智能（後被開爾文勳爵戲稱為「麥克斯韋妖」）。",
+            "charStart": 232,
+            "charEnd": 276,
+            "contentHash": "84b4853ea1a0a96ae6b5e319ae267e1e060e06174f964ba553aed9c3eb46a01e",
+            "contextNote": "一、打破時間之箭的微觀幽靈 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-c39a1c95",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-1-ff468e",
+            "sectionTitle": "一、打破時間之箭的微觀幽靈",
+            "paragraphIndex": 1,
+            "exactQuote": "妖的任務極其單純：\n1. 當看到左室中的高速分子朝閘門飛來時，開門放它進入右室；\n2. 當看到右室中的低速分子朝閘門飛來時，開門放它進入左室；\n3. 其餘情況則關閉閘門，讓分子彈回。",
+            "charStart": 277,
+            "charEnd": 368,
+            "contentHash": "c39a1c95aaf75a2606b9e4237b5710458b60dc650c7296e3c17d4087bd768755",
+            "contextNote": "一、打破時間之箭的微觀幽靈 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-036a4b7f",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-1-ff468e",
+            "sectionTitle": "一、打破時間之箭的微觀幽靈",
+            "paragraphIndex": 2,
+            "exactQuote": "由於閘門被假設為質量無限輕、運動無摩擦，妖開關閘門本身不需要對分子做任何機械功。",
+            "charStart": 506,
+            "charEnd": 546,
+            "contentHash": "036a4b7f4d7413fb894f77672397d591bde03dcbb48e7bf69fa15beb88453019",
+            "contextNote": "一、打破時間之箭的微觀幽靈 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-6cc7b069",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-1-ff468e",
+            "sectionTitle": "一、打破時間之箭的微觀幽靈",
+            "paragraphIndex": 2,
+            "exactQuote": "然而，在經過一段時間的篩選後，右室的高速分子濃度愈來愈高，左室的低速分子愈來愈多。",
+            "charStart": 547,
+            "charEnd": 588,
+            "contentHash": "6cc7b069271d936af7b4116831d002c82f4dad422ba7cf396bb117d6fe3f0ffe",
+            "contextNote": "一、打破時間之箭的微觀幽靈 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-0bf0a91e",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-1-ff468e",
+            "sectionTitle": "一、打破時間之箭的微觀幽靈",
+            "paragraphIndex": 2,
+            "exactQuote": "兩個最初溫度相同的腔室，竟自發產生了顯著的溫差 $\\Delta T = T_R - T_L > 0$！",
+            "charStart": 589,
+            "charEnd": 640,
+            "contentHash": "0bf0a91ed4cdbc7ecc3ca63502b82e12333f615326775ec668f63c140912064e",
+            "contextNote": "一、打破時間之箭的微觀幽靈 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-3284dd15",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-1-ff468e",
+            "sectionTitle": "一、打破時間之箭的微觀幽靈",
+            "paragraphIndex": 2,
+            "exactQuote": "這意味著我們可以藉由溫差驅動熱機對外做功，製造出第二類永動機。",
+            "charStart": 641,
+            "charEnd": 672,
+            "contentHash": "3284dd1518e65bae59325306790ce32599fd628b077cde0662dbe066ba4bad51",
+            "contextNote": "一、打破時間之箭的微觀幽靈 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-846126fd",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-1-ff468e",
+            "sectionTitle": "一、打破時間之箭的微觀幽靈",
+            "paragraphIndex": 3,
+            "exactQuote": "第二定律難道只是一條對無知者的統計妥協，只要掌握足夠的微觀資訊就能隨意逾越嗎？",
+            "charStart": 838,
+            "charEnd": 877,
+            "contentHash": "846126fd388b9b1291a373266bbfc42d2c604119afaf49e8a836a9f5a8e752b3",
+            "contextNote": "一、打破時間之箭的微觀幽靈 · 第 4 段"
+          }
+        ],
+        "formulas": [],
+        "interactiveComponentId": null
+      },
+      {
+        "id": "sec-2-92539b",
+        "title": "二、親手操作：麥克斯韋妖粒子碰撞實驗",
+        "level": 1,
+        "paragraphs": [
+          "在下方物理模擬中，我們在二維絕熱腔室中建立了數十顆剛性碰撞微粒。紅色代表高於平均動能的高速分子，藍色代表低溫分子。中央微觀閘門由自動妖演算法接管：",
+          "<InteractiveExperiment id=\"MaxwellDemonSimulator\" />",
+          "觀察兩側等效溫度的變化：隨著自動妖不斷進行速度篩選，右側溫度攀升、左側冷卻，氣體系統的熱力學熵 $\\Delta S_{gas}$ 明顯下降。然而，請特別留意下方「蘭道爾原理即時核算」面板：妖每做一次篩選判斷，其記憶庫便增加 1 個位元（bit）的資訊佔用。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-2a36ebbe",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-2-92539b",
+            "sectionTitle": "二、親手操作：麥克斯韋妖粒子碰撞實驗",
+            "paragraphIndex": 0,
+            "exactQuote": "在下方物理模擬中，我們在二維絕熱腔室中建立了數十顆剛性碰撞微粒。",
+            "charStart": 919,
+            "charEnd": 951,
+            "contentHash": "2a36ebbec91b0c8a75467291d7039d0f511fb53439445da9d9f4794d1fd338a3",
+            "contextNote": "二、親手操作：麥克斯韋妖粒子碰撞實驗 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-9e479ac7",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-2-92539b",
+            "sectionTitle": "二、親手操作：麥克斯韋妖粒子碰撞實驗",
+            "paragraphIndex": 0,
+            "exactQuote": "紅色代表高於平均動能的高速分子，藍色代表低溫分子。",
+            "charStart": 952,
+            "charEnd": 977,
+            "contentHash": "9e479ac789cb95f3ff350eab8fc4c04f2380f17a9036b4df31c40d9b577c6242",
+            "contextNote": "二、親手操作：麥克斯韋妖粒子碰撞實驗 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-ae085dc7",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-2-92539b",
+            "sectionTitle": "二、親手操作：麥克斯韋妖粒子碰撞實驗",
+            "paragraphIndex": 0,
+            "exactQuote": "中央微觀閘門由自動妖演算法接管：",
+            "charStart": 978,
+            "charEnd": 994,
+            "contentHash": "ae085dc7e9433f63cd378741b31493c1fac26f4d1f38878c1a0f72f96de86ba3",
+            "contextNote": "二、親手操作：麥克斯韋妖粒子碰撞實驗 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-0e4e31f3",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-2-92539b",
+            "sectionTitle": "二、親手操作：麥克斯韋妖粒子碰撞實驗",
+            "paragraphIndex": 2,
+            "exactQuote": "觀察兩側等效溫度的變化：隨著自動妖不斷進行速度篩選，右側溫度攀升、左側冷卻，氣體系統的熱力學熵 $\\Delta S_{gas}$ 明顯下降。",
+            "charStart": 1070,
+            "charEnd": 1140,
+            "contentHash": "0e4e31f313dc856fdf7cf58f4c4d026b75ebd66a6a02bce1417ee5ecdd75f215",
+            "contextNote": "二、親手操作：麥克斯韋妖粒子碰撞實驗 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-447a8838",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-2-92539b",
+            "sectionTitle": "二、親手操作：麥克斯韋妖粒子碰撞實驗",
+            "paragraphIndex": 2,
+            "exactQuote": "然而，請特別留意下方「蘭道爾原理即時核算」面板：妖每做一次篩選判斷，其記憶庫便增加 1 個位元（bit）的資訊佔用。",
+            "charStart": 1141,
+            "charEnd": 1199,
+            "contentHash": "447a88389045e3520e8e126800a917355aef6cc576e504198d9f9dfddd79da72",
+            "contextNote": "二、親手操作：麥克斯韋妖粒子碰撞實驗 · 第 3 段"
+          }
+        ],
+        "formulas": [],
+        "interactiveComponentId": "MaxwellDemonSimulator"
+      },
+      {
+        "id": "sec-3-300ac7",
+        "title": "三、斯齊拉德引擎與資訊的物理化",
+        "level": 1,
+        "paragraphs": [
+          "為拆解這個悖論，匈牙利物理學家利奧·斯齊拉德（Leo Szilard）於 1929 年提出了著名的單分子熱機模型。斯齊拉德證明，即使箱內只有一顆分子，妖若想抽取熱量並轉化為功，首先必須進行「測量」以確定分子到底位於左側還是右側。",
+          "獲取這「左或右」的 1 位元二進位資訊，使妖能夠消除系統位置的不確定性。在等溫膨脹做功 $W = k_B T \\ln 2$ 的過程中，氣體熵減少了：",
+          "$$\\Delta S_{gas} = -k_B \\ln 2$$",
+          "早期物理學家（如萊昂·布里淵）曾試圖將代價歸咎於「測量過程」——例如妖必須發射光子照射分子才能看清其位置，而光子的散射與吸收會耗散熱量。但這一解釋在 1970 年代被查爾斯·貝內特（Charles Bennett）推翻：理論上，物理測量可以透過可逆計算的方式進行，能耗在極限下可以趨近於零。",
+          "真正的熱力學代價，隱藏在一個更幽深的地方：**記憶抹除**。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-77a447c4",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-3-300ac7",
+            "sectionTitle": "三、斯齊拉德引擎與資訊的物理化",
+            "paragraphIndex": 0,
+            "exactQuote": "為拆解這個悖論，匈牙利物理學家利奧·斯齊拉德（Leo Szilard）於 1929 年提出了著名的單分子熱機模型。",
+            "charStart": 1330,
+            "charEnd": 1387,
+            "contentHash": "77a447c421425a91418bc82f91d8daa8f735db6cc91a9e6436cbe7066146af9c",
+            "contextNote": "三、斯齊拉德引擎與資訊的物理化 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-193c7e01",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-3-300ac7",
+            "sectionTitle": "三、斯齊拉德引擎與資訊的物理化",
+            "paragraphIndex": 0,
+            "exactQuote": "斯齊拉德證明，即使箱內只有一顆分子，妖若想抽取熱量並轉化為功，首先必須進行「測量」以確定分子到底位於左側還是右側。",
+            "charStart": 1388,
+            "charEnd": 1445,
+            "contentHash": "193c7e010ab54423e526b76ebbe3a7156dd310f9e9594aa71efa950921add1fc",
+            "contextNote": "三、斯齊拉德引擎與資訊的物理化 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-5e6bdaec",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-3-300ac7",
+            "sectionTitle": "三、斯齊拉德引擎與資訊的物理化",
+            "paragraphIndex": 1,
+            "exactQuote": "獲取這「左或右」的 1 位元二進位資訊，使妖能夠消除系統位置的不確定性。",
+            "charStart": 1562,
+            "charEnd": 1598,
+            "contentHash": "5e6bdaecc8f9a1746697abe2892fcc2e6f4a8f248f791971cb3bf6bd40049b3d",
+            "contextNote": "三、斯齊拉德引擎與資訊的物理化 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-3a7c6765",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-3-300ac7",
+            "sectionTitle": "三、斯齊拉德引擎與資訊的物理化",
+            "paragraphIndex": 1,
+            "exactQuote": "在等溫膨脹做功 $W = k_B T \\ln 2$ 的過程中，氣體熵減少了：",
+            "charStart": 1599,
+            "charEnd": 1637,
+            "contentHash": "3a7c6765c99333b075415e1f0b0de60582b9d3b0f3769967b3d6a1afdcc176f9",
+            "contextNote": "三、斯齊拉德引擎與資訊的物理化 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-ca6c9bf9",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-3-300ac7",
+            "sectionTitle": "三、斯齊拉德引擎與資訊的物理化",
+            "paragraphIndex": 3,
+            "exactQuote": "早期物理學家（如萊昂·布里淵）曾試圖將代價歸咎於「測量過程」——例如妖必須發射光子照射分子才能看清其位置，而光子的散射與吸收會耗散熱量。",
+            "charStart": 1714,
+            "charEnd": 1782,
+            "contentHash": "ca6c9bf9e7d37fde4b02107e4e43a3f68ebaf088fb24da326170a3ceecdea96f",
+            "contextNote": "三、斯齊拉德引擎與資訊的物理化 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-7233d65b",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-3-300ac7",
+            "sectionTitle": "三、斯齊拉德引擎與資訊的物理化",
+            "paragraphIndex": 3,
+            "exactQuote": "但這一解釋在 1970 年代被查爾斯·貝內特（Charles Bennett）推翻：理論上，物理測量可以透過可逆計算的方式進行，能耗在極限下可以趨近於零。",
+            "charStart": 1783,
+            "charEnd": 1860,
+            "contentHash": "7233d65b4b6807224c2fec9be9597215525568922afc7424408bd1869383f575",
+            "contextNote": "三、斯齊拉德引擎與資訊的物理化 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-8187c1a0",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-3-300ac7",
+            "sectionTitle": "三、斯齊拉德引擎與資訊的物理化",
+            "paragraphIndex": 4,
+            "exactQuote": "真正的熱力學代價，隱藏在一個更幽深的地方：**記憶抹除**。",
+            "charStart": 2008,
+            "charEnd": 2038,
+            "contentHash": "8187c1a0660f027cf7e088f83470626a4d3cc90c8dc7772536779020e7b2027f",
+            "contextNote": "三、斯齊拉德引擎與資訊的物理化 · 第 5 段"
+          }
+        ],
+        "formulas": [
+          "$$\\Delta S_{gas} = -k_B \\ln 2$$"
+        ],
+        "interactiveComponentId": null
+      },
+      {
+        "id": "sec-4-087c94",
+        "title": "四、蘭道爾極限：抹除資訊的熱力學代價",
+        "level": 1,
+        "paragraphs": [
+          "1961 年，IBM 物理學家羅爾夫·蘭道爾（Rolf Landauer）提出了奠定現代資訊熱力學基石的論斷：「資訊是物理的」（Information is Physical）。任何邏輯上不可逆的操作（例如將記憶體重置為 0），都必然對應著物理相空間體積的壓縮。",
+          "設妖的記憶體容量有限。在進行了 $N$ 次分子分類後，妖的記憶庫被填滿。若想讓熱機持續運轉，妖必須將記錄「重置」，以便開始下一輪測量。蘭道爾證明，在環境溫度 $T$ 下，**抹除 1 位元未知資訊，必然要向環境散發至少下列大小的熱量**：",
+          "$$Q_{dissipated} \\ge k_B T \\ln 2 \\approx 2.87 \\times 10^{-21}\\ \\text{J (在室溫 300 K)}$$",
+          "相應地，環境中必然產生至少 $\\Delta S_{env} \\ge +k_B \\ln 2$ 的熵增。",
+          "當我們將氣體分子與麥克斯韋妖的記憶系統視為一個完整的複合封閉系統時，總熵變為：",
+          "$$\\Delta S_{total} = \\Delta S_{gas} + \\Delta S_{demon} + \\Delta S_{env} \\ge 0$$",
+          "麥克斯韋妖並沒有推翻熱力學第二定律。它只不過是將微觀氣體的熱力學熵，暫時轉移並編碼成了自己記憶體中的資訊熵；而當這段資訊最終被抹除回歸虛無時，熱力學定律毫不留情地收回了全部代價。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-83ee3e91",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-4-087c94",
+            "sectionTitle": "四、蘭道爾極限：抹除資訊的熱力學代價",
+            "paragraphIndex": 0,
+            "exactQuote": "1961 年，IBM 物理學家羅爾夫·蘭道爾（Rolf Landauer）提出了奠定現代資訊熱力學基石的論斷：「資訊是物理的」（Information is Physical）。",
+            "charStart": 2071,
+            "charEnd": 2160,
+            "contentHash": "83ee3e9152bb25ddab0c1913a0fc750d5500d12776c3bc9dbda9c70950db4ea2",
+            "contextNote": "四、蘭道爾極限：抹除資訊的熱力學代價 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-56135a11",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-4-087c94",
+            "sectionTitle": "四、蘭道爾極限：抹除資訊的熱力學代價",
+            "paragraphIndex": 0,
+            "exactQuote": "任何邏輯上不可逆的操作（例如將記憶體重置為 0），都必然對應著物理相空間體積的壓縮。",
+            "charStart": 2161,
+            "charEnd": 2203,
+            "contentHash": "56135a11d4bc243a84489d00658dd52176b1ecc8d632204e0b1ef5076e331c50",
+            "contextNote": "四、蘭道爾極限：抹除資訊的熱力學代價 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-f8f1925e",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-4-087c94",
+            "sectionTitle": "四、蘭道爾極限：抹除資訊的熱力學代價",
+            "paragraphIndex": 1,
+            "exactQuote": "設妖的記憶體容量有限。",
+            "charStart": 2337,
+            "charEnd": 2348,
+            "contentHash": "f8f1925ead931cdc4c4a15a4922f81992149671d1b6f4da89665e8926fc130b0",
+            "contextNote": "四、蘭道爾極限：抹除資訊的熱力學代價 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-220a0475",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-4-087c94",
+            "sectionTitle": "四、蘭道爾極限：抹除資訊的熱力學代價",
+            "paragraphIndex": 1,
+            "exactQuote": "在進行了 $N$ 次分子分類後，妖的記憶庫被填滿。",
+            "charStart": 2349,
+            "charEnd": 2374,
+            "contentHash": "220a0475612fe901ae69be1028b4d1efa15f8709a456dff3a21af40469cd8ea4",
+            "contextNote": "四、蘭道爾極限：抹除資訊的熱力學代價 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-579f57e3",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-4-087c94",
+            "sectionTitle": "四、蘭道爾極限：抹除資訊的熱力學代價",
+            "paragraphIndex": 1,
+            "exactQuote": "若想讓熱機持續運轉，妖必須將記錄「重置」，以便開始下一輪測量。",
+            "charStart": 2375,
+            "charEnd": 2406,
+            "contentHash": "579f57e3c233fcf0aed97c233fd8d826b9ab7766e4fe89012150aab43b5b08ed",
+            "contextNote": "四、蘭道爾極限：抹除資訊的熱力學代價 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-2883deb3",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-4-087c94",
+            "sectionTitle": "四、蘭道爾極限：抹除資訊的熱力學代價",
+            "paragraphIndex": 1,
+            "exactQuote": "蘭道爾證明，在環境溫度 $T$ 下，**抹除 1 位元未知資訊，必然要向環境散發至少下列大小的熱量**：",
+            "charStart": 2407,
+            "charEnd": 2459,
+            "contentHash": "2883deb3666506260173d4ad785843edd2316dc7cae075e401b6a54238709feb",
+            "contextNote": "四、蘭道爾極限：抹除資訊的熱力學代價 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-8de1f0b7",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-4-087c94",
+            "sectionTitle": "四、蘭道爾極限：抹除資訊的熱力學代價",
+            "paragraphIndex": 3,
+            "exactQuote": "相應地，環境中必然產生至少 $\\Delta S_{env} \\ge +k_B \\ln 2$ 的熵增。",
+            "charStart": 2581,
+            "charEnd": 2631,
+            "contentHash": "8de1f0b7becf36e966297aa97e20dc7e3a46a464140c9274a11cf3bfd725e02e",
+            "contextNote": "四、蘭道爾極限：抹除資訊的熱力學代價 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-3619ca21",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-4-087c94",
+            "sectionTitle": "四、蘭道爾極限：抹除資訊的熱力學代價",
+            "paragraphIndex": 4,
+            "exactQuote": "當我們將氣體分子與麥克斯韋妖的記憶系統視為一個完整的複合封閉系統時，總熵變為：",
+            "charStart": 2684,
+            "charEnd": 2723,
+            "contentHash": "3619ca21cef1ba9a5d70a5b80c14469998af96d3b71cb36778c71053b88d9f4e",
+            "contextNote": "四、蘭道爾極限：抹除資訊的熱力學代價 · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-582085fe",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-4-087c94",
+            "sectionTitle": "四、蘭道爾極限：抹除資訊的熱力學代價",
+            "paragraphIndex": 6,
+            "exactQuote": "麥克斯韋妖並沒有推翻熱力學第二定律。",
+            "charStart": 2765,
+            "charEnd": 2783,
+            "contentHash": "582085fee3f418de259af190c3868bdae0afd2074d29a33ed495b5321511a4b9",
+            "contextNote": "四、蘭道爾極限：抹除資訊的熱力學代價 · 第 7 段"
+          },
+          {
+            "sentenceId": "sent-42be21ee",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-4-087c94",
+            "sectionTitle": "四、蘭道爾極限：抹除資訊的熱力學代價",
+            "paragraphIndex": 6,
+            "exactQuote": "它只不過是將微觀氣體的熱力學熵，暫時轉移並編碼成了自己記憶體中的資訊熵；而當這段資訊最終被抹除回歸虛無時，熱力學定律毫不留情地收回了全部代價。",
+            "charStart": 2784,
+            "charEnd": 2855,
+            "contentHash": "42be21ee8146ed0cf7d70efc4ade1498eb2b1f0ffdc4a98e62cf5f03860d56e2",
+            "contextNote": "四、蘭道爾極限：抹除資訊的熱力學代價 · 第 7 段"
+          }
+        ],
+        "formulas": [
+          "$$Q_{dissipated} \\ge k_B T \\ln 2 \\approx 2.87 \\times 10^{-21}\\ \\text{J (在室溫 300 K)}$$",
+          "$$\\Delta S_{total} = \\Delta S_{gas} + \\Delta S_{demon} + \\Delta S_{env} \\ge 0$$"
+        ],
+        "interactiveComponentId": null
+      }
+    ],
+    "totalWordCount": 1673,
+    "lastIndexedAt": "2026-11-01T19:13:36.234Z"
+  },
+  {
     "id": "art-exoplanet-transit",
     "slug": "when-starlight-dims",
     "version": 1,
@@ -525,7 +1837,7 @@
       }
     ],
     "totalWordCount": 1679,
-    "lastIndexedAt": "2026-11-01T19:00:02.156Z"
+    "lastIndexedAt": "2026-11-01T19:13:36.236Z"
   },
   {
     "id": "art-jwst-supermassive-blackhole",

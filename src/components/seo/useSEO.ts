@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { SITE_CONFIG } from '../../config/site';
 
 export interface SEOMetadata {
   title?: string;
@@ -45,19 +46,26 @@ export function useSEO(meta?: SEOMetadata) {
     const description = meta?.description || DEFAULT_DESC;
     updateMetaTag('name', 'description', description);
 
-    // 3. Canonical URL
+    // 3. Robots Indexing Control (依 SITE_CONFIG 全站集中設定，內容累積階段統一 noindex)
+    if (SITE_CONFIG.preventIndexing) {
+      updateMetaTag('name', 'robots', 'noindex, nofollow');
+    } else {
+      updateMetaTag('name', 'robots', 'index, follow');
+    }
+
+    // 4. Canonical URL
     const canonical =
       meta?.canonicalUrl || (typeof window !== 'undefined' ? window.location.href : 'https://mirari.science/');
     updateLinkTag('canonical', canonical);
 
-    // 4. Open Graph
+    // 5. Open Graph
     updateMetaTag('property', 'og:site_name', SITE_NAME);
     updateMetaTag('property', 'og:title', meta?.title || DEFAULT_TITLE);
     updateMetaTag('property', 'og:description', description);
     updateMetaTag('property', 'og:url', canonical);
     updateMetaTag('property', 'og:type', meta?.ogType || 'website');
 
-    // 5. Twitter Card
+    // 6. Twitter Card
     updateMetaTag('name', 'twitter:card', 'summary_large_image');
     updateMetaTag('name', 'twitter:title', meta?.title || DEFAULT_TITLE);
     updateMetaTag('name', 'twitter:description', description);
@@ -67,3 +75,4 @@ export function useSEO(meta?: SEOMetadata) {
     }
   }, [meta?.title, meta?.description, meta?.canonicalUrl, meta?.ogType, meta?.publishedTime]);
 }
+

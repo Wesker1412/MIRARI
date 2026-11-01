@@ -131,6 +131,39 @@ export interface ArticleDocument extends Article {
   sections: ArticleSection[];
   totalWordCount?: number;
   lastIndexedAt?: string;
+
+  // ─── 未來讀者評價與自主編輯部演進預留欄位 ─────────────────────
+  narrativeStyle?: NarrativeStyle;
+  interactiveType?: InteractiveExperimentType;
+  creationModel?: string;
+  feedbackId?: string;
+  createdAt?: string;
+}
+
+// ─── 寫作風格與互動類型分類（供自主編輯部分析與演進）────────────
+export type NarrativeStyle =
+  | 'depth_narrative' // 深度故事與科學歷史敘事
+  | 'first_principles' // 第一性原理推演與現象分析
+  | 'thought_experiment' // 思想實驗與極限邊界探討
+  | 'math_derivation' // 嚴謹數學模型與動力學方程
+  | 'research_interpretation'; // 學術期刊前沿觀測解讀
+
+export type InteractiveExperimentType =
+  | 'geometric_optics' // 幾何遮蔽與光度投影
+  | 'phase_space' // 混沌相空間與數值積分
+  | 'circuit_oscilloscope' // 電生理離子通道與示波器
+  | 'particle_system' // 分子碰撞與統計物理模擬
+  | 'data_explorer'; // 實證觀測數據互動
+
+// ─── 讀者評價預留結構（本輪不實作 UI，預留模型定義）──────────────
+export interface ReaderFeedbackMetric {
+  articleId: string;
+  feedbackId: string;
+  timestamp: string;
+  clarityRating?: number; // 概念清晰度 (1-5)
+  interactiveRating?: number; // 實驗趣味與操作啟發 (1-5)
+  scientificRigorVote?: boolean; // 科學嚴謹性認可
+  reportedErrorsCount?: number; // 錯誤回報次數
 }
 
 export interface SearchIndexEntry {
