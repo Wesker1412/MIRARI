@@ -2969,7 +2969,7 @@
     "format": "longform_essay",
     "formatBadgeText": "經典思想實驗",
     "isEditorialCover": false,
-    "isEditorialPick": false,
+    "isEditorialPick": true,
     "isResearchHighlight": false,
     "isClassicFoundation": true,
     "tokens": [
@@ -3263,7 +3263,7 @@
     "format": "longform_essay",
     "formatBadgeText": "量子哲學基石",
     "isEditorialCover": false,
-    "isEditorialPick": false,
+    "isEditorialPick": true,
     "isResearchHighlight": false,
     "isClassicFoundation": true,
     "tokens": [

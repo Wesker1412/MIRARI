@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>MIRARI 3D Mascot Candidate Studio</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body, html { width: 100%; height: 100%; overflow: hidden; font-family: system-ui, -apple-system, sans-serif; }
+    #canvas-container {
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 45%, #ffffff 0%, #f4f5fa 60%, #e2e8f0 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    canvas { display: block; }
+    /* Article Corner Simulation Layout */
+    .article-bg {
+      position: absolute;
+      inset: 0;
+      background: #faf8f5;
+      padding: 48px;
+      color: #1a1a1a;
+      pointer-events: none;
+    }
+    .article-corner-container {
+      position: absolute;
+      right: 32px;
+      bottom: 32px;
+      width: 80px;
+      height: 96px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+  <!-- Import Three.js & GLTFLoader via ES Modules -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "/node_modules/three/build/three.module.js",
+        "three/addons/": "/node_modules/three/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="canvas-container"></div>
+
+  <script type="module">
+    import * as THREE from 'three';
+    import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+    const params = new URLSearchParams(window.location.search);
+    const modelName = params.get('model') || 'candidate-a';
+    const view = params.get('view') || 'front'; // front, side, perspective, article-corner
+
+    const container = document.getElementById('canvas-container');
+    const isCorner = view === 'article-corner';
+
+    if (isCorner) {
+      container.innerHTML = `
+        <div class="article-bg">
+          <div style="font-size: 11px; color: #b45309; font-weight: 600; margin-bottom: 8px;">天體物理與深空 · 幾何光學與光譜分析</div>
+          <h1 style="font-size: 28px; font-serif; margin-bottom: 12px; font-weight: bold;">當星光暗了一點</h1>
+          <p style="font-size: 14px; color: #64748b; line-height: 1.7; max-width: 600px;">
+            在漆黑的宇宙長夜中，恆星通常只是微小的光點。但當一顆圍繞它運行的行星碰巧從地球視線與恆星中央穿過時，會暫時遮蔽一部分的星盤表面——這就是「凌日」。這眨眼般的微小光變，成為當代人類發現超過四千顆系外行星的關鍵幾何鑰匙。
+          </p>
+          <div class="article-corner-container" id="corner-anchor"></div>
+        </div>
+      `;
+    }
+
+    const renderTarget = isCorner ? document.getElementById('corner-anchor') : container;
+    const width = isCorner ? 80 : (view === 'front' || view === 'side' || view === 'perspective') ? 600 : window.innerWidth;
+    const height = isCorner ? 96 : (view === 'front' || view === 'side' || view === 'perspective') ? 720 : window.innerHeight;
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(34, width / height, 0.1, 50);
+
+    // Setup Viewpoints
+    if (view === 'front') {
+      camera.position.set(0, 0.15, 5.0);
+    } else if (view === 'side') {
+      camera.position.set(5.0, 0.15, 0);
+    } else if (view === 'perspective') {
+      camera.position.set(2.8, 0.8, 4.0);
+    } else if (view === 'article-corner') {
+      camera.position.set(1.5, 0.4, 4.2);
+    }
+    camera.lookAt(0, 0.12, 0);
+
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    renderer.setSize(width, height);
+    renderer.setPixelRatio(2);
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.15;
+    renderTarget.appendChild(renderer.domElement);
+
+    // Studio Lighting
+    const keyLight = new THREE.DirectionalLight(0xfff8ee, 1.9);
+    keyLight.position.set(3, 4, 4);
+    scene.add(keyLight);
+
+    const fillLight = new THREE.DirectionalLight(0xe0f2fe, 0.9);
+    fillLight.position.set(-3.5, 1, 2.5);
+    scene.add(fillLight);
+
+    const rimLight = new THREE.DirectionalLight(0xfef08a, 1.4);
+    rimLight.position.set(0, 4, -4);
+    scene.add(rimLight);
+
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.75);
+    scene.add(ambientLight);
+
+    const modelUrl = `/models/candidates/${modelName}.glb`;
+    const loader = new GLTFLoader();
+
+    loader.load(
+      modelUrl,
+      (gltf) => {
+        const model = gltf.scene;
+        model.scale.set(0.95, 0.95, 0.95);
+        scene.add(model);
+
+        renderer.render(scene, camera);
+        window.__RENDER_READY = true;
+        console.log(`Render ready for ${modelName} (${view})`);
+      },
+      undefined,
+      (err) => {
+        console.error('Failed to load candidate GLB:', err);
+      }
+    );
+  </script>
+</body>
+</html>

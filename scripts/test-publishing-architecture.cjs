@@ -58,13 +58,13 @@ async function main() {
   // 2.1 測試資料驅動搜尋
   console.log('測試 MIRARI 全站資料驅動搜尋 (關鍵字：行星凌日)...');
   const mascot = page.locator('#mirari-global-mascot');
-  const isSearchPanelOpen = await page.locator('text=探索科學篇章').first().isVisible();
+  const isSearchPanelOpen = await page.locator('text=探索篇章').first().isVisible();
   if (!isSearchPanelOpen) {
     await mascot.click();
     await page.waitForTimeout(400);
   }
 
-  const searchInput = page.locator('input[placeholder*="例如：行星凌日"]').first();
+  const searchInput = page.locator('input[placeholder*="輸入科學現象"]').first();
   await searchInput.fill('行星凌日與光度幾何');
   const submitSearchBtn = page.locator('button:has-text("搜尋")').first();
   await submitSearchBtn.click();
@@ -119,9 +119,9 @@ async function main() {
   await mascot.click();
   await page.waitForTimeout(400);
 
-  // Test Question 1: 為什麼行星越大，恆星亮度下降越多？
-  console.log('提問 1：為什麼行星越大，恆星亮度下降越多？');
-  const q1Btn = page.locator('button:has-text("為什麼行星越大，恆星亮度下降越多？")').first();
+  // Test Question 1: 半徑與光度關係
+  console.log('提問 1：半徑與光度關係 (為什麼行星越大，恆星亮度下降越多？)');
+  const q1Btn = page.locator('button:has-text("半徑與光度關係")').first();
   await q1Btn.click();
   await page.waitForTimeout(700);
 
@@ -138,9 +138,9 @@ async function main() {
     path: path.join(ARTIFACT_DIR, 'automated-evidence-q1.png'),
   });
 
-  // Test Question 2: 為什麼真實的光度曲線底部是 U 型而不是平的？
-  console.log('提問 2：為什麼真實的光度曲線底部是 U 型而不是平的？');
-  const q2Btn = page.locator('button:has-text("為什麼真實的光度曲線底部是 U 型而不是平的？")').first();
+  // Test Question 2: U型曲線成因
+  console.log('提問 2：U型曲線成因 (為什麼真實的光度曲線底部是 U 型而不是平的？)');
+  const q2Btn = page.locator('button:has-text("U型曲線成因")').first();
   await q2Btn.click();
   await page.waitForTimeout(700);
 

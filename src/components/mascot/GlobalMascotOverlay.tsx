@@ -57,6 +57,8 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
   const dragStartMascotPosRef = useRef<Position>({ x: 0, y: 0 });
   const hasMovedBeyondThresholdRef = useRef<boolean>(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const [measuredPanelHeight, setMeasuredPanelHeight] = useState<number>(180);
 
   // Mascot dimensions based on view (Round-Bottom Flask aspect ratio 100:120)
   const isHomeView = currentView === 'home';
@@ -248,20 +250,12 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
     hasMovedBeyondThresholdRef.current = false;
   };
 
-  // Reset to default anchor position
-  const handleResetPosition = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    localStorage.removeItem(STORAGE_KEY_POS);
-    setHasCustomPos(false);
-    setPosition(getDefaultAnchorPosition());
-  };
-
   // ─── Home Natural Language Search Logic ──────────────────────────
   const sampleHomeQueries = [
-    '可以親手操作的天文物理文章',
-    '黑洞與早期宇宙的秘密',
-    '大腦如何感知時間？',
-    '近期關注的科學研究',
+    '行星凌日',
+    '超重黑洞',
+    '大腦知覺',
+    '時間之箭',
   ];
 
   const handleExecuteHomeSearch = (queryStr: string) => {
@@ -282,15 +276,15 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
   // ─── Article Reading Evidence Query Logic ────────────────────────
   const demoArticleQuestions = [
     {
-      label: '為什麼行星越大，恆星亮度下降越多？',
+      label: '半徑與光度關係',
       query: '為什麼行星越大，恆星亮度下降越多？',
     },
     {
-      label: '為什麼真實的光度曲線底部是 U 型而不是平的？',
+      label: 'U型曲線成因',
       query: '為什麼真實的光度曲線底部是 U 型而不是平的？',
     },
     {
-      label: '系外行星凌日被觀測到的幾率有多大？',
+      label: '凌日幾何幾率',
       query: '系外行星凌日被觀測到的幾率有多大？',
     },
   ];
@@ -315,9 +309,23 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
   };
 
   // ─── Floating Panel Position Calculation (Desktop) ───────────────
-  const panelWidth = 420;
-  const estimatedPanelHeight = 520;
+  const panelWidth = 380;
   const isNearRight = position.x + mascotWidth / 2 > window.innerWidth / 2;
+
+  // Dynamically measure actual panel height to avoid hardcoded height assumptions
+  useEffect(() => {
+    if (!isPanelOpen || !panelRef.current) return;
+    const updateHeight = () => {
+      if (panelRef.current) {
+        const h = panelRef.current.offsetHeight;
+        if (h > 0) setMeasuredPanelHeight(h);
+      }
+    };
+    updateHeight();
+    const ro = new ResizeObserver(updateHeight);
+    ro.observe(panelRef.current);
+    return () => ro.disconnect();
+  }, [isPanelOpen, homeRecResult, articleEvidenceResult, isSearchingHome, isSearchingArticle]);
 
   // Horizontal position
   let panelLeft: number | undefined;
@@ -331,13 +339,11 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
     panelLeft = Math.max(16, Math.min(window.innerWidth - panelWidth - 16, rawLeft));
   }
 
-  // Vertical position clamped to ensure header is always inside viewport
-  let panelTop: number;
-  if (position.y + estimatedPanelHeight > window.innerHeight - 16) {
-    panelTop = Math.max(16, window.innerHeight - estimatedPanelHeight - 24);
-  } else {
-    panelTop = Math.max(16, position.y);
-  }
+  // Vertical position dynamically clamped using actual measured panel height
+  const panelTop =
+    position.y + measuredPanelHeight > window.innerHeight - 20
+      ? Math.max(16, window.innerHeight - measuredPanelHeight - 20)
+      : Math.max(16, position.y);
 
   return (
     <>
@@ -387,18 +393,6 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
               </span>
             </div>
           )}
-
-          {/* Reset Position Pill if User Dragged it Away */}
-          {hasCustomPos && isHovered && !isDragging && (
-            <button
-              onClick={handleResetPosition}
-              onPointerDown={(e) => e.stopPropagation()}
-              className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-white border border-mirari-line text-mirari-dim hover:text-mirari-ink text-[10px] px-2 py-0.5 rounded-full shadow-sm whitespace-nowrap font-sans transition hover:bg-mirari-paper"
-              title="將 MIRARI 移回預設錨點"
-            >
-              復位
-            </button>
-          )}
         </div>
       </div>
 
@@ -413,37 +407,33 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
 
           {/* Panel Wrapper: Bottom Sheet on Mobile, Smart Anchor on Desktop */}
           <div
+            ref={panelRef}
+            id="mirari-floating-panel"
             style={
               window.innerWidth >= 640
                 ? {
                     position: 'fixed',
                     top: `${panelTop}px`,
                     ...(panelLeft !== undefined ? { left: `${panelLeft}px` } : { right: `${panelRight}px` }),
-                    maxHeight: `${Math.min(window.innerHeight - 32, 580)}px`,
                   }
                 : undefined
             }
             className={`fixed z-50 
               /* Mobile: Bottom Sheet */
-              inset-x-0 bottom-0 sm:inset-x-auto
-              /* Desktop: Sized Floating Card */
-              sm:w-[420px]
+              inset-x-0 bottom-0 sm:inset-x-auto sm:bottom-auto
+              /* Desktop: Compact Floating Card */
+              sm:w-[380px]
+              h-auto max-h-[calc(100vh-32px)] sm:max-h-[min(560px,calc(100vh-32px))]
               bg-white border-t sm:border border-mirari-border shadow-2xl rounded-t-3xl sm:rounded-2xl overflow-hidden
               flex flex-col animate-fade-in
             `}
           >
             {/* ─── Header Bar ────────────────────────────────────────── */}
-            <div className="flex items-center justify-between px-5 py-3.5 border-b border-mirari-line bg-mirari-paper/60">
+            <div className="flex items-center justify-between px-4 py-2.5 border-b border-mirari-line bg-mirari-paper/80">
               <div className="flex items-center space-x-2">
                 <span className="font-serif text-sm font-semibold text-mirari-ink">
-                  {isHomeView ? '探索科學篇章' : '隨文提問'}
+                  {isHomeView ? '探索篇章' : '隨文提問'}
                 </span>
-                <span className="text-[11px] text-mirari-dim font-sans">
-                  {isHomeView ? '· 自然語言搜尋' : '· 定位原文依據'}
-                </span>
-              </div>
-
-              <div className="flex items-center space-x-2">
                 {!isHomeView && hasActiveHighlight && (
                   <button
                     onClick={onClearHighlight}
@@ -453,22 +443,19 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
                     清除標記
                   </button>
                 )}
-                <button
-                  onClick={() => setIsPanelOpen(false)}
-                  className="text-xs text-mirari-dim hover:text-mirari-ink px-2 py-1 rounded-md hover:bg-mirari-surfaceAlt transition font-sans"
-                >
-                  關閉
-                </button>
               </div>
+
+              <button
+                onClick={() => setIsPanelOpen(false)}
+                className="text-xs text-mirari-dim hover:text-mirari-ink px-2 py-0.5 rounded hover:bg-mirari-surfaceAlt transition font-sans"
+              >
+                關閉
+              </button>
             </div>
 
             {/* ─── Panel Content: Home Exploration Mode ──────────────── */}
             {isHomeView ? (
-              <div className="p-5 space-y-4 overflow-y-auto max-h-[75vh] sm:max-h-[500px]">
-                <p className="text-xs text-mirari-muted leading-relaxed font-sans">
-                  輸入你想探索的科學現象或主題，為你推薦站內深度解析與期刊追蹤。
-                </p>
-
+              <div className="p-4 space-y-3 overflow-y-auto max-h-[min(500px,calc(85vh-48px))]">
                 {/* Search Form */}
                 <form
                   onSubmit={(e) => {
@@ -481,7 +468,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
                     type="text"
                     value={homeQuery}
                     onChange={(e) => setHomeQuery(e.target.value)}
-                    placeholder="例如：行星凌日、黑洞、大腦時間感..."
+                    placeholder="輸入科學現象或關鍵字..."
                     className="w-full bg-transparent px-3 py-1.5 text-xs text-mirari-ink placeholder-mirari-dim focus:outline-none font-sans"
                   />
                   <button
@@ -493,27 +480,25 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
                   </button>
                 </form>
 
-                {/* Hot Query Chips */}
-                <div className="space-y-1.5">
-                  <span className="text-[11px] text-mirari-dim font-sans block">熱門探索：</span>
-                  <div className="flex flex-wrap gap-1.5">
-                    {sampleHomeQueries.map((q, idx) => (
-                      <button
-                        key={idx}
-                        type="button"
-                        onClick={() => handleExecuteHomeSearch(q)}
-                        className="text-[11px] font-sans rounded-full border border-mirari-line bg-mirari-paper hover:bg-mirari-surfaceAlt px-2.5 py-1 text-mirari-muted hover:text-mirari-ink transition"
-                      >
-                        {q}
-                      </button>
-                    ))}
-                  </div>
+                {/* 試試這樣問 (Single-line Short Chips) */}
+                <div className="flex items-center flex-wrap gap-1.5 text-[11px] font-sans">
+                  <span className="text-mirari-dim shrink-0">試試：</span>
+                  {sampleHomeQueries.map((q, idx) => (
+                    <button
+                      key={idx}
+                      type="button"
+                      onClick={() => handleExecuteHomeSearch(q)}
+                      className="rounded-md border border-mirari-line bg-mirari-paper hover:bg-mirari-surfaceAlt px-2 py-0.5 text-mirari-muted hover:text-mirari-ink transition whitespace-nowrap"
+                    >
+                      {q}
+                    </button>
+                  ))}
                 </div>
 
-                {/* Search Recommendation Results */}
+                {/* Search Recommendation Results (Only expands when present) */}
                 {homeRecResult && (
-                  <div className="pt-3 border-t border-mirari-line space-y-3 animate-fade-in">
-                    <div className="p-3 rounded-xl bg-mirari-paper border border-mirari-line text-xs text-mirari-ink leading-relaxed font-sans">
+                  <div className="pt-3 border-t border-mirari-line space-y-2.5 animate-fade-in">
+                    <div className="p-2.5 rounded-xl bg-mirari-paper border border-mirari-line text-xs text-mirari-ink leading-relaxed font-sans">
                       {homeRecResult.curatorReply}
                     </div>
 
@@ -526,14 +511,14 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
                             setIsPanelOpen(false);
                             onSelectArticle(article);
                           }}
-                          className="group p-3 rounded-xl border border-mirari-line hover:border-mirari-border bg-white transition cursor-pointer flex flex-col justify-between"
+                          className="group p-2.5 rounded-xl border border-mirari-line hover:border-mirari-border bg-white transition cursor-pointer flex flex-col justify-between"
                         >
                           <div className="flex items-center justify-between mb-1 text-[11px]">
                             <span className="text-mirari-amber font-sans font-medium">
                               {article.formatBadgeText}
                             </span>
                             <span className="text-mirari-dim font-sans">
-                              {article.status === 'published' ? '正式發布' : '企劃中'}
+                              {article.status === 'published' ? '正式發布' : '籌備中'}
                             </span>
                           </div>
                           <h4 className="font-serif text-sm font-bold text-mirari-ink group-hover:text-mirari-amber transition line-clamp-1">
@@ -550,82 +535,68 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
               </div>
             ) : (
               /* ─── Panel Content: Article Evidence Q&A Mode ─────────── */
-              <div className="p-5 space-y-4 overflow-y-auto max-h-[75vh] sm:max-h-[500px]">
-                {/* Example Questions */}
-                <div className="space-y-1.5">
-                  <span className="text-[11px] text-mirari-dim font-sans block">
-                    範例提問（定位不同原文句子）：
-                  </span>
-                  <div className="flex flex-col space-y-1.5">
-                    {demoArticleQuestions.map((q, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => handleExecuteArticleQuery(q.query)}
-                        className="text-left text-xs text-mirari-muted hover:text-mirari-ink bg-mirari-paper hover:bg-mirari-surfaceAlt border border-mirari-line px-3 py-2 rounded-xl transition flex items-center justify-between group"
-                      >
-                        <span className="line-clamp-1">{q.label}</span>
-                        <span className="text-mirari-dim group-hover:text-mirari-ink ml-2 shrink-0 font-sans text-[11px]">
-                          定位
-                        </span>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
+              <div className="p-4 space-y-3 overflow-y-auto max-h-[min(500px,calc(85vh-48px))]">
                 {/* Custom Query Input */}
                 <form
                   onSubmit={(e) => {
                     e.preventDefault();
                     handleExecuteArticleQuery(articleQuery);
                   }}
-                  className="space-y-2 pt-2 border-t border-mirari-line"
+                  className="relative flex items-center rounded-xl border border-mirari-border bg-mirari-paper p-1 focus-within:border-mirari-ink transition"
                 >
-                  <span className="text-[11px] text-mirari-dim font-sans block">
-                    或直接輸入提問：
-                  </span>
-                  <div className="flex items-center space-y-0 rounded-xl border border-mirari-border bg-mirari-paper p-1 focus-within:border-mirari-ink transition">
-                    <input
-                      type="text"
-                      value={articleQuery}
-                      onChange={(e) => setArticleQuery(e.target.value)}
-                      placeholder="針對本文內容提問..."
-                      className="w-full bg-transparent px-3 py-1.5 text-xs text-mirari-ink placeholder-mirari-dim focus:outline-none font-sans"
-                    />
-                    <button
-                      type="submit"
-                      disabled={!articleQuery.trim() || isSearchingArticle}
-                      className="shrink-0 rounded-lg bg-mirari-ink px-3 py-1.5 text-xs font-medium text-white hover:bg-black transition disabled:opacity-40 font-sans"
-                    >
-                      {isSearchingArticle ? '檢索中' : '提問'}
-                    </button>
-                  </div>
+                  <input
+                    type="text"
+                    value={articleQuery}
+                    onChange={(e) => setArticleQuery(e.target.value)}
+                    placeholder="針對本文內容提問..."
+                    className="w-full bg-transparent px-3 py-1.5 text-xs text-mirari-ink placeholder-mirari-dim focus:outline-none font-sans"
+                  />
+                  <button
+                    type="submit"
+                    disabled={!articleQuery.trim() || isSearchingArticle}
+                    className="shrink-0 rounded-lg bg-mirari-ink px-3 py-1.5 text-xs font-medium text-white hover:bg-black transition disabled:opacity-40 font-sans"
+                  >
+                    {isSearchingArticle ? '檢索中' : '提問'}
+                  </button>
                 </form>
 
-                {/* Evidence Answer Card */}
+                {/* 試試這樣問 (Single-line Short Chips) */}
+                <div className="flex items-center flex-wrap gap-1.5 text-[11px] font-sans">
+                  <span className="text-mirari-dim shrink-0">試試：</span>
+                  {demoArticleQuestions.map((q, idx) => (
+                    <button
+                      key={idx}
+                      type="button"
+                      onClick={() => {
+                        setArticleQuery(q.query);
+                        handleExecuteArticleQuery(q.query);
+                      }}
+                      className="rounded-md border border-mirari-line bg-mirari-paper hover:bg-mirari-surfaceAlt px-2 py-0.5 text-mirari-muted hover:text-mirari-ink transition whitespace-nowrap"
+                    >
+                      {q.label}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Evidence Answer Card (Only expands when present) */}
                 {articleEvidenceResult && (
-                  <div className="pt-3 border-t border-mirari-line space-y-3 animate-fade-in">
+                  <div className="pt-3 border-t border-mirari-line space-y-2.5 animate-fade-in">
                     {articleEvidenceResult.evidence ? (
                       <div className="space-y-2">
-                        {/* Evidence quote tag */}
                         <div className="flex items-center space-x-1.5 text-xs font-sans text-mirari-amber font-semibold">
                           <span>已定位原文依據</span>
-                          <span className="text-mirari-dim font-normal">
-                            (可見文章發光標記)
-                          </span>
                         </div>
 
-                        {/* Exact quote pill */}
-                        <blockquote className="p-3 rounded-xl bg-amber-50/70 border-l-2 border-mirari-amber text-xs text-mirari-ink leading-relaxed italic">
+                        <blockquote className="p-2.5 rounded-xl bg-amber-50/70 border-l-2 border-mirari-amber text-xs text-mirari-ink leading-relaxed italic">
                           「{articleEvidenceResult.evidence.exactQuote}」
                         </blockquote>
 
-                        {/* Companion Explanation */}
-                        <div className="p-3 rounded-xl bg-mirari-paper border border-mirari-line text-xs text-mirari-ink leading-relaxed">
+                        <div className="p-2.5 rounded-xl bg-mirari-paper border border-mirari-line text-xs text-mirari-ink leading-relaxed font-sans">
                           {articleEvidenceResult.answer}
                         </div>
                       </div>
                     ) : (
-                      <div className="p-3 rounded-xl bg-mirari-paper border border-mirari-line text-xs text-mirari-muted leading-relaxed font-sans">
+                      <div className="p-2.5 rounded-xl bg-mirari-paper border border-mirari-line text-xs text-mirari-muted leading-relaxed font-sans">
                         {articleEvidenceResult.answer}
                       </div>
                     )}
