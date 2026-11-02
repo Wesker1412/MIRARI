@@ -1,5 +1,5 @@
 {
-  "lastRunTimestamp": "2026-11-02T15:30:00.000Z",
+  "lastRunTimestamp": "2026-11-03T00:40:00.000Z",
   "scheduledCron": "0 1 * * *",
   "timezone": "Asia/Taipei (UTC+8)",
   "creationModel": "gemini-2.5-pro",
@@ -120,6 +120,65 @@
           "unconfirmedLimits": [
             "量子資訊熱力學之糾纏態熵增未展開，聚焦經典蘭道爾界限"
           ]
+        }
+      ],
+      "unpassedTopics": []
+    },
+    {
+      "runId": "mirari-journal-run-20261103-0040",
+      "timestamp": "2026-11-03T00:40:00.000Z",
+      "targetCount": 3,
+      "succeededCount": 3,
+      "failedCount": 0,
+      "editorialCategory": "journal_interpretation",
+      "articles": [
+        {
+          "id": "art-amygdala-memory-encoding",
+          "slug": "amygdala-memory-encoding-success",
+          "title": "情緒的刻痕：杏仁核特定神經元活動如何預測長久記憶的誕生？",
+          "discipline": "認知神經科學與電生理學",
+          "interactiveComponent": "AmygdalaMemorySimulator",
+          "interactiveType": "neural_raster",
+          "narrativeStyle": "research_interpretation",
+          "status": "published",
+          "sources": [
+            "Nature Neuroscience (2026-10-27) doi:10.1038/s41593-026-02493-9",
+            "Squire & Wixted (2011) Annu. Rev. Neurosci.",
+            "McGaugh (2004) Trends Neurosci."
+          ],
+          "editorialRecordPath": "content/editorial-records/amygdala-memory-encoding-success.json"
+        },
+        {
+          "id": "art-bismuth-sulfide-recombination",
+          "slug": "bismuth-sulfide-pseudo-direct-recombination",
+          "title": "光與電荷的漫長告別：硫化鉍如何以「擬直接能隙」改寫太陽能材料法則？",
+          "discipline": "凝聚態物理與光伏半導體",
+          "interactiveComponent": "PhotovoltaicRecombinationSimulator",
+          "interactiveType": "carrier_dynamics",
+          "narrativeStyle": "research_interpretation",
+          "status": "published",
+          "sources": [
+            "Nature (2026-10-28) doi:10.1038/s41586-026-11223-x",
+            "Shockley & Queisser (1961) J. Appl. Phys.",
+            "Sze & Ng (2006) Physics of Semiconductor Devices"
+          ],
+          "editorialRecordPath": "content/editorial-records/bismuth-sulfide-pseudo-direct-recombination.json"
+        },
+        {
+          "id": "art-thorium-229-nuclear-clock",
+          "slug": "thorium-229-nuclear-clock-laser",
+          "title": "原子核內的宇宙脈搏：釷-229 光學核時鐘如何運作？",
+          "discipline": "精密測量物理與核光子學",
+          "interactiveComponent": "NuclearClockSimulator",
+          "interactiveType": "clock_feedback",
+          "narrativeStyle": "research_interpretation",
+          "status": "published",
+          "sources": [
+            "Nature (2026-10-07) doi:10.1038/s41586-026-11084-4",
+            "Nature (2026-10-07) doi:10.1038/s41586-026-11122-1",
+            "Ludlow et al. (2015) Rev. Mod. Phys."
+          ],
+          "editorialRecordPath": "content/editorial-records/thorium-229-nuclear-clock-laser.json"
         }
       ],
       "unpassedTopics": []

@@ -3,6 +3,9 @@ import { TransitSimulator } from '../article/TransitSimulator';
 import { DoublePendulumSimulator } from '../article/DoublePendulumSimulator';
 import { ActionPotentialSimulator } from '../article/ActionPotentialSimulator';
 import { MaxwellDemonSimulator } from '../article/MaxwellDemonSimulator';
+import { AmygdalaMemorySimulator } from '../article/AmygdalaMemorySimulator';
+import { PhotovoltaicRecombinationSimulator } from '../article/PhotovoltaicRecombinationSimulator';
+import { NuclearClockSimulator } from '../article/NuclearClockSimulator';
 
 export interface InteractiveParameterMeta {
   name: string;
@@ -171,6 +174,111 @@ export const INTERACTIVE_COMPONENTS: Record<string, InteractiveComponentMeta> = 
       '不可逆計算與散熱極限',
     ],
     component: MaxwellDemonSimulator,
+  },
+  AmygdalaMemorySimulator: {
+    id: 'AmygdalaMemorySimulator',
+    nameZh: '杏仁核單神經元發火與記憶編碼模擬器',
+    descriptionZh:
+      '模擬人類杏仁核神經元對特定刺激類別的發火率變化、情緒喚醒增益，以及後續記憶成功率 (SME) 的羅吉斯對應。',
+    parameters: [
+      {
+        name: 'arousal',
+        labelZh: '情緒喚醒度 (Arousal)',
+        description: '調節神經元群體的響應增益與信噪比',
+        defaultValue: 1.2,
+        min: 0.6,
+        max: 2.2,
+        step: 0.1,
+      },
+      {
+        name: 'noiseLevel',
+        labelZh: '背景噪聲水準',
+        description: '神經系統自發隨機放電強度',
+        defaultValue: 0.2,
+        min: 0.05,
+        max: 0.45,
+        step: 0.05,
+      },
+    ],
+    keyConcepts: [
+      '後續記憶效應 (Subsequent Memory Effect, SME)',
+      '杏仁核 (Amygdala)',
+      '單神經元電生理 (Single-Unit Recording)',
+      '刺激選擇性 (Stimulus Specificity)',
+      '情節記憶編碼 (Episodic Memory Encoding)',
+    ],
+    component: AmygdalaMemorySimulator,
+  },
+  PhotovoltaicRecombinationSimulator: {
+    id: 'PhotovoltaicRecombinationSimulator',
+    nameZh: '硫化鉍擬直接能隙與載子復合動力學模擬器',
+    descriptionZh:
+      '探索硫化鉍獨特的擬直接能隙 (Pseudo-direct) 能帶結構，展示強光吸收與弛豫動量屏障如何有效延緩電子-電洞復合損失。',
+    parameters: [
+      {
+        name: 'lightIntensity',
+        labelZh: '入射光強 (Suns)',
+        description: '太陽輻照度等效倍率 (AM1.5G)',
+        defaultValue: 1.0,
+        unit: 'Suns',
+        min: 0.2,
+        max: 2.5,
+        step: 0.1,
+      },
+      {
+        name: 'defectDensityLog',
+        labelZh: '晶格陷阱濃度 (log10)',
+        description: '深能階 Shockley-Read-Hall 缺陷復合中心密度',
+        defaultValue: 15.0,
+        unit: 'cm⁻³',
+        min: 14.0,
+        max: 17.0,
+        step: 0.2,
+      },
+    ],
+    keyConcepts: [
+      '擬直接能隙 (Pseudo-direct Bandgap)',
+      '硫化鉍 (Bi₂S₃)',
+      '雙分子輻射復合 (Bimolecular Recombination)',
+      '少數載子壽命 (Carrier Lifetime)',
+      '載子擴散長度 (Diffusion Length)',
+    ],
+    component: PhotovoltaicRecombinationSimulator,
+  },
+  NuclearClockSimulator: {
+    id: 'NuclearClockSimulator',
+    nameZh: '釷-229 光學核時鐘與鑑頻閉環鎖定實驗',
+    descriptionZh:
+      '展示固態晶體中釷-229 核同質異能躍遷的窄線寬特性、雷射色散誤差信號與閉環反饋控制，並對比原子鐘之環境抗噪尺度。',
+    parameters: [
+      {
+        name: 'feedbackGain',
+        labelZh: '回饋增益 (Loop Gain)',
+        description: '伺服鑑頻器對雷射漂移的校正強度',
+        defaultValue: 1.2,
+        min: 0.2,
+        max: 2.5,
+        step: 0.1,
+      },
+      {
+        name: 'laserDriftRate',
+        labelZh: '雷射熱漂移速率',
+        description: '未鎖定前自由運行的頻率擾動強度',
+        defaultValue: 0.8,
+        min: 0.1,
+        max: 2.5,
+        step: 0.1,
+      },
+    ],
+    keyConcepts: [
+      '釷-229 (Thorium-229)',
+      '光學核時鐘 (Nuclear Optical Clock)',
+      '同質異能態 (Isomeric State)',
+      '真空紫外光 (VUV)',
+      '伺服回饋鎖定閉環 (Feedback Loop)',
+      '艾倫方差 (Allan Deviation)',
+    ],
+    component: NuclearClockSimulator,
   },
 };
 

@@ -1,0 +1,109 @@
+{
+  "articleId": "art-bismuth-sulfide-photovoltaics",
+  "slug": "bismuth-sulfide-pseudo-direct-recombination",
+  "editorialCategory": "journal_interpretation",
+  "version": 1,
+  "creationModel": "gemini-2.5-pro",
+  "editorialPassDate": "2026-11-03T00:30:00Z",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-nature-2026-bis2s3",
+        "citation": "Hoye, R. L. Z., et al. (2026). \"Delayed electron–hole recombination in a pseudo-direct semiconductor.\" Nature, doi:10.1038/s41586-026-11223-x.",
+        "doi": "10.1038/s41586-026-11223-x",
+        "peerReviewStatus": "已完成同行評審 (Nature, 2026-10-28 出刊)",
+        "verifiedClaims": [
+          "硫化鉍 (Bi₂S₃) 在布里淵區中心具有約 1.35 eV 之直接光學躍遷能隙，光吸收係數超過 10⁵ cm⁻¹",
+          "光生載子在吸收後數百飛秒內弛豫至鄰近在動量空間微偏之局域導帶底，形成動量屏障",
+          "動量偏離能帶幾何使雙分子輻射復合係數降低逾一個數量級，少數載子壽命達數百奈秒"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "直接能隙半導體光吸收強但雙分子復合劇烈；間接能隙半導體需聲子輔助吸收弱但復合慢",
+            "肖克利-奎塞爾 (Shockley-Queisser) 理論極限確立單接面太陽能電池最佳能隙約為 1.1 至 1.4 eV"
+          ],
+          "empiricalFindings": [
+            "ARPES 與暫態光譜證實硫化鉍兼具垂直直接躍遷高吸收與局域動量偏離延遲復合之擬直接特性"
+          ],
+          "hypothesesAndModels": [
+            "第一性原理密度泛函理論 (DFT) 預測鉍 6p 與硫 3p 軌域雜化對動量能谷深度之微觀貢獻"
+          ]
+        }
+      },
+      {
+        "id": "ref-shockley-queisser-1961",
+        "citation": "Shockley, W., & Queisser, H. J. (1961). \"Detailed Balance Limit of Efficiency of p-n Junction Solar Cells.\" Journal of Applied Physics, 32(3), 510-519.",
+        "doi": "10.1063/1.1736034",
+        "peerReviewStatus": "經典熱力學文獻同行評審 (Journal of Applied Physics)",
+        "verifiedClaims": [
+          "微觀可逆性 (Detailed balance) 確立半導體光吸收能力與熱平衡輻射復合率呈正比"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "理想單接面太陽能電池在 AM1.5 陽光下熱力學極限效率約為 33.7%"
+          ],
+          "empiricalFindings": [
+            "矽與砷化鎵電池發展歷史印證了能隙選擇的重要性"
+          ],
+          "hypothesesAndModels": [
+            "黑體輻射光子通量微觀平衡模型"
+          ]
+        }
+      }
+    ],
+    "formulasAndUnits": [
+      {
+        "formula": "R_{\\text{bimolecular}} = B \\cdot n \\cdot p",
+        "unitConsistency": "復合率單位為 cm⁻³·s⁻¹，B 係數單位為 cm³·s⁻¹，載子濃度單位為 cm⁻³",
+        "verified": true
+      },
+      {
+        "formula": "L_D = \\sqrt{D \\cdot \\tau}",
+        "unitConsistency": "擴散長度單位為 cm 或 μm，擴散係數 D 單位為 cm²·s⁻¹，壽命 τ 單位為 s 或 ns",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "E-k 色散拋物線能帶方程與載子暫態率方程 (Rate Equation, 包含雙分子輻射復合與 SRH 陷阱復合)",
+      "numericalMethod": "Runge-Kutta 數值衰減步進與動態能帶色散 Canvas 向量即時繪製",
+      "dynamicBehaviorVerified": "選取擬直接模式時，光吸收維持在 10.5×10⁴ cm⁻¹，載子壽命自常規直接能隙之數十奈秒躍升至數百奈秒，擴散長度超過光吸收深度",
+      "modelAssumptionsAndLimits": "互動模擬器採用單一導帶二能谷簡化模型，忽略了非輻射 Auger 復合在高載子注入下的高階非線性效應，旨在教學呈現擬直接能帶解耦原理"
+    },
+    "noFakeCitations": true,
+    "noFictionalReviewers": true
+  },
+  "readability": {
+    "language": "繁體中文",
+    "pedagogyProgression": "太陽能光電接力賽直覺 -> 直接 vs 間接能隙的物理兩難 -> 硫化鉍擬直接微觀能帶解密 -> 壽命與擴散長度定量驗證 -> 客觀商用化邊界與技術挑戰",
+    "technicalTermsDemystified": [
+      {
+        "term": "擬直接能隙 (Pseudo-direct Bandgap)",
+        "intuitiveExplanation": "吸收光子時像直接能隙一樣猛烈垂直跳躍，但跳上去後瞬間滑進隔壁的小能谷，讓想跳回來復合的電荷被動量守恆卡住"
+      },
+      {
+        "term": "載子壽命 (Carrier Lifetime)",
+        "intuitiveExplanation": "光生電子與電洞在半導體中存活奔馳的平均時間，時間越長越容易活著抵達電極輸出電流"
+      },
+      {
+        "term": "布里淵區與晶體動量 (k-Space)",
+        "intuitiveExplanation": "描述微觀電子在週期性原子晶格中運動速度與方向的量子座標系統"
+      }
+    ],
+    "toneReview": "沉穩專業，深入淺出拆解凝聚態固態物理中的對稱性與動量守恆，絕不販賣偽新能源神話"
+  },
+  "aestheticsAndNarrative": {
+    "avoidFormulaicCliches": "開篇直接以光子穿透大氣層的光電物理接力賽破題，杜絕「在浩瀚的宇宙中」「總結來說」等 AI 套話",
+    "coreQuestion": "半導體物理能否打破強光吸收必然伴隨短暫載子壽命的矛盾？硫化鉍的擬直接能隙如何改寫光伏材料法則？",
+    "interactiveRole": "PhotovoltaicRecombinationSimulator 讓讀者動態對比直接、間接與硫化鉍三種機制的能帶幾何與暫態衰減曲線，直觀體驗動量屏障對載子壽命的倍增效應",
+    "narrativeStyle": "first_principles",
+    "interactiveType": "carrier_dynamics"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "商業效率宣稱審查：嚴格核實論文定位，確認該突破為材料微觀物理機制與光譜驗證，嚴禁宣稱「已製造出超越矽晶商用面板」",
+    "單位因次校核：確認光吸收係數單位為 cm⁻¹，載子擴散長度 μm 與吸光厚度 nm 的數量級對比無誤"
+  ],
+  "unconfirmedLimits": [
+    "多晶薄膜晶界缺陷（Grain boundaries）在量產製程中的鈍化技術仍屬開放挑戰",
+    "大面積電池的開路電壓損耗（Voc deficit）仍需進一步介面工程優化"
+  ]
+}

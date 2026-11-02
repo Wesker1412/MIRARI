@@ -175,7 +175,10 @@ export type InteractiveExperimentType =
   | 'phase_space' // 混沌相空間與數值積分
   | 'circuit_oscilloscope' // 電生理離子通道與示波器
   | 'particle_system' // 分子碰撞與統計物理模擬
-  | 'data_explorer'; // 實證觀測數據互動
+  | 'data_explorer' // 實證觀測數據互動
+  | 'neural_raster' // 神經發火率與記憶編碼
+  | 'carrier_dynamics' // 能帶結構與光電載子復合
+  | 'clock_feedback'; // 頻率共振與核時鐘鎖定
 
 // ─── 讀者評價預留結構（本輪不實作 UI，預留模型定義）──────────────
 export interface ReaderFeedbackMetric {

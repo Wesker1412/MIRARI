@@ -1,0 +1,104 @@
+{
+  "articleId": "art-amygdala-memory-encoding",
+  "slug": "amygdala-memory-encoding-success",
+  "editorialCategory": "journal_interpretation",
+  "version": 1,
+  "creationModel": "gemini-2.5-pro",
+  "editorialPassDate": "2026-11-03T00:30:00Z",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-natneuro-2026-amygdala",
+        "citation": "Rutishauser, U., et al. (2026). \"Stimulus-specific recruitment of human amygdala neurons predicts episodic memory encoding success.\" Nature Neuroscience, doi:10.1038/s41593-026-02493-9.",
+        "doi": "10.1038/s41593-026-02493-9",
+        "peerReviewStatus": "已完成同行評審 (Nature Neuroscience, 2026-10-27 出刊)",
+        "verifiedClaims": [
+          "人腦基底外側杏仁核 (BLA) 單神經元展現刺激類別特異性發火偏好（如人臉、場景、物件）",
+          "類別選擇性神經元在刺激呈現期間的發火增率，在統計上顯著預測受試者 24 小時後的情節記憶回憶表現 (SME)",
+          "非選擇性神經元的發火幅度與後續記憶成功率無顯著統計相關性"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "杏仁核在強烈情緒狀態下透過正腎上腺素調節海馬迴突觸可塑性與記憶鞏固",
+            "後續記憶效應 (Subsequent Memory Effect, SME) 描述編碼期神經活動與提取期成功的統計相關"
+          ],
+          "empiricalFindings": [
+            "人類顱內微電極陣列首次在單一細胞級解析度下，證實杏仁核記憶調節具備刺激內容特異性，而非全腦無差別音量放大"
+          ],
+          "hypothesesAndModels": [
+            "杏仁核細胞活動可能透過與海馬迴西塔波 (Theta, 4-8 Hz) 的相位鎖定機制促進長時程增益 (LTP)"
+          ]
+        }
+      },
+      {
+        "id": "ref-mcgaugh-2004",
+        "citation": "McGaugh, J. L. (2004). \"The amygdala modulates the consolidation of memories of emotionally arousing experiences.\" Annual Review of Neuroscience, 27, 1-28.",
+        "doi": "10.1146/annurev.neuro.27.070203.144157",
+        "peerReviewStatus": "經典回顧文獻同行評審 (Annual Reviews)",
+        "verifiedClaims": [
+          "杏仁核情緒調節對記憶鞏固的核心時間窗口發生於刺激呈現後數小時內"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "系統性給予腎上腺素受體阻斷劑會削弱情緒性記憶的增強優勢"
+          ],
+          "empiricalFindings": [
+            "早期動物實驗確立杏仁核破壞損害情緒制約記憶"
+          ],
+          "hypothesesAndModels": [
+            "神經賀爾蒙全身性擴散模型"
+          ]
+        }
+      }
+    ],
+    "formulasAndUnits": [
+      {
+        "formula": "\\text{Logit}(P(\\text{Recall})) = \\ln\\left(\\frac{P}{1 - P}\\right) = \\beta_0 + \\beta_1 \\cdot \\overline{\\Delta f}_{\\text{selective}}",
+        "unitConsistency": "無因次對數幾率（Log-odds），發火率增量單位為 Hz (1/s)，beta1 係數單位為 s",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "神經群體卜瓦松脈衝放電過程 (Inhomogeneous Poisson Process) 與羅吉斯記憶鞏固概率回歸",
+      "numericalMethod": "偽隨機時間序列點陣生成 (Spike Raster Plot) 與時間窗口累計積分",
+      "dynamicBehaviorVerified": "刺激呈現於 0 ms 時，類別偏好神經元發火率自基線 2-4 Hz 抬升至 15-20 Hz，預測回憶成功率顯著攀升；非偏好刺激下維持低放電，回憶率維持低位",
+      "modelAssumptionsAndLimits": "互動模擬器為教學啟發數值模型，簡化了神經元樹突非線性計算與抑制性中間神經元反饋，展示統計相關性而非個別受試者原始電生理數據"
+    },
+    "noFakeCitations": true,
+    "noFictionalReviewers": true
+  },
+  "readability": {
+    "language": "繁體中文",
+    "pedagogyProgression": "日常認知現象（為什麼只記住某個瞬間） -> 經典腦區分工局限（音量旋鈕假說） -> 顱內微電極突破技術 -> 類別特異性 SME 實證結果 -> 嚴格科學因果邊界劃定",
+    "technicalTermsDemystified": [
+      {
+        "term": "後續記憶效應 (Subsequent Memory Effect, SME)",
+        "intuitiveExplanation": "在學習新資訊的當下，大腦特定神經活動的強弱，能提前預知這段內容未來能不能被成功想起來"
+      },
+      {
+        "term": "單神經元記錄 (Single-Unit Recording)",
+        "intuitiveExplanation": "將極細微電極貼近單一神經細胞膜外，直接聆聽單一神經元發出的每一次微弱電脈衝"
+      },
+      {
+        "term": "基底外側杏仁核 (BLA)",
+        "intuitiveExplanation": "杏仁核的核心接收中繼站，負責整合各種感官輸入與情緒價值評判"
+      }
+    ],
+    "toneReview": "典雅嚴謹，從深刻的人文體驗導入細胞級神經物理機制，杜絕誇大因果與科技神話"
+  },
+  "aestheticsAndNarrative": {
+    "avoidFormulaicCliches": "開篇從具體的生活經驗切入，絕無「在浩瀚的宇宙中」「總結來說」等陳腔套話",
+    "coreQuestion": "為什麼大腦能精準挑選特定經歷銘刻為長久記憶，杏仁核如何以細胞級特異性預測回憶的成敗？",
+    "interactiveRole": "AmygdalaMemorySimulator 讓讀者親手操縱刺激類別與情緒喚醒，直觀看見神經脈衝序列在刺激出現後的瞬時聚爆與回憶預測",
+    "narrativeStyle": "research_interpretation",
+    "interactiveType": "neural_raster"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "因果推論界定校核：原文為觀察性微電極記錄，強調發火率具備「統計預測力（Predicts）」，嚴格禁止在科普文案中寫成「證明杏仁核發火直接製造了記憶」之因果武斷陳述",
+    "受試者代表性說明：標註數據來自臨床癲癇監測患者，明確提示其特殊臨床背景之侷限"
+  ],
+  "unconfirmedLimits": [
+    "健康未患病族群之單神經元放電特徵尚無法直接侵入性驗證",
+    "單純放電率增幅與長期突觸結構重塑（如樹突棘生長）之間的生物化學鏈條仍待後續研究補全"
+  ]
+}

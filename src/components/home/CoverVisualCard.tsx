@@ -12,6 +12,9 @@ export const CoverVisualCard: React.FC<CoverVisualCardProps> = ({ article, onCli
   const isChaos = article.slug.includes('chaos') || article.slug.includes('pendulum');
   const isActionPotential = article.slug.includes('action-potential') || article.slug.includes('hodgkin');
   const isMaxwellDemon = article.slug.includes('maxwell') || article.slug.includes('entropy');
+  const isAmygdala = article.slug.includes('amygdala') || article.slug.includes('memory-encoding');
+  const isBismuth = article.slug.includes('bismuth') || article.slug.includes('recombination');
+  const isNuclearClock = article.slug.includes('thorium') || article.slug.includes('nuclear-clock');
 
   return (
     <div
@@ -158,8 +161,153 @@ export const CoverVisualCard: React.FC<CoverVisualCardProps> = ({ article, onCli
         </>
       )}
 
-      {/* ─── Case 5: Generic Future Scientific Visual ──────────────── */}
-      {!isTransit && !isChaos && !isActionPotential && !isMaxwellDemon && (
+      {/* ─── Case 5: Amygdala Memory Encoding Visual ──────────────── */}
+      {isAmygdala && (
+        <>
+          <div className="flex justify-between items-center text-xs font-mono text-slate-400 mb-6 border-b border-white/10 pb-3">
+            <span>NEURAL ENCODING CORRELATION</span>
+            <span className="text-rose-400">P(Recall) = 1/(1 + e^-z)</span>
+          </div>
+
+          <div className="relative h-48 rounded-2xl bg-gradient-to-tr from-slate-950 via-slate-900 to-rose-950/30 border border-white/10 flex items-center justify-center overflow-hidden p-4">
+            {/* Multi-channel raster & logistic curve SVG */}
+            <svg className="w-full h-full" viewBox="0 0 220 120" fill="none">
+              {/* Raster lines */}
+              <line x1="20" y1="25" x2="200" y2="25" stroke="#334155" strokeWidth="0.8" strokeDasharray="2 3" />
+              <line x1="20" y1="45" x2="200" y2="45" stroke="#334155" strokeWidth="0.8" strokeDasharray="2 3" />
+              <line x1="20" y1="65" x2="200" y2="65" stroke="#334155" strokeWidth="0.8" strokeDasharray="2 3" />
+              
+              {/* Spike ticks */}
+              {[35, 52, 70, 88, 92, 105, 120, 145, 160, 185].map((x, i) => (
+                <line key={`sp1-${i}`} x1={x} y1="20" x2={x} y2="30" stroke="#FB7185" strokeWidth="1.5" />
+              ))}
+              {[40, 68, 86, 94, 110, 114, 138, 155, 172].map((x, i) => (
+                <line key={`sp2-${i}`} x1={x} y1="40" x2={x} y2="50" stroke="#F43F5E" strokeWidth="1.5" />
+              ))}
+              {[50, 75, 90, 102, 108, 125, 165].map((x, i) => (
+                <line key={`sp3-${i}`} x1={x} y1="60" x2={x} y2="70" stroke="#FDA4AF" strokeWidth="1.5" />
+              ))}
+
+              {/* SME Logistic Probability curve */}
+              <path
+                d="M 20 110 C 70 110, 110 95, 130 55 C 150 15, 180 15, 200 15"
+                stroke="#F59E0B"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+              />
+              <circle cx="130" cy="55" r="3.5" fill="#F59E0B" className="animate-ping opacity-75" />
+              <circle cx="130" cy="55" r="3" fill="#FFE4E6" />
+            </svg>
+
+            <div className="absolute top-2 left-4 text-[10px] font-mono text-slate-400">
+              刺激範疇調諧 / 脈衝光柵
+            </div>
+            <div className="absolute bottom-2 right-4 text-[10px] font-mono text-rose-300">
+              SME 記憶表現相關預測
+            </div>
+          </div>
+        </>
+      )}
+
+      {/* ─── Case 6: Photovoltaic Bandgap Dynamics Visual ───────────── */}
+      {isBismuth && (
+        <>
+          <div className="flex justify-between items-center text-xs font-mono text-slate-400 mb-6 border-b border-white/10 pb-3">
+            <span>PSEUDO-DIRECT BANDGAP</span>
+            <span className="text-amber-400">Bi₂S₃ (Eg = 1.3 eV)</span>
+          </div>
+
+          <div className="relative h-48 rounded-2xl bg-gradient-to-tr from-slate-950 via-slate-900 to-amber-950/30 border border-white/10 flex items-center justify-center overflow-hidden p-4">
+            {/* E-k dispersion curve preview */}
+            <svg className="w-full h-full" viewBox="0 0 220 120" fill="none">
+              {/* Gamma line */}
+              <line x1="110" y1="10" x2="110" y2="110" stroke="#334155" strokeWidth="1" strokeDasharray="3 3" />
+              
+              {/* Conduction band (parabolic valley shifted slightly) */}
+              <path
+                d="M 40 20 Q 110 55, 140 50 Q 170 55, 200 20"
+                stroke="#FBBF24"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+              {/* Direct optical excitation arrow */}
+              <line x1="110" y1="95" x2="110" y2="52" stroke="#38BDF8" strokeWidth="1.5" strokeDasharray="2 2" />
+              <polygon points="110,48 106,56 114,56" fill="#38BDF8" />
+
+              {/* Delayed Recombination phonon path arrow */}
+              <path
+                d="M 115 54 C 130 54, 138 52, 140 50"
+                stroke="#34D399"
+                strokeWidth="2"
+              />
+
+              {/* Valence band */}
+              <path
+                d="M 40 115 Q 110 90, 180 115"
+                stroke="#94A3B8"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            </svg>
+
+            <div className="absolute top-2 left-4 text-[10px] font-mono text-sky-400">
+              垂直強光學吸收 (α &gt; 10⁵)
+            </div>
+            <div className="absolute bottom-2 right-4 text-[10px] font-mono text-emerald-400">
+              聲子解耦 / 復合延遲
+            </div>
+          </div>
+        </>
+      )}
+
+      {/* ─── Case 7: Thorium-229 Nuclear Clock Visual ───────────────── */}
+      {isNuclearClock && (
+        <>
+          <div className="flex justify-between items-center text-xs font-mono text-slate-400 mb-6 border-b border-white/10 pb-3">
+            <span>ISOMERIC OPTICAL RESONANCE</span>
+            <span className="text-cyan-400">²²⁹mTh: 8.338 eV (148 nm)</span>
+          </div>
+
+          <div className="relative h-48 rounded-2xl bg-gradient-to-tr from-slate-950 via-slate-900 to-cyan-950/30 border border-white/10 flex items-center justify-center overflow-hidden p-4">
+            {/* Laser VUV Resonance Curve & Error Signal */}
+            <svg className="w-full h-full" viewBox="0 0 220 120" fill="none">
+              {/* Zero error center line */}
+              <line x1="20" y1="60" x2="200" y2="60" stroke="#334155" strokeWidth="1" strokeDasharray="2 2" />
+              
+              {/* Lorentzian absorption peak (semi-transparent) */}
+              <path
+                d="M 30 100 Q 80 100, 100 80 Q 110 20, 120 80 Q 140 100, 190 100"
+                stroke="#38BDF8"
+                strokeWidth="1.5"
+                strokeOpacity="0.4"
+                fill="none"
+              />
+
+              {/* Dispersion Error Signal S(Δν) */}
+              <path
+                d="M 40 60 C 80 60, 95 35, 110 60 C 125 85, 140 60, 180 60"
+                stroke="#06B6D4"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+              />
+
+              {/* Lock center target point */}
+              <circle cx="110" cy="60" r="3.5" fill="#F59E0B" className="animate-ping opacity-80" />
+              <circle cx="110" cy="60" r="2.5" fill="#FFFFFF" />
+            </svg>
+
+            <div className="absolute top-2 left-4 text-[10px] font-mono text-cyan-300">
+              VUV 雷射鎖相迴路
+            </div>
+            <div className="absolute bottom-2 right-4 text-[10px] font-mono text-amber-300">
+              磁雜訊免疫 / 理論潛力 10⁻¹⁹
+            </div>
+          </div>
+        </>
+      )}
+
+      {/* ─── Case 8: Generic Future Scientific Visual ──────────────── */}
+      {!isTransit && !isChaos && !isActionPotential && !isMaxwellDemon && !isAmygdala && !isBismuth && !isNuclearClock && (
         <>
           <div className="flex justify-between items-center text-xs font-mono text-slate-400 mb-6 border-b border-white/10 pb-3">
             <span>SCIENTIFIC DISCOVERY</span>

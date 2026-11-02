@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastUpdated": "2026-11-02T15:30:00Z",
+  "lastUpdated": "2026-11-03T00:30:00Z",
   "editorialMemoryDescription": "MIRARI 自主編輯品質管理記憶庫：記錄近期篇章學科分佈、敘事風格、互動模式與編輯檢查規則，提供每日自主創作管線跨日延續性與防重複依據。",
   "recentArticles": [
     {
@@ -50,6 +50,42 @@
       "coreConcept": "麥克斯韋妖思維悖論與蘭道爾極限資訊熱力學代價",
       "pedagogyKey": "微觀守門人悖論破題，區分可逆測量與抹除代價，實體化位元熵增",
       "limitsIdentified": "經典剛球稀薄氣體模型，無量子消相干細節"
+    },
+    {
+      "articleId": "art-amygdala-memory-encoding",
+      "slug": "amygdala-memory-encoding-success",
+      "editorialCategory": "journal_interpretation",
+      "discipline": "神經生物學與認知電生理",
+      "narrativeStyle": "research_interpretation",
+      "interactiveType": "neural_raster",
+      "interactiveComponent": "AmygdalaMemorySimulator",
+      "coreConcept": "人類杏仁核單神經元類別特異性發火預測情節記憶編碼",
+      "pedagogyKey": "微電極陣列破題，區分音量放大與內容選擇性，強調觀察相關性",
+      "limitsIdentified": "癲癇監測臨床族群與非因果直接操控限制"
+    },
+    {
+      "articleId": "art-bismuth-sulfide-photovoltaics",
+      "slug": "bismuth-sulfide-pseudo-direct-recombination",
+      "editorialCategory": "journal_interpretation",
+      "discipline": "固態物理與太陽能材料",
+      "narrativeStyle": "first_principles",
+      "interactiveType": "carrier_dynamics",
+      "interactiveComponent": "PhotovoltaicRecombinationSimulator",
+      "coreConcept": "硫化鉍擬直接能隙解耦強吸光與雙分子復合損失",
+      "pedagogyKey": "以吸光與壽命的物理兩難切入，動態解析動量屏障延緩復合",
+      "limitsIdentified": "未製造出超越商業矽晶量產板之器件限制"
+    },
+    {
+      "articleId": "art-thorium-nuclear-clock",
+      "slug": "thorium-229-nuclear-clock-laser",
+      "editorialCategory": "journal_interpretation",
+      "discipline": "量子光學與核物理計量",
+      "narrativeStyle": "first_principles",
+      "interactiveType": "clock_feedback",
+      "interactiveComponent": "NuclearClockSimulator",
+      "coreConcept": "釷-229 固態光學核時鐘與光頻梳閉環伺服鎖定",
+      "pedagogyKey": "外層電子雲易受擾動破題，引入 8.4 eV 核奇蹟與色散誤差閉環",
+      "limitsIdentified": "實測不確定度 10⁻¹³ 處於原型階段，現役原子鐘仍居領先地位"
     }
   ],
   "cumulativeGuidelines": {
@@ -74,7 +110,7 @@
           "scope": "最新科學發現、重要研究成果、研發技術突破及具有話題性的科學事件",
           "selectionCriteria": "以新聞時效性、科學價值與話題性作為選題依據。涵蓋最新學術研究、重大科學發現、技術研發突破、科學機構發布的重要成果及值得公眾關注的科學事件",
           "rigorRule": "不要求每篇都必須以單篇同儕審查論文為主題，但必須核對可信來源，清楚區分：已完成同行審查的研究、尚未同行審查的預印本、機構或企業提出但尚待獨立驗證的成果。不得為了追逐話題性誇大研究結果",
-          "currentArticles": 0
+          "currentArticles": 3
         }
       },
       "classificationPrinciple": "根據文章的主要編輯目的分類：主要在解釋某個科學知識或原理 -> scientific_principles；主要在報導或解讀近期科學發現、研究成果、技術突破或科學事件 -> journal_interpretation。不能僅因引用了新論文就歸類為期刊解讀，不能僅因內容涉及經典科學原理就排除其作為最新研究報導的可能。兩大分類互斥且與學科標籤獨立",

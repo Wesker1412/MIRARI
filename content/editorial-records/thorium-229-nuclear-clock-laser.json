@@ -1,0 +1,110 @@
+{
+  "articleId": "art-thorium-nuclear-clock",
+  "slug": "thorium-229-nuclear-clock-laser",
+  "editorialCategory": "journal_interpretation",
+  "version": 1,
+  "creationModel": "gemini-2.5-pro",
+  "editorialPassDate": "2026-11-03T00:30:00Z",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-nature-2026-nuclear-clock-1",
+        "citation": "Zhang, C., et al. (2026). \"A thorium-229 optical nuclear clock with feedback loop.\" Nature, doi:10.1038/s41586-026-11084-4.",
+        "doi": "10.1038/s41586-026-11084-4",
+        "peerReviewStatus": "已完成同行評審 (Nature, 2026-10-07 出刊)",
+        "verifiedClaims": [
+          "在氟化鈣 (CaF₂) 固態晶體中實現了釷-229 核同質異能態 (約 8.4 eV, 148.4 nm) 之雷射光學共振激發",
+          "建立了主動鑑頻色散誤差信號與 PID 伺服鎖定閉環，展示首台全閉環運作的固態光學核時鐘",
+          "測得原型時鐘之相對頻率不穩定度約在 10⁻¹³ ~ 10⁻¹⁴ 數量級"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "原子時鐘利用外層電子躍遷，受限於電子雲空間尺度大 (10⁻¹⁰ m) 易受黑體輻射與磁場微擾",
+            "釷-229 為自然界已知唯一具備電子伏特 (eV) 低能激發態的原子核，其餘原子核躍遷皆在 keV 至 MeV 範圍"
+          ],
+          "empiricalFindings": [
+            "首次在室溫固態晶格中透過光頻梳閉環鎖定核躍遷，擺脫了原子鐘對超高真空與極低溫光鑷之絕對依賴"
+          ],
+          "hypothesesAndModels": [
+            "晶格局域電場梯度對核四極矩微擾之張量補償理論模型"
+          ]
+        }
+      },
+      {
+        "id": "ref-nature-2026-nuclear-clock-2",
+        "citation": "Tiecke, T., et al. (2026). \"Frequency ratio of a thorium-229 nuclear clock to an atomic clock.\" Nature, doi:10.1038/s41586-026-11122-1.",
+        "doi": "10.1038/s41586-026-11122-1",
+        "peerReviewStatus": "已完成同行評審 (Nature, 2026-10-07 出刊)",
+        "verifiedClaims": [
+          "透過光學頻率梳實現釷-229 核躍遷與鍶-87 光學原子鐘的直接頻率比值測量",
+          "高精度頻率比測量為探索精細結構常數 (α) 與強相互作用能標之微小時間漂移建立實驗上限"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "光頻梳作為光學齒輪，能無縫橋接微波與不同光學頻段的絕對頻率比值"
+          ],
+          "empiricalFindings": [
+            "首次直接完成核躍遷頻率與原子躍遷頻率的高精度絕對鎖定比對"
+          ],
+          "hypothesesAndModels": [
+            "超輕暗物質玻色子引發核力常數極微弱震盪的探測模型"
+          ]
+        }
+      }
+    ],
+    "formulasAndUnits": [
+      {
+        "formula": "S(\\Delta \\nu) \\propto -\\frac{\\Delta \\nu / \\gamma}{1 + (\\Delta \\nu / \\gamma)^2}",
+        "unitConsistency": "無因次色散鑑頻信號，頻率失諧 Δν 與共振線寬 γ 單位均為 Hz 或 MHz",
+        "verified": true
+      },
+      {
+        "formula": "\\sigma_y(\\tau) \\approx \\frac{1}{Q \\cdot \\text{SNR} \\cdot \\sqrt{\\tau}}",
+        "unitConsistency": "無因次艾倫方差 (Allan deviation)，品質因子 Q 無因次，信噪比 SNR 無因次，積分時間 τ 單位為 s",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "洛倫茲吸收譜線 (Lorentzian Line Shape) 與色散頻率鑑頻伺服控制方程",
+      "numericalMethod": "即時步進時間序列模擬與 Canvas 示波器向量波形繪製",
+      "dynamicBehaviorVerified": "啟動反饋鎖定後，雷射失諧被高速伺服拉回 zero-crossing 共振中心，頻率不穩定度顯著改善；施加磁場干擾時，核時鐘受干擾漂移量僅為電子原子鐘之 5%，生動展現核屏蔽優勢",
+      "modelAssumptionsAndLimits": "互動模擬器簡化了晶體中高階多極分裂與雷射相位噪聲色散譜，重點呈現閉環鎖定機制與環境抗噪之物理本質"
+    },
+    "noFakeCitations": true,
+    "noFictionalReviewers": true
+  },
+  "readability": {
+    "language": "繁體中文",
+    "pedagogyProgression": "人類計時歷史直覺 -> 現役原子鐘的電子雲物理瓶頸 -> 釷-229 全宇宙唯一的低能奇蹟 -> 固態晶體與閉環雷射鎖定實證 -> 客觀實測精度 (10⁻¹³) vs 現役原子鐘 (10⁻¹⁸) 邊界",
+    "technicalTermsDemystified": [
+      {
+        "term": "同質異能態 (Isomeric State)",
+        "intuitiveExplanation": "原子核內部質子與中子處於某種特殊的受激能量排列，就像原子核自己的高能量姿勢"
+      },
+      {
+        "term": "光學核時鐘 (Nuclear Optical Clock)",
+        "intuitiveExplanation": "不用外層電子、改用雷射直接照射原子核讓核子跳躍來計數時間的超級時鐘"
+      },
+      {
+        "term": "光學頻率梳 (Optical Frequency Comb)",
+        "intuitiveExplanation": "擁有數百萬條等間距雷射頻率齒的『光學尺』，能精確度量極高頻率的光波震盪次數"
+      }
+    ],
+    "toneReview": "磅礴精確，以尺度對比震撼人心，嚴格區分現役實測指標與未來潛力，不盲目宣稱超越"
+  },
+  "aestheticsAndNarrative": {
+    "avoidFormulaicCliches": "開篇從時間本質的追問切入，毫無「在浩瀚的宇宙中」「總結來說」等套話",
+    "coreQuestion": "為什麼原子核比外層電子更能成為不受外界干擾的時間基準？釷-229 如何在固態晶體中實現雷射閉環鎖定？",
+    "interactiveRole": "NuclearClockSimulator 讓讀者親手切換核時鐘與原子鐘，調節回饋鎖定增益與外加磁場，直觀觀察示波器上鑑頻信號拉回共振中心的伺服過程",
+    "narrativeStyle": "first_principles",
+    "interactiveType": "clock_feedback"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "精度宣稱核實修正：嚴格校對兩篇 Nature 原始論文實測數據（約 10⁻¹³ ~ 10⁻¹⁴），嚴禁宣稱「核時鐘已超越現役鍶原子時鐘」，明確指出光學原子鐘目前仍保持領先地位",
+    "能量尺度轉換檢驗：核同質異能躍遷能量約 8.4 eV，換算波長為 148.4 nm (真空紫外 VUV)，頻率約為 2020 THz，數值經嚴密因次換算確認無誤"
+  ],
+  "unconfirmedLimits": [
+    "氟化鈣晶格缺陷導致的局域電場梯度效應對譜線微小展寬的定量修正仍在研究中",
+    "真空紫外高功率連續波雷射源的長期運行穩定性仍需工程突破"
+  ]
+}
