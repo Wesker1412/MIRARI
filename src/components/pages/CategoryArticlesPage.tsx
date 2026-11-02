@@ -16,10 +16,10 @@ export const CategoryArticlesPage: React.FC<CategoryArticlesPageProps> = ({ cate
 
   const isJournal = category === 'journal_interpretation';
   const categoryTitle = isJournal ? '期刊解讀' : '科學原理與思想實驗';
-  const categoryTag = isJournal ? '學術研究追蹤' : '思想實驗與基石';
+  const categoryTag = isJournal ? '最新科學動態與研究突破' : '思想實驗與基石';
   const categoryDescription = isJournal
-    ? '聚焦近期同儕審查學術論文的深度科學解讀，剖析研究核心問題、實驗方法、實證發現與邊界限制。'
-    : '探索經典科學體系、第一性原理推演、數學模型與思想實驗，結合同步數值模擬驗證。';
+    ? '追蹤最新科學發現、重要研究成果、研發技術突破與重要科學事件，兼具時效性、科學價值與嚴謹核實。'
+    : '收錄一般科普、經典科學知識、科學現象、數學原理、理論解釋及思想實驗，專注於增進科學理解。';
 
   useSEO({
     title: `${categoryTitle} | MIRARI 數位科學雜誌`,
@@ -110,7 +110,7 @@ export const CategoryArticlesPage: React.FC<CategoryArticlesPageProps> = ({ cate
             </div>
             <h2 className="font-serif text-lg font-bold text-mirari-ink">目前暫無{categoryTitle}篇章</h2>
             <p className="text-xs sm:text-sm text-mirari-muted font-sans max-w-md mx-auto leading-relaxed">
-              編輯部正在進行最新同儕審查文獻之深度查證與數值驗證，篇章將於通過自主編輯審核後即刻刊登。
+              編輯部持續追蹤真實可信的最新科學突破與研究發現，篇章將於通過來源查證後即刻刊登。
             </p>
             <div className="pt-2">
               <Link

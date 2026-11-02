@@ -208,14 +208,14 @@ export const HomePage: React.FC<HomePageProps> = ({
             <div className="flex flex-wrap items-baseline justify-between mb-8 pb-4 border-b border-mirari-line gap-2">
               <div>
                 <span className="text-xs uppercase tracking-wider text-mirari-cobalt font-sans font-semibold block">
-                  學術研究追蹤
+                  最新科學動態與研究突破
                 </span>
                 <h2 className="font-serif text-2xl sm:text-3xl font-bold text-mirari-ink">
                   期刊解讀
                 </h2>
               </div>
               <span className="text-xs text-mirari-dim font-sans">
-                以同儕審查學術文獻為基礎的深度科學剖析
+                最新科學發現、重要研究成果、技術研發突破與重大科學事件
               </span>
             </div>
 

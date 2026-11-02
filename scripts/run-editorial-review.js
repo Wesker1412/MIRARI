@@ -95,18 +95,22 @@ function runReview() {
       process.exit(1);
     }
 
-    // 嚴格判定期刊解讀條件：
-    // 不能僅因引用論文、有 DOI、有 journalReference、使用數學模型或提及近期研究就判定為期刊解讀
-    // journal_interpretation 必須是以近期真實研究論文為主要解讀對象，重點在介紹該研究的問題、方法、結果、限制與科學意義
+    // 分類定位與查證核驗：
+    // - scientific_principles：主要在解釋某個科學知識、現象、數學原理或思想實驗，讓讀者理解科學。
+    // - journal_interpretation：主要在報導或解讀近期科學發現、研究成果、技術突破或科學事件。
+    //   不要求每篇都必須以單篇同行審查論文為主題，但必須核對可信來源，清楚區分同行審查、預印本或待驗證成果，嚴禁誇大。
     if (metadata.editorialCategory === 'journal_interpretation') {
       const scCheck = record.scientificVerification;
       if (!scCheck?.primarySources || scCheck.primarySources.length === 0) {
-        console.error(`   ❌ 期刊解讀文章必須具備可核實的真實同行評審原始文獻！`);
+        console.error(`   ❌ 期刊解讀文章必須具備可核實之可信來源與出處（primarySources）！`);
         process.exit(1);
       }
-      if (!record.researchPaperContext?.coreResearchQuestion || !record.researchPaperContext?.methodology) {
-        console.error(`   ❌ 期刊解讀文章必須在編輯紀錄中具備 researchPaperContext（包含研究問題、研究方法、主要發現與限制）！`);
-        process.exit(1);
+      // 驗證是否清楚區分已審查、預印本或機構待驗證成果，避免為追逐話題性誇大
+      const hasSourceStatus = scCheck.primarySources.some(
+        (s) => s.peerReviewStatus || s.distinctions?.establishedKnowledge || s.distinctions?.empiricalFindings
+      );
+      if (!hasSourceStatus) {
+        console.warn(`   ⚠️ 提示：期刊解讀文章應在編輯紀錄中清楚區分文獻性質（已審查/預印本/待驗證）。`);
       }
     }
 

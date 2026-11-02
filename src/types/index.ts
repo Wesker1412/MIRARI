@@ -41,6 +41,23 @@ export interface KnowledgePoint {
   relatedQuestions: string[];
 }
 
+/**
+ * ─── Major Editorial Categories (兩大主要編輯分類，互斥且與學科標籤獨立) ───
+ * 
+ * 1. scientific_principles (顯示名稱：科學原理與思想實驗)
+ *    收錄一般科普、經典科學知識、科學現象、數學原理、理論解釋及思想實驗。
+ *    主要目的是讓讀者理解科學，而非追逐最新消息。不限制物理學，也不要求每篇一定具有思想實驗。
+ * 
+ * 2. journal_interpretation (顯示名稱：期刊解讀)
+ *    定位為最新科學發現、重要研究成果、研發技術突破及具有話題性的科學事件。
+ *    以新聞時效性、科學價值與話題性作為選題依據。
+ *    涵蓋最新學術研究、重大科學發現、技術研發突破、科學機構重要成果與公眾關注事件。
+ *    不要求每篇都必須以單篇同儕審查論文為主題，但必須核對可信來源，清楚區分同行審查、預印本與機構待驗證成果，嚴禁誇大。
+ * 
+ * 分類判斷原則：
+ * - 主要在解釋某個科學知識或原理 -> scientific_principles
+ * - 主要在報導或解讀近期科學發現、研究成果、技術突破或科學事件 -> journal_interpretation
+ */
 export type EditorialCategory = 'scientific_principles' | 'journal_interpretation';
 
 // ─── Article Core (文章本體) ───────────────────────────────────

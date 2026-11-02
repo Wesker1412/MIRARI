@@ -241,15 +241,15 @@ ${JSON.stringify(jsonLd, null, 2)}
     {
       path: 'journal',
       title: '期刊解讀 | MIRARI 數位科學雜誌',
-      description: '聚焦近期同儕審查學術論文的深度科學解讀，剖析研究核心問題、實驗方法、實證發現與邊界限制。',
+      description: '追蹤最新科學發現、重要研究成果、研發技術突破與重要科學事件，兼具時效性、科學價值與嚴謹核實。',
       category: 'journal_interpretation',
       categoryTitle: '期刊解讀',
-      categoryTag: '學術研究追蹤',
+      categoryTag: '最新科學動態與研究突破',
     },
     {
       path: 'principles',
       title: '科學原理與思想實驗 | MIRARI 數位科學雜誌',
-      description: '探索經典科學體系、第一性原理推演、數學模型與思想實驗，結合同步數值模擬驗證。',
+      description: '收錄一般科普、經典科學知識、科學現象、數學原理、理論解釋及思想實驗，專注於增進科學理解。',
       category: 'scientific_principles',
       categoryTitle: '科學原理與思想實驗',
       categoryTag: '思想實驗與基石',

@@ -62,7 +62,23 @@
       "strictlyProhibitFakeCitations": true
     },
     "editorialCategorization": {
-      "rule": "每篇正式文章必須且只能有其中一個主要編輯分類：scientific_principles 或 journal_interpretation。journal_interpretation 必須是以近期真實研究論文為主要解讀對象，重點在介紹該研究的問題、方法、結果、限制與科學意義，具有可核實的主要論文來源。不能因引用論文、有 DOI、有 journalReference、使用數學模型或提及近期研究而判定為期刊解讀。科學原理與思想實驗則涵蓋經典科學、數學、思想實驗及基礎原理。"
+      "categories": {
+        "scientific_principles": {
+          "displayName": "科學原理與思想實驗",
+          "scope": "收錄一般科普、經典科學知識、科學現象、數學原理、理論解釋及思想實驗",
+          "purpose": "主要目的是讓讀者理解科學，而非追逐最新消息。不限制物理學，也不要求每篇一定具有思想實驗",
+          "currentArticles": 4
+        },
+        "journal_interpretation": {
+          "displayName": "期刊解讀",
+          "scope": "最新科學發現、重要研究成果、研發技術突破及具有話題性的科學事件",
+          "selectionCriteria": "以新聞時效性、科學價值與話題性作為選題依據。涵蓋最新學術研究、重大科學發現、技術研發突破、科學機構發布的重要成果及值得公眾關注的科學事件",
+          "rigorRule": "不要求每篇都必須以單篇同儕審查論文為主題，但必須核對可信來源，清楚區分：已完成同行審查的研究、尚未同行審查的預印本、機構或企業提出但尚待獨立驗證的成果。不得為了追逐話題性誇大研究結果",
+          "currentArticles": 0
+        }
+      },
+      "classificationPrinciple": "根據文章的主要編輯目的分類：主要在解釋某個科學知識或原理 -> scientific_principles；主要在報導或解讀近期科學發現、研究成果、技術突破或科學事件 -> journal_interpretation。不能僅因引用了新論文就歸類為期刊解讀，不能僅因內容涉及經典科學原理就排除其作為最新研究報導的可能。兩大分類互斥且與學科標籤獨立",
+      "autonomousCreationRule": "每日三篇不強制兩種類型各佔多少篇，讓創作 Agent 根據真實值得報導的近期發現與具科普價值的經典主題自由決定比例。若近期無足夠突破，嚴禁編造新聞填充期刊解讀。首頁期刊解讀只收錄真正屬於 journal_interpretation 的正式文章，目前為零篇維持不顯示空白板塊"
     },
     "readabilityStandards": {
       "targetLanguage": "繁體中文（台灣標準科學語境）",
