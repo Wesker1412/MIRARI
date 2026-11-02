@@ -3,6 +3,7 @@ import { Outlet, useLocation, useNavigate, matchPath } from 'react-router-dom';
 import { SiteHeader } from './SiteHeader';
 import { SiteFooter } from './SiteFooter';
 import { GlobalMascotOverlay } from '../mascot/GlobalMascotOverlay';
+import { SITE_CONFIG } from '../../config/site';
 import { ARTICLES, getArticleBySlug } from '../../data/articles';
 import type { Article } from '../../types';
 import type { EvidenceSearchResult } from '../../services/articleEvidenceService';
@@ -56,7 +57,7 @@ export const SiteLayout: React.FC = () => {
     const fullUrl =
       typeof window !== 'undefined'
         ? `${window.location.origin}/articles/${slug}`
-        : `https://mirari.science/articles/${slug}`;
+        : `${SITE_CONFIG.canonicalOrigin}/articles/${slug}`;
 
     if (navigator.clipboard) {
       navigator.clipboard

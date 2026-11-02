@@ -71,28 +71,22 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({
                 封面故事
               </button>
               <button
-                onClick={() => scrollToAnchor('editorial-picks')}
+                onClick={() => scrollToAnchor('journal-research')}
                 className="hover:text-mirari-ink transition py-1"
               >
-                編輯精選
+                期刊解讀
               </button>
               <button
-                onClick={() => scrollToAnchor('research-monitor')}
+                onClick={() => scrollToAnchor('principles-experiments')}
                 className="hover:text-mirari-ink transition py-1"
               >
-                研究追蹤
+                原理與思想實驗
               </button>
               <button
-                onClick={() => scrollToAnchor('classic-foundations')}
+                onClick={() => scrollToAnchor('explore-mirari')}
                 className="hover:text-mirari-ink transition py-1"
               >
-                思想實驗
-              </button>
-              <button
-                onClick={() => scrollToAnchor('explore-topics')}
-                className="hover:text-mirari-ink transition py-1"
-              >
-                科學主題
+                探索 MIRARI
               </button>
             </nav>
 

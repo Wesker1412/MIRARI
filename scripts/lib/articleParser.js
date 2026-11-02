@@ -52,6 +52,16 @@ export function parseFrontmatter(rawContent) {
       continue;
     }
 
+    // Sub-property under a parent object key (e.g. "  journal: ...")
+    const subPropMatch = line.match(/^\s{2,4}([a-zA-Z0-9_]+):\s*(.*)$/);
+    if (subPropMatch && currentKey && !currentList && !currentObjectInList) {
+      if (typeof metadata[currentKey] !== 'object' || metadata[currentKey] === null) {
+        metadata[currentKey] = {};
+      }
+      metadata[currentKey][subPropMatch[1]] = cleanYamlVal(subPropMatch[2].trim());
+      continue;
+    }
+
     // Simple list item (e.g. "  - item")
     if (line.match(/^\s*-\s+(.*)$/)) {
       const val = cleanYamlVal(line.match(/^\s*-\s+(.*)$/)[1]);

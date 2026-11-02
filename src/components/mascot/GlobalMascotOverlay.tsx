@@ -34,6 +34,8 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
   const [mascotState, setMascotState] = useState<MascotState>('idle');
   const [isPanelOpen, setIsPanelOpen] = useState<boolean>(false);
   const [isHovered, setIsHovered] = useState<boolean>(false);
+  const [isInExploreSection, setIsInExploreSection] = useState<boolean>(false);
+  const hasUserDismissedExploreRef = useRef<boolean>(false);
 
   // Position & Drag state
   const [hasCustomPos, setHasCustomPos] = useState<boolean>(() => {
@@ -60,10 +62,10 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
   const panelRef = useRef<HTMLDivElement>(null);
   const [measuredPanelHeight, setMeasuredPanelHeight] = useState<number>(180);
 
-  // Mascot dimensions based on view (Round-Bottom Flask aspect ratio 100:120)
+  // Mascot dimensions based on view & Section 4 presence (Flask ratio 100:120)
   const isHomeView = currentView === 'home';
-  const mascotWidth = isHomeView ? 116 : 80;
-  const mascotHeight = isHomeView ? 138 : 96;
+  const mascotWidth = isInExploreSection ? 120 : isHomeView ? 104 : 80;
+  const mascotHeight = isInExploreSection ? 144 : isHomeView ? 125 : 96;
 
   // ─── Default Anchor Calculation ──────────────────────────────────
   const getDefaultAnchorPosition = useCallback((): Position => {
@@ -72,11 +74,24 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
     const h = window.innerHeight;
 
     if (isHomeView) {
-      // Check if hero anchor element exists in DOM
+      // 1. If in Section 4 Explore workbench, anchor to #explore-mirari-anchor
+      if (isInExploreSection) {
+        const exploreAnchor = document.getElementById('explore-mirari-anchor');
+        if (exploreAnchor) {
+          const rect = exploreAnchor.getBoundingClientRect();
+          if (rect.top > -100 && rect.top < h + 100) {
+            return {
+              x: Math.max(margin, Math.min(w - mascotWidth - margin, rect.left + (rect.width - mascotWidth) / 2)),
+              y: Math.max(margin, Math.min(h - mascotHeight - margin, rect.top + (rect.height - mascotHeight) / 2)),
+            };
+          }
+        }
+      }
+
+      // 2. Check if hero anchor element exists in DOM (Section 1 Cover)
       const heroAnchor = document.getElementById('mirari-hero-anchor');
       if (heroAnchor) {
         const rect = heroAnchor.getBoundingClientRect();
-        // If anchor is within or near viewport, snap to it
         if (rect.top > -50 && rect.top < h) {
           return {
             x: Math.max(margin, Math.min(w - mascotWidth - margin, rect.left)),
@@ -84,9 +99,10 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
           };
         }
       }
-      // Default floating hero position (prominently placed on right)
+
+      // 3. Default floating hero position (prominently placed on right)
       return {
-        x: Math.max(margin, w - mascotWidth - (w > 1024 ? 80 : 32)),
+        x: Math.max(margin, w - mascotWidth - (w > 1024 ? 64 : 24)),
         y: Math.max(margin, Math.min(h - mascotHeight - margin, 240)),
       };
     } else {
@@ -96,7 +112,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
         y: Math.max(margin, h - mascotHeight - 24),
       };
     }
-  }, [isHomeView, mascotWidth, mascotHeight]);
+  }, [isHomeView, isInExploreSection, mascotWidth, mascotHeight]);
 
   // Synchronize position on mount or view switch if not custom dragged
   useEffect(() => {
@@ -147,6 +163,75 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
       window.removeEventListener('scroll', handleScroll);
     };
   }, [hasCustomPos, isHomeView, getDefaultAnchorPosition, mascotWidth, mascotHeight]);
+
+  // ─── Section 4 Intersection Observer (Explore with MIRARI) ───────
+  useEffect(() => {
+    if (currentView !== 'home') {
+      setIsInExploreSection(false);
+      return;
+    }
+
+    const exploreElement = document.getElementById('explore-mirari');
+    if (!exploreElement) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (entry && entry.isIntersecting) {
+          setIsInExploreSection(true);
+          // Auto-open panel if user hasn't explicitly dismissed it
+          if (!hasUserDismissedExploreRef.current) {
+            setIsPanelOpen(true);
+            setMascotState('excited');
+            const timer = setTimeout(() => setMascotState('idle'), 1800);
+            return () => clearTimeout(timer);
+          }
+        } else {
+          setIsInExploreSection(false);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(exploreElement);
+    return () => observer.disconnect();
+  }, [currentView]);
+
+  // ─── Global Event Bus for Section 4 Chips & Summon ───────────────
+  useEffect(() => {
+    const handleExploreQuery = (e: Event) => {
+      const customEvent = e as CustomEvent<{ query: string }>;
+      if (customEvent.detail?.query) {
+        setHomeQuery(customEvent.detail.query);
+        setIsPanelOpen(true);
+        handleExecuteHomeSearch(customEvent.detail.query);
+      }
+    };
+
+    const handleSummon = () => {
+      setHasCustomPos(false);
+      localStorage.removeItem(STORAGE_KEY_POS);
+      setMascotState('excited');
+      setIsPanelOpen(true);
+      setTimeout(() => {
+        setMascotState('idle');
+      }, 1800);
+    };
+
+    window.addEventListener('mirari:explore-query', handleExploreQuery);
+    window.addEventListener('mirari:summon-mascot', handleSummon);
+    return () => {
+      window.removeEventListener('mirari:explore-query', handleExploreQuery);
+      window.removeEventListener('mirari:summon-mascot', handleSummon);
+    };
+  }, []);
+
+  const handleClosePanel = () => {
+    setIsPanelOpen(false);
+    if (isInExploreSection) {
+      hasUserDismissedExploreRef.current = true;
+    }
+  };
 
   // ─── Proactive Home Greeting & Search Pull-out ───────────────────
   useEffect(() => {
@@ -252,10 +337,10 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
 
   // ─── Home Natural Language Search Logic ──────────────────────────
   const sampleHomeQueries = [
-    '行星凌日',
-    '超重黑洞',
-    '大腦知覺',
-    '時間之箭',
+    '想看看雙擺如何展現渾沌？',
+    '好奇動作電位怎麼跨越細胞膜？',
+    '聊聊麥克斯韋妖如何把資訊變成能量？',
+    '系外行星如何利用凌日法量測半徑？',
   ];
 
   const handleExecuteHomeSearch = (queryStr: string) => {
@@ -364,7 +449,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
           touchAction: 'none',
         }}
         className={`fixed top-0 left-0 z-50 select-none cursor-grab active:cursor-grabbing ${
-          isDragging ? '' : 'transition-transform duration-500 cubic-bezier(0.16, 1, 0.3, 1)'
+          isDragging ? '' : 'transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1)'
         }`}
         title={isPanelOpen ? '點擊收起面板，長按可自由拖曳' : '點擊展開對話，長按可自由拖曳'}
       >
@@ -402,7 +487,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
           {/* Mobile Backdrop Overlay */}
           <div
             className="fixed inset-0 bg-mirari-ink/25 backdrop-blur-[2px] z-40 sm:hidden"
-            onClick={() => setIsPanelOpen(false)}
+            onClick={handleClosePanel}
           />
 
           {/* Panel Wrapper: Bottom Sheet on Mobile, Smart Anchor on Desktop */}
@@ -446,7 +531,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
               </div>
 
               <button
-                onClick={() => setIsPanelOpen(false)}
+                onClick={handleClosePanel}
                 className="text-xs text-mirari-dim hover:text-mirari-ink px-2 py-0.5 rounded hover:bg-mirari-surfaceAlt transition font-sans"
               >
                 關閉

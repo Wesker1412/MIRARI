@@ -20,9 +20,7 @@ export const SiteFooter: React.FC = () => {
           <div className="flex items-center space-x-4 text-mirari-muted">
             <Link to="/" className="hover:text-mirari-ink transition">雜誌首頁</Link>
             <span>·</span>
-            <Link to="/series/habitable-worlds-thirty-years" className="hover:text-mirari-ink transition">系列專題</Link>
-            <span>·</span>
-            <Link to="/articles/when-starlight-dims" className="hover:text-mirari-ink transition">精選篇章</Link>
+            <Link to="/articles/when-starlight-dims" className="hover:text-mirari-ink transition">首發篇章</Link>
           </div>
         </div>
 

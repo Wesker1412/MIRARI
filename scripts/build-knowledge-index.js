@@ -140,44 +140,6 @@ async function runPipeline() {
     });
   }
 
-  // Load supplementary article metadata records
-  const suppPath = path.join(ROOT_DIR, 'src', 'data', 'supplementaryArticles.json');
-  if (fs.existsSync(suppPath)) {
-    const staticArticles = JSON.parse(fs.readFileSync(suppPath, 'utf8'));
-    for (const staticArt of staticArticles) {
-      if (!compiledArticles.some((a) => a.id === staticArt.id)) {
-        compiledArticles.push(staticArt);
-        // Also index for search
-        const tokens = Array.from(
-          new Set(
-            tokenizeCJK(
-              `${staticArt.title} ${staticArt.subtitle} ${staticArt.summary} ${(staticArt.tags || []).join(' ')}`
-            )
-          )
-        );
-        searchIndexList.push({
-          articleId: staticArt.id,
-          slug: staticArt.slug,
-          title: staticArt.title,
-          subtitle: staticArt.subtitle,
-          summary: staticArt.summary,
-          status: staticArt.status,
-          topicIds: staticArt.topicIds || [],
-          tags: staticArt.tags || [],
-          format: staticArt.format,
-          formatBadgeText: staticArt.formatBadgeText,
-          isEditorialCover: !!staticArt.isEditorialCover,
-          isEditorialPick: !!staticArt.isEditorialPick,
-          isResearchHighlight: !!staticArt.isResearchHighlight,
-          isClassicFoundation: !!staticArt.isClassicFoundation,
-          tokens,
-          contentHash: sha256(staticArt.id),
-          totalSentences: 0,
-        });
-      }
-    }
-  }
-
   // Save Generated Files
   console.log('\n💾 寫入編譯產出物:');
   const articlesOutPath = path.join(GENERATED_DIR, 'articles-manifest.json');

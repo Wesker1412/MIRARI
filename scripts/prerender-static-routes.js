@@ -90,131 +90,90 @@ function generatePrerenderedHTML() {
 
   const articles = JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf8'));
 
+  const publishedArticles = articles.filter((a) => a.status === 'published');
   let publishedPrerenderCount = 0;
-  let unpublishedNoticeCount = 0;
 
-  for (const article of articles) {
-    const isPublished = article.status === 'published';
+  for (const article of publishedArticles) {
     const articleDir = path.join(DIST_DIR, 'articles', article.slug);
     ensureDir(articleDir);
 
-    let pageTitle = '';
-    let pageDesc = '';
-    let ogType = 'website';
-    let canonicalUrl = `${canonicalOrigin}/articles/${article.slug}`;
-    let preRenderedBody = '';
+    const pageTitle = `${article.title} | MIRARI 數位科學雜誌`;
+    const pageDesc = article.summary || article.leadParagraph || '';
+    const ogType = 'article';
+    const canonicalUrl = `${canonicalOrigin}/articles/${article.slug}`;
 
-    if (isPublished) {
-      pageTitle = `${article.title} | MIRARI 數位科學雜誌`;
-      pageDesc = article.summary || article.leadParagraph || '';
-      ogType = 'article';
+    // 構建結構化文章語意 HTML
+    const authorsHtml = (article.authors && article.authors.length > 0)
+      ? article.authors.map((a) => `<span>${escapeHtml(a.role)}／${escapeHtml(a.name)}</span>`).join(' · ')
+      : '<span>MIRARI 科學組</span>';
 
-      // 構建結構化文章語意 HTML
-      const authorsHtml = (article.authors && article.authors.length > 0)
-        ? article.authors.map((a) => `<span>${escapeHtml(a.role)}／${escapeHtml(a.name)}</span>`).join(' · ')
-        : '<span>MIRARI 科學組</span>';
+    const sectionsHtml = (article.sections || [])
+      .map((sec) => {
+        const paragraphs = (sec.paragraphs || [])
+          .map((p) => {
+            if (p.startsWith('$$')) {
+              return `<div class="mirari-formula-block py-2 font-mono text-center text-xs text-mirari-cobalt">${escapeHtml(p)}</div>`;
+            }
+            return `<p class="leading-relaxed font-serif text-base sm:text-lg text-mirari-ink mb-4">${escapeHtml(p)}</p>`;
+          })
+          .join('\n');
 
-      const sectionsHtml = (article.sections || [])
-        .map((sec) => {
-          const paragraphs = (sec.paragraphs || [])
-            .map((p) => {
-              if (p.startsWith('$$')) {
-                return `<div class="mirari-formula-block py-2 font-mono text-center text-xs text-mirari-cobalt">${escapeHtml(p)}</div>`;
-              }
-              return `<p class="leading-relaxed font-serif text-base sm:text-lg text-mirari-ink mb-4">${escapeHtml(p)}</p>`;
-            })
-            .join('\n');
+        return `
+          <section class="mb-10">
+            <h2 class="font-serif text-xl sm:text-2xl font-bold text-mirari-ink mb-4 pb-2 border-b border-mirari-line">${escapeHtml(sec.title)}</h2>
+            <div class="space-y-4">
+              ${paragraphs}
+            </div>
+          </section>
+        `;
+      })
+      .join('\n');
 
-          return `
-            <section class="mb-10">
-              <h2 class="font-serif text-xl sm:text-2xl font-bold text-mirari-ink mb-4 pb-2 border-b border-mirari-line">${escapeHtml(sec.title)}</h2>
-              <div class="space-y-4">
-                ${paragraphs}
-              </div>
-            </section>
-          `;
-        })
-        .join('\n');
+    const referencesHtml = (article.references && article.references.length > 0)
+      ? `
+        <footer class="mt-12 pt-8 border-t border-mirari-line text-xs font-sans text-mirari-muted space-y-2">
+          <h3 class="font-bold text-mirari-ink text-sm">參考文獻與實證資料來源：</h3>
+          <ol class="list-decimal pl-5 space-y-1.5">
+            ${article.references.map((r) => `<li>${escapeHtml(r.citation)}</li>`).join('\n')}
+          </ol>
+        </footer>
+      `
+      : '';
 
-      const referencesHtml = (article.references && article.references.length > 0)
-        ? `
-          <footer class="mt-12 pt-8 border-t border-mirari-line text-xs font-sans text-mirari-muted space-y-2">
-            <h3 class="font-bold text-mirari-ink text-sm">參考文獻與實證資料來源：</h3>
-            <ol class="list-decimal pl-5 space-y-1.5">
-              ${article.references.map((r) => `<li>${escapeHtml(r.citation)}</li>`).join('\n')}
-            </ol>
-          </footer>
-        `
-        : '';
-
-      preRenderedBody = `
-        <div class="min-h-screen bg-[#fcfbf9] text-[#1a1917] pb-32">
-          <header class="border-b border-[#e5e0d8] bg-[#fcfbf9]/90 px-4 sm:px-8 py-3.5 flex items-center justify-between">
-            <a href="/" class="text-xs font-sans text-[#706c64] hover:text-[#1a1917] px-3 py-1.5 rounded-lg border border-[#e5e0d8]">返回首頁</a>
-            <span class="font-serif text-sm font-semibold truncate max-w-md hidden sm:inline-block">${escapeHtml(article.title)}</span>
+    const preRenderedBody = `
+      <div class="min-h-screen bg-[#fcfbf9] text-[#1a1917] pb-32">
+        <header class="border-b border-[#e5e0d8] bg-[#fcfbf9]/90 px-4 sm:px-8 py-3.5 flex items-center justify-between">
+          <a href="/" class="text-xs font-sans text-[#706c64] hover:text-[#1a1917] px-3 py-1.5 rounded-lg border border-[#e5e0d8]">返回首頁</a>
+          <span class="font-serif text-sm font-semibold truncate max-w-md hidden sm:inline-block">${escapeHtml(article.title)}</span>
+        </header>
+        <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14">
+          <header class="space-y-4 pb-8 border-b border-[#e5e0d8]">
+            <div class="flex items-center space-x-2 text-xs font-sans text-[#b87333]">
+              <span class="font-semibold tracking-wider">科學專題</span>
+              <span>·</span>
+              <span>${escapeHtml(article.formatBadgeText || '深度特輯')}</span>
+            </div>
+            <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#1a1917] leading-[1.2]">${escapeHtml(article.title)}</h1>
+            <p class="font-serif text-lg sm:text-xl text-[#706c64] font-normal leading-relaxed">${escapeHtml(article.subtitle)}</p>
+            <div class="flex flex-wrap items-center justify-between pt-4 text-xs text-[#a09c94] border-t border-[#e5e0d8]/60">
+              <div class="flex items-center space-x-3">${authorsHtml}</div>
+              <span>${escapeHtml(article.formatBadgeText || '正式發布')}</span>
+            </div>
           </header>
-          <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14">
-            <header class="space-y-4 pb-8 border-b border-[#e5e0d8]">
-              <div class="flex items-center space-x-2 text-xs font-sans text-[#b87333]">
-                <span class="font-semibold tracking-wider">科學專題</span>
-                <span>·</span>
-                <span>${escapeHtml(article.formatBadgeText || '深度特輯')}</span>
-              </div>
-              <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#1a1917] leading-[1.2]">${escapeHtml(article.title)}</h1>
-              <p class="font-serif text-lg sm:text-xl text-[#706c64] font-normal leading-relaxed">${escapeHtml(article.subtitle)}</p>
-              <div class="flex flex-wrap items-center justify-between pt-4 text-xs text-[#a09c94] border-t border-[#e5e0d8]/60">
-                <div class="flex items-center space-x-3">${authorsHtml}</div>
-                <span>${escapeHtml(article.formatBadgeText || '正式發布')}</span>
-              </div>
-            </header>
-            <article class="mt-8">
-              ${sectionsHtml}
-            </article>
-            ${referencesHtml}
-          </main>
-        </div>
-      `;
+          <article class="mt-8">
+            ${sectionsHtml}
+          </article>
+          ${referencesHtml}
+        </main>
+      </div>
+    `;
 
-      publishedPrerenderCount++;
-    } else {
-      // 未發布文章：僅生成籌備中保護頁面，杜絕草稿洩漏
-      pageTitle = `《${article.title}》（籌備中）| MIRARI 數位科學雜誌`;
-      pageDesc = article.summary || '本篇章尚處於學術同行評審與編輯部撰寫籌備中，尚未公開發布。';
-      ogType = 'website';
-
-      preRenderedBody = `
-        <div class="min-h-screen bg-[#fcfbf9] text-[#1a1917] flex flex-col justify-between">
-          <header class="border-b border-[#e5e0d8] bg-[#fcfbf9]/90 px-4 sm:px-8 py-3.5 flex items-center justify-between">
-            <a href="/" class="text-xs font-sans text-[#706c64] px-3 py-1.5 rounded-lg border border-[#e5e0d8]">返回 MIRARI 首頁</a>
-            <span class="font-serif text-sm font-semibold">MIRARI · 編輯籌備室</span>
-          </header>
-          <main class="max-w-2xl mx-auto px-4 py-16 text-center space-y-6">
-            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-xs text-amber-800">
-              <span>學術審訂與籌備中 · 尚未公開發布</span>
-            </div>
-            <h1 class="font-serif text-3xl sm:text-4xl font-bold leading-tight">《${escapeHtml(article.title)}》</h1>
-            <p class="font-serif text-base text-[#706c64]">${escapeHtml(article.subtitle)}</p>
-            <div class="p-6 rounded-2xl bg-white border border-[#e5e0d8] text-left text-xs text-[#706c64] leading-relaxed">
-              <strong class="text-[#1a1917] block mb-1">篇章籌備說明：</strong>
-              本篇章目前處於選題研究與同行審查階段，尚未通過發布審核。為維護科學媒體的嚴謹標準，MIRARI 不開放未發布草案的全文公開閱讀。
-            </div>
-            <div class="pt-4">
-              <a href="/" class="inline-block px-6 py-3 rounded-xl bg-[#1a1917] text-white text-xs font-medium">返回雜誌首頁</a>
-            </div>
-          </main>
-          <footer class="border-t border-[#e5e0d8] py-6 text-center text-xs text-[#a09c94]">
-            © 2026 MIRARI 數位科學雜誌
-          </footer>
-        </div>
-      `;
-
-      unpublishedNoticeCount++;
-    }
+    publishedPrerenderCount++;
 
     // JSON-LD 結構化資料
     const jsonLd = {
       '@context': 'https://schema.org',
-      '@type': isPublished ? 'ScholarlyArticle' : 'WebPage',
+      '@type': 'ScholarlyArticle',
       headline: article.title,
       description: pageDesc,
       url: canonicalUrl,
@@ -224,7 +183,7 @@ function generatePrerenderedHTML() {
         name: 'MIRARI',
         url: canonicalOrigin,
       },
-      ...(isPublished && article.authors
+      ...(article.authors
         ? {
             author: article.authors.map((a) => ({
               '@type': 'Person',
@@ -277,63 +236,6 @@ ${JSON.stringify(jsonLd, null, 2)}
     fs.writeFileSync(path.join(DIST_DIR, 'articles', `${article.slug}.html`), articleHtml, 'utf8');
   }
 
-  // 生成系列專題靜態預渲染頁面
-  const seriesList = [
-    {
-      id: 'series-habitable-worlds',
-      slug: 'habitable-worlds-thirty-years',
-      title: '尋找第二個地球：系外行星巡天三十年記',
-      subtitle: '從飛馬座 51b 到宜居帶岩石行星，人類在銀河系尋找生命搖籃的壯麗歷程',
-      description: '自 1995 年首顆主序星系外行星發現至今，三十年間人類從懷疑到證實銀河系處處皆有行星。本系列從觀測幾何、大氣分析到生命印記，系統性回顧並展望人類走出太陽系的科學視野。',
-      status: 'planning',
-      totalPlannedArticles: 4,
-    },
-  ];
-
-  for (const series of seriesList) {
-    const seriesDir = path.join(DIST_DIR, 'series', series.slug);
-    ensureDir(seriesDir);
-
-    const seriesTitle = `《${series.title}》系列專題 | MIRARI 數位科學雜誌`;
-    const seriesDesc = series.description;
-    const seriesCanonical = `${canonicalOrigin}/series/${escapeHtml(series.slug)}`;
-
-    let seriesHtml = baseHtml;
-    seriesHtml = seriesHtml.replace(/<title>.*?<\/title>/i, `<title>${escapeHtml(seriesTitle)}</title>`);
-    seriesHtml = seriesHtml.replace(/<meta\s+name="description"[^>]*>/i, '');
-    seriesHtml = seriesHtml.replace(/<meta\s+name="robots"[^>]*>/i, '');
-
-    const seriesMeta = `
-    ${robotsMetaTag}
-    <meta name="description" content="${escapeHtml(seriesDesc)}" />
-    <link rel="canonical" href="${seriesCanonical}" />
-    <meta property="og:site_name" content="MIRARI" />
-    <meta property="og:title" content="${escapeHtml(seriesTitle)}" />
-    <meta property="og:description" content="${escapeHtml(seriesDesc)}" />
-    <meta property="og:url" content="${seriesCanonical}" />
-  </head>`;
-    seriesHtml = seriesHtml.replace('</head>', `${seriesMeta}`);
-
-    const seriesBody = `
-      <div class="min-h-screen bg-[#fcfbf9] text-[#1a1917] pb-24">
-        <header class="border-b border-[#e5e0d8] bg-[#fcfbf9]/90 px-8 py-3.5 flex items-center justify-between">
-          <a href="/" class="text-xs px-3 py-1.5 border border-[#e5e0d8] rounded-lg">返回首頁</a>
-          <span class="font-serif text-sm font-semibold">系列特輯 · ${escapeHtml(series.title)}</span>
-        </header>
-        <main class="max-w-4xl mx-auto px-6 pt-14 space-y-8">
-          <div class="space-y-3 pb-8 border-b border-[#e5e0d8]">
-            <span class="text-xs font-semibold text-[#b87333]">系列專題策劃預告</span>
-            <h1 class="font-serif text-4xl font-bold">${escapeHtml(series.title)}</h1>
-            <p class="font-serif text-xl text-[#706c64]">${escapeHtml(series.subtitle)}</p>
-            <p class="text-sm text-[#706c64] leading-relaxed">${escapeHtml(series.description)}</p>
-          </div>
-        </main>
-      </div>
-    `;
-    seriesHtml = seriesHtml.replace('<div id="root"></div>', `<div id="root">${seriesBody}</div>`);
-    fs.writeFileSync(path.join(seriesDir, 'index.html'), seriesHtml, 'utf8');
-  }
-
   // 生成 404.html (適用於 Vercel / 靜態伺服器)
   let notFoundHtml = baseHtml
     .replace(/<title>.*?<\/title>/i, '<title>404 · 篇章坐標未找到 | MIRARI</title>');
@@ -360,7 +262,6 @@ ${JSON.stringify(jsonLd, null, 2)}
   fs.writeFileSync(path.join(DIST_DIR, '404.html'), notFoundHtml, 'utf8');
 
   console.log(`✓ 已生成 ${publishedPrerenderCount} 篇正式發布文章之靜態 SEO 預渲染 HTML (含 robots noindex 與集中 Canonical)`);
-  console.log(`✓ 已生成 ${unpublishedNoticeCount} 篇未發布文章之安全審訂保護頁面`);
   console.log(`✓ 已生成 dist/404.html 標準錯誤頁`);
   console.log('================================================================');
   console.log('🎉 靜態預渲染與 SEO 管線執行成功！');

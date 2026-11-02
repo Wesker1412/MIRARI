@@ -28,9 +28,8 @@ function HomeRouteWrapper() {
   return (
     <HomePage
       onSelectArticle={(article) => navigate(`/articles/${article.slug}`)}
-      onSelectSeries={(series) => navigate(`/series/${series.slug}`)}
       onExploreTopic={(_topicId) => {
-        const elem = document.getElementById('explore-topics');
+        const elem = document.getElementById('explore-mirari');
         if (elem) elem.scrollIntoView({ behavior: 'smooth' });
       }}
     />
