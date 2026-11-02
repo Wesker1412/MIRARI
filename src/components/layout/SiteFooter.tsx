@@ -13,14 +13,14 @@ export const SiteFooter: React.FC = () => {
               <span className="font-medium text-mirari-ink">探索科學的互動數位雜誌</span>
             </div>
             <p className="text-mirari-muted max-w-xl leading-relaxed">
-              一本能夠自主選題、查證實證文獻、推導數學物理模型並實作可操作互動實驗的數位科學媒體。
+              聚焦前沿科學研究、第一性原理與思想實驗，結合同步數值模擬的深度科學雜誌。
             </p>
           </div>
 
           <div className="flex items-center space-x-4 text-mirari-muted">
             <Link to="/" className="hover:text-mirari-ink transition">雜誌首頁</Link>
             <span>·</span>
-            <Link to="/articles/when-starlight-dims" className="hover:text-mirari-ink transition">首發篇章</Link>
+            <Link to="/articles/when-starlight-dims" className="hover:text-mirari-ink transition">精選篇章</Link>
           </div>
         </div>
 
@@ -29,9 +29,9 @@ export const SiteFooter: React.FC = () => {
             © 2026 MIRARI. 保留所有科學編輯權利。
           </div>
           <div className="flex items-center space-x-3">
-            <span>持續自主創作機制</span>
+            <span>同儕審查文獻基礎</span>
             <span>·</span>
-            <span>可驗證原文引證標準</span>
+            <span>互動數值實驗</span>
           </div>
         </div>
       </div>
