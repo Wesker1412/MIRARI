@@ -1,4 +1,4 @@
-import { handleGlobalSearch, checkRateLimit } from './_lib/ragEngine';
+import { handleGlobalSearch, checkRateLimit } from './_lib/ragEngine.js';
 
 export default async function handler(req: any, res: any) {
   // CORS Headers for safety

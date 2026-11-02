@@ -1,7 +1,7 @@
-import articlesManifestRaw from '../../src/data/generated/articles-manifest.json' with { type: 'json' };
-import evidenceIndexRaw from '../../src/data/generated/evidence-index.json' with { type: 'json' };
-import knowledgePointsRaw from '../../src/data/generated/knowledge-points.json' with { type: 'json' };
-import searchIndexRaw from '../../src/data/generated/search-index.json' with { type: 'json' };
+import articlesManifestRaw from './data/articles-manifest.json' with { type: 'json' };
+import evidenceIndexRaw from './data/evidence-index.json' with { type: 'json' };
+import knowledgePointsRaw from './data/knowledge-points.json' with { type: 'json' };
+import searchIndexRaw from './data/search-index.json' with { type: 'json' };
 import type {
   Article,
   SentenceEvidence,

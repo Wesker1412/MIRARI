@@ -12,6 +12,7 @@ const ROOT_DIR = path.resolve(__dirname, '..');
 const CONTENT_DIR = path.join(ROOT_DIR, 'content', 'articles');
 const KP_DIR = path.join(ROOT_DIR, 'content', 'knowledge-points');
 const GENERATED_DIR = path.join(ROOT_DIR, 'src', 'data', 'generated');
+const API_DATA_DIR = path.join(ROOT_DIR, 'api', '_lib', 'data');
 const CACHE_DIR = path.join(ROOT_DIR, '.mirari-cache');
 const CACHE_FILE = path.join(CACHE_DIR, 'index-cache.json');
 const LOG_FILE = path.join(CACHE_DIR, 'sync-log.json');
@@ -185,6 +186,16 @@ async function runPipeline() {
   const kpOutPath = path.join(GENERATED_DIR, 'knowledge-points.json');
   fs.writeFileSync(kpOutPath, JSON.stringify(compiledKnowledgeBase, null, 2), 'utf8');
   console.log(`   ✓ ${kpOutPath} (${compiledKnowledgeBase.length} 篇知識庫, 共 ${totalKnowledgePoints} 個知識點)`);
+
+  // Sync to API Data Directory for Serverless Functions
+  if (!fs.existsSync(API_DATA_DIR)) {
+    fs.mkdirSync(API_DATA_DIR, { recursive: true });
+  }
+  fs.copyFileSync(articlesOutPath, path.join(API_DATA_DIR, 'articles-manifest.json'));
+  fs.copyFileSync(evidenceOutPath, path.join(API_DATA_DIR, 'evidence-index.json'));
+  fs.copyFileSync(searchOutPath, path.join(API_DATA_DIR, 'search-index.json'));
+  fs.copyFileSync(kpOutPath, path.join(API_DATA_DIR, 'knowledge-points.json'));
+  console.log(`   ✓ 同步資料至 ${API_DATA_DIR} (供 Vercel Serverless Functions 讀取)`);
 
   // Write Cache & Sync Log
   fs.writeFileSync(CACHE_FILE, JSON.stringify(cache, null, 2), 'utf8');
