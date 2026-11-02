@@ -35,9 +35,9 @@ authors:
     role: "撰文"
 references:
   - id: "ref-nature-2026-nuclear-clock-1"
-    citation: "Zhang, C., et al. (2026). \"A thorium-229 optical nuclear clock with feedback loop.\" Nature, doi:10.1038/s41586-026-11084-4."
+    citation: "Toscani De Col, L., et al. (2026). \"A thorium-229 optical nuclear clock with feedback loop.\" Nature, 658, 897-902. doi:10.1038/s41586-026-11084-4."
   - id: "ref-nature-2026-nuclear-clock-2"
-    citation: "Tiecke, T., et al. (2026). \"Frequency ratio of a thorium-229 nuclear clock to an atomic clock.\" Nature, doi:10.1038/s41586-026-11122-1."
+    citation: "Huang, B., et al. (2026). \"A nuclear clock synchronized to 229Th.\" Nature, 658, 903-908. doi:10.1038/s41586-026-11122-1."
   - id: "ref-peik-tamm-2003"
     citation: "Peik, E., & Tamm, C. (2003). \"Nuclear laser spectroscopy of the 3.5 eV transition in Th-229.\" Europhysics Letters, 61(2), 181-186."
 interactiveComponent: "NuclearClockSimulator"
@@ -80,21 +80,21 @@ interactiveComponent: "NuclearClockSimulator"
 
 # 四、Nature 雙論文解析：固態晶體與光頻梳的聯姻
 
-2026 年 10 月發表的兩項關鍵突破，標誌著核時鐘正式從理論假想蛻變為運作中的物理實體：
+2026 年 10 月發表的兩項關鍵突破（同期刊載於《Nature》第 658 卷），標誌著核時鐘正式從理論假想蛻變為運作中的物理實體：
 
 ### 1. 固態晶體中的百萬億原子核
-在第一篇論文中，研究團隊沒有採用傳統原子鐘複雜的超真空光學鑷子禁錮單個離子，而是直接將數以萬億計的 $^{229}\text{Th}$ 原子核「摻雜」進一塊在真空紫外波段透明的**氟化鈣（$\text{CaF}_2$）晶體**中。
+在歐洲跨國團隊（由維也納科技大學 L. Toscani De Col 與 Thorsten Schumm、德國聯邦物理技術研究院 PTB 等人領銜）的第一篇論文中，研究團隊沒有採用傳統原子鐘複雜的超真空光學鑷子禁錮單個離子，而是直接將數以萬億計的 $^{229}\text{Th}$ 原子核「摻雜」進一塊在真空紫外波段透明的**氟化鈣（$\text{CaF}_2$）晶體**中。
 因為原子核受到外部電子保護，即便身處常溫常壓的固態晶格內，核躍遷譜線依然保持極其狹窄的光學線寬！這意味著，僅僅一塊方糖大小的晶體，就能提供 $10^{15}$ 個極度穩定的核時鐘頻率參考，信噪比遠超傳統僅能捕獲數千個原子的光學晶格。
 
 ### 2. 伺服回饋鎖定閉環（Feedback Loop）
-更關鍵的進展在於「閉環控制」。研究人員利用光頻梳產生精確調諧的 $148.4\text{ nm}$ 真空紫外雷射照射晶體，測量核激發螢光產生的微弱色散誤差信號：
+更關鍵的進展在於「閉環控制」。Toscani De Col 等人利用光頻梳產生精確調諧的 $148.4\text{ nm}$ 真空紫外雷射照射晶體，測量連續吸收產生的微弱色散誤差信號：
 
 $$S(\Delta \nu) \propto -\frac{\Delta \nu / \gamma}{1 + (\Delta \nu / \gamma)^2}$$
 
-當雷射頻率精確對準共振中心時（$\Delta \nu = 0$），誤差信號嚴格過零。一旦雷射發生熱漂移，誤差信號即刻產生反向偏置，透過比例-積分（PID）高速伺服電路，即時將雷射頻率拉回核共振中心，實現了人類歷史上首個**全主動鎖定的固態光學核時鐘**。
+當雷射頻率精確對準共振中心時（$\Delta \nu = 0$），誤差信號嚴格過零。一旦雷射發生熱漂移，誤差信號即刻產生反向偏置，透過比例-積分（PID）高速伺服電路，即時將雷射頻率拉回核共振中心，實現了人類歷史上首個**全主動鎖定的固態光學核時鐘**，並透過次諧波與單離子原子鐘連續比對，證明其頻率不穩定度可一路推進至 $10^{-15}$ 量級。
 
-### 3. 與鍶原子鐘的頻率絕對比值
-在第二篇論文中，科學家透過光纖光頻梳，首次將釷-229 核時鐘的跳動頻率，與當代頂級鍶光學原子鐘進行了同場比對，精確測得了兩者的頻率比值。這項比對不僅完成了時間度量的交接，更為檢驗愛因斯坦相對論與搜尋宇宙「暗物質」提供了前所未有的超高靈敏度探針。
+### 3. 同步鎖定與獨立晶體再現性
+在同期發表的第二篇論文中，清華大學研究團隊（第一作者 B. Huang 與 S. Ding 等人）獨立以《A nuclear clock synchronized to 229Th》為題，實現了窄線寬連續波深紫外雷射對 $^{229}\text{Th}:\text{CaF}_2$ 核躍遷的頻率調制主動同步鎖定。該研究同樣達到了 $10^{-15}$ 量級的瞬時相對頻率不穩定度，並在多個獨立生長晶體之間測得了 $10^{-13}$ 的絕對頻率再現性，為核時鐘的大規模固態製造可行性提供了關鍵實證。
 
 # 五、科學邊界：核時鐘已經全面超越原子鐘了嗎？
 

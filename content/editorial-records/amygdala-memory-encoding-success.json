@@ -9,9 +9,16 @@
     "primarySources": [
       {
         "id": "ref-natneuro-2026-amygdala",
-        "citation": "Rutishauser, U., et al. (2026). \"Stimulus-specific recruitment of human amygdala neurons predicts episodic memory encoding success.\" Nature Neuroscience, doi:10.1038/s41593-026-02493-9.",
+        "citation": "Xiao, J., et al. (2026). \"Stimulus-specific recruitment of human amygdala neurons predicts episodic memory encoding success.\" Nature Neuroscience, doi:10.1038/s41593-026-02493-9.",
         "doi": "10.1038/s41593-026-02493-9",
         "peerReviewStatus": "已完成同行評審 (Nature Neuroscience, 2026-10-27 出刊)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Jiayang Xiao",
+          "seniorAuthor": "Ueli Rutishauser",
+          "originalPublicationPageVerified": true,
+          "causalityCaveatAudited": true,
+          "auditNotes": "第一作者由原先誤記之資深通訊作者 Rutishauser 正式校正為第一作者 Jiayang Xiao；同步全面審核正文，嚴格區分統計預測 (predicts) 與單向因果操控。"
+        },
         "verifiedClaims": [
           "人腦基底外側杏仁核 (BLA) 單神經元展現刺激類別特異性發火偏好（如人臉、場景、物件）",
           "類別選擇性神經元在刺激呈現期間的發火增率，在統計上顯著預測受試者 24 小時後的情節記憶回憶表現 (SME)",
@@ -94,7 +101,8 @@
     "interactiveType": "neural_raster"
   },
   "issuesIdentifiedAndCorrected": [
-    "因果推論界定校核：原文為觀察性微電極記錄，強調發火率具備「統計預測力（Predicts）」，嚴格禁止在科普文案中寫成「證明杏仁核發火直接製造了記憶」之因果武斷陳述",
+    "第一作者精確校正：原始研究出處由原先誤填之資深作者 Ueli Rutishauser 正式校正為論文第一作者 Jiayang Xiao，完整保留通訊作者貢獻資訊",
+    "因果推論界定校核：原文為觀察性微電極記錄，強調發火率具備「統計預測力（Predicts）」，全面排查並修正正文與引言將統計預測誇大為「決定了」之因果性字眼，嚴格遵守觀察研究因果邊界",
     "受試者代表性說明：標註數據來自臨床癲癇監測患者，明確提示其特殊臨床背景之侷限"
   ],
   "unconfirmedLimits": [

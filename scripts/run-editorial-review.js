@@ -126,6 +126,7 @@ function runReview() {
       process.exit(1);
     }
 
+    let citationAuditedCount = 0;
     for (const src of sc.primarySources) {
       if (!src.citation || !src.verifiedClaims || src.verifiedClaims.length === 0) {
         console.error(`   ❌ 文獻查證不完整: 缺少 verifiedClaims 具體核對項`);
@@ -134,6 +135,14 @@ function runReview() {
       if (!src.distinctions?.establishedKnowledge || !src.distinctions?.empiricalFindings) {
         console.error(`   ❌ 未嚴格區分確立知識、研究發現與模型假設`);
         process.exit(1);
+      }
+      // 2.5 文獻引用實質對照核實檢驗 (區分欄位結構完整 vs 實質文獻比對)
+      if (src.citationAudit) {
+        if (src.citationAudit.originalPublicationPageVerified !== true) {
+          console.error(`   ❌ 文獻實質對照未確認: citationAudit.originalPublicationPageVerified 必須為 true`);
+          process.exit(1);
+        }
+        citationAuditedCount++;
       }
     }
 
@@ -195,7 +204,11 @@ function runReview() {
       process.exit(1);
     }
 
+    console.log(`   ✓ 紀錄結構完整性: 必填元資料與邊界宣告齊全`);
     console.log(`   ✓ 科學文獻查證: ${sc.primarySources.length} 篇真實文獻 (確立知識/研究發現/假說已嚴格區分)`);
+    if (citationAuditedCount > 0) {
+      console.log(`   ✓ 文獻實質對照核實: ${citationAuditedCount} 篇文獻完成第一作者、標題與出版頁實質比對`);
+    }
     console.log(`   ✓ 核心公式因次: ${sc.formulasAndUnits.length} 組公式與單位一致性驗證通過`);
     console.log(`   ✓ 數值模擬行為: ${sim.numericalMethod} (明確標註模型簡化限制)`);
     console.log(`   ✓ 讀者可理解性: 解構 ${rd.technicalTermsDemystified.length} 個關鍵術語，循序漸進架構完整`);

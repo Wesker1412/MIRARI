@@ -29,13 +29,13 @@ tags:
   - "海馬迴"
 summary: "為什麼某些生活片段能在腦海中銘刻數十年，而其餘大部分日常經驗卻在數小時內煙消雲散？《Nature Neuroscience》最新人體電生理研究發現，杏仁核並非單純調控情緒的大音量旋鈕，其特定類別偏好的單一神經元在刺激呈現初期的發火幅度，能精確預測該經驗是否會被成功記住。"
 leadParagraph: "走在人聲鼎沸的街頭，你每天擦肩而過數以千計的面孔與街景，但唯獨某一瞬間——或許是一張令你心頭一震的面容，或是某處觸動心弦的轉角——會在數天乃至數年後依舊歷歷在目。長久以來，神經科學界知道大腦顳葉深處的杏仁核（Amygdala）與海馬迴（Hippocampus）聯手主導了情緒與情節記憶的塑造。然而，杏仁核究竟只是扮演一個無差別放大記憶強度的『大腦廣播器』，還是具有針對特定經驗內容的精準篩選能力？2026 年 10 月 27 日發表於《Nature Neuroscience》的一項重磅人體電生理研究，給出了前所未有的細胞級答案。"
-quoteLead: "記憶並非將現實世界均勻攝錄的底片。在經驗發生的幾百毫秒內，杏仁核中特定神經元群體的發火頻率，就已經悄悄決定了這段記憶是否能跨越時間的遺忘之河。"
+quoteLead: "記憶並非將現實世界均勻攝錄的底片。在經驗發生的幾百毫秒內，杏仁核中特定神經元群體的發火頻率，就已經提供了這段記憶能否跨越時間遺忘之河的早期統計預測信號。"
 authors:
   - name: "MIRARI 科學組"
     role: "撰文"
 references:
   - id: "ref-natneuro-2026-amygdala"
-    citation: "Rutishauser, U., et al. (2026). \"Stimulus-specific recruitment of human amygdala neurons predicts episodic memory encoding success.\" Nature Neuroscience, doi:10.1038/s41593-026-02493-9."
+    citation: "Xiao, J., et al. (2026). \"Stimulus-specific recruitment of human amygdala neurons predicts episodic memory encoding success.\" Nature Neuroscience, doi:10.1038/s41593-026-02493-9."
   - id: "ref-mcgaugh-2004"
     citation: "McGaugh, J. L. (2004). \"The amygdala modulates the consolidation of memories of emotionally arousing experiences.\" Annual Review of Neuroscience, 27, 1-28."
   - id: "ref-paller-wagner-2002"
@@ -59,7 +59,7 @@ interactiveComponent: "AmygdalaMemorySimulator"
 
 要回答單一細胞層面的問題，非侵入性的功能性磁振造影（fMRI）無能為力。fMRI 測量的是數立方毫米內數十萬神經元的平均血氧信號，其時間解析度長達數秒，無法捕捉神經元在毫秒級時間尺度內的放電行為。
 
-這項由跨國神經外科與認知科學團隊合作的研究，把握了珍貴的臨床研究機會：利用難治型癲癇患者為了定位致癇病灶而在腦內暫時植入深部電極（Depth Electrodes）的醫學監測期，在患者知情同意下進行記憶實驗。
+這項由跨國神經外科與認知科學團隊（第一作者 Jiayang Xiao 與資深通訊作者 Ueli Rutishauser 等人）合作的研究，把握了珍貴的臨床研究機會：利用難治型癲癇患者為了定位致癇病灶而在腦內暫時植入深部電極（Depth Electrodes）的醫學監測期，在患者知情同意下進行記憶實驗。
 
 研究團隊使用了尖端微電極陣列，成功分離出人腦**基底外側杏仁核（Basolateral Amygdala, BLA）**與海馬迴內數百個個別神經元的單元動作電位（Single-Unit Action Potentials）。
 
@@ -91,7 +91,7 @@ interactiveComponent: "AmygdalaMemorySimulator"
 
 $$\text{Logit}\left(P(\text{Recall})\right) = \ln\left(\frac{P(\text{Recall})}{1 - P(\text{Recall})}\right) = \beta_0 + \beta_1 \cdot \overline{\Delta f}_{\text{selective}}$$
 
-其中 $\overline{\Delta f}_{\text{selective}}$ 為該類別偏好神經元群體的平均發火增率。數據顯示，$\beta_1$ 呈現高度統計顯著性，證實了單一神經元放電量與情節記憶成功率的緊密連結。
+其中 $\overline{\Delta f}_{\text{selective}}$ 為該類別偏好神經元群體的平均發火增率。數據顯示，$\beta_1$ 呈現高度統計顯著性，揭示了特定類別偏好神經元放電活動與情節記憶編碼表現之間顯著的統計預測關聯，而非單向決定論因果。
 
 ### 3. 與海馬迴的動態相位鎖定
 進一步的跨區域局部場電位（LFP）分析顯示，在記憶成功編碼的瞬間，杏仁核發火活躍的單元神經元會與海馬迴的西塔波（Theta Oscillation, 4–8 Hz）產生強烈的「相位鎖定」（Phase Locking）。這意味著杏仁核並非單打獨鬥，而是將其對特定重要內容的微觀激發，精準對準海馬迴突觸可塑性最容易開啟的時間窗口。
@@ -100,8 +100,8 @@ $$\text{Logit}\left(P(\text{Recall})\right) = \ln\left(\frac{P(\text{Recall})}{1
 
 在解讀這項引人入勝的科學進展時，MIRARI 編輯部必須秉持最高嚴謹度，為讀者劃定明確的證據邊界：
 
-1. **相關性 vs 因果性**：
-   微電極記錄展示的是神經放電與記憶表現之間的**強統計關聯（Statistical Predictability）**。雖然我們可以藉由神經放電率預測回憶成功率，但這項實驗屬於觀察性記錄，並未直接利用光遺傳學（Optogenetics）或微電流精確操控單一神經元放電來強行植入或抹除記憶。因此，我們不能斷言「單一杏仁核放電必然是形成記憶的充分且必要原因」。
+1. **統計預測力 vs 確定因果性**：
+   微電極記錄展示的是神經放電與後續回憶表現之間的**強統計關聯與早期預測力（Statistical Predictability）**。雖然特定神經元放電強度在統計迴歸上能有效預測隔天的回憶概率，但這項研究屬於觀察性電生理記錄，並未透過光遺傳學（Optogenetics）或微電流精準操控單一神經元放電來強行植入或抹除記憶。因此，嚴格的科學詮釋必須將「具備統計預測力的神經相關特徵」與「已證實的單向普遍因果機制」明確區分，不可宣稱杏仁核單一放電即可單獨決定記憶的存續。
 2. **臨床受試者的特殊性**：
    所有數據均來自長期罹患頑固型癲癇的患者。雖然電極記錄已刻意避開致癇病灶區，但長期患病與抗癲癇藥物是否對神經微迴路的可塑性產生潛在影響，仍需在更多健康靈長類動物模型中進一步交叉印證。
 3. **教學模型之簡化**：

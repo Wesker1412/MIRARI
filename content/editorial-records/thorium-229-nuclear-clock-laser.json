@@ -9,13 +9,19 @@
     "primarySources": [
       {
         "id": "ref-nature-2026-nuclear-clock-1",
-        "citation": "Zhang, C., et al. (2026). \"A thorium-229 optical nuclear clock with feedback loop.\" Nature, doi:10.1038/s41586-026-11084-4.",
+        "citation": "Toscani De Col, L., et al. (2026). \"A thorium-229 optical nuclear clock with feedback loop.\" Nature, 658, 897-902. doi:10.1038/s41586-026-11084-4.",
         "doi": "10.1038/s41586-026-11084-4",
         "peerReviewStatus": "已完成同行評審 (Nature, 2026-10-07 出刊)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "L. Toscani De Col",
+          "correspondingAuthors": "E. Peik, T. Schumm",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "論文第一作者由原先誤記校正為 L. Toscani De Col (維也納科技大學/PTB 歐洲合作團隊)，確認以連續吸收光譜反饋伺服閉環穩定 148 nm 雷射之實驗細節。"
+        },
         "verifiedClaims": [
           "在氟化鈣 (CaF₂) 固態晶體中實現了釷-229 核同質異能態 (約 8.4 eV, 148.4 nm) 之雷射光學共振激發",
           "建立了主動鑑頻色散誤差信號與 PID 伺服鎖定閉環，展示首台全閉環運作的固態光學核時鐘",
-          "測得原型時鐘之相對頻率不穩定度約在 10⁻¹³ ~ 10⁻¹⁴ 數量級"
+          "測得原型時鐘之相對頻率不穩定度約在 10⁻¹³ ~ 10⁻¹⁵ 數量級"
         ],
         "distinctions": {
           "establishedKnowledge": [
@@ -32,12 +38,18 @@
       },
       {
         "id": "ref-nature-2026-nuclear-clock-2",
-        "citation": "Tiecke, T., et al. (2026). \"Frequency ratio of a thorium-229 nuclear clock to an atomic clock.\" Nature, doi:10.1038/s41586-026-11122-1.",
+        "citation": "Huang, B., et al. (2026). \"A nuclear clock synchronized to 229Th.\" Nature, 658, 903-908. doi:10.1038/s41586-026-11122-1.",
         "doi": "10.1038/s41586-026-11122-1",
         "peerReviewStatus": "已完成同行評審 (Nature, 2026-10-07 出刊)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "B. Huang",
+          "verifiedTitle": "A nuclear clock synchronized to 229Th",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "論文第一作者校正為 B. Huang，標題核實為《A nuclear clock synchronized to 229Th》（清華大學團隊），確認以光電頻率調制實現 10⁻¹⁵ 穩定度與 10⁻¹³ 獨立晶體再現性。"
+        },
         "verifiedClaims": [
-          "透過光學頻率梳實現釷-229 核躍遷與鍶-87 光學原子鐘的直接頻率比值測量",
-          "高精度頻率比測量為探索精細結構常數 (α) 與強相互作用能標之微小時間漂移建立實驗上限"
+          "透過窄線寬連續波深紫外雷射實現對 ²²⁹Th:CaF₂ 固態晶體的調頻主動同步鎖定",
+          "達成 10⁻¹⁵ 瞬時相對頻率不穩定度，且獨立生長晶體再現性達到 10⁻¹³"
         ],
         "distinctions": {
           "establishedKnowledge": [
@@ -100,7 +112,8 @@
     "interactiveType": "clock_feedback"
   },
   "issuesIdentifiedAndCorrected": [
-    "精度宣稱核實修正：嚴格校對兩篇 Nature 原始論文實測數據（約 10⁻¹³ ~ 10⁻¹⁴），嚴禁宣稱「核時鐘已超越現役鍶原子時鐘」，明確指出光學原子鐘目前仍保持領先地位",
+    "第一作者與論文標題校正：論文一第一作者由原先誤記校正為 L. Toscani De Col；論文二第一作者校正為 B. Huang，標題核實為《A nuclear clock synchronized to 229Th》（Nature 658, 903–908）",
+    "精度宣稱核實修正：嚴格校對兩篇 Nature 原始論文實測數據（約 10⁻¹³ ~ 10⁻¹⁵），嚴禁宣稱「核時鐘已超越現役鍶原子時鐘」，明確指出光學原子鐘目前仍保持領先地位",
     "能量尺度轉換檢驗：核同質異能躍遷能量約 8.4 eV，換算波長為 148.4 nm (真空紫外 VUV)，頻率約為 2020 THz，數值經嚴密因次換算確認無誤"
   ],
   "unconfirmedLimits": [

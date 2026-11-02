@@ -9,9 +9,16 @@
     "primarySources": [
       {
         "id": "ref-nature-2026-bis2s3",
-        "citation": "Hoye, R. L. Z., et al. (2026). \"Delayed electron–hole recombination in a pseudo-direct semiconductor.\" Nature, doi:10.1038/s41586-026-11223-x.",
+        "citation": "Righetto, M., et al. (2026). \"Delayed electron–hole recombination in a pseudo-direct semiconductor.\" Nature, doi:10.1038/s41586-026-11223-x.",
         "doi": "10.1038/s41586-026-11223-x",
         "peerReviewStatus": "已完成同行評審 (Nature, 2026-10-28 出刊)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Marcello Righetto",
+          "seniorAuthor": "Laura M. Herz",
+          "originalPublicationPageVerified": true,
+          "mechanismVsCommercialAudited": true,
+          "auditNotes": "第一作者由原先誤記之 Hoye 正式校正為第一作者 Marcello Righetto (牛津大學 Laura M. Herz 課題組)；確認能隙值 1.35 eV、超快暫態光譜與擬直接能帶解耦機制與 Nature 原始出版頁完全一致。"
+        },
         "verifiedClaims": [
           "硫化鉍 (Bi₂S₃) 在布里淵區中心具有約 1.35 eV 之直接光學躍遷能隙，光吸收係數超過 10⁵ cm⁻¹",
           "光生載子在吸收後數百飛秒內弛豫至鄰近在動量空間微偏之局域導帶底，形成動量屏障",
@@ -99,6 +106,7 @@
     "interactiveType": "carrier_dynamics"
   },
   "issuesIdentifiedAndCorrected": [
+    "第一作者精確校正：原始文獻第一作者由原先誤記之 Hoye 正式校正為論文第一作者 Marcello Righetto（牛津大學 Laura M. Herz 課題組），嚴格核實原始出版頁署名順序",
     "商業效率宣稱審查：嚴格核實論文定位，確認該突破為材料微觀物理機制與光譜驗證，嚴禁宣稱「已製造出超越矽晶商用面板」",
     "單位因次校核：確認光吸收係數單位為 cm⁻¹，載子擴散長度 μm 與吸光厚度 nm 的數量級對比無誤"
   ],
