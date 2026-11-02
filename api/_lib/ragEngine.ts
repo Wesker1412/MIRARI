@@ -72,11 +72,16 @@ const OFF_TOPIC_INTENT_PATTERNS: RegExp[] = [
   /^(你好|哈囉|hi|hello|hey|你是誰|你叫什麼名字|你可以做什麼|陪我聊天|好無聊)\??$/i,
 ];
 
+const SINGLE_STOPWORDS = new Set([
+  '的', '了', '是', '在', '有', '和', '與', '或', '被', '會', '讓', '嗎', '呢',
+  '這', '那', '就', '也', '而', '及', '著', '其', '至', '從', '於', '以', '如', '何',
+  '請', '問'
+]);
+
 const STOPWORDS = new Set([
   '什麼', '為什麼', '如何', '為何', '怎麼', '怎樣', '是否', '有沒有', '多少',
-  '的', '了', '是', '在', '有', '和', '與', '或', '被', '會', '讓', '嗎', '呢',
-  '請', '問', '請問', '告訴我', '想知道', '可以', '能夠', '篇章', '文章', '內容',
-  '一個', '這', '那', '就', '也', '而', '及', '著', '其', '至', '從', '於', '以',
+  '告訴我', '想知道', '可以', '能夠', '篇章', '文章', '內容', '一個',
+  ...SINGLE_STOPWORDS
 ]);
 
 /**
@@ -97,14 +102,22 @@ export function tokenizeText(input: string): string[] {
       if (len === 1) {
         if (!STOPWORDS.has(raw)) tokens.push(raw);
       } else {
-        // Bigrams & Trigrams
+        // Bigrams & Trigrams，過濾掉頭尾為單字停用詞的跨詞邊界碎片
         for (let i = 0; i < len - 1; i++) {
           const bigram = raw.slice(i, i + 2);
-          if (!STOPWORDS.has(bigram)) tokens.push(bigram);
+          if (!STOPWORDS.has(bigram) && !SINGLE_STOPWORDS.has(bigram[0]) && !SINGLE_STOPWORDS.has(bigram[1])) {
+            tokens.push(bigram);
+          }
         }
         for (let i = 0; i < len - 2; i++) {
           const trigram = raw.slice(i, i + 3);
-          if (!STOPWORDS.has(trigram)) tokens.push(trigram);
+          if (
+            !STOPWORDS.has(trigram) &&
+            !SINGLE_STOPWORDS.has(trigram[0]) &&
+            !SINGLE_STOPWORDS.has(trigram[trigram.length - 1])
+          ) {
+            tokens.push(trigram);
+          }
         }
         if (len >= 4 && !STOPWORDS.has(raw)) {
           tokens.push(raw);
@@ -538,7 +551,12 @@ export async function handleGlobalSearch(params: {
   }
 
   // 2. 評估所有文章的相關性分數
-  const scoredList: Array<{ article: Article; score: number; matchedTokenRatio: number }> = [];
+  const scoredList: Array<{
+    article: Article;
+    score: number;
+    matchedTokenRatio: number;
+    isDirectHit: boolean;
+  }> = [];
 
   for (const entry of SEARCH_INDEX) {
     if (entry.status !== 'published') continue;
@@ -557,15 +575,24 @@ export async function handleGlobalSearch(params: {
     }
 
     // 檢查文章標題與副標題精確重疊
-    if (article.title.includes(rawQuery) || article.subtitle.includes(rawQuery)) {
-      score += 8.0;
-      matchedTokensCount = queryTokens.length;
-    }
+    const isTitleHit = article.title.includes(rawQuery) || article.subtitle.includes(rawQuery);
+    const isTagHit = (article.tags || []).some(
+      (t: string) => rawQuery.includes(t) || t.includes(rawQuery)
+    );
+    let isKpQuestionHit = false;
 
     // 關聯知識點加權
     const kpConfig = KNOWLEDGE_BASE.find((k) => k.articleId === article.id);
     if (kpConfig) {
       for (const kp of kpConfig.knowledgePoints) {
+        if (
+          rawQuery.includes(kp.label) ||
+          kp.suggestedQuestion.includes(rawQuery) ||
+          rawQuery.includes(kp.suggestedQuestion)
+        ) {
+          isKpQuestionHit = true;
+          score += 10.0;
+        }
         for (const kw of kp.keywords) {
           if (rawQuery.includes(kw) || kw.includes(rawQuery)) {
             score += 3.0;
@@ -574,9 +601,16 @@ export async function handleGlobalSearch(params: {
       }
     }
 
+    if (isTitleHit) {
+      score += 12.0;
+      matchedTokensCount = queryTokens.length;
+    }
+
+    const isDirectHit = isTitleHit || isTagHit || isKpQuestionHit;
+
     if (score > 0) {
       const matchedTokenRatio = matchedTokensCount / queryTokens.length;
-      scoredList.push({ article, score, matchedTokenRatio });
+      scoredList.push({ article, score, matchedTokenRatio, isDirectHit });
     }
   }
 
@@ -584,11 +618,13 @@ export async function handleGlobalSearch(params: {
   const topCandidate = scoredList[0];
 
   // ─── 相關性硬性閘門檢驗 ───
-  // 必須滿足：最高分候選文章達到實質門檻 (score >= 7.0 或 score >= 4.0 且 Token 覆蓋率至少 20%)
+  // 必須滿足：
+  // 1) 直接命中標題、標籤或預製問題 (isDirectHit)，或
+  // 2) 語意實質命中：分數達 18 分以上且 Token 覆蓋率至少 22% (杜絕偶然單詞重疊)
   const passesGlobalGate =
     topCandidate &&
-    (topCandidate.score >= 7.0 ||
-      (topCandidate.score >= 4.0 && topCandidate.matchedTokenRatio >= 0.20));
+    (topCandidate.isDirectHit ||
+      (topCandidate.score >= 18.0 && topCandidate.matchedTokenRatio >= 0.22));
 
   if (!passesGlobalGate) {
     return {
