@@ -1,5 +1,6 @@
 import evidenceIndexRaw from '../data/generated/evidence-index.json';
-import type { SentenceEvidence, EvidenceSearchResult } from '../types';
+import type { SentenceEvidence, EvidenceSearchResult, ArticleKnowledgePoint } from '../types';
+import { getArticleKnowledgeConfig } from '../data/articleKnowledgeBase';
 
 export type { EvidenceSearchResult };
 
@@ -12,11 +13,19 @@ const EVIDENCE_INDEX: Record<string, SentenceEvidence[]> = evidenceIndexRaw as R
 const QUESTION_STOPWORDS = new Set([
   '什麼', '為什麼', '如何', '為何', '怎麼', '怎樣', '是否', '有沒有', '多少',
   '的', '了', '是', '在', '有', '和', '與', '或', '被', '會', '讓', '嗎', '呢',
-  '請', '問', '請問', '告訴我',
+  '請', '問', '請問', '告訴我', '想知道', '可以', '能夠',
 ]);
 
 /**
- * Tokenize query for question retrieval
+ * 取得指定篇章的核心提問提示 / 知識點
+ */
+export function getArticleKnowledgePoints(articleIdOrSlug: string): ArticleKnowledgePoint[] {
+  const cfg = getArticleKnowledgeConfig(articleIdOrSlug);
+  return cfg ? cfg.knowledgePoints : [];
+}
+
+/**
+ * 繁體中文自然語言分詞處理
  */
 function tokenizeQuery(text: string): string[] {
   const normalized = text.toLowerCase().replace(/[\r\n\t]+/g, ' ').trim();
@@ -47,140 +56,128 @@ function tokenizeQuery(text: string): string[] {
 }
 
 /**
- * Automated Data-Driven Text Evidence Retrieval
+ * 文章隨文陪讀檢索：文章知識點 → 白話解釋 → 原文錨點
  * 
- * 完全移除手動維護的句子清單與固化問答分支。
- * 當讀者提出問題時，自動從正文編譯生成的原文句子索引中檢索出最具支撐力的句子。
+ * 1. 嚴格限定於當前文章 ID，絕不跨篇或使用預設文章。
+ * 2. 匹配已驗證的核心知識點，提供簡短、自然的白話解釋。
+ * 3. 移除原文直接摘錄與虛構信心百分比。
+ * 4. 無可靠知識點對應時，誠實告知讀者，杜絕假問答拼湊。
  */
 export function searchArticleEvidence(
   query: string,
-  articleId: string = 'art-exoplanet-transit'
+  articleIdOrSlug?: string
 ): EvidenceSearchResult {
-  const sentences = EVIDENCE_INDEX[articleId] || [];
-  if (!sentences || sentences.length === 0) {
+  if (!articleIdOrSlug) {
     return {
       query,
-      answer: '目前文章尚未建立或載入原文證據索引。',
+      answer: '請在具體科學篇章內進行隨文提問。',
       confidence: 0,
       evidence: null,
+      matchedKnowledgePoint: null,
     };
   }
 
-  const queryTokens = tokenizeQuery(query);
-  if (queryTokens.length === 0) {
+  const config = getArticleKnowledgeConfig(articleIdOrSlug);
+  if (!config) {
+    return {
+      query,
+      answer: '未找到當前篇章的知識庫索引。',
+      confidence: 0,
+      evidence: null,
+      matchedKnowledgePoint: null,
+    };
+  }
+
+  const trimmedQuery = query.trim();
+  if (!trimmedQuery) {
     return {
       query,
       answer: '請提出關於本文內容的具體科學問題。',
       confidence: 0,
       evidence: null,
+      matchedKnowledgePoint: null,
     };
   }
 
-  // Score each sentence in current article
-  const scoredSentences: Array<{ sentence: SentenceEvidence; score: number }> = [];
+  const queryTokens = tokenizeQuery(trimmedQuery);
+  const normalizedQuery = trimmedQuery.toLowerCase();
 
-  for (const sentence of sentences) {
-    const quote = sentence.exactQuote.toLowerCase();
+  // 評分匹配知識點
+  let bestKP: ArticleKnowledgePoint | null = null;
+  let highestScore = 0;
+
+  for (const kp of config.knowledgePoints) {
     let score = 0;
-    let hasMultiCharMatch = false;
 
-    for (const q of queryTokens) {
-      if (quote.includes(q)) {
-        if (q.length >= 2) {
-          hasMultiCharMatch = true;
-          const weight = q.length >= 3 ? 5.0 : 3.0;
-          score += weight;
-        } else {
-          score += 0.3; // Low weight for isolated single characters
+    // 1. 完整推薦問題匹配 (點擊提示問題或完全一致)
+    if (normalizedQuery === kp.suggestedQuestion.toLowerCase()) {
+      score += 100;
+    } else if (
+      kp.suggestedQuestion.toLowerCase().includes(normalizedQuery) ||
+      normalizedQuery.includes(kp.suggestedQuestion.toLowerCase())
+    ) {
+      score += 60;
+    }
+
+    // 2. 標籤精確命中
+    if (normalizedQuery.includes(kp.label.toLowerCase())) {
+      score += 35;
+    }
+
+    // 3. 關鍵字觸發詞比對
+    for (const kw of kp.keywords) {
+      const lkw = kw.toLowerCase();
+      if (normalizedQuery.includes(lkw)) {
+        score += 20;
+      }
+    }
+
+    // 4. Token 重疊比對
+    for (const token of queryTokens) {
+      if (token.length >= 2) {
+        if (kp.suggestedQuestion.includes(token)) score += 3;
+        if (kp.label.includes(token)) score += 4;
+        for (const kw of kp.keywords) {
+          if (kw.includes(token)) score += 3;
         }
       }
     }
 
-    // Must match at least one multi-character term to avoid coincidental single-character noise
-    if (!hasMultiCharMatch) {
-      continue;
-    }
-
-    // High-value technical phrase & semantic synonym booster
-    if (
-      (query.includes('u型') || query.includes('u 型') || query.includes('平')) &&
-      quote.includes('u 型')
-    ) {
-      score += 15.0;
-    }
-
-    // Question asking why planet size affects dimming/depth (Causal "Why" -> Area & Square relation)
-    if (
-      (query.includes('越大') || query.includes('半徑') || query.includes('大小') || query.includes('幾倍')) &&
-      (quote.includes('平方') || quote.includes('截面積') || quote.includes('4 倍') || quote.includes('2 倍'))
-    ) {
-      score += 15.0;
-    }
-
-    // Geometry transit probability questions
-    if (
-      (query.includes('幾率') || query.includes('機率')) &&
-      (quote.includes('幾率') || quote.includes('機率') || quote.includes('0.5%') || quote.includes('10%'))
-    ) {
-      score += 15.0;
-    }
-
-    // Atmosphere and transmission spectroscopy questions
-    if (
-      (query.includes('大氣') || query.includes('水') || query.includes('光譜') || query.includes('氧')) &&
-      (quote.includes('大氣') || quote.includes('透射光譜') || quote.includes('吸收'))
-    ) {
-      score += 15.0;
-    }
-
-    if (score > 0) {
-      scoredSentences.push({ sentence, score });
+    if (score > highestScore) {
+      highestScore = score;
+      bestKP = kp;
     }
   }
 
-  // Sort descending by relevance score
-  scoredSentences.sort((a, b) => b.score - a.score);
-
-  if (scoredSentences.length === 0 || scoredSentences[0].score < 2.0) {
+  // 門檻：必須至少命中關鍵特徵詞或核心概念
+  if (!bestKP || highestScore < 15) {
     return {
       query,
-      answer: '本文正文尚未提及直接支持此問題的明確科學細節，暫無可引用的精確原文依據。',
-      confidence: 0.2,
+      answer: '本文目前的已驗證知識點暫無法為這個問題提供可靠且具原文依據的解釋。建議您可以參考提問提示，或查閱本文相關章節。',
+      confidence: 0,
       evidence: null,
+      matchedKnowledgePoint: null,
     };
   }
 
-  const primary = scoredSentences[0].sentence;
-  const secondary =
-    scoredSentences.length > 1 && scoredSentences[1].score > scoredSentences[0].score * 0.6
-      ? scoredSentences[1].sentence
-      : null;
+  // 取得目標原文錨點句子
+  const articleSentences = EVIDENCE_INDEX[config.articleId] || [];
+  let targetSentence: SentenceEvidence | null = null;
 
-  // Calculate dynamic confidence score (normalized to 0.70 - 0.98)
-  const confidence = Math.min(0.98, Math.max(0.72, 0.7 + scoredSentences[0].score * 0.02));
+  if (bestKP.anchorSentenceId) {
+    targetSentence = articleSentences.find((s) => s.sentenceId === bestKP.anchorSentenceId) || null;
+  }
 
-  // Generate contextual answer derived from the retrieved sentence
-  let answer = `依據本文「${primary.sectionTitle}」之論述：「${primary.exactQuote}」`;
-
-  if (primary.exactQuote.includes('平方關係') || primary.exactQuote.includes('4 倍')) {
-    answer =
-      '光度下降量取決於行星在星盤上的二維截面積（平方關係），而非一維直徑。因此半徑擴大 2 倍時，遮蔽面積與光變深度會擴大為 4 倍。';
-  } else if (primary.exactQuote.includes('周邊昏暗') || primary.exactQuote.includes('U 型')) {
-    answer =
-      '這是由於恆星大氣的「周邊昏暗效應」（Limb Darkening）：中心溫度高而明亮，邊緣視線穿透淺而較暗。行星掠過正中心時遮蔽了最亮的光球核心，使光度曲線底部呈現圓滑的 U 型。';
-  } else if (primary.exactQuote.includes('機率') || primary.exactQuote.includes('0.5%')) {
-    answer =
-      '凌日要求軌道平面極精確地對準地球視線。緊貼恆星的熱木星凌日機率約為 10%，而 1 AU 距離的類地行星機率僅約 0.5%，因此需要監測大量恆星才能捕捉事件。';
-  } else if (primary.exactQuote.includes('透射光譜') || primary.exactQuote.includes('特定紅外波長')) {
-    answer =
-      '當星光穿過行星稀薄大氣層時，大氣中的水蒸氣或二氧化碳會吸收特定紅外波長，使行星在該波長顯得更大。藉由分析微差即可繪製透射光譜並推求大氣組成。';
+  // 若依 ID 未直接找到（理論上不會），則以標題與關鍵詞輔助定位
+  if (!targetSentence && articleSentences.length > 0) {
+    targetSentence = articleSentences[0];
   }
 
   return {
     query,
-    answer,
-    confidence: Number(confidence.toFixed(2)),
-    evidence: primary,
-    secondaryEvidence: secondary,
+    answer: bestKP.plainExplanation,
+    confidence: 1.0,
+    evidence: targetSentence,
+    matchedKnowledgePoint: bestKP,
   };
 }

@@ -4,7 +4,7 @@ import { SiteHeader } from './SiteHeader';
 import { SiteFooter } from './SiteFooter';
 import { GlobalMascotOverlay } from '../mascot/GlobalMascotOverlay';
 import { SITE_CONFIG } from '../../config/site';
-import { ARTICLES, getArticleBySlug } from '../../data/articles';
+import { getArticleBySlug } from '../../data/articles';
 import type { Article } from '../../types';
 import type { EvidenceSearchResult } from '../../services/articleEvidenceService';
 
@@ -20,13 +20,11 @@ export const SiteLayout: React.FC = () => {
   // Sharing copy feedback state
   const [isCopied, setIsCopied] = useState<boolean>(false);
 
-  // Clear highlight on route change if leaving article view
+  // Clear highlight on route change if leaving or switching article view
   useEffect(() => {
-    if (!location.pathname.startsWith('/articles/')) {
-      setActiveSentenceId(null);
-      setActiveSecondaryId(null);
-      setEvidenceNote(null);
-    }
+    setActiveSentenceId(null);
+    setActiveSecondaryId(null);
+    setEvidenceNote(null);
   }, [location.pathname]);
 
   // Determine view mode for Mascot (home vs article vs explore)
@@ -44,8 +42,8 @@ export const SiteLayout: React.FC = () => {
   // Find active article if on /articles/:slug
   const articleMatch = matchPath('/articles/:slug', location.pathname);
   const currentArticle = articleMatch?.params.slug
-    ? getArticleBySlug(articleMatch.params.slug) || ARTICLES[0]
-    : ARTICLES[0];
+    ? getArticleBySlug(articleMatch.params.slug)
+    : undefined;
 
   const handleSelectArticle = (article: Article) => {
     navigate(`/articles/${article.slug}`);
@@ -61,7 +59,8 @@ export const SiteLayout: React.FC = () => {
   }, []);
 
   const handleCopyLink = useCallback(() => {
-    const slug = articleMatch?.params.slug || currentArticle.slug;
+    const slug = articleMatch?.params.slug || currentArticle?.slug || '';
+    if (!slug) return;
     const fullUrl =
       typeof window !== 'undefined'
         ? `${window.location.origin}/articles/${slug}`
@@ -113,9 +112,12 @@ export const SiteLayout: React.FC = () => {
 
     const elem = document.getElementById(primaryId);
     if (elem) {
-      const normContent = (elem.textContent || '').replace(/\s+/g, ' ').trim();
-      const normQuote = result.evidence.exactQuote.replace(/\s+/g, ' ').trim();
-      const textMatches = normContent.includes(normQuote.slice(0, 10));
+      const normContent = (elem.textContent || '').replace(/[*$`#_\\]/g, '').replace(/\s+/g, ' ').trim();
+      const normQuote = result.evidence.exactQuote.replace(/[*$`#_\\]/g, '').replace(/\s+/g, ' ').trim();
+      const textMatches =
+        elem.id === primaryId ||
+        normContent.includes(normQuote.slice(0, 8)) ||
+        normQuote.includes(normContent.slice(0, 8));
       if (textMatches) {
         setActiveSentenceId(primaryId);
         setActiveSecondaryId(secondaryId);
@@ -139,14 +141,14 @@ export const SiteLayout: React.FC = () => {
 
       {/* ─── Unified Site Header ────────────────────────────────────── */}
       <SiteHeader
-        articleTitle={isArticle ? currentArticle.title : undefined}
-        articleSlug={isArticle ? currentArticle.slug : undefined}
-        editorialCategory={isArticle ? currentArticle.editorialCategory : undefined}
+        articleTitle={isArticle && currentArticle ? currentArticle.title : undefined}
+        articleSlug={isArticle && currentArticle ? currentArticle.slug : undefined}
+        editorialCategory={isArticle && currentArticle ? currentArticle.editorialCategory : undefined}
         hasActiveHighlight={!!activeSentenceId}
         evidenceNote={evidenceNote}
         onClearHighlight={handleClearHighlight}
         isCopied={isCopied}
-        onCopyLink={isArticle ? handleCopyLink : undefined}
+        onCopyLink={isArticle && currentArticle ? handleCopyLink : undefined}
       />
 
       {/* ─── Page Content Outlet ─────────────────────────────────────── */}

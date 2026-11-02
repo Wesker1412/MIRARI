@@ -226,10 +226,27 @@ export interface AIRecommendation {
   matchLevel?: RecommendationMatchLevel;
 }
 
+export interface ArticleKnowledgePoint {
+  id: string;
+  label: string;
+  suggestedQuestion: string;
+  keywords: string[];
+  plainExplanation: string;
+  anchorSentenceId: string;
+}
+
+export interface ArticleKnowledgeConfig {
+  articleId: string;
+  slug: string;
+  title: string;
+  knowledgePoints: ArticleKnowledgePoint[];
+}
+
 export interface EvidenceSearchResult {
   query: string;
   answer: string;
-  confidence: number;
+  confidence?: number;
   evidence: SentenceEvidence | null;
   secondaryEvidence?: SentenceEvidence | null;
+  matchedKnowledgePoint?: ArticleKnowledgePoint | null;
 }

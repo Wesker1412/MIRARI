@@ -1,9 +1,13 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { MirariMascot3D } from './MirariMascot3D';
 import { RoundBottomFlaskFrame } from './RoundBottomFlaskFrame';
 import type { MascotState, Article, AIRecommendation } from '../../types';
 import { queryMockAIRecommendation } from '../../services/aiRecommendationService';
-import { searchArticleEvidence, type EvidenceSearchResult } from '../../services/articleEvidenceService';
+import {
+  searchArticleEvidence,
+  getArticleKnowledgePoints,
+  type EvidenceSearchResult,
+} from '../../services/articleEvidenceService';
 
 interface GlobalMascotOverlayProps {
   currentView: 'home' | 'article' | 'explore';
@@ -24,7 +28,7 @@ const SESSION_KEY_GREETED = 'mirari_home_greeted';
 
 export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
   currentView,
-  currentArticle: _currentArticle,
+  currentArticle,
   onSelectArticle,
   onEvidenceFound,
   onClearHighlight,
@@ -53,6 +57,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
   const [articleQuery, setArticleQuery] = useState<string>('');
   const [articleEvidenceResult, setArticleEvidenceResult] = useState<EvidenceSearchResult | null>(null);
   const [isSearchingArticle, setIsSearchingArticle] = useState<boolean>(false);
+  const [isMobileExpandedAnswer, setIsMobileExpandedAnswer] = useState<boolean>(false);
 
   // Drag interaction tracking refs
   const dragStartPointerRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
@@ -283,6 +288,15 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
     }
   }, [currentView]);
 
+  // ─── Reset Article Q&A State on Article Switch ───────────────────
+  useEffect(() => {
+    setArticleQuery('');
+    setArticleEvidenceResult(null);
+    setIsSearchingArticle(false);
+    setIsMobileExpandedAnswer(false);
+    onClearHighlight();
+  }, [currentArticle?.id, onClearHighlight]);
+
   // ─── Free Drag Pointer Handlers ──────────────────────────────────
   const handlePointerDown = (e: React.PointerEvent) => {
     // Only primary mouse button or touch
@@ -386,38 +400,48 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
   };
 
   // ─── Article Reading Evidence Query Logic ────────────────────────
-  const demoArticleQuestions = [
-    {
-      label: '半徑與光度關係',
-      query: '為什麼行星越大，恆星亮度下降越多？',
-    },
-    {
-      label: 'U型曲線成因',
-      query: '為什麼真實的光度曲線底部是 U 型而不是平的？',
-    },
-    {
-      label: '凌日幾何幾率',
-      query: '系外行星凌日被觀測到的幾率有多大？',
-    },
-  ];
+  const articleQuestionChips = useMemo(() => {
+    if (!currentArticle) return [];
+    const kps = getArticleKnowledgePoints(currentArticle.id || currentArticle.slug);
+    return kps.map((kp) => ({
+      label: kp.label,
+      query: kp.suggestedQuestion,
+    }));
+  }, [currentArticle]);
 
   const handleExecuteArticleQuery = (queryText: string) => {
-    if (!queryText.trim()) return;
+    if (!queryText.trim() || !currentArticle) return;
     setIsSearchingArticle(true);
     setMascotState('thinking');
-    setArticleEvidenceResult(null);
 
     setTimeout(() => {
-      const searchResult = searchArticleEvidence(queryText);
+      const searchResult = searchArticleEvidence(
+        queryText,
+        currentArticle.id || currentArticle.slug
+      );
       setIsSearchingArticle(false);
       setArticleEvidenceResult(searchResult);
-      setMascotState('excited');
 
-      // Trigger exact text highlight and smooth scroll in ArticleView
-      onEvidenceFound(searchResult);
+      if (searchResult.evidence) {
+        setMascotState('excited');
+        // Trigger exact text highlight and smooth scroll in ArticleView
+        onEvidenceFound(searchResult);
 
-      setTimeout(() => setMascotState('idle'), 2500);
-    }, 400);
+        // On mobile, automatically collapse large input panel so reader sees highlighted text
+        if (typeof window !== 'undefined' && window.innerWidth < 640) {
+          setIsPanelOpen(false);
+        }
+
+        setTimeout(() => setMascotState('idle'), 2500);
+      } else {
+        setMascotState('idle');
+      }
+    }, 300);
+  };
+
+  const handleDismissAnswer = () => {
+    setArticleEvidenceResult(null);
+    onClearHighlight();
   };
 
   // ─── Floating Panel Position Calculation (Desktop) ───────────────
@@ -686,52 +710,116 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
                   </button>
                 </form>
 
-                {/* 試試這樣問 (Single-line Short Chips) */}
-                <div className="flex items-center flex-wrap gap-1.5 text-[11px] font-sans">
-                  <span className="text-mirari-dim shrink-0">試試：</span>
-                  {demoArticleQuestions.map((q, idx) => (
-                    <button
-                      key={idx}
-                      type="button"
-                      onClick={() => {
-                        setArticleQuery(q.query);
-                        handleExecuteArticleQuery(q.query);
-                      }}
-                      className="rounded-md border border-mirari-line bg-mirari-paper hover:bg-mirari-surfaceAlt px-2 py-0.5 text-mirari-muted hover:text-mirari-ink transition whitespace-nowrap"
-                    >
-                      {q.label}
-                    </button>
-                  ))}
-                </div>
+                {/* 試試這樣問 (Dynamic Question Chips for Current Article) */}
+                {articleQuestionChips.length > 0 && (
+                  <div className="flex items-center flex-wrap gap-1.5 text-[11px] font-sans">
+                    <span className="text-mirari-dim shrink-0">提問提示：</span>
+                    {articleQuestionChips.map((q, idx) => (
+                      <button
+                        key={idx}
+                        type="button"
+                        onClick={() => {
+                          setArticleQuery(q.query);
+                          handleExecuteArticleQuery(q.query);
+                        }}
+                        className="rounded-md border border-mirari-line bg-mirari-paper hover:bg-mirari-surfaceAlt px-2 py-0.5 text-mirari-muted hover:text-mirari-ink transition whitespace-nowrap cursor-pointer text-left"
+                      >
+                        {q.label}
+                      </button>
+                    ))}
+                  </div>
+                )}
 
-                {/* Evidence Answer Card (Only expands when present) */}
+                {/* Plain-Language Answer Card (No raw quote duplication, no fake percentages) */}
                 {articleEvidenceResult && (
-                  <div className="pt-3 border-t border-mirari-line space-y-2.5 animate-fade-in">
-                    {articleEvidenceResult.evidence ? (
-                      <div className="space-y-2">
-                        <div className="flex items-center space-x-1.5 text-xs font-sans text-mirari-amber font-semibold">
-                          <span>已定位原文依據</span>
-                        </div>
-
-                        <blockquote className="p-2.5 rounded-xl bg-amber-50/70 border-l-2 border-mirari-amber text-xs text-mirari-ink leading-relaxed italic">
-                          「{articleEvidenceResult.evidence.exactQuote}」
-                        </blockquote>
-
-                        <div className="p-2.5 rounded-xl bg-mirari-paper border border-mirari-line text-xs text-mirari-ink leading-relaxed font-sans">
-                          {articleEvidenceResult.answer}
-                        </div>
+                  <div className="pt-3 border-t border-mirari-line space-y-2 animate-fade-in">
+                    <div className="flex items-center justify-between text-xs font-sans text-mirari-amber font-semibold">
+                      <div className="flex items-center space-x-1.5">
+                        <span className="w-2 h-2 rounded-full bg-mirari-amber animate-pulse" />
+                        <span>MIRARI 白話陪讀</span>
+                        {articleEvidenceResult.evidence && (
+                          <span className="px-1.5 py-0.5 rounded text-[10px] bg-amber-50 text-amber-800 font-sans font-medium">
+                            已定位原文
+                          </span>
+                        )}
                       </div>
-                    ) : (
-                      <div className="p-2.5 rounded-xl bg-mirari-paper border border-mirari-line text-xs text-mirari-muted leading-relaxed font-sans">
-                        {articleEvidenceResult.answer}
-                      </div>
-                    )}
+                      <button
+                        type="button"
+                        onClick={handleDismissAnswer}
+                        className="text-[11px] text-mirari-muted hover:text-mirari-ink hover:underline font-normal cursor-pointer"
+                      >
+                        關閉回答
+                      </button>
+                    </div>
+
+                    <div className="p-3 rounded-xl bg-mirari-paper border border-mirari-line text-xs text-mirari-ink leading-relaxed font-sans">
+                      {articleEvidenceResult.answer}
+                    </div>
                   </div>
                 )}
               </div>
             )}
           </div>
         </>
+      )}
+
+      {/* ─── Mobile Compact Companion Answer Card (In Article View) ──── */}
+      {currentView === 'article' && articleEvidenceResult && !isPanelOpen && (
+        <div
+          id="mirari-mobile-companion-card"
+          className="fixed bottom-4 inset-x-3 z-[60] sm:hidden animate-fade-in pointer-events-auto"
+          style={{
+            paddingBottom: 'max(0.25rem, env(safe-area-inset-bottom, 0px))',
+          }}
+        >
+          <div className="bg-white/95 backdrop-blur-md border border-mirari-amber/40 shadow-2xl rounded-2xl p-3.5 space-y-2">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-1.5">
+                <span className="w-2 h-2 rounded-full bg-mirari-amber animate-pulse" />
+                <span className="text-[11px] font-sans font-bold text-mirari-ink">
+                  MIRARI 白話陪讀
+                </span>
+                {articleEvidenceResult.evidence && (
+                  <span className="px-1.5 py-0.5 rounded text-[10px] bg-amber-50 text-amber-800 font-sans font-medium">
+                    已定位原文
+                  </span>
+                )}
+              </div>
+              <div className="flex items-center space-x-1">
+                <button
+                  type="button"
+                  onClick={() => setIsPanelOpen(true)}
+                  className="text-[11px] text-mirari-muted hover:text-mirari-ink px-2 py-0.5 rounded hover:bg-mirari-surfaceAlt transition font-sans cursor-pointer"
+                >
+                  換個問題
+                </button>
+                <button
+                  type="button"
+                  onClick={handleDismissAnswer}
+                  className="text-xs text-mirari-dim hover:text-mirari-ink px-1.5 py-0.5 rounded hover:bg-mirari-surfaceAlt transition font-sans font-bold cursor-pointer"
+                  title="關閉回答並清除標記"
+                >
+                  ✕
+                </button>
+              </div>
+            </div>
+
+            <div className="text-xs text-mirari-ink leading-relaxed font-sans">
+              <p className={isMobileExpandedAnswer ? '' : 'line-clamp-3'}>
+                {articleEvidenceResult.answer}
+              </p>
+              {articleEvidenceResult.answer.length > 90 && (
+                <button
+                  type="button"
+                  onClick={() => setIsMobileExpandedAnswer((prev) => !prev)}
+                  className="text-[11px] text-mirari-amber hover:underline mt-1 font-medium block cursor-pointer"
+                >
+                  {isMobileExpandedAnswer ? '收合' : '展開完整解釋'}
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
       )}
     </>
   );
