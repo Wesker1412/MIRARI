@@ -1,0 +1,105 @@
+{
+  "articleId": "art-neuron-action-potential",
+  "slug": "action-potential-hodgkin-huxley",
+  "version": 1,
+  "creationModel": "gemini-2.5-pro",
+  "editorialPassDate": "2026-11-02T15:30:00Z",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-hodgkin-1952",
+        "citation": "Hodgkin, A. L., & Huxley, A. F. (1952). \"A quantitative description of membrane current and its application to conduction and excitation in nerve.\" The Journal of Physiology, 117(4), 500-544.",
+        "doi": "10.1113/jphysiol.1952.sp004764",
+        "verifiedClaims": [
+          "膜電位四元非線性微分方程組 (V, m, h, n) 成功定量復現神經衝動全波形",
+          "電壓門控鈉通道具備三次方快速激發 m^3 與一次方慢速去活化 h；鉀通道具備四次方延遲整流 n^4"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "脂質雙分子層電容性質 Cm 約為 1 μF/cm²",
+            "能士特平衡電位：內部高鉀 (EK ≈ -77 mV)、外部高鈉 (ENa ≈ +50 mV)"
+          ],
+          "empiricalFindings": [
+            "烏賊巨軸突在 6.3°C 測得之最大鈉電导 gNa = 120 mS/cm²、鉀電導 gK = 36 mS/cm²、漏電導 gL = 0.3 mS/cm²"
+          ],
+          "hypothesesAndModels": [
+            "HH 模型假設離子通道由獨立帶電次級閘門粒子二態開關控制；現代分子生物學證實為跨膜 S4 螺旋結構轉變，唯巨觀動力學完全符合 HH 唯象預測"
+          ]
+        }
+      },
+      {
+        "id": "ref-bean-2007",
+        "citation": "Bean, B. P. (2007). \"The action potential in mammalian central neurons.\" Nature Reviews Neuroscience, 8(6), 451-465.",
+        "doi": "10.1038/nrn2148",
+        "verifiedClaims": [
+          "中樞神經元放電閾值非固定標量常數，而受前序激發歷史與 dV/dt 動態調控",
+          "全或無定律在軸突長途傳導中保證數位強健性，在軸突起始段與突觸末端則保有類比調諧"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "不反應期由鈉通道去活化門 h 慢速恢復動力學直接支配"
+          ],
+          "empiricalFindings": [
+            "皮質錐體細胞高頻連續發放時，峰值波幅呈現動態壓縮"
+          ],
+          "hypothesesAndModels": [
+            "動態分界曲面（Dynamic Separatrix）相空間邊界理論"
+          ]
+        }
+      }
+    ],
+    "formulasAndUnits": [
+      {
+        "formula": "C_m \\frac{dV}{dt} = I_{ext} - \\bar{g}_{Na} m^3 h (V - E_{Na}) - \\bar{g}_K n^4 (V - E_K) - g_L (V - E_L)",
+        "unitConsistency": "Cm [μF/cm²], dV/dt [mV/ms = V/s], I [μA/cm²], g [mS/cm²], V [mV]；量綱一致 (μA/cm²)",
+        "verified": true
+      },
+      {
+        "formula": "E_{ion} = \\frac{RT}{zF} \\ln \\frac{[ion]_{out}}{[ion]_{in}}",
+        "unitConsistency": "RT/F 在 20°C 約為 25.3 mV，平衡電位單位為 mV",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "HH 四階常微分方程組 (ODE) 結合電壓相關傳輸速率 α(V)、β(V)",
+      "numericalMethod": "指數積分器 (Exponential Euler) / 前向數值離散，步長 dt = 0.02 ms",
+      "dynamicBehaviorVerified": "刺激電流 6.0 μA/cm² 時表現為亞閾值被動衰減；當電流增加至 8.0 μA/cm² 越過閾值時激發 100 mV 尖峰動作電位；TTX 模擬開關可完全阻斷鈉電導並消除脈衝",
+      "modelAssumptionsAndLimits": "模擬器採用等電位空間鉗（Space-clamp）點神經元模型，未考慮軸突軸向空間傳導電阻與樹突被動分枝衰減"
+    },
+    "noFakeCitations": true,
+    "noFictionalReviewers": true
+  },
+  "readability": {
+    "language": "繁體中文",
+    "pedagogyProgression": "細胞膜作為奈米電容器 -> 能士特平衡電位與離子梯度儲能 -> 即時數值示波器動手驗證 -> 四元微分方程離子電導交響樂 -> 現代動態閾值與全或無邊界深化",
+    "technicalTermsDemystified": [
+      {
+        "term": "動作電位 (Action Potential)",
+        "intuitiveExplanation": "神經細胞膜兩側電位差在數毫秒內短暫反轉並自動復原的快速電波脈衝"
+      },
+      {
+        "term": "全或無定律 (All-or-None Law)",
+        "intuitiveExplanation": "刺激強度若未達標則完全不激發，一旦達標則產生幅度與波形完全固定的標準脈衝"
+      },
+      {
+        "term": "不反應期 (Refractory Period)",
+        "intuitiveExplanation": "脈衝剛結束時鈉離子通道暫時處於鎖死狀態，無論多強的刺激都無法立即再次引爆的冷卻時間"
+      }
+    ],
+    "toneReview": "生動流暢，以電路並聯模型比擬生物膜，專業術語首次出現皆有直觀語境，杜絕無意義晦澀修飾"
+  },
+  "aestheticsAndNarrative": {
+    "avoidFormulaicCliches": "開篇以「磷脂雙分子層微型電容器」切入，無俗套科普開頭，結尾深入動態分界曲面與現代神經計算",
+    "coreQuestion": "為什麼薄僅 5 奈米的生物脂質膜，能憑藉四條非線性微分方程，引爆如同數位芯片般的精準脈衝？",
+    "interactiveRole": "ActionPotentialSimulator 讓讀者手動調節刺激電流、施加電流脈衝或加入河豚毒素 TTX，即時對照膜電位曲線與通道閘門演化",
+    "narrativeStyle": "depth_narrative",
+    "interactiveType": "circuit_oscilloscope"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "用詞規範性校正：修正第二節示波器操作指引中「跨越閥值時」為繁體中文標準術語「跨越閾值時」，維持全篇「動態閾值」與「放電閾值」專業術語統一",
+    "平衡電位標註：核實哺乳類典型神經元鉀平衡電位 (-77 mV) 與靜止膜電位 (-65 mV) 的數值匹配性"
+  ],
+  "unconfirmedLimits": [
+    "未涉及鈣離子依賴型慢動作電位（心肌細胞或浦肯野細胞）及鈉通道亞型多元性，聚焦於經典軸突傳導"
+  ]
+}

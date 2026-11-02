@@ -1,0 +1,105 @@
+{
+  "articleId": "art-chaos-double-pendulum",
+  "slug": "chaos-double-pendulum-lyapunov",
+  "version": 1,
+  "creationModel": "gemini-2.5-pro",
+  "editorialPassDate": "2026-11-02T15:30:00Z",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-shinbrot-1992",
+        "citation": "Shinbrot, T., Grebogi, C., Wisdom, J., & Yorke, J. A. (1992). \"Chaos in a double pendulum.\" American Journal of Physics, 60(6), 491-499.",
+        "doi": "10.1119/1.16860",
+        "verifiedClaims": [
+          "大角度雙擺運動在實驗與數值模擬中均呈現正的最大李雅普諾夫指數",
+          "翻轉時間（Flip Time）對初始角度呈現碎形結構的極端敏感分佈"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "雙擺由拉格朗日力學精確描述，系統為四維相空間中的確定性保守力學系統",
+            "在小角度極限下系統退化為兩種線性簡正模 (Normal Modes) 的疊加"
+          ],
+          "empiricalFindings": [
+            "真實實驗中即使空氣阻力極小，微米級的軸承摩擦與樞軸間隙亦足以在數秒內使軌跡偏離純數值預測"
+          ],
+          "hypothesesAndModels": [
+            "無摩擦剛性擺桿與質點假設為理想化數學模型，用於提煉純粹的確定性渾沌機制"
+          ]
+        }
+      },
+      {
+        "id": "ref-strogatz-2018",
+        "citation": "Strogatz, S. H. (2018). Nonlinear Dynamics and Chaos: With Applications to Physics, Biology, Chemistry, and Engineering (2nd ed.). CRC Press.",
+        "verifiedClaims": [
+          "李雅普諾夫時間定義了確定性系統的有限預測地平線",
+          "保守哈密頓系統遵循劉維爾定理，相體積守恆，不存在體積收縮的奇異吸子"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "劉維爾定理：相空間流速散度為零 (div v = 0)",
+            "KAM 定理：微小非線性擾動下部分不變環面得以保留，大擾動下環面破裂形成龐加萊截面上的同宿糾纏"
+          ],
+          "empiricalFindings": [
+            "數值相空間切片清晰呈現穩定規則島與渾沌海洋的共存結構"
+          ],
+          "hypothesesAndModels": [
+            "李雅普諾夫指數的數值估算通常基於切空間軌道切向量的重正化累積（Benettin 演算法）"
+          ]
+        }
+      }
+    ],
+    "formulasAndUnits": [
+      {
+        "formula": "|\\delta \\mathbf{Z}(t)| \\approx |\\delta \\mathbf{Z}(0)| e^{\\lambda t}",
+        "unitConsistency": "Z 為相空間位置與動量混合向量，\\lambda 單位為 s^-1（時間倒數）",
+        "verified": true
+      },
+      {
+        "formula": "(\\theta_1, \\theta_2, p_{\\theta_1}, p_{\\theta_2}) \\in \\mathbb{R}^4",
+        "unitConsistency": "角度為弧度 (rad)，廣義動量為角動量 (kg·m^2/s)",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "非線性拉格朗日運動方程式組（包含 cos(θ1-θ2) 與 sin(θ1-θ2) 耦合項）",
+      "numericalMethod": "標準四階龍格-庫塔法 (RK4)，固定微步長 dt = 0.02 s，即時維持總機械能守恆檢驗",
+      "dynamicBehaviorVerified": "微小擾動 Δθ0 = 0.001 rad 在低角度（<20°）維持同步振盪；在 90° 釋放時於 2 秒內爆發歐氏距離指數級分離",
+      "modelAssumptionsAndLimits": "模擬器採用理想無阻尼剛性擺桿模型；數值積分器在極長時域（>10 分鐘）會因浮點數截斷誤差產生微小能量漂移"
+    },
+    "noFakeCitations": true,
+    "noFictionalReviewers": true
+  },
+  "readability": {
+    "language": "繁體中文",
+    "pedagogyProgression": "古典單擺的線性秩序 -> 雙擺的非線性力矩反饋 -> 數值模擬雙軌發散體驗 -> 數學本質（相空間維度、李雅普諾夫指數與劉維爾定理）",
+    "technicalTermsDemystified": [
+      {
+        "term": "相空間 (Phase Space)",
+        "intuitiveExplanation": "將系統在每一瞬間所有的位置與速度，同時作為坐標軸所建構的高維幾何空間"
+      },
+      {
+        "term": "李雅普諾夫指數 (Lyapunov Exponent)",
+        "intuitiveExplanation": "用來度量兩個起點極其接近的軌道，隨著時間流逝以多快的指數速度分道揚鑣的指標"
+      },
+      {
+        "term": "確定性渾沌 (Deterministic Chaos)",
+        "intuitiveExplanation": "物理定律完全確定、無任何隨機擲骰，但由於對初值極度敏感，長期未來在數學上根本無法預測"
+      }
+    ],
+    "toneReview": "思辨深刻，嚴謹區分決定論與可預測性，不流於「蝴蝶效應」等通俗濫調，直擊分析力學幾何本質"
+  },
+  "aestheticsAndNarrative": {
+    "avoidFormulaicCliches": "以拉普拉斯機械宇宙觀的破產直接破題，無老套過渡詞，結構緊湊精鍊",
+    "coreQuestion": "為什麼由完全確定、無隨機項的牛頓運動方程支配的簡單機械，會在數秒內走向無法預言的隨機性？",
+    "interactiveRole": "DoublePendulumSimulator 同步渲染基準軌道與對比微擾軌道，讓讀者親眼見證兩條軌跡如何從完全貼合到劇烈撕裂",
+    "narrativeStyle": "first_principles",
+    "interactiveType": "phase_space"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "概念嚴謹性修正：嚴格排除將保守雙擺混為「奇異吸子」的常見科普錯誤，明確指出吸子只存在於耗散系統，保守系統相體積遵循劉維爾定理保持不變",
+    "補充能量超曲面維度說明：四維相空間減去一個能量守恆標量約束，軌跡運動嚴格局限於三維超曲面"
+  ],
+  "unconfirmedLimits": [
+    "未深入探討擺桿質量分佈（分佈質量剛體 vs 點質量）對分岔點角度的數值微移，正文以質點雙擺為代表模型"
+  ]
+}

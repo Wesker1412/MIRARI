@@ -97,15 +97,15 @@
       "contextNote": "二、親手量測：動作電位示波器模擬 · 第 1 段"
     },
     {
-      "sentenceId": "sent-49cf21cc",
+      "sentenceId": "sent-7b0dc89a",
       "articleId": "art-neuron-action-potential",
       "sectionId": "sec-2-5d21b6",
       "sectionTitle": "二、親手量測：動作電位示波器模擬",
       "paragraphIndex": 2,
-      "exactQuote": "請嘗試調節左側的「刺激電流強度」：\n1. 當電流設為 $6\\ \\mu\\text{A/cm}^2$ 時，膜電位僅被動抬升數毫伏特後便衰減恢復，無法引爆脈衝；\n2. 當電流微增至 $8\\ \\mu\\text{A/cm}^2$ 跨越閥值時，高達 $100\\text{ mV}$ 的尖銳峰值瞬間爆發！",
+      "exactQuote": "請嘗試調節左側的「刺激電流強度」：\n1. 當電流設為 $6\\ \\mu\\text{A/cm}^2$ 時，膜電位僅被動抬升數毫伏特後便衰減恢復，無法引爆脈衝；\n2. 當電流微增至 $8\\ \\mu\\text{A/cm}^2$ 跨越閾值時，高達 $100\\text{ mV}$ 的尖銳峰值瞬間爆發！",
       "charStart": 1032,
       "charEnd": 1177,
-      "contentHash": "49cf21cc50384a490d3f2f3a46eac6ada482cffe1bfe8c08e016c2e71ee07275",
+      "contentHash": "7b0dc89a0b7b1a5565d62979594b517a02f0879c215e78869a99372ffbcccd1a",
       "contextNote": "二、親手量測：動作電位示波器模擬 · 第 3 段"
     },
     {

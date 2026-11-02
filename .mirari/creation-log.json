@@ -1,8 +1,9 @@
 {
-  "lastRunTimestamp": "2026-11-01T19:10:00.000Z",
+  "lastRunTimestamp": "2026-11-02T15:30:00.000Z",
   "scheduledCron": "0 1 * * *",
   "timezone": "Asia/Taipei (UTC+8)",
   "creationModel": "gemini-2.5-pro",
+  "editorialQualityFramework": "Phase 6 Autonomous Editorial Review",
   "runs": [
     {
       "runId": "mirari-auto-run-20261101-1910",
@@ -21,11 +22,31 @@
           "narrativeStyle": "first_principles",
           "status": "published",
           "sources": [
-            "Shinbrot et al. (1992) Am. J. Phys.",
+            "Shinbrot et al. (1992) Am. J. Phys. doi:10.1119/1.16860",
             "Strogatz (2018) Nonlinear Dynamics and Chaos",
-            "Levien & Tan (1993) Am. J. Phys."
+            "Levien & Tan (1993) Am. J. Phys. doi:10.1119/1.17335"
           ],
-          "verificationPassed": true
+          "editorialRecordPath": "content/editorial-records/chaos-double-pendulum-lyapunov.json",
+          "scientificVerification": {
+            "verifiedClaimsCount": 2,
+            "distinguishedKnowledgeTypes": {
+              "established": 2,
+              "empirical": 1,
+              "modelHypothesis": 1
+            },
+            "formulaValidation": "四維相空間拉格朗日運動方程與李雅普諾夫發散指數 λ [s^-1]",
+            "simulationValidation": "四階龍格-庫塔數值解 (RK4)，Δθ0 軌跡發散驗證與能量守恆檢驗",
+            "assumptionsAndLimits": "理想無阻尼剛性擺桿質點模型，無空氣耗散"
+          },
+          "readabilityReview": "由單擺簡諧振盪切入非線性反饋，直觀化相空間與李雅普諾夫時間，無幼兒化比喻",
+          "aestheticsReview": "以拉普拉斯決定論的破產破題，無陳腔濫調，DoublePendulumSimulator 機制呼應",
+          "issuesCorrected": [
+            "釐清保守系統相體積遵循劉維爾定理，杜絕將雙擺渾沌混同為耗散系統奇異吸子的常見概念偏差",
+            "補充三維能量超曲面約束推導"
+          ],
+          "unconfirmedLimits": [
+            "分佈質量剛體對分岔角微移未納入本篇，維持質點雙擺代表性"
+          ]
         },
         {
           "id": "art-neuron-action-potential",
@@ -37,11 +58,31 @@
           "narrativeStyle": "depth_narrative",
           "status": "published",
           "sources": [
-            "Hodgkin & Huxley (1952) J. Physiol.",
+            "Hodgkin & Huxley (1952) J. Physiol. doi:10.1113/jphysiol.1952.sp004764",
             "Kandel et al. (2021) Principles of Neural Science",
-            "Bean (2007) Nat. Rev. Neurosci."
+            "Bean (2007) Nat. Rev. Neurosci. doi:10.1038/nrn2148"
           ],
-          "verificationPassed": true
+          "editorialRecordPath": "content/editorial-records/action-potential-hodgkin-huxley.json",
+          "scientificVerification": {
+            "verifiedClaimsCount": 2,
+            "distinguishedKnowledgeTypes": {
+              "established": 2,
+              "empirical": 1,
+              "modelHypothesis": 1
+            },
+            "formulaValidation": "HH 四元非線性 ODE 電流平衡式與能士特平衡電位，量綱統一 (μA/cm²)",
+            "simulationValidation": "指數歐拉數值積分，驗證 6.0 μA 亞閾衰減與 8.0 μA 100 mV 脈衝爆發，TTX 阻斷正常",
+            "assumptionsAndLimits": "等電位空間鉗點神經元，未計軸向空間衰減常數 λ"
+          },
+          "readabilityReview": "脂質雙層並聯電路直觀化，動作電位、去極化、不反應期逐步拆解，平衡專業度與流暢度",
+          "aestheticsReview": "以微型電容器切入，深入動態閾值分界曲面，ActionPotentialSimulator 即時波形呼應",
+          "issuesCorrected": [
+            "修正第二節示波器操作指引中「跨越閥值時」為繁體中文標準術語「跨越閾值時」",
+            "核定哺乳類典型靜止膜電位 (-65 mV) 與鉀平衡電位 (-77 mV)"
+          ],
+          "unconfirmedLimits": [
+            "未涉及心肌細胞鈣離子型慢動作電位，聚焦經典軸突傳導"
+          ]
         },
         {
           "id": "art-maxwells-demon-entropy",
@@ -54,11 +95,31 @@
           "status": "published",
           "sources": [
             "Maxwell (1871) Theory of Heat",
-            "Landauer (1961) IBM J. Res. Dev.",
-            "Bennett (1982) Int. J. Theor. Phys.",
-            "Toyabe et al. (2010) Nat. Phys."
+            "Landauer (1961) IBM J. Res. Dev. doi:10.1147/rd.53.0183",
+            "Bennett (1982) Int. J. Theor. Phys. doi:10.1007/BF02084158",
+            "Toyabe et al. (2010) Nat. Phys. doi:10.1038/nphys1821"
           ],
-          "verificationPassed": true
+          "editorialRecordPath": "content/editorial-records/maxwells-demon-landauer-entropy.json",
+          "scientificVerification": {
+            "verifiedClaimsCount": 2,
+            "distinguishedKnowledgeTypes": {
+              "established": 2,
+              "empirical": 1,
+              "modelHypothesis": 1
+            },
+            "formulaValidation": "蘭道爾耗散下限 Q >= kB * T * ln(2) 與總複合熵增 ΔStotal >= 0",
+            "simulationValidation": "剛性圓球彈性碰撞與微觀速度閘門篩選，即時核算記憶庫位元累計",
+            "assumptionsAndLimits": "稀薄剛球氣體模型，忽略分子間長程凡得瓦力與量子消相干"
+          },
+          "readabilityReview": "思維悖論破題，逐步推進至斯齊拉德引擎與蘭道爾記憶抹除，邏輯鏈條嚴密",
+          "aestheticsReview": "以時間之箭與微觀操作者破題，無套話，MaxwellDemonSimulator 實體化位元消耗",
+          "issuesCorrected": [
+            "清晰區分布里淵測量能耗說與貝內特抹除代價說的歷史認知更迭",
+            "核算 300 K 室溫下蘭道爾極限約 2.871 × 10^-21 J，數值準確"
+          ],
+          "unconfirmedLimits": [
+            "量子資訊熱力學之糾纏態熵增未展開，聚焦經典蘭道爾界限"
+          ]
         }
       ],
       "unpassedTopics": []

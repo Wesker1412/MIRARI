@@ -60,7 +60,7 @@
     "creationModel": "gemini-2.5-pro",
     "feedbackId": "fb-art-neuron-action-potential",
     "createdAt": "2026-11-01T19:00:00Z",
-    "contentHash": "3c86f43378c90a31e81fbda8bc3e4fba3482138aaaea0ec294e0d2fbca1c5e11",
+    "contentHash": "243ee8b454a596ca8d9d388c796a7e9c466237491e5b4c1bfb3ae0a0b335b293",
     "sections": [
       {
         "id": "sec-1-6b1dc2",
@@ -158,7 +158,7 @@
         "paragraphs": [
           "在下方即時數值示波器中，我們完整實作了霍奇金與赫胥黎（Hodgkin-Huxley）四元非線性微分方程組。上方藍色跡線為跨膜電位 $V_m(t)$，下方三條彩色曲線則實時描繪鈉通道激發門控 $m$（橘色）、失活門控 $h$（綠色）與鉀通道延遲門控 $n$（紫色）的機率演化：",
           "<InteractiveExperiment id=\"ActionPotentialSimulator\" />",
-          "請嘗試調節左側的「刺激電流強度」：\n1. 當電流設為 $6\\ \\mu\\text{A/cm}^2$ 時，膜電位僅被動抬升數毫伏特後便衰減恢復，無法引爆脈衝；\n2. 當電流微增至 $8\\ \\mu\\text{A/cm}^2$ 跨越閥值時，高達 $100\\text{ mV}$ 的尖銳峰值瞬間爆發！\n3. 您亦可點擊開關加入河豚毒素（TTX）阻斷鈉通道，觀察動作電位如何徹底熄滅。"
+          "請嘗試調節左側的「刺激電流強度」：\n1. 當電流設為 $6\\ \\mu\\text{A/cm}^2$ 時，膜電位僅被動抬升數毫伏特後便衰減恢復，無法引爆脈衝；\n2. 當電流微增至 $8\\ \\mu\\text{A/cm}^2$ 跨越閾值時，高達 $100\\text{ mV}$ 的尖銳峰值瞬間爆發！\n3. 您亦可點擊開關加入河豚毒素（TTX）阻斷鈉通道，觀察動作電位如何徹底熄滅。"
         ],
         "sentences": [
           {
@@ -186,15 +186,15 @@
             "contextNote": "二、親手量測：動作電位示波器模擬 · 第 1 段"
           },
           {
-            "sentenceId": "sent-49cf21cc",
+            "sentenceId": "sent-7b0dc89a",
             "articleId": "art-neuron-action-potential",
             "sectionId": "sec-2-5d21b6",
             "sectionTitle": "二、親手量測：動作電位示波器模擬",
             "paragraphIndex": 2,
-            "exactQuote": "請嘗試調節左側的「刺激電流強度」：\n1. 當電流設為 $6\\ \\mu\\text{A/cm}^2$ 時，膜電位僅被動抬升數毫伏特後便衰減恢復，無法引爆脈衝；\n2. 當電流微增至 $8\\ \\mu\\text{A/cm}^2$ 跨越閥值時，高達 $100\\text{ mV}$ 的尖銳峰值瞬間爆發！",
+            "exactQuote": "請嘗試調節左側的「刺激電流強度」：\n1. 當電流設為 $6\\ \\mu\\text{A/cm}^2$ 時，膜電位僅被動抬升數毫伏特後便衰減恢復，無法引爆脈衝；\n2. 當電流微增至 $8\\ \\mu\\text{A/cm}^2$ 跨越閾值時，高達 $100\\text{ mV}$ 的尖銳峰值瞬間爆發！",
             "charStart": 1032,
             "charEnd": 1177,
-            "contentHash": "49cf21cc50384a490d3f2f3a46eac6ada482cffe1bfe8c08e016c2e71ee07275",
+            "contentHash": "7b0dc89a0b7b1a5565d62979594b517a02f0879c215e78869a99372ffbcccd1a",
             "contextNote": "二、親手量測：動作電位示波器模擬 · 第 3 段"
           },
           {
@@ -438,7 +438,7 @@
       }
     ],
     "totalWordCount": 1930,
-    "lastIndexedAt": "2026-11-02T07:23:47.404Z"
+    "lastIndexedAt": "2026-11-02T07:34:07.005Z"
   },
   {
     "id": "art-chaos-double-pendulum",
@@ -868,7 +868,7 @@
       }
     ],
     "totalWordCount": 1783,
-    "lastIndexedAt": "2026-11-02T07:23:47.409Z"
+    "lastIndexedAt": "2026-11-02T07:34:07.016Z"
   },
   {
     "id": "art-maxwells-demon-entropy",
@@ -1377,7 +1377,7 @@
       }
     ],
     "totalWordCount": 1673,
-    "lastIndexedAt": "2026-11-02T07:23:47.410Z"
+    "lastIndexedAt": "2026-11-02T07:34:07.018Z"
   },
   {
     "id": "art-exoplanet-transit",
@@ -1905,6 +1905,6 @@
       }
     ],
     "totalWordCount": 1679,
-    "lastIndexedAt": "2026-11-02T07:23:47.412Z"
+    "lastIndexedAt": "2026-11-02T07:34:07.020Z"
   }
 ]

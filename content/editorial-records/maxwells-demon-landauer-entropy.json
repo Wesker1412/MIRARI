@@ -1,0 +1,105 @@
+{
+  "articleId": "art-maxwells-demon-entropy",
+  "slug": "maxwells-demon-landauer-entropy",
+  "version": 1,
+  "creationModel": "gemini-2.5-pro",
+  "editorialPassDate": "2026-11-02T15:30:00Z",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-landauer-1961",
+        "citation": "Landauer, R. (1961). \"Irreversibility and heat generation in the computing process.\" IBM Journal of Research and Development, 5(3), 183-191.",
+        "doi": "10.1147/rd.53.0183",
+        "verifiedClaims": [
+          "在物理環境溫度 T 下，抹除 1 位元未知二進位資訊至少伴隨 kB * T * ln(2) 的熱量耗散",
+          "邏輯不可逆操作必然對應著物理相空間體積的壓縮，代價由環境總熵增承擔"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "熱力學第二定律要求孤立系統總熵不減 (ΔS >= 0)",
+            "斯齊拉德單分子引擎提取功的最大極限為 W = kB * T * ln(2)"
+          ],
+          "empiricalFindings": [
+            "當代奈米碳管、微米膠體粒子光鑷實驗證實，抹除操作能耗在極限下逼近蘭道爾極限"
+          ],
+          "hypothesesAndModels": [
+            "理想絕熱無摩擦閘門與無耗散可逆計算（Bennett 測量假說）"
+          ]
+        }
+      },
+      {
+        "id": "ref-toyabe-2010",
+        "citation": "Toyabe, S., Sagawa, T., Ueda, M., Muneyuki, E., & Sano, M. (2010). \"Experimental demonstration of information-to-energy conversion and validation of the generalized Jarzynski equality.\" Nature Physics, 6(12), 988-992.",
+        "doi": "10.1038/nphys1821",
+        "verifiedClaims": [
+          "利用旋轉電場與光學顯微追蹤單個奈米粒子，成功在微觀實驗中觀測到資訊轉換為自由能的過程",
+          "驗證了廣義賈辛斯基等式（Generalized Jarzynski Equality）對資訊熱力學反饋控制的推廣"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "資訊與能量存在確定的熱力學等價轉換關係"
+          ],
+          "empiricalFindings": [
+            "高達 28% 的測量資訊轉換為有用功輸出"
+          ],
+          "hypothesesAndModels": [
+            "過阻尼朗之萬方程（Overdamped Langevin Dynamics）模型"
+          ]
+        }
+      }
+    ],
+    "formulasAndUnits": [
+      {
+        "formula": "Q_{dissipated} \\ge k_B T \\ln 2",
+        "unitConsistency": "kB [J/K], T [K]，熱量單位為焦耳 [J]；在 300 K 時為 2.87 × 10^-21 J",
+        "verified": true
+      },
+      {
+        "formula": "\\Delta S_{total} = \\Delta S_{gas} + \\Delta S_{demon} + \\Delta S_{env} \\ge 0",
+        "unitConsistency": "熵單位為 J/K；玻茲曼常數 kB 或無因次熱力學熵",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "二維剛性圓球彈性碰撞定律結合速度閾值閘門篩選邏輯與位元記憶累加器",
+      "numericalMethod": "連續碰撞時間驅動離散事件模擬，維護系統總動能與顆粒計數守恆",
+      "dynamicBehaviorVerified": "自動妖演算法開啟時，右腔室均方根速度（溫度）顯著上升，左腔室冷卻；記憶體位元計數隨篩選事件單調增加，清晰展示資訊熵的儲存與代價",
+      "modelAssumptionsAndLimits": "模擬器採用稀薄氣體剛性球碰撞模型，忽略分子間長程凡得瓦力與非彈性激發"
+    },
+    "noFakeCitations": true,
+    "noFictionalReviewers": true
+  },
+  "readability": {
+    "language": "繁體中文",
+    "pedagogyProgression": "思維悖論破題（麥克斯韋的微觀守門人） -> 互動碰撞腔室動手驗證 -> 斯齊拉德引擎與測量爭端 -> 蘭道爾原理終局解答（資訊是物理的）",
+    "technicalTermsDemystified": [
+      {
+        "term": "麥克斯韋妖 (Maxwell's Demon)",
+        "intuitiveExplanation": "麥克斯韋構想的一種假想微觀智能，能看見並分選不同速度的氣體分子，試圖在不耗功的情況下自發產生溫差"
+      },
+      {
+        "term": "蘭道爾原理 (Landauer's Principle)",
+        "intuitiveExplanation": "抹除電腦或智能實體中的 1 位元資訊，在物理上必須向周圍環境排放至少特定微小熱量的基本定律"
+      },
+      {
+        "term": "熱力學第二定律 (Second Law of Thermodynamics)",
+        "intuitiveExplanation": "孤立系統的混亂程度（熵）永遠不會自發減少，熱量不會無代價地從低溫自發流向高溫"
+      }
+    ],
+    "toneReview": "思辨張力極強，將抽象的資訊理論與古典熱力學交融，不借助玄學修辭，嚴守現代統計物理邊界"
+  },
+  "aestheticsAndNarrative": {
+    "avoidFormulaicCliches": "開篇直接以時間之箭的單向命運與麥克斯韋的假想漏洞切入，摒棄常見的 AI 公式化總結",
+    "coreQuestion": "為什麼單純「知道」分子的快慢就能換取有用功？資訊的本質究竟是虛無的思想，還是受熱力學定律約束的物理實體？",
+    "interactiveRole": "MaxwellDemonSimulator 讓讀者親眼目睹妖在左右兩側分離出溫差的同時，下方蘭道爾記憶庫位元數同步飆升，將不可見的資訊代價實體化",
+    "narrativeStyle": "thought_experiment",
+    "interactiveType": "particle_system"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "論述歷史演進精確化：清晰劃分早期布里淵「測量能耗說」與現代貝內特「可逆測量/抹除代價說」的認知更迭，避免讀者誤以為測量本身不可避免耗能",
+    "常數精度核算：核對 kB * 300 K * ln(2) = 1.380649e-23 * 300 * 0.693147 ≈ 2.871e-21 J，確認文稿數值精確無誤"
+  ],
+  "unconfirmedLimits": [
+    "未涵蓋量子資訊熱力學中的量子糾纏消相干熵增細節，正文以經典蘭道爾界限為主要敘事範疇"
+  ]
+}

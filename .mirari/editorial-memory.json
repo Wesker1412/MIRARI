@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "lastUpdated": "2026-11-02T15:30:00Z",
+  "editorialMemoryDescription": "MIRARI 自主編輯品質管理記憶庫：記錄近期篇章學科分佈、敘事風格、互動模式與編輯檢查規則，提供每日自主創作管線跨日延續性與防重複依據。",
+  "recentArticles": [
+    {
+      "articleId": "art-exoplanet-transit",
+      "slug": "when-starlight-dims",
+      "discipline": "天文物理學與幾何光學",
+      "narrativeStyle": "geometric_observation",
+      "interactiveType": "geometric_light_curve",
+      "interactiveComponent": "TransitSimulator",
+      "coreConcept": "系外行星凌日光度曲線與周邊昏暗幾何",
+      "pedagogyKey": "以探照燈與飛蛾建立直覺，逐步推導面積比與 U 型幾何大氣效應",
+      "limitsIdentified": "正圓軌道無偏心率與黑子干擾簡化"
+    },
+    {
+      "articleId": "art-chaos-double-pendulum",
+      "slug": "chaos-double-pendulum-lyapunov",
+      "discipline": "非線性動力學與渾沌理論",
+      "narrativeStyle": "first_principles",
+      "interactiveType": "phase_space",
+      "interactiveComponent": "DoublePendulumSimulator",
+      "coreConcept": "雙擺拉格朗日運動方程、相空間與李雅普諾夫發散",
+      "pedagogyKey": "從單擺諧振對比雙擺失序，強調保守系統相體積守恆無吸子",
+      "limitsIdentified": "質點無阻尼無彈性形變理想模型"
+    },
+    {
+      "articleId": "art-neuron-action-potential",
+      "slug": "action-potential-hodgkin-huxley",
+      "discipline": "生物物理學與神經電生理",
+      "narrativeStyle": "depth_narrative",
+      "interactiveType": "circuit_oscilloscope",
+      "interactiveComponent": "ActionPotentialSimulator",
+      "coreConcept": "霍奇金-赫胥黎四元非線性微分方程與全或無定律",
+      "pedagogyKey": "奈米電容與離子梯度類比並聯電路，深入動態閾值分界曲面",
+      "limitsIdentified": "等電位空間鉗點神經元，無軸向衰減常數"
+    },
+    {
+      "articleId": "art-maxwells-demon-entropy",
+      "slug": "maxwells-demon-landauer-entropy",
+      "discipline": "統計物理學與資訊理論",
+      "narrativeStyle": "thought_experiment",
+      "interactiveType": "particle_system",
+      "interactiveComponent": "MaxwellDemonSimulator",
+      "coreConcept": "麥克斯韋妖思維悖論與蘭道爾極限資訊熱力學代價",
+      "pedagogyKey": "微觀守門人悖論破題，區分可逆測量與抹除代價，實體化位元熵增",
+      "limitsIdentified": "經典剛球稀薄氣體模型，無量子消相干細節"
+    }
+  ],
+  "cumulativeGuidelines": {
+    "scientificIntegrity": {
+      "mandatoryPrimarySources": true,
+      "requireDoiOrPermanentUrl": true,
+      "distinguishFactVsHypothesis": true,
+      "simulationValidationRequired": true,
+      "strictlyProhibitFakeReviewers": true,
+      "strictlyProhibitFakeCitations": true
+    },
+    "readabilityStandards": {
+      "targetLanguage": "繁體中文（台灣標準科學語境）",
+      "pedagogyRule": "必須遵循「現象 -> 機制 -> 必要數學」逐步推進",
+      "jargonRequirement": "所有專用學術名詞在文章中首次出現時，必須緊隨直觀日常物理意象解釋",
+      "antiInfantilization": "禁止為了通俗化而使用幼稚化或玄學化修辭，尊重讀者心智，保留真實科學數值與因次"
+    },
+    "editorialAesthetics": {
+      "prohibitedCliches": [
+        "在浩瀚的宇宙中",
+        "在千變萬化的科學世界裡",
+        "總結來說",
+        "綜上所述",
+        "讓我們拭目以待",
+        "無疑是一座燈塔",
+        "值得注意的是"
+      ],
+      "mandatoryElements": [
+        "每篇文章必須在引言確立一個尖銳且具體的「核心科學問題」",
+        "互動實驗必須與正文特定章節形成雙向機制呼應，不可僅作為點綴特效",
+        "每日相鄰創作必須輪替敘事風格與模擬形式，嚴禁連續使用雷同結構"
+      ]
+    }
+  },
+  "candidateThemesQueue": [
+    {
+      "topic": "量子物理與拓撲物質",
+      "proposedInquiry": "分數霍爾效應與任意子（Anyons）：二維空間中的拓撲幾何奇景",
+      "recommendedNarrativeStyle": "historical_detective",
+      "recommendedInteractiveType": "topological_braiding"
+    },
+    {
+      "topic": "流體動力學與大氣物理",
+      "proposedInquiry": "納維-斯托克斯方程與渦旋破裂：能量如何從大尺度渦流階梯式串級至分子黏滯？",
+      "recommendedNarrativeStyle": "first_principles",
+      "recommendedInteractiveType": "vorticity_cascade"
+    },
+    {
+      "topic": "分子生物學與微觀力學",
+      "proposedInquiry": "布朗棘輪（Brownian Ratchet）：分子馬達如何利用熱噪聲在熱平衡邊界定向行進？",
+      "recommendedNarrativeStyle": "thought_experiment",
+      "recommendedInteractiveType": "brownian_ratchet"
+    },
+    {
+      "topic": "廣義相對論與時空幾何",
+      "proposedInquiry": "重力透鏡與愛因斯坦環：光線如何在彎曲時空中走出多重時間路徑？",
+      "recommendedNarrativeStyle": "geometric_observation",
+      "recommendedInteractiveType": "ray_tracing_geodesic"
+    }
+  ]
+}

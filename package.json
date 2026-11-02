@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build:content": "node scripts/build-knowledge-index.js",
+    "check:editorial": "node scripts/run-editorial-review.js",
     "prerender": "node scripts/prerender-static-routes.js",
-    "build": "node scripts/build-knowledge-index.js && tsc -b && vite build && node scripts/prerender-static-routes.js",
+    "build": "node scripts/run-editorial-review.js && node scripts/build-knowledge-index.js && tsc -b && vite build && node scripts/prerender-static-routes.js",
     "lint": "oxlint",
     "preview": "vite preview"
   },
