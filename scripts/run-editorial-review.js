@@ -13,6 +13,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { parseFrontmatter } from './lib/articleParser.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -83,6 +84,30 @@ function runReview() {
     } catch (err) {
       console.error(`   ❌ 編輯紀錄 JSON 解析失敗: ${err.message}`);
       process.exit(1);
+    }
+
+    // 1.5 檢查主要編輯分類 (editorialCategory) 規範
+    const { metadata } = parseFrontmatter(content);
+    const validCategories = ['scientific_principles', 'journal_interpretation'];
+    if (!metadata.editorialCategory || !validCategories.includes(metadata.editorialCategory)) {
+      console.error(`   ❌ 缺少或無效之主要編輯分類 (editorialCategory): "${metadata.editorialCategory}"`);
+      console.error(`      正式文章必須且只能有其中一個主要分類："scientific_principles" 或 "journal_interpretation"！`);
+      process.exit(1);
+    }
+
+    // 嚴格判定期刊解讀條件：
+    // 不能僅因引用論文、有 DOI、有 journalReference、使用數學模型或提及近期研究就判定為期刊解讀
+    // journal_interpretation 必須是以近期真實研究論文為主要解讀對象，重點在介紹該研究的問題、方法、結果、限制與科學意義
+    if (metadata.editorialCategory === 'journal_interpretation') {
+      const scCheck = record.scientificVerification;
+      if (!scCheck?.primarySources || scCheck.primarySources.length === 0) {
+        console.error(`   ❌ 期刊解讀文章必須具備可核實的真實同行評審原始文獻！`);
+        process.exit(1);
+      }
+      if (!record.researchPaperContext?.coreResearchQuestion || !record.researchPaperContext?.methodology) {
+        console.error(`   ❌ 期刊解讀文章必須在編輯紀錄中具備 researchPaperContext（包含研究問題、研究方法、主要發現與限制）！`);
+        process.exit(1);
+      }
     }
 
     // 2. 核心科學查證欄位核驗

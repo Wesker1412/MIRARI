@@ -9,6 +9,7 @@ import {
 import { HomePage } from './components/home/HomePage';
 import { ArticlePage } from './components/pages/ArticlePage';
 import { SeriesPage } from './components/pages/SeriesPage';
+import { CategoryArticlesPage } from './components/pages/CategoryArticlesPage';
 import { NotFoundPage } from './components/pages/NotFoundPage';
 import { SiteLayout } from './components/layout/SiteLayout';
 
@@ -43,6 +44,8 @@ export function App() {
       <Routes>
         <Route element={<SiteLayout />}>
           <Route path="/" element={<HomeRouteWrapper />} />
+          <Route path="/journal" element={<CategoryArticlesPage category="journal_interpretation" />} />
+          <Route path="/principles" element={<CategoryArticlesPage category="scientific_principles" />} />
           <Route path="/articles/:slug" element={<ArticlePage />} />
           <Route path="/series/:slug" element={<SeriesPage />} />
           <Route path="*" element={<NotFoundPage />} />

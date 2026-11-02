@@ -236,6 +236,99 @@ ${JSON.stringify(jsonLd, null, 2)}
     fs.writeFileSync(path.join(DIST_DIR, 'articles', `${article.slug}.html`), articleHtml, 'utf8');
   }
 
+  // 生成分類頁靜態預渲染 (/journal 與 /principles)
+  const categoryRoutes = [
+    {
+      path: 'journal',
+      title: '期刊解讀 | MIRARI 數位科學雜誌',
+      description: '聚焦近期同儕審查學術論文的深度科學解讀，剖析研究核心問題、實驗方法、實證發現與邊界限制。',
+      category: 'journal_interpretation',
+      categoryTitle: '期刊解讀',
+      categoryTag: '學術研究追蹤',
+    },
+    {
+      path: 'principles',
+      title: '科學原理與思想實驗 | MIRARI 數位科學雜誌',
+      description: '探索經典科學體系、第一性原理推演、數學模型與思想實驗，結合同步數值模擬驗證。',
+      category: 'scientific_principles',
+      categoryTitle: '科學原理與思想實驗',
+      categoryTag: '思想實驗與基石',
+    },
+  ];
+
+  for (const cat of categoryRoutes) {
+    const catDir = path.join(DIST_DIR, cat.path);
+    ensureDir(catDir);
+
+    const catArticles = publishedArticles.filter((a) => a.editorialCategory === cat.category);
+    const canonicalUrl = `${canonicalOrigin}/${cat.path}`;
+
+    let catArticlesHtml = '';
+    if (catArticles.length === 0) {
+      catArticlesHtml = `
+        <div class="py-16 text-center space-y-3">
+          <h2 class="font-serif text-lg font-bold">目前暫無${cat.categoryTitle}篇章</h2>
+          <p class="text-xs text-[#706c64]">編輯部正在進行最新同儕審查文獻之深度查證與數值驗證，篇章將於通過自主編輯審核後即刻刊登。</p>
+          <a href="/" class="inline-block mt-4 text-xs font-medium text-[#1a1917] underline">返回首頁</a>
+        </div>
+      `;
+    } else {
+      catArticlesHtml = catArticles
+        .map(
+          (a) => `
+        <article class="p-6 mb-6 rounded-2xl border border-[#e5e0d8] bg-white">
+          <div class="text-xs text-[#b87333] mb-2">${escapeHtml(a.formatBadgeText || '')} · ${escapeHtml(a.publishedDate || '')}</div>
+          <h2 class="font-serif text-xl font-bold mb-2"><a href="/articles/${a.slug}" class="hover:underline">${escapeHtml(a.title)}</a></h2>
+          <p class="font-serif text-sm text-[#706c64] mb-3">${escapeHtml(a.subtitle)}</p>
+          <p class="text-xs text-[#706c64]">${escapeHtml(a.summary)}</p>
+        </article>
+      `
+        )
+        .join('\n');
+    }
+
+    const catBody = `
+      <div class="min-h-screen bg-[#fcfbf9] text-[#1a1917] pb-32">
+        <header class="border-b border-[#e5e0d8] bg-[#fcfbf9]/90 px-4 sm:px-8 py-3.5 flex items-center justify-between">
+          <a href="/" class="text-xs font-sans text-[#706c64] hover:text-[#1a1917] px-3 py-1.5 rounded-lg border border-[#e5e0d8]">返回首頁</a>
+          <span class="font-serif text-sm font-semibold">${escapeHtml(cat.categoryTitle)}</span>
+        </header>
+        <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14">
+          <header class="border-b border-[#e5e0d8] pb-8 mb-10 space-y-2">
+            <span class="text-xs font-semibold text-[#b87333]">${escapeHtml(cat.categoryTag)}</span>
+            <h1 class="font-serif text-3xl sm:text-4xl font-bold">${escapeHtml(cat.categoryTitle)}</h1>
+            <p class="text-sm text-[#706c64]">${escapeHtml(cat.description)}</p>
+          </header>
+          <section>
+            ${catArticlesHtml}
+          </section>
+        </main>
+      </div>
+    `;
+
+    let catHtml = baseHtml;
+    catHtml = catHtml.replace(/<title>.*?<\/title>/i, `<title>${escapeHtml(cat.title)}</title>`);
+    catHtml = catHtml.replace(/<meta\s+name="description"[^>]*>/i, '');
+    catHtml = catHtml.replace(/<meta\s+name="robots"[^>]*>/i, '');
+
+    const catMetaTags = `
+    ${robotsMetaTag}
+    <meta name="description" content="${escapeHtml(cat.description)}" />
+    <link rel="canonical" href="${escapeHtml(canonicalUrl)}" />
+    <meta property="og:site_name" content="MIRARI" />
+    <meta property="og:title" content="${escapeHtml(cat.title)}" />
+    <meta property="og:description" content="${escapeHtml(cat.description)}" />
+    <meta property="og:url" content="${escapeHtml(canonicalUrl)}" />
+    <meta property="og:type" content="website" />
+  </head>`;
+
+    catHtml = catHtml.replace('</head>', `${catMetaTags}`);
+    catHtml = catHtml.replace('<div id="root"></div>', `<div id="root">${catBody}</div>`);
+
+    fs.writeFileSync(path.join(catDir, 'index.html'), catHtml, 'utf8');
+    fs.writeFileSync(path.join(DIST_DIR, `${cat.path}.html`), catHtml, 'utf8');
+  }
+
   // 生成 404.html (適用於 Vercel / 靜態伺服器)
   let notFoundHtml = baseHtml
     .replace(/<title>.*?<\/title>/i, '<title>404 · 篇章坐標未找到 | MIRARI</title>');
@@ -262,6 +355,7 @@ ${JSON.stringify(jsonLd, null, 2)}
   fs.writeFileSync(path.join(DIST_DIR, '404.html'), notFoundHtml, 'utf8');
 
   console.log(`✓ 已生成 ${publishedPrerenderCount} 篇正式發布文章之靜態 SEO 預渲染 HTML (含 robots noindex 與集中 Canonical)`);
+  console.log(`✓ 已生成 /journal 與 /principles 分類列表頁靜態預渲染 HTML`);
   console.log(`✓ 已生成 dist/404.html 標準錯誤頁`);
   console.log('================================================================');
   console.log('🎉 靜態預渲染與 SEO 管線執行成功！');

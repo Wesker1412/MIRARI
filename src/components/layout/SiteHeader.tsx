@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { ARTICLES } from '../../data/articles';
 
 interface SiteHeaderProps {
   articleTitle?: string;
@@ -23,6 +24,10 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({
   const navigate = useNavigate();
   const isArticleView = location.pathname.startsWith('/articles/');
   const isHomeView = location.pathname === '/';
+
+  const hasJournalArticles = ARTICLES.some(
+    (a) => a.status === 'published' && a.editorialCategory === 'journal_interpretation'
+  );
 
   const scrollToAnchor = (anchorId: string) => {
     if (isHomeView) {
@@ -70,17 +75,19 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({
               >
                 封面故事
               </button>
-              <button
-                onClick={() => scrollToAnchor('journal-research')}
-                className="hover:text-mirari-ink transition py-1"
-              >
-                期刊解讀
-              </button>
+              {hasJournalArticles && (
+                <button
+                  onClick={() => scrollToAnchor('journal-research')}
+                  className="hover:text-mirari-ink transition py-1"
+                >
+                  期刊解讀
+                </button>
+              )}
               <button
                 onClick={() => scrollToAnchor('principles-experiments')}
                 className="hover:text-mirari-ink transition py-1"
               >
-                原理與思想實驗
+                科學原理與實驗
               </button>
               <button
                 onClick={() => scrollToAnchor('explore-mirari')}

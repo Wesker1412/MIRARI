@@ -16,7 +16,7 @@ export const CoverVisualCard: React.FC<CoverVisualCardProps> = ({ article, onCli
   return (
     <div
       onClick={onClick}
-      className="group relative rounded-3xl bg-mirari-space p-6 sm:p-8 cursor-pointer shadow-xl overflow-hidden border border-mirari-spaceBorder transition-all duration-300 hover:border-mirari-amber/40 select-none"
+      className="group relative rounded-3xl bg-mirari-space p-6 sm:p-8 cursor-pointer shadow-xl overflow-hidden border border-mirari-spaceBorder transition-all duration-300 hover:border-mirari-amber/40 select-none h-[340px] sm:h-[380px] flex flex-col justify-between"
     >
       {/* ─── Case 1: Exoplanet Transit Visual ─────────────────────── */}
       {isTransit && (

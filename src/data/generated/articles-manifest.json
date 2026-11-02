@@ -5,6 +5,7 @@
     "version": 1,
     "publishedDate": "2026-11-02",
     "status": "published",
+    "editorialCategory": "scientific_principles",
     "isEditorialCover": false,
     "isEditorialPick": true,
     "isResearchHighlight": true,
@@ -60,7 +61,7 @@
     "creationModel": "gemini-2.5-pro",
     "feedbackId": "fb-art-neuron-action-potential",
     "createdAt": "2026-11-01T19:00:00Z",
-    "contentHash": "243ee8b454a596ca8d9d388c796a7e9c466237491e5b4c1bfb3ae0a0b335b293",
+    "contentHash": "7e749757d81cb277a5296fcbdb33956d339dd33da21fecca882fb4020544da73",
     "sections": [
       {
         "id": "sec-1-6b1dc2",
@@ -438,7 +439,7 @@
       }
     ],
     "totalWordCount": 1930,
-    "lastIndexedAt": "2026-11-02T07:42:26.728Z"
+    "lastIndexedAt": "2026-11-02T15:49:41.924Z"
   },
   {
     "id": "art-chaos-double-pendulum",
@@ -446,6 +447,7 @@
     "version": 1,
     "publishedDate": "2026-11-02",
     "status": "published",
+    "editorialCategory": "scientific_principles",
     "isEditorialCover": false,
     "isEditorialPick": true,
     "isClassicFoundation": true,
@@ -500,7 +502,7 @@
     "creationModel": "gemini-2.5-pro",
     "feedbackId": "fb-art-chaos-double-pendulum",
     "createdAt": "2026-11-01T19:00:00Z",
-    "contentHash": "3c9be78a522b72d7edfee325ac5ce2dbe980eb09047cb7be85d3d09671b1b76a",
+    "contentHash": "38e667f55407a762a61a02f5b3cae0874285d6bb5fa4a295a7b7102ee469d2e7",
     "sections": [
       {
         "id": "sec-1-9b398a",
@@ -868,7 +870,7 @@
       }
     ],
     "totalWordCount": 1783,
-    "lastIndexedAt": "2026-11-02T07:42:26.734Z"
+    "lastIndexedAt": "2026-11-02T15:49:41.931Z"
   },
   {
     "id": "art-maxwells-demon-entropy",
@@ -876,6 +878,7 @@
     "version": 1,
     "publishedDate": "2026-11-02",
     "status": "published",
+    "editorialCategory": "scientific_principles",
     "isEditorialCover": false,
     "isEditorialPick": true,
     "isClassicFoundation": true,
@@ -933,7 +936,7 @@
     "creationModel": "gemini-2.5-pro",
     "feedbackId": "fb-art-maxwells-demon-entropy",
     "createdAt": "2026-11-01T19:00:00Z",
-    "contentHash": "38f09b0ae22ed9add701dfac9c68d45f4d06d1679969698ca56b9b0b9233ef42",
+    "contentHash": "364e205bad904a65c5b0adc98cfe2bc0e61d787b5910753ba4bd1ebd2b0ecab2",
     "sections": [
       {
         "id": "sec-1-ff468e",
@@ -1377,7 +1380,7 @@
       }
     ],
     "totalWordCount": 1673,
-    "lastIndexedAt": "2026-11-02T07:42:26.737Z"
+    "lastIndexedAt": "2026-11-02T15:49:41.934Z"
   },
   {
     "id": "art-exoplanet-transit",
@@ -1385,6 +1388,7 @@
     "version": 1,
     "publishedDate": "2026-11-02",
     "status": "published",
+    "editorialCategory": "scientific_principles",
     "isEditorialCover": true,
     "isEditorialPick": true,
     "isResearchHighlight": true,
@@ -1437,7 +1441,7 @@
       }
     ],
     "interactiveComponent": "TransitSimulator",
-    "contentHash": "cca6aee79128eb35c06873340ad1cd7c2dd68a9d7eee105d6bbc60333fdb80cd",
+    "contentHash": "fbaa232184209db82852c836eb53543fae14d4241dee7776774ec11b6494e6f8",
     "sections": [
       {
         "id": "sec-1-5725ec",
@@ -1905,6 +1909,6 @@
       }
     ],
     "totalWordCount": 1679,
-    "lastIndexedAt": "2026-11-02T07:42:26.739Z"
+    "lastIndexedAt": "2026-11-02T15:49:41.937Z"
   }
 ]

@@ -41,12 +41,17 @@ export interface KnowledgePoint {
   relatedQuestions: string[];
 }
 
+export type EditorialCategory = 'scientific_principles' | 'journal_interpretation';
+
 // ─── Article Core (文章本體) ───────────────────────────────────
 export interface Article {
   id: string;
   slug: string;
   title: string;
   subtitle: string;
+
+  // 主要編輯分類 (必須且只能有其中一個主要分類)
+  editorialCategory: EditorialCategory;
 
   // 多科學主題關聯 (Many-to-Many Topics)
   topicIds: string[];
@@ -175,6 +180,7 @@ export interface SearchIndexEntry {
   status: ArticleStatus;
   topicIds: string[];
   tags: string[];
+  editorialCategory: EditorialCategory;
   formatBadgeText: string;
   isEditorialCover?: boolean;
   isEditorialPick?: boolean;

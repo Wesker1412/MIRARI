@@ -6,6 +6,7 @@
     {
       "articleId": "art-exoplanet-transit",
       "slug": "when-starlight-dims",
+      "editorialCategory": "scientific_principles",
       "discipline": "天文物理學與幾何光學",
       "narrativeStyle": "geometric_observation",
       "interactiveType": "geometric_light_curve",
@@ -17,6 +18,7 @@
     {
       "articleId": "art-chaos-double-pendulum",
       "slug": "chaos-double-pendulum-lyapunov",
+      "editorialCategory": "scientific_principles",
       "discipline": "非線性動力學與渾沌理論",
       "narrativeStyle": "first_principles",
       "interactiveType": "phase_space",
@@ -28,6 +30,7 @@
     {
       "articleId": "art-neuron-action-potential",
       "slug": "action-potential-hodgkin-huxley",
+      "editorialCategory": "scientific_principles",
       "discipline": "生物物理學與神經電生理",
       "narrativeStyle": "depth_narrative",
       "interactiveType": "circuit_oscilloscope",
@@ -39,6 +42,7 @@
     {
       "articleId": "art-maxwells-demon-entropy",
       "slug": "maxwells-demon-landauer-entropy",
+      "editorialCategory": "scientific_principles",
       "discipline": "統計物理學與資訊理論",
       "narrativeStyle": "thought_experiment",
       "interactiveType": "particle_system",
@@ -56,6 +60,9 @@
       "simulationValidationRequired": true,
       "strictlyProhibitFakeReviewers": true,
       "strictlyProhibitFakeCitations": true
+    },
+    "editorialCategorization": {
+      "rule": "每篇正式文章必須且只能有其中一個主要編輯分類：scientific_principles 或 journal_interpretation。journal_interpretation 必須是以近期真實研究論文為主要解讀對象，重點在介紹該研究的問題、方法、結果、限制與科學意義，具有可核實的主要論文來源。不能因引用論文、有 DOI、有 journalReference、使用數學模型或提及近期研究而判定為期刊解讀。科學原理與思想實驗則涵蓋經典科學、數學、思想實驗及基礎原理。"
     },
     "readabilityStandards": {
       "targetLanguage": "繁體中文（台灣標準科學語境）",

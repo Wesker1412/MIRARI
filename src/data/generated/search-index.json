@@ -19,6 +19,7 @@
       "生物物理",
       "動態閾值"
     ],
+    "editorialCategory": "scientific_principles",
     "format": "interactive_simulation",
     "formatBadgeText": "電生理示波實驗",
     "isEditorialCover": false,
@@ -2489,7 +2490,7 @@
       "物理上",
       "理上限"
     ],
-    "contentHash": "243ee8b454a596ca8d9d388c796a7e9c466237491e5b4c1bfb3ae0a0b335b293",
+    "contentHash": "7e749757d81cb277a5296fcbdb33956d339dd33da21fecca882fb4020544da73",
     "totalSentences": 26
   },
   {
@@ -2512,6 +2513,7 @@
       "哈密頓力學",
       "KAM理論"
     ],
+    "editorialCategory": "scientific_principles",
     "format": "interactive_simulation",
     "formatBadgeText": "動力學數值實驗",
     "isEditorialCover": false,
@@ -4997,7 +4999,7 @@
       "幾何之",
       "何之中"
     ],
-    "contentHash": "3c9be78a522b72d7edfee325ac5ce2dbe980eb09047cb7be85d3d09671b1b76a",
+    "contentHash": "38e667f55407a762a61a02f5b3cae0874285d6bb5fa4a295a7b7102ee469d2e7",
     "totalSentences": 25
   },
   {
@@ -5019,6 +5021,7 @@
       "統計物理",
       "不可逆計算"
     ],
+    "editorialCategory": "scientific_principles",
     "format": "interactive_simulation",
     "formatBadgeText": "熱力學碰撞實驗",
     "isEditorialCover": false,
@@ -7414,7 +7417,7 @@
       "全部代",
       "部代價"
     ],
-    "contentHash": "38f09b0ae22ed9add701dfac9c68d45f4d06d1679969698ca56b9b0b9233ef42",
+    "contentHash": "364e205bad904a65c5b0adc98cfe2bc0e61d787b5910753ba4bd1ebd2b0ecab2",
     "totalSentences": 31
   },
   {
@@ -7436,6 +7439,7 @@
       "幾何光學",
       "天文物理"
     ],
+    "editorialCategory": "scientific_principles",
     "format": "interactive_simulation",
     "formatBadgeText": "幾何光度實驗",
     "isEditorialCover": true,
@@ -9668,7 +9672,7 @@
       "化學組",
       "學組成"
     ],
-    "contentHash": "cca6aee79128eb35c06873340ad1cd7c2dd68a9d7eee105d6bbc60333fdb80cd",
+    "contentHash": "fbaa232184209db82852c836eb53543fae14d4241dee7776774ec11b6494e6f8",
     "totalSentences": 32
   }
 ]

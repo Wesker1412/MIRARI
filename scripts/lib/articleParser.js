@@ -157,11 +157,18 @@ export function parseArticleDocument(rawContent, filePath = '') {
   const { metadata, bodyMarkdown } = parseFrontmatter(rawContent);
 
   // Validate required metadata
-  const required = ['id', 'slug', 'title', 'status', 'references'];
+  const required = ['id', 'slug', 'title', 'status', 'references', 'editorialCategory'];
   for (const field of required) {
     if (!metadata[field]) {
       throw new Error(`Article validation failed (${filePath}): Missing required field "${field}"`);
     }
+  }
+
+  const validEditorialCategories = ['scientific_principles', 'journal_interpretation'];
+  if (!validEditorialCategories.includes(metadata.editorialCategory)) {
+    throw new Error(
+      `Article validation failed (${filePath}): Invalid editorialCategory "${metadata.editorialCategory}". Must be "scientific_principles" or "journal_interpretation"`
+    );
   }
 
   const articleId = metadata.id;

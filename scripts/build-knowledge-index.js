@@ -128,6 +128,7 @@ async function runPipeline() {
       status: document.status,
       topicIds: document.topicIds || [],
       tags: document.tags || [],
+      editorialCategory: document.editorialCategory,
       format: document.format,
       formatBadgeText: document.formatBadgeText,
       isEditorialCover: !!document.isEditorialCover,
