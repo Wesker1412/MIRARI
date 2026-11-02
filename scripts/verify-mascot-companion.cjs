@@ -90,9 +90,9 @@ async function runVerification() {
     console.log('✓ 提問提示已正確自動更新為雙擺專屬知識點: 「初值敏感性」');
 
     // ══════════════════════════════════════════════════════════════════
-    // 【測試 3：無可靠依據時不編造回答】
+    // 【測試 3：無可靠依據時不編造回答，跨文章題目自動銜接全站推薦】
     // ══════════════════════════════════════════════════════════════════
-    console.log('\n--- 3. 測試無可靠依據時不編造回答 ---');
+    console.log('\n--- 3. 測試無可靠依據時不編造回答與跨文章自動推薦銜接 ---');
     const inputField = page.locator('#mirari-floating-panel input[type="text"]');
     await inputField.fill('請問台北明天會下大雨嗎？');
     const submitBtn = page.locator('#mirari-floating-panel button[type="submit"]');
@@ -107,6 +107,37 @@ async function runVerification() {
       throw new Error('無依據問題未顯示標準誠實告知訊息，可能存在假回答拼湊');
     }
     console.log('✓ 無可靠依據問題正確顯示誠實告知，未拼湊假回答');
+
+    // 提問其他文章主題 (在雙擺篇詢問暗物質微弱重力透鏡)
+    await inputField.fill('韋伯太空望遠鏡怎麼探測暗物質的微弱透鏡效應？');
+    await submitBtn.click();
+    await page.waitForTimeout(1000);
+
+    const panelAfterCross = await page.locator('#mirari-floating-panel').textContent();
+    if (!panelAfterCross.includes('推薦閱讀') && !panelAfterCross.includes('推薦你延伸閱讀')) {
+      throw new Error('未自動銜接為全站推薦閱讀導讀');
+    }
+    console.log('✓ 其他文章主題成功自動銜接為站內推薦導引');
+
+    // 驗證絕不拿其他文章的句子標記當前雙擺文章原文
+    const crossHighlightCount = await page.locator('span.exact-text-highlight').count();
+    if (crossHighlightCount !== 0) {
+      throw new Error('跨文章推薦時發生正文錯誤高亮 (Highlight 錯位)');
+    }
+    console.log('✓ 跨文章推薦時當前正文無錯誤高亮 (Highlight 嚴格防錯位驗證通過)');
+
+    // 驗證推薦卡片存在並點擊跳轉
+    const recCard = page.locator('#mirari-floating-panel div:has-text("弱重力透鏡")').last();
+    await recCard.waitFor({ state: 'visible' });
+    console.log('✓ 成功呈現可點擊的延伸推薦文章卡片');
+
+    await recCard.click();
+    await page.waitForTimeout(1000);
+
+    if (!page.url().includes('lensing')) {
+      throw new Error(`點擊推薦卡片後未正確導航至目標文章，當前 URL: ${page.url()}`);
+    }
+    console.log('✓ 點擊推薦卡片後成功在同個標籤頁跳轉至推薦文章: ' + page.url());
 
     // ══════════════════════════════════════════════════════════════════
     // 【測試 4：手機閱讀優先 (Mobile UX)】

@@ -54,12 +54,14 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
   const [homeRecResult, setHomeRecResult] = useState<AIRecommendation | null>(null);
   const [isSearchingHome, setIsSearchingHome] = useState<boolean>(false);
 
-  // Article Q&A state (Phase 5: Multi-turn Dialogue Stream)
+  // Article Q&A state (Phase 5: Multi-turn Dialogue Stream & Recommendation)
   interface DialogueTurn {
     id: string;
     role: 'user' | 'assistant';
     content: string;
     evidence?: SentenceEvidence | null;
+    recommendedArticles?: Article[];
+    isRecommendation?: boolean;
   }
   const [articleQuery, setArticleQuery] = useState<string>('');
   const [articleEvidenceResult, setArticleEvidenceResult] = useState<EvidenceSearchResult | null>(null);
@@ -467,6 +469,8 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
           role: 'assistant',
           content: searchResult.answer,
           evidence: searchResult.evidence,
+          recommendedArticles: searchResult.recommendedArticles,
+          isRecommendation: searchResult.isRecommendation,
         },
       ]);
 
@@ -475,7 +479,8 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
         setIsPanelOpen(false);
       }
 
-      if (searchResult.evidence) {
+      // 絕不拿其他文章的證據標記當前文章，僅在確信為本文證據時高亮
+      if (searchResult.evidence && !searchResult.isRecommendation) {
         setMascotState('excited');
         // Trigger exact text highlight and smooth scroll in ArticleView
         onEvidenceFound(searchResult);
@@ -491,7 +496,25 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
       );
       setIsSearchingArticle(false);
       setArticleEvidenceResult(fallback);
-      if (fallback.evidence) {
+
+      setArticleDialogue((prev) => [
+        ...prev,
+        {
+          id: `u-${Date.now()}`,
+          role: 'user',
+          content: trimmedQuery,
+        },
+        {
+          id: `a-${Date.now() + 1}`,
+          role: 'assistant',
+          content: fallback.answer,
+          evidence: fallback.evidence,
+          recommendedArticles: fallback.recommendedArticles,
+          isRecommendation: fallback.isRecommendation,
+        },
+      ]);
+
+      if (fallback.evidence && !fallback.isRecommendation) {
         onEvidenceFound(fallback);
       } else {
         onClearHighlight();
@@ -772,15 +795,62 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
                           {turn.role === 'assistant' && (
                             <div className="flex items-center space-x-1.5 mb-1 text-[10px] font-semibold text-mirari-amber">
                               <span className="w-1.5 h-1.5 rounded-full bg-mirari-amber" />
-                              <span>MIRARI 白話陪讀</span>
+                              <span>{turn.isRecommendation ? 'MIRARI 推薦閱讀' : 'MIRARI 白話陪讀'}</span>
                               {turn.evidence && (
                                 <span className="px-1 py-0.2 rounded bg-amber-50 text-amber-800 font-medium">
                                   已定位原文
                                 </span>
                               )}
+                              {turn.isRecommendation && (
+                                <span className="px-1 py-0.2 rounded bg-sky-50 text-sky-800 font-medium">
+                                  延伸專題
+                                </span>
+                              )}
                             </div>
                           )}
                           <p>{turn.content}</p>
+
+                          {/* 渲染推薦文章卡片 */}
+                          {turn.recommendedArticles && turn.recommendedArticles.length > 0 && (
+                            <div className="mt-2.5 space-y-1.5 pt-2 border-t border-mirari-line/60">
+                              <div className="text-[10px] font-sans font-medium text-mirari-muted flex items-center space-x-1">
+                                <span>📚 站內推薦專題：</span>
+                              </div>
+                              {turn.recommendedArticles.map((rec) => (
+                                <div
+                                  key={rec.id}
+                                  onClick={() => {
+                                    if (onSelectArticle) {
+                                      onSelectArticle(rec);
+                                      setIsPanelOpen(false);
+                                    }
+                                  }}
+                                  className="group block p-2 rounded-lg border border-mirari-line hover:border-mirari-amber/60 bg-white/70 hover:bg-white transition-all cursor-pointer text-left shadow-2xs"
+                                >
+                                  <div className="flex items-center space-x-1 text-[10px] font-mono text-mirari-amber mb-0.5">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-mirari-amber" />
+                                    <span>
+                                      {rec.formatBadgeText ||
+                                        (rec.editorialCategory === 'journal_interpretation'
+                                          ? '期刊解讀'
+                                          : '科學原理')}
+                                    </span>
+                                  </div>
+                                  <div className="text-[11px] font-serif font-bold text-mirari-ink group-hover:text-mirari-amber transition-colors line-clamp-1">
+                                    {rec.title}
+                                  </div>
+                                  {rec.summary && (
+                                    <div className="text-[10px] font-sans text-mirari-dim line-clamp-1 mt-0.5">
+                                      {rec.summary}
+                                    </div>
+                                  )}
+                                  <div className="mt-1 flex items-center justify-end text-[10px] font-sans text-mirari-amber font-medium">
+                                    <span>閱讀此專題 →</span>
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          )}
                         </div>
                       </div>
                     ))}
@@ -878,10 +948,17 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
                     <div className="flex items-center justify-between text-xs font-sans text-mirari-amber font-semibold">
                       <div className="flex items-center space-x-1.5">
                         <span className="w-2 h-2 rounded-full bg-mirari-amber animate-pulse" />
-                        <span>MIRARI 白話陪讀</span>
+                        <span>
+                          {articleEvidenceResult.isRecommendation ? 'MIRARI 推薦閱讀' : 'MIRARI 白話陪讀'}
+                        </span>
                         {articleEvidenceResult.evidence && (
                           <span className="px-1.5 py-0.5 rounded text-[10px] bg-amber-50 text-amber-800 font-sans font-medium">
                             已定位原文
+                          </span>
+                        )}
+                        {articleEvidenceResult.isRecommendation && (
+                          <span className="px-1.5 py-0.5 rounded text-[10px] bg-sky-50 text-sky-800 font-sans font-medium">
+                            延伸專題
                           </span>
                         )}
                       </div>
@@ -895,7 +972,36 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
                     </div>
 
                     <div className="p-3 rounded-xl bg-mirari-paper border border-mirari-line text-xs text-mirari-ink leading-relaxed font-sans">
-                      {articleEvidenceResult.answer}
+                      <p>{articleEvidenceResult.answer}</p>
+                      {articleEvidenceResult.recommendedArticles && articleEvidenceResult.recommendedArticles.length > 0 && (
+                        <div className="mt-2.5 pt-2 border-t border-mirari-line/60 space-y-1.5">
+                          <div className="text-[10px] font-sans font-medium text-mirari-muted">📚 推薦閱讀專題：</div>
+                          {articleEvidenceResult.recommendedArticles.map((rec) => (
+                            <div
+                              key={rec.id}
+                              onClick={() => {
+                                if (onSelectArticle) {
+                                  onSelectArticle(rec);
+                                  setIsPanelOpen(false);
+                                }
+                              }}
+                              className="group block p-2 rounded-lg border border-mirari-line hover:border-mirari-amber/60 bg-white/70 hover:bg-white transition cursor-pointer text-left shadow-2xs"
+                            >
+                              <div className="text-[11px] font-serif font-bold text-mirari-ink group-hover:text-mirari-amber transition-colors line-clamp-1">
+                                {rec.title}
+                              </div>
+                              {rec.summary && (
+                                <div className="text-[10px] font-sans text-mirari-dim line-clamp-1 mt-0.5">
+                                  {rec.summary}
+                                </div>
+                              )}
+                              <div className="mt-1 flex items-center justify-end text-[10px] font-sans text-mirari-amber font-medium">
+                                <span>閱讀此專題 →</span>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   </div>
                 )}
@@ -919,11 +1025,16 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
               <div className="flex items-center space-x-1.5">
                 <span className="w-2 h-2 rounded-full bg-mirari-amber animate-pulse" />
                 <span className="text-[11px] font-sans font-bold text-mirari-ink">
-                  MIRARI 白話陪讀
+                  {articleEvidenceResult.isRecommendation ? 'MIRARI 推薦閱讀' : 'MIRARI 白話陪讀'}
                 </span>
                 {articleEvidenceResult.evidence && (
                   <span className="px-1.5 py-0.5 rounded text-[10px] bg-amber-50 text-amber-800 font-sans font-medium">
                     已定位原文
+                  </span>
+                )}
+                {articleEvidenceResult.isRecommendation && (
+                  <span className="px-1.5 py-0.5 rounded text-[10px] bg-sky-50 text-sky-800 font-sans font-medium">
+                    延伸專題
                   </span>
                 )}
               </div>
@@ -962,6 +1073,35 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
                 </button>
               )}
             </div>
+
+            {/* 推薦閱讀文章卡片 */}
+            {articleEvidenceResult.recommendedArticles && articleEvidenceResult.recommendedArticles.length > 0 && (
+              <div className="pt-2 border-t border-mirari-line/60 space-y-1.5">
+                <div className="text-[10px] text-mirari-muted font-sans font-medium flex items-center space-x-1">
+                  <span>📚 推薦閱讀專題：</span>
+                </div>
+                {articleEvidenceResult.recommendedArticles.map((rec) => (
+                  <div
+                    key={rec.id}
+                    onClick={() => {
+                      if (onSelectArticle) {
+                        onSelectArticle(rec);
+                        handleDismissAnswer();
+                      }
+                    }}
+                    className="p-2 rounded-lg bg-mirari-paper border border-mirari-line hover:border-mirari-amber/60 flex items-center justify-between cursor-pointer active:scale-[0.99] transition"
+                  >
+                    <div className="min-w-0 pr-2">
+                      <div className="text-[11px] font-serif font-bold text-mirari-ink truncate">{rec.title}</div>
+                      {rec.summary && (
+                        <div className="text-[10px] font-sans text-mirari-dim truncate">{rec.summary}</div>
+                      )}
+                    </div>
+                    <span className="text-[10px] text-mirari-amber font-sans font-medium shrink-0">閱讀 →</span>
+                  </div>
+                ))}
+              </div>
+            )}
 
             {/* Mobile Quick Follow-up Row */}
             <div className="flex items-center space-x-1.5 pt-1.5 border-t border-mirari-line/60 overflow-x-auto text-[11px] font-sans">

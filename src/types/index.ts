@@ -249,4 +249,6 @@ export interface EvidenceSearchResult {
   evidence: SentenceEvidence | null;
   secondaryEvidence?: SentenceEvidence | null;
   matchedKnowledgePoint?: ArticleKnowledgePoint | null;
+  recommendedArticles?: Article[];
+  isRecommendation?: boolean;
 }

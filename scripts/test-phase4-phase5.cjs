@@ -161,8 +161,9 @@ async function runTests() {
     assert.ok(d3.answer.length > 15);
   });
 
-  // ─── 測試 7：不會混入其他文章的內容 (跨文章隔離) ───
-  await check('7. Phase 5 - 嚴格文章邊界隔離 (動作電位篇問暗物質必阻斷)', async () => {
+  // ─── 測試 7：單篇伴讀 → 全站文章推薦自動銜接 ───
+  await check('7. Phase 5 - 單篇伴讀自動銜接全站推薦 (動作電位篇問暗物質推薦韋伯篇，不合成跨篇答案，evidence 為 null)', async () => {
+    // 7a: 當前文章無依據，但站內其他文章有收錄 -> 自動推薦閱讀，不標記當前文章
     const res = await fetch(`${BASE_URL}/api/article-chat`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -172,9 +173,27 @@ async function runTests() {
       }),
     });
     const data = await res.json();
-    assert.strictEqual(data.gated, true, '跨文章問題在單篇陪讀中必須被嚴格阻斷');
-    assert.strictEqual(data.answer, EXPECTED_GATED_MESSAGE, '必須返回指定標準文案');
-    assert.strictEqual(data.evidence, null, '被阻斷時原文定位必須為 null');
+    assert.strictEqual(data.gated, false, '全站有相關文章時不應直接阻斷');
+    assert.strictEqual(data.isRecommendation, true, '必須標記為推薦閱讀 (isRecommendation: true)');
+    assert.strictEqual(data.evidence, null, '推薦閱讀時絕不拿其他文章句子標記當前文章 (evidence 必為 null)');
+    assert.ok(data.recommendedArticles && data.recommendedArticles.length >= 1, '必須推薦至少 1 篇相關文章');
+    const hasWebb = data.recommendedArticles.some((a) => a.slug.includes('lensing'));
+    assert.ok(hasWebb, '推薦清單中必須包含韋伯望遠鏡暗物質重力透鏡專題');
+
+    // 7b: 當前文章無依據且全站亦無收錄 -> 觸發硬性閘門，回傳標準文案
+    const res2 = await fetch(`${BASE_URL}/api/article-chat`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        articleId: 'art-neuron-action-potential',
+        query: '超導量子位元如何實現量子糾纏與退相干？',
+      }),
+    });
+    const data2 = await res2.json();
+    assert.strictEqual(data2.gated, true, '全站無收錄領域在單篇伴讀中必須被閘門阻斷');
+    assert.strictEqual(data2.answer, EXPECTED_GATED_MESSAGE, '必須返回指定標準文案');
+    assert.strictEqual(data2.evidence, null, '被阻斷時原文定位必須為 null');
+    assert.strictEqual(data2.recommendedArticles?.length || 0, 0, '阻斷時推薦文章數必須為 0');
   });
 
   // ─── 測試 8：無 API Key 時安全降級 ───

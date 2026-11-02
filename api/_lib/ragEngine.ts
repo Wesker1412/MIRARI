@@ -28,6 +28,8 @@ export interface ArticleChatResponse {
   gated: boolean;
   degraded: boolean;
   provider: 'gemini' | 'local-fallback';
+  recommendedArticles?: Article[];
+  isRecommendation?: boolean;
 }
 
 export interface GlobalSearchResponse {
@@ -432,14 +434,47 @@ export async function handleArticleChat(params: {
     (maxScore >= 4.0 && tokenCoverage >= 0.20);
 
   if (!passesGate) {
+    // 【單篇伴讀 → 全站文章推薦自動銜接】
+    // 當前文章無足夠原文依據時，不直接宣告失敗，轉交 Phase 4 全站 RAG 檢索
+    const globalSearchResult = await handleGlobalSearch({
+      query: resolvedQuery || rawQuery,
+    });
+
+    // 檢查全站檢索是否通過門檻，且推薦文章中包含非當前文章
+    const otherArticles = (globalSearchResult.recommendedArticles || []).filter(
+      (a) => a.id !== articleId
+    );
+
+    if (globalSearchResult.gated || otherArticles.length === 0) {
+      // 全站亦無足夠相關內容，觸發硬性閘門，回傳指定標準文案
+      return {
+        query: rawQuery,
+        answer: GATE_REJECTION_MESSAGE,
+        confidence: 0,
+        evidence: null,
+        gated: true,
+        degraded: false,
+        provider: 'local-fallback',
+        recommendedArticles: [],
+        isRecommendation: false,
+      };
+    }
+
+    // 全站找到其他高度相關的正式文章 -> 推薦閱讀（非跨文章綜合分析，絕不拿其他文章證據標記當前文章）
+    const targetRecs = otherArticles.slice(0, 2);
+    const recTitles = targetRecs.map((a) => `《${a.title}》`).join(' 與 ');
+    const guideMessage = `這篇文章主要探討《${article.title}》，未涵蓋該問題的具體細節。不過，MIRARI 在站內其他深度專題中已收錄相關內容，推薦你延伸閱讀 ${recTitles}：`;
+
     return {
       query: rawQuery,
-      answer: GATE_REJECTION_MESSAGE,
-      confidence: 0,
-      evidence: null,
-      gated: true,
-      degraded: false,
-      provider: 'local-fallback',
+      answer: guideMessage,
+      confidence: 0.9,
+      evidence: null, // 絕不拿其他文章證據標記當前文章，防止 Highlight 錯位
+      gated: false,
+      degraded: globalSearchResult.degraded,
+      provider: globalSearchResult.provider,
+      recommendedArticles: targetRecs,
+      isRecommendation: true,
     };
   }
 
@@ -490,6 +525,8 @@ ${rawQuery}
       gated: false,
       degraded: false,
       provider: 'gemini',
+      recommendedArticles: [],
+      isRecommendation: false,
     };
   }
 
@@ -511,6 +548,8 @@ ${rawQuery}
     gated: false,
     degraded: true,
     provider: 'local-fallback',
+    recommendedArticles: [],
+    isRecommendation: false,
   };
 }
 

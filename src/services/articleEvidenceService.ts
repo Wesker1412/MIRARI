@@ -1,6 +1,7 @@
 import evidenceIndexRaw from '../data/generated/evidence-index.json';
 import type { SentenceEvidence, EvidenceSearchResult, ArticleKnowledgePoint } from '../types';
 import { getArticleKnowledgeConfig } from '../data/articleKnowledgeBase';
+import { queryDataDrivenRecommendation } from './unifiedSearchService';
 
 export type { EvidenceSearchResult };
 
@@ -151,12 +152,35 @@ export function searchArticleEvidence(
 
   // 門檻：必須至少命中關鍵特徵詞或核心概念
   if (!bestKP || highestScore < 15) {
+    // 【單篇伴讀 → 全站文章推薦自動銜接（本機降級）】
+    // 當前文章無足夠依據時，嘗試比對站內其他專題
+    const localRec = queryDataDrivenRecommendation(trimmedQuery);
+    const otherArticles = (localRec.recommendedArticles || []).filter(
+      (a) => a.id !== config.articleId && a.slug !== articleIdOrSlug
+    );
+
+    if (otherArticles.length > 0) {
+      const targetRecs = otherArticles.slice(0, 2);
+      const recTitles = targetRecs.map((a) => `《${a.title}》`).join(' 與 ');
+      return {
+        query,
+        answer: `這篇文章主要探討《${config.title}》，未涵蓋該問題的具體細節。不過，MIRARI 在站內其他深度專題中已收錄相關內容，推薦你延伸閱讀 ${recTitles}：`,
+        confidence: 0.9,
+        evidence: null,
+        matchedKnowledgePoint: null,
+        recommendedArticles: targetRecs,
+        isRecommendation: true,
+      };
+    }
+
     return {
       query,
-      answer: '本文目前的已驗證知識點暫無法為這個問題提供可靠且具原文依據的解釋。建議您可以參考提問提示，或查閱本文相關章節。',
+      answer: 'MIRARI 目前尚未收錄足以回答這個問題的科學內容。你可以嘗試換個關鍵字，或探索站內其他科學文章。',
       confidence: 0,
       evidence: null,
       matchedKnowledgePoint: null,
+      recommendedArticles: [],
+      isRecommendation: false,
     };
   }
 
@@ -231,6 +255,8 @@ export async function queryArticleCompanionChat(
       evidence: data.evidence || null,
       matchedKnowledgePoint:
         config?.knowledgePoints.find((kp) => kp.id === data.matchedKnowledgePointId) || null,
+      recommendedArticles: data.recommendedArticles || [],
+      isRecommendation: Boolean(data.isRecommendation),
     };
   } catch (err) {
     console.warn('[Article Chat Service] /api/article-chat 網路錯誤，啟動安全降級:', err);
