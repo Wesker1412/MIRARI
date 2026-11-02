@@ -6,6 +6,9 @@ import { MaxwellDemonSimulator } from '../article/MaxwellDemonSimulator';
 import { AmygdalaMemorySimulator } from '../article/AmygdalaMemorySimulator';
 import { PhotovoltaicRecombinationSimulator } from '../article/PhotovoltaicRecombinationSimulator';
 import { NuclearClockSimulator } from '../article/NuclearClockSimulator';
+import { BrownianRatchetSimulator } from '../article/BrownianRatchetSimulator';
+import { TurbulenceCascadeSimulator } from '../article/TurbulenceCascadeSimulator';
+import { WeakLensingShearSimulator } from '../article/WeakLensingShearSimulator';
 
 export interface InteractiveParameterMeta {
   name: string;
@@ -279,6 +282,125 @@ export const INTERACTIVE_COMPONENTS: Record<string, InteractiveComponentMeta> = 
       '艾倫方差 (Allan Deviation)',
     ],
     component: NuclearClockSimulator,
+  },
+  BrownianRatchetSimulator: {
+    id: 'BrownianRatchetSimulator',
+    nameZh: '布朗棘輪與微觀非平衡態步進模擬器',
+    descriptionZh:
+      '展示費曼布朗棘輪在等溫熱平衡下的細緻平衡（淨功為零），以及 ATP 水解化學能注入如何打破時間反演對稱性，將熱噪聲整流為微觀定向做功。',
+    parameters: [
+      {
+        name: 'temperature',
+        labelZh: '環境溫度 (K)',
+        description: '熱噪聲碰撞劇烈程度，正比於擴散係數 D',
+        defaultValue: 300,
+        unit: 'K',
+        min: 100,
+        max: 450,
+        step: 10,
+      },
+      {
+        name: 'atpRate',
+        labelZh: 'ATP 水解頻率 (Hz)',
+        description: '非平衡勢阱週期切換頻率',
+        defaultValue: 4.0,
+        unit: 'Hz',
+        min: 0.5,
+        max: 8.0,
+        step: 0.5,
+      },
+      {
+        name: 'loadForce',
+        labelZh: '逆向負載拉力 (pN)',
+        description: '外加機械阻力，對抗分子馬達前進',
+        defaultValue: 1.5,
+        unit: 'pN',
+        min: 0.0,
+        max: 8.0,
+        step: 0.2,
+      },
+    ],
+    keyConcepts: [
+      '費曼布朗棘輪 (Feynman Brownian Ratchet)',
+      '熱力學第二定律 (Second Law of Thermodynamics)',
+      '細緻平衡 (Detailed Balance)',
+      '非平衡態統計物理 (Non-equilibrium Statistical Mechanics)',
+      '驅動蛋白 (Kinesin)',
+      '失速力 (Stall Force)',
+    ],
+    component: BrownianRatchetSimulator,
+  },
+  TurbulenceCascadeSimulator: {
+    id: 'TurbulenceCascadeSimulator',
+    nameZh: '柯爾莫哥洛夫湍流能量串級模擬器',
+    descriptionZh:
+      '展示大尺度渦旋在非線性慣性子區無黏性耗散地逐級破裂傳遞，驗證 -5/3 冪律能譜與微觀柯爾莫哥洛夫黏滯耗散尺度。',
+    parameters: [
+      {
+        name: 'reynoldsNumber',
+        labelZh: '雷諾數 (Re)',
+        description: '慣性力與黏滯力之比，決定慣性子區跨越數量級',
+        defaultValue: 15000,
+        min: 300,
+        max: 50000,
+        step: 500,
+      },
+      {
+        name: 'energyInjectionRate',
+        labelZh: '能量注入率 ε',
+        description: '每單位質量流體的大尺度機械攪拌能量傳遞率',
+        defaultValue: 3.0,
+        unit: 'm²/s³',
+        min: 0.5,
+        max: 10.0,
+        step: 0.5,
+      },
+    ],
+    keyConcepts: [
+      '理查森能量串級 (Richardson Energy Cascade)',
+      '柯爾莫哥洛夫能譜 (K41 Theory)',
+      '-5/3 冪律 (Minus Five-Thirds Law)',
+      '慣性子區 (Inertial Subrange)',
+      '柯爾莫哥洛夫微尺度 (Kolmogorov Microscale)',
+      '渦度 (Vorticity)',
+    ],
+    component: TurbulenceCascadeSimulator,
+  },
+  WeakLensingShearSimulator: {
+    id: 'WeakLensingShearSimulator',
+    nameZh: '韋伯望遠鏡微弱重力透鏡與宇宙剪切模擬器',
+    descriptionZh:
+      '展示大尺度暗物質暈如何藉由微弱引力透鏡對數十萬個背景星系施加切向剪切變形，並透過凱瑟-斯奎爾斯反演重建宇宙無形骨架。',
+    parameters: [
+      {
+        name: 'darkMatterMass',
+        labelZh: '暗物質暈總質量',
+        description: '透鏡面密度深度，決定切向剪切強度',
+        defaultValue: 8.5,
+        unit: '10¹⁴ M☉',
+        min: 1.0,
+        max: 25.0,
+        step: 0.5,
+      },
+      {
+        name: 'sourceRedshift',
+        labelZh: '背景星系紅移 z_s',
+        description: '幾何距離比，影響透鏡臨界有效面密度',
+        defaultValue: 2.2,
+        min: 1.0,
+        max: 3.5,
+        step: 0.1,
+      },
+    ],
+    keyConcepts: [
+      '微弱重力透鏡 (Weak Gravitational Lensing)',
+      '宇宙剪切 (Cosmic Shear)',
+      '會聚度 (Convergence κ)',
+      '凱瑟-斯奎爾斯反演 (Kaiser-Squires Inversion)',
+      '暗物質暈 (Dark Matter Halo)',
+      '宇宙網絲狀結構 (Cosmic Web Filaments)',
+    ],
+    component: WeakLensingShearSimulator,
   },
 };
 

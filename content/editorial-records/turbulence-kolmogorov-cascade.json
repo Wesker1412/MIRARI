@@ -1,0 +1,123 @@
+{
+  "articleId": "art-turbulence-kolmogorov-cascade",
+  "slug": "turbulence-kolmogorov-cascade",
+  "editorialCategory": "scientific_principles",
+  "version": 1,
+  "creationModel": "gemini-2.5-pro",
+  "editorialPassDate": "2026-11-04T00:30:00Z",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-kolmogorov-1941",
+        "citation": "Kolmogorov, A. N. (1941). \"The local structure of turbulence in incompressible viscous fluid for very large Reynolds' numbers.\" Proceedings of the USSR Academy of Sciences, 30(4), 301-305.",
+        "peerReviewStatus": "經典蘇聯科學院報告文獻 (Doklady Akademii Nauk SSSR)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Andrei N. Kolmogorov",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核查柯爾莫哥洛夫 1941 年奠基論文之兩大自相似假設，確認局部均勻各向同性與能量傳遞率 ε、波數 k 量綱分析推導 -5/3 冪律無誤。"
+        },
+        "verifiedClaims": [
+          "在極高雷諾數下，慣性子區內的微觀旋渦運動在統計上呈現局部各向同性，遺忘大尺度注入的幾何細節",
+          "動能譜密度嚴格遵循 E(k) = C_K * ε^(2/3) * k^(-5/3)，能量在旋渦間保守傳遞無耗散",
+          "能量耗散截斷於柯爾莫哥洛夫微尺度 η = (ν³ / ε)^(1/4)"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "納維-斯托克斯方程在無黏極限下之能量守恆與渦絲拉伸非線性項",
+            "雷諾數 Re = UL/ν 決定流動從層流轉向湍流的失穩臨界"
+          ],
+          "empiricalFindings": [
+            "全球大氣風洞、噴流與海洋深層湍流探測一致觀測到跨越多個數量級的 -5/3 直線斜率"
+          ],
+          "hypothesesAndModels": [
+            "K41 理論假設能量耗散空間均勻，忽略微觀渦絲高度聚集之多重分形間歇性"
+          ]
+        }
+      },
+      {
+        "id": "ref-sreenivasan-1999",
+        "citation": "Sreenivasan, K. R. (1999). \"Fluid turbulence.\" Reviews of Modern Physics, 71(2), S383-S395. doi:10.1103/RevModPhys.71.S383.",
+        "doi": "10.1103/RevModPhys.71.S383",
+        "peerReviewStatus": "現代流體權威綜述同行評審 (Reviews of Modern Physics)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Katepalli R. Sreenivasan",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實直接數值模擬 (DNS) 網格點規模 Re^(9/4) 擴展限制與現代實驗對柯爾莫哥洛夫常數 C_K ≈ 1.5 之精確測量。"
+        },
+        "verifiedClaims": [
+          "直接數值模擬全尺度湍流計算複雜度隨雷諾數呈 Re^(9/4) 爆發性增長，構成計算物理世紀瓶頸",
+          "現代高精度雷達與雷射測速證實間歇性對能譜指數帶來約 0.02-0.04 之細微修正"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "柯爾莫哥洛夫常數 C_K 普遍介於 1.4 至 1.6 之間",
+            "三維湍流能量自大尺度向小尺度正向串級，不同於二維流體之逆向串級"
+          ],
+          "empiricalFindings": [
+            "極高雷諾數大氣邊界層測量證實慣性子區可寬達 4 至 5 個十年"
+          ],
+          "hypothesesAndModels": [
+            "She-Leveque 對數泊松層級結構模型"
+          ]
+        }
+      }
+    ],
+    "formulasAndUnits": [
+      {
+        "formula": "E(k) = C_K \\cdot \\varepsilon^{2/3} \\cdot k^{-5/3}",
+        "unitConsistency": "能譜密度因次為 m³/s² (J/kg·m⁻¹ = m²/s² · m)；能量傳遞率 ε 因次 m²/s³，波數 k 因次 m⁻¹，(m²/s³)^(2/3) * (m⁻¹)^(-5/3) = m^(4/3 + 5/3) s^(-2) = m³/s²，因次嚴格守恆",
+        "verified": true
+      },
+      {
+        "formula": "\\eta = \\left(\\frac{\\nu^3}{\\varepsilon}\\right)^{1/4}",
+        "unitConsistency": "運動黏度 ν 因次 m²/s，耗散率 ε 因次 m²/s³；[(m²/s)³ / (m²/s³)]^(1/4) = [m⁶ s⁻³ / m² s⁻³]^(1/4) = (m⁴)^(1/4) = m (長度米)，因次完全相符",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "多尺度流函數疊加場速度微分方程與柯爾莫哥洛夫-帕奧 (Pao) 能譜模型",
+      "numericalMethod": "2D 渦度場拉格朗日渦粒子追蹤結合頻譜空間雙對數能譜數值擬合，即時標記 -5/3 基準線與 k_η 截止波數",
+      "dynamicBehaviorVerified": "調節雷諾數從 300 攀升至 50,000 時，高頻微尺度旋渦劇烈湧現，能譜慣性子區直線寬度由 1 個十年顯著擴展至近 4 個十年；能量注入率提升時能譜整體垂直抬升",
+      "modelAssumptionsAndLimits": "二維畫布視覺化展示了渦度捲動現象，頻譜計算嚴格採用三維各向同性 K41 公式，未考慮二維特有的擬渦度逆向串級限制"
+    },
+    "noFakeCitations": true,
+    "noFictionalReviewers": true
+  },
+  "readability": {
+    "language": "繁體中文",
+    "pedagogyProgression": "咖啡奶泡日常失序現象 -> 雷諾數慣性與黏性力量綱 -> 理查森詩意能量串級假說 -> 柯爾莫哥洛夫 K41 純量綱推導 -5/3 冪律 -> 柯爾莫哥洛夫微尺度與超算網格極限",
+    "technicalTermsDemystified": [
+      {
+        "term": "雷諾數 (Reynolds Number)",
+        "intuitiveExplanation": "衡量流體『衝力慣性』與『黏黏膠水力』之間博弈的關鍵比值，比值越大流體越容易炸裂成漩渦"
+      },
+      {
+        "term": "能量串級 (Energy Cascade)",
+        "intuitiveExplanation": "大旋渦碎成小旋渦、小旋渦再碎成更小旋渦，能量像瀑布一樣逐層向下傳遞的過程"
+      },
+      {
+        "term": "慣性子區 (Inertial Subrange)",
+        "intuitiveExplanation": "旋渦既不受最初外力干擾、又還沒被黏性力磨滅的中間黃金尺度，能量在此處完全無損傳遞"
+      },
+      {
+        "term": "柯爾莫哥洛夫微尺度 (Kolmogorov Microscale)",
+        "intuitiveExplanation": "旋渦被粉碎到的最小極限尺寸（通常在毫米到微米），在此處黏性力終於戰勝慣性，把旋渦動能化為熱量"
+      }
+    ],
+    "toneReview": "磅礴詩意與嚴謹量綱推導兼具，將經典難題以幾何直覺鋪展，杜絕生硬堆砌術語"
+  },
+  "aestheticsAndNarrative": {
+    "avoidFormulaicCliches": "開篇從攪拌熱咖啡中牛奶絲帶的炸裂破題，杜絕「在浩瀚的宇宙中」「總結來說」等套話",
+    "coreQuestion": "為什麼由完全確定、平滑的流體力學方程支配的流動，會在跨越臨界速度後走向無限碎裂？自然界如何在極致的混亂中維持 -5/3 的永恆冪律？",
+    "interactiveRole": "TurbulenceCascadeSimulator 實現雙視圖並行：左側展示直觀渦絲撕裂，右側展示頻譜空間無可撼動的 -5/3 冪律斜線",
+    "narrativeStyle": "first_principles",
+    "interactiveType": "turbulence_cascade"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "量綱分析因次一致性嚴格核驗：詳細展開 E(k) 量綱 [L]³ [T]⁻² 與 ε^(2/3) k^(-5/3) 之代數聯立推導，確保讀者理解其數學必然性而非巧合",
+    "二維流體與三維流體差異註明：明確向讀者澄清日常 2D 畫布模擬為投影概念，正文中嚴謹強調真實 -5/3 級聯依賴三維渦絲拉伸機制"
+  ],
+  "unconfirmedLimits": [
+    "極端高雷諾數下的間歇性多重分形奇異譜修正未展開，保留經典 K41 代表性"
+  ]
+}

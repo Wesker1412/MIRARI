@@ -15,6 +15,9 @@ export const CoverVisualCard: React.FC<CoverVisualCardProps> = ({ article, onCli
   const isAmygdala = article.slug.includes('amygdala') || article.slug.includes('memory-encoding');
   const isBismuth = article.slug.includes('bismuth') || article.slug.includes('recombination');
   const isNuclearClock = article.slug.includes('thorium') || article.slug.includes('nuclear-clock');
+  const isBrownianRatchet = article.slug.includes('brownian') || article.slug.includes('ratchet') || article.slug.includes('molecular-motors');
+  const isTurbulence = article.slug.includes('turbulence') || article.slug.includes('kolmogorov');
+  const isWeakLensing = article.slug.includes('lensing') || article.slug.includes('cosmos-web') || article.slug.includes('dark-matter');
 
   return (
     <div
@@ -306,8 +309,129 @@ export const CoverVisualCard: React.FC<CoverVisualCardProps> = ({ article, onCli
         </>
       )}
 
-      {/* ─── Case 8: Generic Future Scientific Visual ──────────────── */}
-      {!isTransit && !isChaos && !isActionPotential && !isMaxwellDemon && !isAmygdala && !isBismuth && !isNuclearClock && (
+      {/* ─── Case 8: Brownian Ratchet Visual ───────────────────────── */}
+      {isBrownianRatchet && (
+        <>
+          <div className="flex justify-between items-center text-xs font-mono text-slate-400 mb-6 border-b border-white/10 pb-3">
+            <span>NON-EQUILIBRIUM RATCHET</span>
+            <span className="text-emerald-400">Δμ_ATP &gt; 20 kBT</span>
+          </div>
+
+          <div className="relative h-48 rounded-2xl bg-gradient-to-tr from-slate-950 via-slate-900 to-emerald-950/30 border border-white/10 flex items-center justify-center overflow-hidden p-4">
+            <svg className="w-full h-full" viewBox="0 0 220 120" fill="none">
+              {/* Asymmetric Sawtooth Potential */}
+              <path
+                d="M 20 70 L 40 30 L 100 70 L 120 30 L 180 70 L 200 30"
+                stroke="#10B981"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+              {/* Particle at minimum */}
+              <circle cx="100" cy="70" r="5" fill="#F59E0B" className="animate-pulse" />
+              {/* Forward stepping trajectory arrow */}
+              <path
+                d="M 100 65 C 105 40, 115 35, 125 50"
+                stroke="#38BDF8"
+                strokeWidth="1.5"
+                strokeDasharray="2 2"
+              />
+              <polygon points="127,53 121,50 125,44" fill="#38BDF8" />
+              {/* Baseline microtubule */}
+              <line x1="20" y1="105" x2="200" y2="105" stroke="#334155" strokeWidth="3" />
+            </svg>
+
+            <div className="absolute top-2 left-4 text-[10px] font-mono text-slate-400">
+              非對稱鋸齒勢阱 / 能量整流
+            </div>
+            <div className="absolute bottom-2 right-4 text-[10px] font-mono text-emerald-300">
+              細緻平衡破缺 · 定向步進 8nm
+            </div>
+          </div>
+        </>
+      )}
+
+      {/* ─── Case 9: Turbulence Cascade Visual ──────────────────────── */}
+      {isTurbulence && (
+        <>
+          <div className="flex justify-between items-center text-xs font-mono text-slate-400 mb-6 border-b border-white/10 pb-3">
+            <span>KOLMOGOROV INERTIAL CASCADE</span>
+            <span className="text-amber-400">E(k) ∝ ε^(2/3) k^(-5/3)</span>
+          </div>
+
+          <div className="relative h-48 rounded-2xl bg-gradient-to-tr from-slate-950 via-slate-900 to-amber-950/30 border border-white/10 flex items-center justify-center overflow-hidden p-4">
+            <svg className="w-full h-full" viewBox="0 0 220 120" fill="none">
+              {/* Power Spectrum Slope */}
+              <line x1="35" y1="25" x2="165" y2="95" stroke="#F59E0B" strokeWidth="2.5" />
+              <line x1="165" y1="95" x2="195" y2="115" stroke="#EF4444" strokeWidth="1.5" strokeDasharray="2 2" />
+
+              {/* Multi-scale vortex circles */}
+              <circle cx="65" cy="50" r="16" stroke="#38BDF8" strokeWidth="1" strokeDasharray="3 3" opacity="0.6" />
+              <circle cx="115" cy="72" r="9" stroke="#38BDF8" strokeWidth="1" strokeDasharray="2 2" opacity="0.8" />
+              <circle cx="155" cy="90" r="4.5" stroke="#F59E0B" strokeWidth="1" />
+            </svg>
+
+            <div className="absolute top-2 left-4 text-[10px] font-mono text-amber-300">
+              -5/3 普遍冪律能譜
+            </div>
+            <div className="absolute bottom-2 right-4 text-[10px] font-mono text-rose-300">
+              微觀柯爾莫哥洛夫尺度 η
+            </div>
+          </div>
+        </>
+      )}
+
+      {/* ─── Case 10: Weak Gravitational Lensing Visual ─────────────── */}
+      {isWeakLensing && (
+        <>
+          <div className="flex justify-between items-center text-xs font-mono text-slate-400 mb-6 border-b border-white/10 pb-3">
+            <span>COSMIC SHEAR WEAK LENSING</span>
+            <span className="text-purple-400">κ(θ) = Σ / Σ_crit</span>
+          </div>
+
+          <div className="relative h-48 rounded-2xl bg-gradient-to-tr from-slate-950 via-slate-900 to-purple-950/30 border border-white/10 flex items-center justify-center overflow-hidden p-4">
+            <svg className="w-full h-full" viewBox="0 0 220 120" fill="none">
+              {/* Central Dark Matter Halo gradient ring */}
+              <circle cx="110" cy="60" r="30" stroke="#A855F7" strokeWidth="1.5" strokeDasharray="4 3" opacity="0.4" />
+              <circle cx="110" cy="60" r="15" fill="#A855F7" opacity="0.15" />
+
+              {/* Tangentially sheared background galaxy ellipses */}
+              {[
+                { cx: 70, cy: 35, rot: 45 },
+                { cx: 150, cy: 35, rot: -45 },
+                { cx: 55, cy: 60, rot: 90 },
+                { cx: 165, cy: 60, rot: 90 },
+                { cx: 70, cy: 85, rot: -45 },
+                { cx: 150, cy: 85, rot: 45 },
+                { cx: 110, cy: 20, rot: 0 },
+                { cx: 110, cy: 100, rot: 0 },
+              ].map((g, idx) => (
+                <g key={`l-gal-${idx}`} transform={`translate(${g.cx}, ${g.cy}) rotate(${g.rot})`}>
+                  <ellipse cx="0" cy="0" rx="9" ry="3.5" fill="#93C5FD" opacity="0.85" />
+                </g>
+              ))}
+            </svg>
+
+            <div className="absolute top-2 left-4 text-[10px] font-mono text-purple-300">
+              JWST COSMOS-Web 巡天
+            </div>
+            <div className="absolute bottom-2 right-4 text-[10px] font-mono text-sky-300">
+              凱瑟-斯奎爾斯反演暗物質骨架
+            </div>
+          </div>
+        </>
+      )}
+
+      {/* ─── Case 11: Generic Future Scientific Visual ──────────────── */}
+      {!isTransit &&
+        !isChaos &&
+        !isActionPotential &&
+        !isMaxwellDemon &&
+        !isAmygdala &&
+        !isBismuth &&
+        !isNuclearClock &&
+        !isBrownianRatchet &&
+        !isTurbulence &&
+        !isWeakLensing && (
         <>
           <div className="flex justify-between items-center text-xs font-mono text-slate-400 mb-6 border-b border-white/10 pb-3">
             <span>SCIENTIFIC DISCOVERY</span>

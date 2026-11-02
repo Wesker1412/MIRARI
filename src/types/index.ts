@@ -178,7 +178,10 @@ export type InteractiveExperimentType =
   | 'data_explorer' // 實證觀測數據互動
   | 'neural_raster' // 神經發火率與記憶編碼
   | 'carrier_dynamics' // 能帶結構與光電載子復合
-  | 'clock_feedback'; // 頻率共振與核時鐘鎖定
+  | 'clock_feedback' // 頻率共振與核時鐘鎖定
+  | 'brownian_ratchet' // 布朗棘輪與微觀非平衡態步進
+  | 'turbulence_cascade' // 湍流能量串級與能譜冪律
+  | 'weak_lensing'; // 微弱重力透鏡與宇宙剪切質量圖
 
 // ─── 讀者評價預留結構（本輪不實作 UI，預留模型定義）──────────────
 export interface ReaderFeedbackMetric {

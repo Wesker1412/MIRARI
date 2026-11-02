@@ -1,0 +1,126 @@
+{
+  "articleId": "art-jwst-cosmos-web-lensing",
+  "slug": "jwst-cosmos-web-dark-matter-lensing",
+  "editorialCategory": "journal_interpretation",
+  "version": 1,
+  "creationModel": "gemini-2.5-pro",
+  "editorialPassDate": "2026-11-04T00:30:00Z",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-natureastro-2026-scognamiglio",
+        "citation": "Scognamiglio, D., et al. (2026). \"An ultra-high-resolution map of (dark) matter from the COSMOS-Web survey.\" Nature Astronomy, doi:10.1038/s41550-025-02763-9.",
+        "doi": "10.1038/s41550-025-02763-9",
+        "peerReviewStatus": "已完成同行評審 (Nature Astronomy, 2026-01-20 出刊)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Diana Scognamiglio",
+          "correspondingAuthors": "G. Leroy, D. Harvey",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實第一作者 Diana Scognamiglio 及 COSMOS-Web 團隊發表於 Nature Astronomy 之高解析暗物質重力透鏡巡天數據，覆蓋天區 0.54-0.77 deg²，背景星系數量近 80 萬，分辨率較 HST 提升逾兩倍。"
+        },
+        "verifiedClaims": [
+          "JWST 近紅外相機 (NIRCam) 在 0.54-0.77 平方度天區內，利用微弱重力透鏡效應重構出解析度超過哈伯太空望遠鏡兩倍之暗物質面密度地圖",
+          "測量背景星系紅移深達 z ~ 2 至 3，以切向剪切統計平均克服個體固有橢圓率噪聲 (σ_e ≈ 0.25)",
+          "暗物質空間集聚峰值與發光星系團位置高度吻合，小尺度次結構分佈嚴格約束冷暗物質 (ΛCDM) 模型"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "廣義相對論確立質量引起時空彎曲，使背景光線產生切向剪切 γ 與會聚度 κ 形變",
+            "暗物質佔宇宙物質總量約 85%，不發光且不參與電磁相互作用"
+          ],
+          "empiricalFindings": [
+            "JWST COSMOS-Web 首次在亞角秒級超高解析度下描繪出跨越數千萬光年之暗物質絲狀纖維與宇宙空洞結構"
+          ],
+          "hypothesesAndModels": [
+            "冷暗物質 NFW 密度輪廓在次星系尺度 (< 100 kpc) 的尖點/核心理論模型"
+          ]
+        }
+      },
+      {
+        "id": "ref-kaiser-squires-1993",
+        "citation": "Kaiser, N., & Squires, G. (1993). \"Mapping the dark matter with weak gravitational lensing.\" The Astrophysical Journal, 404, 441-450. doi:10.1086/172297.",
+        "doi": "10.1086/172297",
+        "peerReviewStatus": "經典天體物理學同行評審 (The Astrophysical Journal)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Nick Kaiser",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核驗凱瑟-斯奎爾斯 (Kaiser-Squires) 傅立葉空間反演算符推導，確認剪切場 γ 與投影面密度 κ 為同一個重力勢場的二階空間導數無誤。"
+        },
+        "verifiedClaims": [
+          "微弱引力透鏡的複剪切場 γ(θ) 與會聚度場 κ(θ) 在傅立葉空間存在直接代數對應，可無偏差直接反演二維暗物質面密度分佈",
+          "背景星系隨機朝向噪聲可藉由空間角對稱平均以 1/√N 速率濾除"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "投影雅可比矩陣描述天球切平面之局部無旋仿射變換",
+            "臨界面密度 Σ_crit 取決於觀測者、透鏡與背景光源之間的角直徑距離比"
+          ],
+          "empiricalFindings": [
+            "凱瑟-斯奎爾斯反演法成為三十年來全球弱透鏡巡天重建暗物質地圖的通用黃金標準"
+          ],
+          "hypothesesAndModels": [
+            "平直天球近似與有限邊界效應之傅立葉窗口濾波模型"
+          ]
+        }
+      }
+    ],
+    "formulasAndUnits": [
+      {
+        "formula": "\\kappa(\\vec{\\theta}) = \\frac{\\Sigma(\\vec{\\theta})}{\\Sigma_{\\text{crit}}} = \\frac{4\\pi G}{c^2} \\frac{D_d D_{ds}}{D_s} \\Sigma(\\vec{\\theta})",
+        "unitConsistency": "面密度 Σ 單位 kg/m²；引力常數 G 單位 m³/(kg·s²)，光速 c 單位 m/s，距離 D 單位 m；4π G / c² · (D_d D_ds / D_s) 因次為 m²/kg，相乘後會聚度 κ 為嚴格無因次純數",
+        "verified": true
+      },
+      {
+        "formula": "\\tilde{\\kappa}(\\vec{k}) = \\frac{k_1^2 - k_2^2 + 2 i k_1 k_2}{k^2} \\tilde{\\gamma}(\\vec{k})",
+        "unitConsistency": "分子 (k1² - k2² + 2i k1 k2) 因次 m⁻²，分母 k² 因次 m⁻²，比值為無因次複相位因子，傅立葉空間中 κ 與 γ 維持完全相同因次（無因次量）",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "薄透鏡近似下的引力切向剪切場方程與凱瑟-斯奎爾斯反演卷積",
+      "numericalMethod": "各向同性隨機背景星系群生成，疊加引力幾何剪切向量，即時動態繪製星系長短軸橢圓化與暗物質反演等高熱圖",
+      "dynamicBehaviorVerified": "調節暗物質質量增加時，周圍背景星系沿切向方向的拉伸橢圓度顯著增強，反演熱圖峰值 κ 隨之增高；切換至無暗物質純重子對照時，切向剪切信號隱入固有隨機噪聲中",
+      "modelAssumptionsAndLimits": "將多層紅移面簡化為單一有效背景源紅移面，展示投影面密度效應，未納入視線方向星系本動速度引起的紅移畸變"
+    },
+    "noFakeCitations": true,
+    "noFictionalReviewers": true
+  },
+  "readability": {
+    "language": "繁體中文",
+    "pedagogyProgression": "宇宙85%物質隱形之謎 -> 愛因斯坦時空彎曲與強/弱重力透鏡之別 -> 固有星系形狀噪聲與統計向量平均 -> 凱瑟-斯奎爾斯數學反演 -> JWST COSMOS-Web 巡天最新成果與冷暗物質檢驗",
+    "technicalTermsDemystified": [
+      {
+        "term": "微弱重力透鏡 (Weak Gravitational Lensing)",
+        "intuitiveExplanation": "暗物質引力雖然不足以把背景星系扭成巨大圓環，但卻能把成千上萬個星系悄悄拉長一點點，宛如隔著不平整的毛玻璃看遠方的燈火"
+      },
+      {
+        "term": "宇宙剪切 (Cosmic Shear)",
+        "intuitiveExplanation": "暗物質引力像一雙無形的手，將圓形星系往特定方向拉伸成細長橢圓的變形程度"
+      },
+      {
+        "term": "會聚度 (Convergence κ)",
+        "intuitiveExplanation": "衡量視線方向上究竟堆積了多厚、多重的暗物質面密度指標，數值越高雄厚暗物質越密集"
+      },
+      {
+        "term": "凱瑟-斯奎爾斯反演 (Kaiser-Squires Inversion)",
+        "intuitiveExplanation": "一種神奇的數學演算法，能把幾十萬個星系的微小拉伸形狀，倒推還原成暗物質的立體分佈地圖"
+      }
+    ],
+    "toneReview": "宏大深邃，嚴謹闡釋重力幾何反演原理，清楚區分數學反演地圖與直接光學成像，杜絕科技噱頭"
+  },
+  "aestheticsAndNarrative": {
+    "avoidFormulaicCliches": "開篇從夜空恆星僅佔宇宙物質 15% 的震撼事實切入，杜絕「在浩瀚的宇宙中」「總結來說」等套話",
+    "coreQuestion": "我們如何為完全不發光、不反光且不吸收光的隱形暗物質，繪製出亞角秒級超高清的宇宙網骨骼地圖？",
+    "interactiveRole": "WeakLensingShearSimulator 讓讀者親手操縱暗物質暈質量，親眼看見背景星系如何產生切向對齊，並一鍵啟用反演層直觀看見數學重建的無形骨骼",
+    "narrativeStyle": "research_interpretation",
+    "interactiveType": "weak_lensing"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "成圖本質嚴謹澄清：反覆向讀者強調新聞報導中的紫色暗物質地圖為『弱透鏡數學反演熱圖』，嚴禁誤導讀者以為韋伯望遠鏡直接拍下了暗物質的發光照片",
+    "第一作者署名核實：嚴格核對 Nature Astronomy 原始出版頁署名順序，確認第一作者為 Diana Scognamiglio（加州理工/JPL 團隊）"
+  ],
+  "unconfirmedLimits": [
+    "三維斷層掃描中光度紅移不確定性對徑向距離重建的微小偏差仍屬當前宇宙學限制",
+    "次星系尺度下超新星重子反饋對暗物質暈核心的微擾修正仍在探索中"
+  ]
+}

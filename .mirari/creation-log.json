@@ -1,5 +1,5 @@
 {
-  "lastRunTimestamp": "2026-11-03T00:40:00.000Z",
+  "lastRunTimestamp": "2026-11-04T01:00:00.000Z",
   "scheduledCron": "0 1 * * *",
   "timezone": "Asia/Taipei (UTC+8)",
   "creationModel": "gemini-2.5-pro",
@@ -179,6 +179,67 @@
             "Ludlow et al. (2015) Rev. Mod. Phys."
           ],
           "editorialRecordPath": "content/editorial-records/thorium-229-nuclear-clock-laser.json"
+        }
+      ],
+      "unpassedTopics": []
+    },
+    {
+      "runId": "mirari-auto-run-20261104-0900",
+      "timestamp": "2026-11-04T01:00:00.000Z",
+      "targetCount": 3,
+      "succeededCount": 3,
+      "failedCount": 0,
+      "articles": [
+        {
+          "id": "art-brownian-ratchet-motors",
+          "slug": "brownian-ratchet-molecular-motors",
+          "title": "穿透熱混沌的微觀足跡：布朗棘輪與分子馬達如何逆流而行？",
+          "editorialCategory": "scientific_principles",
+          "discipline": "分子生物物理與統計熱力學",
+          "interactiveComponent": "BrownianRatchetSimulator",
+          "interactiveType": "brownian_ratchet",
+          "narrativeStyle": "thought_experiment",
+          "status": "published",
+          "sources": [
+            "Feynman et al. (1963) Lectures on Physics, Ch. 46",
+            "Astumian (1997) Science doi:10.1126/science.276.5314.917",
+            "Svoboda et al. (1993) Nature doi:10.1038/365721a0"
+          ],
+          "editorialRecordPath": "content/editorial-records/brownian-ratchet-molecular-motors.json"
+        },
+        {
+          "id": "art-turbulence-kolmogorov-cascade",
+          "slug": "turbulence-kolmogorov-cascade",
+          "title": "暴風中的分形旋渦：柯爾莫哥洛夫能譜與湍流的能量串級",
+          "editorialCategory": "scientific_principles",
+          "discipline": "流體動力學與非線性物理",
+          "interactiveComponent": "TurbulenceCascadeSimulator",
+          "interactiveType": "turbulence_cascade",
+          "narrativeStyle": "first_principles",
+          "status": "published",
+          "sources": [
+            "Kolmogorov (1941) Dokl. Akad. Nauk SSSR 30(4):301",
+            "Richardson (1922) Weather Prediction by Numerical Process",
+            "Sreenivasan (1999) Rev. Mod. Phys. doi:10.1103/RevModPhys.71.S383"
+          ],
+          "editorialRecordPath": "content/editorial-records/turbulence-kolmogorov-cascade.json"
+        },
+        {
+          "id": "art-jwst-cosmos-web-lensing",
+          "slug": "jwst-cosmos-web-dark-matter-lensing",
+          "title": "宇宙的無形骨骼：韋伯望遠鏡如何以微弱重力透鏡繪製暗物質極限地圖？",
+          "editorialCategory": "journal_interpretation",
+          "discipline": "觀測宇宙學與重力天體物理",
+          "interactiveComponent": "WeakLensingShearSimulator",
+          "interactiveType": "weak_lensing",
+          "narrativeStyle": "research_interpretation",
+          "status": "published",
+          "sources": [
+            "Scognamiglio et al. (2026) Nature Astronomy doi:10.1038/s41550-025-02763-9",
+            "Kaiser & Squires (1993) Astrophys. J. doi:10.1086/172297",
+            "Bartelmann & Schneider (2001) Phys. Rep. doi:10.1016/S0370-1573(00)00082-X"
+          ],
+          "editorialRecordPath": "content/editorial-records/jwst-cosmos-web-dark-matter-lensing.json"
         }
       ],
       "unpassedTopics": []

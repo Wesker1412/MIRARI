@@ -86,6 +86,42 @@
       "coreConcept": "釷-229 固態光學核時鐘與光頻梳閉環伺服鎖定",
       "pedagogyKey": "外層電子雲易受擾動破題，引入 8.4 eV 核奇蹟與色散誤差閉環",
       "limitsIdentified": "實測不確定度 10⁻¹³ 處於原型階段，現役原子鐘仍居領先地位"
+    },
+    {
+      "articleId": "art-brownian-ratchet-motors",
+      "slug": "brownian-ratchet-molecular-motors",
+      "editorialCategory": "scientific_principles",
+      "discipline": "分子生物物理與統計熱力學",
+      "narrativeStyle": "thought_experiment",
+      "interactiveType": "brownian_ratchet",
+      "interactiveComponent": "BrownianRatchetSimulator",
+      "coreConcept": "費曼布朗棘輪細緻平衡與 ATP 非平衡態化學力學整流步進",
+      "pedagogyKey": "極端低雷諾數熱風暴破題，拆解等溫不可提取功悖論，引入閃爍勢阱整流",
+      "limitsIdentified": "簡化為單維質點模型，雙頭協同多維自由能面未完全展開"
+    },
+    {
+      "articleId": "art-turbulence-kolmogorov-cascade",
+      "slug": "turbulence-kolmogorov-cascade",
+      "editorialCategory": "scientific_principles",
+      "discipline": "流體動力學與非線性物理",
+      "narrativeStyle": "first_principles",
+      "interactiveType": "turbulence_cascade",
+      "interactiveComponent": "TurbulenceCascadeSimulator",
+      "coreConcept": "理查森能量串級、柯爾莫哥洛夫 -5/3 普適能譜與微觀耗散尺度",
+      "pedagogyKey": "咖啡奶泡失序現象破題，以純量綱分析推導 -5/3 冪律，深入 DNS 超算極限",
+      "limitsIdentified": "未納入極高雷諾數下多重分形間歇性微小修正"
+    },
+    {
+      "articleId": "art-jwst-cosmos-web-lensing",
+      "slug": "jwst-cosmos-web-dark-matter-lensing",
+      "editorialCategory": "journal_interpretation",
+      "discipline": "觀測宇宙學與重力天體物理",
+      "narrativeStyle": "research_interpretation",
+      "interactiveType": "weak_lensing",
+      "interactiveComponent": "WeakLensingShearSimulator",
+      "coreConcept": "韋伯望遠鏡 COSMOS-Web 巡天微弱重力透鏡與凱瑟-斯奎爾斯暗物質反演",
+      "pedagogyKey": "宇宙85%物質隱形破題，以角對稱統計平均克服個體星系固有形狀噪聲",
+      "limitsIdentified": "二維投影面密度反演，視線方向斷層掃描依賴光度紅移精度"
     }
   ],
   "cumulativeGuidelines": {
@@ -103,14 +139,14 @@
           "displayName": "科學原理與思想實驗",
           "scope": "收錄一般科普、經典科學知識、科學現象、數學原理、理論解釋及思想實驗",
           "purpose": "主要目的是讓讀者理解科學，而非追逐最新消息。不限制物理學，也不要求每篇一定具有思想實驗",
-          "currentArticles": 4
+          "currentArticles": 6
         },
         "journal_interpretation": {
           "displayName": "期刊解讀",
           "scope": "最新科學發現、重要研究成果、研發技術突破及具有話題性的科學事件",
           "selectionCriteria": "以新聞時效性、科學價值與話題性作為選題依據。涵蓋最新學術研究、重大科學發現、技術研發突破、科學機構發布的重要成果及值得公眾關注的科學事件",
           "rigorRule": "不要求每篇都必須以單篇同儕審查論文為主題，但必須核對可信來源，清楚區分：已完成同行審查的研究、尚未同行審查的預印本、機構或企業提出但尚待獨立驗證的成果。不得為了追逐話題性誇大研究結果",
-          "currentArticles": 3
+          "currentArticles": 4
         }
       },
       "classificationPrinciple": "根據文章的主要編輯目的分類：主要在解釋某個科學知識或原理 -> scientific_principles；主要在報導或解讀近期科學發現、研究成果、技術突破或科學事件 -> journal_interpretation。不能僅因引用了新論文就歸類為期刊解讀，不能僅因內容涉及經典科學原理就排除其作為最新研究報導的可能。兩大分類互斥且與學科標籤獨立",
@@ -147,22 +183,22 @@
       "recommendedInteractiveType": "topological_braiding"
     },
     {
-      "topic": "流體動力學與大氣物理",
-      "proposedInquiry": "納維-斯托克斯方程與渦旋破裂：能量如何從大尺度渦流階梯式串級至分子黏滯？",
+      "topic": "演化生物學與族群遺傳學",
+      "proposedInquiry": "木村資生分子演化中性理論：為什麼大部分基因突變既非有利亦非有害，而是純粹的隨機漂變？",
       "recommendedNarrativeStyle": "first_principles",
-      "recommendedInteractiveType": "vorticity_cascade"
+      "recommendedInteractiveType": "neutral_drift"
     },
     {
-      "topic": "分子生物學與微觀力學",
-      "proposedInquiry": "布朗棘輪（Brownian Ratchet）：分子馬達如何利用熱噪聲在熱平衡邊界定向行進？",
-      "recommendedNarrativeStyle": "thought_experiment",
-      "recommendedInteractiveType": "brownian_ratchet"
+      "topic": "聚變能源與高溫電漿",
+      "proposedInquiry": "托卡馬克磁約束不穩定性：邊界局部模（ELMs）如何破壞上億度的微型人造太陽？",
+      "recommendedNarrativeStyle": "depth_narrative",
+      "recommendedInteractiveType": "plasma_instability"
     },
     {
-      "topic": "廣義相對論與時空幾何",
-      "proposedInquiry": "重力透鏡與愛因斯坦環：光線如何在彎曲時空中走出多重時間路徑？",
-      "recommendedNarrativeStyle": "geometric_observation",
-      "recommendedInteractiveType": "ray_tracing_geodesic"
+      "topic": "計算神經學與神經形態晶片",
+      "proposedInquiry": "脈衝神經網路（SNN）：大腦如何用極稀疏的離散電脈衝實現極低功耗認知？",
+      "recommendedNarrativeStyle": "research_interpretation",
+      "recommendedInteractiveType": "spiking_compute"
     }
   ]
 }
