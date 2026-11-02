@@ -370,27 +370,6 @@ export const HomePage: React.FC<HomePageProps> = ({
           </div>
         </div>
       </section>
-
-      {/* ─── 板塊四：與 MIRARI 一起探索 (簡潔專注的探索體驗) ───────────── */}
-      <section id="explore-mirari" className="py-16 sm:py-24 border-t border-mirari-line">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto text-center space-y-4">
-            <span className="text-xs uppercase tracking-wider text-mirari-amber font-sans font-semibold block">
-              知識探索
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-mirari-ink">
-              與 MIRARI 一起探索
-            </h2>
-            <p className="text-sm sm:text-base text-mirari-muted font-sans leading-relaxed">
-              輸入感興趣的科學概念、現象或原理，MIRARI 將引導您探索站內的深度論述與互動數值實驗。
-            </p>
-            {/* Anchor placeholder for the persistent global MIRARI mascot */}
-            <div className="pt-2 flex justify-center">
-              <div id="explore-mirari-anchor" className="w-16 h-16 pointer-events-none select-none" />
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };

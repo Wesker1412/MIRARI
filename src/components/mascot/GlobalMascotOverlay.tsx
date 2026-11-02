@@ -6,7 +6,7 @@ import { queryMockAIRecommendation } from '../../services/aiRecommendationServic
 import { searchArticleEvidence, type EvidenceSearchResult } from '../../services/articleEvidenceService';
 
 interface GlobalMascotOverlayProps {
-  currentView: 'home' | 'article';
+  currentView: 'home' | 'article' | 'explore';
   currentArticle?: Article;
   onSelectArticle: (article: Article) => void;
   onEvidenceFound: (result: EvidenceSearchResult) => void;
@@ -64,8 +64,9 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
 
   // Mascot dimensions based on view & Section 4 presence (Flask ratio 100:120)
   const isHomeView = currentView === 'home';
-  const mascotWidth = isInExploreSection ? 120 : isHomeView ? 104 : 80;
-  const mascotHeight = isInExploreSection ? 144 : isHomeView ? 125 : 96;
+  const isExploreView = currentView === 'explore';
+  const mascotWidth = isInExploreSection || isExploreView ? 120 : isHomeView ? 104 : 80;
+  const mascotHeight = isInExploreSection || isExploreView ? 144 : isHomeView ? 125 : 96;
 
   // ─── Default Anchor Calculation ──────────────────────────────────
   const getDefaultAnchorPosition = useCallback((): Position => {
@@ -73,8 +74,26 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
     const w = window.innerWidth;
     const h = window.innerHeight;
 
+    // 1. If in Explore Page, anchor to #explore-page-mascot-anchor
+    if (isExploreView) {
+      const explorePageAnchor = document.getElementById('explore-page-mascot-anchor');
+      if (explorePageAnchor) {
+        const rect = explorePageAnchor.getBoundingClientRect();
+        if (rect.top > -100 && rect.top < h + 100) {
+          return {
+            x: Math.max(margin, Math.min(w - mascotWidth - margin, rect.left + (rect.width - mascotWidth) / 2)),
+            y: Math.max(margin, Math.min(h - mascotHeight - margin, rect.top + (rect.height - mascotHeight) / 2)),
+          };
+        }
+      }
+      return {
+        x: Math.max(margin, w - mascotWidth - (w > 1024 ? 64 : 24)),
+        y: Math.max(margin, Math.min(h - mascotHeight - margin, 180)),
+      };
+    }
+
     if (isHomeView) {
-      // 1. If in Section 4 Explore workbench, anchor to #explore-mirari-anchor
+      // 2. If in Section 4 Explore workbench, anchor to #explore-mirari-anchor
       if (isInExploreSection) {
         const exploreAnchor = document.getElementById('explore-mirari-anchor');
         if (exploreAnchor) {
@@ -88,7 +107,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
         }
       }
 
-      // 2. Check if hero anchor element exists in DOM (Section 1 Cover)
+      // 3. Check if hero anchor element exists in DOM (Section 1 Cover)
       const heroAnchor = document.getElementById('mirari-hero-anchor');
       if (heroAnchor) {
         const rect = heroAnchor.getBoundingClientRect();
@@ -100,7 +119,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
         }
       }
 
-      // 3. Default floating hero position (prominently placed on right)
+      // 4. Default floating hero position (prominently placed on right)
       return {
         x: Math.max(margin, w - mascotWidth - (w > 1024 ? 64 : 24)),
         y: Math.max(margin, Math.min(h - mascotHeight - margin, 240)),
@@ -112,7 +131,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
         y: Math.max(margin, h - mascotHeight - 24),
       };
     }
-  }, [isHomeView, isInExploreSection, mascotWidth, mascotHeight]);
+  }, [isHomeView, isExploreView, isInExploreSection, mascotWidth, mascotHeight]);
 
   // Synchronize position on mount or view switch if not custom dragged
   useEffect(() => {
@@ -250,6 +269,14 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
         }, 500);
         return () => clearTimeout(timer);
       }
+    } else if (currentView === 'explore') {
+      // In explore page: expand panel on desktop; on mobile keep closed so it doesn't block the screen
+      if (typeof window !== 'undefined' && window.innerWidth >= 640) {
+        setIsPanelOpen(true);
+      }
+      setMascotState('excited');
+      const resetTimer = setTimeout(() => setMascotState('idle'), 1800);
+      return () => clearTimeout(resetTimer);
     } else {
       // In article view, keep panel closed initially
       setIsPanelOpen(false);
@@ -474,7 +501,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
           {!isPanelOpen && !isDragging && isHovered && (
             <div className="hidden sm:block absolute -top-8 left-1/2 -translate-x-1/2 opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
               <span className="text-[11px] font-sans bg-mirari-ink text-white px-2.5 py-1 rounded-full shadow-md">
-                {isHomeView ? '探索篇章' : '隨文提問'}
+                {isHomeView || isExploreView ? '探索篇章' : '隨文提問'}
               </span>
             </div>
           )}
@@ -517,9 +544,9 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
             <div className="flex items-center justify-between px-4 py-2.5 border-b border-mirari-line bg-mirari-paper/80">
               <div className="flex items-center space-x-2">
                 <span className="font-serif text-sm font-semibold text-mirari-ink">
-                  {isHomeView ? '探索篇章' : '隨文提問'}
+                  {isHomeView || isExploreView ? '探索篇章' : '隨文提問'}
                 </span>
-                {!isHomeView && hasActiveHighlight && (
+                {!isHomeView && !isExploreView && hasActiveHighlight && (
                   <button
                     onClick={onClearHighlight}
                     className="text-[11px] text-mirari-amber hover:underline px-1 font-sans"
@@ -538,8 +565,8 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
               </button>
             </div>
 
-            {/* ─── Panel Content: Home Exploration Mode ──────────────── */}
-            {isHomeView ? (
+            {/* ─── Panel Content: Home/Explore Exploration Mode ──────────────── */}
+            {isHomeView || isExploreView ? (
               <div className="p-4 space-y-3 overflow-y-auto max-h-[min(500px,calc(85vh-48px))]">
                 {/* Search Form */}
                 <form
@@ -583,38 +610,52 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
                 {/* Search Recommendation Results (Only expands when present) */}
                 {homeRecResult && (
                   <div className="pt-3 border-t border-mirari-line space-y-2.5 animate-fade-in">
-                    <div className="p-2.5 rounded-xl bg-mirari-paper border border-mirari-line text-xs text-mirari-ink leading-relaxed font-sans">
-                      {homeRecResult.curatorReply}
+                    <div className="p-2.5 rounded-xl bg-mirari-paper border border-mirari-line text-xs text-mirari-ink leading-relaxed font-sans space-y-1.5">
+                      <div className="flex items-center justify-between">
+                        <span className="text-[11px] font-medium text-mirari-dim">MIRARI 引導回應</span>
+                        {homeRecResult.matchLevel === 'direct' && (
+                          <span className="px-1.5 py-0.5 rounded text-[10px] bg-emerald-50 text-emerald-700 font-sans font-medium">已有專題收錄</span>
+                        )}
+                        {homeRecResult.matchLevel === 'partial' && (
+                          <span className="px-1.5 py-0.5 rounded text-[10px] bg-amber-50 text-amber-700 font-sans font-medium">部分相關內容</span>
+                        )}
+                        {homeRecResult.matchLevel === 'none' && (
+                          <span className="px-1.5 py-0.5 rounded text-[10px] bg-slate-100 text-slate-600 font-sans font-medium">尚無相關文章</span>
+                        )}
+                      </div>
+                      <p>{homeRecResult.curatorReply}</p>
                     </div>
 
-                    <div className="space-y-2">
-                      <span className="text-[11px] font-sans text-mirari-dim block">推薦篇章：</span>
-                      {homeRecResult.recommendedArticles.map((article) => (
-                        <div
-                          key={article.id}
-                          onClick={() => {
-                            setIsPanelOpen(false);
-                            onSelectArticle(article);
-                          }}
-                          className="group p-2.5 rounded-xl border border-mirari-line hover:border-mirari-border bg-white transition cursor-pointer flex flex-col justify-between"
-                        >
-                          <div className="flex items-center justify-between mb-1 text-[11px]">
-                            <span className="text-mirari-amber font-sans font-medium">
-                              {article.formatBadgeText}
-                            </span>
-                            <span className="text-mirari-dim font-sans">
-                              {article.status === 'published' ? '正式發布' : '籌備中'}
-                            </span>
+                    {homeRecResult.recommendedArticles.length > 0 && (
+                      <div className="space-y-2">
+                        <span className="text-[11px] font-sans text-mirari-dim block">推薦篇章：</span>
+                        {homeRecResult.recommendedArticles.map((article) => (
+                          <div
+                            key={article.id}
+                            onClick={() => {
+                              setIsPanelOpen(false);
+                              onSelectArticle(article);
+                            }}
+                            className="group p-2.5 rounded-xl border border-mirari-line hover:border-mirari-border bg-white transition cursor-pointer flex flex-col justify-between"
+                          >
+                            <div className="flex items-center justify-between mb-1 text-[11px]">
+                              <span className="text-mirari-amber font-sans font-medium">
+                                {article.formatBadgeText}
+                              </span>
+                              <span className="text-mirari-dim font-sans">
+                                {article.status === 'published' ? '正式發布' : '籌備中'}
+                              </span>
+                            </div>
+                            <h4 className="font-serif text-sm font-bold text-mirari-ink group-hover:text-mirari-amber transition line-clamp-1">
+                              {article.title}
+                            </h4>
+                            <p className="mt-1 text-xs text-mirari-muted line-clamp-2 leading-relaxed">
+                              {article.summary}
+                            </p>
                           </div>
-                          <h4 className="font-serif text-sm font-bold text-mirari-ink group-hover:text-mirari-amber transition line-clamp-1">
-                            {article.title}
-                          </h4>
-                          <p className="mt-1 text-xs text-mirari-muted line-clamp-2 leading-relaxed">
-                            {article.summary}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 )}
               </div>

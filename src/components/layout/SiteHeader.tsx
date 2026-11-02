@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { ARTICLES } from '../../data/articles';
+import { Link, NavLink, useLocation } from 'react-router-dom';
+import type { EditorialCategory } from '../../types';
 
 interface SiteHeaderProps {
   articleTitle?: string;
   articleSlug?: string;
+  editorialCategory?: EditorialCategory;
   hasActiveHighlight?: boolean;
   evidenceNote?: string | null;
   onClearHighlight?: () => void;
@@ -14,6 +15,7 @@ interface SiteHeaderProps {
 
 export const SiteHeader: React.FC<SiteHeaderProps> = ({
   articleTitle,
+  editorialCategory,
   hasActiveHighlight,
   evidenceNote,
   onClearHighlight,
@@ -21,93 +23,59 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({
   onCopyLink,
 }) => {
   const location = useLocation();
-  const navigate = useNavigate();
   const isArticleView = location.pathname.startsWith('/articles/');
-  const isHomeView = location.pathname === '/';
-
-  const hasJournalArticles = ARTICLES.some(
-    (a) => a.status === 'published' && a.editorialCategory === 'journal_interpretation'
-  );
-
-  const scrollToAnchor = (anchorId: string) => {
-    if (isHomeView) {
-      const elem = document.getElementById(anchorId);
-      if (elem) elem.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      navigate(`/#${anchorId}`);
-    }
-  };
 
   return (
     <header className="border-b border-mirari-line bg-mirari-paper/95 sticky top-0 z-40 backdrop-blur-sm transition-all duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between py-3.5">
-          {/* Left: Brand & Tagline */}
-          <div className="flex items-center space-x-4">
-            <Link to="/" className="flex items-baseline space-x-3 group">
-              <span className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-mirari-ink group-hover:text-mirari-amber transition">
-                MIRARI
-              </span>
-              <span className="text-xs text-mirari-dim hidden sm:inline-block font-sans border-l border-mirari-line pl-3">
-                探索科學的互動數位雜誌
-              </span>
+        <div className="flex items-center justify-between py-3.5 gap-2 sm:gap-4">
+          {/* Left: Brand & Tagline / Breadcrumbs (Aligned on the exact same vertical center line) */}
+          <div className="flex items-center space-x-2 sm:space-x-3 min-w-0 shrink">
+            <Link
+              to="/"
+              className="font-serif text-xl sm:text-3xl font-bold tracking-tight text-mirari-ink hover:text-mirari-amber transition shrink-0 leading-none"
+              title="返回首頁"
+            >
+              MIRARI
             </Link>
 
-            {/* Context Breadcrumb on Article View */}
-            {isArticleView && articleTitle && (
-              <div className="hidden lg:flex items-center space-x-2 text-xs font-sans text-mirari-dim border-l border-mirari-line pl-4">
-                <span>篇章</span>
-                <span>/</span>
-                <span className="font-serif font-medium text-mirari-ink truncate max-w-[260px]">
+            {isArticleView && articleTitle ? (
+              <nav
+                aria-label="文章導覽麵包屑"
+                className="flex items-center space-x-1 sm:space-x-2 text-[11px] sm:text-xs font-sans text-mirari-dim min-w-0 h-5"
+              >
+                <span className="text-mirari-line select-none shrink-0 leading-none">/</span>
+                <Link
+                  to={editorialCategory === 'journal_interpretation' ? '/journal' : '/principles'}
+                  className="hover:text-mirari-ink transition shrink-0 leading-none"
+                >
+                  {editorialCategory === 'journal_interpretation' ? '期刊解讀' : '科普文章'}
+                </Link>
+                <span className="hidden sm:inline text-mirari-line select-none shrink-0 leading-none">/</span>
+                <span className="hidden sm:inline font-serif font-medium text-mirari-ink truncate sm:max-w-[160px] md:max-w-[260px] leading-none">
                   {articleTitle}
                 </span>
-              </div>
+              </nav>
+            ) : (
+              <span className="text-xs text-mirari-dim hidden sm:flex items-center font-sans border-l border-mirari-line pl-3 shrink-0 h-5 leading-none">
+                探索科學的互動數位雜誌
+              </span>
             )}
           </div>
 
-          {/* Center/Right: Unified Navigation & Actions */}
-          <div className="flex items-center space-x-3 sm:space-x-6 text-xs font-sans">
-            {/* Standard Nav Anchors */}
-            <nav className="hidden md:flex items-center space-x-5 text-mirari-muted font-medium">
-              <button
-                onClick={() => scrollToAnchor('cover-story')}
-                className="hover:text-mirari-ink transition py-1"
-              >
-                封面故事
-              </button>
-              {hasJournalArticles && (
-                <button
-                  onClick={() => scrollToAnchor('journal-research')}
-                  className="hover:text-mirari-ink transition py-1"
-                >
-                  期刊解讀
-                </button>
-              )}
-              <button
-                onClick={() => scrollToAnchor('principles-experiments')}
-                className="hover:text-mirari-ink transition py-1"
-              >
-                科學原理與實驗
-              </button>
-              <button
-                onClick={() => scrollToAnchor('explore-mirari')}
-                className="hover:text-mirari-ink transition py-1"
-              >
-                探索 MIRARI
-              </button>
-            </nav>
-
-            {/* Article Specific Actions */}
-            {isArticleView ? (
-              <div className="flex items-center space-x-2.5">
+          {/* Right: Three Navigation Entrances + Article Specific Actions */}
+          <div className="flex items-center space-x-2 sm:space-x-6 text-[11px] sm:text-xs font-sans shrink-0">
+            {/* Article Specific Actions (Highlight badge & share button) */}
+            {isArticleView && (
+              <div className="flex items-center space-x-1.5 sm:space-x-2">
                 {hasActiveHighlight && onClearHighlight && (
-                  <div className="flex items-center space-x-1.5 bg-amber-50 border border-amber-300 text-amber-900 px-2.5 py-1 rounded-lg text-xs font-sans animate-fade-in">
-                    <span className="truncate max-w-[120px] sm:max-w-none">
+                  <div className="flex items-center space-x-1 bg-amber-50 border border-amber-300 text-amber-900 px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-lg text-[10px] sm:text-xs font-sans animate-fade-in">
+                    <span className="truncate max-w-[70px] sm:max-w-none">
                       已定位：{evidenceNote || '原文依據'}
                     </span>
                     <button
                       onClick={onClearHighlight}
-                      className="hover:underline font-medium text-amber-950 ml-1"
+                      className="hover:underline font-medium text-amber-950 ml-0.5"
                       title="清除標記"
                     >
                       清除
@@ -118,31 +86,60 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({
                 {onCopyLink && (
                   <button
                     onClick={onCopyLink}
-                    className={`px-3 py-1.5 rounded-lg border transition ${
+                    className={`px-2 py-0.5 sm:px-3 sm:py-1.5 rounded-lg border text-[11px] sm:text-xs transition ${
                       isCopied
                         ? 'bg-emerald-50 border-emerald-300 text-emerald-800 font-medium'
                         : 'text-mirari-dim hover:text-mirari-ink border-mirari-line hover:border-mirari-border'
                     }`}
                     title="複製完整文章分享網址"
                   >
-                    {isCopied ? '已複製文章網址' : '複製連結'}
+                    {isCopied ? '已複製' : '分享'}
                   </button>
                 )}
-
-                <Link
-                  to="/"
-                  className="px-3 py-1.5 rounded-lg border border-mirari-line hover:border-mirari-border text-mirari-muted hover:text-mirari-ink transition"
-                >
-                  回首頁
-                </Link>
-              </div>
-            ) : (
-              <div className="flex items-center space-x-2">
-                <span className="text-[11px] text-mirari-dim px-2.5 py-1 rounded-full bg-mirari-surfaceAlt border border-mirari-line hidden sm:inline-block">
-                  自主科學媒體
-                </span>
               </div>
             )}
+
+            {/* Three Page Navigation Entrances (Active state + Mobile accessible) */}
+            <nav className="flex items-center space-x-1.5 sm:space-x-5 font-medium text-[11px] sm:text-xs">
+              <NavLink
+                to="/journal"
+                className={({ isActive }) =>
+                  `transition py-1 whitespace-nowrap ${
+                    isActive
+                      ? 'text-mirari-ink font-semibold border-b-2 border-mirari-ink'
+                      : 'text-mirari-muted hover:text-mirari-ink'
+                  }`
+                }
+              >
+                期刊解讀
+              </NavLink>
+
+              <NavLink
+                to="/principles"
+                className={({ isActive }) =>
+                  `transition py-1 whitespace-nowrap ${
+                    isActive
+                      ? 'text-mirari-ink font-semibold border-b-2 border-mirari-ink'
+                      : 'text-mirari-muted hover:text-mirari-ink'
+                  }`
+                }
+              >
+                科普文章
+              </NavLink>
+
+              <NavLink
+                to="/explore"
+                className={({ isActive }) =>
+                  `transition py-1 whitespace-nowrap ${
+                    isActive
+                      ? 'text-mirari-ink font-semibold border-b-2 border-mirari-ink'
+                      : 'text-mirari-muted hover:text-mirari-ink'
+                  }`
+                }
+              >
+                探索 MIRARI
+              </NavLink>
+            </nav>
           </div>
         </div>
       </div>

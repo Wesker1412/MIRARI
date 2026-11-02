@@ -210,11 +210,14 @@ export interface SearchIndexEntry {
 // ─── MIRARI Mascot & Recommendation ─────────────────────────────
 export type MascotState = 'idle' | 'thinking' | 'excited' | 'pointing';
 
+export type RecommendationMatchLevel = 'direct' | 'partial' | 'none';
+
 export interface AIRecommendation {
   query: string;
   curatorReply: string;
   recommendedArticles: Article[];
   suggestedTags: string[];
+  matchLevel?: RecommendationMatchLevel;
 }
 
 export interface EvidenceSearchResult {

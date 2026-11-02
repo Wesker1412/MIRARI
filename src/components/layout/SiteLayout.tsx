@@ -29,9 +29,17 @@ export const SiteLayout: React.FC = () => {
     }
   }, [location.pathname]);
 
-  // Determine view mode for Mascot (home vs article/other)
+  // Determine view mode for Mascot (home vs article vs explore)
   const isHome = location.pathname === '/';
-  const currentView: 'home' | 'article' = isHome ? 'home' : 'article';
+  const isExplore = location.pathname === '/explore';
+  const isArticle = location.pathname.startsWith('/articles/');
+  const currentView: 'home' | 'article' | 'explore' = isHome
+    ? 'home'
+    : isExplore
+    ? 'explore'
+    : isArticle
+    ? 'article'
+    : 'home';
 
   // Find active article if on /articles/:slug
   const articleMatch = matchPath('/articles/:slug', location.pathname);
@@ -131,13 +139,14 @@ export const SiteLayout: React.FC = () => {
 
       {/* ─── Unified Site Header ────────────────────────────────────── */}
       <SiteHeader
-        articleTitle={location.pathname.startsWith('/articles/') ? currentArticle.title : undefined}
-        articleSlug={location.pathname.startsWith('/articles/') ? currentArticle.slug : undefined}
+        articleTitle={isArticle ? currentArticle.title : undefined}
+        articleSlug={isArticle ? currentArticle.slug : undefined}
+        editorialCategory={isArticle ? currentArticle.editorialCategory : undefined}
         hasActiveHighlight={!!activeSentenceId}
         evidenceNote={evidenceNote}
         onClearHighlight={handleClearHighlight}
         isCopied={isCopied}
-        onCopyLink={location.pathname.startsWith('/articles/') ? handleCopyLink : undefined}
+        onCopyLink={isArticle ? handleCopyLink : undefined}
       />
 
       {/* ─── Page Content Outlet ─────────────────────────────────────── */}

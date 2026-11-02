@@ -31,15 +31,22 @@ function tokenizeQuery(query: string): string[] {
       }
     } else {
       const len = raw.length;
-      for (let i = 0; i < len; i++) {
-        if (!STOPWORDS.has(raw[i])) tokens.push(raw[i]);
-      }
-      for (let i = 0; i < len - 1; i++) {
-        const bigram = raw.slice(i, i + 2);
-        if (!STOPWORDS.has(bigram)) tokens.push(bigram);
-      }
-      for (let i = 0; i < len - 2; i++) {
-        tokens.push(raw.slice(i, i + 3));
+      if (len === 1) {
+        if (!STOPWORDS.has(raw)) tokens.push(raw);
+      } else {
+        // Multi-character Chinese phrases: use bigrams, trigrams, and full word.
+        // Strictly avoid single-character unigram noise that causes false matches across unrelated articles.
+        for (let i = 0; i < len - 1; i++) {
+          const bigram = raw.slice(i, i + 2);
+          if (!STOPWORDS.has(bigram)) tokens.push(bigram);
+        }
+        for (let i = 0; i < len - 2; i++) {
+          const trigram = raw.slice(i, i + 3);
+          if (!STOPWORDS.has(trigram)) tokens.push(trigram);
+        }
+        if (len >= 4 && !STOPWORDS.has(raw)) {
+          tokens.push(raw);
+        }
       }
     }
   }
@@ -107,6 +114,22 @@ export function queryDataDrivenRecommendation(query: string): AIRecommendation {
   // Sort by score descending
   scoredEntries.sort((a, b) => b.score - a.score);
 
+  const topScore = scoredEntries[0]?.score || 0;
+  const topCandidateArticle = scoredEntries[0] ? ARTICLES_MAP.get(scoredEntries[0].entry.articleId) : undefined;
+  const hasVerbatimTitle = topCandidateArticle && (topCandidateArticle.title.includes(query) || topCandidateArticle.subtitle.includes(query));
+
+  // If no articles scored meaningfully (less than a real bigram match: topScore < 2.5),
+  // return clear 'none' status (never hallucinate or pretend with single-character noise matches)
+  if (scoredEntries.length === 0 || (topScore < 2.5 && !hasVerbatimTitle)) {
+    return {
+      query,
+      curatorReply: `站內目前尚無與「${query}」直接相關的科學篇章。MIRARI 僅收錄具備嚴謹論述與數值模擬的篇章，您可以試試搜尋「系外行星」、「雙擺渾沌」、「動作電位」或「麥克斯韋妖」。`,
+      recommendedArticles: [],
+      suggestedTags: ['系外行星', '渾沌理論', '動作電位', '麥克斯韋妖'],
+      matchLevel: 'none',
+    };
+  }
+
   // Separate published vs in_preparation to ensure published articles come first
   const publishedMatches = scoredEntries
     .filter((s) => s.entry.status === 'published')
@@ -118,19 +141,11 @@ export function queryDataDrivenRecommendation(query: string): AIRecommendation {
     .map((s) => ARTICLES_MAP.get(s.entry.articleId)!)
     .filter(Boolean);
 
-  // Ensure published articles are prioritized
   const recommendedArticles: Article[] = [];
   if (publishedMatches.length > 0) {
-    recommendedArticles.push(...publishedMatches.slice(0, 2));
-    if (prepMatches.length > 0 && recommendedArticles.length < 2) {
-      recommendedArticles.push(prepMatches[0]);
-    }
+    recommendedArticles.push(...publishedMatches.slice(0, 3));
   } else if (prepMatches.length > 0) {
     recommendedArticles.push(...prepMatches.slice(0, 2));
-  } else {
-    // Fallback if score was 0 across all
-    const defaultCover = ARTICLES_MAP.get('art-exoplanet-transit');
-    if (defaultCover) recommendedArticles.push(defaultCover);
   }
 
   // Extract relevant tags
@@ -147,15 +162,19 @@ export function queryDataDrivenRecommendation(query: string): AIRecommendation {
     )
   ).slice(0, 4);
 
-  // Generate Curator Explanation based on top match
+  // Generate Curator Explanation based on top match and confidence level
   const topArticle = recommendedArticles[0];
-  let curatorReply = '';
+  const isDirectMatch =
+    topScore >= 6.0 ||
+    (topArticle && (topArticle.title.includes(query) || (topArticle.tags || []).some((t) => query.includes(t) || t.includes(query))));
+  const matchLevel = isDirectMatch ? 'direct' : 'partial';
 
+  let curatorReply = '';
   if (topArticle) {
-    if (topArticle.status === 'published') {
-      curatorReply = `針對「${query}」，推薦閱讀已發布之深度專題《${topArticle.title}》。${topArticle.summary}`;
+    if (isDirectMatch) {
+      curatorReply = `針對「${query}」，站內已有收錄之深度專題《${topArticle.title}》，可直接閱讀相關原理與互動實驗。`;
     } else {
-      curatorReply = `針對「${query}」，編輯部正籌備文獻解讀《${topArticle.title}》（${topArticle.journalReference?.journal || '期刊研究'}）。可先閱讀相關背景與核心主題。`;
+      curatorReply = `針對「${query}」，在站內找到部分相關概念的討論。推薦參考《${topArticle.title}》。`;
     }
   } else {
     curatorReply = `已為你檢索關於「${query}」之相關文獻與專題。`;
@@ -166,5 +185,6 @@ export function queryDataDrivenRecommendation(query: string): AIRecommendation {
     curatorReply,
     recommendedArticles,
     suggestedTags: matchedTags,
+    matchLevel,
   };
 }

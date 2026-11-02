@@ -234,6 +234,7 @@ ${JSON.stringify(jsonLd, null, 2)}
     // 寫入檔案
     fs.writeFileSync(path.join(articleDir, 'index.html'), articleHtml, 'utf8');
     fs.writeFileSync(path.join(DIST_DIR, 'articles', `${article.slug}.html`), articleHtml, 'utf8');
+    publishedPrerenderCount++;
   }
 
   // 生成分類頁靜態預渲染 (/journal 與 /principles)
@@ -329,6 +330,53 @@ ${JSON.stringify(jsonLd, null, 2)}
     fs.writeFileSync(path.join(DIST_DIR, `${cat.path}.html`), catHtml, 'utf8');
   }
 
+  // 生成探索頁靜態預渲染 (/explore)
+  const exploreDir = path.join(DIST_DIR, 'explore');
+  ensureDir(exploreDir);
+  const exploreCanonicalUrl = `${canonicalOrigin}/explore`;
+  const exploreTitle = '探索 MIRARI | 數位科學雜誌';
+  const exploreDesc = '探索科學主題、經典原理與前沿研究，由 MIRARI 吉祥物引導您在深度論述與互動數值實驗中進行主題探索與精準語義檢索。';
+
+  const exploreBody = `
+    <div class="min-h-screen bg-[#fcfbf9] text-[#1a1917] pb-32">
+      <header class="border-b border-[#e5e0d8] bg-[#fcfbf9]/90 px-4 sm:px-8 py-3.5 flex items-center justify-between">
+        <a href="/" class="text-xs font-sans text-[#706c64] hover:text-[#1a1917] px-3 py-1.5 rounded-lg border border-[#e5e0d8]">返回首頁</a>
+        <span class="font-serif text-sm font-semibold">探索 MIRARI</span>
+      </header>
+      <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14">
+        <header class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+          <span class="text-xs uppercase tracking-wider text-[#b87333] font-sans font-semibold block">主題與知識檢索</span>
+          <h1 class="font-serif text-3xl sm:text-4xl font-bold">探索 MIRARI</h1>
+          <p class="text-sm sm:text-base text-[#706c64] font-sans leading-relaxed">
+            輸入感興趣的科學概念、現象或原理，MIRARI 將引導您探索站內的深度論述與互動數值實驗。
+          </p>
+        </header>
+      </main>
+    </div>
+  `;
+
+  let exploreHtml = baseHtml;
+  exploreHtml = exploreHtml.replace(/<title>.*?<\/title>/i, `<title>${escapeHtml(exploreTitle)}</title>`);
+  exploreHtml = exploreHtml.replace(/<meta\s+name="description"[^>]*>/i, '');
+  exploreHtml = exploreHtml.replace(/<meta\s+name="robots"[^>]*>/i, '');
+
+  const exploreMetaTags = `
+    ${robotsMetaTag}
+    <meta name="description" content="${escapeHtml(exploreDesc)}" />
+    <link rel="canonical" href="${escapeHtml(exploreCanonicalUrl)}" />
+    <meta property="og:site_name" content="MIRARI" />
+    <meta property="og:title" content="${escapeHtml(exploreTitle)}" />
+    <meta property="og:description" content="${escapeHtml(exploreDesc)}" />
+    <meta property="og:url" content="${escapeHtml(exploreCanonicalUrl)}" />
+    <meta property="og:type" content="website" />
+  </head>`;
+
+  exploreHtml = exploreHtml.replace('</head>', `${exploreMetaTags}`);
+  exploreHtml = exploreHtml.replace('<div id="root"></div>', `<div id="root">${exploreBody}</div>`);
+
+  fs.writeFileSync(path.join(exploreDir, 'index.html'), exploreHtml, 'utf8');
+  fs.writeFileSync(path.join(DIST_DIR, 'explore.html'), exploreHtml, 'utf8');
+
   // 生成 404.html (適用於 Vercel / 靜態伺服器)
   let notFoundHtml = baseHtml
     .replace(/<title>.*?<\/title>/i, '<title>404 · 篇章坐標未找到 | MIRARI</title>');
@@ -355,7 +403,7 @@ ${JSON.stringify(jsonLd, null, 2)}
   fs.writeFileSync(path.join(DIST_DIR, '404.html'), notFoundHtml, 'utf8');
 
   console.log(`✓ 已生成 ${publishedPrerenderCount} 篇正式發布文章之靜態 SEO 預渲染 HTML (含 robots noindex 與集中 Canonical)`);
-  console.log(`✓ 已生成 /journal 與 /principles 分類列表頁靜態預渲染 HTML`);
+  console.log(`✓ 已生成 /journal、/principles 與 /explore 頁靜態預渲染 HTML`);
   console.log(`✓ 已生成 dist/404.html 標準錯誤頁`);
   console.log('================================================================');
   console.log('🎉 靜態預渲染與 SEO 管線執行成功！');
