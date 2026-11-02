@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { MirariMascot3D } from './MirariMascot3D';
 import { RoundBottomFlaskFrame } from './RoundBottomFlaskFrame';
-import type { MascotState, Article, AIRecommendation } from '../../types';
-import { queryMockAIRecommendation } from '../../services/aiRecommendationService';
+import type { MascotState, Article, AIRecommendation, SentenceEvidence } from '../../types';
+import { queryMockAIRecommendation, queryAISearch } from '../../services/aiRecommendationService';
 import {
   searchArticleEvidence,
   getArticleKnowledgePoints,
+  queryArticleCompanionChat,
   type EvidenceSearchResult,
 } from '../../services/articleEvidenceService';
 
@@ -53,9 +54,16 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
   const [homeRecResult, setHomeRecResult] = useState<AIRecommendation | null>(null);
   const [isSearchingHome, setIsSearchingHome] = useState<boolean>(false);
 
-  // Article Q&A state
+  // Article Q&A state (Phase 5: Multi-turn Dialogue Stream)
+  interface DialogueTurn {
+    id: string;
+    role: 'user' | 'assistant';
+    content: string;
+    evidence?: SentenceEvidence | null;
+  }
   const [articleQuery, setArticleQuery] = useState<string>('');
   const [articleEvidenceResult, setArticleEvidenceResult] = useState<EvidenceSearchResult | null>(null);
+  const [articleDialogue, setArticleDialogue] = useState<DialogueTurn[]>([]);
   const [isSearchingArticle, setIsSearchingArticle] = useState<boolean>(false);
   const [isMobileExpandedAnswer, setIsMobileExpandedAnswer] = useState<boolean>(false);
 
@@ -292,6 +300,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
   useEffect(() => {
     setArticleQuery('');
     setArticleEvidenceResult(null);
+    setArticleDialogue([]);
     setIsSearchingArticle(false);
     setIsMobileExpandedAnswer(false);
     onClearHighlight();
@@ -384,19 +393,28 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
     '系外行星如何利用凌日法量測半徑？',
   ];
 
-  const handleExecuteHomeSearch = (queryStr: string) => {
+  const handleExecuteHomeSearch = async (queryStr: string) => {
     if (!queryStr.trim()) return;
     setIsSearchingHome(true);
     setMascotState('thinking');
     setHomeQuery(queryStr);
 
-    setTimeout(() => {
+    try {
+      const rec = await queryAISearch(queryStr);
+      setHomeRecResult(rec);
+      setIsSearchingHome(false);
+      if (rec.recommendedArticles.length > 0) {
+        setMascotState('excited');
+        setTimeout(() => setMascotState('idle'), 2000);
+      } else {
+        setMascotState('idle');
+      }
+    } catch {
       const rec = queryMockAIRecommendation(queryStr);
       setHomeRecResult(rec);
       setIsSearchingHome(false);
-      setMascotState('excited');
-      setTimeout(() => setMascotState('idle'), 2000);
-    }, 400);
+      setMascotState('idle');
+    }
   };
 
   // ─── Article Reading Evidence Query Logic ────────────────────────
@@ -409,7 +427,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
     }));
   }, [currentArticle]);
 
-  const handleExecuteArticleQuery = (queryText: string) => {
+  const handleExecuteArticleQuery = async (queryText: string) => {
     if (!queryText.trim() || !currentArticle) return;
 
     // Immediately blur active element to collapse mobile virtual keyboard
@@ -417,16 +435,40 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
       (document.activeElement as HTMLElement)?.blur();
     }
 
+    const trimmedQuery = queryText.trim();
     setIsSearchingArticle(true);
     setMascotState('thinking');
 
-    setTimeout(() => {
-      const searchResult = searchArticleEvidence(
-        queryText,
-        currentArticle.id || currentArticle.slug
+    // Contextual dialogue history for continuous follow-ups
+    const historyPayload = articleDialogue.slice(-4).map((d) => ({
+      role: d.role,
+      content: d.content,
+    }));
+
+    try {
+      const searchResult = await queryArticleCompanionChat(
+        currentArticle.id || currentArticle.slug,
+        trimmedQuery,
+        historyPayload
       );
+
       setIsSearchingArticle(false);
       setArticleEvidenceResult(searchResult);
+
+      setArticleDialogue((prev) => [
+        ...prev,
+        {
+          id: `u-${Date.now()}`,
+          role: 'user',
+          content: trimmedQuery,
+        },
+        {
+          id: `a-${Date.now() + 1}`,
+          role: 'assistant',
+          content: searchResult.answer,
+          evidence: searchResult.evidence,
+        },
+      ]);
 
       // On mobile, collapse full overlay panel so user sees article and compact card
       if (typeof window !== 'undefined' && window.innerWidth < 640) {
@@ -439,13 +481,34 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
         onEvidenceFound(searchResult);
         setTimeout(() => setMascotState('idle'), 2500);
       } else {
+        onClearHighlight();
         setMascotState('idle');
       }
-    }, 300);
+    } catch {
+      const fallback = searchArticleEvidence(
+        trimmedQuery,
+        currentArticle.id || currentArticle.slug
+      );
+      setIsSearchingArticle(false);
+      setArticleEvidenceResult(fallback);
+      if (fallback.evidence) {
+        onEvidenceFound(fallback);
+      } else {
+        onClearHighlight();
+      }
+      setMascotState('idle');
+    }
   };
 
   const handleDismissAnswer = () => {
     setArticleEvidenceResult(null);
+    onClearHighlight();
+  };
+
+  const handleResetArticleChat = () => {
+    setArticleQuery('');
+    setArticleEvidenceResult(null);
+    setArticleDialogue([]);
     onClearHighlight();
   };
 
@@ -690,35 +753,70 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
               </div>
             ) : (
               /* ─── Panel Content: Article Evidence Q&A Mode ─────────── */
-              <div className="p-4 space-y-3 overflow-y-auto max-h-[min(500px,calc(85vh-48px))]">
-                {/* Custom Query Input */}
-                <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    handleExecuteArticleQuery(articleQuery);
-                  }}
-                  className="relative flex items-center rounded-xl border border-mirari-border bg-mirari-paper p-1 focus-within:border-mirari-ink transition"
-                >
-                  <input
-                    type="text"
-                    value={articleQuery}
-                    onChange={(e) => setArticleQuery(e.target.value)}
-                    placeholder="針對本文內容提問..."
-                    className="w-full bg-transparent px-3 py-1.5 text-xs text-mirari-ink placeholder-mirari-dim focus:outline-none font-sans"
-                  />
-                  <button
-                    type="submit"
-                    disabled={!articleQuery.trim() || isSearchingArticle}
-                    className="shrink-0 rounded-lg bg-mirari-ink px-3 py-1.5 text-xs font-medium text-white hover:bg-black transition disabled:opacity-40 font-sans"
-                  >
-                    {isSearchingArticle ? '檢索中' : '提問'}
-                  </button>
-                </form>
+              <div className="p-4 space-y-3 overflow-y-auto max-h-[min(520px,calc(85vh-48px))]">
+                {/* Multi-turn Dialogue Stream if turns exist */}
+                {articleDialogue.length > 0 && (
+                  <div className="space-y-2.5 max-h-[240px] overflow-y-auto pr-1">
+                    {articleDialogue.map((turn) => (
+                      <div
+                        key={turn.id}
+                        className={`flex flex-col ${turn.role === 'user' ? 'items-end' : 'items-start'}`}
+                      >
+                        <div
+                          className={`max-w-[90%] rounded-xl p-2.5 text-xs font-sans leading-relaxed ${
+                            turn.role === 'user'
+                              ? 'bg-mirari-ink text-white rounded-br-none'
+                              : 'bg-mirari-paper border border-mirari-line text-mirari-ink rounded-bl-none shadow-sm'
+                          }`}
+                        >
+                          {turn.role === 'assistant' && (
+                            <div className="flex items-center space-x-1.5 mb-1 text-[10px] font-semibold text-mirari-amber">
+                              <span className="w-1.5 h-1.5 rounded-full bg-mirari-amber" />
+                              <span>MIRARI 白話陪讀</span>
+                              {turn.evidence && (
+                                <span className="px-1 py-0.2 rounded bg-amber-50 text-amber-800 font-medium">
+                                  已定位原文
+                                </span>
+                              )}
+                            </div>
+                          )}
+                          <p>{turn.content}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
 
-                {/* 試試這樣問 (Dynamic Question Chips for Current Article) */}
-                {articleQuestionChips.length > 0 && (
-                  <div className="flex items-center flex-wrap gap-1.5 text-[11px] font-sans">
-                    <span className="text-mirari-dim shrink-0">提問提示：</span>
+                {/* Follow-up / Question Chips */}
+                <div className="flex items-center justify-between flex-wrap gap-1.5 text-[11px] font-sans pt-1">
+                  <div className="flex items-center flex-wrap gap-1">
+                    <span className="text-mirari-dim shrink-0 text-[10px]">
+                      {articleDialogue.length > 0 ? '追問與主題：' : '提問提示：'}
+                    </span>
+                    {articleDialogue.length > 0 && (
+                      <>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setArticleQuery('那為什麼？');
+                            handleExecuteArticleQuery('那為什麼？');
+                          }}
+                          className="rounded-full border border-mirari-amber/40 bg-amber-50/50 hover:bg-amber-100/60 px-2 py-0.5 text-amber-900 transition cursor-pointer text-[10px]"
+                        >
+                          那為什麼？
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setArticleQuery('可以再簡單一點嗎？');
+                            handleExecuteArticleQuery('可以再簡單一點嗎？');
+                          }}
+                          className="rounded-full border border-mirari-amber/40 bg-amber-50/50 hover:bg-amber-100/60 px-2 py-0.5 text-amber-900 transition cursor-pointer text-[10px]"
+                        >
+                          可以再簡單一點嗎？
+                        </button>
+                      </>
+                    )}
                     {articleQuestionChips.map((q, idx) => (
                       <button
                         key={idx}
@@ -733,11 +831,50 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
                       </button>
                     ))}
                   </div>
-                )}
+                  {articleDialogue.length > 0 && (
+                    <button
+                      type="button"
+                      onClick={handleResetArticleChat}
+                      className="text-[10px] text-mirari-muted hover:text-mirari-ink hover:underline cursor-pointer shrink-0"
+                    >
+                      重新開始
+                    </button>
+                  )}
+                </div>
 
-                {/* Plain-Language Answer Card (No raw quote duplication, no fake percentages) */}
-                {articleEvidenceResult && (
-                  <div className="pt-3 border-t border-mirari-line space-y-2 animate-fade-in">
+                {/* Custom Query Input (Always at bottom for continuous interaction) */}
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    const q = articleQuery;
+                    setArticleQuery('');
+                    handleExecuteArticleQuery(q);
+                  }}
+                  className="relative flex items-center rounded-xl border border-mirari-border bg-mirari-paper p-1 focus-within:border-mirari-ink transition"
+                >
+                  <input
+                    type="text"
+                    value={articleQuery}
+                    onChange={(e) => setArticleQuery(e.target.value)}
+                    placeholder={
+                      articleDialogue.length > 0
+                        ? '輸入追問或新疑問...'
+                        : '針對本文內容自由提問...'
+                    }
+                    className="w-full bg-transparent px-3 py-1.5 text-xs text-mirari-ink placeholder-mirari-dim focus:outline-none font-sans"
+                  />
+                  <button
+                    type="submit"
+                    disabled={!articleQuery.trim() || isSearchingArticle}
+                    className="shrink-0 rounded-lg bg-mirari-ink px-3 py-1.5 text-xs font-medium text-white hover:bg-black transition disabled:opacity-40 font-sans"
+                  >
+                    {isSearchingArticle ? '思考中' : '發送'}
+                  </button>
+                </form>
+
+                {/* Fallback Display if single result without dialogue turn */}
+                {articleDialogue.length === 0 && articleEvidenceResult && (
+                  <div className="pt-2 border-t border-mirari-line space-y-2 animate-fade-in">
                     <div className="flex items-center justify-between text-xs font-sans text-mirari-amber font-semibold">
                       <div className="flex items-center space-x-1.5">
                         <span className="w-2 h-2 rounded-full bg-mirari-amber animate-pulse" />
@@ -824,6 +961,25 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
                   {isMobileExpandedAnswer ? '▲ 收合簡短模式' : '▼ 展開完整解釋'}
                 </button>
               )}
+            </div>
+
+            {/* Mobile Quick Follow-up Row */}
+            <div className="flex items-center space-x-1.5 pt-1.5 border-t border-mirari-line/60 overflow-x-auto text-[11px] font-sans">
+              <span className="text-[10px] text-mirari-dim shrink-0">追問：</span>
+              <button
+                type="button"
+                onClick={() => handleExecuteArticleQuery('那為什麼？')}
+                className="rounded-full border border-mirari-amber/40 bg-amber-50 px-2 py-0.5 text-[10px] text-amber-900 font-sans cursor-pointer hover:bg-amber-100 shrink-0"
+              >
+                那為什麼？
+              </button>
+              <button
+                type="button"
+                onClick={() => handleExecuteArticleQuery('可以再簡單一點嗎？')}
+                className="rounded-full border border-mirari-amber/40 bg-amber-50 px-2 py-0.5 text-[10px] text-amber-900 font-sans cursor-pointer hover:bg-amber-100 shrink-0"
+              >
+                再簡單一點
+              </button>
             </div>
           </div>
         </div>

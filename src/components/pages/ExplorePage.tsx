@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ARTICLES } from '../../data/articles';
 import { TOPICS, getTopicArticleCount } from '../../data/topics';
-import { queryDataDrivenRecommendation } from '../../services/unifiedSearchService';
+import { queryDataDrivenRecommendation, queryAISearch } from '../../services/unifiedSearchService';
 import type { Article, AIRecommendation } from '../../types';
 import { useSEO } from '../seo/useSEO';
 
@@ -46,8 +46,8 @@ export const ExplorePage: React.FC = () => {
     return TOPICS.find((t) => t.id === selectedTopicId) || null;
   }, [selectedTopicId]);
 
-  // Execute search
-  const handleExecuteSearch = (searchQuery: string) => {
+  // Execute search (Phase 4 AI RAG Search with server-side Gate)
+  const handleExecuteSearch = async (searchQuery: string) => {
     const trimmed = searchQuery.trim();
     if (!trimmed) {
       setActiveSearchResult(null);
@@ -55,9 +55,14 @@ export const ExplorePage: React.FC = () => {
     }
     setIsSearching(true);
     setQuery(trimmed);
-    const result = queryDataDrivenRecommendation(trimmed);
-    setActiveSearchResult(result);
-    setIsSearching(false);
+    try {
+      const result = await queryAISearch(trimmed);
+      setActiveSearchResult(result);
+    } catch {
+      setActiveSearchResult(queryDataDrivenRecommendation(trimmed));
+    } finally {
+      setIsSearching(false);
+    }
   };
 
   const getArticleTopicNames = (article: Article) => {

@@ -188,3 +188,40 @@ export function queryDataDrivenRecommendation(query: string): AIRecommendation {
     matchLevel,
   };
 }
+
+/**
+ * Phase 4: 全站 AI 科學搜尋 (Server-side RAG + 相關性硬性閘門)
+ * 呼叫 /api/search 端點，支援自然語言提問、相關性嚴格驗證與免費 LLM 推薦導讀。
+ * 當網路中斷或服務端異常時，自動安全降級至本機確定性檢索。
+ */
+export async function queryAISearch(query: string): Promise<AIRecommendation> {
+  const trimmed = query.trim();
+  if (!trimmed) {
+    return queryDataDrivenRecommendation(query);
+  }
+
+  try {
+    const res = await fetch('/api/search', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query: trimmed }),
+    });
+
+    if (!res.ok) {
+      console.warn(`[Search Service] /api/search 回應非 200 (${res.status})，降級至本機檢索`);
+      return queryDataDrivenRecommendation(trimmed);
+    }
+
+    const data = await res.json();
+    return {
+      query: data.query || trimmed,
+      curatorReply: data.curatorReply,
+      recommendedArticles: data.recommendedArticles || [],
+      suggestedTags: data.suggestedTags || [],
+      matchLevel: data.matchLevel || 'none',
+    };
+  } catch (err) {
+    console.warn('[Search Service] /api/search 網路異常，啟動安全降級:', err);
+    return queryDataDrivenRecommendation(trimmed);
+  }
+}

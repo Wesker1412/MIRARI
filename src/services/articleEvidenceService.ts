@@ -176,3 +176,64 @@ export function searchArticleEvidence(
     matchedKnowledgePoint: bestKP,
   };
 }
+
+export interface CompanionChatHistory {
+  role: 'user' | 'assistant';
+  content: string;
+}
+
+/**
+ * Phase 5 隨文陪讀：呼叫 /api/article-chat 服務端 RAG
+ * 支援單篇文章自由問答、連續追問與指涉還原、原文定位與嚴格相關性閘門。
+ * 網路異常時自動降級至本機確定性知識點檢索。
+ */
+export async function queryArticleCompanionChat(
+  articleIdOrSlug: string,
+  query: string,
+  history: CompanionChatHistory[] = []
+): Promise<EvidenceSearchResult> {
+  const trimmed = query.trim();
+  if (!trimmed) {
+    return {
+      query,
+      answer: '請輸入你想向 MIRARI 詢問的科學問題。',
+      confidence: 0,
+      evidence: null,
+      matchedKnowledgePoint: null,
+    };
+  }
+
+  // 嘗試解析標準 articleId
+  const config = getArticleKnowledgeConfig(articleIdOrSlug);
+  const targetArticleId = config ? config.articleId : articleIdOrSlug;
+
+  try {
+    const res = await fetch('/api/article-chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        articleId: targetArticleId,
+        query: trimmed,
+        history,
+      }),
+    });
+
+    if (!res.ok) {
+      console.warn(`[Article Chat Service] /api/article-chat 回應異常 (${res.status})，降級至本機知識庫`);
+      return searchArticleEvidence(trimmed, articleIdOrSlug);
+    }
+
+    const data = await res.json();
+    return {
+      query: data.query || trimmed,
+      answer: data.answer,
+      confidence: data.confidence ?? (data.gated ? 0 : 1.0),
+      evidence: data.evidence || null,
+      matchedKnowledgePoint:
+        config?.knowledgePoints.find((kp) => kp.id === data.matchedKnowledgePointId) || null,
+    };
+  } catch (err) {
+    console.warn('[Article Chat Service] /api/article-chat 網路錯誤，啟動安全降級:', err);
+    return searchArticleEvidence(trimmed, articleIdOrSlug);
+  }
+}

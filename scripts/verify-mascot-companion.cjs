@@ -100,7 +100,10 @@ async function runVerification() {
     await page.waitForTimeout(800);
 
     const fallbackText = await page.locator('#mirari-floating-panel').textContent();
-    if (!fallbackText.includes('暫無法為這個問題提供可靠且具原文依據的解釋')) {
+    if (
+      !fallbackText.includes('MIRARI 目前尚未收錄足以回答這個問題的科學內容') &&
+      !fallbackText.includes('暫無法為這個問題提供可靠且具原文依據的解釋')
+    ) {
       throw new Error('無依據問題未顯示標準誠實告知訊息，可能存在假回答拼湊');
     }
     console.log('✓ 無可靠依據問題正確顯示誠實告知，未拼湊假回答');
