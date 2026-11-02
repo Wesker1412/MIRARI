@@ -3,6 +3,7 @@ import type { Article, ArticleDocument } from '../../types';
 import { TOPICS } from '../../data/topics';
 import { ArticleRenderer } from './ArticleRenderer';
 import { useSEO } from '../seo/useSEO';
+import { SITE_CONFIG } from '../../config/site';
 
 interface ArticleViewProps {
   article: Article;
@@ -26,7 +27,7 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
     canonicalUrl:
       typeof window !== 'undefined'
         ? `${window.location.origin}/articles/${article.slug}`
-        : `https://mirari.science/articles/${article.slug}`,
+        : `${SITE_CONFIG.canonicalOrigin}/articles/${article.slug}`,
     ogType: 'article',
     publishedTime: article.publishedDate,
   });

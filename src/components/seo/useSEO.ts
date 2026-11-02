@@ -55,7 +55,10 @@ export function useSEO(meta?: SEOMetadata) {
 
     // 4. Canonical URL
     const canonical =
-      meta?.canonicalUrl || (typeof window !== 'undefined' ? window.location.href : 'https://mirari.science/');
+      meta?.canonicalUrl ||
+      (typeof window !== 'undefined'
+        ? window.location.href
+        : `${SITE_CONFIG.canonicalOrigin}/`);
     updateLinkTag('canonical', canonical);
 
     // 5. Open Graph

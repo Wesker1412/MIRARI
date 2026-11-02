@@ -7,7 +7,7 @@ export const SITE_CONFIG = {
   tagline: '探索科學的互動數位雜誌',
   description:
     'MIRARI 是一本探索科學前沿的互動數位雜誌，結合可驗證原文證據與可操作的動態模擬實驗。',
-  canonicalOrigin: 'https://mirari.science',
+  canonicalOrigin: 'https://mirari-henna.vercel.app',
   locale: 'zh-Hant',
 
   // ─── 搜尋引擎索引全站控制開關 ────────────────────────────────────
@@ -19,7 +19,7 @@ export const SITE_CONFIG = {
   autonomousEditorial: {
     cronExpression: '0 1 * * *', // 每日 UTC 01:00 (台灣時間 09:00)
     targetArticlesPerRun: 3,
-    primaryModel: 'Pro Reasoning Model',
+    primaryModel: 'gemini-2.5-pro',
     timezone: 'Asia/Taipei (UTC+8)',
   },
 };

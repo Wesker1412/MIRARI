@@ -6,7 +6,8 @@
  * 2. 產出純靜態 HTML（含獨立 title、meta description、canonical link、OG 標籤與結構化正文）。
  * 3. 搜尋引擎爬蟲、社群分享機器人或未啟用 JS 的客戶端可直接擷取完整文章正文與學術資訊。
  * 4. 具備 JavaScript 的客戶端載入後，React 19 與 Three.js 全站吉祥物無縫掛載接管。
- * 5. 未發布文章自動生成籌備中保護頁，杜絕正文洩漏。
+ * 5. 全站 robots noindex 狀態集中自 src/config/site.ts 讀取，直接注入所有靜態預渲染檔案，而非僅依賴 client-side JS。
+ * 6. Canonical Origin 集中配置，徹底消除硬編碼過期網址。
  */
 
 import fs from 'node:fs';
@@ -20,6 +21,7 @@ const ROOT_DIR = path.join(__dirname, '..');
 const DIST_DIR = path.join(ROOT_DIR, 'dist');
 const MANIFEST_PATH = path.join(ROOT_DIR, 'src', 'data', 'generated', 'articles-manifest.json');
 const INDEX_HTML_PATH = path.join(DIST_DIR, 'index.html');
+const SITE_CONFIG_PATH = path.join(ROOT_DIR, 'src', 'config', 'site.ts');
 
 function escapeHtml(str) {
   if (!str) return '';
@@ -37,6 +39,25 @@ function ensureDir(dirPath) {
   }
 }
 
+function loadSiteConfig() {
+  let canonicalOrigin = 'https://mirari-henna.vercel.app';
+  let preventIndexing = true;
+
+  if (fs.existsSync(SITE_CONFIG_PATH)) {
+    const siteTs = fs.readFileSync(SITE_CONFIG_PATH, 'utf8');
+    const originMatch = siteTs.match(/canonicalOrigin:\s*['"]([^'"]+)['"]/);
+    if (originMatch) {
+      canonicalOrigin = originMatch[1].replace(/\/+$/, '');
+    }
+    const indexingMatch = siteTs.match(/preventIndexing:\s*(true|false)/);
+    if (indexingMatch) {
+      preventIndexing = indexingMatch[1] === 'true';
+    }
+  }
+
+  return { canonicalOrigin, preventIndexing };
+}
+
 function generatePrerenderedHTML() {
   console.log('================================================================');
   console.log('📰 MIRARI 靜態文章預渲染與 SEO 建置管線');
@@ -47,7 +68,26 @@ function generatePrerenderedHTML() {
     process.exit(1);
   }
 
-  const baseHtml = fs.readFileSync(INDEX_HTML_PATH, 'utf8');
+  const { canonicalOrigin, preventIndexing } = loadSiteConfig();
+  console.log(`🌐 網站來源 Canonical Origin: ${canonicalOrigin}`);
+  console.log(`🤖 搜尋引擎收錄防護 Prevent Indexing: ${preventIndexing ? 'true (noindex, nofollow)' : 'false (index, follow)'}`);
+
+  const robotsMetaTag = preventIndexing
+    ? '<meta name="robots" content="noindex, nofollow" />'
+    : '<meta name="robots" content="index, follow" />';
+
+  let baseHtml = fs.readFileSync(INDEX_HTML_PATH, 'utf8');
+
+  // 確保 dist/index.html 本體具備正確的 robots meta 與 canonical
+  let rootIndexHtml = baseHtml;
+  if (rootIndexHtml.includes('<meta name="robots"')) {
+    rootIndexHtml = rootIndexHtml.replace(/<meta\s+name="robots"[^>]*>/i, robotsMetaTag);
+  } else {
+    rootIndexHtml = rootIndexHtml.replace('</head>', `    ${robotsMetaTag}\n  </head>`);
+  }
+  fs.writeFileSync(INDEX_HTML_PATH, rootIndexHtml, 'utf8');
+  baseHtml = rootIndexHtml;
+
   const articles = JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf8'));
 
   let publishedPrerenderCount = 0;
@@ -61,7 +101,7 @@ function generatePrerenderedHTML() {
     let pageTitle = '';
     let pageDesc = '';
     let ogType = 'website';
-    let canonicalUrl = `https://mirari.science/articles/${article.slug}`;
+    let canonicalUrl = `${canonicalOrigin}/articles/${article.slug}`;
     let preRenderedBody = '';
 
     if (isPublished) {
@@ -178,11 +218,11 @@ function generatePrerenderedHTML() {
       headline: article.title,
       description: pageDesc,
       url: canonicalUrl,
-      datePublished: article.publishedDate || '2026-11-01',
+      datePublished: article.publishedDate || '2026-11-02',
       publisher: {
         '@type': 'Organization',
         name: 'MIRARI',
-        url: 'https://mirari.science',
+        url: canonicalOrigin,
       },
       ...(isPublished && article.authors
         ? {
@@ -198,15 +238,17 @@ function generatePrerenderedHTML() {
     // 替換與注入 Head Meta
     let articleHtml = baseHtml;
 
-    // 1. Title & Description Clean
+    // 清除既有 meta
     articleHtml = articleHtml.replace(
       /<title>.*?<\/title>/i,
       `<title>${escapeHtml(pageTitle)}</title>`
     );
     articleHtml = articleHtml.replace(/<meta\s+name="description"[^>]*>/i, '');
+    articleHtml = articleHtml.replace(/<meta\s+name="robots"[^>]*>/i, '');
 
-    // 2. Meta Tags (Canonical, Description, Open Graph, Twitter, JSON-LD)
+    // 注入完整 Meta Tags (Robots, Canonical, Description, Open Graph, Twitter, JSON-LD)
     const metaTags = `
+    ${robotsMetaTag}
     <meta name="description" content="${escapeHtml(pageDesc)}" />
     <link rel="canonical" href="${escapeHtml(canonicalUrl)}" />
     <meta property="og:site_name" content="MIRARI" />
@@ -224,7 +266,7 @@ ${JSON.stringify(jsonLd, null, 2)}
 
     articleHtml = articleHtml.replace('</head>', `${metaTags}`);
 
-    // 3. Inject Pre-rendered Body into #root
+    // 注入預渲染 Body 至 #root
     articleHtml = articleHtml.replace(
       '<div id="root"></div>',
       `<div id="root">${preRenderedBody}</div>`
@@ -235,7 +277,7 @@ ${JSON.stringify(jsonLd, null, 2)}
     fs.writeFileSync(path.join(DIST_DIR, 'articles', `${article.slug}.html`), articleHtml, 'utf8');
   }
 
-  // 4. 生成系列專題靜態預渲染頁面
+  // 生成系列專題靜態預渲染頁面
   const seriesList = [
     {
       id: 'series-habitable-worlds',
@@ -254,18 +296,21 @@ ${JSON.stringify(jsonLd, null, 2)}
 
     const seriesTitle = `《${series.title}》系列專題 | MIRARI 數位科學雜誌`;
     const seriesDesc = series.description;
-    let seriesHtml = baseHtml;
+    const seriesCanonical = `${canonicalOrigin}/series/${escapeHtml(series.slug)}`;
 
+    let seriesHtml = baseHtml;
     seriesHtml = seriesHtml.replace(/<title>.*?<\/title>/i, `<title>${escapeHtml(seriesTitle)}</title>`);
     seriesHtml = seriesHtml.replace(/<meta\s+name="description"[^>]*>/i, '');
+    seriesHtml = seriesHtml.replace(/<meta\s+name="robots"[^>]*>/i, '');
 
     const seriesMeta = `
+    ${robotsMetaTag}
     <meta name="description" content="${escapeHtml(seriesDesc)}" />
-    <link rel="canonical" href="https://mirari.science/series/${escapeHtml(series.slug)}" />
+    <link rel="canonical" href="${seriesCanonical}" />
     <meta property="og:site_name" content="MIRARI" />
     <meta property="og:title" content="${escapeHtml(seriesTitle)}" />
     <meta property="og:description" content="${escapeHtml(seriesDesc)}" />
-    <meta property="og:url" content="https://mirari.science/series/${escapeHtml(series.slug)}" />
+    <meta property="og:url" content="${seriesCanonical}" />
   </head>`;
     seriesHtml = seriesHtml.replace('</head>', `${seriesMeta}`);
 
@@ -289,26 +334,32 @@ ${JSON.stringify(jsonLd, null, 2)}
     fs.writeFileSync(path.join(seriesDir, 'index.html'), seriesHtml, 'utf8');
   }
 
-  // 5. 生成 404.html (適用於 Vercel / GitHub Pages / 靜態伺服器)
-  const notFoundHtml = baseHtml
-    .replace(/<title>.*?<\/title>/i, '<title>404 · 篇章坐標未找到 | MIRARI</title>')
-    .replace(
-      '<div id="root"></div>',
-      `<div id="root">
-        <div class="min-h-screen bg-[#fcfbf9] text-[#1a1917] flex flex-col justify-between">
-          <header class="border-b border-[#e5e0d8] px-8 py-3.5"><a href="/" class="text-xs px-3 py-1.5 border border-[#e5e0d8] rounded">返回首頁</a></header>
-          <main class="max-w-xl mx-auto py-20 text-center space-y-4">
-            <h1 class="font-serif text-3xl font-bold">404 · 篇章坐標未找到</h1>
-            <p class="text-sm text-[#706c64]">您所探尋的科學篇章坐標不存在或已重新編目。</p>
-            <a href="/" class="inline-block px-5 py-2.5 bg-[#1a1917] text-white text-xs rounded-xl">返回首頁</a>
-          </main>
-          <footer class="py-6 text-center text-xs text-[#a09c94]">© 2026 MIRARI</footer>
-        </div>
-      </div>`
-    );
+  // 生成 404.html (適用於 Vercel / 靜態伺服器)
+  let notFoundHtml = baseHtml
+    .replace(/<title>.*?<\/title>/i, '<title>404 · 篇章坐標未找到 | MIRARI</title>');
+
+  notFoundHtml = notFoundHtml.replace(/<meta\s+name="robots"[^>]*>/i, '');
+  notFoundHtml = notFoundHtml.replace(
+    '</head>',
+    `    ${robotsMetaTag}\n  </head>`
+  );
+  notFoundHtml = notFoundHtml.replace(
+    '<div id="root"></div>',
+    `<div id="root">
+      <div class="min-h-screen bg-[#fcfbf9] text-[#1a1917] flex flex-col justify-between">
+        <header class="border-b border-[#e5e0d8] px-8 py-3.5"><a href="/" class="text-xs px-3 py-1.5 border border-[#e5e0d8] rounded">返回首頁</a></header>
+        <main class="max-w-xl mx-auto py-20 text-center space-y-4">
+          <h1 class="font-serif text-3xl font-bold">404 · 篇章坐標未找到</h1>
+          <p class="text-sm text-[#706c64]">您所探尋的科學篇章坐標不存在或已重新編目。</p>
+          <a href="/" class="inline-block px-5 py-2.5 bg-[#1a1917] text-white text-xs rounded-xl">返回首頁</a>
+        </main>
+        <footer class="py-6 text-center text-xs text-[#a09c94]">© 2026 MIRARI</footer>
+      </div>
+    </div>`
+  );
   fs.writeFileSync(path.join(DIST_DIR, '404.html'), notFoundHtml, 'utf8');
 
-  console.log(`✓ 已生成 ${publishedPrerenderCount} 篇正式發布文章之靜態 SEO 預渲染 HTML`);
+  console.log(`✓ 已生成 ${publishedPrerenderCount} 篇正式發布文章之靜態 SEO 預渲染 HTML (含 robots noindex 與集中 Canonical)`);
   console.log(`✓ 已生成 ${unpublishedNoticeCount} 篇未發布文章之安全審訂保護頁面`);
   console.log(`✓ 已生成 dist/404.html 標準錯誤頁`);
   console.log('================================================================');

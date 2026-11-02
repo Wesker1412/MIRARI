@@ -241,18 +241,20 @@ async function testRoutingArchitecture() {
     const staticHtml = fs.readFileSync(staticHtmlPath, 'utf8');
 
     const hasStaticTitle = staticHtml.includes('<title>當星光暗了一點 | MIRARI 數位科學雜誌</title>');
-    const hasCanonical = staticHtml.includes('https://mirari.science/articles/when-starlight-dims');
+    const hasCanonical = staticHtml.includes('https://mirari-henna.vercel.app/articles/when-starlight-dims');
+    const hasNoIndex = staticHtml.includes('name="robots" content="noindex, nofollow"');
     const hasOgArticle = staticHtml.includes('content="article"');
     const hasJsonLd = staticHtml.includes('"@type": "ScholarlyArticle"');
     const hasBodyParagraph = staticHtml.includes('在太陽系之外，尋找系外行星（Exoplanet）最直觀的困難在於');
 
     console.log(`✓ 靜態 HTML 包含專屬 Title: ${hasStaticTitle}`);
     console.log(`✓ 靜態 HTML 包含 Canonical Link: ${hasCanonical}`);
+    console.log(`✓ 靜態 HTML 包含 Robots Noindex: ${hasNoIndex}`);
     console.log(`✓ 靜態 HTML 包含 Open Graph Article 屬性: ${hasOgArticle}`);
     console.log(`✓ 靜態 HTML 包含 ScholarlyArticle 結構化 JSON-LD: ${hasJsonLd}`);
     console.log(`✓ 靜態 HTML 在 #root 內預渲染文章正文段落 (無 JS 可讀): ${hasBodyParagraph}`);
 
-    if (!hasStaticTitle || !hasCanonical || !hasOgArticle || !hasJsonLd || !hasBodyParagraph) {
+    if (!hasStaticTitle || !hasCanonical || !hasNoIndex || !hasOgArticle || !hasJsonLd || !hasBodyParagraph) {
       throw new Error('靜態預渲染 HTML 缺少必要 SEO 或正文資訊！');
     }
 
