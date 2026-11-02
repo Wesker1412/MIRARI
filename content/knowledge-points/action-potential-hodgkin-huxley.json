@@ -1,0 +1,58 @@
+{
+  "articleId": "art-neuron-action-potential",
+  "slug": "action-potential-hodgkin-huxley",
+  "title": "神經元的數位之火：動作電位的全或無定律與離子閘門",
+  "knowledgePoints": [
+    {
+      "id": "kp-neuron-all-or-none",
+      "label": "全或無定律",
+      "suggestedQuestion": "為什麼動作電位要麼完全爆發、要麼完全不產生？",
+      "keywords": [
+        "全或無",
+        "臨界閾值",
+        "閾值",
+        "數位",
+        "爆發",
+        "全有全無",
+        "觸發",
+        "定律",
+        "55"
+      ],
+      "plainExplanation": "就像按下按鈕觸發打火機：神經元細胞膜只要受到足夠刺激、膜電位跨過約 -55 mV 的臨界門檻，電壓閘控鈉通道就會全面雪崩式開啟，激發固定振幅的完整電位脈衝；若刺激未達門檻，電位擾動便會迅速平息消散。這確保了神經信號即使傳導數公尺也不會隨距離減弱衰減。",
+      "anchorSentenceId": "sent-face8a34"
+    },
+    {
+      "id": "kp-neuron-ion-cascade",
+      "label": "鈉鉀通道交響",
+      "suggestedQuestion": "鈉離子與鉀離子通道如何毫秒級協同運作？",
+      "keywords": [
+        "鈉離子",
+        "鉀離子",
+        "通道",
+        "閘門",
+        "去極化",
+        "復極化",
+        "交響",
+        "毫秒"
+      ],
+      "plainExplanation": "這是一場千分之一秒內的緊密接力：首先電壓閘控鈉通道高速開啟，胞外高濃度的鈉離子瞬間湧入細胞，使膜電位猛烈翻正（去極化）；緊接著鈉通道迅速自動失活關閉，同時鉀通道開啟，鉀離子奔向胞外將膜電位強行拉回負值（復極化）。兩者精準協同，完成了神經衝動的起伏。",
+      "anchorSentenceId": "sent-ce8be08f"
+    },
+    {
+      "id": "kp-neuron-refractory",
+      "label": "絕對不反應期",
+      "suggestedQuestion": "神經脈衝為什麼不會倒流逆向傳播？",
+      "keywords": [
+        "不反應期",
+        "絕對不反應期",
+        "倒流",
+        "逆向",
+        "單向",
+        "失活",
+        "傳導"
+      ],
+      "plainExplanation": "就像相機閃光燈發報後需要短暫回電冷卻：在電位脈衝剛通過後的數毫秒內，鈉通道的失活閘門會處於深度的失活狀態，形成「絕對不反應期」。此時無論給予多麼強烈的刺激，通道都無法再次開啟，這強制鎖定了神經衝動只能沿著軸突單向往前飛馳，絕不倒流。",
+      "anchorSentenceId": "sent-7dffbfb0"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "articleId": "art-brownian-ratchet-motors",
+  "slug": "brownian-ratchet-molecular-motors",
+  "title": "穿透熱混沌的微觀足跡：布朗棘輪與分子馬達如何逆流而行？",
+  "knowledgePoints": [
+    {
+      "id": "kp-ratchet-detailed-balance",
+      "label": "費曼布朗棘輪",
+      "suggestedQuestion": "費曼布朗棘輪為什麼無法在單一溫度下憑空發電？",
+      "keywords": [
+        "費曼",
+        "布朗棘輪",
+        "第二定律",
+        "細緻平衡",
+        "棘爪",
+        "永動機",
+        "單一溫度"
+      ],
+      "plainExplanation": "想像一個只能單向旋轉的齒輪，但卡榫本身也只有分子大小。在單一溫度下，卡榫自己也在遭受劇烈熱碰撞而不斷跳動，正轉與反轉滑脫的機率嚴格相等（細緻平衡），整體平均位移為零。如果它能在等溫環境下自動發電做功，就會違背熱力學第二定律而成為第二類永動機。",
+      "anchorSentenceId": "sent-e81e7405"
+    },
+    {
+      "id": "kp-ratchet-flashing-potential",
+      "label": "ATP 閃爍勢阱",
+      "suggestedQuestion": "分子馬達如何利用 ATP 水解將無序熱噪聲轉化為前進做功？",
+      "keywords": [
+        "ATP",
+        "閃爍勢阱",
+        "水解",
+        "非平衡",
+        "整流",
+        "驅動蛋白",
+        "定向行走"
+      ],
+      "plainExplanation": "分子馬達並非靠宏觀引擎那樣的機械推力，而是靠消耗 ATP 化學能週期性開關微管上的鋸齒勢阱。在平坦鬆弛期，馬達向四周隨機晃動擴散；在勢阱重新開啟時，由於齒形前緩後陡，粒子有超過 70% 的幾率被前方下一個凹坑捕獲，巧妙將無序熱晃動整流為定向行走。",
+      "anchorSentenceId": "sent-b8c2e7c3"
+    },
+    {
+      "id": "kp-ratchet-stall-force",
+      "label": "馬達失速極限",
+      "suggestedQuestion": "單個分子馬達的最大負載力極限是多少？",
+      "keywords": [
+        "失速力",
+        "負載",
+        "pN",
+        "力學極限",
+        "阻力",
+        "拖拽"
+      ],
+      "plainExplanation": "單個驅動蛋白馬達的失速阻力極限約為 6.5 皮牛頓（pN）。在失速力以內，馬達能穩定輸出奈米級機械功；一旦外界逆向拖拽力超越此極限，馬達前進便會停滯，若外力繼續加大甚至會被強行拖向反方向逆行。",
+      "anchorSentenceId": "sent-7cedeccb"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "articleId": "art-chaos-double-pendulum",
+  "slug": "chaos-double-pendulum-lyapunov",
+  "title": "渾沌的邊界：雙擺與確定性系統的不可預測性",
+  "knowledgePoints": [
+    {
+      "id": "kp-chaos-divergence",
+      "label": "初值敏感性",
+      "suggestedQuestion": "為什麼雙擺在初始角度只有微小差異時會迅速分道揚鑣？",
+      "keywords": [
+        "初值敏感",
+        "蝴蝶效應",
+        "不可預測",
+        "雙擺",
+        "分道揚鑣",
+        "軌跡",
+        "擾動"
+      ],
+      "plainExplanation": "雙擺由兩個擺臂串聯而成，是非線性動力學的極致代表。即使起始擺角只差百萬分之一度，這個微不足道的擾動也會以指數級速度成倍放大。短短數秒之內，兩隻原本幾乎重合的雙擺就會走向完全不同的翻滾姿態，這就是蝴蝶效應的物理本質。",
+      "anchorSentenceId": "sent-5e27fc1a"
+    },
+    {
+      "id": "kp-chaos-lyapunov-time",
+      "label": "李雅普諾夫時間",
+      "suggestedQuestion": "什麼是李雅普諾夫時間？它如何定義預測極限？",
+      "keywords": [
+        "李雅普諾夫",
+        "李雅普諾夫時間",
+        "指數",
+        "預測極限",
+        "時間尺度",
+        "發散"
+      ],
+      "plainExplanation": "李雅普諾夫時間好比混沌系統的「預測保鮮期」。在該時間之內，系統軌跡還能大致跟隨數學模型；但一旦跨過這個時間尺度，指數級的誤差放大就會徹底摧毀任何確定性預報，即便使用最強大的超級電腦，也無法準確預言幾秒後的具體擺動位置。",
+      "anchorSentenceId": "sent-84f1a171"
+    },
+    {
+      "id": "kp-chaos-deterministic",
+      "label": "確定性與混沌",
+      "suggestedQuestion": "雙擺看似混亂的擺動是一種隨機雜訊嗎？",
+      "keywords": [
+        "確定性",
+        "隨機",
+        "牛頓方程",
+        "哈密頓",
+        "保守系統",
+        "雜訊",
+        "守恆"
+      ],
+      "plainExplanation": "雙擺的翻滾不是外來噪聲，它的每一幀運動都嚴格服從完全確定的牛頓力學方程，總機械能分毫不差地守恆。由完全精確、沒有任何隨機項的物理定律，自發誕生出無法長久預測的混沌行為，這正是經典物理學最迷人的哲學意涵。",
+      "anchorSentenceId": "sent-df6a59db"
+    }
+  ]
+}

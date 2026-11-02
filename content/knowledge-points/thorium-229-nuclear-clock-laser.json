@@ -1,0 +1,53 @@
+{
+  "articleId": "art-thorium-nuclear-clock",
+  "slug": "thorium-229-nuclear-clock-laser",
+  "title": "原子核內的宇宙脈搏：釷-229 光學核時鐘如何運作？",
+  "knowledgePoints": [
+    {
+      "id": "kp-thorium-nuclear-shielding",
+      "label": "原子核天然屏蔽",
+      "suggestedQuestion": "光學核時鐘為什麼比傳統鍶光晶格原子鐘更穩定？",
+      "keywords": [
+        "核時鐘",
+        "原子鐘",
+        "原子核",
+        "電子雲",
+        "電磁場",
+        "屏蔽",
+        "抗干擾"
+      ],
+      "plainExplanation": "現有原子鐘依賴外層電子雲的躍遷，而電子雲體積龐大，很容易受到外界雜散電磁場或黑體輻射的擾動；核時鐘則直接以原子核內部的質子躍遷為鐘擺。原子核尺寸比電子雲小了十萬倍，周圍的電磁噪聲被核外電子天然屏蔽，因此具有無與倫比的極致穩定性。",
+      "anchorSentenceId": "sent-0ad0dc15"
+    },
+    {
+      "id": "kp-thorium-laser-key",
+      "label": "釷-229 紫外鑰匙",
+      "suggestedQuestion": "為什麼全宇宙只有釷-229 能用紫外雷射激發？",
+      "keywords": [
+        "釷-229",
+        "釷",
+        "紫外雷射",
+        "電子伏特",
+        "8.3",
+        "同核異構態"
+      ],
+      "plainExplanation": "全宇宙幾乎所有原子核躍遷都需要幾十萬甚至幾百萬電子伏特的硬伽馬射線，人類現有光學雷射根本無能為力。唯獨釷-229 擁有全宇宙絕無僅有的低能同核異構態，躍遷能量僅約 8.35 電子伏特，剛好落在人類現有真空紫外雷射能精準相干激發的光學範圍內。",
+      "anchorSentenceId": "sent-dd53be1e"
+    },
+    {
+      "id": "kp-thorium-solid-crystal",
+      "label": "固態晶體核時鐘",
+      "suggestedQuestion": "固態晶體核時鐘比氣態原子鐘有何巨大優勢？",
+      "keywords": [
+        "固態晶體",
+        "氟化鈣",
+        "氣態原子",
+        "抗振",
+        "便攜",
+        "真空腔"
+      ],
+      "plainExplanation": "傳統光晶格時鐘需要龐大繁複的真空腔體與超低溫雷射冷卻設備來束縛氣體原子；而釷-229 能直接摻雜在微小的氟化鈣透明晶體中，指甲蓋大小的晶片就容納了數千億個核鐘參考源，體積大幅縮小且具備超強抗震能力，極具深空導航與可攜式精密計時潛力。",
+      "anchorSentenceId": "sent-52c5aa96"
+    }
+  ]
+}

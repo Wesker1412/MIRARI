@@ -1,0 +1,52 @@
+{
+  "articleId": "art-turbulence-kolmogorov-cascade",
+  "slug": "turbulence-kolmogorov-cascade",
+  "title": "暴風中的分形旋渦：柯爾莫哥洛夫能譜與湍流的能量串級",
+  "knowledgePoints": [
+    {
+      "id": "kp-turbulence-kolmogorov-law",
+      "label": "-5/3 能譜冪律",
+      "suggestedQuestion": "為什麼湍流能譜在慣性區會嚴格遵從 -5/3 冪律？",
+      "keywords": [
+        "-5/3",
+        "冪律",
+        "柯爾莫哥洛夫",
+        "能譜",
+        "慣性區",
+        "因次分析"
+      ],
+      "plainExplanation": "在狂暴的湍流中，大旋渦破碎成小旋渦時，早已忘記當初是撞到山峰還是機翼，展現出高度的統計對稱性。柯爾莫哥洛夫證明，在黏性力尚未起作用的慣性區內，能量既不產生也不耗散，僅由能量傳遞率與波數支配，純因次分析推導出的唯一自洽形式必然是嚴格的 -5/3 冪律。",
+      "anchorSentenceId": "sent-2e2d731b"
+    },
+    {
+      "id": "kp-turbulence-richardson-cascade",
+      "label": "理查森能量串級",
+      "suggestedQuestion": "能量在湍流中是如何像瀑布般自上而下傳遞的？",
+      "keywords": [
+        "理查森",
+        "能量串級",
+        "旋渦",
+        "大渦旋",
+        "小旋渦",
+        "瀑布"
+      ],
+      "plainExplanation": "理查森用詩句描繪了能量串級：大尺度注入能量形成大渦旋；大渦旋因慣性不穩定碎裂為中旋渦，中旋渦再碎裂為小旋渦。能量在各尺度旋渦之間無黏性耗散地逐級向下奔騰，就像一道巨大的階梯瀑布，直至進入微觀耗散尺度。",
+      "anchorSentenceId": "sent-6b254506"
+    },
+    {
+      "id": "kp-turbulence-dissipation-microscale",
+      "label": "柯爾莫哥洛夫微尺度",
+      "suggestedQuestion": "湍流的旋渦為什麼不會無限變小？",
+      "keywords": [
+        "微尺度",
+        "耗散尺度",
+        "黏性力",
+        "終點",
+        "摩擦",
+        "熱運動"
+      ],
+      "plainExplanation": "旋渦不可能無限碎裂下去。當尺度縮小到柯爾莫哥洛夫微尺度時，流體的黏滯摩擦力重新佔據主導，微小旋渦的動能在此尺度被分子黏滯摩擦直接轉化為水或空氣分子的熱運動，這就是湍流能量瀑布的最終終點。",
+      "anchorSentenceId": "sent-c76d063b"
+    }
+  ]
+}

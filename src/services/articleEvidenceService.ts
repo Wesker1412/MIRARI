@@ -160,17 +160,12 @@ export function searchArticleEvidence(
     };
   }
 
-  // 取得目標原文錨點句子
+  // 取得目標原文錨點句子（若未設定或找不到對應句子，嚴格維持 null，禁止降級至文章第一句）
   const articleSentences = EVIDENCE_INDEX[config.articleId] || [];
   let targetSentence: SentenceEvidence | null = null;
 
   if (bestKP.anchorSentenceId) {
     targetSentence = articleSentences.find((s) => s.sentenceId === bestKP.anchorSentenceId) || null;
-  }
-
-  // 若依 ID 未直接找到（理論上不會），則以標題與關鍵詞輔助定位
-  if (!targetSentence && articleSentences.length > 0) {
-    targetSentence = articleSentences[0];
   }
 
   return {

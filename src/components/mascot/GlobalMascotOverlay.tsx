@@ -411,6 +411,12 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
 
   const handleExecuteArticleQuery = (queryText: string) => {
     if (!queryText.trim() || !currentArticle) return;
+
+    // Immediately blur active element to collapse mobile virtual keyboard
+    if (typeof document !== 'undefined') {
+      (document.activeElement as HTMLElement)?.blur();
+    }
+
     setIsSearchingArticle(true);
     setMascotState('thinking');
 
@@ -422,16 +428,15 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
       setIsSearchingArticle(false);
       setArticleEvidenceResult(searchResult);
 
+      // On mobile, collapse full overlay panel so user sees article and compact card
+      if (typeof window !== 'undefined' && window.innerWidth < 640) {
+        setIsPanelOpen(false);
+      }
+
       if (searchResult.evidence) {
         setMascotState('excited');
         // Trigger exact text highlight and smooth scroll in ArticleView
         onEvidenceFound(searchResult);
-
-        // On mobile, automatically collapse large input panel so reader sees highlighted text
-        if (typeof window !== 'undefined' && window.innerWidth < 640) {
-          setIsPanelOpen(false);
-        }
-
         setTimeout(() => setMascotState('idle'), 2500);
       } else {
         setMascotState('idle');
@@ -785,36 +790,38 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
                   </span>
                 )}
               </div>
-              <div className="flex items-center space-x-1">
+              <div className="flex items-center space-x-1.5">
                 <button
                   type="button"
                   onClick={() => setIsPanelOpen(true)}
-                  className="text-[11px] text-mirari-muted hover:text-mirari-ink px-2 py-0.5 rounded hover:bg-mirari-surfaceAlt transition font-sans cursor-pointer"
+                  className="text-[11px] text-mirari-muted hover:text-mirari-ink px-2 py-1 rounded hover:bg-mirari-surfaceAlt transition font-sans cursor-pointer"
                 >
                   換個問題
                 </button>
                 <button
                   type="button"
                   onClick={handleDismissAnswer}
-                  className="text-xs text-mirari-dim hover:text-mirari-ink px-1.5 py-0.5 rounded hover:bg-mirari-surfaceAlt transition font-sans font-bold cursor-pointer"
-                  title="關閉回答並清除標記"
+                  className="flex items-center space-x-1 text-xs text-mirari-dim hover:text-mirari-ink px-2.5 py-1 rounded-full bg-mirari-paper border border-mirari-line hover:bg-mirari-surfaceAlt transition font-sans font-medium cursor-pointer"
+                  title="收起回答並清除標記"
+                  aria-label="收起回答"
                 >
-                  ✕
+                  <span>✕</span>
+                  <span>收起</span>
                 </button>
               </div>
             </div>
 
             <div className="text-xs text-mirari-ink leading-relaxed font-sans">
-              <p className={isMobileExpandedAnswer ? '' : 'line-clamp-3'}>
-                {articleEvidenceResult.answer}
-              </p>
+              <div className={isMobileExpandedAnswer ? 'max-h-[30vh] overflow-y-auto pr-1' : 'line-clamp-3'}>
+                <p>{articleEvidenceResult.answer}</p>
+              </div>
               {articleEvidenceResult.answer.length > 90 && (
                 <button
                   type="button"
                   onClick={() => setIsMobileExpandedAnswer((prev) => !prev)}
                   className="text-[11px] text-mirari-amber hover:underline mt-1 font-medium block cursor-pointer"
                 >
-                  {isMobileExpandedAnswer ? '收合' : '展開完整解釋'}
+                  {isMobileExpandedAnswer ? '▲ 收合簡短模式' : '▼ 展開完整解釋'}
                 </button>
               )}
             </div>

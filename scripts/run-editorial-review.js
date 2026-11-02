@@ -13,7 +13,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { parseFrontmatter } from './lib/articleParser.js';
+import { parseArticleDocument } from './lib/articleParser.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -21,6 +21,7 @@ const ROOT_DIR = path.resolve(__dirname, '..');
 
 const ARTICLES_DIR = path.join(ROOT_DIR, 'content', 'articles');
 const RECORDS_DIR = path.join(ROOT_DIR, 'content', 'editorial-records');
+const KP_DIR = path.join(ROOT_DIR, 'content', 'knowledge-points');
 const MEMORY_FILE = path.join(ROOT_DIR, '.mirari', 'editorial-memory.json');
 
 const PROHIBITED_CLICHES = [
@@ -87,12 +88,62 @@ function runReview() {
     }
 
     // 1.5 檢查主要編輯分類 (editorialCategory) 規範
-    const { metadata } = parseFrontmatter(content);
+    const { document, sentences } = parseArticleDocument(content, file);
+    const metadata = document;
     const validCategories = ['scientific_principles', 'journal_interpretation'];
     if (!metadata.editorialCategory || !validCategories.includes(metadata.editorialCategory)) {
       console.error(`   ❌ 缺少或無效之主要編輯分類 (editorialCategory): "${metadata.editorialCategory}"`);
       console.error(`      正式文章必須且只能有其中一個主要分類："scientific_principles" 或 "journal_interpretation"！`);
       process.exit(1);
+    }
+
+    // 1.8 檢查文章核心白話知識點 (content/knowledge-points/<slug>.json)
+    const kpPath = path.join(KP_DIR, `${slug}.json`);
+    if (!fs.existsSync(kpPath)) {
+      console.error(`   ❌ 缺少白話知識點設定: content/knowledge-points/${slug}.json`);
+      console.error(`      每篇新文章發布前必須同步建立核心知識點、白話解釋、建議問題與原文錨點！`);
+      process.exit(1);
+    }
+
+    let kpData;
+    try {
+      kpData = JSON.parse(fs.readFileSync(kpPath, 'utf8'));
+    } catch (err) {
+      console.error(`   ❌ 知識點 JSON 解析失敗: ${err.message}`);
+      process.exit(1);
+    }
+
+    if (!kpData.articleId || kpData.articleId !== document.id) {
+      console.error(`   ❌ 知識點 articleId ("${kpData.articleId}") 與文章本體 id ("${document.id}") 不一致！`);
+      process.exit(1);
+    }
+
+    if (!Array.isArray(kpData.knowledgePoints) || kpData.knowledgePoints.length < 2) {
+      console.error(`   ❌ 知識點清單不完整: 每篇文章必須包含至少 2 個核心白話知識點！`);
+      process.exit(1);
+    }
+
+    const validSentenceIds = new Set(sentences.map((s) => s.sentenceId));
+    let validAnchorsCount = 0;
+
+    for (const kpItem of kpData.knowledgePoints) {
+      if (!kpItem.id || !kpItem.label || !kpItem.suggestedQuestion || !kpItem.plainExplanation) {
+        console.error(`   ❌ 知識點欄位缺失: 必須包含 id, label, suggestedQuestion, plainExplanation！`);
+        process.exit(1);
+      }
+      if (kpItem.plainExplanation.trim().length < 25) {
+        console.error(`   ❌ 知識點「${kpItem.label}」白話解釋過於簡略，必須提供具實質理解幫助之完整說明！`);
+        process.exit(1);
+      }
+      if (kpItem.anchorSentenceId) {
+        if (!validSentenceIds.has(kpItem.anchorSentenceId)) {
+          console.error(
+            `   ❌ 知識點「${kpItem.label}」宣告之 anchorSentenceId (${kpItem.anchorSentenceId}) 不存在於文章原文索引中！發布中斷。`
+          );
+          process.exit(1);
+        }
+        validAnchorsCount++;
+      }
     }
 
     // 分類定位與查證核驗：
@@ -213,6 +264,7 @@ function runReview() {
     console.log(`   ✓ 數值模擬行為: ${sim.numericalMethod} (明確標註模型簡化限制)`);
     console.log(`   ✓ 讀者可理解性: 解構 ${rd.technicalTermsDemystified.length} 個關鍵術語，循序漸進架構完整`);
     console.log(`   ✓ 敘事核心問題: 《${aes.coreQuestion}》`);
+    console.log(`   ✓ 白話知識點與錨點: ${kpData.knowledgePoints.length} 個知識點 (原文定位錨點 100% 吻合)`);
     console.log(`   ✓ 發現修正問題: ${record.issuesIdentifiedAndCorrected.length} 項 (具體修正已沉澱)`);
     console.log(`   ✓ 已知適用限制: ${record.unconfirmedLimits.length} 項 (邊界清晰透明)`);
 

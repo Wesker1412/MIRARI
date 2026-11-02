@@ -1,0 +1,54 @@
+{
+  "articleId": "art-amygdala-memory-encoding",
+  "slug": "amygdala-memory-encoding-success",
+  "title": "情緒的刻痕：杏仁核特定神經元活動如何預測長久記憶的誕生？",
+  "knowledgePoints": [
+    {
+      "id": "kp-amygdala-predict-memory",
+      "label": "杏仁核預測記憶",
+      "suggestedQuestion": "杏仁核的神經活動如何預測經驗能否成為長期記憶？",
+      "keywords": [
+        "杏仁核",
+        "預測",
+        "記憶",
+        "長期記憶",
+        "長久記憶",
+        "回憶",
+        "放電",
+        "發火"
+      ],
+      "plainExplanation": "當微電極深入人腦記錄單一細胞時發現：當受試者凝視特定刺激時，若基底外側杏仁核中對該類別具有偏好的神經元放電頻率顯著抬升，該畫面在翌日被成功記住的統計機率就大幅增加。這說明記憶並非事後才慢慢重構，而是在感知的當下就已被烙上深淺不同的神經刻痕。",
+      "anchorSentenceId": "sent-4cb8f1b8"
+    },
+    {
+      "id": "kp-amygdala-category-selectivity",
+      "label": "語意類別選擇性",
+      "suggestedQuestion": "杏仁核是粗糙的情緒旋鈕還是具備內容選擇性？",
+      "keywords": [
+        "音量旋鈕",
+        "選擇性",
+        "語意類別",
+        "神經元偏好",
+        "特異性",
+        "粗糙"
+      ],
+      "plainExplanation": "過去人們以為杏仁核就像粗糙的音量旋鈕，情緒激動時就無差別把所有訊息一同放大。但前沿實驗證實，杏仁核個別細胞具備高度精細的語意選擇性——有的神經元專門對動物劇烈放電，有的則專注於特定人臉，它具備高度特異的內容過濾與辨識能力。",
+      "anchorSentenceId": "sent-70430e82"
+    },
+    {
+      "id": "kp-amygdala-hippocampus-sync",
+      "label": "海馬迴突觸窗口",
+      "suggestedQuestion": "杏仁核如何與海馬迴協同鞏固長期記憶？",
+      "keywords": [
+        "海馬迴",
+        "海馬體",
+        "突觸可塑性",
+        "時間窗口",
+        "協同",
+        "鞏固"
+      ],
+      "plainExplanation": "杏仁核並非單打獨鬥的記憶庫，它像是一位精準的信號引導員：當它辨識出重要刺激並產生微觀激發時，會將信號精準對準海馬迴突觸可塑性最容易開啟的時間窗口，引導海馬迴將這段特定的關鍵經歷優先固化為長期記憶。",
+      "anchorSentenceId": "sent-ac2790b6"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "articleId": "art-bismuth-sulfide-photovoltaics",
+  "slug": "bismuth-sulfide-pseudo-direct-recombination",
+  "title": "光與電荷的漫長告別：硫化鉍如何以「擬直接能隙」改寫太陽能材料法則？",
+  "knowledgePoints": [
+    {
+      "id": "kp-bismuth-pseudo-direct",
+      "label": "擬直接能隙",
+      "suggestedQuestion": "什麼是硫化鉍獨特的「擬直接能隙」？",
+      "keywords": [
+        "擬直接能隙",
+        "能隙",
+        "直接能隙",
+        "間接能隙",
+        "硫化鉍",
+        "幾何"
+      ],
+      "plainExplanation": "傳統半導體常陷入兩難：直接能隙材料吸光極快但電荷短命，間接能隙材料電荷壽命長但吸光遲緩。硫化鉍在微觀上雖然是間接能隙，但其能帶存在密集重疊的近簡併態，如同擁有一把「雙重鑰匙」：既能像直接能隙一樣大量吞噬陽光，又能像間接能隙一樣讓光生電荷存活長達微秒級。",
+      "anchorSentenceId": "sent-05a65f61"
+    },
+    {
+      "id": "kp-bismuth-absorption-dilemma",
+      "label": "吸光與壽命兩難",
+      "suggestedQuestion": "太陽能材料為什麼很難兼顧強吸光與長載子壽命？",
+      "keywords": [
+        "兩難",
+        "吸光",
+        "載子壽命",
+        "輻射復合",
+        "能帶結構",
+        "動量"
+      ],
+      "plainExplanation": "在量子力學中，光子具有能量卻幾乎沒有動量。直接能隙材料中電子跳上去與落下來不需要額外動量，因此吸光快，但也極易直接碰頭湮滅；而間接能隙材料需要原子晶格振動（聲子）幫忙湊足動量，雖然抑制了碰撞湮滅，卻也導致材料必須做得很厚才能吸收足夠陽光。",
+      "anchorSentenceId": "sent-d0f5fd03"
+    },
+    {
+      "id": "kp-bismuth-diffusion-length",
+      "label": "載子擴散長度",
+      "suggestedQuestion": "硫化鉍的微觀特性如何革新薄膜太陽能電池？",
+      "keywords": [
+        "擴散長度",
+        "薄膜",
+        "太陽能電池",
+        "光伏",
+        "無毒",
+        "環保"
+      ],
+      "plainExplanation": "擬直接能隙讓硫化鉍的光生電子擴散長度達到了微米尺度，遠遠超過了它吸收陽光所需的超薄厚度。這意味著被陽光激發出的電荷有充裕的時間活著穿過材料抵達電極，為製造高效、輕薄且無毒環保的下一代太陽能板奠定了物理基礎。",
+      "anchorSentenceId": "sent-481d11c5"
+    }
+  ]
+}

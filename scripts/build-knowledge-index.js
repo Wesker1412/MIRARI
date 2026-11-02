@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { parseArticleDocument, sha256 } from './lib/articleParser.js';
+import { parseArticleDocument } from './lib/articleParser.js';
 import { tokenizeCJK } from './lib/cjkTokenizer.js';
 import { LocalDeterministicProvider } from './lib/localEmbedding.js';
 
@@ -10,6 +10,7 @@ const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, '..');
 
 const CONTENT_DIR = path.join(ROOT_DIR, 'content', 'articles');
+const KP_DIR = path.join(ROOT_DIR, 'content', 'knowledge-points');
 const GENERATED_DIR = path.join(ROOT_DIR, 'src', 'data', 'generated');
 const CACHE_DIR = path.join(ROOT_DIR, '.mirari-cache');
 const CACHE_FILE = path.join(CACHE_DIR, 'index-cache.json');
@@ -24,6 +25,9 @@ async function runPipeline() {
   // Ensure directories exist
   if (!fs.existsSync(CONTENT_DIR)) {
     fs.mkdirSync(CONTENT_DIR, { recursive: true });
+  }
+  if (!fs.existsSync(KP_DIR)) {
+    fs.mkdirSync(KP_DIR, { recursive: true });
   }
   if (!fs.existsSync(GENERATED_DIR)) {
     fs.mkdirSync(GENERATED_DIR, { recursive: true });
@@ -154,6 +158,33 @@ async function runPipeline() {
   const searchOutPath = path.join(GENERATED_DIR, 'search-index.json');
   fs.writeFileSync(searchOutPath, JSON.stringify(searchIndexList, null, 2), 'utf8');
   console.log(`   ✓ ${searchOutPath} (${searchIndexList.length} 筆搜尋索引)`);
+
+  // Compile Knowledge Points Manifest from content/knowledge-points/*.json
+  const kpFiles = fs.existsSync(KP_DIR)
+    ? fs.readdirSync(KP_DIR).filter((f) => f.endsWith('.json'))
+    : [];
+  const compiledKnowledgeBase = [];
+  let totalKnowledgePoints = 0;
+
+  for (const kpFile of kpFiles) {
+    const rawKp = JSON.parse(fs.readFileSync(path.join(KP_DIR, kpFile), 'utf8'));
+    const articleSentences = evidenceIndexByArticle[rawKp.articleId] || [];
+    const sentenceIds = new Set(articleSentences.map((s) => s.sentenceId));
+
+    for (const kpItem of rawKp.knowledgePoints || []) {
+      totalKnowledgePoints++;
+      if (kpItem.anchorSentenceId && !sentenceIds.has(kpItem.anchorSentenceId)) {
+        console.warn(
+          `   ⚠️ 警告：知識點「${kpItem.label}」之 anchorSentenceId (${kpItem.anchorSentenceId}) 未在 ${rawKp.articleId} 中匹配到句子！`
+        );
+      }
+    }
+    compiledKnowledgeBase.push(rawKp);
+  }
+
+  const kpOutPath = path.join(GENERATED_DIR, 'knowledge-points.json');
+  fs.writeFileSync(kpOutPath, JSON.stringify(compiledKnowledgeBase, null, 2), 'utf8');
+  console.log(`   ✓ ${kpOutPath} (${compiledKnowledgeBase.length} 篇知識庫, 共 ${totalKnowledgePoints} 個知識點)`);
 
   // Write Cache & Sync Log
   fs.writeFileSync(CACHE_FILE, JSON.stringify(cache, null, 2), 'utf8');

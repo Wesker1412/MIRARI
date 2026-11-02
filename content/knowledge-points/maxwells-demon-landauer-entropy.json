@@ -1,0 +1,54 @@
+{
+  "articleId": "art-maxwells-demon-entropy",
+  "slug": "maxwells-demon-landauer-entropy",
+  "title": "穿過微觀閘門的幽靈：麥克斯韋妖與資訊的熱力學代價",
+  "knowledgePoints": [
+    {
+      "id": "kp-maxwell-demon-paradox",
+      "label": "麥克斯韋妖悖論",
+      "suggestedQuestion": "麥克斯韋妖如何看似打破了時間之箭？",
+      "keywords": [
+        "麥克斯韋妖",
+        "小妖",
+        "第二定律",
+        "隔板",
+        "時間之箭",
+        "自發降溫",
+        "熵增"
+      ],
+      "plainExplanation": "麥克斯韋想像一個守在隔板微小開孔處的智慧精靈：看見飛得快的熱分子就開門放進左邊，慢的冷分子放進右邊。不用消耗機械功，箱子兩側就自發形成了溫差，熱量看似自動從低溫流向高溫，挑戰了熱力學第二定律中孤立系統熵必然增加的鐵律。",
+      "anchorSentenceId": "sent-84b4853e"
+    },
+    {
+      "id": "kp-landauer-erasure-cost",
+      "label": "蘭道爾極限",
+      "suggestedQuestion": "為什麼抹除 1 位元資訊必須耗散熱量？",
+      "keywords": [
+        "蘭道爾極限",
+        "蘭道爾原理",
+        "抹除資訊",
+        "熱力學代價",
+        "kT ln 2",
+        "位元",
+        "記憶"
+      ],
+      "plainExplanation": "物理學家蘭道爾揭示了「遺忘必須付出代價」：小妖測量分子時必須在記憶體中記錄狀態；當記憶體滿了要把 1 位元資訊重置抹除時，在溫度 T 下至少必須向環境散發 kB·T·ln2 的熱量。正是這筆抹除記憶的熱力學開銷，補足了系統的熵增，守護了熱力學第二定律。",
+      "anchorSentenceId": "sent-8187c1a0"
+    },
+    {
+      "id": "kp-szilard-single-molecule",
+      "label": "斯齊拉德引擎",
+      "suggestedQuestion": "單個氣體分子如何把資訊轉化為機械功？",
+      "keywords": [
+        "斯齊拉德",
+        "單分子熱機",
+        "做功",
+        "資訊轉能量",
+        "活塞",
+        "等溫膨脹"
+      ],
+      "plainExplanation": "在斯齊拉德單分子熱機中，一旦小妖探測確認分子位於箱子某一側並插入活塞，單個分子的碰撞便會推動活塞向外進行等溫膨脹，對外輸出剛好 kB·T·ln2 的有用功。這直接在實驗與理論上證實了：獲取微觀資訊在物理上等同於獲得了可提取的自由能。",
+      "anchorSentenceId": "sent-77a447c4"
+    }
+  ]
+}

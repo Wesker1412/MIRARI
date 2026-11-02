@@ -1,0 +1,53 @@
+{
+  "articleId": "art-exoplanet-transit",
+  "slug": "when-starlight-dims",
+  "title": "當星光暗了一點",
+  "knowledgePoints": [
+    {
+      "id": "kp-transit-radius-square",
+      "label": "半徑與深度平方關係",
+      "suggestedQuestion": "為什麼行星半徑變成 2 倍，星光變暗幅度卻會變成 4 倍？",
+      "keywords": [
+        "平方",
+        "半徑",
+        "變暗",
+        "截面積",
+        "2 倍",
+        "4 倍",
+        "凌日深度"
+      ],
+      "plainExplanation": "當行星掠過恆星前方時，星光下降的比例（凌日深度）取決於行星在星盤上的二維遮蔽截面積（圓形面積公式 πR²），而非一維的直徑。因此當行星半徑擴大為 2 倍時，遮擋住的發光截面積會以平方關係擴大為 4 倍。",
+      "anchorSentenceId": "sent-771634ca"
+    },
+    {
+      "id": "kp-transit-limb-darkening",
+      "label": "周邊昏暗與 U 型曲線",
+      "suggestedQuestion": "為什麼真實的光度曲線底部是圓滑的 U 型而不是平坦的矩形？",
+      "keywords": [
+        "周邊昏暗",
+        "U型",
+        "圓滑",
+        "邊緣",
+        "光球",
+        "中心亮"
+      ],
+      "plainExplanation": "這是恆星大氣的「周邊昏暗效應」所致：直視恆星中心時，視線垂直切入能看見溫度較高、更明亮的深層光球；而視線切向邊緣時只能看見較淺、較暗的表層。當行星從邊緣滑向中心時，遮蔽的正是最亮的光球核心，使光度曲線呈現圓滑的 U 型。",
+      "anchorSentenceId": "sent-4a07305c"
+    },
+    {
+      "id": "kp-transit-transmission-spectroscopy",
+      "label": "透射光譜探測大氣",
+      "suggestedQuestion": "天文學家如何利用凌日探測外星大氣的成分？",
+      "keywords": [
+        "透射光譜",
+        "大氣",
+        "光譜",
+        "波長",
+        "吸收",
+        "水蒸氣"
+      ],
+      "plainExplanation": "當行星掠過恆星時，邊緣稀薄的大氣層會過濾背後的星光。大氣中的特定分子（如水蒸氣、二氧化碳）會強烈吸收特定紅外波長，使行星在該波長下顯得稍微「大了一圈」。測量不同顏色星光的變暗深度微差，便能精準解析出外星大氣的化學成分。",
+      "anchorSentenceId": "sent-f5768fa2"
+    }
+  ]
+}
