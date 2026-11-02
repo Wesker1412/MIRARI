@@ -75,18 +75,30 @@ async function runTests() {
     }
   });
 
-  // ─── 測試 4：低相關/未收錄科學領域返回固定訊息 ───
-  await check('4. Phase 4 - 站內未收錄領域 (偶然單詞重疊) 返回固定訊息', async () => {
-    const res = await fetch(`${BASE_URL}/api/search`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ query: '超導量子位元如何實現量子糾纏與退相干？' }),
-    });
-    assert.strictEqual(res.status, 200);
-    const data = await res.json();
-    assert.strictEqual(data.gated, true, '未收錄領域不能硬湊推薦，必須被閘門阻擋');
-    assert.strictEqual(data.curatorReply, EXPECTED_GATED_MESSAGE);
-    assert.strictEqual(data.recommendedArticles.length, 0);
+  // ─── 測試 4：低相關/未收錄科學領域及模糊短詞包含返回固定訊息 ───
+  await check('4. Phase 4 - 模糊相關、短詞包含與未收錄領域嚴格觸發閘門', async () => {
+    const edgeCases = [
+      '超導量子位元如何實現量子糾纏與退相干？',
+      '光合作用中葉綠素的激發態壽命是多少？',
+      'CRISPR 基因編輯 Cas9 切割機制',
+      '時間',
+      '電',
+      '這是什麼？',
+      '請問這個現象為什麼會發生？',
+      '我想了解科學',
+    ];
+    for (const q of edgeCases) {
+      const res = await fetch(`${BASE_URL}/api/search`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query: q }),
+      });
+      assert.strictEqual(res.status, 200);
+      const data = await res.json();
+      assert.strictEqual(data.gated, true, `問題 "${q}" 不能硬湊推薦或誤觸包含，必須被閘門阻擋`);
+      assert.strictEqual(data.curatorReply, EXPECTED_GATED_MESSAGE);
+      assert.strictEqual(data.recommendedArticles.length, 0);
+    }
   });
 
   // ─── 測試 5：Prompt Injection 無法繞過 RAG 閘門 ───
@@ -231,6 +243,37 @@ async function runTests() {
         false,
         `${f} 不得洩漏 GEMINI_API_KEY`
       );
+    }
+  });
+
+  // ─── 測試 10：公開 API 防濫用 (長度上限、爬蟲 UA 封鎖、歷史條數截斷) ───
+  await check('10. 公開 API 防濫用 - 輸入長度上限 (100字) 與自動化爬蟲 UA 阻斷', async () => {
+    // 10a: 超過 100 字元長度限制 -> HTTP 400
+    const overlongQuery = '這是一段用來測試系統防護長度的超長問題字串，我們需要確保任何超過一百個字的查詢或惡意注入都不會被直接送入伺服器端或模型中處理。'.repeat(2);
+    const resOverlong = await fetch(`${BASE_URL}/api/search`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query: overlongQuery }),
+    });
+    assert.strictEqual(resOverlong.status, 400, '超過 100 字元的超長查詢必須回傳 400 Bad Request');
+    const overlongData = await resOverlong.json();
+    assert.ok(overlongData.error.includes('100'), '錯誤訊息應提示長度上限');
+
+    // 10b: 爬蟲/腳本掃描 UA 攔截 -> HTTP 403
+    const botUserAgents = ['python-requests/2.31.0', 'curl/8.1.0', 'Wget/1.21.3', 'PostmanRuntime/7.32.3'];
+    for (const botUa of botUserAgents) {
+      const resBot = await fetch(`${BASE_URL}/api/article-chat`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'User-Agent': botUa,
+        },
+        body: JSON.stringify({
+          articleId: 'art-neuron-action-potential',
+          query: '動作電位',
+        }),
+      });
+      assert.strictEqual(resBot.status, 403, `自動化爬蟲 UA "${botUa}" 必須被攔截回傳 403 Forbidden`);
     }
   });
 

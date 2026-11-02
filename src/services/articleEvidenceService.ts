@@ -151,7 +151,7 @@ export function searchArticleEvidence(
   }
 
   // 門檻：必須至少命中關鍵特徵詞或核心概念
-  if (!bestKP || highestScore < 15) {
+  if (!bestKP || highestScore < 20) {
     // 【單篇伴讀 → 全站文章推薦自動銜接（本機降級）】
     // 當前文章無足夠依據時，嘗試比對站內其他專題
     const localRec = queryDataDrivenRecommendation(trimmedQuery);
@@ -159,7 +159,7 @@ export function searchArticleEvidence(
       (a) => a.id !== config.articleId && a.slug !== articleIdOrSlug
     );
 
-    if (otherArticles.length > 0) {
+    if (localRec.matchLevel !== 'none' && otherArticles.length > 0) {
       const targetRecs = otherArticles.slice(0, 2);
       const recTitles = targetRecs.map((a) => `《${a.title}》`).join(' 與 ');
       return {

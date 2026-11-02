@@ -77,6 +77,11 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
   const panelRef = useRef<HTMLDivElement>(null);
   const [measuredPanelHeight, setMeasuredPanelHeight] = useState<number>(180);
 
+  // Request sequence and article tracking to prevent race conditions / stale async responses
+  const activeArticleRequestIdRef = useRef<number>(0);
+  const activeArticleIdRef = useRef<string | null>(null);
+  const activeHomeRequestIdRef = useRef<number>(0);
+
   // Mascot dimensions based on view & Section 4 presence (Flask ratio 100:120)
   const isHomeView = currentView === 'home';
   const isExploreView = currentView === 'explore';
@@ -300,6 +305,9 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
 
   // ─── Reset Article Q&A State on Article Switch ───────────────────
   useEffect(() => {
+    // 增加請求序號，立即使前一篇文章正在發送中的非同步請求失效
+    activeArticleRequestIdRef.current++;
+    activeArticleIdRef.current = currentArticle?.id || currentArticle?.slug || null;
     setArticleQuery('');
     setArticleEvidenceResult(null);
     setArticleDialogue([]);
@@ -397,12 +405,14 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
 
   const handleExecuteHomeSearch = async (queryStr: string) => {
     if (!queryStr.trim()) return;
+    const currentHomeId = ++activeHomeRequestIdRef.current;
     setIsSearchingHome(true);
     setMascotState('thinking');
     setHomeQuery(queryStr);
 
     try {
       const rec = await queryAISearch(queryStr);
+      if (currentHomeId !== activeHomeRequestIdRef.current) return;
       setHomeRecResult(rec);
       setIsSearchingHome(false);
       if (rec.recommendedArticles.length > 0) {
@@ -412,6 +422,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
         setMascotState('idle');
       }
     } catch {
+      if (currentHomeId !== activeHomeRequestIdRef.current) return;
       const rec = queryMockAIRecommendation(queryStr);
       setHomeRecResult(rec);
       setIsSearchingHome(false);
@@ -438,6 +449,10 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
     }
 
     const trimmedQuery = queryText.trim();
+    const currentRequestId = ++activeArticleRequestIdRef.current;
+    const requestArticleId = currentArticle.id || currentArticle.slug;
+    activeArticleIdRef.current = requestArticleId;
+
     setIsSearchingArticle(true);
     setMascotState('thinking');
 
@@ -449,10 +464,18 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
 
     try {
       const searchResult = await queryArticleCompanionChat(
-        currentArticle.id || currentArticle.slug,
+        requestArticleId,
         trimmedQuery,
         historyPayload
       );
+
+      // 防止非同步舊答案覆蓋：若有新問題發出或讀者已切換至其他文章，直接拋棄過期結果
+      if (
+        currentRequestId !== activeArticleRequestIdRef.current ||
+        requestArticleId !== (currentArticle?.id || currentArticle?.slug)
+      ) {
+        return;
+      }
 
       setIsSearchingArticle(false);
       setArticleEvidenceResult(searchResult);
@@ -490,9 +513,17 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
         setMascotState('idle');
       }
     } catch {
+      // 異常降級同樣防止舊請求覆蓋當前文章
+      if (
+        currentRequestId !== activeArticleRequestIdRef.current ||
+        requestArticleId !== (currentArticle?.id || currentArticle?.slug)
+      ) {
+        return;
+      }
+
       const fallback = searchArticleEvidence(
         trimmedQuery,
-        currentArticle.id || currentArticle.slug
+        requestArticleId
       );
       setIsSearchingArticle(false);
       setArticleEvidenceResult(fallback);
@@ -529,9 +560,11 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
   };
 
   const handleResetArticleChat = () => {
+    activeArticleRequestIdRef.current++;
     setArticleQuery('');
     setArticleEvidenceResult(null);
     setArticleDialogue([]);
+    setIsSearchingArticle(false);
     onClearHighlight();
   };
 
@@ -814,7 +847,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
                           {turn.recommendedArticles && turn.recommendedArticles.length > 0 && (
                             <div className="mt-2.5 space-y-1.5 pt-2 border-t border-mirari-line/60">
                               <div className="text-[10px] font-sans font-medium text-mirari-muted flex items-center space-x-1">
-                                <span>📚 站內推薦專題：</span>
+                                <span>站內推薦專題：</span>
                               </div>
                               {turn.recommendedArticles.map((rec) => (
                                 <div
@@ -975,7 +1008,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
                       <p>{articleEvidenceResult.answer}</p>
                       {articleEvidenceResult.recommendedArticles && articleEvidenceResult.recommendedArticles.length > 0 && (
                         <div className="mt-2.5 pt-2 border-t border-mirari-line/60 space-y-1.5">
-                          <div className="text-[10px] font-sans font-medium text-mirari-muted">📚 推薦閱讀專題：</div>
+                          <div className="text-[10px] font-sans font-medium text-mirari-muted">推薦閱讀專題：</div>
                           {articleEvidenceResult.recommendedArticles.map((rec) => (
                             <div
                               key={rec.id}
@@ -1078,7 +1111,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
             {articleEvidenceResult.recommendedArticles && articleEvidenceResult.recommendedArticles.length > 0 && (
               <div className="pt-2 border-t border-mirari-line/60 space-y-1.5">
                 <div className="text-[10px] text-mirari-muted font-sans font-medium flex items-center space-x-1">
-                  <span>📚 推薦閱讀專題：</span>
+                  <span>推薦閱讀專題：</span>
                 </div>
                 {articleEvidenceResult.recommendedArticles.map((rec) => (
                   <div

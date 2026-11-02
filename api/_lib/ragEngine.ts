@@ -152,6 +152,37 @@ export function checkRateLimit(ip: string): boolean {
   return true;
 }
 
+// ─── Gemini API 免費額度熔斷防護（杜絕產生付費用量或超出免費配額） ───
+// Google Gemini 官方免費限額：15 RPM, 1500 RPD
+const MODEL_CALL_MAX_PER_MINUTE = 10; // 保留 33% 餘量
+const MODEL_CALL_MAX_PER_DAY = 800;   // 保留 46% 餘量
+
+let minuteCalls = 0;
+let minuteWindowStart = Date.now();
+let dailyCalls = 0;
+let dayWindowStart = Date.now();
+
+export function canInvokeGeminiModel(): boolean {
+  const now = Date.now();
+  if (now - minuteWindowStart >= 60 * 1000) {
+    minuteCalls = 0;
+    minuteWindowStart = now;
+  }
+  if (now - dayWindowStart >= 24 * 60 * 60 * 1000) {
+    dailyCalls = 0;
+    dayWindowStart = now;
+  }
+
+  if (minuteCalls >= MODEL_CALL_MAX_PER_MINUTE || dailyCalls >= MODEL_CALL_MAX_PER_DAY) {
+    console.warn('[Gemini Quota Guard] 模型調用觸發安全熔斷上限，自動轉為確定性知識點降級');
+    return false;
+  }
+
+  minuteCalls++;
+  dailyCalls++;
+  return true;
+}
+
 /**
  * 檢查是否觸發 Prompt Injection 或完全無關的通用任務
  */
@@ -240,6 +271,11 @@ async function callGemini(
   const apiKey = process.env.GEMINI_API_KEY || process.env.AI_API_KEY;
   if (!apiKey) {
     return null; // 無 API Key 時觸發優雅降級
+  }
+
+  // 免費配額熔斷保護：超出安全上限時直接降級，禁止超出免費額度
+  if (!canInvokeGeminiModel()) {
+    return null;
   }
 
   const modelName = process.env.AI_MODEL_NAME || 'gemini-2.5-flash';
@@ -392,18 +428,23 @@ export async function handleArticleChat(params: {
   const topSentence = scoredSentences[0]?.sentence || null;
   const topSentenceScore = scoredSentences[0]?.score || 0;
 
-  // 標題與建議問題直接命中檢驗
+  const coreQuery = rawQuery.replace(/[\s\p{P}]+/gu, '');
+
+  // 標題與建議問題直接命中檢驗（嚴格防範短字串包含與偶然詞片重疊）
   const isDirectQuestionHit =
-    bestKnowledgePoint &&
-    (rawQuery.includes(bestKnowledgePoint.label) ||
-      bestKnowledgePoint.suggestedQuestion.includes(rawQuery) ||
-      rawQuery.includes(bestKnowledgePoint.suggestedQuestion));
+    Boolean(bestKnowledgePoint &&
+    (rawQuery === bestKnowledgePoint.suggestedQuestion ||
+      (bestKnowledgePoint.label.length >= 3 && rawQuery.includes(bestKnowledgePoint.label))));
 
   const isTitleHit =
-    article.title.includes(rawQuery) ||
-    (article.tags || []).some((t: string) => rawQuery.includes(t) || t.includes(rawQuery));
+    article.title === rawQuery ||
+    (coreQuery.length >= 4 && article.title.includes(rawQuery));
 
-  const maxScore = Math.max(highestKpScore, topSentenceScore) + (isTitleHit ? 5.0 : 0);
+  const isTagHit = (article.tags || []).some(
+    (t: string) => t.length >= 2 && (rawQuery === t || (rawQuery.length >= 3 && rawQuery.includes(t)))
+  );
+
+  const maxScore = Math.max(highestKpScore, topSentenceScore) + (isTitleHit || isTagHit ? 6.0 : 0);
 
   // 檢查在知識點、正文與標題中的命中情況
   let matchedTokensCount = 0;
@@ -413,7 +454,7 @@ export async function handleArticleChat(params: {
       (bestKnowledgePoint.plainExplanation.includes(t) ||
         bestKnowledgePoint.suggestedQuestion.includes(t) ||
         bestKnowledgePoint.label.includes(t) ||
-        bestKnowledgePoint.keywords.some((k: string) => k.includes(t) || t.includes(k)));
+        bestKnowledgePoint.keywords.some((k: string) => k.length >= 3 && k.includes(t)));
     const inSentence = topSentence && topSentence.exactQuote.includes(t);
     const inTitle = article.title.includes(t);
     if (inKp || inSentence || inTitle) {
@@ -424,20 +465,22 @@ export async function handleArticleChat(params: {
 
   // ─── 相關性硬性閘門檢驗 ───
   // 通過條件：
-  // 1) 直接命中知識點標籤/建議問題/標題 (isDirectQuestionHit || isTitleHit)，或
+  // 1) 直接命中知識點標籤/建議問題/標題/標籤 (isDirectQuestionHit || isTitleHit || isTagHit)，或
   // 2) 實質高分概念命中 (maxScore >= 7.0)，或
   // 3) 中度概念命中 (maxScore >= 4.0 且 tokenCoverage >= 0.20)
   const passesGate =
     isDirectQuestionHit ||
     isTitleHit ||
+    isTagHit ||
     maxScore >= 7.0 ||
     (maxScore >= 4.0 && tokenCoverage >= 0.20);
 
   if (!passesGate) {
     // 【單篇伴讀 → 全站文章推薦自動銜接】
-    // 當前文章無足夠原文依據時，不直接宣告失敗，轉交 Phase 4 全站 RAG 檢索
+    // 僅執行全站 RAG 檢索與相關性判定，明確跳過 LLM 呼叫 (skipLLM: true)，不浪費配額生成會被丟棄的說明
     const globalSearchResult = await handleGlobalSearch({
       query: resolvedQuery || rawQuery,
+      skipLLM: true,
     });
 
     // 檢查全站檢索是否通過門檻，且推薦文章中包含非當前文章
@@ -558,8 +601,10 @@ ${rawQuery}
 // ══════════════════════════════════════════════════════════════════
 export async function handleGlobalSearch(params: {
   query: string;
+  skipLLM?: boolean;
 }): Promise<GlobalSearchResponse> {
   const rawQuery = params.query.trim();
+  const skipLLM = Boolean(params.skipLLM);
 
   // 1. 安全防護：檢查 Prompt Injection 或通用無關任務
   if (isAdversarialOrOffTopic(rawQuery)) {
@@ -576,14 +621,15 @@ export async function handleGlobalSearch(params: {
   }
 
   const queryTokens = tokenizeText(rawQuery);
-  if (queryTokens.length === 0) {
+  const coreQuery = rawQuery.replace(/[\s\p{P}]+/gu, '');
+  if (queryTokens.length === 0 || coreQuery.length <= 1) {
     return {
       query: rawQuery,
-      curatorReply: '請輸入你想探索的科學現象或主題，為你檢索站內深度文章與研究解讀。',
-      recommendedArticles: ARTICLES_LIST.filter((a) => a.status === 'published').slice(0, 2),
-      suggestedTags: ['系外行星', '動作電位', '渾沌理論'],
+      curatorReply: GATE_REJECTION_MESSAGE,
+      recommendedArticles: [],
+      suggestedTags: [],
       matchLevel: 'none',
-      gated: false,
+      gated: true,
       degraded: false,
       provider: 'local-fallback',
     };
@@ -613,10 +659,12 @@ export async function handleGlobalSearch(params: {
       }
     }
 
-    // 檢查文章標題與副標題精確重疊
-    const isTitleHit = article.title.includes(rawQuery) || article.subtitle.includes(rawQuery);
+    // 檢查文章標題與副標題精確重疊（嚴格防短字串誤判）
+    const isTitleHit =
+      article.title === rawQuery ||
+      (coreQuery.length >= 4 && article.title.includes(rawQuery));
     const isTagHit = (article.tags || []).some(
-      (t: string) => rawQuery.includes(t) || t.includes(rawQuery)
+      (t: string) => t.length >= 2 && (rawQuery === t || (rawQuery.length >= 3 && rawQuery.includes(t)))
     );
     let isKpQuestionHit = false;
 
@@ -625,15 +673,14 @@ export async function handleGlobalSearch(params: {
     if (kpConfig) {
       for (const kp of kpConfig.knowledgePoints) {
         if (
-          rawQuery.includes(kp.label) ||
-          kp.suggestedQuestion.includes(rawQuery) ||
-          rawQuery.includes(kp.suggestedQuestion)
+          rawQuery === kp.suggestedQuestion ||
+          (kp.label.length >= 3 && rawQuery.includes(kp.label))
         ) {
           isKpQuestionHit = true;
           score += 10.0;
         }
         for (const kw of kp.keywords) {
-          if (rawQuery.includes(kw) || kw.includes(rawQuery)) {
+          if (kw.length >= 3 && rawQuery.includes(kw)) {
             score += 3.0;
           }
         }
@@ -685,6 +732,21 @@ export async function handleGlobalSearch(params: {
   const matchedTags = Array.from(
     new Set(recommendedArticles.flatMap((a) => a.tags || []))
   ).slice(0, 4);
+
+  // 若指定 skipLLM（如單篇伴讀轉全站推薦時），直接返回確定性結果，不消耗 LLM 額度
+  if (skipLLM) {
+    const curatorReply = `針對「${rawQuery}」，站內已收錄深度專題《${topArticle.title}》，詳細解析了該現象的物理機制與可操作之數值實驗。`;
+    return {
+      query: rawQuery,
+      curatorReply,
+      recommendedArticles,
+      suggestedTags: matchedTags,
+      matchLevel: topCandidate.score >= 18.0 ? 'direct' : 'partial',
+      gated: false,
+      degraded: false,
+      provider: 'local-fallback',
+    };
+  }
 
   // 3. 嘗試呼叫免費 LLM 產生個人化科學推薦導讀
   const systemInstruction = `你是 MIRARI 數位科學雜誌的科學策展人 MIRARI。

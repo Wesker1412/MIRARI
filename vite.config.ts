@@ -19,6 +19,14 @@ function devApiPlugin(): Plugin {
           return res.end();
         }
 
+        // 1. 公開 API 防濫用：阻斷爬蟲與掃描腳本
+        const userAgent = (req.headers['user-agent'] as string || '').toLowerCase();
+        if (/curl|python|wget|postman|scrapy|httpclient/i.test(userAgent)) {
+          res.statusCode = 403;
+          res.setHeader('Content-Type', 'application/json');
+          return res.end(JSON.stringify({ error: 'Forbidden' }));
+        }
+
         if (req.url === '/api/search' && req.method === 'POST') {
           let body = '';
           req.on('data', (chunk) => {
@@ -27,7 +35,17 @@ function devApiPlugin(): Plugin {
           req.on('end', async () => {
             try {
               const parsed = JSON.parse(body || '{}');
-              const result = await handleGlobalSearch({ query: parsed.query || '' });
+              if (!parsed.query || typeof parsed.query !== 'string') {
+                res.statusCode = 400;
+                res.setHeader('Content-Type', 'application/json');
+                return res.end(JSON.stringify({ error: '缺少 query 查詢參數' }));
+              }
+              if (parsed.query.trim().length > 100) {
+                res.statusCode = 400;
+                res.setHeader('Content-Type', 'application/json');
+                return res.end(JSON.stringify({ error: '查詢長度超過 100 字元上限。' }));
+              }
+              const result = await handleGlobalSearch({ query: parsed.query.trim().slice(0, 100) });
               res.setHeader('Content-Type', 'application/json');
               res.end(JSON.stringify(result));
             } catch (err: any) {
@@ -47,10 +65,31 @@ function devApiPlugin(): Plugin {
           req.on('end', async () => {
             try {
               const parsed = JSON.parse(body || '{}');
+              if (!parsed.articleId || typeof parsed.articleId !== 'string' || parsed.articleId.length > 60) {
+                res.statusCode = 400;
+                res.setHeader('Content-Type', 'application/json');
+                return res.end(JSON.stringify({ error: '缺少或無效的 articleId 參數' }));
+              }
+              if (!parsed.query || typeof parsed.query !== 'string') {
+                res.statusCode = 400;
+                res.setHeader('Content-Type', 'application/json');
+                return res.end(JSON.stringify({ error: '缺少 query 參數' }));
+              }
+              if (parsed.query.trim().length > 100) {
+                res.statusCode = 400;
+                res.setHeader('Content-Type', 'application/json');
+                return res.end(JSON.stringify({ error: '問題長度超過 100 字元上限。' }));
+              }
+              const sanitizedHistory = Array.isArray(parsed.history)
+                ? parsed.history.slice(-4).map((h: any) => ({
+                    role: h.role === 'assistant' ? ('assistant' as const) : ('user' as const),
+                    content: String(h.content || '').trim().slice(0, 100),
+                  }))
+                : [];
               const result = await handleArticleChat({
-                articleId: parsed.articleId || '',
-                query: parsed.query || '',
-                history: parsed.history || [],
+                articleId: parsed.articleId,
+                query: parsed.query.trim().slice(0, 100),
+                history: sanitizedHistory,
               });
               res.setHeader('Content-Type', 'application/json');
               res.end(JSON.stringify(result));
