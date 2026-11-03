@@ -253,7 +253,46 @@ function stripMarkdownBlockPrefix(text: string): string {
   let clean = text.replace(/^(#{1,6})\s+[^\r\n]*\r?\n?/, '');
   // Strip list markers: 1. or - or *
   clean = clean.replace(/^(\d+\.|[-*+])\s+/, '');
+  // Strip blockquote markers
+  clean = clean.replace(/^>\s*/gm, '');
   return clean.trim();
+}
+
+function getSentencePortionForLine(line: string, sentQuote: string): string {
+  const cleanLine = stripMarkdownBlockPrefix(line);
+  const cleanQuote = stripMarkdownBlockPrefix(sentQuote);
+  if (cleanLine.includes(cleanQuote)) return cleanQuote;
+  for (const qLine of cleanQuote.split(/\r?\n/)) {
+    const cleanQ = stripMarkdownBlockPrefix(qLine);
+    if (cleanQ && cleanLine.includes(cleanQ)) return cleanQ;
+  }
+  return cleanLine;
+}
+
+/**
+ * Helper to group continuation lines in a list item together with their parent item
+ */
+function parseListItems(lines: string[]): string[] {
+  const items: string[] = [];
+  let currentItem = '';
+
+  for (const line of lines) {
+    const isNewItem = /^([-*+]|\d+\.)\s+/.test(line.trim());
+    if (isNewItem) {
+      if (currentItem.length > 0) {
+        items.push(currentItem);
+      }
+      currentItem = line;
+    } else if (currentItem.length > 0) {
+      currentItem += '\n' + line;
+    } else {
+      currentItem = line;
+    }
+  }
+  if (currentItem.length > 0) {
+    items.push(currentItem);
+  }
+  return items;
 }
 
 export const ArticleRenderer: React.FC<ArticleRendererProps> = ({
@@ -284,12 +323,17 @@ export const ArticleRenderer: React.FC<ArticleRendererProps> = ({
     return sentences.filter((s) => {
       const cleanQuote = stripMarkdownBlockPrefix(s.exactQuote);
       if (!cleanQuote || cleanQuote === '**') return false;
-      return (
-        cleanLine.includes(cleanQuote) ||
-        cleanQuote.includes(cleanLine) ||
-        cleanLine.slice(0, 15).includes(cleanQuote.slice(0, 15)) ||
-        cleanQuote.slice(0, 15).includes(cleanLine.slice(0, 15))
-      );
+      if (cleanLine.includes(cleanQuote) || cleanQuote.includes(cleanLine)) return true;
+      return cleanQuote.split(/\r?\n/).some((qLine) => {
+        const cleanQ = stripMarkdownBlockPrefix(qLine);
+        return (
+          cleanQ &&
+          (cleanLine.includes(cleanQ) ||
+            cleanQ.includes(cleanLine) ||
+            cleanLine.slice(0, 15).includes(cleanQ.slice(0, 15)) ||
+            cleanQ.slice(0, 15).includes(cleanLine.slice(0, 15)))
+        );
+      });
     });
   };
 
@@ -449,31 +493,19 @@ export const ArticleRenderer: React.FC<ArticleRendererProps> = ({
               const isBlockquote = rawLines.every((l) => l.startsWith('>'));
               if (isBlockquote) {
                 const quoteLines = rawLines.map((l) => l.replace(/^\s*>\s?/, ''));
+                const primarySent = matchingSentences[0];
+                const safeBlockId = getSafeSentenceId(primarySent?.sentenceId);
                 return (
                   <blockquote
                     key={pIdx}
-                    className="my-6 pl-5 border-l-2 border-mirari-amber py-2 space-y-2 font-serif text-mirari-ink italic bg-mirari-amber/5 rounded-r-lg"
+                    id={safeBlockId}
+                    className={`my-6 pl-5 border-l-2 border-mirari-amber py-2 space-y-2 font-serif text-mirari-ink italic bg-mirari-amber/5 rounded-r-lg ${primarySent ? getHighlightClass(primarySent.sentenceId) : ''}`}
                   >
-                    {quoteLines.map((line, lIdx) => {
-                      const lineSents = getSentencesForLine(line, matchingSentences);
-                      const primarySent = lineSents[0] || matchingSentences[lIdx] || matchingSentences[0];
-                      const sentId = primarySent?.sentenceId;
-                      const safeId = getSafeSentenceId(sentId);
-                      return (
-                        <p key={lIdx} className="leading-relaxed">
-                          {sentId ? (
-                            <span
-                              id={safeId}
-                              className={`transition-colors duration-300 ${getHighlightClass(sentId)}`}
-                            >
-                              {renderInlineContent(line)}
-                            </span>
-                          ) : (
-                            renderInlineContent(line)
-                          )}
-                        </p>
-                      );
-                    })}
+                    {quoteLines.map((line, lIdx) => (
+                      <p key={lIdx} className="leading-relaxed">
+                        {renderInlineContent(line)}
+                      </p>
+                    ))}
                   </blockquote>
                 );
               }
@@ -522,7 +554,7 @@ export const ArticleRenderer: React.FC<ArticleRendererProps> = ({
                     );
                     const leadInLines =
                       firstListIndex > 0 ? remainingLines.slice(0, firstListIndex) : [];
-                    const listLines = remainingLines.slice(firstListIndex);
+                    const listLines = parseListItems(remainingLines.slice(firstListIndex));
                     const isOrdered = /^\d+\./.test(listLines[0].trim());
 
                     return (
@@ -535,13 +567,17 @@ export const ArticleRenderer: React.FC<ArticleRendererProps> = ({
                               if (lineSents.length > 0) {
                                 return lineSents.map((s) => {
                                   const safeId = getSafeSentenceId(s.sentenceId);
+                                  const text =
+                                    lineSents.length === 1
+                                      ? stripMarkdownBlockPrefix(line)
+                                      : getSentencePortionForLine(line, s.exactQuote);
                                   return (
                                     <span
                                       key={s.sentenceId}
                                       id={safeId}
                                       className={`transition-colors duration-300 ${getHighlightClass(s.sentenceId)}`}
                                     >
-                                      {renderInlineContent(stripMarkdownBlockPrefix(line))}{' '}
+                                      {renderInlineContent(text)}{' '}
                                     </span>
                                   );
                                 });
@@ -670,7 +706,7 @@ export const ArticleRenderer: React.FC<ArticleRendererProps> = ({
               if (hasList) {
                 const firstListIdx = rawLines.findIndex((l) => l.match(/^([-*+]|\d+\.)\s+/));
                 const leadInLines = firstListIdx > 0 ? rawLines.slice(0, firstListIdx) : [];
-                const listLines = rawLines.slice(firstListIdx);
+                const listLines = parseListItems(rawLines.slice(firstListIdx));
                 const isOrdered = /^\d+\./.test(listLines[0]);
 
                 return (
@@ -683,13 +719,17 @@ export const ArticleRenderer: React.FC<ArticleRendererProps> = ({
                           if (lineSents.length > 0) {
                             return lineSents.map((s) => {
                               const safeId = getSafeSentenceId(s.sentenceId);
+                              const text =
+                                lineSents.length === 1
+                                  ? stripMarkdownBlockPrefix(line)
+                                  : getSentencePortionForLine(line, s.exactQuote);
                               return (
                                 <span
                                   key={s.sentenceId}
                                   id={safeId}
                                   className={`transition-colors duration-300 ${getHighlightClass(s.sentenceId)}`}
                                 >
-                                  {renderInlineContent(stripMarkdownBlockPrefix(line))}{' '}
+                                  {renderInlineContent(text)}{' '}
                                 </span>
                               );
                             });
