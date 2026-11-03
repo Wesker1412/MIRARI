@@ -4,6 +4,7 @@ import { ARTICLES } from '../../data/articles';
 import { TOPICS } from '../../data/topics';
 import type { Article, EditorialCategory } from '../../types';
 import { useSEO } from '../seo/useSEO';
+import { isArticlePublished, sortArticlesByDateDescending } from '../../utils/date';
 
 interface CategoryArticlesPageProps {
   category: EditorialCategory;
@@ -15,7 +16,7 @@ export const CategoryArticlesPage: React.FC<CategoryArticlesPageProps> = ({ cate
   const navigate = useNavigate();
 
   const isJournal = category === 'journal_interpretation';
-  const categoryTitle = isJournal ? '期刊解讀' : '科學原理與思想實驗';
+  const categoryTitle = isJournal ? '研究動態' : '科普探索';
   const categoryTag = isJournal ? '最新科學動態與研究突破' : '思想實驗與基石';
   const categoryDescription = isJournal
     ? '追蹤最新科學發現、重要研究成果、研發技術突破與重要科學事件，兼具時效性、科學價值與嚴謹核實。'
@@ -26,14 +27,11 @@ export const CategoryArticlesPage: React.FC<CategoryArticlesPageProps> = ({ cate
     description: categoryDescription,
   });
 
-  // Filter and sort articles by publication date descending
+  // Filter and sort articles by publication date descending in Asia/Taipei
   const allArticles = useMemo(() => {
-    return ARTICLES.filter((a) => a.status === 'published' && a.editorialCategory === category).sort((a, b) => {
-      const dateA = a.publishedDate || '';
-      const dateB = b.publishedDate || '';
-      if (dateB !== dateA) return dateB.localeCompare(dateA);
-      return a.id.localeCompare(b.id);
-    });
+    return sortArticlesByDateDescending(
+      ARTICLES.filter((a) => isArticlePublished(a) && a.editorialCategory === category)
+    );
   }, [category]);
 
   const [visibleCount, setVisibleCount] = useState<number>(BATCH_SIZE);

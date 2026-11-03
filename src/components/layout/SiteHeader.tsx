@@ -49,7 +49,7 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({
                   to={editorialCategory === 'journal_interpretation' ? '/journal' : '/principles'}
                   className="hover:text-mirari-ink transition shrink-0 leading-none"
                 >
-                  {editorialCategory === 'journal_interpretation' ? '期刊解讀' : '科普文章'}
+                  {editorialCategory === 'journal_interpretation' ? '研究動態' : '科普探索'}
                 </Link>
                 <span className="hidden sm:inline text-mirari-line select-none shrink-0 leading-none">/</span>
                 <span className="hidden sm:inline font-serif font-medium text-mirari-ink truncate sm:max-w-[160px] md:max-w-[260px] leading-none">
@@ -111,7 +111,7 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({
                   }`
                 }
               >
-                期刊解讀
+                研究動態
               </NavLink>
 
               <NavLink
@@ -124,7 +124,7 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({
                   }`
                 }
               >
-                科普文章
+                科普探索
               </NavLink>
 
               <NavLink

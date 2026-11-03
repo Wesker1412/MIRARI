@@ -6,6 +6,8 @@ import { ARTICLES } from '../../data/articles';
 import { useSEO } from '../seo/useSEO';
 import { CoverRankingService } from '../../services/CoverRankingService';
 import { CoverVisualCard } from './CoverVisualCard';
+import { isArticlePublished, sortArticlesByDateDescending } from '../../utils/date';
+import { useHorizontalDragScroll } from '../../hooks/useHorizontalDragScroll';
 
 interface HomePageProps {
   onSelectArticle: (article: Article) => void;
@@ -16,6 +18,10 @@ export const HomePage: React.FC<HomePageProps> = ({
   onSelectArticle,
 }) => {
   useSEO(); // Reset to default home SEO when mounting home view
+
+  // 橫向滑動列拖曳 Hook
+  const journalScroll = useHorizontalDragScroll();
+  const principlesScroll = useHorizontalDragScroll();
 
   // ─── 板塊一：封面故事（CoverRankingService 排序，最多五篇自動輪播） ───
   const rankedStories = useMemo(() => CoverRankingService.rankCoverStories(ARTICLES), []);
@@ -65,28 +71,18 @@ export const HomePage: React.FC<HomePageProps> = ({
     };
   }, [totalCovers, isCoverPaused, prefersReducedMotion]);
 
-  // ─── 板塊二：期刊解讀（依發布時間由新到舊排序，目前 0 篇） ───────────
+  // ─── 板塊二：研究動態（依發布時間由新到舊排序） ───────────
   const journalArticles = useMemo(() => {
-    return ARTICLES
-      .filter((a) => a.status === 'published' && a.editorialCategory === 'journal_interpretation')
-      .sort((a, b) => {
-        const dateA = a.publishedDate || '';
-        const dateB = b.publishedDate || '';
-        if (dateB !== dateA) return dateB.localeCompare(dateA);
-        return a.id.localeCompare(b.id);
-      });
+    return sortArticlesByDateDescending(
+      ARTICLES.filter((a) => isArticlePublished(a) && a.editorialCategory === 'journal_interpretation')
+    );
   }, []);
 
-  // ─── 板塊三：科學原理與思想實驗（依發布時間由新到舊排序） ───────────
+  // ─── 板塊三：科普探索（依發布時間由新到舊排序） ───────────
   const principlesArticles = useMemo(() => {
-    return ARTICLES
-      .filter((a) => a.status === 'published' && a.editorialCategory === 'scientific_principles')
-      .sort((a, b) => {
-        const dateA = a.publishedDate || '';
-        const dateB = b.publishedDate || '';
-        if (dateB !== dateA) return dateB.localeCompare(dateA);
-        return a.id.localeCompare(b.id);
-      });
+    return sortArticlesByDateDescending(
+      ARTICLES.filter((a) => isArticlePublished(a) && a.editorialCategory === 'scientific_principles')
+    );
   }, []);
 
   // Helper to get topic names for an article
@@ -111,32 +107,32 @@ export const HomePage: React.FC<HomePageProps> = ({
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            {/* Left: Headline Narrative (Fixed Height Container to prevent jump) */}
-            <div className="lg:col-span-7 flex flex-col justify-between min-h-[340px] sm:min-h-[380px] space-y-4">
+            {/* Left: Headline Narrative (允許任意長度中文標題完整自然換行，無裁切) */}
+            <div className="lg:col-span-7 flex flex-col justify-center space-y-4">
               <div className="space-y-3">
                 {/* Topic tags row */}
-                <div className="h-5 flex items-center space-x-2 text-xs font-sans text-mirari-amber font-semibold tracking-wider">
+                <div className="flex items-center space-x-2 text-xs font-sans text-mirari-amber font-semibold tracking-wider">
                   <span>封面故事</span>
                   <span className="text-mirari-dim">·</span>
                   <span className="text-mirari-muted">{getArticleTopicNames(currentCover)}</span>
                 </div>
 
-                {/* Title (Consistent height allocation) */}
-                <div className="min-h-[4.5rem] sm:min-h-[5.5rem] lg:min-h-[6.5rem] flex items-center">
-                  <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-mirari-ink leading-[1.18] line-clamp-2">
+                {/* Title (完整自然換行，移除 line-clamp 與高度限制) */}
+                <div>
+                  <h1 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-mirari-ink leading-[1.24]">
                     {currentCover.title}
                   </h1>
                 </div>
 
-                {/* Subtitle (Consistent height allocation) */}
-                <div className="min-h-[3rem] sm:min-h-[3.5rem] flex items-center">
-                  <p className="font-serif text-base sm:text-lg text-mirari-muted leading-relaxed font-normal line-clamp-2">
+                {/* Subtitle */}
+                <div>
+                  <p className="font-serif text-base sm:text-lg text-mirari-muted leading-relaxed font-normal">
                     {currentCover.subtitle}
                   </p>
                 </div>
 
-                {/* Lead Paragraph / Summary (Consistent height allocation) */}
-                <div className="min-h-[4rem] sm:min-h-[4.5rem] flex items-center">
+                {/* Lead Paragraph / Summary */}
+                <div>
                   <p className="text-xs sm:text-sm text-mirari-muted/90 leading-relaxed font-sans line-clamp-3">
                     {currentCover.leadParagraph || currentCover.summary}
                   </p>
@@ -147,7 +143,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               <div className="pt-2 flex flex-wrap items-center gap-4">
                 <button
                   onClick={() => onSelectArticle(currentCover)}
-                  className="inline-flex items-center rounded-xl bg-mirari-ink px-6 py-3.5 text-sm font-medium text-white shadow-sm hover:bg-black active:scale-95 transition font-sans"
+                  className="inline-flex items-center rounded-xl bg-mirari-ink px-6 py-3.5 text-sm font-medium text-white shadow-sm hover:bg-black active:scale-95 transition font-sans cursor-pointer"
                 >
                   進入互動閱讀
                 </button>
@@ -158,7 +154,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               </div>
             </div>
 
-            {/* Right: Graphic Spread + Mascot Hero View (Fixed Height Container) */}
+            {/* Right: Graphic Spread + Mascot Hero View */}
             <div className="lg:col-span-5 relative">
               <CoverVisualCard
                 article={currentCover}
@@ -188,7 +184,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                     }}
                     aria-label={`切換至封面篇章 ${idx + 1}：${story.article.title}`}
                     aria-current={isActive ? 'true' : 'false'}
-                    className={`transition-all duration-300 rounded-full h-2.5 focus:outline-none focus:ring-2 focus:ring-mirari-amber/50 ${
+                    className={`transition-all duration-300 rounded-full h-2.5 focus:outline-none focus:ring-2 focus:ring-mirari-amber/50 cursor-pointer ${
                       isActive
                         ? 'w-8 bg-mirari-ink'
                         : 'w-2.5 bg-mirari-line hover:bg-mirari-dim'
@@ -201,7 +197,7 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* ─── 板塊二：期刊解讀 (目前 0 篇時自動隱藏，有文章時自動呈現) ─── */}
+      {/* ─── 板塊二：研究動態 (依發布日期展示) ─── */}
       {journalArticles.length > 0 && (
         <section id="journal-research" className="py-12 border-t border-mirari-line">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -211,7 +207,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                   最新科學動態與研究突破
                 </span>
                 <h2 className="font-serif text-2xl sm:text-3xl font-bold text-mirari-ink">
-                  期刊解讀
+                  研究動態
                 </h2>
               </div>
               <span className="text-xs text-mirari-dim font-sans">
@@ -219,8 +215,11 @@ export const HomePage: React.FC<HomePageProps> = ({
               </span>
             </div>
 
-            {/* Horizontal Scrollable Row (Scroll-snap) */}
-            <div className="flex space-x-6 overflow-x-auto pb-4 pt-2 snap-x snap-mandatory focus:outline-none scrollbar-none [scrollbar-width:none] [-ms-overflow-style:none]">
+            {/* Horizontal Scrollable Row (Mouse Drag, Touch Swipe & Keyboard Support) */}
+            <div
+              {...journalScroll.dragProps}
+              className="flex space-x-6 overflow-x-auto pb-4 pt-2 snap-x snap-mandatory focus:outline-none scrollbar-none [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+            >
               {journalArticles.slice(0, 9).map((article) => (
                 <article
                   key={article.id}
@@ -239,7 +238,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                       <span className="font-sans font-medium text-mirari-cobalt">
                         {article.journalReference
                           ? `${article.journalReference.journal} · ${article.journalReference.year}`
-                          : '期刊論文解讀'}
+                          : '研究動態解讀'}
                       </span>
                       <span className="text-[11px] text-mirari-dim font-mono bg-mirari-paper px-2 py-0.5 rounded border border-mirari-line">
                         {article.publishedDate}
@@ -276,7 +275,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                     </svg>
                   </div>
                   <h4 className="mt-4 font-serif text-base font-bold text-mirari-ink group-hover:text-mirari-cobalt transition">
-                    探索更多期刊解讀
+                    探索更多研究動態
                   </h4>
                   <p className="mt-1 text-xs text-mirari-muted font-sans">
                     瀏覽全部 {journalArticles.length} 篇收錄文章
@@ -288,7 +287,7 @@ export const HomePage: React.FC<HomePageProps> = ({
         </section>
       )}
 
-      {/* ─── 板塊三：科學原理與思想實驗 (橫向滑動卡片列) ─────────────── */}
+      {/* ─── 板塊三：科普探索 (橫向滑動卡片列) ─────────────── */}
       <section id="principles-experiments" className="py-12 border-t border-mirari-line bg-mirari-surfaceAlt/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-baseline justify-between mb-8 pb-4 border-b border-mirari-line gap-2">
@@ -297,7 +296,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                 思想實驗與基石
               </span>
               <h2 className="font-serif text-2xl sm:text-3xl font-bold text-mirari-ink">
-                科學原理與思想實驗
+                科普探索
               </h2>
             </div>
             <span className="text-xs text-mirari-dim font-sans">
@@ -305,8 +304,11 @@ export const HomePage: React.FC<HomePageProps> = ({
             </span>
           </div>
 
-          {/* Horizontal Scrollable Row (Scroll-snap, Touch Swipe & Keyboard Support) */}
-          <div className="flex space-x-6 overflow-x-auto pb-4 pt-2 snap-x snap-mandatory focus:outline-none scrollbar-none [scrollbar-width:none] [-ms-overflow-style:none]">
+          {/* Horizontal Scrollable Row (Mouse Drag, Touch Swipe & Keyboard Support) */}
+          <div
+            {...principlesScroll.dragProps}
+            className="flex space-x-6 overflow-x-auto pb-4 pt-2 snap-x snap-mandatory focus:outline-none scrollbar-none [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          >
             {principlesArticles.slice(0, 9).map((article) => (
               <article
                 key={article.id}
@@ -360,7 +362,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                   </svg>
                 </div>
                 <h4 className="mt-4 font-serif text-base font-bold text-mirari-ink group-hover:text-mirari-amber transition">
-                  探索更多科學原理
+                  探索更多科普探索
                 </h4>
                 <p className="mt-1 text-xs text-mirari-muted font-sans">
                   瀏覽全部 {principlesArticles.length} 篇收錄文章

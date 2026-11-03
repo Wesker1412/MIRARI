@@ -1,4 +1,5 @@
 import type { ArticleDocument } from '../types';
+import { isArticlePublished } from '../utils/date';
 
 /**
  * 封面排序權重設定
@@ -80,9 +81,9 @@ export class CoverRankingService {
     maxCount: number = 5,
     _metricsMap?: Record<string, ArticleMetrics>
   ): RankedCoverArticle[] {
-    // 1. 候選資格過濾：必須為已發布且正文結構完備的文章
+    // 1. 候選資格過濾：必須為依台灣時區已發布且正文結構完備的文章
     const candidates = articles.filter(
-      (a) => a.status === 'published' && a.sections && a.sections.length > 0
+      (a) => isArticlePublished(a) && a.sections && a.sections.length > 0
     );
 
     if (candidates.length === 0) return [];

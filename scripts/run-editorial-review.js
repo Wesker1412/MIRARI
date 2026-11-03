@@ -97,6 +97,20 @@ function runReview() {
       process.exit(1);
     }
 
+    // 1.6 檢查發布日期與台灣時區 (Asia/Taipei)：已發布文章之發布日期不得為未來日期
+    const todayTaipei = new Intl.DateTimeFormat('en-CA', {
+      timeZone: 'Asia/Taipei',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+    }).format(new Date());
+
+    if (metadata.status === 'published' && metadata.publishedDate && metadata.publishedDate > todayTaipei) {
+      console.error(`   ❌ 發布日期異常: 文章標記為 published，但發布日期 (${metadata.publishedDate}) 超前於台灣時間今日 (${todayTaipei})！`);
+      console.error(`      預排程文章不得提前公開，且不可將未來日期作為現有發布日期。`);
+      process.exit(1);
+    }
+
     // 1.8 檢查文章核心白話知識點 (content/knowledge-points/<slug>.json)
     const kpPath = path.join(KP_DIR, `${slug}.json`);
     if (!fs.existsSync(kpPath)) {

@@ -439,7 +439,7 @@
       }
     ],
     "totalWordCount": 1930,
-    "lastIndexedAt": "2026-11-03T13:16:27.313Z"
+    "lastIndexedAt": "2026-11-03T14:12:32.983Z"
   },
   {
     "id": "art-amygdala-memory-encoding",
@@ -975,7 +975,7 @@
       }
     ],
     "totalWordCount": 2692,
-    "lastIndexedAt": "2026-11-03T13:16:27.322Z"
+    "lastIndexedAt": "2026-11-03T14:12:32.988Z"
   },
   {
     "id": "art-bismuth-sulfide-photovoltaics",
@@ -1619,13 +1619,13 @@
       }
     ],
     "totalWordCount": 2855,
-    "lastIndexedAt": "2026-11-03T13:16:27.335Z"
+    "lastIndexedAt": "2026-11-03T14:12:32.991Z"
   },
   {
     "id": "art-brownian-ratchet-motors",
     "slug": "brownian-ratchet-molecular-motors",
     "version": 1,
-    "publishedDate": "2026-11-04",
+    "publishedDate": "2026-11-03",
     "status": "published",
     "editorialCategory": "scientific_principles",
     "isEditorialCover": true,
@@ -1674,7 +1674,7 @@
       }
     ],
     "interactiveComponent": "BrownianRatchetSimulator",
-    "contentHash": "da0dd28daa279ec8b150d580f74546910883e4770ebe731efa3c2c65d3485b5b",
+    "contentHash": "caef9b08f3287db30d5260236bc7b630202328acb2cfecf40812e853c798d4bb",
     "sections": [
       {
         "id": "sec-1-6e286f",
@@ -2372,7 +2372,7 @@
       }
     ],
     "totalWordCount": 3332,
-    "lastIndexedAt": "2026-11-03T13:16:27.346Z"
+    "lastIndexedAt": "2026-11-03T14:12:32.994Z"
   },
   {
     "id": "art-chaos-double-pendulum",
@@ -2803,13 +2803,13 @@
       }
     ],
     "totalWordCount": 1783,
-    "lastIndexedAt": "2026-11-03T13:16:27.353Z"
+    "lastIndexedAt": "2026-11-03T14:12:32.997Z"
   },
   {
     "id": "art-jwst-cosmos-web-lensing",
     "slug": "jwst-cosmos-web-dark-matter-lensing",
     "version": 1,
-    "publishedDate": "2026-11-04",
+    "publishedDate": "2026-11-03",
     "status": "published",
     "editorialCategory": "journal_interpretation",
     "isEditorialCover": false,
@@ -2861,7 +2861,7 @@
       }
     ],
     "interactiveComponent": "WeakLensingShearSimulator",
-    "contentHash": "6fb0e0623b8bf407d73227c1eb592b717fed984e25ad931e0b2b8db760c7f891",
+    "contentHash": "e6bb8d6975c60c502fa070b7fb6d1575b1da99291660c899787813db7a6920a1",
     "sections": [
       {
         "id": "sec-1-786351",
@@ -3479,7 +3479,7 @@
       }
     ],
     "totalWordCount": 3510,
-    "lastIndexedAt": "2026-11-03T13:16:27.364Z"
+    "lastIndexedAt": "2026-11-03T14:12:33.000Z"
   },
   {
     "id": "art-maxwells-demon-entropy",
@@ -3989,7 +3989,7 @@
       }
     ],
     "totalWordCount": 1673,
-    "lastIndexedAt": "2026-11-03T13:16:27.367Z"
+    "lastIndexedAt": "2026-11-03T14:12:33.002Z"
   },
   {
     "id": "art-thorium-nuclear-clock",
@@ -4584,13 +4584,13 @@
       }
     ],
     "totalWordCount": 3193,
-    "lastIndexedAt": "2026-11-03T13:16:27.373Z"
+    "lastIndexedAt": "2026-11-03T14:12:33.005Z"
   },
   {
     "id": "art-turbulence-kolmogorov-cascade",
     "slug": "turbulence-kolmogorov-cascade",
     "version": 1,
-    "publishedDate": "2026-11-04",
+    "publishedDate": "2026-11-03",
     "status": "published",
     "editorialCategory": "scientific_principles",
     "isEditorialCover": false,
@@ -4639,7 +4639,7 @@
       }
     ],
     "interactiveComponent": "TurbulenceCascadeSimulator",
-    "contentHash": "cece9ac2fcf45c17c145521af61ba4394c7d43f3cfc25a6284306c8a5d6b4a9f",
+    "contentHash": "554d7ee3d6f9d77c3e8e8f0c00ca4cbf7f6f0f9ebda1ece242502bfe2477be05",
     "sections": [
       {
         "id": "sec-1-b192d0",
@@ -5414,7 +5414,7 @@
       }
     ],
     "totalWordCount": 3937,
-    "lastIndexedAt": "2026-11-03T13:16:27.379Z"
+    "lastIndexedAt": "2026-11-03T14:12:33.008Z"
   },
   {
     "id": "art-exoplanet-transit",
@@ -5943,6 +5943,6 @@
       }
     ],
     "totalWordCount": 1679,
-    "lastIndexedAt": "2026-11-03T13:16:27.396Z"
+    "lastIndexedAt": "2026-11-03T14:12:33.011Z"
   }
 ]

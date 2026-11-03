@@ -659,13 +659,15 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
       {/* ─── Contextual Floating Panel ──────────────────────────────── */}
       {isPanelOpen && (
         <>
-          {/* Mobile Backdrop Overlay */}
-          <div
-            className="fixed inset-0 bg-mirari-ink/25 backdrop-blur-[2px] z-40 sm:hidden"
-            onClick={handleClosePanel}
-          />
+          {/* Mobile Backdrop Overlay - ONLY for home or explore view! In article view: ZERO backdrop, ZERO dark overlay, ZERO blur */}
+          {(isHomeView || isExploreView) && (
+            <div
+              className="fixed inset-0 bg-mirari-ink/25 backdrop-blur-[2px] z-40 sm:hidden"
+              onClick={handleClosePanel}
+            />
+          )}
 
-          {/* Panel Wrapper: Bottom Sheet on Mobile, Smart Anchor on Desktop */}
+          {/* Panel Wrapper: Non-modal Bottom Sheet on Mobile, Smart Anchor on Desktop */}
           <div
             ref={panelRef}
             id="mirari-floating-panel"
@@ -678,26 +680,29 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
                   }
                 : undefined
             }
-            className={`fixed z-50 
-              /* Mobile: Bottom Sheet */
+            className={`fixed z-50 pointer-events-auto
+              /* Mobile: Non-modal Bottom Sheet preserving upper article reading area */
               inset-x-0 bottom-0 sm:inset-x-auto sm:bottom-auto
-              /* Desktop: Compact Floating Card */
+              /* Desktop: Compact Floating Card (Simultaneous reading & typing) */
               sm:w-[380px]
-              h-auto max-h-[calc(100vh-32px)] sm:max-h-[min(560px,calc(100vh-32px))]
+              h-auto max-h-[56vh] sm:max-h-[min(560px,calc(100vh-32px))]
               bg-white border-t sm:border border-mirari-border shadow-2xl rounded-t-3xl sm:rounded-2xl overflow-hidden
               flex flex-col animate-fade-in
             `}
           >
+            {/* Mobile Drag Indicator bar */}
+            <div className="w-10 h-1 bg-mirari-line rounded-full mx-auto mt-2 sm:hidden shrink-0" />
+
             {/* ─── Header Bar ────────────────────────────────────────── */}
-            <div className="flex items-center justify-between px-4 py-2.5 border-b border-mirari-line bg-mirari-paper/80">
+            <div className="flex items-center justify-between px-4 py-2 border-b border-mirari-line bg-mirari-paper">
               <div className="flex items-center space-x-2">
                 <span className="font-serif text-sm font-semibold text-mirari-ink">
-                  {isHomeView || isExploreView ? '探索篇章' : '隨文提問'}
+                  {isHomeView || isExploreView ? '探索篇章' : '隨文伴讀'}
                 </span>
                 {!isHomeView && !isExploreView && hasActiveHighlight && (
                   <button
                     onClick={onClearHighlight}
-                    className="text-[11px] text-mirari-amber hover:underline px-1 font-sans"
+                    className="text-[11px] text-mirari-amber hover:underline px-1 font-sans cursor-pointer"
                     title="清除文章內的文字高亮"
                   >
                     清除標記
@@ -707,9 +712,9 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
 
               <button
                 onClick={handleClosePanel}
-                className="text-xs text-mirari-dim hover:text-mirari-ink px-2 py-0.5 rounded hover:bg-mirari-surfaceAlt transition font-sans"
+                className="text-xs text-mirari-dim hover:text-mirari-ink px-2 py-0.5 rounded hover:bg-mirari-surfaceAlt transition font-sans cursor-pointer"
               >
-                關閉
+                {isHomeView || isExploreView ? '關閉' : '收合'}
               </button>
             </div>
 
@@ -865,8 +870,8 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
                                     <span>
                                       {rec.formatBadgeText ||
                                         (rec.editorialCategory === 'journal_interpretation'
-                                          ? '期刊解讀'
-                                          : '科學原理')}
+                                          ? '研究動態'
+                                          : '科普探索')}
                                     </span>
                                   </div>
                                   <div className="text-[11px] font-serif font-bold text-mirari-ink group-hover:text-mirari-amber transition-colors line-clamp-1">
