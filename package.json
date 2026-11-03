@@ -10,6 +10,7 @@
     "check:gate": "node scripts/verify-publication-gate.cjs",
     "check:drag": "node scripts/verify-drag-scroll.cjs",
     "check:markdown": "node scripts/verify-article-markdown.cjs",
+    "check:sentences": "node scripts/audit-sentence-anchors.cjs",
     "prerender": "node scripts/prerender-static-routes.js",
     "build": "node scripts/run-editorial-review.js && node scripts/build-knowledge-index.js && tsc -b && vite build && node scripts/prerender-static-routes.js",
     "lint": "oxlint",

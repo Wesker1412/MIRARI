@@ -260,6 +260,39 @@ export const ArticleRenderer: React.FC<ArticleRendererProps> = ({
   document,
   getHighlightClass,
 }) => {
+  // Track sentence IDs emitted across the entire article document to guarantee 100% uniqueness in DOM
+  const usedSentenceIds = new Set<string>();
+
+  const getSafeSentenceId = (sentId?: string): string | undefined => {
+    if (!sentId) return undefined;
+    if (usedSentenceIds.has(sentId)) return undefined;
+    usedSentenceIds.add(sentId);
+    return sentId;
+  };
+
+  const hasTextContent = (text?: string): boolean => {
+    if (!text) return false;
+    return /[\p{L}\p{N}]/u.test(text);
+  };
+
+  const getSentencesForLine = (
+    line: string,
+    sentences: SentenceEvidence[]
+  ): SentenceEvidence[] => {
+    const cleanLine = stripMarkdownBlockPrefix(line);
+    if (!cleanLine) return [];
+    return sentences.filter((s) => {
+      const cleanQuote = stripMarkdownBlockPrefix(s.exactQuote);
+      if (!cleanQuote || cleanQuote === '**') return false;
+      return (
+        cleanLine.includes(cleanQuote) ||
+        cleanQuote.includes(cleanLine) ||
+        cleanLine.slice(0, 15).includes(cleanQuote.slice(0, 15)) ||
+        cleanQuote.slice(0, 15).includes(cleanLine.slice(0, 15))
+      );
+    });
+  };
+
   return (
     <article className="space-y-10 text-base sm:text-[17px] leading-[1.85] font-sans text-mirari-ink">
       {/* ─── Quote Lead (引言) ────────────────────────────────────── */}
@@ -422,13 +455,15 @@ export const ArticleRenderer: React.FC<ArticleRendererProps> = ({
                     className="my-6 pl-5 border-l-2 border-mirari-amber py-2 space-y-2 font-serif text-mirari-ink italic bg-mirari-amber/5 rounded-r-lg"
                   >
                     {quoteLines.map((line, lIdx) => {
-                      const matchingSent = matchingSentences[lIdx] || matchingSentences[0];
-                      const sentId = matchingSent?.sentenceId;
+                      const lineSents = getSentencesForLine(line, matchingSentences);
+                      const primarySent = lineSents[0] || matchingSentences[lIdx] || matchingSentences[0];
+                      const sentId = primarySent?.sentenceId;
+                      const safeId = getSafeSentenceId(sentId);
                       return (
                         <p key={lIdx} className="leading-relaxed">
                           {sentId ? (
                             <span
-                              id={sentId}
+                              id={safeId}
                               className={`transition-colors duration-300 ${getHighlightClass(sentId)}`}
                             >
                               {renderInlineContent(line)}
@@ -485,45 +520,57 @@ export const ArticleRenderer: React.FC<ArticleRendererProps> = ({
                     const firstListIndex = remainingLines.findIndex((l) =>
                       l.trim().match(/^([-*+]|\d+\.)\s+/)
                     );
-                    const leadInText =
-                      firstListIndex > 0 ? remainingLines.slice(0, firstListIndex).join('\n') : '';
+                    const leadInLines =
+                      firstListIndex > 0 ? remainingLines.slice(0, firstListIndex) : [];
                     const listLines = remainingLines.slice(firstListIndex);
                     const isOrdered = /^\d+\./.test(listLines[0].trim());
 
                     return (
                       <div key={pIdx} className="space-y-4">
                         {renderHeadingElement()}
-                        {leadInText && (
-                          <p className="leading-relaxed">
-                            {matchingSentences
-                              .filter((s) => leadInText.includes(stripMarkdownBlockPrefix(s.exactQuote).slice(0, 15)))
-                              .map((sent) => (
-                                <span
-                                  key={sent.sentenceId}
-                                  id={sent.sentenceId}
-                                  className={`transition-colors duration-300 ${getHighlightClass(sent.sentenceId)}`}
-                                >
-                                  {renderInlineContent(stripMarkdownBlockPrefix(sent.exactQuote))}{' '}
-                                </span>
-                              ))}
+                        {leadInLines.length > 0 && (
+                          <p className="leading-relaxed mb-3">
+                            {leadInLines.map((line, idx) => {
+                              const lineSents = getSentencesForLine(line, matchingSentences);
+                              if (lineSents.length > 0) {
+                                return lineSents.map((s) => {
+                                  const safeId = getSafeSentenceId(s.sentenceId);
+                                  return (
+                                    <span
+                                      key={s.sentenceId}
+                                      id={safeId}
+                                      className={`transition-colors duration-300 ${getHighlightClass(s.sentenceId)}`}
+                                    >
+                                      {renderInlineContent(stripMarkdownBlockPrefix(line))}{' '}
+                                    </span>
+                                  );
+                                });
+                              }
+                              return <React.Fragment key={idx}>{renderInlineContent(line)} </React.Fragment>;
+                            })}
                           </p>
                         )}
                         {isOrdered ? (
                           <ol className="my-4 space-y-3 list-decimal list-outside pl-6 text-mirari-ink">
                             {listLines.map((line, lIdx) => {
                               const cleanItem = line.replace(/^\d+\.\s+/, '').trim();
-                              const sent = matchingSentences.find(
-                                (s) => s.exactQuote.includes(cleanItem) || cleanItem.includes(stripMarkdownBlockPrefix(s.exactQuote))
-                              );
+                              const lineSents = getSentencesForLine(line, matchingSentences);
                               return (
                                 <li key={lIdx} className="leading-relaxed pl-1">
-                                  {sent ? (
-                                    <span
-                                      id={sent.sentenceId}
-                                      className={`transition-colors duration-300 ${getHighlightClass(sent.sentenceId)}`}
-                                    >
-                                      {renderInlineContent(cleanItem)}
-                                    </span>
+                                  {lineSents.length > 0 ? (
+                                    lineSents.map((s) => {
+                                      const safeId = getSafeSentenceId(s.sentenceId);
+                                      const text = lineSents.length === 1 ? cleanItem : stripMarkdownBlockPrefix(s.exactQuote);
+                                      return (
+                                        <span
+                                          key={s.sentenceId}
+                                          id={safeId}
+                                          className={`transition-colors duration-300 ${getHighlightClass(s.sentenceId)}`}
+                                        >
+                                          {renderInlineContent(text)}{' '}
+                                        </span>
+                                      );
+                                    })
                                   ) : (
                                     renderInlineContent(cleanItem)
                                   )}
@@ -535,18 +582,23 @@ export const ArticleRenderer: React.FC<ArticleRendererProps> = ({
                           <ul className="my-4 space-y-2.5 list-disc list-outside pl-6 text-mirari-ink">
                             {listLines.map((line, lIdx) => {
                               const cleanItem = line.replace(/^[-*+]\s+/, '').trim();
-                              const sent = matchingSentences.find(
-                                (s) => s.exactQuote.includes(cleanItem) || cleanItem.includes(stripMarkdownBlockPrefix(s.exactQuote))
-                              );
+                              const lineSents = getSentencesForLine(line, matchingSentences);
                               return (
                                 <li key={lIdx} className="leading-relaxed pl-1">
-                                  {sent ? (
-                                    <span
-                                      id={sent.sentenceId}
-                                      className={`transition-colors duration-300 ${getHighlightClass(sent.sentenceId)}`}
-                                    >
-                                      {renderInlineContent(cleanItem)}
-                                    </span>
+                                  {lineSents.length > 0 ? (
+                                    lineSents.map((s) => {
+                                      const safeId = getSafeSentenceId(s.sentenceId);
+                                      const text = lineSents.length === 1 ? cleanItem : stripMarkdownBlockPrefix(s.exactQuote);
+                                      return (
+                                        <span
+                                          key={s.sentenceId}
+                                          id={safeId}
+                                          className={`transition-colors duration-300 ${getHighlightClass(s.sentenceId)}`}
+                                        >
+                                          {renderInlineContent(text)}{' '}
+                                        </span>
+                                      );
+                                    })
                                   ) : (
                                     renderInlineContent(cleanItem)
                                   )}
@@ -555,6 +607,22 @@ export const ArticleRenderer: React.FC<ArticleRendererProps> = ({
                             })}
                           </ul>
                         )}
+                        {/* Safeguard: render any unrendered sentence from matchingSentences */}
+                        {matchingSentences
+                          .filter((s) => !usedSentenceIds.has(s.sentenceId) && hasTextContent(s.exactQuote))
+                          .map((s) => {
+                            const safeId = getSafeSentenceId(s.sentenceId);
+                            return (
+                              <p key={s.sentenceId} className="leading-relaxed">
+                                <span
+                                  id={safeId}
+                                  className={`transition-colors duration-300 ${getHighlightClass(s.sentenceId)}`}
+                                >
+                                  {renderInlineContent(stripMarkdownBlockPrefix(s.exactQuote))}{' '}
+                                </span>
+                              </p>
+                            );
+                          })}
                       </div>
                     );
                   }
@@ -571,11 +639,19 @@ export const ArticleRenderer: React.FC<ArticleRendererProps> = ({
                             if (sIdx === 0 && textToRender.startsWith('#')) {
                               textToRender = textToRender.replace(/^(#{1,6})\s+[^\r\n]*\r?\n?/, '').trim();
                             }
-                            if (!textToRender) return null;
+                            if (!textToRender || textToRender === '**') return null;
+
+                            // If next sentence is '**', append it to close bold
+                            const nextSent = matchingSentences[sIdx + 1];
+                            if (nextSent && nextSent.exactQuote.trim() === '**') {
+                              textToRender += '**';
+                            }
+
+                            const safeId = getSafeSentenceId(sent.sentenceId);
                             return (
                               <span
                                 key={sent.sentenceId}
-                                id={sent.sentenceId}
+                                id={safeId}
                                 className={`transition-colors duration-300 ${getHighlightClass(sent.sentenceId)}`}
                               >
                                 {renderInlineContent(textToRender)}{' '}
@@ -603,20 +679,22 @@ export const ArticleRenderer: React.FC<ArticleRendererProps> = ({
                     {leadInLines.length > 0 && (
                       <p className="leading-relaxed mb-3">
                         {leadInLines.map((line, idx) => {
-                          const sent = matchingSentences.find(
-                            (s) => s.exactQuote.includes(line) || line.includes(stripMarkdownBlockPrefix(s.exactQuote))
-                          );
-                          return sent ? (
-                            <span
-                              key={sent.sentenceId}
-                              id={sent.sentenceId}
-                              className={`transition-colors duration-300 ${getHighlightClass(sent.sentenceId)}`}
-                            >
-                              {renderInlineContent(line)}{' '}
-                            </span>
-                          ) : (
-                            <React.Fragment key={idx}>{renderInlineContent(line)} </React.Fragment>
-                          );
+                          const lineSents = getSentencesForLine(line, matchingSentences);
+                          if (lineSents.length > 0) {
+                            return lineSents.map((s) => {
+                              const safeId = getSafeSentenceId(s.sentenceId);
+                              return (
+                                <span
+                                  key={s.sentenceId}
+                                  id={safeId}
+                                  className={`transition-colors duration-300 ${getHighlightClass(s.sentenceId)}`}
+                                >
+                                  {renderInlineContent(stripMarkdownBlockPrefix(line))}{' '}
+                                </span>
+                              );
+                            });
+                          }
+                          return <React.Fragment key={idx}>{renderInlineContent(line)} </React.Fragment>;
                         })}
                       </p>
                     )}
@@ -626,22 +704,18 @@ export const ArticleRenderer: React.FC<ArticleRendererProps> = ({
                       <ol className="my-4 space-y-3 list-decimal list-outside pl-6 text-mirari-ink">
                         {listLines.map((line, lIdx) => {
                           const cleanItem = line.replace(/^\d+\.\s+/, '').trim();
-                          const sents = matchingSentences.filter(
-                            (s) =>
-                              s.exactQuote.includes(cleanItem) ||
-                              cleanItem.includes(stripMarkdownBlockPrefix(s.exactQuote)) ||
-                              cleanItem.slice(0, 20).includes(stripMarkdownBlockPrefix(s.exactQuote).slice(0, 20))
-                          );
+                          const lineSents = getSentencesForLine(line, matchingSentences);
                           return (
                             <li key={lIdx} className="leading-relaxed pl-1">
-                              {sents.length > 0 ? (
-                                sents.map((sent) => {
-                                  const text = stripMarkdownBlockPrefix(sent.exactQuote);
+                              {lineSents.length > 0 ? (
+                                lineSents.map((s) => {
+                                  const safeId = getSafeSentenceId(s.sentenceId);
+                                  const text = lineSents.length === 1 ? cleanItem : stripMarkdownBlockPrefix(s.exactQuote);
                                   return (
                                     <span
-                                      key={sent.sentenceId}
-                                      id={sent.sentenceId}
-                                      className={`transition-colors duration-300 ${getHighlightClass(sent.sentenceId)}`}
+                                      key={s.sentenceId}
+                                      id={safeId}
+                                      className={`transition-colors duration-300 ${getHighlightClass(s.sentenceId)}`}
                                     >
                                       {renderInlineContent(text)}{' '}
                                     </span>
@@ -658,22 +732,18 @@ export const ArticleRenderer: React.FC<ArticleRendererProps> = ({
                       <ul className="my-4 space-y-2.5 list-disc list-outside pl-6 text-mirari-ink">
                         {listLines.map((line, lIdx) => {
                           const cleanItem = line.replace(/^[-*+]\s+/, '').trim();
-                          const sents = matchingSentences.filter(
-                            (s) =>
-                              s.exactQuote.includes(cleanItem) ||
-                              cleanItem.includes(stripMarkdownBlockPrefix(s.exactQuote)) ||
-                              cleanItem.slice(0, 20).includes(stripMarkdownBlockPrefix(s.exactQuote).slice(0, 20))
-                          );
+                          const lineSents = getSentencesForLine(line, matchingSentences);
                           return (
                             <li key={lIdx} className="leading-relaxed pl-1">
-                              {sents.length > 0 ? (
-                                sents.map((sent) => {
-                                  const text = stripMarkdownBlockPrefix(sent.exactQuote);
+                              {lineSents.length > 0 ? (
+                                lineSents.map((s) => {
+                                  const safeId = getSafeSentenceId(s.sentenceId);
+                                  const text = lineSents.length === 1 ? cleanItem : stripMarkdownBlockPrefix(s.exactQuote);
                                   return (
                                     <span
-                                      key={sent.sentenceId}
-                                      id={sent.sentenceId}
-                                      className={`transition-colors duration-300 ${getHighlightClass(sent.sentenceId)}`}
+                                      key={s.sentenceId}
+                                      id={safeId}
+                                      className={`transition-colors duration-300 ${getHighlightClass(s.sentenceId)}`}
                                     >
                                       {renderInlineContent(text)}{' '}
                                     </span>
@@ -687,6 +757,23 @@ export const ArticleRenderer: React.FC<ArticleRendererProps> = ({
                         })}
                       </ul>
                     )}
+
+                    {/* Safeguard: render any unrendered sentence from matchingSentences */}
+                    {matchingSentences
+                      .filter((s) => !usedSentenceIds.has(s.sentenceId) && hasTextContent(s.exactQuote))
+                      .map((s) => {
+                        const safeId = getSafeSentenceId(s.sentenceId);
+                        return (
+                          <p key={s.sentenceId} className="leading-relaxed">
+                            <span
+                              id={safeId}
+                              className={`transition-colors duration-300 ${getHighlightClass(s.sentenceId)}`}
+                            >
+                              {renderInlineContent(stripMarkdownBlockPrefix(s.exactQuote))}{' '}
+                            </span>
+                          </p>
+                        );
+                      })}
                   </div>
                 );
               }
@@ -695,15 +782,27 @@ export const ArticleRenderer: React.FC<ArticleRendererProps> = ({
               if (matchingSentences.length > 0) {
                 return (
                   <p key={pIdx} className="leading-relaxed">
-                    {matchingSentences.map((sent: SentenceEvidence) => (
-                      <span
-                        key={sent.sentenceId}
-                        id={sent.sentenceId}
-                        className={`transition-colors duration-300 ${getHighlightClass(sent.sentenceId)}`}
-                      >
-                        {renderInlineContent(sent.exactQuote)}{' '}
-                      </span>
-                    ))}
+                    {matchingSentences.map((sent: SentenceEvidence, sIdx: number) => {
+                      let text = sent.exactQuote;
+                      if (text.trim() === '**') return null;
+
+                      // If next sentence is '**', append it to close bold
+                      const nextSent = matchingSentences[sIdx + 1];
+                      if (nextSent && nextSent.exactQuote.trim() === '**') {
+                        text += '**';
+                      }
+
+                      const safeId = getSafeSentenceId(sent.sentenceId);
+                      return (
+                        <span
+                          key={sent.sentenceId}
+                          id={safeId}
+                          className={`transition-colors duration-300 ${getHighlightClass(sent.sentenceId)}`}
+                        >
+                          {renderInlineContent(text)}{' '}
+                        </span>
+                      );
+                    })}
                   </p>
                 );
               }
