@@ -25,6 +25,7 @@ async function runTests() {
       console.error('   錯誤原因:', err.message);
       failedCount++;
     }
+    await new Promise((r) => setTimeout(r, 120));
   }
 
   // ─── 測試 1：相關的自然語言問題可找到正確文章 ───
