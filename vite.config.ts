@@ -19,7 +19,7 @@ function devApiPlugin(): Plugin {
           return res.end();
         }
 
-        // 1. 公開 API 防濫用：阻斷爬蟲與掃描腳本
+        // 1. 客戶端標頭初階衛生過濾（過濾常見預設腳本標頭；非主要防禦手段）
         const userAgent = (req.headers['user-agent'] as string || '').toLowerCase();
         if (/curl|python|wget|postman|scrapy|httpclient/i.test(userAgent)) {
           res.statusCode = 403;

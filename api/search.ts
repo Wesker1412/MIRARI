@@ -17,13 +17,13 @@ export default async function handler(req: any, res: any) {
     return res.status(405).json({ error: 'Method Not Allowed' });
   }
 
-  // 1. 公開 API 防濫用：阻斷無 User-Agent 或爬蟲掃描請求
+  // 1. 客戶端標頭初階衛生過濾（過濾常見預設腳本標頭；注意：UA 易被偽造，非主要防禦手段）
   const userAgent = (req.headers['user-agent'] as string || '').toLowerCase();
   if (/curl|python|wget|postman|scrapy|httpclient/i.test(userAgent)) {
     return res.status(403).json({ error: 'Forbidden' });
   }
 
-  // 2. 並發上限 (Concurrency Limit)
+  // 2. 容器層並發上限 (Concurrency Limit，防止單一實例被突發連線灌爆)
   if (activeConcurrentRequests >= MAX_CONCURRENT_REQUESTS) {
     return res.status(429).json({ error: '伺服器正忙，請稍候再試。' });
   }
@@ -33,7 +33,7 @@ export default async function handler(req: any, res: any) {
     req.socket?.remoteAddress ||
     'local';
 
-  // 3. 請求頻率限制
+  // 3. 容器內部 IP 頻率輔助檢查（真正的入口限流由 Vercel Edge Firewall 提供）
   if (!checkRateLimit(clientIp)) {
     return res.status(429).json({ error: '請求過於頻繁，請稍候再試。' });
   }

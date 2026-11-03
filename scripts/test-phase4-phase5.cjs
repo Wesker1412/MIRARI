@@ -208,8 +208,8 @@ async function runTests() {
     assert.strictEqual(data2.recommendedArticles?.length || 0, 0, '阻斷時推薦文章數必須為 0');
   });
 
-  // ─── 測試 8：無 API Key 時安全降級 ───
-  await check('8. 系統韌性 - 無 API Key 或額度耗盡時正確降級 (degraded: true)', async () => {
+  // ─── 測試 8：無 API Key、未確認 Free Tier 或額度耗盡時正確降級 ───
+  await check('8. 系統韌性 - 無 API Key、未確認 Free Tier 或供應商 429 耗盡時正確降級 (degraded: true)', async () => {
     const res = await fetch(`${BASE_URL}/api/article-chat`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

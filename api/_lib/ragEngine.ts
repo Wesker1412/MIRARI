@@ -131,9 +131,24 @@ export function tokenizeText(input: string): string[] {
   return Array.from(new Set(tokens));
 }
 
-/**
- * 簡易記憶體 Rate Limiting (防止惡意高頻請求)
- */
+// ══════════════════════════════════════════════════════════════════
+// 【流量與額度防護三層架構定義（嚴格區分、杜絕混淆）】
+//
+// 1. 來源流量限制 (Per-IP / Per-Client Ingress Limit)：
+//    主體應為邊緣入口之 Vercel Edge Firewall / WAF（Hobby 免費支援 1 條，依 IP 限制）。
+//    下方 checkRateLimit(ip) 僅為單一 Serverless 容器執行期間之內部輔助防禦。
+//
+// 2. 全專案共享模型配額 (Project-Wide Shared Model Quota)：
+//    【架構邊界聲明】：Vercel Serverless 多實例無狀態架構在無中心化儲存（如 Upstash Redis / Vercel KV）時，
+//    純記憶體變數無法跨實例共享。下方 canInvokeGeminiModel() 僅為「單一容器應急熔斷保護」，
+//    絕不宣稱為全站共享配額保障。
+//
+// 3. 模型供應商免費額度與計費狀態 (Provider Free Tier & Billing Status)：
+//    費用終極防線。必須使用未綁定任何信用卡/付款帳戶之 Google AI Studio 純 Free Tier 專案。
+//    若未確認該計費狀態（未設定 GEMINI_FREE_TIER_CONFIRMED=true），系統嚴格保持安全降級。
+// ══════════════════════════════════════════════════════════════════
+
+// ── 第 1 層輔助：單一容器內 IP 頻率檢查（非全站分散式限流） ──
 const ipRequestLogs = new Map<string, { count: number; windowStart: number }>();
 const RATE_LIMIT_WINDOW_MS = 60 * 1000;
 const MAX_REQUESTS_PER_WINDOW = 35;
@@ -152,18 +167,31 @@ export function checkRateLimit(ip: string): boolean {
   return true;
 }
 
-// ─── Gemini API 免費額度熔斷防護（杜絕產生付費用量或超出免費配額） ───
-// Google Gemini 官方免費限額：15 RPM, 1500 RPD
-const MODEL_CALL_MAX_PER_MINUTE = 10; // 保留 33% 餘量
-const MODEL_CALL_MAX_PER_DAY = 800;   // 保留 46% 餘量
+// ── 第 2 層輔助：單一容器內部應急計數熔斷（注意：無法跨 Vercel 實例共享） ──
+const MODEL_CALL_MAX_PER_MINUTE = 10;
+const MODEL_CALL_MAX_PER_DAY = 800;
 
 let minuteCalls = 0;
 let minuteWindowStart = Date.now();
 let dailyCalls = 0;
 let dayWindowStart = Date.now();
 
+// ── 第 3 層輔助：供應商 429 配額耗盡冷卻標記（單容器即刻熔斷，防止無效請求） ──
+let providerQuotaExhaustedUntil = 0;
+
+export function markProviderQuotaExhausted(cooldownMs: number = 60_000) {
+  providerQuotaExhaustedUntil = Date.now() + cooldownMs;
+  console.warn(`[Gemini API] 供應商回傳 429 配額耗盡，容器啟動即刻冷卻 ${cooldownMs / 1000} 秒，期間完全跳過模型調用，直接降級`);
+}
+
 export function canInvokeGeminiModel(): boolean {
   const now = Date.now();
+
+  // 若供應商回傳 429 配額耗盡，處於冷卻熔斷期間直接拒絕，避免持續浪費外部連線
+  if (now < providerQuotaExhaustedUntil) {
+    return false;
+  }
+
   if (now - minuteWindowStart >= 60 * 1000) {
     minuteCalls = 0;
     minuteWindowStart = now;
@@ -173,8 +201,9 @@ export function canInvokeGeminiModel(): boolean {
     dayWindowStart = now;
   }
 
+  // 單實例容器內部熔斷檢查
   if (minuteCalls >= MODEL_CALL_MAX_PER_MINUTE || dailyCalls >= MODEL_CALL_MAX_PER_DAY) {
-    console.warn('[Gemini Quota Guard] 模型調用觸發安全熔斷上限，自動轉為確定性知識點降級');
+    console.warn('[Gemini Quota Guard] 單一容器模型調用達到內部應急熔斷上限，自動轉為確定性知識點降級');
     return false;
   }
 
@@ -263,6 +292,9 @@ export function resolveAnaphoraQuery(
 
 /**
  * 呼叫 Google Gemini API (輕量免費 LLM)
+ * 嚴格守則：
+ * 1. 僅在明確確認專案為純 Free Tier（無信用卡/帳單帳戶）且 GEMINI_FREE_TIER_CONFIRMED=true 時啟用。
+ * 2. 供應商回傳 429、配額耗盡、逾時或錯誤時立即降級，0 次自動重試，絕不造成額外流量與開銷。
  */
 async function callGemini(
   systemInstruction: string,
@@ -273,12 +305,18 @@ async function callGemini(
     return null; // 無 API Key 時觸發優雅降級
   }
 
-  // 免費配額熔斷保護：超出安全上限時直接降級，禁止超出免費額度
+  // 【計費狀態硬性卡扣】：未明確確認付款層級前，絕不啟用正式 LLM
+  if (process.env.GEMINI_FREE_TIER_CONFIRMED !== 'true') {
+    console.warn('[Gemini Quota Guard] 尚未設定 GEMINI_FREE_TIER_CONFIRMED=true 確認專案為純免費層（無綁定付款帳戶），安全降級至本機回答');
+    return null;
+  }
+
+  // 容器內部計數與 429 冷卻熔斷保護
   if (!canInvokeGeminiModel()) {
     return null;
   }
 
-  const modelName = process.env.AI_MODEL_NAME || 'gemini-2.5-flash';
+  const modelName = process.env.AI_MODEL_NAME || 'gemini-2.0-flash';
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
 
   const controller = new AbortController();
@@ -311,8 +349,14 @@ async function callGemini(
 
     clearTimeout(timeoutId);
 
+    // 供應商 429 配額耗盡處理：標記冷卻熔斷，即刻降級，絕無自動重試
+    if (res.status === 429) {
+      markProviderQuotaExhausted(60_000);
+      return null;
+    }
+
     if (!res.ok) {
-      console.warn(`[Gemini API] 回應失敗 (狀態碼: ${res.status})，降級至本機確定性回答`);
+      console.warn(`[Gemini API] 回應失敗 (狀態碼: ${res.status})，即刻降級至本機確定性回答（0次重試）`);
       return null;
     }
 
@@ -322,7 +366,7 @@ async function callGemini(
     return candidateText;
   } catch (err) {
     clearTimeout(timeoutId);
-    console.warn(`[Gemini API] 呼叫異常或逾時，啟動安全降級:`, (err as Error).message);
+    console.warn(`[Gemini API] 呼叫異常或逾時，即刻降級至本機確定性回答（0次重試）:`, (err as Error).message);
     return null;
   }
 }
