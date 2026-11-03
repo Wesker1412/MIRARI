@@ -27,7 +27,7 @@ export interface ArticleChatResponse {
   matchedKnowledgePointId?: string;
   gated: boolean;
   degraded: boolean;
-  provider: 'gemini' | 'local-fallback';
+  provider: 'cloudflare-workers-ai' | 'local-fallback';
   recommendedArticles?: Article[];
   isRecommendation?: boolean;
 }
@@ -40,7 +40,7 @@ export interface GlobalSearchResponse {
   matchLevel: 'direct' | 'partial' | 'none';
   gated: boolean;
   degraded: boolean;
-  provider: 'gemini' | 'local-fallback';
+  provider: 'cloudflare-workers-ai' | 'local-fallback';
 }
 
 const ARTICLES_LIST: Article[] = articlesManifestRaw as unknown as Article[];
@@ -135,17 +135,17 @@ export function tokenizeText(input: string): string[] {
 // 【流量與額度防護三層架構定義（嚴格區分、杜絕混淆）】
 //
 // 1. 來源流量限制 (Per-IP / Per-Client Ingress Limit)：
-//    主體應為邊緣入口之 Vercel Edge Firewall / WAF（Hobby 免費支援 1 條，依 IP 限制）。
+//    主體為邊緣入口之 Vercel Edge Firewall WAF（已正式發布 Rate Limit 規則：每 IP 60s 內 20 次）。
 //    下方 checkRateLimit(ip) 僅為單一 Serverless 容器執行期間之內部輔助防禦。
 //
 // 2. 全專案共享模型配額 (Project-Wide Shared Model Quota)：
 //    【架構邊界聲明】：Vercel Serverless 多實例無狀態架構在無中心化儲存（如 Upstash Redis / Vercel KV）時，
-//    純記憶體變數無法跨實例共享。下方 canInvokeGeminiModel() 僅為「單一容器應急熔斷保護」，
+//    純記憶體變數無法跨實例共享。下方 canInvokeCloudflareAIModel() 僅為「單一容器應急熔斷保護」，
 //    絕不宣稱為全站共享配額保障。
 //
 // 3. 模型供應商免費額度與計費狀態 (Provider Free Tier & Billing Status)：
-//    費用終極防線。必須使用未綁定任何信用卡/付款帳戶之 Google AI Studio 純 Free Tier 專案。
-//    若未確認該計費狀態（未設定 GEMINI_FREE_TIER_CONFIRMED=true），系統嚴格保持安全降級。
+//    採用 Cloudflare Workers AI Free 每日 10,000 Neurons 免費配額（重置時間為每日 00:00 UTC）。
+//    超過配額或觸發 429 時，系統即刻冷卻並降級至本機確定性知識點，絕不啟用 Workers Paid 或付費模型。
 // ══════════════════════════════════════════════════════════════════
 
 // ── 第 1 層輔助：單一容器內 IP 頻率檢查（非全站分散式限流） ──
@@ -168,8 +168,8 @@ export function checkRateLimit(ip: string): boolean {
 }
 
 // ── 第 2 層輔助：單一容器內部應急計數熔斷（注意：無法跨 Vercel 實例共享） ──
-const MODEL_CALL_MAX_PER_MINUTE = 10;
-const MODEL_CALL_MAX_PER_DAY = 800;
+const MODEL_CALL_MAX_PER_MINUTE = 20;
+const MODEL_CALL_MAX_PER_DAY = 1000;
 
 let minuteCalls = 0;
 let minuteWindowStart = Date.now();
@@ -181,10 +181,10 @@ let providerQuotaExhaustedUntil = 0;
 
 export function markProviderQuotaExhausted(cooldownMs: number = 60_000) {
   providerQuotaExhaustedUntil = Date.now() + cooldownMs;
-  console.warn(`[Gemini API] 供應商回傳 429 配額耗盡，容器啟動即刻冷卻 ${cooldownMs / 1000} 秒，期間完全跳過模型調用，直接降級`);
+  console.warn(`[Cloudflare Workers AI] 供應商回傳 429 配額耗盡（每日 10,000 Neurons 耗盡或速率限制），容器啟動即刻冷卻 ${cooldownMs / 1000} 秒，期間完全跳過模型調用，直接降級`);
 }
 
-export function canInvokeGeminiModel(): boolean {
+export function canInvokeCloudflareAIModel(): boolean {
   const now = Date.now();
 
   // 若供應商回傳 429 配額耗盡，處於冷卻熔斷期間直接拒絕，避免持續浪費外部連線
@@ -203,7 +203,7 @@ export function canInvokeGeminiModel(): boolean {
 
   // 單實例容器內部熔斷檢查
   if (minuteCalls >= MODEL_CALL_MAX_PER_MINUTE || dailyCalls >= MODEL_CALL_MAX_PER_DAY) {
-    console.warn('[Gemini Quota Guard] 單一容器模型調用達到內部應急熔斷上限，自動轉為確定性知識點降級');
+    console.warn('[Cloudflare Workers AI Quota Guard] 單一容器模型調用達到內部應急熔斷上限，自動轉為確定性知識點降級');
     return false;
   }
 
@@ -291,82 +291,76 @@ export function resolveAnaphoraQuery(
 }
 
 /**
- * 呼叫 Google Gemini API (輕量免費 LLM)
+ * 呼叫 Cloudflare Workers AI REST API (輕量免費開源模型)
+ * 預設模型：@cf/google/gemma-4-26b-a4b-it
  * 嚴格守則：
- * 1. 僅在明確確認專案為純 Free Tier（無信用卡/帳單帳戶）且 GEMINI_FREE_TIER_CONFIRMED=true 時啟用。
+ * 1. 僅使用 Cloudflare Workers AI Free 每日 10,000 Neurons 免費額度，超過自動降級。
  * 2. 供應商回傳 429、配額耗盡、逾時或錯誤時立即降級，0 次自動重試，絕不造成額外流量與開銷。
  */
-async function callGemini(
+async function callCloudflareWorkersAI(
   systemInstruction: string,
   prompt: string
 ): Promise<string | null> {
-  const apiKey = process.env.GEMINI_API_KEY || process.env.AI_API_KEY;
-  if (!apiKey) {
-    return null; // 無 API Key 時觸發優雅降級
-  }
-
-  // 【計費狀態硬性卡扣】：未明確確認付款層級前，絕不啟用正式 LLM
-  if (process.env.GEMINI_FREE_TIER_CONFIRMED !== 'true') {
-    console.warn('[Gemini Quota Guard] 尚未設定 GEMINI_FREE_TIER_CONFIRMED=true 確認專案為純免費層（無綁定付款帳戶），安全降級至本機回答');
-    return null;
+  const apiToken = process.env.CLOUDFLARE_API_TOKEN;
+  const accountId = process.env.CLOUDFLARE_ACCOUNT_ID;
+  if (!apiToken || !accountId) {
+    return null; // 無 API Token 或 Account ID 時觸發優雅降級至本機知識庫
   }
 
   // 容器內部計數與 429 冷卻熔斷保護
-  if (!canInvokeGeminiModel()) {
+  if (!canInvokeCloudflareAIModel()) {
     return null;
   }
 
-  const modelName = process.env.AI_MODEL_NAME || 'gemini-2.0-flash';
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
+  const modelName = process.env.CLOUDFLARE_AI_MODEL || '@cf/google/gemma-4-26b-a4b-it';
+  const url = `https://api.cloudflare.com/client/v4/accounts/${accountId}/ai/run/${modelName}`;
 
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), 8000);
 
   try {
     const payload = {
-      systemInstruction: {
-        parts: [{ text: systemInstruction }],
-      },
-      contents: [
-        {
-          role: 'user',
-          parts: [{ text: prompt }],
-        },
+      messages: [
+        { role: 'system', content: systemInstruction },
+        { role: 'user', content: prompt },
       ],
-      generationConfig: {
-        temperature: 0.2,
-        maxOutputTokens: 280,
-        topP: 0.85,
-      },
+      max_tokens: 280,
+      temperature: 0.2,
     };
 
     const res = await fetch(url, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Authorization': `Bearer ${apiToken}`,
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify(payload),
       signal: controller.signal,
     });
 
     clearTimeout(timeoutId);
 
-    // 供應商 429 配額耗盡處理：標記冷卻熔斷，即刻降級，絕無自動重試
+    // 供應商 429 配額耗盡處理（每日 10,000 Neurons 用盡或速率限制）：標記冷卻熔斷，即刻降級，絕無自動重試
     if (res.status === 429) {
-      markProviderQuotaExhausted(60_000);
+      markProviderQuotaExhausted(300_000); // 5 分鐘冷卻
       return null;
     }
 
     if (!res.ok) {
-      console.warn(`[Gemini API] 回應失敗 (狀態碼: ${res.status})，即刻降級至本機確定性回答（0次重試）`);
+      console.warn(`[Cloudflare Workers AI] 回應失敗 (狀態碼: ${res.status})，即刻降級至本機確定性回答（0次重試）`);
       return null;
     }
 
     const data = (await res.json()) as any;
     const candidateText =
-      data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || null;
+      data.result?.response?.trim() ||
+      data.response?.trim() ||
+      data.result?.choices?.[0]?.message?.content?.trim() ||
+      null;
     return candidateText;
   } catch (err) {
     clearTimeout(timeoutId);
-    console.warn(`[Gemini API] 呼叫異常或逾時，即刻降級至本機確定性回答（0次重試）:`, (err as Error).message);
+    console.warn(`[Cloudflare Workers AI] 呼叫異常或逾時，即刻降級至本機確定性回答（0次重試）:`, (err as Error).message);
     return null;
   }
 }
@@ -600,18 +594,18 @@ ${rawQuery}
 
 請以 MIRARI 陪讀的語氣給出白話解答：`;
 
-  const geminiAnswer = await callGemini(systemInstruction, prompt);
+  const modelAnswer = await callCloudflareWorkersAI(systemInstruction, prompt);
 
-  if (geminiAnswer) {
+  if (modelAnswer) {
     return {
       query: rawQuery,
-      answer: geminiAnswer,
+      answer: modelAnswer,
       confidence: 1.0,
       evidence: targetEvidence,
       matchedKnowledgePointId: bestKnowledgePoint?.id,
       gated: false,
       degraded: false,
-      provider: 'gemini',
+      provider: 'cloudflare-workers-ai',
       recommendedArticles: [],
       isRecommendation: false,
     };
@@ -816,18 +810,18 @@ ${recommendedArticles
 
 請以 MIRARI 科學策展人的身份，向讀者解釋推薦這篇/這些文章的科學原因：`;
 
-  const geminiCuratorReply = await callGemini(systemInstruction, prompt);
+  const modelCuratorReply = await callCloudflareWorkersAI(systemInstruction, prompt);
 
-  if (geminiCuratorReply) {
+  if (modelCuratorReply) {
     return {
       query: rawQuery,
-      curatorReply: geminiCuratorReply,
+      curatorReply: modelCuratorReply,
       recommendedArticles,
       suggestedTags: matchedTags,
       matchLevel: topCandidate.score >= 8.0 ? 'direct' : 'partial',
       gated: false,
       degraded: false,
-      provider: 'gemini',
+      provider: 'cloudflare-workers-ai',
     };
   }
 

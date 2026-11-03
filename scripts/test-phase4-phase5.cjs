@@ -225,8 +225,8 @@ async function runTests() {
     assert.ok(data.evidence !== null);
   });
 
-  // ─── 測試 9：API Key 不出現在前端產物 ───
-  await check('9. 安全審計 - API Key 絕不出現在前端產物 (dist/)', async () => {
+  // ─── 測試 9：API Key 與 Token 絕不出現在前端產物 ───
+  await check('9. 安全審計 - API Token 與金鑰絕不出現在前端產物 (dist/)', async () => {
     const distAssetsDir = path.join(__dirname, '..', 'dist', 'assets');
     assert.ok(fs.existsSync(distAssetsDir), 'dist/assets 目錄必須存在');
     const files = fs.readdirSync(distAssetsDir);
@@ -242,6 +242,16 @@ async function runTests() {
         content.includes('GEMINI_API_KEY'),
         false,
         `${f} 不得洩漏 GEMINI_API_KEY`
+      );
+      assert.strictEqual(
+        content.includes('CLOUDFLARE_API_TOKEN'),
+        false,
+        `${f} 不得洩漏 CLOUDFLARE_API_TOKEN`
+      );
+      assert.strictEqual(
+        content.includes('CLOUDFLARE_ACCOUNT_ID'),
+        false,
+        `${f} 不得洩漏 CLOUDFLARE_ACCOUNT_ID`
       );
     }
   });
