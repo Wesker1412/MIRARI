@@ -30,6 +30,11 @@ export interface ArticleChatResponse {
   provider: 'cloudflare-workers-ai' | 'local-fallback';
   recommendedArticles?: Article[];
   isRecommendation?: boolean;
+  cfDiag?: {
+    status: number;
+    elapsedMs: number;
+    error?: string;
+  };
 }
 
 export interface GlobalSearchResponse {
@@ -41,6 +46,11 @@ export interface GlobalSearchResponse {
   gated: boolean;
   degraded: boolean;
   provider: 'cloudflare-workers-ai' | 'local-fallback';
+  cfDiag?: {
+    status: number;
+    elapsedMs: number;
+    error?: string;
+  };
 }
 
 const ARTICLES_LIST: Article[] = articlesManifestRaw as unknown as Article[];
@@ -290,34 +300,43 @@ export function resolveAnaphoraQuery(
   };
 }
 
+interface CloudflareAIInvocationResult {
+  text: string | null;
+  status: number;
+  elapsedMs: number;
+  error?: string;
+}
+
 /**
  * 呼叫 Cloudflare Workers AI REST API (輕量免費開源模型)
  * 預設模型：@cf/google/gemma-4-26b-a4b-it
  * 嚴格守則：
  * 1. 僅使用 Cloudflare Workers AI Free 每日 10,000 Neurons 免費額度，超過自動降級。
  * 2. 供應商回傳 429、配額耗盡、逾時或錯誤時立即降級，0 次自動重試，絕不造成額外流量與開銷。
+ * 3. 停用 Gemma 4 預設之思維鏈 (enable_thinking: false)，防止思考過程耗盡 max_tokens。
  */
 async function callCloudflareWorkersAI(
   systemInstruction: string,
   prompt: string
-): Promise<string | null> {
+): Promise<CloudflareAIInvocationResult> {
   const apiToken = process.env.CLOUDFLARE_API_TOKEN;
   const accountId = process.env.CLOUDFLARE_ACCOUNT_ID;
   if (!apiToken || !accountId) {
-    return null; // 無 API Token 或 Account ID 時觸發優雅降級至本機知識庫
+    return { text: null, status: 0, elapsedMs: 0, error: 'missing_credentials' };
   }
 
   // 容器內部計數與 429 冷卻熔斷保護
   if (!canInvokeCloudflareAIModel()) {
-    return null;
+    return { text: null, status: 429, elapsedMs: 0, error: 'internal_quota_guard' };
   }
 
   const modelName = process.env.CLOUDFLARE_AI_MODEL || '@cf/google/gemma-4-26b-a4b-it';
   const url = `https://api.cloudflare.com/client/v4/accounts/${accountId}/ai/run/${modelName}`;
 
   const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 8000);
+  const timeoutId = setTimeout(() => controller.abort(), 12000); // 12 秒超時防護
 
+  const startTime = Date.now();
   try {
     const payload = {
       messages: [
@@ -326,6 +345,7 @@ async function callCloudflareWorkersAI(
       ],
       max_tokens: 280,
       temperature: 0.2,
+      chat_template_kwargs: { enable_thinking: false },
     };
 
     const res = await fetch(url, {
@@ -339,29 +359,54 @@ async function callCloudflareWorkersAI(
     });
 
     clearTimeout(timeoutId);
+    const elapsedMs = Date.now() - startTime;
 
     // 供應商 429 配額耗盡處理（每日 10,000 Neurons 用盡或速率限制）：標記冷卻熔斷，即刻降級，絕無自動重試
     if (res.status === 429) {
+      console.warn(`[Cloudflare Workers AI] 429 速率限制或配額耗盡 (耗時: ${elapsedMs}ms)`);
       markProviderQuotaExhausted(300_000); // 5 分鐘冷卻
-      return null;
+      return { text: null, status: 429, elapsedMs, error: 'provider_429_rate_limit' };
     }
 
     if (!res.ok) {
-      console.warn(`[Cloudflare Workers AI] 回應失敗 (狀態碼: ${res.status})，即刻降級至本機確定性回答（0次重試）`);
-      return null;
+      const errText = await res.text().catch(() => '');
+      console.warn(`[Cloudflare Workers AI] 回應失敗 (狀態碼: ${res.status}, 耗時: ${elapsedMs}ms):`, errText.slice(0, 150));
+      return { text: null, status: res.status, elapsedMs, error: errText.slice(0, 150) };
     }
 
     const data = (await res.json()) as any;
-    const candidateText =
+    let candidateText =
       data.result?.response?.trim() ||
       data.response?.trim() ||
       data.result?.choices?.[0]?.message?.content?.trim() ||
       null;
-    return candidateText;
+
+    if (candidateText && candidateText.includes('</thought>')) {
+      candidateText = candidateText.split('</thought>').pop()?.trim() || candidateText;
+    }
+
+    if (!candidateText) {
+      console.warn(`[Cloudflare Workers AI] 回應無有效文本 (耗時: ${elapsedMs}ms):`, JSON.stringify(data).slice(0, 150));
+      return {
+        text: null,
+        status: res.status,
+        elapsedMs,
+        error: `empty_response_content: ${JSON.stringify(data).slice(0, 100)}`,
+      };
+    }
+
+    return { text: candidateText, status: res.status, elapsedMs };
   } catch (err) {
     clearTimeout(timeoutId);
-    console.warn(`[Cloudflare Workers AI] 呼叫異常或逾時，即刻降級至本機確定性回答（0次重試）:`, (err as Error).message);
-    return null;
+    const elapsedMs = Date.now() - startTime;
+    const isTimeout = (err as Error).name === 'AbortError';
+    console.warn(`[Cloudflare Workers AI] 呼叫異常或逾時 (耗時: ${elapsedMs}ms, 0次重試):`, (err as Error).message);
+    return {
+      text: null,
+      status: isTimeout ? 408 : 500,
+      elapsedMs,
+      error: (err as Error).message,
+    };
   }
 }
 
@@ -594,12 +639,12 @@ ${rawQuery}
 
 請以 MIRARI 陪讀的語氣給出白話解答：`;
 
-  const modelAnswer = await callCloudflareWorkersAI(systemInstruction, prompt);
+  const aiResult = await callCloudflareWorkersAI(systemInstruction, prompt);
 
-  if (modelAnswer) {
+  if (aiResult.text) {
     return {
       query: rawQuery,
-      answer: modelAnswer,
+      answer: aiResult.text,
       confidence: 1.0,
       evidence: targetEvidence,
       matchedKnowledgePointId: bestKnowledgePoint?.id,
@@ -608,6 +653,7 @@ ${rawQuery}
       provider: 'cloudflare-workers-ai',
       recommendedArticles: [],
       isRecommendation: false,
+      cfDiag: { status: aiResult.status, elapsedMs: aiResult.elapsedMs },
     };
   }
 
@@ -631,6 +677,7 @@ ${rawQuery}
     provider: 'local-fallback',
     recommendedArticles: [],
     isRecommendation: false,
+    cfDiag: { status: aiResult.status, elapsedMs: aiResult.elapsedMs, error: aiResult.error },
   };
 }
 
@@ -810,18 +857,19 @@ ${recommendedArticles
 
 請以 MIRARI 科學策展人的身份，向讀者解釋推薦這篇/這些文章的科學原因：`;
 
-  const modelCuratorReply = await callCloudflareWorkersAI(systemInstruction, prompt);
+  const aiResult = await callCloudflareWorkersAI(systemInstruction, prompt);
 
-  if (modelCuratorReply) {
+  if (aiResult.text) {
     return {
       query: rawQuery,
-      curatorReply: modelCuratorReply,
+      curatorReply: aiResult.text,
       recommendedArticles,
       suggestedTags: matchedTags,
       matchLevel: topCandidate.score >= 8.0 ? 'direct' : 'partial',
       gated: false,
       degraded: false,
       provider: 'cloudflare-workers-ai',
+      cfDiag: { status: aiResult.status, elapsedMs: aiResult.elapsedMs },
     };
   }
 
@@ -842,5 +890,6 @@ ${recommendedArticles
     gated: false,
     degraded: true,
     provider: 'local-fallback',
+    cfDiag: { status: aiResult.status, elapsedMs: aiResult.elapsedMs, error: aiResult.error },
   };
 }

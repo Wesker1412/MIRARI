@@ -1,5 +1,7 @@
 import { handleGlobalSearch, checkRateLimit } from './_lib/ragEngine.js';
 
+export const maxDuration = 20;
+
 let activeConcurrentRequests = 0;
 const MAX_CONCURRENT_REQUESTS = 6;
 
