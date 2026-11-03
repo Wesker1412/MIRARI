@@ -23,6 +23,103 @@ const MANIFEST_PATH = path.join(ROOT_DIR, 'src', 'data', 'generated', 'articles-
 const INDEX_HTML_PATH = path.join(DIST_DIR, 'index.html');
 const SITE_CONFIG_PATH = path.join(ROOT_DIR, 'src', 'config', 'site.ts');
 
+function renderInlineHtml(text) {
+  if (!text) return '';
+  let out = escapeHtml(text);
+  // Bold: **...**
+  out = out.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+  // Italic: *...*
+  out = out.replace(/(^|[^\\])\*([^*]+)\*/g, '$1<em>$2</em>');
+  // Code: `...`
+  out = out.replace(/`([^`]+)`/g, '<code class="font-mono text-xs px-1.5 py-0.5 bg-[#FAF9F6] border border-[#E8E4DA] rounded">$1</code>');
+  // Link: [text](url)
+  out = out.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, label, rawUrl) => {
+    const safe = /^(https?:\/\/|\/|#|mailto:)/i.test(rawUrl.trim());
+    const href = safe ? rawUrl.trim() : '#';
+    return `<a href="${href}" target="_blank" rel="noopener noreferrer" class="text-[#0369A1] underline">$1</a>`;
+  });
+  return out;
+}
+
+function renderMarkdownParagraphToHtml(paraText) {
+  const trimmed = paraText.trim();
+  if (!trimmed) return '';
+
+  if (trimmed.includes('<InteractiveExperiment')) {
+    const match = trimmed.match(/id=["']([^"']+)["']/);
+    const id = match ? match[1] : 'InteractiveSimulation';
+    return `<div class="my-6 p-4 rounded-xl border border-[#E8E4DA] bg-[#FAF9F6] text-center font-serif text-sm text-[#4E5764]">【MIRARI 互動實驗模擬元件：${escapeHtml(id)}】</div>`;
+  }
+
+  if ((trimmed.startsWith('$$') && trimmed.endsWith('$$')) || (trimmed.startsWith('\\[') && trimmed.endsWith('\\]'))) {
+    return `<div class="mirari-formula-block py-3 font-mono text-center text-sm text-[#0369A1] my-4 bg-[#FAF9F6] border-y border-[#E8E4DA] rounded-lg">${escapeHtml(trimmed)}</div>`;
+  }
+
+  if (trimmed.startsWith('```')) {
+    const match = trimmed.match(/^```([a-zA-Z0-9_-]*)\r?\n([\s\S]*?)\r?\n```$/);
+    const code = match ? match[2] : trimmed.slice(3, -3);
+    return `<pre class="my-4 p-4 rounded-xl border border-[#E8E4DA] bg-[#FAF9F6] overflow-x-auto font-mono text-xs text-[#15171B]"><code>${escapeHtml(code)}</code></pre>`;
+  }
+
+  const rawLines = trimmed.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+  if (rawLines.length >= 2 && rawLines[0].startsWith('|') && rawLines[0].endsWith('|') && rawLines[1].includes('---')) {
+    const headers = rawLines[0].split('|').map(s => s.trim()).filter((_, idx, arr) => idx > 0 && idx < arr.length - 1);
+    const rows = rawLines.slice(2).map(r => r.split('|').map(s => s.trim()).filter((_, idx, arr) => idx > 0 && idx < arr.length - 1));
+    return `
+      <div class="my-6 overflow-x-auto">
+        <table class="min-w-full text-left text-sm border-collapse border border-[#E8E4DA]">
+          <thead class="bg-[#FAF9F6] font-serif font-bold text-[#15171B]">
+            <tr>${headers.map(h => `<th class="p-3 border border-[#E8E4DA]">${renderInlineHtml(h)}</th>`).join('')}</tr>
+          </thead>
+          <tbody>
+            ${rows.map(r => `<tr>${r.map(c => `<td class="p-3 border border-[#E8E4DA]">${renderInlineHtml(c)}</td>`).join('')}</tr>`).join('')}
+          </tbody>
+        </table>
+      </div>
+    `;
+  }
+
+  if (rawLines.every(l => l.startsWith('>'))) {
+    return `
+      <blockquote class="my-6 pl-5 border-l-2 border-[#C2410C] py-2 space-y-2 font-serif text-[#15171B] italic bg-[#FFF7ED] rounded-r-lg">
+        ${rawLines.map(l => `<p class="leading-relaxed font-serif text-base sm:text-lg text-[#15171B]">${renderInlineHtml(l.replace(/^\s*>\s?/, ''))}</p>`).join('\n')}
+      </blockquote>
+    `;
+  }
+
+  if (trimmed.startsWith('#')) {
+    const match = trimmed.match(/^(#{1,6})\s+([^\r\n]+)/);
+    if (match) {
+      const level = match[1].length;
+      const title = match[2].trim();
+      const tag = level === 3 ? 'h3' : level === 4 ? 'h4' : 'h2';
+      const remaining = trimmed.split(/\r?\n/).slice(1).join('\n').trim();
+      let bodyHtml = '';
+      if (remaining) {
+        bodyHtml = renderMarkdownParagraphToHtml(remaining);
+      }
+      return `<${tag} class="font-serif text-xl sm:text-2xl font-bold text-[#15171B] tracking-tight mt-8 mb-4 pt-2">${renderInlineHtml(title)}</${tag}>\n${bodyHtml}`;
+    }
+  }
+
+  const hasList = rawLines.some(l => l.match(/^([-*+]|\d+\.)\s+/));
+  if (hasList) {
+    const firstListIdx = rawLines.findIndex(l => l.match(/^([-*+]|\d+\.)\s+/));
+    const leadIn = firstListIdx > 0 ? `<p class="leading-relaxed font-serif text-base sm:text-lg text-[#15171B] mb-3">${renderInlineHtml(rawLines.slice(0, firstListIdx).join('\n'))}</p>` : '';
+    const listLines = rawLines.slice(firstListIdx);
+    const isOrdered = /^\d+\./.test(listLines[0]);
+    const tag = isOrdered ? 'ol' : 'ul';
+    const cls = isOrdered ? 'my-4 space-y-3 list-decimal list-outside pl-6 text-[#15171B]' : 'my-4 space-y-2.5 list-disc list-outside pl-6 text-[#15171B]';
+    const items = listLines.map(l => {
+      const clean = l.replace(/^(\d+\.|[-*+])\s+/, '').trim();
+      return `<li class="leading-relaxed pl-1">${renderInlineHtml(clean)}</li>`;
+    }).join('\n');
+    return `${leadIn}\n<${tag} class="${cls}">\n${items}\n</${tag}>`;
+  }
+
+  return `<p class="leading-relaxed font-serif text-base sm:text-lg text-[#15171B] mb-4">${renderInlineHtml(trimmed)}</p>`;
+}
+
 function escapeHtml(str) {
   if (!str) return '';
   return str
@@ -124,12 +221,7 @@ function generatePrerenderedHTML() {
     const sectionsHtml = (article.sections || [])
       .map((sec) => {
         const paragraphs = (sec.paragraphs || [])
-          .map((p) => {
-            if (p.startsWith('$$')) {
-              return `<div class="mirari-formula-block py-2 font-mono text-center text-xs text-mirari-cobalt">${escapeHtml(p)}</div>`;
-            }
-            return `<p class="leading-relaxed font-serif text-base sm:text-lg text-mirari-ink mb-4">${escapeHtml(p)}</p>`;
-          })
+          .map((p) => renderMarkdownParagraphToHtml(p))
           .join('\n');
 
         return `
