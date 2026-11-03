@@ -54,6 +54,19 @@ async function runPipeline() {
   const articleFiles = fs.readdirSync(CONTENT_DIR).filter((f) => f.endsWith('.mdx') || f.endsWith('.md'));
   console.log(`📚 發現 ${articleFiles.length} 篇 Markdown/MDX 正式文章本體`);
 
+  const todayTaipei = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Taipei',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).format(new Date());
+
+  function isArticlePublished(doc, refDateStr = todayTaipei) {
+    if (!doc || doc.status !== 'published') return false;
+    if (!doc.publishedDate) return false;
+    return doc.publishedDate <= refDateStr;
+  }
+
   const compiledArticles = [];
   const evidenceIndexByArticle = {};
   const searchIndexList = [];
@@ -74,76 +87,88 @@ async function runPipeline() {
     console.log(`   · 結構: ${document.sections.length} 個章節, ${sentences.length} 句原文, ${chunks.length} 個檢索區塊`);
     console.log(`   · 參考來源: ${document.references.length} 篇實證論文`);
 
-    totalSentences += sentences.length;
-    totalChunks += chunks.length;
+    const isPub = isArticlePublished(document);
+    if (!isPub) {
+      console.log(`   🔒 尚未到期未發布篇章 (${document.publishedDate || '無發布日期'} > ${todayTaipei})：正文與檢索索引隔離`);
+      // 隔離正文內容，確保公開資產 (JS bundle / articles-manifest.json) 絕不洩漏未公開正文
+      compiledArticles.push({
+        ...document,
+        sections: [],
+      });
+      // 未發布篇章不納入公開 evidenceIndex 與 searchIndex
+    } else {
+      totalSentences += sentences.length;
+      totalChunks += chunks.length;
 
-    // Incremental Chunk Processing
-    const processedChunks = [];
-    for (const chunk of chunks) {
-      const cached = cache.chunks[chunk.contentHash];
-      if (cached && cached.modelVersion === embeddingProvider.modelVersion) {
-        // Reuse cached embedding
-        reusedChunksCount++;
-        processedChunks.push({
-          ...chunk,
-          vector: cached.vector,
-          reused: true,
-        });
-      } else {
-        // Generate new embedding
-        newlyEmbeddedChunksCount++;
-        const vector = await embeddingProvider.generateEmbedding(chunk.contextContent);
-        cache.chunks[chunk.contentHash] = {
-          chunkId: chunk.id,
-          contentHash: chunk.contentHash,
-          vector,
-          modelVersion: embeddingProvider.modelVersion,
-          updatedAt: new Date().toISOString(),
-        };
-        processedChunks.push({
-          ...chunk,
-          vector,
-          reused: false,
-        });
+      // Incremental Chunk Processing
+      const processedChunks = [];
+      for (const chunk of chunks) {
+        const cached = cache.chunks[chunk.contentHash];
+        if (cached && cached.modelVersion === embeddingProvider.modelVersion) {
+          // Reuse cached embedding
+          reusedChunksCount++;
+          processedChunks.push({
+            ...chunk,
+            vector: cached.vector,
+            reused: true,
+          });
+        } else {
+          // Generate new embedding
+          newlyEmbeddedChunksCount++;
+          const vector = await embeddingProvider.generateEmbedding(chunk.contextContent);
+          cache.chunks[chunk.contentHash] = {
+            chunkId: chunk.id,
+            contentHash: chunk.contentHash,
+            vector,
+            modelVersion: embeddingProvider.modelVersion,
+            updatedAt: new Date().toISOString(),
+          };
+          processedChunks.push({
+            ...chunk,
+            vector,
+            reused: false,
+          });
+        }
       }
+
+      // Attach processed chunks and metadata
+      compiledArticles.push(document);
+      evidenceIndexByArticle[document.id] = sentences;
+
+      // Build Search Index Entry
+      const combinedSearchText = [
+        document.title,
+        document.subtitle,
+        document.summary,
+        document.leadParagraph,
+        ...(document.tags || []),
+        ...sentences.map((s) => s.exactQuote),
+      ].join(' ');
+
+      const tokens = Array.from(new Set(tokenizeCJK(combinedSearchText)));
+
+      searchIndexList.push({
+        articleId: document.id,
+        slug: document.slug,
+        title: document.title,
+        subtitle: document.subtitle,
+        summary: document.summary,
+        status: document.status,
+        publishedDate: document.publishedDate,
+        topicIds: document.topicIds || [],
+        tags: document.tags || [],
+        editorialCategory: document.editorialCategory,
+        format: document.format,
+        formatBadgeText: document.formatBadgeText,
+        isEditorialCover: !!document.isEditorialCover,
+        isEditorialPick: !!document.isEditorialPick,
+        isResearchHighlight: !!document.isResearchHighlight,
+        isClassicFoundation: !!document.isClassicFoundation,
+        tokens,
+        contentHash: document.contentHash,
+        totalSentences: sentences.length,
+      });
     }
-
-    // Attach processed chunks and metadata
-    compiledArticles.push(document);
-    evidenceIndexByArticle[document.id] = sentences;
-
-    // Build Search Index Entry
-    const combinedSearchText = [
-      document.title,
-      document.subtitle,
-      document.summary,
-      document.leadParagraph,
-      ...(document.tags || []),
-      ...sentences.map((s) => s.exactQuote),
-    ].join(' ');
-
-    const tokens = Array.from(new Set(tokenizeCJK(combinedSearchText)));
-
-    searchIndexList.push({
-      articleId: document.id,
-      slug: document.slug,
-      title: document.title,
-      subtitle: document.subtitle,
-      summary: document.summary,
-      status: document.status,
-      topicIds: document.topicIds || [],
-      tags: document.tags || [],
-      editorialCategory: document.editorialCategory,
-      format: document.format,
-      formatBadgeText: document.formatBadgeText,
-      isEditorialCover: !!document.isEditorialCover,
-      isEditorialPick: !!document.isEditorialPick,
-      isResearchHighlight: !!document.isResearchHighlight,
-      isClassicFoundation: !!document.isClassicFoundation,
-      tokens,
-      contentHash: document.contentHash,
-      totalSentences: sentences.length,
-    });
   }
 
   // Save Generated Files
@@ -169,6 +194,14 @@ async function runPipeline() {
 
   for (const kpFile of kpFiles) {
     const rawKp = JSON.parse(fs.readFileSync(path.join(KP_DIR, kpFile), 'utf8'));
+    const targetArticle = compiledArticles.find(
+      (a) => a.id === rawKp.articleId || a.slug === rawKp.slug
+    );
+    if (!targetArticle || !isArticlePublished(targetArticle)) {
+      console.log(`   🔒 排除未公開篇章之知識庫: ${rawKp.articleId || kpFile}`);
+      continue;
+    }
+
     const articleSentences = evidenceIndexByArticle[rawKp.articleId] || [];
     const sentenceIds = new Set(articleSentences.map((s) => s.sentenceId));
 

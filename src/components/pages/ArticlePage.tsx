@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, useNavigate, useOutletContext } from 'react-router-dom';
 import { getArticleBySlug } from '../../data/articles';
+import { isArticlePublished } from '../../utils/date';
 import { ArticleView } from '../article/ArticleView';
 import { NotFoundPage } from './NotFoundPage';
 import { UnpublishedNoticePage } from './UnpublishedNoticePage';
@@ -31,8 +32,8 @@ export const ArticlePage: React.FC = () => {
     );
   }
 
-  // 2. 未發布之篇章：嚴格阻擋直接輸入網址公開閱讀正文
-  if (article.status !== 'published') {
+  // 2. 未正式發布之篇章（包含 status !== 'published' 或未抵達 Asia/Taipei 發布日期之預排篇章）：嚴格阻擋直接輸入網址公開閱讀正文
+  if (!isArticlePublished(article)) {
     return <UnpublishedNoticePage article={article} />;
   }
 

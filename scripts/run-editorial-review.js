@@ -97,7 +97,7 @@ function runReview() {
       process.exit(1);
     }
 
-    // 1.6 檢查發布日期與台灣時區 (Asia/Taipei)：已發布文章之發布日期不得為未來日期
+    // 1.6 檢查發布日期與台灣時區 (Asia/Taipei)
     const todayTaipei = new Intl.DateTimeFormat('en-CA', {
       timeZone: 'Asia/Taipei',
       year: 'numeric',
@@ -105,10 +105,16 @@ function runReview() {
       day: '2-digit',
     }).format(new Date());
 
-    if (metadata.status === 'published' && metadata.publishedDate && metadata.publishedDate > todayTaipei) {
-      console.error(`   ❌ 發布日期異常: 文章標記為 published，但發布日期 (${metadata.publishedDate}) 超前於台灣時間今日 (${todayTaipei})！`);
-      console.error(`      預排程文章不得提前公開，且不可將未來日期作為現有發布日期。`);
+    if (!metadata.publishedDate) {
+      console.error(`   ❌ 缺少發布日期 (publishedDate)`);
       process.exit(1);
+    }
+
+    const isPreScheduled = metadata.publishedDate > todayTaipei;
+    if (isPreScheduled) {
+      console.log(`   ℹ️ 排程狀態: 預排程發表篇章 (發布日期 ${metadata.publishedDate} > 台灣今日 ${todayTaipei})，發布閘門將自動隔離未公開正文。`);
+    } else {
+      console.log(`   ✓ 發布日期驗證: 正式公開篇章 (${metadata.publishedDate} <= 台灣今日 ${todayTaipei})`);
     }
 
     // 1.8 檢查文章核心白話知識點 (content/knowledge-points/<slug>.json)

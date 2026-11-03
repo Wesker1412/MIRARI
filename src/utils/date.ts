@@ -42,7 +42,7 @@ export function getTaipeiDateString(dateInput: Date | string | number = new Date
  */
 export function isArticlePublished(
   article: { status?: string; publishedDate?: string },
-  referenceDate: Date | string = new Date()
+  referenceDate?: Date | string | unknown
 ): boolean {
   if (!article || article.status !== 'published') {
     return false;
@@ -52,7 +52,12 @@ export function isArticlePublished(
     return false;
   }
 
-  const todayTaipei = getTaipeiDateString(referenceDate);
+  // 若作為 Array.filter callback 呼叫時，第 2 個參數為數值 index，予以安全忽略
+  const ref =
+    typeof referenceDate === 'string' || referenceDate instanceof Date
+      ? referenceDate
+      : new Date();
+  const todayTaipei = getTaipeiDateString(ref);
   // YYYY-MM-DD 格式可直接進行字典序比較
   return article.publishedDate <= todayTaipei;
 }

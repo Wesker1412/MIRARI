@@ -9,6 +9,7 @@ import type {
   ArticleKnowledgePoint,
   SearchIndexEntry,
 } from '../../src/types/index.ts';
+import { isArticlePublished } from '../../src/utils/date.ts';
 
 // ─── 核心常數與型別宣告 ──────────────────────────────────────────
 export const GATE_REJECTION_MESSAGE =
@@ -462,14 +463,14 @@ export async function handleArticleChat(params: {
     };
   }
 
-  // 2. 驗證文章是否存在於站內正式文章中（防範前端偽造未發布或外部文章）
+  // 2. 驗證文章是否存在且已正式發布（防範前端偽造未發布、外部或尚未到達發布日期之預排文章）
   const article = ARTICLES_MAP.get(articleId);
   const articleKnowledge = KNOWLEDGE_BASE.find(
     (k) => k.articleId === articleId || k.slug === articleId
   );
   const articleSentences = EVIDENCE_MAP[articleId] || [];
 
-  if (!article || article.status !== 'published') {
+  if (!article || !isArticlePublished(article)) {
     return {
       query: rawQuery,
       answer: GATE_REJECTION_MESSAGE,
@@ -594,9 +595,9 @@ export async function handleArticleChat(params: {
       skipLLM: true,
     });
 
-    // 檢查全站檢索是否通過門檻，且推薦文章中包含非當前文章
+    // 檢查全站檢索是否通過門檻，且推薦文章中包含非當前文章且已正式發布
     const otherArticles = (globalSearchResult.recommendedArticles || []).filter(
-      (a) => a.id !== articleId
+      (a) => a.id !== articleId && isArticlePublished(a)
     );
 
     if (globalSearchResult.gated || otherArticles.length === 0) {
@@ -758,9 +759,8 @@ export async function handleGlobalSearch(params: {
   }> = [];
 
   for (const entry of SEARCH_INDEX) {
-    if (entry.status !== 'published') continue;
     const article = ARTICLES_MAP.get(entry.articleId);
-    if (!article) continue;
+    if (!article || !isArticlePublished(article)) continue;
 
     let score = 0;
     const entryTokenSet = new Set(entry.tokens);
@@ -838,7 +838,10 @@ export async function handleGlobalSearch(params: {
   }
 
   const topCandidate = qualifiedCandidates[0];
-  const recommendedArticles = qualifiedCandidates.slice(0, 3).map((s) => s.article);
+  const recommendedArticles = qualifiedCandidates
+    .slice(0, 3)
+    .map((s) => s.article)
+    .filter((a) => isArticlePublished(a));
   const topArticle = recommendedArticles[0];
 
   const matchedTags = Array.from(

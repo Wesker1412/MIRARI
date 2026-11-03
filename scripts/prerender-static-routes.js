@@ -90,7 +90,21 @@ function generatePrerenderedHTML() {
 
   const articles = JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf8'));
 
-  const publishedArticles = articles.filter((a) => a.status === 'published');
+  const todayTaipei = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Taipei',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).format(new Date());
+
+  function isArticlePublished(article, refDateStr = todayTaipei) {
+    if (!article || article.status !== 'published') return false;
+    if (!article.publishedDate) return false;
+    return article.publishedDate <= refDateStr;
+  }
+
+  const publishedArticles = articles.filter((a) => isArticlePublished(a));
+  const unreleasedArticles = articles.filter((a) => !isArticlePublished(a));
   let publishedPrerenderCount = 0;
 
   for (const article of publishedArticles) {
@@ -235,6 +249,58 @@ ${JSON.stringify(jsonLd, null, 2)}
     fs.writeFileSync(path.join(articleDir, 'index.html'), articleHtml, 'utf8');
     fs.writeFileSync(path.join(DIST_DIR, 'articles', `${article.slug}.html`), articleHtml, 'utf8');
     publishedPrerenderCount++;
+  }
+
+  // 針對未正式發布或預排程篇章，預渲染受保護之提示頁面，完全不包含任何未公開正文
+  for (const article of unreleasedArticles) {
+    const articleDir = path.join(DIST_DIR, 'articles', article.slug);
+    ensureDir(articleDir);
+
+    const pageTitle = `《${article.title}》（籌備中） | MIRARI 數位科學雜誌`;
+    const pageDesc = article.summary || '本篇章尚處於同行評審或編輯部撰寫籌備中，尚未公開發布。';
+    const canonicalUrl = `${canonicalOrigin}/articles/${article.slug}`;
+
+    const unpublishedBody = `
+      <div class="min-h-screen bg-[#fcfbf9] text-[#1a1917] flex flex-col justify-between">
+        <header class="border-b border-[#e5e0d8] bg-[#fcfbf9]/90 px-4 sm:px-8 py-3.5 flex items-center justify-between">
+          <a href="/" class="text-xs font-sans text-[#706c64] hover:text-[#1a1917] px-3 py-1.5 rounded-lg border border-[#e5e0d8]">返回 MIRARI 首頁</a>
+          <span class="font-serif text-sm font-semibold">MIRARI · 編輯籌備室</span>
+        </header>
+        <main class="max-w-2xl mx-auto px-4 py-16 text-center space-y-6">
+          <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-xs font-sans text-amber-800">
+            <span>學術審訂與籌備中 · 尚未公開發布</span>
+          </div>
+          <div class="space-y-3">
+            <h1 class="font-serif text-3xl sm:text-4xl font-bold">《${escapeHtml(article.title)}》</h1>
+            <p class="font-serif text-base sm:text-lg text-[#706c64]">${escapeHtml(article.subtitle || '')}</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-white border border-[#e5e0d8] text-left space-y-3 font-sans text-xs text-[#706c64]">
+            <div class="font-semibold text-[#1a1917] text-sm font-serif border-b border-[#e5e0d8] pb-2">篇章籌備說明</div>
+            <p>本篇章目前處於選題研究、同行審議或互動數據實驗的建構階段，尚未通過發布審核。為維護科學媒體的嚴謹標準，MIRARI 不開放未發布草案的全文公開閱讀。</p>
+          </div>
+          <div class="pt-4">
+            <a href="/" class="inline-block px-6 py-3 rounded-xl bg-[#1a1917] text-white text-xs font-medium">返回雜誌首頁</a>
+          </div>
+        </main>
+        <footer class="border-t border-[#e5e0d8] py-6 text-center text-xs text-[#a09c94] font-sans">© 2026 MIRARI 數位科學雜誌 · 嚴謹可驗證的科學內容標準</footer>
+      </div>
+    `;
+
+    let unpubHtml = baseHtml;
+    unpubHtml = unpubHtml.replace(/<title>.*?<\/title>/i, `<title>${escapeHtml(pageTitle)}</title>`);
+    unpubHtml = unpubHtml.replace(/<meta\s+name="description"[^>]*>/i, '');
+    unpubHtml = unpubHtml.replace(/<meta\s+name="robots"[^>]*>/i, '');
+
+    const unpubMeta = `
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="${escapeHtml(pageDesc)}" />
+    <link rel="canonical" href="${escapeHtml(canonicalUrl)}" />
+  </head>`;
+    unpubHtml = unpubHtml.replace('</head>', `${unpubMeta}`);
+    unpubHtml = unpubHtml.replace('<div id="root"></div>', `<div id="root">${unpublishedBody}</div>`);
+
+    fs.writeFileSync(path.join(articleDir, 'index.html'), unpubHtml, 'utf8');
+    fs.writeFileSync(path.join(DIST_DIR, 'articles', `${article.slug}.html`), unpubHtml, 'utf8');
   }
 
   // 生成分類頁靜態預渲染 (/journal 與 /principles)

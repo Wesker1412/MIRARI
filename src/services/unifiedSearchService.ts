@@ -1,6 +1,7 @@
 import searchIndexRaw from '../data/generated/search-index.json';
 import articlesManifestRaw from '../data/generated/articles-manifest.json';
 import { TOPICS } from '../data/topics';
+import { isArticlePublished } from '../utils/date';
 import type { Article, AIRecommendation, SearchIndexEntry } from '../types';
 
 const SEARCH_INDEX: SearchIndexEntry[] = searchIndexRaw as unknown as SearchIndexEntry[];
@@ -99,9 +100,8 @@ export function queryDataDrivenRecommendation(query: string): AIRecommendation {
   const queryTokens = tokenizeQuery(query);
 
   if (queryTokens.length === 0) {
-    const publishedFallback = SEARCH_INDEX.filter((a) => a.status === 'published')
-      .map((entry) => ARTICLES_MAP.get(entry.articleId)!)
-      .filter(Boolean)
+    const publishedFallback = Array.from(ARTICLES_MAP.values())
+      .filter((a) => isArticlePublished(a))
       .slice(0, 2);
 
     return {
@@ -117,6 +117,8 @@ export function queryDataDrivenRecommendation(query: string): AIRecommendation {
   const scoredEntries: Array<{ entry: SearchIndexEntry; score: number; matchedTokensCount: number }> = [];
 
   for (const entry of SEARCH_INDEX) {
+    const article = ARTICLES_MAP.get(entry.articleId);
+    if (!article || !isArticlePublished(article)) continue;
     const entryTokenSet = new Set(entry.tokens);
     let score = 0;
     let matchedTokensCount = 0;
@@ -178,23 +180,12 @@ export function queryDataDrivenRecommendation(query: string): AIRecommendation {
     };
   }
 
-  // Separate published vs in_preparation to ensure published articles come first
+  // Only return articles that have passed the Asia/Taipei publication gate
   const publishedMatches = scoredEntries
-    .filter((s) => s.entry.status === 'published')
     .map((s) => ARTICLES_MAP.get(s.entry.articleId)!)
-    .filter(Boolean);
+    .filter((a) => a && isArticlePublished(a));
 
-  const prepMatches = scoredEntries
-    .filter((s) => s.entry.status === 'in_preparation')
-    .map((s) => ARTICLES_MAP.get(s.entry.articleId)!)
-    .filter(Boolean);
-
-  const recommendedArticles: Article[] = [];
-  if (publishedMatches.length > 0) {
-    recommendedArticles.push(...publishedMatches.slice(0, 3));
-  } else if (prepMatches.length > 0) {
-    recommendedArticles.push(...prepMatches.slice(0, 2));
-  }
+  const recommendedArticles: Article[] = publishedMatches.slice(0, 3);
 
   // Extract relevant tags
   const matchedTags = Array.from(

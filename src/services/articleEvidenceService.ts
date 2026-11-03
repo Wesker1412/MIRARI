@@ -1,6 +1,8 @@
 import evidenceIndexRaw from '../data/generated/evidence-index.json';
 import type { SentenceEvidence, EvidenceSearchResult, ArticleKnowledgePoint } from '../types';
 import { getArticleKnowledgeConfig } from '../data/articleKnowledgeBase';
+import { getArticleById, getArticleBySlug } from '../data/articles';
+import { isArticlePublished } from '../utils/date';
 import { queryDataDrivenRecommendation } from './unifiedSearchService';
 
 export type { EvidenceSearchResult };
@@ -21,6 +23,8 @@ const QUESTION_STOPWORDS = new Set([
  * 取得指定篇章的核心提問提示 / 知識點
  */
 export function getArticleKnowledgePoints(articleIdOrSlug: string): ArticleKnowledgePoint[] {
+  const art = getArticleById(articleIdOrSlug) || getArticleBySlug(articleIdOrSlug);
+  if (!art || !isArticlePublished(art)) return [];
   const cfg = getArticleKnowledgeConfig(articleIdOrSlug);
   return cfg ? cfg.knowledgePoints : [];
 }
@@ -83,6 +87,17 @@ export function searchArticleEvidence(
     return {
       query,
       answer: '未找到當前篇章的知識庫索引。',
+      confidence: 0,
+      evidence: null,
+      matchedKnowledgePoint: null,
+    };
+  }
+
+  const targetArticle = getArticleById(config.articleId) || getArticleBySlug(articleIdOrSlug);
+  if (!targetArticle || !isArticlePublished(targetArticle)) {
+    return {
+      query,
+      answer: 'MIRARI 目前尚未收錄足以回答這個問題的科學內容。你可以嘗試換個關鍵字，或探索站內其他科學文章。',
       confidence: 0,
       evidence: null,
       matchedKnowledgePoint: null,
@@ -230,6 +245,17 @@ export async function queryArticleCompanionChat(
   // 嘗試解析標準 articleId
   const config = getArticleKnowledgeConfig(articleIdOrSlug);
   const targetArticleId = config ? config.articleId : articleIdOrSlug;
+
+  const targetArticle = getArticleById(targetArticleId) || getArticleBySlug(articleIdOrSlug);
+  if (!targetArticle || !isArticlePublished(targetArticle)) {
+    return {
+      query: trimmed,
+      answer: 'MIRARI 目前尚未收錄足以回答這個問題的科學內容。你可以嘗試換個關鍵字，或探索站內其他科學文章。',
+      confidence: 0,
+      evidence: null,
+      matchedKnowledgePoint: null,
+    };
+  }
 
   try {
     const res = await fetch('/api/article-chat', {
