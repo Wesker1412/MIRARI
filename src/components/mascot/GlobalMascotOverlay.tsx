@@ -751,7 +751,6 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
       >
         <div className="relative w-full h-full flex items-center justify-center group">
 
-          {/* THE SINGLE 3D WebGL MASCOT (Star-seed Sprite / 星種精靈) */}
           <div className="relative z-10 w-full h-full flex items-center justify-center">
             <MirariMascot3D
               size="full"
