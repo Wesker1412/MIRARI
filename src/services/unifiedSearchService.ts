@@ -2,6 +2,7 @@ import searchIndexRaw from '../data/generated/search-index.json';
 import articlesManifestRaw from '../data/generated/articles-manifest.json';
 import { TOPICS } from '../data/topics';
 import { isArticlePublished } from '../utils/date';
+import { getSearchSubject, getSubjectMatch } from '../utils/searchSubject';
 import type { Article, AIRecommendation, SearchIndexEntry } from '../types';
 
 const SEARCH_INDEX: SearchIndexEntry[] = searchIndexRaw as unknown as SearchIndexEntry[];
@@ -97,7 +98,8 @@ export function queryDataDrivenRecommendation(query: string): AIRecommendation {
     };
   }
 
-  const queryTokens = tokenizeQuery(query);
+  const subject = getSearchSubject(query);
+  const queryTokens = tokenizeQuery(subject);
 
   if (queryTokens.length === 0) {
     const publishedFallback = Array.from(ARTICLES_MAP.values())
@@ -114,7 +116,7 @@ export function queryDataDrivenRecommendation(query: string): AIRecommendation {
   }
 
   // Score each article in search index
-  const scoredEntries: Array<{ entry: SearchIndexEntry; score: number; matchedTokensCount: number }> = [];
+  const scoredEntries: Array<{ entry: SearchIndexEntry; score: number }> = [];
 
   for (const entry of SEARCH_INDEX) {
     const article = ARTICLES_MAP.get(entry.articleId);
@@ -147,8 +149,13 @@ export function queryDataDrivenRecommendation(query: string): AIRecommendation {
       matchedTokensCount = queryTokens.length;
     }
 
-    if (score > 0) {
-      scoredEntries.push({ entry, score, matchedTokensCount });
+    const subjectMatch = getSubjectMatch(article, subject);
+    score += subjectMatch;
+    const tagHit = (article.tags || []).some(
+      (tag) => tag.length >= 2 && (subject === tag || (subject.length >= 3 && subject.includes(tag)))
+    );
+    if (score > 0 && (subjectMatch > 0 || tagHit || score >= 18.0 && matchedTokensCount / queryTokens.length >= 0.22)) {
+      scoredEntries.push({ entry, score });
     }
   }
 
@@ -156,21 +163,7 @@ export function queryDataDrivenRecommendation(query: string): AIRecommendation {
   scoredEntries.sort((a, b) => b.score - a.score);
 
   const topScore = scoredEntries[0]?.score || 0;
-  const topCandidateArticle = scoredEntries[0] ? ARTICLES_MAP.get(scoredEntries[0].entry.articleId) : undefined;
-  const coreQuery = query.replace(/[\s\p{P}]+/gu, '');
-  const hasVerbatimTitle = topCandidateArticle && (topCandidateArticle.title === query || (coreQuery.length >= 4 && topCandidateArticle.title.includes(query)));
-  const hasTagHit = topCandidateArticle && (topCandidateArticle.tags || []).some(
-    (t: string) => t.length >= 2 && (query === t || (query.length >= 3 && query.includes(t)))
-  );
-  const matchedTokenRatio = queryTokens.length > 0 ? (scoredEntries[0]?.matchedTokensCount || 0) / queryTokens.length : 0;
-
-  // 嚴格相關性閘門：杜絕偶然重疊與短詞誤判
-  const passesGate =
-    hasVerbatimTitle ||
-    hasTagHit ||
-    (topScore >= 18.0 && matchedTokenRatio >= 0.22);
-
-  if (!passesGate || scoredEntries.length === 0) {
+  if (scoredEntries.length === 0) {
     return {
       query,
       curatorReply: 'MIRARI 目前尚未收錄足以回答這個問題的科學內容。你可以嘗試換個關鍵字，或探索站內其他科學文章。',

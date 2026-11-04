@@ -10,6 +10,7 @@ import type {
   SearchIndexEntry,
 } from '../../src/types/index.ts';
 import { isArticlePublished } from '../../src/utils/date.ts';
+import { getSearchSubject, getSubjectMatch } from '../../src/utils/searchSubject.ts';
 
 // ─── 核心常數與型別宣告 ──────────────────────────────────────────
 export const GATE_REJECTION_MESSAGE =
@@ -750,8 +751,9 @@ export async function handleGlobalSearch(params: {
     };
   }
 
-  const queryTokens = tokenizeText(rawQuery);
-  const coreQuery = rawQuery.replace(/[\s\p{P}]+/gu, '');
+  const subject = getSearchSubject(rawQuery);
+  const queryTokens = tokenizeText(subject);
+  const coreQuery = subject.replace(/[\s\p{P}]+/gu, '');
   if (queryTokens.length === 0 || coreQuery.length <= 1) {
     return {
       query: rawQuery,
@@ -821,7 +823,9 @@ export async function handleGlobalSearch(params: {
       matchedTokensCount = queryTokens.length;
     }
 
-    const isDirectHit = isTitleHit || isTagHit || isKpQuestionHit;
+    const subjectMatch = getSubjectMatch(article, subject);
+    score += subjectMatch;
+    const isDirectHit = isTitleHit || isTagHit || isKpQuestionHit || subjectMatch > 0;
 
     if (score > 0) {
       const matchedTokenRatio = matchedTokensCount / queryTokens.length;
