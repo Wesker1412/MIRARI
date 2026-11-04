@@ -17,7 +17,7 @@
         "k=μ"
       ],
       "plainExplanation": "大族群雖然每代產生的新突變較多（正比於 2Ne），但單一突變因競爭激烈而在群體中登頂固著的機率極低（反比於 1/2Ne）。兩者相乘後族群大小 Ne 恰好完美抵消，使得長期分子演化替換速率 k 嚴格等於中性突變率 μ，展現出宛如勻速發條般的恆定分子時鐘。",
-      "anchorSentenceId": "sent-7938e00d"
+      "anchorSentenceId": "sent-d62a6ff1"
     },
     {
       "id": "kp-kimura-genetic-drift",

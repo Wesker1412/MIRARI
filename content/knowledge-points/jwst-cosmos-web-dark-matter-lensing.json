@@ -16,7 +16,7 @@
         "時空扭曲"
       ],
       "plainExplanation": "暗物質既不發光也不遮光，但它的質量會彎曲周圍的時空幾何。當數十億光年外遙遠背景星系的光穿過暗物質聚集區時，時空凹陷會像一塊微弱的透鏡，將背景星系的圓盤形狀拉扯出一絲極其微小的切向橢圓形變，天文學家正是藉由量測這種幾何剪切來倒推暗物質。",
-      "anchorSentenceId": "sent-c38200f5"
+      "anchorSentenceId": "sent-80d120b7"
     },
     {
       "id": "kp-lensing-shape-noise",
@@ -46,7 +46,7 @@
         "Kaiser-Squires"
       ],
       "plainExplanation": "凱瑟與斯奎爾斯（Kaiser-Squires）提出了一套優雅的傅立葉轉換演算法，在頻譜空間直接建立了星系剪切形變與前景二維表面質量密度之間的微分幾何關聯。它能直接將星空表面量測到的微弱變形統計場，數學反演重構為一張清晰的二維暗物質宇宙網地圖。",
-      "anchorSentenceId": "sent-18549e4d"
+      "anchorSentenceId": "sent-8bd7915b"
     }
   ]
 }

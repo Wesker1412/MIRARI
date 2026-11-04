@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { MirariMascot3D } from './MirariMascot3D';
+import { CompanionMarkdown } from './CompanionMarkdown';
 import type { MascotState, Article, AIRecommendation, SentenceEvidence } from '../../types';
 import { getTaipeiDateString } from '../../utils/date';
 import { queryMockAIRecommendation, queryAISearch } from '../../services/aiRecommendationService';
@@ -906,7 +907,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
                           <span className="px-1.5 py-0.5 rounded text-[10px] bg-slate-100 text-slate-600 font-sans font-medium">尚無相關文章</span>
                         )}
                       </div>
-                      <p>{homeRecResult.curatorReply}</p>
+                      <CompanionMarkdown text={homeRecResult.curatorReply} />
                     </div>
 
                     {homeRecResult.recommendedArticles.length > 0 && (
@@ -977,7 +978,9 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
                               )}
                             </div>
                           )}
-                          <p>{turn.content}</p>
+                          {turn.role === 'assistant'
+                            ? <CompanionMarkdown text={turn.content} />
+                            : <p>{turn.content}</p>}
 
                           {/* 渲染推薦文章卡片 */}
                           {turn.recommendedArticles && turn.recommendedArticles.length > 0 && (
@@ -1108,7 +1111,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
                     </div>
 
                     <div className="p-3 rounded-xl bg-mirari-paper border border-mirari-line text-xs text-mirari-ink leading-relaxed font-sans">
-                      <p>{articleEvidenceResult.answer}</p>
+                      <CompanionMarkdown text={articleEvidenceResult.answer} />
                       {articleEvidenceResult.recommendedArticles && articleEvidenceResult.recommendedArticles.length > 0 && (
                         <div className="mt-2.5 pt-2 border-t border-mirari-line/60 space-y-1.5">
                           <div className="text-[10px] font-sans font-medium text-mirari-muted">推薦閱讀專題：</div>
@@ -1225,7 +1228,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
 
             <div className="text-xs text-mirari-ink leading-relaxed font-sans">
               <div className={isMobileExpandedAnswer ? 'max-h-[30vh] overflow-y-auto pr-1' : 'line-clamp-3'}>
-                <p>{articleEvidenceResult.answer}</p>
+                <CompanionMarkdown text={articleEvidenceResult.answer} />
               </div>
               {articleEvidenceResult.answer.length > 90 && (
                 <button

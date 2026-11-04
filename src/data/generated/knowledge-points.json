@@ -182,7 +182,7 @@
           "單一溫度"
         ],
         "plainExplanation": "想像一個只能單向旋轉的齒輪，但卡榫本身也只有分子大小。在單一溫度下，卡榫自己也在遭受劇烈熱碰撞而不斷跳動，正轉與反轉滑脫的機率嚴格相等（細緻平衡），整體平均位移為零。如果它能在等溫環境下自動發電做功，就會違背熱力學第二定律而成為第二類永動機。",
-        "anchorSentenceId": "sent-e81e7405"
+        "anchorSentenceId": "sent-d0ac61ee"
       },
       {
         "id": "kp-ratchet-flashing-potential",
@@ -198,7 +198,7 @@
           "定向行走"
         ],
         "plainExplanation": "分子馬達並非靠宏觀引擎那樣的機械推力，而是靠消耗 ATP 化學能週期性開關微管上的鋸齒勢阱。在平坦鬆弛期，馬達向四周隨機晃動擴散；在勢阱重新開啟時，由於齒形前緩後陡，粒子有超過 70% 的幾率被前方下一個凹坑捕獲，巧妙將無序熱晃動整流為定向行走。",
-        "anchorSentenceId": "sent-b8c2e7c3"
+        "anchorSentenceId": "sent-8d6c7fb6"
       },
       {
         "id": "kp-ratchet-stall-force",
@@ -289,7 +289,7 @@
           "時空扭曲"
         ],
         "plainExplanation": "暗物質既不發光也不遮光，但它的質量會彎曲周圍的時空幾何。當數十億光年外遙遠背景星系的光穿過暗物質聚集區時，時空凹陷會像一塊微弱的透鏡，將背景星系的圓盤形狀拉扯出一絲極其微小的切向橢圓形變，天文學家正是藉由量測這種幾何剪切來倒推暗物質。",
-        "anchorSentenceId": "sent-c38200f5"
+        "anchorSentenceId": "sent-80d120b7"
       },
       {
         "id": "kp-lensing-shape-noise",
@@ -319,7 +319,7 @@
           "Kaiser-Squires"
         ],
         "plainExplanation": "凱瑟與斯奎爾斯（Kaiser-Squires）提出了一套優雅的傅立葉轉換演算法，在頻譜空間直接建立了星系剪切形變與前景二維表面質量密度之間的微分幾何關聯。它能直接將星空表面量測到的微弱變形統計場，數學反演重構為一張清晰的二維暗物質宇宙網地圖。",
-        "anchorSentenceId": "sent-18549e4d"
+        "anchorSentenceId": "sent-8bd7915b"
       }
     ]
   },
@@ -342,7 +342,7 @@
           "k=μ"
         ],
         "plainExplanation": "大族群雖然每代產生的新突變較多（正比於 2Ne），但單一突變因競爭激烈而在群體中登頂固著的機率極低（反比於 1/2Ne）。兩者相乘後族群大小 Ne 恰好完美抵消，使得長期分子演化替換速率 k 嚴格等於中性突變率 μ，展現出宛如勻速發條般的恆定分子時鐘。",
-        "anchorSentenceId": "sent-7938e00d"
+        "anchorSentenceId": "sent-d62a6ff1"
       },
       {
         "id": "kp-kimura-genetic-drift",

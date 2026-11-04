@@ -17,7 +17,7 @@
         "單一溫度"
       ],
       "plainExplanation": "想像一個只能單向旋轉的齒輪，但卡榫本身也只有分子大小。在單一溫度下，卡榫自己也在遭受劇烈熱碰撞而不斷跳動，正轉與反轉滑脫的機率嚴格相等（細緻平衡），整體平均位移為零。如果它能在等溫環境下自動發電做功，就會違背熱力學第二定律而成為第二類永動機。",
-      "anchorSentenceId": "sent-e81e7405"
+      "anchorSentenceId": "sent-d0ac61ee"
     },
     {
       "id": "kp-ratchet-flashing-potential",
@@ -33,7 +33,7 @@
         "定向行走"
       ],
       "plainExplanation": "分子馬達並非靠宏觀引擎那樣的機械推力，而是靠消耗 ATP 化學能週期性開關微管上的鋸齒勢阱。在平坦鬆弛期，馬達向四周隨機晃動擴散；在勢阱重新開啟時，由於齒形前緩後陡，粒子有超過 70% 的幾率被前方下一個凹坑捕獲，巧妙將無序熱晃動整流為定向行走。",
-      "anchorSentenceId": "sent-b8c2e7c3"
+      "anchorSentenceId": "sent-8d6c7fb6"
     },
     {
       "id": "kp-ratchet-stall-force",

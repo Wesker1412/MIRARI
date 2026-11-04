@@ -133,6 +133,16 @@ export function splitIntoCanonicalSentences(paragraphText) {
           current += nextChar;
           i++;
         }
+        // Keep closing emphasis with the sentence that opened it.
+        const closingEmphasis = paragraphText.slice(i + 1).match(/^(\*{1,3}|_{1,3})(?![*_])/);
+        if (closingEmphasis) {
+          const marker = closingEmphasis[0];
+          const runs = current.match(/(?<!\\)[*_]+/g) || [];
+          if (runs.filter((run) => run === marker).length % 2 === 1) {
+            current += marker;
+            i += marker.length;
+          }
+        }
         const trimmed = current.trim();
         if (trimmed.length > 0) {
           sentences.push(trimmed);
