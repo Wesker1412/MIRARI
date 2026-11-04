@@ -551,6 +551,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
 
   const handleExecuteArticleQuery = async (queryText: string) => {
     if (!queryText.trim() || !currentArticle) return;
+    setArticleQuery('');
 
     // Immediately blur active element to collapse mobile virtual keyboard
     if (typeof document !== 'undefined') {
@@ -1036,7 +1037,6 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
                         <button
                           type="button"
                           onClick={() => {
-                            setArticleQuery('那為什麼？');
                             handleExecuteArticleQuery('那為什麼？');
                           }}
                           className="rounded-full border border-mirari-amber/40 bg-amber-50/50 hover:bg-amber-100/60 px-2 py-0.5 text-amber-900 transition cursor-pointer text-[10px]"
@@ -1046,7 +1046,6 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
                         <button
                           type="button"
                           onClick={() => {
-                            setArticleQuery('可以再簡單一點嗎？');
                             handleExecuteArticleQuery('可以再簡單一點嗎？');
                           }}
                           className="rounded-full border border-mirari-amber/40 bg-amber-50/50 hover:bg-amber-100/60 px-2 py-0.5 text-amber-900 transition cursor-pointer text-[10px]"
@@ -1060,7 +1059,6 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
                         key={idx}
                         type="button"
                         onClick={() => {
-                          setArticleQuery(q.query);
                           handleExecuteArticleQuery(q.query);
                         }}
                         className="rounded-md border border-mirari-line bg-mirari-paper hover:bg-mirari-surfaceAlt px-2 py-0.5 text-mirari-muted hover:text-mirari-ink transition whitespace-nowrap cursor-pointer text-left"
@@ -1148,9 +1146,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
-                  const q = articleQuery;
-                  setArticleQuery('');
-                  handleExecuteArticleQuery(q);
+                  handleExecuteArticleQuery(articleQuery);
                 }}
                 className="relative mx-3 mb-3 mt-1 flex shrink-0 items-center rounded-xl border border-mirari-border bg-mirari-paper p-1 focus-within:border-mirari-ink transition"
               >
