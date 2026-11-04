@@ -11,10 +11,8 @@ export interface SEOMetadata {
   authors?: string[];
 }
 
-const DEFAULT_TITLE = 'MIRARI | 探索科學的互動數位雜誌';
 const DEFAULT_DESC =
   'MIRARI 是一本探索科學前沿的互動數位雜誌，結合可驗證原文證據與動態模擬實驗。';
-const SITE_NAME = 'MIRARI';
 
 function updateMetaTag(attrName: 'name' | 'property', attrValue: string, content: string) {
   let element = document.querySelector(`meta[${attrName}="${attrValue}"]`);
@@ -39,7 +37,7 @@ function updateLinkTag(rel: string, href: string) {
 export function useSEO(meta?: SEOMetadata) {
   useEffect(() => {
     // 1. Document Title
-    const fullTitle = meta?.title ? `${meta.title} | MIRARI 數位科學雜誌` : DEFAULT_TITLE;
+    const fullTitle = meta?.title ? `${meta.title} | ${SITE_CONFIG.name}` : SITE_CONFIG.name;
     document.title = fullTitle;
 
     // 2. Meta Description
@@ -62,15 +60,15 @@ export function useSEO(meta?: SEOMetadata) {
     updateLinkTag('canonical', canonical);
 
     // 5. Open Graph
-    updateMetaTag('property', 'og:site_name', SITE_NAME);
-    updateMetaTag('property', 'og:title', meta?.title || DEFAULT_TITLE);
+    updateMetaTag('property', 'og:site_name', SITE_CONFIG.name);
+    updateMetaTag('property', 'og:title', fullTitle);
     updateMetaTag('property', 'og:description', description);
     updateMetaTag('property', 'og:url', canonical);
     updateMetaTag('property', 'og:type', meta?.ogType || 'website');
 
     // 6. Twitter Card
     updateMetaTag('name', 'twitter:card', 'summary_large_image');
-    updateMetaTag('name', 'twitter:title', meta?.title || DEFAULT_TITLE);
+    updateMetaTag('name', 'twitter:title', fullTitle);
     updateMetaTag('name', 'twitter:description', description);
 
     if (meta?.publishedTime) {

@@ -3,7 +3,6 @@
  */
 export const SITE_CONFIG = {
   name: 'MIRARI',
-  fullName: 'MIRARI 數位科學雜誌',
   tagline: '探索科學的互動數位雜誌',
   description:
     'MIRARI 是一本探索科學前沿的互動數位雜誌，結合可驗證原文證據與可操作的動態模擬實驗。',

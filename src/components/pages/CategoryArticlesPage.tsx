@@ -23,7 +23,7 @@ export const CategoryArticlesPage: React.FC<CategoryArticlesPageProps> = ({ cate
     : '收錄一般科普、經典科學知識、科學現象、數學原理、理論解釋及思想實驗，專注於增進科學理解。';
 
   useSEO({
-    title: `${categoryTitle} | MIRARI 數位科學雜誌`,
+    title: categoryTitle,
     description: categoryDescription,
   });
 

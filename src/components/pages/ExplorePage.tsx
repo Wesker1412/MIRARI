@@ -17,7 +17,7 @@ export const ExplorePage: React.FC = () => {
   const navigate = useNavigate();
 
   useSEO({
-    title: '探索 MIRARI | 數位科學雜誌',
+    title: '探索',
     description: '探索站內涵蓋天體物理、渾沌理論、神經電生理與資訊熱力學的科學主題，或直接檢索相關的深度論述與互動數值實驗。',
   });
 
