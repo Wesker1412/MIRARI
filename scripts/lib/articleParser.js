@@ -154,7 +154,8 @@ export function splitIntoCanonicalSentences(paragraphText) {
  * Full Article Document Parsing
  */
 export function parseArticleDocument(rawContent, filePath = '') {
-  const { metadata, bodyMarkdown } = parseFrontmatter(rawContent);
+  // Sentence and chunk hashes must match across Windows and Linux checkouts.
+  const { metadata, bodyMarkdown } = parseFrontmatter(rawContent.replace(/\r\n/g, '\n'));
 
   // Validate required metadata
   const required = ['id', 'slug', 'title', 'status', 'references', 'editorialCategory'];
