@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { MirariMascot3D } from './MirariMascot3D';
 import type { MascotState, Article, AIRecommendation, SentenceEvidence } from '../../types';
+import { getTaipeiDateString } from '../../utils/date';
 import { queryMockAIRecommendation, queryAISearch } from '../../services/aiRecommendationService';
 import {
   searchArticleEvidence,
@@ -25,7 +26,7 @@ interface Position {
 
 const STORAGE_KEY_POS = 'mirari_mascot_pos';
 const STORAGE_KEY_READING_INTRO = 'mirari_reading_intro_seen';
-const SESSION_KEY_GREETED = 'mirari_home_greeted';
+const STORAGE_KEY_HOME_GREETING_DATE = 'mirari_home_greeting_date';
 
 export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
   currentView,
@@ -51,6 +52,8 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
   const [isDragging, setIsDragging] = useState<boolean>(false);
   const [introArticleId, setIntroArticleId] = useState<string | null>(null);
   const introShown = useRef(false);
+  const [showHomeGreeting, setShowHomeGreeting] = useState(false);
+  const lastHomeGreetingDate = useRef<string | null>(null);
   const dragDirection = useRef<Position>({ x: 0, y: 0 });
   const lastPointer = useRef<Position>({ x: 0, y: 0 });
   const [dismissedSentence, setDismissedSentence] = useState<string | null>(null);
@@ -100,6 +103,9 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
   const mascotHeight = isInExploreSection || isExploreView ? 144 : isHomeView ? 125 : 96;
   const articleId = currentView === 'article' ? currentArticle?.id : undefined;
   const showReadingIntro = !!articleId && introArticleId === articleId && !isPanelOpen;
+  const hint = isHomeView && showHomeGreeting && !isPanelOpen
+    ? '你好！今天想找什麼？'
+    : showReadingIntro ? '有問題嗎？點我一起找答案。' : null;
 
   useEffect(() => {
     if (!articleId || introShown.current) return;
@@ -359,23 +365,21 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
     }
   };
 
-  // ─── Proactive Home Greeting & Search Pull-out ───────────────────
+  // ─── Daily Home Greeting & Explore Panel ─────────────────────────
   useEffect(() => {
+    if (currentView !== 'home') setShowHomeGreeting(false);
     if (currentView === 'home') {
-      const alreadyGreeted = sessionStorage.getItem(SESSION_KEY_GREETED);
-      if (!alreadyGreeted) {
-        // Gentle delay before proactive greeting and pull-out
-        const timer = setTimeout(() => {
-          sessionStorage.setItem(SESSION_KEY_GREETED, 'true');
-          setMascotState('excited');
-          setIsPanelOpen(true);
-          const resetTimer = setTimeout(() => {
-            setMascotState('idle');
-          }, 1800);
-          return () => clearTimeout(resetTimer);
-        }, 500);
-        return () => clearTimeout(timer);
+      setIsPanelOpen(false);
+      const today = getTaipeiDateString();
+      if (lastHomeGreetingDate.current === today) return;
+      lastHomeGreetingDate.current = today;
+      try {
+        if (localStorage.getItem(STORAGE_KEY_HOME_GREETING_DATE) === today) return;
+        localStorage.setItem(STORAGE_KEY_HOME_GREETING_DATE, today);
+      } catch {
+        // The in-memory date still prevents repeat greetings during this visit.
       }
+      setShowHomeGreeting(true);
     } else if (currentView === 'explore') {
       // In explore page: expand panel on desktop; on mobile keep closed so it doesn't block the screen
       if (typeof window !== 'undefined' && window.innerWidth >= 640) {
@@ -439,6 +443,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
     if (!hasMovedBeyondThresholdRef.current && Math.hypot(dx, dy) > 8) {
       hasMovedBeyondThresholdRef.current = true;
       setIntroArticleId(null);
+      setShowHomeGreeting(false);
       setIsDragging(true);
       setDismissedSentence(activeSentenceId);
       setMascotState('thinking');
@@ -477,6 +482,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
     } else {
       // Click/Tap toggle
       setIntroArticleId(null);
+      setShowHomeGreeting(false);
       setIsPanelOpen((prev) => !prev);
     }
 
@@ -717,12 +723,13 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
         tabIndex={0}
         aria-label={currentView === 'article' ? '隨文提問' : '探索篇章'}
         aria-expanded={isPanelOpen}
-        aria-describedby={showReadingIntro ? 'mirari-reading-intro' : undefined}
+        aria-describedby={hint ? 'mirari-mascot-hint' : undefined}
         onKeyDown={(event) => {
           if (event.key !== 'Enter' && event.key !== ' ') return;
           event.preventDefault();
           if (event.repeat) return;
           setIntroArticleId(null);
+          setShowHomeGreeting(false);
           setIsPanelOpen((open) => !open);
         }}
         onPointerDown={handlePointerDown}
@@ -756,17 +763,17 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
             />
           </div>
 
-          {showReadingIntro && (
+          {hint && (
             <div
-              id="mirari-reading-intro"
+              id="mirari-mascot-hint"
               className={`pointer-events-none absolute z-20 w-max max-w-[min(15rem,calc(100vw-2rem))] rounded-xl border border-mirari-line bg-white px-3 py-2 text-xs leading-relaxed text-mirari-ink shadow-sm ${displayedPosition.y < 78 ? 'top-full mt-1' : 'bottom-full mb-1'} ${displayedPosition.x + mascotWidth / 2 > window.innerWidth / 2 ? 'right-0' : 'left-0'}`}
             >
-              有問題嗎？點我一起找答案。
+              {hint}
             </div>
           )}
 
           {/* Hover Status Indicator / Hint (Desktop) */}
-          {!showReadingIntro && !isPanelOpen && !isDragging && isHovered && (
+          {!hint && !isPanelOpen && !isDragging && isHovered && (
             <div className="hidden sm:block absolute -top-8 left-1/2 -translate-x-1/2 opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
               <span className="text-[11px] font-sans bg-mirari-ink text-white px-2.5 py-1 rounded-full shadow-md">
                 {isHomeView || isExploreView ? '探索篇章' : '隨文提問'}
