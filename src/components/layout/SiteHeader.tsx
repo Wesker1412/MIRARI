@@ -20,7 +20,7 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({
   const isArticleView = location.pathname.startsWith('/articles/');
 
   return (
-    <header className="border-b border-mirari-line bg-mirari-paper/95 sticky top-0 z-40 backdrop-blur-sm transition-all duration-200">
+    <header id="mirari-site-header" className="border-b border-mirari-line bg-mirari-paper/95 sticky top-0 z-40 backdrop-blur-sm transition-all duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-3.5 gap-2 sm:gap-4">
           {/* Left: Brand & Tagline / Breadcrumbs (Aligned on the exact same vertical center line) */}
@@ -36,7 +36,7 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({
             {isArticleView && articleTitle ? (
               <nav
                 aria-label="文章導覽麵包屑"
-                className="flex items-center gap-1 sm:gap-2 text-[11px] sm:text-xs leading-5 font-sans text-mirari-dim min-w-0"
+                className="flex items-baseline gap-1 sm:gap-2 whitespace-nowrap text-[11px] sm:text-xs leading-5 font-sans text-mirari-dim min-w-0"
               >
                 <span className="text-mirari-line select-none shrink-0">/</span>
                 <Link
@@ -46,7 +46,7 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({
                   {editorialCategory === 'journal_interpretation' ? '研究動態' : '科普探索'}
                 </Link>
                 <span className="hidden sm:inline text-mirari-line select-none shrink-0">/</span>
-                <span className="hidden sm:block min-w-0 font-serif font-medium text-mirari-ink truncate sm:max-w-[160px] md:max-w-[260px]">
+                <span className="hidden sm:block min-w-0 font-medium text-mirari-ink truncate sm:max-w-[160px] md:max-w-[260px]">
                   {articleTitle}
                 </span>
               </nav>

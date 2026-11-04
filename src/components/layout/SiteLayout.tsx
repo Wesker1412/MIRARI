@@ -117,7 +117,12 @@ export const SiteLayout: React.FC = () => {
         setActiveSentenceId(primaryId);
         setActiveSecondaryId(secondaryId);
         const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        elem.scrollIntoView({ behavior: reducedMotion ? 'instant' : 'smooth', block: 'center' });
+        const headerBottom = document.getElementById('mirari-site-header')?.getBoundingClientRect().bottom ?? 0;
+        const readingTop = Math.max(headerBottom + 24, window.innerHeight * 0.22);
+        window.scrollTo({
+          top: window.scrollY + elem.getBoundingClientRect().top - readingTop,
+          behavior: reducedMotion ? 'instant' : 'smooth',
+        });
       }
     }
   }, []);

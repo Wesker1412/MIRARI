@@ -89,6 +89,8 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
   const hasMovedBeyondThresholdRef = useRef<boolean>(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
+  const dialogueScrollRef = useRef<HTMLDivElement>(null);
+  const latestAnswerRef = useRef<HTMLDivElement>(null);
   const [measuredPanelHeight, setMeasuredPanelHeight] = useState<number>(180);
 
   // Request sequence and article tracking to prevent race conditions / stale async responses
@@ -678,7 +680,14 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
 
   // ─── Floating Panel Position Calculation (Desktop) ───────────────
   const panelWidth = 380;
-  const isNearRight = displayedPosition.x + mascotWidth / 2 > window.innerWidth / 2;
+  const isArticlePanel = currentView === 'article';
+  const isNearRight = position.x + mascotWidth / 2 > window.innerWidth / 2;
+
+  useEffect(() => {
+    const scrollArea = dialogueScrollRef.current;
+    const answer = latestAnswerRef.current;
+    if (isPanelOpen && scrollArea && answer) scrollArea.scrollTop = answer.offsetTop;
+  }, [articleDialogue, isPanelOpen]);
 
   // Dynamically measure actual panel height to avoid hardcoded height assumptions
   useEffect(() => {
@@ -698,24 +707,15 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
   const panelGap = 16;
   const maxPanelLeft = Math.max(panelGap, window.innerWidth - panelWidth - panelGap);
   const maxPanelTop = Math.max(panelGap, window.innerHeight - measuredPanelHeight - panelGap);
-  const leftOfMascot = displayedPosition.x - panelWidth - panelGap;
-  const rightOfMascot = displayedPosition.x + mascotWidth + panelGap;
+  const leftOfMascot = position.x - panelWidth - panelGap;
+  const rightOfMascot = position.x + mascotWidth + panelGap;
   const leftFits = leftOfMascot >= panelGap;
   const rightFits = rightOfMascot <= maxPanelLeft;
-  // Prefer the side away from the quotation while MIRARI is pointing.
-  const preferLeft = dock && dock.direction.x !== 0 ? dock.direction.x > 0 : isNearRight;
-  const candidateLeft = preferLeft
+  const candidateLeft = isNearRight
     ? (leftFits || !rightFits ? leftOfMascot : rightOfMascot)
     : (rightFits || !leftFits ? rightOfMascot : leftOfMascot);
   const panelLeft = Math.max(panelGap, Math.min(maxPanelLeft, candidateLeft));
-  let panelTop = Math.max(panelGap, Math.min(maxPanelTop, displayedPosition.y));
-  if (dock && !leftFits && !rightFits) {
-    const above = displayedPosition.y - measuredPanelHeight - panelGap;
-    const below = displayedPosition.y + mascotHeight + panelGap;
-    if (above >= panelGap) panelTop = above;
-    else if (below <= maxPanelTop) panelTop = below;
-    else panelTop = displayedPosition.y > maxPanelTop / 2 ? panelGap : maxPanelTop;
-  }
+  const panelTop = Math.max(panelGap, Math.min(maxPanelTop, position.y));
 
   return (
     <>
@@ -802,7 +802,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
             ref={panelRef}
             id="mirari-floating-panel"
             style={
-              window.innerWidth >= 640
+              !isArticlePanel && window.innerWidth >= 640
                 ? {
                     position: 'fixed',
                     top: `${panelTop}px`,
@@ -811,11 +811,9 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
                 : undefined
             }
             className={`fixed z-50 pointer-events-auto
-              /* Mobile: Non-modal Bottom Sheet preserving upper article reading area */
-              inset-x-0 bottom-0 sm:inset-x-auto sm:bottom-auto
-              /* Desktop: Compact Floating Card (Simultaneous reading & typing) */
-              sm:w-[380px]
-              h-auto max-h-[56vh] sm:max-h-[min(560px,calc(100vh-32px))]
+              ${isArticlePanel
+                ? 'inset-x-0 bottom-0 mx-auto w-full max-h-[38dvh] sm:bottom-4 sm:w-[calc(100%_-_2rem)] sm:max-w-3xl sm:max-h-[min(280px,35dvh)]'
+                : 'inset-x-0 bottom-0 max-h-[56vh] sm:inset-x-auto sm:bottom-auto sm:w-[380px] sm:max-h-[min(560px,calc(100vh-32px))]'}
               bg-white border-t sm:border border-mirari-border shadow-2xl rounded-t-3xl sm:rounded-2xl overflow-hidden
               flex flex-col animate-fade-in
             `}
@@ -824,7 +822,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
             <div className="w-10 h-1 bg-mirari-line rounded-full mx-auto mt-2 sm:hidden shrink-0" />
 
             {/* ─── Header Bar ────────────────────────────────────────── */}
-            <div className="flex items-center justify-between px-4 py-2 border-b border-mirari-line bg-mirari-paper">
+            <div className="flex shrink-0 items-center justify-between px-4 py-2 border-b border-mirari-line bg-mirari-paper">
               <div className="flex items-center space-x-2">
                 <span className="font-serif text-sm font-semibold text-mirari-ink">
                   {isHomeView || isExploreView ? '探索篇章' : '隨文伴讀'}
@@ -943,14 +941,15 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
                 )}
               </div>
             ) : (
-              /* ─── Panel Content: Article Evidence Q&A Mode ─────────── */
-              <div className="p-4 space-y-3 overflow-y-auto max-h-[min(520px,calc(85vh-48px))]">
+              <>
+              <div ref={dialogueScrollRef} className="relative min-h-0 overflow-y-auto overscroll-contain px-3 py-2 space-y-2">
                 {/* Multi-turn Dialogue Stream if turns exist */}
                 {articleDialogue.length > 0 && (
-                  <div className="space-y-2.5 max-h-[240px] overflow-y-auto pr-1">
-                    {articleDialogue.map((turn) => (
+                  <div className="space-y-2.5">
+                    {articleDialogue.map((turn, index) => (
                       <div
                         key={turn.id}
+                        ref={index === articleDialogue.length - 1 && turn.role === 'assistant' ? latestAnswerRef : undefined}
                         className={`flex flex-col ${turn.role === 'user' ? 'items-end' : 'items-start'}`}
                       >
                         <div
@@ -1080,36 +1079,6 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
                   )}
                 </div>
 
-                {/* Custom Query Input (Always at bottom for continuous interaction) */}
-                <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    const q = articleQuery;
-                    setArticleQuery('');
-                    handleExecuteArticleQuery(q);
-                  }}
-                  className="relative flex items-center rounded-xl border border-mirari-border bg-mirari-paper p-1 focus-within:border-mirari-ink transition"
-                >
-                  <input
-                    type="text"
-                    value={articleQuery}
-                    onChange={(e) => setArticleQuery(e.target.value)}
-                    placeholder={
-                      articleDialogue.length > 0
-                        ? '輸入追問或新疑問...'
-                        : '針對本文內容自由提問...'
-                    }
-                    className="w-full bg-transparent px-3 py-1.5 text-xs text-mirari-ink placeholder-mirari-dim focus:outline-none font-sans"
-                  />
-                  <button
-                    type="submit"
-                    disabled={!articleQuery.trim() || isSearchingArticle}
-                    className="shrink-0 rounded-lg bg-mirari-ink px-3 py-1.5 text-xs font-medium text-white hover:bg-black transition disabled:opacity-40 font-sans"
-                  >
-                    {isSearchingArticle ? '思考中' : '發送'}
-                  </button>
-                </form>
-
                 {/* Fallback Display if single result without dialogue turn */}
                 {articleDialogue.length === 0 && articleEvidenceResult && (
                   <div className="pt-2 border-t border-mirari-line space-y-2 animate-fade-in">
@@ -1174,6 +1143,36 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
                   </div>
                 )}
               </div>
+              {/* Custom Query Input (Always at bottom for continuous interaction) */}
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  const q = articleQuery;
+                  setArticleQuery('');
+                  handleExecuteArticleQuery(q);
+                }}
+                className="relative mx-3 mb-3 mt-1 flex shrink-0 items-center rounded-xl border border-mirari-border bg-mirari-paper p-1 focus-within:border-mirari-ink transition"
+              >
+                <input
+                  type="text"
+                  value={articleQuery}
+                  onChange={(e) => setArticleQuery(e.target.value)}
+                  placeholder={
+                    articleDialogue.length > 0
+                      ? '輸入追問或新疑問...'
+                      : '針對本文內容自由提問...'
+                  }
+                  className="w-full bg-transparent px-3 py-1.5 text-xs text-mirari-ink placeholder-mirari-dim focus:outline-none font-sans"
+                />
+                <button
+                  type="submit"
+                  disabled={!articleQuery.trim() || isSearchingArticle}
+                  className="shrink-0 rounded-lg bg-mirari-ink px-3 py-1.5 text-xs font-medium text-white hover:bg-black transition disabled:opacity-40 font-sans"
+                >
+                  {isSearchingArticle ? '思考中' : '發送'}
+                </button>
+              </form>
+              </>
             )}
           </div>
         </>
