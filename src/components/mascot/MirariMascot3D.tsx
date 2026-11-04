@@ -5,6 +5,7 @@ import type { MascotState } from '../../types';
 
 interface MirariMascot3DProps {
   state?: MascotState;
+  dragging?: boolean;
   size?: 'hero' | 'companion' | 'compact' | 'showcase' | 'full';
   interactive?: boolean;
   onClick?: () => void;
@@ -14,6 +15,7 @@ interface MirariMascot3DProps {
 
 export const MirariMascot3D: React.FC<MirariMascot3DProps> = ({
   state = 'idle',
+  dragging = false,
   size = 'hero',
   interactive = true,
   onClick,
@@ -22,12 +24,11 @@ export const MirariMascot3D: React.FC<MirariMascot3DProps> = ({
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [webglSupported, setWebglSupported] = useState(true);
-  const [isHovered, setIsHovered] = useState(false);
-  const stateRef = useRef<MascotState>(state);
+  const stateRef = useRef({ state, dragging });
 
   useEffect(() => {
-    stateRef.current = state;
-  }, [state]);
+    stateRef.current = { state, dragging };
+  }, [state, dragging]);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -36,7 +37,7 @@ export const MirariMascot3D: React.FC<MirariMascot3DProps> = ({
     // Check WebGL availability
     try {
       const canvas = document.createElement('canvas');
-      const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+      const gl = canvas.getContext('webgl2');
       if (!gl) {
         setWebglSupported(false);
         return;
@@ -52,7 +53,7 @@ export const MirariMascot3D: React.FC<MirariMascot3DProps> = ({
     // Scene & Camera
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(36, width / height, 0.1, 50);
-    camera.position.set(0, 0.2, 5.2);
+    camera.position.set(0, 0, 5.3);
 
     // Renderer
     const renderer = new THREE.WebGLRenderer({
@@ -89,52 +90,42 @@ export const MirariMascot3D: React.FC<MirariMascot3DProps> = ({
 
     // Character Root
     const characterRoot = new THREE.Group();
-    characterRoot.position.set(0, -0.2, 0);
+    characterRoot.position.set(0, -0.12, 0);
     scene.add(characterRoot);
 
-    // Node references for animation
-    let bodyGroup: THREE.Object3D | null = null;
-    let sproutGroup: THREE.Object3D | null = null;
-    let capeGroup: THREE.Object3D | null = null;
-    let broochGroup: THREE.Object3D | null = null;
-    let leftEar: THREE.Object3D | null = null;
-    let rightEar: THREE.Object3D | null = null;
-    let leftEyelid: THREE.Object3D | null = null;
-    let rightEyelid: THREE.Object3D | null = null;
-    let leftPaw: THREE.Object3D | null = null;
-    let rightPaw: THREE.Object3D | null = null;
-    let tailGroup: THREE.Object3D | null = null;
+    const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let disposed = false;
+    let body: THREE.Object3D | undefined;
+    let sprout: THREE.Object3D | undefined;
+    let cape: THREE.Object3D | undefined;
+    let eyes: (THREE.Object3D | undefined)[] = [];
+    let mouth: THREE.Object3D | undefined;
+    let smile: THREE.Object3D | undefined;
 
-    function bindHierarchy(rootObj: THREE.Object3D) {
-      bodyGroup = rootObj.getObjectByName('BodyGroup') || rootObj;
-      sproutGroup = rootObj.getObjectByName('SproutGroup') || null;
-      capeGroup = rootObj.getObjectByName('CapeGroup') || null;
-      broochGroup = rootObj.getObjectByName('BroochGroup') || null;
-      leftEar = rootObj.getObjectByName('LeftEarGroup') || null;
-      rightEar = rootObj.getObjectByName('RightEarGroup') || null;
-      leftEyelid = rootObj.getObjectByName('LeftEyelid') || null;
-      rightEyelid = rootObj.getObjectByName('RightEyelid') || null;
-      leftPaw = rootObj.getObjectByName('LeftPawGroup') || null;
-      rightPaw = rootObj.getObjectByName('RightPawGroup') || null;
-      tailGroup = rootObj.getObjectByName('TailGroup') || null;
+    function disposeModel(model: THREE.Object3D) {
+      model.traverse((node) => {
+        if (!(node instanceof THREE.Mesh)) return;
+        node.geometry.dispose();
+        const materials = Array.isArray(node.material) ? node.material : [node.material];
+        materials.forEach((material) => material.dispose());
+      });
     }
 
-    // Load independent original GLB asset
-    const loader = new GLTFLoader();
-    loader.load(
-      '/models/mirari.glb',
-      (gltf) => {
-        characterRoot.clear();
-        const model = gltf.scene;
-        model.scale.set(0.9, 0.9, 0.9);
-        characterRoot.add(model);
-        bindHierarchy(model);
-      },
-      undefined,
-      (err) => {
-        console.warn('GLB asset load deferred or failed, using procedural fallback:', err);
+    new GLTFLoader().load('/models/seed.glb', ({ scene: model }) => {
+      if (disposed) {
+        disposeModel(model);
+        return;
       }
-    );
+      characterRoot.add(model);
+      body = model.getObjectByName('BodyGroup');
+      sprout = model.getObjectByName('SproutGroup');
+      cape = model.getObjectByName('CapeGroup');
+      eyes = ['LeftEye', 'RightEye'].map((name) => model.getObjectByName(name));
+      mouth = model.getObjectByName('Mouth');
+      smile = model.getObjectByName('Smile');
+    }, undefined, () => {
+      if (!disposed) setWebglSupported(false);
+    });
 
     // ─── Interaction & Gaze Tracking ─────────────────────────────
     let targetLookX = 0;
@@ -192,6 +183,9 @@ export const MirariMascot3D: React.FC<MirariMascot3DProps> = ({
     let lastTime = performance.now();
     let clockTime = 0;
 
+    let previousPose = '';
+    let poseTime = 0;
+
     const animate = (currentTime: number) => {
       animId = requestAnimationFrame(animate);
       if (!isVisible || !isPageVisible) return; // Pause GPU rendering when scrolled out or tab hidden
@@ -200,146 +194,74 @@ export const MirariMascot3D: React.FC<MirariMascot3DProps> = ({
       lastTime = currentTime;
       clockTime += dt;
 
-      // 1. Gaze & Tilt Tracking with Soft Damping
-      const currentState = stateRef.current;
-      let stateTargetX = targetLookX;
-      let stateTargetY = targetLookY;
-      let stateTiltZ = 0;
-
-      if (currentState === 'thinking') {
-        stateTargetX = -0.3;
-        stateTargetY = -0.4; // Look up-sideways thoughtfully
-        stateTiltZ = 0.22; // Curious head tilt
-      } else if (currentState === 'excited') {
-        stateTargetY = 0.15; // Bow / nod forward happily
-        stateTiltZ = Math.sin(clockTime * 4.0) * 0.06;
+      const { state: mood, dragging: held } = stateRef.current;
+      const pose = held ? 'held' : mood;
+      if (pose !== previousPose) {
+        previousPose = pose;
+        poseTime = 0;
       }
+      poseTime += dt;
 
-      currentLookX += (stateTargetX - currentLookX) * 0.06;
-      currentLookY += (stateTargetY - currentLookY) * 0.06;
+      const reduced = motionPreference.matches;
+      const thinking = pose === 'thinking';
+      const greeting = pose === 'excited';
+      const found = pose === 'pointing';
+      const lift = greeting || found
+        ? Math.sin(Math.min(poseTime / 0.65, 1) * Math.PI)
+        : 0;
+      const damp = 1 - Math.exp(-dt * 9);
+      currentLookX = THREE.MathUtils.lerp(currentLookX, thinking ? -0.36 : targetLookX, damp);
+      currentLookY = THREE.MathUtils.lerp(currentLookY, thinking ? -0.42 : targetLookY, damp);
 
-      characterRoot.rotation.y = currentLookX * 0.42;
-      characterRoot.rotation.x = -currentLookY * 0.22;
-      characterRoot.rotation.z = stateTiltZ - currentLookX * 0.1;
+      const targetPitch = found ? 0.21 * lift : -currentLookY * 0.16;
+      const targetRoll = held ? -0.21 : thinking ? 0.13 : -currentLookX * 0.08;
+      characterRoot.rotation.x = reduced ? 0 : THREE.MathUtils.lerp(characterRoot.rotation.x, targetPitch, damp);
+      characterRoot.rotation.y = reduced ? 0 : currentLookX * 0.29;
+      characterRoot.rotation.z = reduced ? 0 : THREE.MathUtils.lerp(characterRoot.rotation.z, targetRoll, damp);
 
-      // 2. Natural Blinking Animation
       blinkTimer += dt;
       if (blinkTimer >= nextBlinkTime && !isBlinking) {
         isBlinking = true;
         blinkProgress = 0;
       }
-
       if (isBlinking) {
-        blinkProgress += dt / 0.16; // 0.16s complete blink cycle
-        if (blinkProgress >= 1.0) {
+        blinkProgress += dt / 0.17;
+        if (blinkProgress >= 1) {
           isBlinking = false;
           blinkTimer = 0;
           nextBlinkTime = 3.2 + Math.random() * 3.5;
-          blinkProgress = 0;
+        }
+      }
+      const blink = !reduced && isBlinking ? Math.sin(blinkProgress * Math.PI) : 0;
+      const eyeOpening = held ? 1.42 : thinking ? 0.75 : greeting || found ? 1.17 : 1;
+      for (const eye of eyes) {
+        if (eye) eye.scale.y = Math.max(0.07, eyeOpening * (1 - blink));
+      }
+      if (mouth && smile) {
+        const smiling = greeting || found;
+        smile.visible = smiling;
+        for (const part of mouth.children) {
+          if (part !== smile) {
+            part.visible = !smiling;
+            part.scale.set(held ? 0.64 : 1, held ? 2.3 : 1, 1);
+          }
         }
       }
 
-      const blinkAngle = isBlinking
-        ? Math.sin(blinkProgress * Math.PI) * (Math.PI * 0.52)
-        : 0;
-
-      if (leftEyelid) leftEyelid.rotation.x = -Math.PI * 0.52 + blinkAngle;
-      if (rightEyelid) rightEyelid.rotation.x = -Math.PI * 0.52 + blinkAngle;
-
-      // 3. Organic Breathing & Soft Floating
-      if (bodyGroup) {
-        const breathSpeed = currentState === 'thinking' ? 1.8 : currentState === 'excited' ? 4.2 : 2.4;
-        const breath = Math.sin(clockTime * breathSpeed);
-        
-        // Volume-conserving squish & stretch
-        const sy = 1.0 + breath * 0.035;
-        const sxz = 1.0 - breath * 0.018;
-        bodyGroup.scale.set(sxz, sy, sxz);
-
-        // Gentle floating hover
-        const hoverSpeed = currentState === 'excited' ? 4.8 : 2.0;
-        const hoverAmp = currentState === 'excited' ? 0.12 : 0.06;
-        bodyGroup.position.y = Math.sin(clockTime * hoverSpeed) * hoverAmp;
+      if (body) {
+        const breath = reduced ? 0 : Math.sin(clockTime * 2) * 0.014;
+        const stretch = reduced ? 0 : breath + lift * 0.04 + (held ? 0.06 : 0);
+        body.scale.set(1 - stretch / 2, 1 + stretch, 1 - stretch / 2);
+        const hover = reduced ? 0 : Math.sin(clockTime * 1.7) * 0.029 + lift * 0.11;
+        body.position.y = reduced ? 0 : THREE.MathUtils.lerp(body.position.y, hover, damp);
       }
-
-      // 4. Secondary Spring Inertia on Ears
-      if (leftEar && rightEar) {
-        const earSway = Math.sin(clockTime * 2.4) * 0.04;
-        const earLag = currentLookX * 0.15;
-        leftEar.rotation.z = 0.2 - earLag + earSway;
-        rightEar.rotation.z = -0.2 - earLag - earSway;
-
-        if (currentState === 'thinking') {
-          leftEar.rotation.z = 0.35 + earSway;
-        } else if (currentState === 'excited') {
-          // Perked up ears
-          leftEar.rotation.z = 0.1 + Math.sin(clockTime * 6.0) * 0.05;
-          rightEar.rotation.z = -0.1 - Math.sin(clockTime * 6.0) * 0.05;
-        }
+      if (sprout) {
+        const sway = Math.sin(clockTime * 2.2) * 0.035;
+        const settle = Math.sin(poseTime * 14) * Math.exp(-poseTime * 5) * 0.14;
+        const target = held ? 0.22 : thinking ? -0.10 : sway + settle - currentLookX * 0.08;
+        sprout.rotation.z = reduced ? 0 : THREE.MathUtils.lerp(sprout.rotation.z, target, damp);
       }
-
-      // 5. Paw Articulation
-      if (leftPaw && rightPaw) {
-        if (currentState === 'thinking') {
-          // Left paw thoughtfully near chin
-          leftPaw.position.set(-0.35, -0.18, 0.82);
-          leftPaw.rotation.set(0.8, 0.5, -0.4);
-          rightPaw.position.set(0.42, -0.42, 0.72);
-        } else if (currentState === 'excited') {
-          // Both paws lifted joyfully
-          const bounce = Math.sin(clockTime * 6.0) * 0.06;
-          leftPaw.position.set(-0.38, -0.26 + bounce, 0.78);
-          rightPaw.position.set(0.38, -0.26 + bounce, 0.78);
-        } else {
-          // Rest on belly
-          leftPaw.position.set(-0.42, -0.42, 0.72);
-          leftPaw.rotation.set(0.5, 0.35, -0.3);
-          rightPaw.position.set(0.42, -0.42, 0.72);
-          rightPaw.rotation.set(0.5, -0.35, 0.3);
-        }
-      }
-
-      // 6. Sprout & Twin Leaves Secondary Animation
-      if (sproutGroup) {
-        const sproutSway = Math.sin(clockTime * 2.2) * 0.05;
-        const sproutLag = currentLookX * 0.06;
-        if (currentState === 'thinking') {
-          sproutGroup.rotation.z = 0.12 + sproutSway;
-          sproutGroup.rotation.x = 0.08 + Math.sin(clockTime * 1.8) * 0.03;
-        } else if (currentState === 'excited') {
-          sproutGroup.rotation.z = sproutSway + Math.sin(clockTime * 6.0) * 0.1;
-          sproutGroup.rotation.x = Math.sin(clockTime * 5.0) * 0.06;
-        } else {
-          sproutGroup.rotation.z = sproutSway - sproutLag;
-          sproutGroup.rotation.x = Math.sin(clockTime * 1.8) * 0.04 - currentLookY * 0.04;
-        }
-      }
-
-      // 7. Starry Cape Floating Motion
-      if (capeGroup) {
-        const capeFloat = Math.sin(clockTime * 2.0 - 0.4) * 0.03;
-        if (currentState === 'excited') {
-          capeGroup.rotation.x = 0.08 + Math.sin(clockTime * 5.0) * 0.05;
-        } else {
-          capeGroup.rotation.x = 0.04 + capeFloat;
-        }
-      }
-
-      // 8. Brooch Crystal Gentle Emissive Pulse
-      if (broochGroup) {
-        const crystal = broochGroup.getObjectByName('BroochCrystal') as THREE.Mesh | undefined;
-        if (crystal && crystal.material) {
-          const mat = crystal.material as THREE.MeshStandardMaterial;
-          const pulse = 0.65 + Math.sin(clockTime * 2.5) * 0.35;
-          mat.emissiveIntensity = currentState === 'excited' ? 1.4 : currentState === 'thinking' ? 1.0 : pulse;
-        }
-      }
-
-      // 9. Gentle Tail Swish
-      if (tailGroup) {
-        const tailSway = Math.sin(clockTime * 2.4 - 0.8) * 0.28;
-        tailGroup.rotation.y = tailSway;
-      }
+      if (cape) cape.rotation.x = reduced ? 0 : -lift * 0.022;
 
       renderer.render(scene, camera);
     };
@@ -371,7 +293,9 @@ export const MirariMascot3D: React.FC<MirariMascot3DProps> = ({
 
     // ─── Cleanup ─────────────────────────────────────────────────
     return () => {
+      disposed = true;
       cancelAnimationFrame(animId);
+      disposeModel(characterRoot);
       observer.disconnect();
       resizeObserver.disconnect();
       document.removeEventListener('visibilitychange', handleVisibilityChange);
@@ -402,8 +326,6 @@ export const MirariMascot3D: React.FC<MirariMascot3DProps> = ({
   return (
     <div
       className={`relative select-none ${sizeClasses} ${className}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
       onClick={onClick}
       style={{ cursor: interactive ? 'pointer' : 'default' }}
       title={tooltipText || 'MIRARI'}
@@ -414,26 +336,14 @@ export const MirariMascot3D: React.FC<MirariMascot3DProps> = ({
       {/* Fallback 2D Representation if WebGL is unavailable */}
       {!webglSupported && (
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-24 h-24 rounded-full bg-mirari-paper border border-mirari-line flex items-center justify-center shadow-lg">
-            <span className="font-serif text-lg text-mirari-ink font-bold tracking-widest">
+          <div className="w-full h-full rounded-full bg-mirari-paper border border-mirari-line flex items-center justify-center shadow-lg">
+            <span className="font-serif text-xs text-mirari-ink font-bold tracking-widest">
               MIRARI
             </span>
           </div>
         </div>
       )}
 
-      {/* Subtle mood aura glow behind mascot (Zero stars, zero particle noise) */}
-      <div
-        className={`absolute inset-4 rounded-full -z-10 blur-2xl transition-opacity duration-700 pointer-events-none ${
-          state === 'thinking'
-            ? 'bg-amber-200/30 opacity-90 scale-105'
-            : state === 'excited'
-            ? 'bg-amber-300/40 opacity-100 scale-115'
-            : isHovered
-            ? 'bg-amber-100/30 opacity-80'
-            : 'bg-amber-50/20 opacity-50'
-        }`}
-      />
     </div>
   );
 };

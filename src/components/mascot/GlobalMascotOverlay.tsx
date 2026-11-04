@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { MirariMascot3D } from './MirariMascot3D';
-import { RoundBottomFlaskFrame } from './RoundBottomFlaskFrame';
 import type { MascotState, Article, AIRecommendation, SentenceEvidence } from '../../types';
 import { queryMockAIRecommendation, queryAISearch } from '../../services/aiRecommendationService';
 import {
@@ -82,7 +81,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
   const activeArticleIdRef = useRef<string | null>(null);
   const activeHomeRequestIdRef = useRef<number>(0);
 
-  // Mascot dimensions based on view & Section 4 presence (Flask ratio 100:120)
+  // Mascot dimensions based on the active view.
   const isHomeView = currentView === 'home';
   const isExploreView = currentView === 'explore';
   const mascotWidth = isInExploreSection || isExploreView ? 120 : isHomeView ? 104 : 80;
@@ -504,7 +503,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
 
       // 絕不拿其他文章的證據標記當前文章，僅在確信為本文證據時高亮
       if (searchResult.evidence && !searchResult.isRecommendation) {
-        setMascotState('excited');
+        setMascotState('pointing');
         // Trigger exact text highlight and smooth scroll in ArticleView
         onEvidenceFound(searchResult);
         setTimeout(() => setMascotState('idle'), 2500);
@@ -628,19 +627,14 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
         }`}
         title={isPanelOpen ? '點擊收起面板，長按可自由拖曳' : '點擊展開對話，長按可自由拖曳'}
       >
-        {/* Laboratory Round-Bottom Flask (圓底燒瓶) Container Frame */}
         <div className="relative w-full h-full flex items-center justify-center group">
-          {/* Refined Glass Flask Frame (Lip Rim, Neck, Spherical Bulb & Highlights) */}
-          <RoundBottomFlaskFrame
-            isHovered={isHovered}
-            state={mascotState}
-          />
 
           {/* THE SINGLE 3D WebGL MASCOT (Star-seed Sprite / 星種精靈) */}
-          <div className="relative z-10 w-full h-full flex items-center justify-center pt-2">
+          <div className="relative z-10 w-full h-full flex items-center justify-center">
             <MirariMascot3D
               size="full"
               state={mascotState}
+              dragging={isDragging}
               interactive={true} // Responsive gaze tracking
             />
           </div>
