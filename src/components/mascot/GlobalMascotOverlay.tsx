@@ -104,7 +104,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
   const articleId = currentView === 'article' ? currentArticle?.id : undefined;
   const showReadingIntro = !!articleId && introArticleId === articleId && !isPanelOpen;
   const hint = isHomeView && showHomeGreeting && !isPanelOpen
-    ? '你好！今天想找什麼？'
+    ? '你好！今天想讀什麼？'
     : showReadingIntro ? '有問題嗎？點我一起找答案。' : null;
 
   useEffect(() => {
