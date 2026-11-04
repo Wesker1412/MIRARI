@@ -27,10 +27,11 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({
           <div className="flex items-center space-x-2 sm:space-x-3 min-w-0 shrink">
             <Link
               to="/"
-              className="font-serif text-xl sm:text-3xl font-bold tracking-tight text-mirari-ink hover:text-mirari-amber transition shrink-0 leading-none"
+              className="inline-flex items-center gap-1 font-serif text-xl sm:text-3xl font-bold tracking-tight text-mirari-ink hover:text-mirari-amber transition shrink-0 leading-none"
               title="返回首頁"
             >
-              MIRARI
+              <img src="/mirari-icon.png" alt="" width={28} height={28} className="h-6 w-6 sm:h-7 sm:w-7" />
+              <span>MIRARI</span>
             </Link>
 
             {isArticleView && articleTitle ? (
