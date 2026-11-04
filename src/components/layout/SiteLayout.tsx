@@ -122,7 +122,8 @@ export const SiteLayout: React.FC = () => {
         setActiveSentenceId(primaryId);
         setActiveSecondaryId(secondaryId);
         setEvidenceNote(result.evidence.contextNote || '支持回答之原文依據');
-        elem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        elem.scrollIntoView({ behavior: reducedMotion ? 'instant' : 'smooth', block: 'center' });
       }
     }
   }, []);
@@ -136,7 +137,7 @@ export const SiteLayout: React.FC = () => {
         onSelectArticle={handleSelectArticle}
         onEvidenceFound={handleEvidenceFound}
         onClearHighlight={handleClearHighlight}
-        hasActiveHighlight={!!activeSentenceId}
+        activeSentenceId={activeSentenceId}
       />
 
       {/* ─── Unified Site Header ────────────────────────────────────── */}
@@ -146,7 +147,6 @@ export const SiteLayout: React.FC = () => {
         editorialCategory={isArticle && currentArticle ? currentArticle.editorialCategory : undefined}
         hasActiveHighlight={!!activeSentenceId}
         evidenceNote={evidenceNote}
-        onClearHighlight={handleClearHighlight}
         isCopied={isCopied}
         onCopyLink={isArticle && currentArticle ? handleCopyLink : undefined}
       />

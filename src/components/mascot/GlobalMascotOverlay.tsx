@@ -15,7 +15,7 @@ interface GlobalMascotOverlayProps {
   onSelectArticle: (article: Article) => void;
   onEvidenceFound: (result: EvidenceSearchResult) => void;
   onClearHighlight: () => void;
-  hasActiveHighlight: boolean;
+  activeSentenceId: string | null;
 }
 
 interface Position {
@@ -24,6 +24,7 @@ interface Position {
 }
 
 const STORAGE_KEY_POS = 'mirari_mascot_pos';
+const STORAGE_KEY_READING_INTRO = 'mirari_reading_intro_seen';
 const SESSION_KEY_GREETED = 'mirari_home_greeted';
 
 export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
@@ -32,8 +33,9 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
   onSelectArticle,
   onEvidenceFound,
   onClearHighlight,
-  hasActiveHighlight,
+  activeSentenceId,
 }) => {
+  const hasActiveHighlight = !!activeSentenceId;
   // Mascot state
   const [mascotState, setMascotState] = useState<MascotState>('idle');
   const [isPanelOpen, setIsPanelOpen] = useState<boolean>(false);
@@ -47,6 +49,16 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
   });
   const [position, setPosition] = useState<Position>({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState<boolean>(false);
+  const [introArticleId, setIntroArticleId] = useState<string | null>(null);
+  const introShown = useRef(false);
+  const dragDirection = useRef<Position>({ x: 0, y: 0 });
+  const lastPointer = useRef<Position>({ x: 0, y: 0 });
+  const [dismissedSentence, setDismissedSentence] = useState<string | null>(null);
+  const [evidenceDock, setEvidenceDock] = useState<{
+    id: string;
+    position: Position;
+    direction: Position;
+  } | null>(null);
 
   // Home search state
   const [homeQuery, setHomeQuery] = useState<string>('');
@@ -86,6 +98,82 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
   const isExploreView = currentView === 'explore';
   const mascotWidth = isInExploreSection || isExploreView ? 120 : isHomeView ? 104 : 80;
   const mascotHeight = isInExploreSection || isExploreView ? 144 : isHomeView ? 125 : 96;
+  const articleId = currentView === 'article' ? currentArticle?.id : undefined;
+  const showReadingIntro = !!articleId && introArticleId === articleId && !isPanelOpen;
+
+  useEffect(() => {
+    if (!articleId || introShown.current) return;
+    introShown.current = true;
+    try {
+      if (localStorage.getItem(STORAGE_KEY_READING_INTRO)) return;
+      localStorage.setItem(STORAGE_KEY_READING_INTRO, '1');
+    } catch {
+      // The current page can still show the hint when storage is unavailable.
+    }
+    setIntroArticleId(articleId);
+  }, [articleId]);
+
+  useEffect(() => {
+    setIntroArticleId((previous) => previous === articleId ? previous : null);
+  }, [articleId]);
+
+  useEffect(() => {
+    setDismissedSentence(null);
+  }, [activeSentenceId, currentArticle?.id]);
+
+  useEffect(() => {
+    if (!activeSentenceId || currentView !== 'article' || dismissedSentence === activeSentenceId) return;
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const quote = document.getElementById(activeSentenceId);
+      const rect = quote?.getBoundingClientRect();
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      if (!rect || rect.bottom < 100 || rect.top > height - 40) {
+        setEvidenceDock(null);
+        return;
+      }
+
+      const centerY = (rect.top + rect.bottom) / 2;
+      let x = rect.right + 12;
+      let y = centerY - mascotHeight / 2;
+      if (x + mascotWidth > width - 12) {
+        x = rect.left - mascotWidth - 12;
+        if (x < 12) {
+          x = rect.right - mascotWidth;
+          y = rect.bottom + 12;
+          if (y + mascotHeight > height - 12) y = rect.top - mascotHeight - 12;
+        }
+      }
+      x = Math.max(12, Math.min(width - mascotWidth - 12, x));
+      y = Math.max(12, Math.min(height - mascotHeight - 12, y));
+      if (x < rect.right && x + mascotWidth > rect.left &&
+          y < rect.bottom && y + mascotHeight > rect.top) {
+        setEvidenceDock(null);
+        return;
+      }
+      const dx = Math.max(rect.left, Math.min(rect.right, x + mascotWidth / 2)) - x - mascotWidth / 2;
+      const dy = Math.max(rect.top, Math.min(rect.bottom, y + mascotHeight / 2)) - y - mascotHeight / 2;
+      const length = Math.hypot(dx, dy) || 1;
+      setEvidenceDock({ id: activeSentenceId, position: { x, y }, direction: { x: dx / length, y: dy / length } });
+    };
+    const schedule = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+    schedule();
+    window.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('resize', schedule);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener('scroll', schedule);
+      window.removeEventListener('resize', schedule);
+    };
+  }, [activeSentenceId, currentView, dismissedSentence, mascotWidth, mascotHeight]);
+
+  const dock = currentView === 'article' && !isDragging &&
+    dismissedSentence !== activeSentenceId && evidenceDock?.id === activeSentenceId ? evidenceDock : null;
+  const displayedPosition = dock?.position ?? position;
 
   // ─── Default Anchor Calculation ──────────────────────────────────
   const getDefaultAnchorPosition = useCallback((): Position => {
@@ -326,7 +414,10 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
     }
 
     dragStartPointerRef.current = { x: e.clientX, y: e.clientY };
-    dragStartMascotPosRef.current = { ...position };
+    lastPointer.current = dragStartPointerRef.current;
+    dragDirection.current = { x: 0, y: 0 };
+    const rect = containerRef.current?.getBoundingClientRect();
+    dragStartMascotPosRef.current = rect ? { x: rect.left, y: rect.top } : displayedPosition;
     hasMovedBeyondThresholdRef.current = false;
   };
 
@@ -336,10 +427,20 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
 
     const dx = e.clientX - dragStartPointerRef.current.x;
     const dy = e.clientY - dragStartPointerRef.current.y;
+    const stepX = e.clientX - lastPointer.current.x;
+    const stepY = e.clientY - lastPointer.current.y;
+    lastPointer.current = { x: e.clientX, y: e.clientY };
+    const stepLength = Math.hypot(stepX, stepY);
+    if (stepLength > 0) {
+      const scale = Math.max(3, stepLength);
+      dragDirection.current = { x: stepX / scale, y: stepY / scale };
+    }
 
     if (!hasMovedBeyondThresholdRef.current && Math.hypot(dx, dy) > 8) {
       hasMovedBeyondThresholdRef.current = true;
+      setIntroArticleId(null);
       setIsDragging(true);
+      setDismissedSentence(activeSentenceId);
       setMascotState('thinking');
     }
 
@@ -375,6 +476,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
       localStorage.setItem(STORAGE_KEY_POS, JSON.stringify(position));
     } else {
       // Click/Tap toggle
+      setIntroArticleId(null);
       setIsPanelOpen((prev) => !prev);
     }
 
@@ -503,10 +605,10 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
 
       // 絕不拿其他文章的證據標記當前文章，僅在確信為本文證據時高亮
       if (searchResult.evidence && !searchResult.isRecommendation) {
-        setMascotState('pointing');
+        setDismissedSentence(null);
         // Trigger exact text highlight and smooth scroll in ArticleView
         onEvidenceFound(searchResult);
-        setTimeout(() => setMascotState('idle'), 2500);
+        setMascotState('idle');
       } else {
         onClearHighlight();
         setMascotState('idle');
@@ -545,6 +647,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
       ]);
 
       if (fallback.evidence && !fallback.isRecommendation) {
+        setDismissedSentence(null);
         onEvidenceFound(fallback);
       } else {
         onClearHighlight();
@@ -610,6 +713,18 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
       <div
         ref={containerRef}
         id="mirari-global-mascot"
+        role="button"
+        tabIndex={0}
+        aria-label={currentView === 'article' ? '隨文提問' : '探索篇章'}
+        aria-expanded={isPanelOpen}
+        aria-describedby={showReadingIntro ? 'mirari-reading-intro' : undefined}
+        onKeyDown={(event) => {
+          if (event.key !== 'Enter' && event.key !== ' ') return;
+          event.preventDefault();
+          if (event.repeat) return;
+          setIntroArticleId(null);
+          setIsPanelOpen((open) => !open);
+        }}
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
@@ -617,13 +732,13 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         style={{
-          transform: `translate3d(${position.x}px, ${position.y}px, 0)`,
+          transform: `translate3d(${displayedPosition.x}px, ${displayedPosition.y}px, 0)`,
           width: `${mascotWidth}px`,
           height: `${mascotHeight}px`,
           touchAction: 'none',
         }}
         className={`fixed top-0 left-0 z-50 select-none cursor-grab active:cursor-grabbing ${
-          isDragging ? '' : 'transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1)'
+          isDragging ? '' : 'motion-safe:transition-transform duration-500 ease-out'
         }`}
         title={isPanelOpen ? '點擊收起面板，長按可自由拖曳' : '點擊展開對話，長按可自由拖曳'}
       >
@@ -633,14 +748,25 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
           <div className="relative z-10 w-full h-full flex items-center justify-center">
             <MirariMascot3D
               size="full"
-              state={mascotState}
+              state={dock && mascotState === 'idle' ? 'pointing' : mascotState}
               dragging={isDragging}
+              dragDirection={dragDirection}
+              evidenceDirection={dock?.direction}
               interactive={true} // Responsive gaze tracking
             />
           </div>
 
+          {showReadingIntro && (
+            <div
+              id="mirari-reading-intro"
+              className={`pointer-events-none absolute z-20 w-max max-w-[min(15rem,calc(100vw-2rem))] rounded-xl border border-mirari-line bg-white px-3 py-2 text-xs leading-relaxed text-mirari-ink shadow-sm ${displayedPosition.y < 78 ? 'top-full mt-1' : 'bottom-full mb-1'} ${displayedPosition.x + mascotWidth / 2 > window.innerWidth / 2 ? 'right-0' : 'left-0'}`}
+            >
+              有問題嗎？點我一起找答案。
+            </div>
+          )}
+
           {/* Hover Status Indicator / Hint (Desktop) */}
-          {!isPanelOpen && !isDragging && isHovered && (
+          {!showReadingIntro && !isPanelOpen && !isDragging && isHovered && (
             <div className="hidden sm:block absolute -top-8 left-1/2 -translate-x-1/2 opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
               <span className="text-[11px] font-sans bg-mirari-ink text-white px-2.5 py-1 rounded-full shadow-md">
                 {isHomeView || isExploreView ? '探索篇章' : '隨文提問'}

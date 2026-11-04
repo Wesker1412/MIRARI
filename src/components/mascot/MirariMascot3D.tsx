@@ -3,9 +3,16 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import type { MascotState } from '../../types';
 
+interface Direction {
+  x: number;
+  y: number;
+}
+
 interface MirariMascot3DProps {
   state?: MascotState;
   dragging?: boolean;
+  dragDirection?: React.RefObject<Direction>;
+  evidenceDirection?: Direction;
   size?: 'hero' | 'companion' | 'compact' | 'showcase' | 'full';
   interactive?: boolean;
   onClick?: () => void;
@@ -16,6 +23,8 @@ interface MirariMascot3DProps {
 export const MirariMascot3D: React.FC<MirariMascot3DProps> = ({
   state = 'idle',
   dragging = false,
+  dragDirection,
+  evidenceDirection,
   size = 'hero',
   interactive = true,
   onClick,
@@ -24,11 +33,11 @@ export const MirariMascot3D: React.FC<MirariMascot3DProps> = ({
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [webglSupported, setWebglSupported] = useState(true);
-  const stateRef = useRef({ state, dragging });
+  const stateRef = useRef({ state, dragging, dragDirection, evidenceDirection });
 
   useEffect(() => {
-    stateRef.current = { state, dragging };
-  }, [state, dragging]);
+    stateRef.current = { state, dragging, dragDirection, evidenceDirection };
+  }, [state, dragging, dragDirection, evidenceDirection]);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -194,7 +203,7 @@ export const MirariMascot3D: React.FC<MirariMascot3DProps> = ({
       lastTime = currentTime;
       clockTime += dt;
 
-      const { state: mood, dragging: held } = stateRef.current;
+      const { state: mood, dragging: held, dragDirection, evidenceDirection } = stateRef.current;
       const pose = held ? 'held' : mood;
       if (pose !== previousPose) {
         previousPose = pose;
@@ -210,11 +219,13 @@ export const MirariMascot3D: React.FC<MirariMascot3DProps> = ({
         ? Math.sin(Math.min(poseTime / 0.65, 1) * Math.PI)
         : 0;
       const damp = 1 - Math.exp(-dt * 9);
-      currentLookX = THREE.MathUtils.lerp(currentLookX, thinking ? -0.36 : targetLookX, damp);
-      currentLookY = THREE.MathUtils.lerp(currentLookY, thinking ? -0.42 : targetLookY, damp);
+      const direction = held ? dragDirection?.current : found ? evidenceDirection : undefined;
+      currentLookX = THREE.MathUtils.lerp(currentLookX, direction?.x ?? (thinking ? -0.36 : targetLookX), damp);
+      currentLookY = THREE.MathUtils.lerp(currentLookY, direction?.y ?? (thinking ? -0.42 : targetLookY), damp);
 
-      const targetPitch = found ? 0.21 * lift : -currentLookY * 0.16;
-      const targetRoll = held ? -0.21 : thinking ? 0.13 : -currentLookX * 0.08;
+      const pointSway = found ? Math.sin(poseTime * 4) * 0.055 : 0;
+      const targetPitch = currentLookY * (held ? 0.27 : 0.16) + (found ? 0.12 * lift : 0);
+      const targetRoll = thinking ? 0.13 : -currentLookX * (held ? 0.3 : found ? 0.17 : 0.08) + pointSway;
       characterRoot.rotation.x = reduced ? 0 : THREE.MathUtils.lerp(characterRoot.rotation.x, targetPitch, damp);
       characterRoot.rotation.y = reduced ? 0 : currentLookX * 0.29;
       characterRoot.rotation.z = reduced ? 0 : THREE.MathUtils.lerp(characterRoot.rotation.z, targetRoll, damp);
@@ -258,7 +269,7 @@ export const MirariMascot3D: React.FC<MirariMascot3DProps> = ({
       if (sprout) {
         const sway = Math.sin(clockTime * 2.2) * 0.035;
         const settle = Math.sin(poseTime * 14) * Math.exp(-poseTime * 5) * 0.14;
-        const target = held ? 0.22 : thinking ? -0.10 : sway + settle - currentLookX * 0.08;
+        const target = held ? currentLookX * 0.24 : thinking ? -0.10 : sway + settle - currentLookX * 0.08;
         sprout.rotation.z = reduced ? 0 : THREE.MathUtils.lerp(sprout.rotation.z, target, damp);
       }
       if (cape) cape.rotation.x = reduced ? 0 : -lift * 0.022;

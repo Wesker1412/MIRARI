@@ -8,7 +8,6 @@ interface SiteHeaderProps {
   editorialCategory?: EditorialCategory;
   hasActiveHighlight?: boolean;
   evidenceNote?: string | null;
-  onClearHighlight?: () => void;
   isCopied?: boolean;
   onCopyLink?: () => void;
 }
@@ -18,7 +17,6 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({
   editorialCategory,
   hasActiveHighlight,
   evidenceNote,
-  onClearHighlight,
   isCopied,
   onCopyLink,
 }) => {
@@ -68,18 +66,11 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({
             {/* Article Specific Actions (Highlight badge & share button) */}
             {isArticleView && (
               <div className="flex items-center space-x-1.5 sm:space-x-2">
-                {hasActiveHighlight && onClearHighlight && (
+                {hasActiveHighlight && (
                   <div className="flex items-center space-x-1 bg-amber-50 border border-amber-300 text-amber-900 px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-lg text-[10px] sm:text-xs font-sans animate-fade-in">
                     <span className="truncate max-w-[70px] sm:max-w-none">
                       已定位：{evidenceNote || '原文依據'}
                     </span>
-                    <button
-                      onClick={onClearHighlight}
-                      className="hover:underline font-medium text-amber-950 ml-0.5"
-                      title="清除標記"
-                    >
-                      清除
-                    </button>
                   </div>
                 )}
 
