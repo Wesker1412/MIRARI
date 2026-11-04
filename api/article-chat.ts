@@ -63,6 +63,9 @@ export default async function handler(req: any, res: any) {
       ? history.slice(-4).map((h: any) => ({
           role: h.role === 'assistant' ? ('assistant' as const) : ('user' as const),
           content: String(h.content || '').trim().slice(0, 100),
+          evidenceSentenceId: h.role === 'assistant' && typeof h.evidenceSentenceId === 'string'
+            ? h.evidenceSentenceId.slice(0, 100)
+            : undefined,
         }))
       : [];
 

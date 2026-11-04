@@ -18,7 +18,12 @@ export const GATE_REJECTION_MESSAGE =
 export interface ChatHistoryMessage {
   role: 'user' | 'assistant';
   content: string;
+  evidenceSentenceId?: string;
 }
+
+const SIMPLIFICATION_MARKER = /(?:再|更|講得?|說得?|解釋得?)\s*簡單|白話|太難|(?:看|聽)不太?懂|(?:看|聽)不懂|用小學生/;
+const CONTEXT_ONLY_SIMPLIFICATION =
+  /^(?:(?:我)?(?:聽|看)(?:不太懂|不懂|不明白)[，,、。\s]*)?(?:請問|請|能不能|可不可以|可以|能否|能)?(?:再)?(?:講得?|說得?|解釋得?|用)?(?:再|更)?(?:簡單|白話)(?:一點|點|一點的方式)?(?:嗎|呢)?[？?！!。\s]*$/;
 
 export interface ArticleChatResponse {
   query: string;
@@ -275,9 +280,7 @@ export function resolveAnaphoraQuery(
   history?: ChatHistoryMessage[]
 ): { resolvedQuery: string; isFollowUp: boolean; isSimplification: boolean } {
   const trimmed = currentQuery.trim();
-  const isSimplification = /再簡單|更簡單|再白話|白話點|太難了|看不懂|用小學生|聽不懂|講簡單/i.test(
-    trimmed
-  );
+  const isSimplification = SIMPLIFICATION_MARKER.test(trimmed);
 
   const followUpIndicators = [
     /^(那|那為什麼|為什麼會這樣|為什麼|怎麼會這樣|這代表什麼|然後呢|下一步呢|後來呢|那它呢)/,
@@ -302,7 +305,7 @@ export function resolveAnaphoraQuery(
       (m) =>
         m.role === 'user' &&
         !followUpIndicators.some((p) => p.test(m.content.trim())) &&
-        !/再簡單|更簡單|再白話/i.test(m.content)
+        !SIMPLIFICATION_MARKER.test(m.content)
     );
 
   // 2. 取得前一輪助理回覆
@@ -320,7 +323,9 @@ export function resolveAnaphoraQuery(
 
   // 重組還原後的檢索語意（主題詞 + 當前追問詞）
   const distinctHints = Array.from(new Set(contextHints));
-  const resolvedQuery = `${distinctHints.join(' ')} ${trimmed}`.trim();
+  const resolvedQuery = isSimplification && substantiveUserMsg && CONTEXT_ONLY_SIMPLIFICATION.test(trimmed)
+    ? substantiveUserMsg.content
+    : `${distinctHints.join(' ')} ${trimmed}`.trim();
 
   return {
     resolvedQuery,
@@ -484,9 +489,13 @@ export async function handleArticleChat(params: {
 
   // 3. 連續追問指涉還原
   const { resolvedQuery, isSimplification } = resolveAnaphoraQuery(rawQuery, history);
+  const lastTurn = history.at(-1);
+  const priorEvidence = CONTEXT_ONLY_SIMPLIFICATION.test(rawQuery) && lastTurn?.role === 'assistant'
+    ? articleSentences.find((sentence) => sentence.sentenceId === lastTurn.evidenceSentenceId)
+    : undefined;
   const queryTokens = tokenizeText(resolvedQuery);
 
-  if (queryTokens.length === 0) {
+  if (queryTokens.length === 0 && !priorEvidence) {
     return {
       query: rawQuery,
       answer: GATE_REJECTION_MESSAGE,
@@ -581,6 +590,7 @@ export async function handleArticleChat(params: {
   // 2) 實質高分概念命中 (maxScore >= 7.0)，或
   // 3) 中度概念命中 (maxScore >= 4.0 且 tokenCoverage >= 0.20)
   const passesGate =
+    !!priorEvidence ||
     isDirectQuestionHit ||
     isTitleHit ||
     isTagHit ||
@@ -634,8 +644,13 @@ export async function handleArticleChat(params: {
   }
 
   // 5. 原文句子精確定位（優先使用知識點的 anchorSentenceId，若無則使用最高分句子）
-  let targetEvidence: SentenceEvidence | null = null;
-  if (bestKnowledgePoint?.anchorSentenceId) {
+  let targetEvidence: SentenceEvidence | null = priorEvidence ?? null;
+  if (priorEvidence) {
+    bestKnowledgePoint = articleKnowledge?.knowledgePoints.find(
+      (kp) => kp.anchorSentenceId === priorEvidence.sentenceId
+    ) ?? null;
+  }
+  if (!targetEvidence && bestKnowledgePoint?.anchorSentenceId) {
     targetEvidence =
       articleSentences.find((s) => s.sentenceId === bestKnowledgePoint.anchorSentenceId) ||
       null;
@@ -690,7 +705,7 @@ ${rawQuery}
   // 7. 若無 API Key 或 LLM 呼叫失敗：觸發預製知識點安全降級
   let fallbackAnswer = bestKnowledgePoint
     ? bestKnowledgePoint.plainExplanation
-    : article.summary;
+    : priorEvidence?.exactQuote ?? article.summary;
 
   if (isSimplification && bestKnowledgePoint) {
     fallbackAnswer = `簡單來說：${bestKnowledgePoint.plainExplanation}`;

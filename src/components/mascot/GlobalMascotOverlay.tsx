@@ -569,6 +569,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
     const historyPayload = articleDialogue.slice(-4).map((d) => ({
       role: d.role,
       content: d.content,
+      evidenceSentenceId: d.evidence?.sentenceId,
     }));
 
     try {

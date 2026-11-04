@@ -219,6 +219,7 @@ export function searchArticleEvidence(
 export interface CompanionChatHistory {
   role: 'user' | 'assistant';
   content: string;
+  evidenceSentenceId?: string;
 }
 
 /**
