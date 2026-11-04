@@ -9,7 +9,6 @@ import { UnpublishedNoticePage } from './UnpublishedNoticePage';
 export interface RouteContextType {
   activeSentenceId: string | null;
   activeSecondaryId: string | null;
-  evidenceNote: string | null;
   handleClearHighlight: () => void;
   handleOpenArticleBySlug: (slug: string) => void;
 }
@@ -45,7 +44,6 @@ export const ArticlePage: React.FC = () => {
       onOpenArticleBySlug={(targetSlug) => navigate(`/articles/${targetSlug}`)}
       activeSentenceId={context?.activeSentenceId ?? null}
       activeSecondaryId={context?.activeSecondaryId ?? null}
-      evidenceNote={context?.evidenceNote ?? null}
       onClearHighlight={context?.handleClearHighlight ?? (() => {})}
     />
   );

@@ -15,7 +15,6 @@ export const SiteLayout: React.FC = () => {
   // Highlight state for article reading & mascot evidence locating
   const [activeSentenceId, setActiveSentenceId] = useState<string | null>(null);
   const [activeSecondaryId, setActiveSecondaryId] = useState<string | null>(null);
-  const [evidenceNote, setEvidenceNote] = useState<string | null>(null);
 
   // Sharing copy feedback state
   const [isCopied, setIsCopied] = useState<boolean>(false);
@@ -24,7 +23,6 @@ export const SiteLayout: React.FC = () => {
   useEffect(() => {
     setActiveSentenceId(null);
     setActiveSecondaryId(null);
-    setEvidenceNote(null);
   }, [location.pathname]);
 
   // Determine view mode for Mascot (home vs article vs explore)
@@ -49,13 +47,11 @@ export const SiteLayout: React.FC = () => {
     navigate(`/articles/${article.slug}`);
     setActiveSentenceId(null);
     setActiveSecondaryId(null);
-    setEvidenceNote(null);
   };
 
   const handleClearHighlight = useCallback(() => {
     setActiveSentenceId(null);
     setActiveSecondaryId(null);
-    setEvidenceNote(null);
   }, []);
 
   const handleCopyLink = useCallback(() => {
@@ -103,7 +99,6 @@ export const SiteLayout: React.FC = () => {
     if (!result.evidence) {
       setActiveSentenceId(null);
       setActiveSecondaryId(null);
-      setEvidenceNote(null);
       return;
     }
 
@@ -121,7 +116,6 @@ export const SiteLayout: React.FC = () => {
       if (textMatches) {
         setActiveSentenceId(primaryId);
         setActiveSecondaryId(secondaryId);
-        setEvidenceNote(result.evidence.contextNote || '支持回答之原文依據');
         const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         elem.scrollIntoView({ behavior: reducedMotion ? 'instant' : 'smooth', block: 'center' });
       }
@@ -145,8 +139,6 @@ export const SiteLayout: React.FC = () => {
         articleTitle={isArticle && currentArticle ? currentArticle.title : undefined}
         articleSlug={isArticle && currentArticle ? currentArticle.slug : undefined}
         editorialCategory={isArticle && currentArticle ? currentArticle.editorialCategory : undefined}
-        hasActiveHighlight={!!activeSentenceId}
-        evidenceNote={evidenceNote}
         isCopied={isCopied}
         onCopyLink={isArticle && currentArticle ? handleCopyLink : undefined}
       />
@@ -157,7 +149,6 @@ export const SiteLayout: React.FC = () => {
           context={{
             activeSentenceId,
             activeSecondaryId,
-            evidenceNote,
             handleClearHighlight,
             isCopied,
             handleCopyLink,

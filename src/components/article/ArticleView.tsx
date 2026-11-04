@@ -11,7 +11,6 @@ interface ArticleViewProps {
   onOpenArticleBySlug?: (slug: string) => void;
   activeSentenceId: string | null;
   activeSecondaryId: string | null;
-  evidenceNote?: string | null;
   onClearHighlight?: () => void;
 }
 

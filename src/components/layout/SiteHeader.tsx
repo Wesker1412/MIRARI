@@ -6,8 +6,6 @@ interface SiteHeaderProps {
   articleTitle?: string;
   articleSlug?: string;
   editorialCategory?: EditorialCategory;
-  hasActiveHighlight?: boolean;
-  evidenceNote?: string | null;
   isCopied?: boolean;
   onCopyLink?: () => void;
 }
@@ -15,8 +13,6 @@ interface SiteHeaderProps {
 export const SiteHeader: React.FC<SiteHeaderProps> = ({
   articleTitle,
   editorialCategory,
-  hasActiveHighlight,
-  evidenceNote,
   isCopied,
   onCopyLink,
 }) => {
@@ -63,17 +59,9 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({
 
           {/* Right: Three Navigation Entrances + Article Specific Actions */}
           <div className="flex items-center space-x-2 sm:space-x-6 text-[11px] sm:text-xs font-sans shrink-0">
-            {/* Article Specific Actions (Highlight badge & share button) */}
+            {/* Article share button */}
             {isArticleView && (
               <div className="flex items-center space-x-1.5 sm:space-x-2">
-                {hasActiveHighlight && (
-                  <div className="flex items-center space-x-1 bg-amber-50 border border-amber-300 text-amber-900 px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-lg text-[10px] sm:text-xs font-sans animate-fade-in">
-                    <span className="truncate max-w-[70px] sm:max-w-none">
-                      已定位：{evidenceNote || '原文依據'}
-                    </span>
-                  </div>
-                )}
-
                 {onCopyLink && (
                   <button
                     onClick={onCopyLink}
