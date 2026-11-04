@@ -36,17 +36,17 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({
             {isArticleView && articleTitle ? (
               <nav
                 aria-label="文章導覽麵包屑"
-                className="flex items-center space-x-1 sm:space-x-2 text-[11px] sm:text-xs font-sans text-mirari-dim min-w-0 h-5"
+                className="flex items-center gap-1 sm:gap-2 text-[11px] sm:text-xs leading-5 font-sans text-mirari-dim min-w-0"
               >
-                <span className="text-mirari-line select-none shrink-0 leading-none">/</span>
+                <span className="text-mirari-line select-none shrink-0">/</span>
                 <Link
                   to={editorialCategory === 'journal_interpretation' ? '/journal' : '/principles'}
-                  className="hover:text-mirari-ink transition shrink-0 leading-none"
+                  className="hover:text-mirari-ink transition shrink-0"
                 >
                   {editorialCategory === 'journal_interpretation' ? '研究動態' : '科普探索'}
                 </Link>
-                <span className="hidden sm:inline text-mirari-line select-none shrink-0 leading-none">/</span>
-                <span className="hidden sm:inline font-serif font-medium text-mirari-ink truncate sm:max-w-[160px] md:max-w-[260px] leading-none">
+                <span className="hidden sm:inline text-mirari-line select-none shrink-0">/</span>
+                <span className="hidden sm:block min-w-0 font-serif font-medium text-mirari-ink truncate sm:max-w-[160px] md:max-w-[260px]">
                   {articleTitle}
                 </span>
               </nav>

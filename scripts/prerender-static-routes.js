@@ -208,7 +208,7 @@ function generatePrerenderedHTML() {
     const articleDir = path.join(DIST_DIR, 'articles', article.slug);
     ensureDir(articleDir);
 
-    const pageTitle = `${article.title} | MIRARI`;
+    const pageTitle = `MIRARI | ${article.title}`;
     const pageDesc = article.summary || article.leadParagraph || '';
     const ogType = 'article';
     const canonicalUrl = `${canonicalOrigin}/articles/${article.slug}`;
@@ -348,7 +348,7 @@ ${JSON.stringify(jsonLd, null, 2)}
     const articleDir = path.join(DIST_DIR, 'articles', article.slug);
     ensureDir(articleDir);
 
-    const pageTitle = `《${article.title}》（籌備中） | MIRARI`;
+    const pageTitle = `MIRARI | 《${article.title}》（籌備中）`;
     const pageDesc = article.summary || '本篇章尚處於同行評審或編輯部撰寫籌備中，尚未公開發布。';
     const canonicalUrl = `${canonicalOrigin}/articles/${article.slug}`;
 
@@ -399,7 +399,7 @@ ${JSON.stringify(jsonLd, null, 2)}
   const categoryRoutes = [
     {
       path: 'journal',
-      title: '研究動態 | MIRARI',
+      title: 'MIRARI | 研究動態',
       description: '追蹤最新科學發現、重要研究成果、研發技術突破與重要科學事件，兼具時效性、科學價值與嚴謹核實。',
       category: 'journal_interpretation',
       categoryTitle: '研究動態',
@@ -407,7 +407,7 @@ ${JSON.stringify(jsonLd, null, 2)}
     },
     {
       path: 'principles',
-      title: '科普探索 | MIRARI',
+      title: 'MIRARI | 科普探索',
       description: '收錄一般科普、經典科學知識、科學現象、數學原理、理論解釋及思想實驗，專注於增進科學理解。',
       category: 'scientific_principles',
       categoryTitle: '科普探索',
@@ -492,7 +492,7 @@ ${JSON.stringify(jsonLd, null, 2)}
   const exploreDir = path.join(DIST_DIR, 'explore');
   ensureDir(exploreDir);
   const exploreCanonicalUrl = `${canonicalOrigin}/explore`;
-  const exploreTitle = '探索 | MIRARI';
+  const exploreTitle = 'MIRARI | 探索';
   const exploreDesc = '探索科學主題、經典原理與前沿研究，由 MIRARI 吉祥物引導您在深度論述與互動數值實驗中進行主題探索與精準語義檢索。';
 
   const exploreBody = `
@@ -537,7 +537,7 @@ ${JSON.stringify(jsonLd, null, 2)}
 
   // 生成 404.html (適用於 Vercel / 靜態伺服器)
   let notFoundHtml = baseHtml
-    .replace(/<title>.*?<\/title>/i, '<title>404 · 篇章坐標未找到 | MIRARI</title>');
+    .replace(/<title>.*?<\/title>/i, '<title>MIRARI | 404 篇章未找到</title>');
 
   notFoundHtml = notFoundHtml.replace(/<meta\s+name="robots"[^>]*>/i, '');
   notFoundHtml = notFoundHtml.replace(

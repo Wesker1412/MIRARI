@@ -678,7 +678,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
 
   // ─── Floating Panel Position Calculation (Desktop) ───────────────
   const panelWidth = 380;
-  const isNearRight = position.x + mascotWidth / 2 > window.innerWidth / 2;
+  const isNearRight = displayedPosition.x + mascotWidth / 2 > window.innerWidth / 2;
 
   // Dynamically measure actual panel height to avoid hardcoded height assumptions
   useEffect(() => {
@@ -695,23 +695,27 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
     return () => ro.disconnect();
   }, [isPanelOpen, homeRecResult, articleEvidenceResult, isSearchingHome, isSearchingArticle]);
 
-  // Horizontal position
-  let panelLeft: number | undefined;
-  let panelRight: number | undefined;
-
-  if (isNearRight) {
-    const rawRight = window.innerWidth - position.x + 16;
-    panelRight = Math.max(16, Math.min(window.innerWidth - panelWidth - 16, rawRight));
-  } else {
-    const rawLeft = position.x + mascotWidth + 16;
-    panelLeft = Math.max(16, Math.min(window.innerWidth - panelWidth - 16, rawLeft));
+  const panelGap = 16;
+  const maxPanelLeft = Math.max(panelGap, window.innerWidth - panelWidth - panelGap);
+  const maxPanelTop = Math.max(panelGap, window.innerHeight - measuredPanelHeight - panelGap);
+  const leftOfMascot = displayedPosition.x - panelWidth - panelGap;
+  const rightOfMascot = displayedPosition.x + mascotWidth + panelGap;
+  const leftFits = leftOfMascot >= panelGap;
+  const rightFits = rightOfMascot <= maxPanelLeft;
+  // Prefer the side away from the quotation while MIRARI is pointing.
+  const preferLeft = dock && dock.direction.x !== 0 ? dock.direction.x > 0 : isNearRight;
+  const candidateLeft = preferLeft
+    ? (leftFits || !rightFits ? leftOfMascot : rightOfMascot)
+    : (rightFits || !leftFits ? rightOfMascot : leftOfMascot);
+  const panelLeft = Math.max(panelGap, Math.min(maxPanelLeft, candidateLeft));
+  let panelTop = Math.max(panelGap, Math.min(maxPanelTop, displayedPosition.y));
+  if (dock && !leftFits && !rightFits) {
+    const above = displayedPosition.y - measuredPanelHeight - panelGap;
+    const below = displayedPosition.y + mascotHeight + panelGap;
+    if (above >= panelGap) panelTop = above;
+    else if (below <= maxPanelTop) panelTop = below;
+    else panelTop = displayedPosition.y > maxPanelTop / 2 ? panelGap : maxPanelTop;
   }
-
-  // Vertical position dynamically clamped using actual measured panel height
-  const panelTop =
-    position.y + measuredPanelHeight > window.innerHeight - 20
-      ? Math.max(16, window.innerHeight - measuredPanelHeight - 20)
-      : Math.max(16, position.y);
 
   return (
     <>
@@ -744,7 +748,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
           height: `${mascotHeight}px`,
           touchAction: 'none',
         }}
-        className={`fixed top-0 left-0 z-50 select-none cursor-grab active:cursor-grabbing ${
+        className={`fixed top-0 left-0 select-none cursor-grab active:cursor-grabbing ${dock ? 'z-[55]' : 'z-50'} ${
           isDragging ? '' : 'motion-safe:transition-transform duration-500 ease-out'
         }`}
         title={isPanelOpen ? '點擊收起面板，長按可自由拖曳' : '點擊展開對話，長按可自由拖曳'}
@@ -802,7 +806,7 @@ export const GlobalMascotOverlay: React.FC<GlobalMascotOverlayProps> = ({
                 ? {
                     position: 'fixed',
                     top: `${panelTop}px`,
-                    ...(panelLeft !== undefined ? { left: `${panelLeft}px` } : { right: `${panelRight}px` }),
+                    left: `${panelLeft}px`,
                   }
                 : undefined
             }

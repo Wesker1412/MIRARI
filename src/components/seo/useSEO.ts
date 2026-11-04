@@ -37,7 +37,7 @@ function updateLinkTag(rel: string, href: string) {
 export function useSEO(meta?: SEOMetadata) {
   useEffect(() => {
     // 1. Document Title
-    const fullTitle = meta?.title ? `${meta.title} | ${SITE_CONFIG.name}` : SITE_CONFIG.name;
+    const fullTitle = meta?.title ? `${SITE_CONFIG.name} | ${meta.title}` : SITE_CONFIG.name;
     document.title = fullTitle;
 
     // 2. Meta Description
