@@ -9,6 +9,9 @@ import { NuclearClockSimulator } from '../article/NuclearClockSimulator';
 import { BrownianRatchetSimulator } from '../article/BrownianRatchetSimulator';
 import { TurbulenceCascadeSimulator } from '../article/TurbulenceCascadeSimulator';
 import { WeakLensingShearSimulator } from '../article/WeakLensingShearSimulator';
+import { AnyonBraidingSimulator } from '../article/AnyonBraidingSimulator';
+import { NeutralDriftSimulator } from '../article/NeutralDriftSimulator';
+import { SpikingNeuronSimulator } from '../article/SpikingNeuronSimulator';
 
 export interface InteractiveParameterMeta {
   name: string;
@@ -401,6 +404,139 @@ export const INTERACTIVE_COMPONENTS: Record<string, InteractiveComponentMeta> = 
       '宇宙網絲狀結構 (Cosmic Web Filaments)',
     ],
     component: WeakLensingShearSimulator,
+  },
+  AnyonBraidingSimulator: {
+    id: 'AnyonBraidingSimulator',
+    nameZh: '拓撲編織與任意子量子態模擬器',
+    descriptionZh:
+      '展示二維凝聚態系統中阿貝爾與非阿貝爾任意子的空間交換軌跡、(2+1)維時空世界線編織結，以及相角積累與拓撲量子位元子空間旋轉。',
+    parameters: [
+      {
+        name: 'anyonType',
+        labelZh: '任意子類型',
+        description: '阿貝爾 Laughlin 態 (ν=1/3) 或非阿貝爾 Ising / Majorana 態 (ν=5/2)',
+        defaultValue: 'abelian_laughlin',
+      },
+      {
+        name: 'noiseLevel',
+        labelZh: '局域熱擾動噪聲',
+        description: '微觀幾何路徑擾動強度，展示拓撲不變性對局域噪聲的絕對免疫',
+        defaultValue: 0.0,
+        min: 0.0,
+        max: 1.0,
+        step: 0.1,
+      },
+    ],
+    keyConcepts: [
+      '任意子 (Anyons)',
+      '拓撲編織 (Topological Braiding)',
+      '分數統計 (Fractional Statistics)',
+      '非阿貝爾幾何 (Non-Abelian Berry Phase)',
+      '世界線 (Space-Time Worldlines)',
+      '拓撲量子計算 (Topological Quantum Computing)',
+    ],
+    component: AnyonBraidingSimulator,
+  },
+  NeutralDriftSimulator: {
+    id: 'NeutralDriftSimulator',
+    nameZh: '賴特-費雪隨機漂變與木村中性演化模擬器',
+    descriptionZh:
+      '基於 Wright-Fisher 族群遺傳二項抽樣馬可夫鏈，展示有限族群中等位基因純隨機漂變、固著機率以及獨立於族群規模的分子演化時鐘速率。',
+    parameters: [
+      {
+        name: 'popSize',
+        labelZh: '有效族群大小 (Ne)',
+        description: '二倍體有效繁殖個體數量，決定隨機抽樣方差',
+        defaultValue: 50,
+        min: 20,
+        max: 300,
+        step: 10,
+      },
+      {
+        name: 'initFreq',
+        labelZh: '初始等位基因頻率 (p0)',
+        description: '等位基因在世代起始時的頻率或新突變極限 1/(2Ne)',
+        defaultValue: 0.2,
+        min: 0.05,
+        max: 0.8,
+        step: 0.05,
+      },
+      {
+        name: 'selectionS',
+        labelZh: '天擇選擇係數 (s)',
+        description: '達爾文適應度優勢或劣勢；為 0 時為純粹中性突變',
+        defaultValue: 0.0,
+        min: -0.04,
+        max: 0.04,
+        step: 0.01,
+      },
+    ],
+    keyConcepts: [
+      '隨機基因漂變 (Random Genetic Drift)',
+      '木村資生中性理論 (Kimura Neutral Theory)',
+      '賴特-費雪模型 (Wright-Fisher Model)',
+      '固著機率 (Fixation Probability)',
+      '分子時鐘 (Molecular Clock)',
+      '有效族群大小 (Effective Population Size)',
+    ],
+    component: NeutralDriftSimulator,
+  },
+  SpikingNeuronSimulator: {
+    id: 'SpikingNeuronSimulator',
+    nameZh: '類腦神經元洩漏整合放電 (LIF) 與事件驅動能耗模擬器',
+    descriptionZh:
+      '即時示波器動態展示生物神經元與類腦晶片的 Leaky Integrate-and-Fire 膜電位動力學、脈衝點陣與事件驅動架構相較於馮紐曼架構的千倍極致節能。',
+    parameters: [
+      {
+        name: 'inputRateHz',
+        labelZh: '輸入突觸脈衝率 (Hz)',
+        description: '輸入泊松脈衝流頻率',
+        defaultValue: 35,
+        unit: 'Hz',
+        min: 5,
+        max: 90,
+        step: 5,
+      },
+      {
+        name: 'synapticWeight',
+        labelZh: '突觸權重 (mV)',
+        description: '單個輸入脈衝引發的興奮性突觸後電位 (EPSP)',
+        defaultValue: 4.5,
+        unit: 'mV',
+        min: 1.0,
+        max: 9.0,
+        step: 0.5,
+      },
+      {
+        name: 'membraneTau',
+        labelZh: '膜時間常數 (τ_m)',
+        description: '決定胞膜電荷漏電速度與時域整合記憶窗口',
+        defaultValue: 20,
+        unit: 'ms',
+        min: 10,
+        max: 45,
+        step: 5,
+      },
+      {
+        name: 'thresholdV',
+        labelZh: '發火閾值 (V_th)',
+        description: '膜電位觸發全或無動作電位的去極化臨界電位',
+        defaultValue: -50,
+        unit: 'mV',
+        min: -55,
+        max: -42,
+        step: 1,
+      },
+    ],
+    keyConcepts: [
+      '洩漏整合放電 (Leaky Integrate-and-Fire)',
+      '脈衝神經網絡 (Spiking Neural Networks)',
+      '神經形態晶片 (Neuromorphic Chips)',
+      '事件驅動計算 (Event-driven Computing)',
+      '馮紐曼瓶頸 (von Neumann Bottleneck)',
+      '突觸操作能耗 (Synaptic Operations SOP)',
+    ],
+    component: SpikingNeuronSimulator,
   },
 };
 

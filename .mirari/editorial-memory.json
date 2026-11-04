@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastUpdated": "2026-11-03T00:30:00Z",
+  "lastUpdated": "2026-11-04T07:15:57.445Z",
   "editorialMemoryDescription": "MIRARI 自主編輯品質管理記憶庫：記錄近期篇章學科分佈、敘事風格、互動模式與編輯檢查規則，提供每日自主創作管線跨日延續性與防重複依據。",
   "recentArticles": [
     {
@@ -122,6 +122,42 @@
       "coreConcept": "韋伯望遠鏡 COSMOS-Web 巡天微弱重力透鏡與凱瑟-斯奎爾斯暗物質反演",
       "pedagogyKey": "宇宙85%物質隱形破題，以角對稱統計平均克服個體星系固有形狀噪聲",
       "limitsIdentified": "二維投影面密度反演，視線方向斷層掃描依賴光度紅移精度"
+    },
+    {
+      "articleId": "art-quantum-hall-anyons",
+      "slug": "quantum-hall-anyon-braiding",
+      "editorialCategory": "scientific_principles",
+      "discipline": "量子凝聚態物理與拓撲物態",
+      "narrativeStyle": "historical_detective",
+      "interactiveType": "topological_braiding",
+      "interactiveComponent": "AnyonBraidingSimulator",
+      "coreConcept": "二維拓撲限制下的任意子分數統計、勞夫林分數電荷與非阿貝爾編織",
+      "pedagogyKey": "由三維繩圈可收縮的直覺破題，推進至二維世界線不可解之結與編織群",
+      "limitsIdentified": "非阿貝爾態能隙極小，Ising 編織僅生成 Clifford 門"
+    },
+    {
+      "articleId": "art-kimura-neutral-evolution",
+      "slug": "kimura-neutral-molecular-evolution",
+      "editorialCategory": "scientific_principles",
+      "discipline": "演化生物學與族群遺傳學",
+      "narrativeStyle": "first_principles",
+      "interactiveType": "neutral_drift",
+      "interactiveComponent": "NeutralDriftSimulator",
+      "coreConcept": "木村中性理論 k=μ、賴特-費雪隨機漂變與 2Ne·s 分水嶺",
+      "pedagogyKey": "分子時鐘悖論與霍爾丹困境破題，以機率相乘推導族群大小抵消",
+      "limitsIdentified": "未納入連鎖、回復突變與族群亞結構"
+    },
+    {
+      "articleId": "art-snn-neuromorphic-compute",
+      "slug": "spiking-neural-networks-neuromorphic",
+      "editorialCategory": "journal_interpretation",
+      "discipline": "計算神經學與神經形態晶片",
+      "narrativeStyle": "research_interpretation",
+      "interactiveType": "spiking_compute",
+      "interactiveComponent": "SpikingNeuronSimulator",
+      "coreConcept": "LIF 脈衝神經元、事件驅動稀疏計算與天機/Loihi 存算一體架構",
+      "pedagogyKey": "20 瓦人腦對比 GPU 功耗牆破題，拆解記憶體牆與 SOP/MAC 能耗",
+      "limitsIdentified": "SNN 不可微訓練困境與大模型精度落差"
     }
   ],
   "cumulativeGuidelines": {
@@ -139,14 +175,14 @@
           "displayName": "科學原理與思想實驗",
           "scope": "收錄一般科普、經典科學知識、科學現象、數學原理、理論解釋及思想實驗",
           "purpose": "主要目的是讓讀者理解科學，而非追逐最新消息。不限制物理學，也不要求每篇一定具有思想實驗",
-          "currentArticles": 6
+          "currentArticles": 8
         },
         "journal_interpretation": {
           "displayName": "期刊解讀",
           "scope": "最新科學發現、重要研究成果、研發技術突破及具有話題性的科學事件",
           "selectionCriteria": "以新聞時效性、科學價值與話題性作為選題依據。涵蓋最新學術研究、重大科學發現、技術研發突破、科學機構發布的重要成果及值得公眾關注的科學事件",
           "rigorRule": "不要求每篇都必須以單篇同儕審查論文為主題，但必須核對可信來源，清楚區分：已完成同行審查的研究、尚未同行審查的預印本、機構或企業提出但尚待獨立驗證的成果。不得為了追逐話題性誇大研究結果",
-          "currentArticles": 4
+          "currentArticles": 5
         }
       },
       "classificationPrinciple": "根據文章的主要編輯目的分類：主要在解釋某個科學知識或原理 -> scientific_principles；主要在報導或解讀近期科學發現、研究成果、技術突破或科學事件 -> journal_interpretation。不能僅因引用了新論文就歸類為期刊解讀，不能僅因內容涉及經典科學原理就排除其作為最新研究報導的可能。兩大分類互斥且與學科標籤獨立",
@@ -177,28 +213,10 @@
   },
   "candidateThemesQueue": [
     {
-      "topic": "量子物理與拓撲物質",
-      "proposedInquiry": "分數霍爾效應與任意子（Anyons）：二維空間中的拓撲幾何奇景",
-      "recommendedNarrativeStyle": "historical_detective",
-      "recommendedInteractiveType": "topological_braiding"
-    },
-    {
-      "topic": "演化生物學與族群遺傳學",
-      "proposedInquiry": "木村資生分子演化中性理論：為什麼大部分基因突變既非有利亦非有害，而是純粹的隨機漂變？",
-      "recommendedNarrativeStyle": "first_principles",
-      "recommendedInteractiveType": "neutral_drift"
-    },
-    {
       "topic": "聚變能源與高溫電漿",
       "proposedInquiry": "托卡馬克磁約束不穩定性：邊界局部模（ELMs）如何破壞上億度的微型人造太陽？",
       "recommendedNarrativeStyle": "depth_narrative",
       "recommendedInteractiveType": "plasma_instability"
-    },
-    {
-      "topic": "計算神經學與神經形態晶片",
-      "proposedInquiry": "脈衝神經網路（SNN）：大腦如何用極稀疏的離散電脈衝實現極低功耗認知？",
-      "recommendedNarrativeStyle": "research_interpretation",
-      "recommendedInteractiveType": "spiking_compute"
     }
   ]
 }

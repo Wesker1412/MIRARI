@@ -1,0 +1,55 @@
+{
+  "articleId": "art-kimura-neutral-evolution",
+  "slug": "kimura-neutral-molecular-evolution",
+  "title": "演化的靜默密碼：木村資生分子中性理論與基因隨機漂變",
+  "knowledgePoints": [
+    {
+      "id": "kp-kimura-molecular-clock",
+      "label": "木村中性分子時鐘",
+      "suggestedQuestion": "為什麼分子層次的演化速率與族群個體數量完全無關？",
+      "keywords": [
+        "木村資生",
+        "中性理論",
+        "突變率",
+        "替代速率",
+        "族群大小",
+        "分子時鐘",
+        "k=μ"
+      ],
+      "plainExplanation": "大族群雖然每代產生的新突變較多（正比於 2Ne），但單一突變因競爭激烈而在群體中登頂固著的機率極低（反比於 1/2Ne）。兩者相乘後族群大小 Ne 恰好完美抵消，使得長期分子演化替換速率 k 嚴格等於中性突變率 μ，展現出宛如勻速發條般的恆定分子時鐘。",
+      "anchorSentenceId": "sent-7938e00d"
+    },
+    {
+      "id": "kp-kimura-genetic-drift",
+      "label": "賴特-費雪隨機漂變",
+      "suggestedQuestion": "完全中性的突變是如何在沒有天擇推動下統治整個物種的？",
+      "keywords": [
+        "隨機漂變",
+        "賴特-費雪",
+        "二項抽樣",
+        "吸收態",
+        "固定",
+        "滅絕",
+        "基因池"
+      ],
+      "plainExplanation": "生命代際傳遞本質上是有限配子的二項隨機抽樣。在沒有生存優勢差異時，某個基因拷貝在群體中的比例每一代都會隨機漫步。在漫長的世代累積下，絕大部分突變最終不幸漂變至 0% 滅絕，但極少數突變純粹憑藉運氣連續抽中，一路隨機漂移至 100% 固著成為全族群的唯一祖先。",
+      "anchorSentenceId": "sent-4379e4bf"
+    },
+    {
+      "id": "kp-kimura-selection-drift-barrier",
+      "label": "天擇與漂變的分水嶺",
+      "suggestedQuestion": "天擇在什麼條件下會對有害或微利突變徹底『失明』？",
+      "keywords": [
+        "選擇係數",
+        "2Nes",
+        "太田朋子",
+        "近似中性",
+        "天擇失明",
+        "隨機波動",
+        "分水嶺"
+      ],
+      "plainExplanation": "突變的命運取決於天擇選擇強度 s 與族群大小 Ne 的乘積 2Ne·s。當 |2Ne·s| 小於 1 時，微弱的生存優劣勢會被每代隨機抽樣的巨大噪聲徹底淹沒，天擇機制實質失效，即使是輕微有害的突變也能像中性基因一樣自由漂變並在族群中擴散固定。",
+      "anchorSentenceId": "sent-4b9d24e0"
+    }
+  ]
+}

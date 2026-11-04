@@ -1,6 +1,6 @@
 {
-  "lastRunTimestamp": "2026-11-04T01:00:00.000Z",
-  "scheduledCron": "0 1 * * *",
+  "lastRunTimestamp": "2026-11-04T07:15:57.449Z",
+  "scheduledCron": "0 9 * * *",
   "timezone": "Asia/Taipei (UTC+8)",
   "creationModel": "gemini-2.5-pro",
   "editorialQualityFramework": "Phase 6 Autonomous Editorial Review",
@@ -243,6 +243,65 @@
         }
       ],
       "unpassedTopics": []
+    },
+    {
+      "runId": "mirari-auto-run-20261104-backfill",
+      "timestamp": "2026-11-04T07:15:57.449Z",
+      "note": "補跑 09:00 排程（原 cron 誤設為 01:00 本地時間）",
+      "targetCount": 3,
+      "succeededCount": 3,
+      "failedCount": 0,
+      "articles": [
+        {
+          "id": "art-quantum-hall-anyons",
+          "slug": "quantum-hall-anyon-braiding",
+          "title": "二維空間的拓撲編織：分數霍爾效應與任意子的非阿貝爾奇景",
+          "discipline": "量子凝聚態物理與拓撲物態",
+          "interactiveComponent": "AnyonBraidingSimulator",
+          "interactiveType": "topological_braiding",
+          "narrativeStyle": "historical_detective",
+          "status": "published",
+          "sources": [
+            "Laughlin (1983) PRL doi:10.1103/PhysRevLett.50.1395",
+            "Wilczek (1982) PRL doi:10.1103/PhysRevLett.49.957",
+            "Bartolomei et al. (2020) Science doi:10.1126/science.aaz5601",
+            "Nayak et al. (2008) RMP doi:10.1103/RevModPhys.80.1083"
+          ],
+          "editorialRecordPath": "content/editorial-records/quantum-hall-anyon-braiding.json"
+        },
+        {
+          "id": "art-kimura-neutral-evolution",
+          "slug": "kimura-neutral-molecular-evolution",
+          "title": "演化的靜默密碼：木村資生分子中性理論與基因隨機漂變",
+          "discipline": "演化生物學與族群遺傳學",
+          "interactiveComponent": "NeutralDriftSimulator",
+          "interactiveType": "neutral_drift",
+          "narrativeStyle": "first_principles",
+          "status": "published",
+          "sources": [
+            "Kimura (1968) Nature doi:10.1038/217624a0",
+            "King & Jukes (1969) Science doi:10.1126/science.164.3881.788",
+            "Ohta (1992) Annu. Rev. Ecol. Syst. doi:10.1146/annurev.es.23.110192.001403"
+          ],
+          "editorialRecordPath": "content/editorial-records/kimura-neutral-molecular-evolution.json"
+        },
+        {
+          "id": "art-snn-neuromorphic-compute",
+          "slug": "spiking-neural-networks-neuromorphic",
+          "title": "大腦的非同步脈衝革命：神經形態晶片如何以事件驅動破除馮紐曼瓶頸？",
+          "discipline": "計算神經學與神經形態晶片",
+          "interactiveComponent": "SpikingNeuronSimulator",
+          "interactiveType": "spiking_compute",
+          "narrativeStyle": "research_interpretation",
+          "status": "published",
+          "sources": [
+            "Pei et al. (2019) Nature doi:10.1038/s41586-019-1424-8",
+            "Davies et al. (2018) IEEE Micro doi:10.1109/MM.2018.112130359",
+            "Frenkel, Bol & Indiveri (2023) Proc. IEEE doi:10.1109/JPROC.2023.3273520"
+          ],
+          "editorialRecordPath": "content/editorial-records/spiking-neural-networks-neuromorphic.json"
+        }
+      ]
     }
   ]
 }

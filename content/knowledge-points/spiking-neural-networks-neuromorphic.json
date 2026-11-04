@@ -1,0 +1,55 @@
+{
+  "articleId": "art-snn-neuromorphic-compute",
+  "slug": "spiking-neural-networks-neuromorphic",
+  "title": "大腦的非同步脈衝革命：神經形態晶片如何以事件驅動破除馮紐曼瓶頸？",
+  "knowledgePoints": [
+    {
+      "id": "kp-snn-lif-dynamics",
+      "label": "洩漏整合放電 (LIF)",
+      "suggestedQuestion": "生物神經元與類腦晶片是如何以洩漏整合放電傳遞資訊的？",
+      "keywords": [
+        "LIF",
+        "洩漏整合放電",
+        "膜電位",
+        "時間常數",
+        "動作電位",
+        "全或無",
+        "不應期"
+      ],
+      "plainExplanation": "LIF 模型將神經元類比為帶有漏電電容的水桶：外來突觸脈衝像水滴一樣注入使電位上升，平時則以時間常數 τ 指數衰減洩漏。一旦電位漫過閾值，便引發一次全或無的動作電位向下游廣播，隨後立即重置進入不應期，精確模仿生物大腦的非同步脈衝傳導。",
+      "anchorSentenceId": "sent-e39ba856"
+    },
+    {
+      "id": "kp-snn-event-driven-sparsity",
+      "label": "事件驅動與時空稀疏性",
+      "suggestedQuestion": "神經形態晶片為什麼能比傳統 GPU 節省百倍甚至千倍的推論能耗？",
+      "keywords": [
+        "事件驅動",
+        "稀疏性",
+        "GPU",
+        "能效比",
+        "SOP",
+        "MAC",
+        "非同步"
+      ],
+      "plainExplanation": "傳統 GPU 依靠固定時鐘頻率持續對所有權重進行耗能的浮點乘加（MAC）；而類腦晶片採用事件驅動架構，沒有脈衝抵達時核心處於靜止零功耗狀態，有脈衝時僅執行極低功耗的定點累加（SOP，僅約數十飛焦耳），結合大腦超過 95% 的時空稀疏性，實現驚人的千倍節能。",
+      "anchorSentenceId": "sent-d4c78b8b"
+    },
+    {
+      "id": "kp-snn-memory-wall-break",
+      "label": "破除馮紐曼記憶體牆",
+      "suggestedQuestion": "天機晶片與 Loihi 是如何消除運算與記憶體之間的高昂搬移代價的？",
+      "keywords": [
+        "天機晶片",
+        "Loihi",
+        "馮紐曼瓶頸",
+        "記憶體牆",
+        "存算一體",
+        "片上路由",
+        "異構融合"
+      ],
+      "plainExplanation": "傳統馮紐曼架構運算核心與記憶體物理分離，數據搬移消耗超過 80% 電能。類腦晶片（如天機晶片與 Loihi）將神經突觸權重直接內嵌在分佈式神經核心內部，實現存算一體，核心間僅以非同步微包路由傳遞脈衝事件，從根本上瓦解了長期困擾計算機科學的記憶體牆。",
+      "anchorSentenceId": "sent-bf38ebca"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "articleId": "art-kimura-neutral-evolution",
+  "slug": "kimura-neutral-molecular-evolution",
+  "editorialCategory": "scientific_principles",
+  "version": 1,
+  "creationModel": "gemini-2.5-pro",
+  "editorialPassDate": "2026-11-04T09:15:00+08:00",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-kimura-1968-nature",
+        "citation": "Kimura, M. (1968). \"Evolutionary rate at the molecular level.\" Nature, 217(5129), 624-626. doi:10.1038/217624a0.",
+        "peerReviewStatus": "已完成同行評審 (Nature)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Motoo Kimura",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實木村資生 1968 年經典論文之突變產生率 2Ne*mu 與固著機率 1/(2Ne) 相乘導出 k = mu 之嚴格數學證明無誤。"
+        },
+        "verifiedClaims": [
+          "在分子層次，絕大多數核苷酸與胺基酸替換是由隨機基因漂變主導的中性或近似中性變異，而非正向自然選擇",
+          "中性基因的長期演化替代速率 k 嚴格等於中性突變率 μ，且與族群規模 Ne 相互獨立"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "二倍體有限族群中有限配子抽樣方差正比於 1/(2Ne)，引發隨機基因漂變",
+            "密碼子第三位的簡併性使許多點突變不改變轉譯出的胺基酸序列（同義突變）"
+          ],
+          "empiricalFindings": [
+            "多種哺乳類動物血紅素與細胞色素 c 的胺基酸替換累積與化石分化時間呈現高度線性關係（分子時鐘）"
+          ],
+          "hypothesesAndModels": [
+            "假設中性突變對達爾文適應度的影響微弱至滿足 |2Ne*s| << 1"
+          ]
+        }
+      },
+      {
+        "id": "ref-king-jukes-1969-science",
+        "citation": "King, J. L., & Jukes, T. H. (1969). \"Non-Darwinian Evolution.\" Science, 164(3881), 788-798. doi:10.1126/science.164.3881.788.",
+        "peerReviewStatus": "已完成同行評審 (Science)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Jack Lester King",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實非達爾文演化中遺傳密碼簡併性、非編碼 DNA 與蛋白質微觀可塑性對隨機漂變假說的分子生物學支撐。"
+        },
+        "verifiedClaims": [
+          "DNA 序列中許多突變並未反映在宏觀表型適應上，大量分子演化是在天擇的審查之外默默進行的",
+          "霍爾丹的遺傳代價限制（Haldane's Dilemma）排除了所有微觀突變皆由天擇正向固定的可能"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "自然選擇若要在每個世代同時固定大量有利基因，會因為淘汰過多劣勢個體而導致族群面臨滅絕崩潰"
+          ],
+          "empiricalFindings": [
+            "假基因（Pseudogenes）不具備轉錄功能，其核苷酸演化替換率為全基因組最高且最均勻"
+          ],
+          "hypothesesAndModels": [
+            "非編碼序列在早年生態學中被假定為完全無功能的模型簡化"
+          ]
+        }
+      }
+    ],
+    "formulasAndUnits": [
+      {
+        "formula": "k = M_{\\text{new}} \\times P_{\\text{fix}} = (2N_e \\cdot \\mu) \\times \\left(\\frac{1}{2N_e}\\right) = \\mu",
+        "unitConsistency": "突變率 μ 為 [突變數/配子/世代]，替換率 k 為 [替換數/位點/世代]，二者量綱因次嚴格相等",
+        "verified": true
+      },
+      {
+        "formula": "P_{\\text{fix}} = \\frac{1 - \\exp(-4N_e s p_0)}{1 - \\exp(-4N_e s)}",
+        "unitConsistency": "選擇係數 s 與初始頻率 p0 為純數，族群大小 Ne 為純數，指數項無量綱，固著機率為 [0, 1] 區間之機率值",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "賴特-費雪二項式抽樣馬可夫鏈 P(k_{t+1}|p_t) = Binomial(2Ne, p'_t)，其中 p'_t = p_t(1+s)/(1+sp_t)",
+      "numericalMethod": "蒙地卡羅隨機抽樣，結合小樣本精確伯努利累加與大樣本高斯-博克斯-穆勒極限定理近似",
+      "dynamicBehaviorVerified": "純中性 (s=0) 下多條獨立譜系展示隨機漫步，固定率實測統計值緊密圍繞初始頻率 p0，平均固定時間驗證趨近 4Ne 世代",
+      "modelAssumptionsAndLimits": "未納入突變回彈 (Back-mutation)、連鎖不平衡 (Linkage disequilibrium) 與族群地理亞群亞結構"
+    },
+    "noFakeCitations": true,
+    "noFictionalReviewers": true
+  },
+  "readability": {
+    "language": "繁體中文",
+    "pedagogyProgression": "血紅素勻速時鐘與達爾文天擇悖論 -> 霍爾丹遺傳代價瓶頸 -> 木村資生中性推導 (k=mu) -> 賴特-費雪隨機抽樣方差 -> 2Ne*s 天擇漂變分水嶺",
+    "technicalTermsDemystified": [
+      {
+        "term": "分子中性理論 (Neutral Theory of Molecular Evolution)",
+        "intuitiveExplanation": "在微觀基因層次，絕大部分被固定下來的基因突變，既不幫助生存也不妨礙生存，純粹是靠抽籤運氣留存下來的"
+      },
+      {
+        "term": "隨機基因漂變 (Random Genetic Drift)",
+        "intuitiveExplanation": "因為每一代生孩子抽取的基因數量有限，就像從裝滿紅藍彈珠的罐子裡隨機抓一把，即使紅藍完全一樣好，比例每一代也會純粹隨機晃動"
+      },
+      {
+        "term": "固著 (Fixation)",
+        "intuitiveExplanation": "某個新突變經歷漫長的世代更迭後，普及到了全體族群的每一個個體身上，頻率達到 100%"
+      }
+    ]
+  },
+  "aestheticsAndNarrative": {
+    "coreQuestion": "為什麼在弱肉強食的演化世界裡，微觀分子演化的走時步伐卻完全獨立於族群競爭優勢？",
+    "interactiveRole": "NeutralDriftSimulator 提供即時蒙地卡羅族群演化軌跡，讓讀者親眼見證中性基因如何在無形隨機漫步中走向固定或滅絕，體會機率在大自然中的隱秘主宰力"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "嚴格區分分子序列的微觀中性演化與宏觀生物形態的達爾文天擇適應，杜絕將中性理論曲解為『生物演化完全靠運氣』的常見科學誤解",
+    "補充太田朋子近似中性理論對微弱有害突變的邊界界定"
+  ],
+  "unconfirmedLimits": [
+    "真實生物基因組中非編碼調控元件可能受到微弱表觀遺傳選擇影響，中性檢驗在超高維調控網路中需要更精細的多位點模型"
+  ]
+}

@@ -1,0 +1,124 @@
+---
+id: "art-snn-neuromorphic-compute"
+slug: "spiking-neural-networks-neuromorphic"
+version: 1
+publishedDate: "2026-11-04"
+status: "published"
+editorialCategory: "journal_interpretation"
+isEditorialCover: true
+isEditorialPick: true
+format: "interactive_simulation"
+formatBadgeText: "類腦計算實驗"
+title: "大腦的非同步脈衝革命：神經形態晶片如何以事件驅動破除馮紐曼瓶頸？"
+subtitle: "從持續數值矩陣到稀疏時空脈衝：解讀天機晶片與類腦硬體將推論能耗降低千倍的架構密碼"
+topicIds:
+  - "topic-computational-neuroscience"
+  - "topic-computer-architecture"
+tags:
+  - "神經形態晶片"
+  - "脈衝神經網路"
+  - "天機晶片"
+  - "馮紐曼瓶頸"
+  - "事件驅動"
+  - "低功耗計算"
+summary: "當前以大語言模型為代表的人工智慧浪潮，正面臨著不可承受之重的能耗高牆：現代 GPU 依靠時鐘同步的高頻時脈，在記憶體與運算核心之間瘋狂搬移海量矩陣權重，耗電動輒數百瓦。然而，擁有 860 億個神經元與百兆突觸的人類大腦，執行複雜認知與即時運動控制的功耗卻僅有驚人的 20 瓦！清華大學天機晶片（Tianjic）與英特爾 Loihi 等前沿類腦架構，在《Nature》與《IEEE》等頂級期刊發表突破性進展，展示了以生物大腦的『洩漏整合放電（LIF）』非同步脈衝事件驅動破除馮紐曼記憶體牆的革命路徑。"
+leadParagraph: "全球人工智慧算力的指數級膨脹，正在撞上一堵名為『記憶體牆（Memory Wall）』與『功耗牆（Power Wall）』的物理巨壁。在傳統馮紐曼架構中，運算單元與儲存單元在物理空間上彼此分離；即使畫面空無一物，現代深度學習模型也必須在每一個固定時鐘週期內，對數十億個浮點數進行密集的乘加運算（MAC），絕大部分電能白白耗費在匯流排的數據搬移上。然而，生物演化歷經數億年千錘百鍊的大腦，卻採用了一種徹底不同的運算範式——脈衝神經網路（Spiking Neural Networks, SNN）。在這裡，時間不是被時鐘切碎的離散步長，而是承載資訊的本體；沒有事件，就沒有任何計算與能耗。"
+quoteLead: "大腦從不用百萬伏特的雷霆推動思維，而是用極度稀疏的時空微火，在寂靜的突觸間點燃智慧。"
+authors:
+  - name: "MIRARI 科學組"
+    role: "撰文"
+references:
+  - id: "ref-pei-2019-nature"
+    citation: "Pei, J., Deng, L., Song, S., et al. (2019). \"Towards artificial general intelligence with hybrid Tianjic chip architecture.\" Nature, 572(7767), 106-111. doi:10.1038/s41586-019-1424-8."
+  - id: "ref-davies-2018-ieeemicro"
+    citation: "Davies, M., Srinivasa, N., Lin, T. H., et al. (2018). \"Loihi: A Neuromorphic Manycore Processor with On-Chip Learning.\" IEEE Micro, 38(1), 82-99. doi:10.1109/MM.2018.112130359."
+  - id: "ref-frenkel-2023-procieee"
+    citation: "Frenkel, C., Bol, D., & Indiveri, G. (2023). \"Bottom-Up and Top-Down Approaches for the Design of Neuromorphic Processing Systems: Tradeoffs and Synergies Between Natural and Artificial Intelligence.\" Proceedings of the IEEE, 111(6), 623-652. doi:10.1109/JPROC.2023.3273520."
+interactiveComponent: "SpikingNeuronSimulator"
+---
+
+# 一、能耗高牆：為什麼現代深度學習難以為繼？
+
+當前以 Transformer 與卷積神經網路為基石的第二代人工神經網路（ANN），取得了舉世矚目的認知突破。然而，隱藏在其輝煌成就背後的，是近乎天文數字的能源代價。
+
+訓練或部署一個兆級參數的大型模型，需要數萬張高階 GPU 叢集日夜全速運轉，其瞬時消耗的電能堪比一座中型城市的日常用電。這種高能耗的根源，深深植根於計算機科學自 1945 年誕生以來的核心典範——**馮·紐曼架構（Von Neumann Architecture）**：
+1. **儲存與運算分離（Memory Wall）**：
+   在現代 CPU 與 GPU 中，數據儲存在動態隨機存取記憶體（DRAM）中，運算則在算術邏輯單元（ALU / Tensor Core）中完成。在典型的深層神經網路推論中，**搬移一筆數據所消耗的能量，往往是執行該筆浮點數乘法運算本身的數百倍**！
+2. **全域時鐘同步的無效運算（Dense Static MAC）**：
+   傳統人工神經網路是以固定的時間步長或時脈週期推進的。在每個時鐘觸發時，不論輸入信號是否發生變化，神經網路的每一個權重都必須與連續輸入向量進行密集的乘積累加（Multiply-Accumulate, MAC）。這種「持續在線、全矩陣刷新」的機制，導致了巨大的靜態能耗浪費。
+
+反觀生物大腦：人類大腦擁有約 $8.6 \times 10^{10}$ 個神經元與超過 $10^{14}$ 個突觸連接，每秒能處理視訊、語音、本體感覺並即時做出流暢的運動規劃。然而，維持整個大腦運作的總功率，**僅僅只有約 20 瓦（W）**——甚至低於一個普通家用白熾燈泡！
+
+大腦究竟掌握了何種人類工程師尚未徹底領悟的計算密碼？
+
+# 二、大腦的運算範式：洩漏整合放電與時空稀疏性
+
+計算神經科學家指出，大腦的秘密在於其採用了**脈衝神經網路（Spiking Neural Networks, SNN，被稱為第三代人工神經網路）**的運算範式。
+
+在真實神經系統中，神經元之間的溝通不是透過傳輸高精度的 32 位元連續浮點數，而是透過傳輸一個個時間寬度僅約 1 毫秒、振幅固定的全或無離散電脈衝——**動作電位（Spike / Action Potential）**。
+
+神經形態工程學（Neuromorphic Engineering）中最核心的經典數學模型，是**洩漏整合放電模型（Leaky Integrate-and-Fire, LIF）**：
+
+$$\tau_m \frac{dV(t)}{dt} = -\left(V(t) - V_{\text{rest}}\right) + R_m I(t)$$
+
+其中：
+- $V(t)$ 為神經元的膜電位（Membrane Potential），$V_{\text{rest}}$ 為靜止膜電位（約 $-70\text{ mV}$）；
+- $\tau_m = R_m C_m$ 為細胞膜時間常數（通常在 $10 - 30\text{ ms}$ 之間），決定了電荷的自然洩漏速度與時域整合記憶窗口；
+- $I(t) = \sum_j w_j \sum_k \delta(t - t_j^k)$ 為所有輸入突觸傳入的電流脈衝總和，其中 $w_j$ 為突觸權重，$\delta$ 為狄拉克脈衝。
+
+LIF 模型的工作機制具備極高的物理簡潔性：
+1. **時域被動整合（Integration & Leakage）**：
+   在沒有輸入脈衝抵達時，膜電位隨時間以指數形式自發衰減回到靜止電位 $V_{\text{rest}}$；當突觸脈衝傳入時，膜電位跳升相應的去極化幅度。
+2. **臨界發火與硬重置（Fire & Reset）**：
+   一旦膜電位累積越過發火閾值 $V_{\text{th}}$（約 $-50\text{ mV}$），神經元瞬間釋放一個動作電位脈衝向下游軸突廣播，同時膜電位被強行重置回 $V_{\text{reset}}$（約 $-75\text{ mV}$），並在隨後的絕對不應期（Refractory Period $\tau_{\text{ref}}$）內對任何輸入免疫。
+
+這帶來了兩項顛覆傳統晶片架構的革命性特性：
+- **事件驅動（Event-driven）**：在沒有外部事件刺激時，系統處於完全靜息狀態，功耗僅為微弱的漏電流（皮瓦級 pW）；
+- **極致的時空稀疏性（Spatiotemporal Sparsity）**：在任意特定瞬間，大腦中處於發火狀態的神經元比例通常不到 **1% 到 5%**。大腦是用極端稀疏的脈衝點陣在時域中傳遞資訊。
+
+# 三、親手實驗：LIF 膜電位動力學與即時能耗監控
+
+在下方互動實驗中，你可以調節輸入突觸脈衝率、突觸權重、膜時間常數 $\tau_m$ 與發火閾值 $V_{\text{th}}$，即時觀察 LIF 神經元膜電位在虛擬示波器上的滾動軌跡，並同步監測類腦事件驅動架構相對於傳統定頻時鐘矩陣運算的實測能耗對比：
+
+<InteractiveExperiment id="SpikingNeuronSimulator" />
+
+# 四、晶片架構的重構：天機晶片與 Loihi 的技術突破
+
+為了將這種生物大腦的事件驅動優勢落實於真實半導體矽片，全球前沿實驗室在近年取得了決定性的硬體突破。
+
+其中最具代表性的成果之一，是清華大學施路平教授團隊於 2019 年在《Nature》封面發表的**天機晶片（Tianjic）**：
+
+### 1. 異構融合架構（Hybrid Architecture）
+長期以來，AI 領域存在兩條涇渭分明的研究路線：以計算機科學為主的「自頂向下」傳統 ANN，與以神經科學為主的「自底向上」生物 SNN。前者在靜態影像分類與大語言模型上表現優異，但能耗極高；後者能耗極低且精於時序感知，但在主流通用學習任務上精度難以匹敵 ANN。
+天機晶片首創了**統一人工智慧與類腦運算的異構核心（FCCA）**，在單一晶片上同時支援 ANN 的密集矩陣運算與 SNN 的非同步脈衝事件處理，成功驅動一輛無人自行車實現自主平衡、即時語音辨識、避障與目標追蹤。
+
+### 2. 存算一體與片上路由網（Crossbar & NoC）
+英特爾（Intel）發布的第二代類腦處理器 **Loihi 2** 則代表了純 SNN 架構的極致工程演進。
+Loihi 摒棄了獨立的集中式記憶體，將運算與儲存緊密縫合在 128 個全異步神經核心中：
+- 每個核心內部包含高密度 SRAM 陣列，直接儲存突觸權重，徹底消除了匯流排搬移數據的記憶體牆；
+- 核心之間透過非同步微包路由器（Packet-based Network-on-Chip, NoC）連接，僅當某個神經元發火時，才打包發送一個包含目標突觸位址的微小封包。
+
+在能耗計算上，這種架構帶來了質的飛躍：
+傳統 GPU 執行一次 32 位元浮點乘加（MAC），消耗的能量約為：
+
+$$E_{\text{MAC}} \approx 1 - 5\text{ pJ} \quad (10^{-12}\text{ 焦耳})$$
+
+而在神經形態晶片上，一個脈衝抵達引發的突觸操作（Synaptic Operation, SOP）僅需要執行簡單的加法定點累加，且完全由事件觸發，單次 SOP 的能耗僅為：
+
+$$E_{\text{SOP}} \approx 20 - 100\text{ fJ} \quad (10^{-15}\text{ 焦耳})$$
+
+單個運算事件的物理能耗**直接降低了 10 到 100 倍**；結合時空稀疏性帶來的 95% 運算省略，整個晶片在處理動態邊緣視覺或音訊信號時的綜合能效比，相較於傳統嵌入式 GPU **暴增了 100 到 1000 倍**！
+
+# 五、科學邊界：神經形態硬體的當前困境與真相
+
+在為神經形態晶片的極致能效振奮之時，MIRARI 科學組秉持客觀嚴謹的批判視角，為讀者梳理當前類腦計算面臨的真實工程瓶頸：
+
+1. **不可微性與反向傳播訓練困境**：
+   傳統深度學習繁榮的核心引擎是基於梯度下降的**反向傳播算法（Backpropagation）**。然而，SNN 中的階躍放電函數 $\Theta(V - V_{\text{th}})$ 在閾值處不可導（導數為狄拉克函數 $\delta$，其餘處處為 0），導致傳統梯度反向傳播直接崩潰。
+   當前學界主要依靠「替代梯度法（Surrogate Gradients）」或「ANN-to-SNN 轉換法」，但這在百億參數規模的超大模型上訓練收斂極為困難，模型容量與表徵能力仍顯著落後於現代 Transformer。
+2. **晶片製造的製程一致性與類比噪聲**：
+   許多前沿類腦架構試圖利用忆阻器（Memristor）或相變記憶體（PCM）實現超高密度的純類比神經突觸。然而，奈米級類比器件存在嚴重的元件間離散性（Device Variation）、熱漂移與隨機電報噪聲（RTN），限制了高精度推論的可靠性。
+3. **軟體生態與演算法應用的荒漠**：
+   與 CUDA 構建數十年的成熟 GPU 軟體生態相比，神經形態計算缺乏統一的高階編程介面、編譯器與標準化基準測試集（Benchmark）。大部分商業成果仍局限於低功耗關鍵詞喚醒、心電圖監測或神經擬態事件相機（DVS）等邊緣利基場景。
+
+大腦歷經數億年自然選擇所鑄就的脈衝奇蹟，向人類昭示了一條不同於蠻力堆疊浮點數的智慧之路。神經形態晶片對馮紐曼瓶頸的突圍，不僅是一場微電子架構的工程變革，更是一場人類向生物演化智慧謙卑致敬的深刻啟發。

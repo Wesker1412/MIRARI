@@ -324,6 +324,61 @@
     ]
   },
   {
+    "articleId": "art-kimura-neutral-evolution",
+    "slug": "kimura-neutral-molecular-evolution",
+    "title": "演化的靜默密碼：木村資生分子中性理論與基因隨機漂變",
+    "knowledgePoints": [
+      {
+        "id": "kp-kimura-molecular-clock",
+        "label": "木村中性分子時鐘",
+        "suggestedQuestion": "為什麼分子層次的演化速率與族群個體數量完全無關？",
+        "keywords": [
+          "木村資生",
+          "中性理論",
+          "突變率",
+          "替代速率",
+          "族群大小",
+          "分子時鐘",
+          "k=μ"
+        ],
+        "plainExplanation": "大族群雖然每代產生的新突變較多（正比於 2Ne），但單一突變因競爭激烈而在群體中登頂固著的機率極低（反比於 1/2Ne）。兩者相乘後族群大小 Ne 恰好完美抵消，使得長期分子演化替換速率 k 嚴格等於中性突變率 μ，展現出宛如勻速發條般的恆定分子時鐘。",
+        "anchorSentenceId": "sent-7938e00d"
+      },
+      {
+        "id": "kp-kimura-genetic-drift",
+        "label": "賴特-費雪隨機漂變",
+        "suggestedQuestion": "完全中性的突變是如何在沒有天擇推動下統治整個物種的？",
+        "keywords": [
+          "隨機漂變",
+          "賴特-費雪",
+          "二項抽樣",
+          "吸收態",
+          "固定",
+          "滅絕",
+          "基因池"
+        ],
+        "plainExplanation": "生命代際傳遞本質上是有限配子的二項隨機抽樣。在沒有生存優勢差異時，某個基因拷貝在群體中的比例每一代都會隨機漫步。在漫長的世代累積下，絕大部分突變最終不幸漂變至 0% 滅絕，但極少數突變純粹憑藉運氣連續抽中，一路隨機漂移至 100% 固著成為全族群的唯一祖先。",
+        "anchorSentenceId": "sent-4379e4bf"
+      },
+      {
+        "id": "kp-kimura-selection-drift-barrier",
+        "label": "天擇與漂變的分水嶺",
+        "suggestedQuestion": "天擇在什麼條件下會對有害或微利突變徹底『失明』？",
+        "keywords": [
+          "選擇係數",
+          "2Nes",
+          "太田朋子",
+          "近似中性",
+          "天擇失明",
+          "隨機波動",
+          "分水嶺"
+        ],
+        "plainExplanation": "突變的命運取決於天擇選擇強度 s 與族群大小 Ne 的乘積 2Ne·s。當 |2Ne·s| 小於 1 時，微弱的生存優劣勢會被每代隨機抽樣的巨大噪聲徹底淹沒，天擇機制實質失效，即使是輕微有害的突變也能像中性基因一樣自由漂變並在族群中擴散固定。",
+        "anchorSentenceId": "sent-4b9d24e0"
+      }
+    ]
+  },
+  {
     "articleId": "art-maxwells-demon-entropy",
     "slug": "maxwells-demon-landauer-entropy",
     "title": "穿過微觀閘門的幽靈：麥克斯韋妖與資訊的熱力學代價",
@@ -374,6 +429,116 @@
         ],
         "plainExplanation": "在斯齊拉德單分子熱機中，一旦小妖探測確認分子位於箱子某一側並插入活塞，單個分子的碰撞便會推動活塞向外進行等溫膨脹，對外輸出剛好 kB·T·ln2 的有用功。這直接在實驗與理論上證實了：獲取微觀資訊在物理上等同於獲得了可提取的自由能。",
         "anchorSentenceId": "sent-77a447c4"
+      }
+    ]
+  },
+  {
+    "articleId": "art-quantum-hall-anyons",
+    "slug": "quantum-hall-anyon-braiding",
+    "title": "二維空間的拓撲編織：分數霍爾效應與任意子的非阿貝爾奇景",
+    "knowledgePoints": [
+      {
+        "id": "kp-anyon-fractional-statistics",
+        "label": "二維反常量子統計",
+        "suggestedQuestion": "為什麼在二維空間中微觀粒子不再只能是玻色子或費米子？",
+        "keywords": [
+          "任意子",
+          "玻色子",
+          "費米子",
+          "二維空間",
+          "交換相位",
+          "拓撲收縮",
+          "威爾切克"
+        ],
+        "plainExplanation": "在三維世界中，兩條粒子軌跡可以輕易越過彼此解開繩圈，因此互換兩次必然等於沒動（相位只能是 +1 或 -1）；但在二維平面上，空間少了一個維度，粒子無法跳出平面，彼此環繞的世界線會形成無法解開的真結，交換時累積的量子相角可以是任意角度，這就是『任意子』。",
+        "anchorSentenceId": "sent-ce889ed9"
+      },
+      {
+        "id": "kp-anyon-laughlin-charge",
+        "label": "分數電荷與量子流體",
+        "suggestedQuestion": "分數量子霍爾態中為什麼會湧現出 1/3 電荷的準粒子？",
+        "keywords": [
+          "勞夫林",
+          "分數量子霍爾",
+          "分數電荷",
+          "1/3",
+          "準粒子",
+          "不可壓縮流體",
+          "磁通渦旋"
+        ],
+        "plainExplanation": "在強磁場與超低溫下，數十億個電子凝結成一種不可壓縮的集體量子流體，每個電子與多個磁通渦旋緊密綁定。當外加磁場強行注入額外磁通時，周圍電子集體後退，在宏觀流體中形成一個等效的空穴準粒子，其淨電量恰好精確等於單個電子電荷的三分之一。",
+        "anchorSentenceId": "sent-e98e7d01"
+      },
+      {
+        "id": "kp-anyon-topological-braiding",
+        "label": "非阿貝爾編織與抗噪聲",
+        "suggestedQuestion": "拓撲量子計算如何依靠任意子編織徹底免疫環境退相干？",
+        "keywords": [
+          "非阿貝爾",
+          "編織群",
+          "拓撲量子計算",
+          "退相干",
+          "世界線",
+          "幾何不變性",
+          "容錯"
+        ],
+        "plainExplanation": "非阿貝爾任意子擁有簡併的量子基態子空間，交換次序不同會觸發不同的么正矩陣旋轉。由於量子資訊不是儲存在單個粒子的坐標中，而是分佈在整體時空編織結裡，局域環境的熱噪聲或微觀路徑抖動只要沒有剪斷繩結，運算結果就嚴格保持精確，天生免疫量子退相干。",
+        "anchorSentenceId": "sent-bb6e1dd2"
+      }
+    ]
+  },
+  {
+    "articleId": "art-snn-neuromorphic-compute",
+    "slug": "spiking-neural-networks-neuromorphic",
+    "title": "大腦的非同步脈衝革命：神經形態晶片如何以事件驅動破除馮紐曼瓶頸？",
+    "knowledgePoints": [
+      {
+        "id": "kp-snn-lif-dynamics",
+        "label": "洩漏整合放電 (LIF)",
+        "suggestedQuestion": "生物神經元與類腦晶片是如何以洩漏整合放電傳遞資訊的？",
+        "keywords": [
+          "LIF",
+          "洩漏整合放電",
+          "膜電位",
+          "時間常數",
+          "動作電位",
+          "全或無",
+          "不應期"
+        ],
+        "plainExplanation": "LIF 模型將神經元類比為帶有漏電電容的水桶：外來突觸脈衝像水滴一樣注入使電位上升，平時則以時間常數 τ 指數衰減洩漏。一旦電位漫過閾值，便引發一次全或無的動作電位向下游廣播，隨後立即重置進入不應期，精確模仿生物大腦的非同步脈衝傳導。",
+        "anchorSentenceId": "sent-e39ba856"
+      },
+      {
+        "id": "kp-snn-event-driven-sparsity",
+        "label": "事件驅動與時空稀疏性",
+        "suggestedQuestion": "神經形態晶片為什麼能比傳統 GPU 節省百倍甚至千倍的推論能耗？",
+        "keywords": [
+          "事件驅動",
+          "稀疏性",
+          "GPU",
+          "能效比",
+          "SOP",
+          "MAC",
+          "非同步"
+        ],
+        "plainExplanation": "傳統 GPU 依靠固定時鐘頻率持續對所有權重進行耗能的浮點乘加（MAC）；而類腦晶片採用事件驅動架構，沒有脈衝抵達時核心處於靜止零功耗狀態，有脈衝時僅執行極低功耗的定點累加（SOP，僅約數十飛焦耳），結合大腦超過 95% 的時空稀疏性，實現驚人的千倍節能。",
+        "anchorSentenceId": "sent-d4c78b8b"
+      },
+      {
+        "id": "kp-snn-memory-wall-break",
+        "label": "破除馮紐曼記憶體牆",
+        "suggestedQuestion": "天機晶片與 Loihi 是如何消除運算與記憶體之間的高昂搬移代價的？",
+        "keywords": [
+          "天機晶片",
+          "Loihi",
+          "馮紐曼瓶頸",
+          "記憶體牆",
+          "存算一體",
+          "片上路由",
+          "異構融合"
+        ],
+        "plainExplanation": "傳統馮紐曼架構運算核心與記憶體物理分離，數據搬移消耗超過 80% 電能。類腦晶片（如天機晶片與 Loihi）將神經突觸權重直接內嵌在分佈式神經核心內部，實現存算一體，核心間僅以非同步微包路由傳遞脈衝事件，從根本上瓦解了長期困擾計算機科學的記憶體牆。",
+        "anchorSentenceId": "sent-bf38ebca"
       }
     ]
   },
