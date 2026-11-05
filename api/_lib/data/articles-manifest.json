@@ -2367,6 +2367,14 @@
       {
         "id": "ref-levien-1993",
         "citation": "Levien, R. B., & Tan, S. M. (1993). \"Double pendulum: An experiment in chaos.\" American Journal of Physics, 61(11), 1038-1044. doi:10.1119/1.17335"
+      },
+      {
+        "id": "ref-tong-dynamics",
+        "citation": "Tong, D. (2015). Classical Dynamics, Section 4.1, An Example: The Pendulum. University of Cambridge. https://www.damtp.cam.ac.uk/user/tong/dynamics/dynhtml/S4.html"
+      },
+      {
+        "id": "ref-jimenez-garcia-2024",
+        "citation": "Jiménez López, J., & García-Garrido, V. J. (2024). Chaos and Regularity in the Double Pendulum with Lagrangian Descriptors. arXiv:2403.07000. https://arxiv.org/abs/2403.07000"
       }
     ],
     "interactiveComponent": "DoublePendulumSimulator",
@@ -2375,18 +2383,18 @@
     "creationModel": "gemini-2.5-pro",
     "feedbackId": "fb-art-chaos-double-pendulum",
     "createdAt": "2026-11-01T19:00:00Z",
-    "contentHash": "38e667f55407a762a61a02f5b3cae0874285d6bb5fa4a295a7b7102ee469d2e7",
+    "contentHash": "163b9be80751e9e061f7eb6a4663e8f6df1f22db84ab1f045654b7af9ddb4ea4",
     "sections": [
       {
         "id": "sec-1-9b398a",
         "title": "一、從單擺的和諧到雙擺的失序",
         "level": 1,
         "paragraphs": [
-          "單擺是古典物理學最優雅的基石之一。當單擺的擺角維持在微小幅度時，回復力與位移呈線性比例，運動方程退化為簡諧震盪，擺動週期僅由擺長與重力加速度決定，與振幅無關。即使考慮大角度擺動，單擺的相空間軌跡依然是封閉且平滑的橢圓形軌道。",
+          "單擺是古典物理學最優雅的基石之一。在小角度簡諧近似下，回復力與位移近似成正比，擺動週期近似只由擺長與重力加速度決定，角度與角動量構成的相平面軌跡近似為橢圓。大角度的非線性往返振盪仍有封閉軌道，但形狀偏離橢圓，週期也隨振幅增大。當能量恰好達到擺錘直立所需的位能時，分界軌道（Separatrix）將往返振盪與連續旋轉分開，理想模型沿這條軌道無限逼近直立位置。再提高能量，擺錘便可持續轉圈，軌道在角度按 $2\\pi$ 識別的圓柱相空間上繞行。[單擺相圖教材](https://www.damtp.cam.ac.uk/user/tong/dynamics/dynhtml/S4.html)",
           "然而，一旦我們在第一根擺桿的末端樞紐上，懸掛第二根可自由旋轉的擺桿，這個雙自由度力學系統的相空間維度便立即由二維躍升至四維：",
           "$$(\\theta_1, \\theta_2, p_{\\theta_1}, p_{\\theta_2})$$",
           "第二根擺桿的瞬時重力力矩與離心力，會即時反作用於第一根擺桿；同時，第一根擺桿的角加速度又為第二根擺桿提供動態變化的旋轉樞軸。這種雙向反饋摧毀了運動方程的線性疊加性，使拉格朗日運動方程式呈現高度非線性的三角函數耦合。",
-          "在低能量狀態下（初始角度極小），系統表現為兩種簡正模（Normal Modes）的平穩疊加；但只要初始釋放角度增大到臨界能量閾值以上，系統便跨過分岔點（Bifurcation Point），規則運動徹底瓦解。"
+          "在低能量、小角度的線性近似下，系統表現為兩種簡正模（Normal Modes）的平穩疊加。隨著能量提高，非線性耦合會使相空間出現渾沌區域，但規則的週期或準週期運動仍可與之共存。同一能量下，不同初始條件也可能落在規則島或渾沌區域。能量、擺長與質量比共同影響這幅地圖，沒有一個普遍適用的單一能量閾值，能讓所有規則運動一夕消失。[雙擺規則與渾沌區域研究](https://arxiv.org/abs/2403.07000)"
         ],
         "sentences": [
           {
@@ -2402,27 +2410,63 @@
             "contextNote": "一、從單擺的和諧到雙擺的失序 · 第 1 段"
           },
           {
-            "sentenceId": "sent-2adc7f07",
+            "sentenceId": "sent-e8eff587",
             "articleId": "art-chaos-double-pendulum",
             "sectionId": "sec-1-9b398a",
             "sectionTitle": "一、從單擺的和諧到雙擺的失序",
             "paragraphIndex": 0,
-            "exactQuote": "當單擺的擺角維持在微小幅度時，回復力與位移呈線性比例，運動方程退化為簡諧震盪，擺動週期僅由擺長與重力加速度決定，與振幅無關。",
+            "exactQuote": "在小角度簡諧近似下，回復力與位移近似成正比，擺動週期近似只由擺長與重力加速度決定，角度與角動量構成的相平面軌跡近似為橢圓。",
             "charStart": 18,
-            "charEnd": 80,
-            "contentHash": "2adc7f07d1608455e0f74d5575254e7668d140ba1cb0fb484fbc10df1d80762d",
+            "charEnd": 79,
+            "contentHash": "e8eff587f2d3123485d56d29b3aacaec09212312df2ea5ad8288cdba627fdd92",
             "contextNote": "一、從單擺的和諧到雙擺的失序 · 第 1 段"
           },
           {
-            "sentenceId": "sent-bd0e901e",
+            "sentenceId": "sent-4d12c9f4",
             "articleId": "art-chaos-double-pendulum",
             "sectionId": "sec-1-9b398a",
             "sectionTitle": "一、從單擺的和諧到雙擺的失序",
             "paragraphIndex": 0,
-            "exactQuote": "即使考慮大角度擺動，單擺的相空間軌跡依然是封閉且平滑的橢圓形軌道。",
-            "charStart": 81,
-            "charEnd": 114,
-            "contentHash": "bd0e901ea24f3221f8a6441ecc9aa5c07e22fd1bdd215aa425e4727c24893c68",
+            "exactQuote": "大角度的非線性往返振盪仍有封閉軌道，但形狀偏離橢圓，週期也隨振幅增大。",
+            "charStart": 80,
+            "charEnd": 115,
+            "contentHash": "4d12c9f41291441f88d51c0760a7af3d7ed22db7d01c69c9a757768b308a49be",
+            "contextNote": "一、從單擺的和諧到雙擺的失序 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-811c78a7",
+            "articleId": "art-chaos-double-pendulum",
+            "sectionId": "sec-1-9b398a",
+            "sectionTitle": "一、從單擺的和諧到雙擺的失序",
+            "paragraphIndex": 0,
+            "exactQuote": "當能量恰好達到擺錘直立所需的位能時，分界軌道（Separatrix）將往返振盪與連續旋轉分開，理想模型沿這條軌道無限逼近直立位置。",
+            "charStart": 116,
+            "charEnd": 181,
+            "contentHash": "811c78a7b1da3aace2875382385a99c9fe9c4d40781f7c5f4738c5b37196bf18",
+            "contextNote": "一、從單擺的和諧到雙擺的失序 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-1df1354f",
+            "articleId": "art-chaos-double-pendulum",
+            "sectionId": "sec-1-9b398a",
+            "sectionTitle": "一、從單擺的和諧到雙擺的失序",
+            "paragraphIndex": 0,
+            "exactQuote": "再提高能量，擺錘便可持續轉圈，軌道在角度按 $2\\pi$ 識別的圓柱相空間上繞行。",
+            "charStart": 182,
+            "charEnd": 223,
+            "contentHash": "1df1354f36b09ed45ffd86484121f830081086ce1c4179da4bd1f1f12b6d5b0b",
+            "contextNote": "一、從單擺的和諧到雙擺的失序 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-b53f0ce5",
+            "articleId": "art-chaos-double-pendulum",
+            "sectionId": "sec-1-9b398a",
+            "sectionTitle": "一、從單擺的和諧到雙擺的失序",
+            "paragraphIndex": 0,
+            "exactQuote": "[單擺相圖教材](https://www.damtp.cam.ac.uk/user/tong/dynamics/dynhtml/S4.html)",
+            "charStart": 224,
+            "charEnd": 296,
+            "contentHash": "b53f0ce532951614917ca065c7b05a105e7c8bd324eaa13bd00a9202156da3d2",
             "contextNote": "一、從單擺的和諧到雙擺的失序 · 第 1 段"
           },
           {
@@ -2432,8 +2476,8 @@
             "sectionTitle": "一、從單擺的和諧到雙擺的失序",
             "paragraphIndex": 1,
             "exactQuote": "然而，一旦我們在第一根擺桿的末端樞紐上，懸掛第二根可自由旋轉的擺桿，這個雙自由度力學系統的相空間維度便立即由二維躍升至四維：",
-            "charStart": 229,
-            "charEnd": 291,
+            "charStart": 590,
+            "charEnd": 652,
             "contentHash": "6cba436818a3d90584619ca5d2bc635664b96154c16093c727bba5a5a5659733",
             "contextNote": "一、從單擺的和諧到雙擺的失序 · 第 2 段"
           },
@@ -2444,8 +2488,8 @@
             "sectionTitle": "一、從單擺的和諧到雙擺的失序",
             "paragraphIndex": 3,
             "exactQuote": "第二根擺桿的瞬時重力力矩與離心力，會即時反作用於第一根擺桿；同時，第一根擺桿的角加速度又為第二根擺桿提供動態變化的旋轉樞軸。",
-            "charStart": 356,
-            "charEnd": 418,
+            "charStart": 717,
+            "charEnd": 779,
             "contentHash": "74f09f616407e4cc23f3dffae691f5376408607acc3d0b407f8cb7fd8f406a8c",
             "contextNote": "一、從單擺的和諧到雙擺的失序 · 第 4 段"
           },
@@ -2456,21 +2500,69 @@
             "sectionTitle": "一、從單擺的和諧到雙擺的失序",
             "paragraphIndex": 3,
             "exactQuote": "這種雙向反饋摧毀了運動方程的線性疊加性，使拉格朗日運動方程式呈現高度非線性的三角函數耦合。",
-            "charStart": 419,
-            "charEnd": 464,
+            "charStart": 780,
+            "charEnd": 825,
             "contentHash": "3f0702cc05eaa5d23de71ef13b9007a2b675158dc6aba4052f9a33277272a5a0",
             "contextNote": "一、從單擺的和諧到雙擺的失序 · 第 4 段"
           },
           {
-            "sentenceId": "sent-ec98a9a4",
+            "sentenceId": "sent-440ebfb0",
             "articleId": "art-chaos-double-pendulum",
             "sectionId": "sec-1-9b398a",
             "sectionTitle": "一、從單擺的和諧到雙擺的失序",
             "paragraphIndex": 4,
-            "exactQuote": "在低能量狀態下（初始角度極小），系統表現為兩種簡正模（Normal Modes）的平穩疊加；但只要初始釋放角度增大到臨界能量閾值以上，系統便跨過分岔點（Bifurcation Point），規則運動徹底瓦解。",
-            "charStart": 574,
-            "charEnd": 678,
-            "contentHash": "ec98a9a4f16258ff5d797ea21ae8727705f006caa417b557aa145450bd9ca37f",
+            "exactQuote": "在低能量、小角度的線性近似下，系統表現為兩種簡正模（Normal Modes）的平穩疊加。",
+            "charStart": 935,
+            "charEnd": 980,
+            "contentHash": "440ebfb048ddf1a87d45257a48b02bc8a7b6c6b5b6c4dca52798050950946252",
+            "contextNote": "一、從單擺的和諧到雙擺的失序 · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-7fdf84bf",
+            "articleId": "art-chaos-double-pendulum",
+            "sectionId": "sec-1-9b398a",
+            "sectionTitle": "一、從單擺的和諧到雙擺的失序",
+            "paragraphIndex": 4,
+            "exactQuote": "隨著能量提高，非線性耦合會使相空間出現渾沌區域，但規則的週期或準週期運動仍可與之共存。",
+            "charStart": 981,
+            "charEnd": 1024,
+            "contentHash": "7fdf84bf47bb2cc01053478569582d066cc6fe157ef607da327eebf3be071ef3",
+            "contextNote": "一、從單擺的和諧到雙擺的失序 · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-1d28d5b2",
+            "articleId": "art-chaos-double-pendulum",
+            "sectionId": "sec-1-9b398a",
+            "sectionTitle": "一、從單擺的和諧到雙擺的失序",
+            "paragraphIndex": 4,
+            "exactQuote": "同一能量下，不同初始條件也可能落在規則島或渾沌區域。",
+            "charStart": 1025,
+            "charEnd": 1051,
+            "contentHash": "1d28d5b23d73f39fd6b27817798866fc51b3c90edc1ac073756a938a3f728779",
+            "contextNote": "一、從單擺的和諧到雙擺的失序 · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-2573e5f1",
+            "articleId": "art-chaos-double-pendulum",
+            "sectionId": "sec-1-9b398a",
+            "sectionTitle": "一、從單擺的和諧到雙擺的失序",
+            "paragraphIndex": 4,
+            "exactQuote": "能量、擺長與質量比共同影響這幅地圖，沒有一個普遍適用的單一能量閾值，能讓所有規則運動一夕消失。",
+            "charStart": 1052,
+            "charEnd": 1099,
+            "contentHash": "2573e5f1a2a0d834ee308f3867d65cd176e39e3862e9e1fb682d897291c82321",
+            "contextNote": "一、從單擺的和諧到雙擺的失序 · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-22f22873",
+            "articleId": "art-chaos-double-pendulum",
+            "sectionId": "sec-1-9b398a",
+            "sectionTitle": "一、從單擺的和諧到雙擺的失序",
+            "paragraphIndex": 4,
+            "exactQuote": "[雙擺規則與渾沌區域研究](https://arxiv.org/abs/2403.07000)",
+            "charStart": 1100,
+            "charEnd": 1147,
+            "contentHash": "22f228738449e03adccde64c5b648fe8ff3d9fb04a8346722ac1191aafcc0006",
             "contextNote": "一、從單擺的和諧到雙擺的失序 · 第 5 段"
           }
         ],
@@ -2496,8 +2588,8 @@
             "sectionTitle": "二、親手驗證：相相分離與李雅普諾夫發散",
             "paragraphIndex": 0,
             "exactQuote": "在下方數值模擬實驗中，我們採用四階龍格-庫塔法（RK4）對精確拉格朗日方程進行即時微步積分。",
-            "charStart": 785,
-            "charEnd": 831,
+            "charStart": 1358,
+            "charEnd": 1404,
             "contentHash": "67fc64f402abef1b98db005879efa0e038ef7bfb717e142ecd090d09178869fb",
             "contextNote": "二、親手驗證：相相分離與李雅普諾夫發散 · 第 1 段"
           },
@@ -2508,8 +2600,8 @@
             "sectionTitle": "二、親手驗證：相相分離與李雅普諾夫發散",
             "paragraphIndex": 0,
             "exactQuote": "畫布中同時呈現了兩隻雙擺：深藍色為基準軌道 A，金色為施加了微小角度擾動 $\\Delta \\theta_0$ 的對比軌道 B。",
-            "charStart": 832,
-            "charEnd": 895,
+            "charStart": 1405,
+            "charEnd": 1468,
             "contentHash": "5e27fc1a39ad1843ec777ea80a92777806e6d3362e2dd8442902c5d47f4d7fe6",
             "contextNote": "二、親手驗證：相相分離與李雅普諾夫發散 · 第 1 段"
           },
@@ -2520,8 +2612,8 @@
             "sectionTitle": "二、親手驗證：相相分離與李雅普諾夫發散",
             "paragraphIndex": 2,
             "exactQuote": "請嘗試將初始角度設為 90° 並啟動模擬。",
-            "charStart": 1007,
-            "charEnd": 1028,
+            "charStart": 1580,
+            "charEnd": 1601,
             "contentHash": "581301c5e1baa3e13141311165d1d8a70f3945c33f9a1ebb93c7ee76eb8583af",
             "contextNote": "二、親手驗證：相相分離與李雅普諾夫發散 · 第 3 段"
           },
@@ -2532,8 +2624,8 @@
             "sectionTitle": "二、親手驗證：相相分離與李雅普諾夫發散",
             "paragraphIndex": 2,
             "exactQuote": "在最初的 1 至 2 秒內，兩隻擺桿幾乎完全重合；但隨著能量在兩臂間劇烈交換，兩者在相空間中的歐氏距離將呈現指數量級的急劇膨脹。",
-            "charStart": 1029,
-            "charEnd": 1093,
+            "charStart": 1602,
+            "charEnd": 1666,
             "contentHash": "5464df064e3eafb6ca392a74bf9317bec146ace817b37965f7982b76bf4ee358",
             "contextNote": "二、親手驗證：相相分離與李雅普諾夫發散 · 第 3 段"
           }
@@ -2559,8 +2651,8 @@
             "sectionTitle": "三、確定性隨機與李雅普諾夫指數",
             "paragraphIndex": 0,
             "exactQuote": "這種對初值的極端敏感依賴性，是渾沌（Chaos）的核心數學判據。",
-            "charStart": 1181,
-            "charEnd": 1213,
+            "charStart": 1754,
+            "charEnd": 1786,
             "contentHash": "168642da801d133bbc9a7b27c7feed7ed3d6bfe1435f76adeda1de5ab2a950b0",
             "contextNote": "三、確定性隨機與李雅普諾夫指數 · 第 1 段"
           },
@@ -2571,8 +2663,8 @@
             "sectionTitle": "三、確定性隨機與李雅普諾夫指數",
             "paragraphIndex": 0,
             "exactQuote": "設系統在四維相空間中的初始微小分離向量為 $\\delta \\mathbf{Z}(0)$，隨時間演化的發散速率可用最大李雅普諾夫指數（Maximal Lyapunov Exponent, $\\lambda$）刻畫：",
-            "charStart": 1214,
-            "charEnd": 1320,
+            "charStart": 1787,
+            "charEnd": 1893,
             "contentHash": "84f1a171fe939e3855a806f896d9c8baabbc8140f1d3658300c227366605b076",
             "contextNote": "三、確定性隨機與李雅普諾夫指數 · 第 1 段"
           },
@@ -2583,8 +2675,8 @@
             "sectionTitle": "三、確定性隨機與李雅普諾夫指數",
             "paragraphIndex": 2,
             "exactQuote": "若 $\\lambda \\le 0$，鄰近軌道隨時間衰減或保持等距，系統維持可預測的穩定態或準週期態；而當 $\\lambda > 0$ 時，相空間中任意微小的測量不確定度，都會隨時間呈幾何級數放大。",
-            "charStart": 1461,
-            "charEnd": 1559,
+            "charStart": 2034,
+            "charEnd": 2132,
             "contentHash": "d20a8da212e714ebf9c3325cbdf3488f1ff7b9073b9a70dffd065c8c8788be7e",
             "contextNote": "三、確定性隨機與李雅普諾夫指數 · 第 3 段"
           },
@@ -2595,8 +2687,8 @@
             "sectionTitle": "三、確定性隨機與李雅普諾夫指數",
             "paragraphIndex": 3,
             "exactQuote": "這導致了「李雅普諾夫時間」（Lyapunov Time）概念的誕生：即系統誤差擴大一倍或一個數量級所需的典型時間尺度。",
-            "charStart": 1660,
-            "charEnd": 1719,
+            "charStart": 2233,
+            "charEnd": 2292,
             "contentHash": "8a18b58259e5c2ebdc7338c8084b234e004703e378a10a8832344f7211b64ef0",
             "contextNote": "三、確定性隨機與李雅普諾夫指數 · 第 4 段"
           },
@@ -2607,8 +2699,8 @@
             "sectionTitle": "三、確定性隨機與李雅普諾夫指數",
             "paragraphIndex": 3,
             "exactQuote": "對於實驗室尺度的大角度雙擺，李雅普諾夫時間通常僅為數百毫秒。",
-            "charStart": 1720,
-            "charEnd": 1750,
+            "charStart": 2293,
+            "charEnd": 2323,
             "contentHash": "030f1a5d103f30fa9a0d5e6ab7a537c741d2b0991b7b07d94b4d03f8920b19a7",
             "contextNote": "三、確定性隨機與李雅普諾夫指數 · 第 4 段"
           },
@@ -2619,8 +2711,8 @@
             "sectionTitle": "三、確定性隨機與李雅普諾夫指數",
             "paragraphIndex": 3,
             "exactQuote": "即使使用世界最精密的雷射干涉儀將初值測量推進至納米尺度，預言地平線（Predictability Horizon）也僅能向後延展數秒。",
-            "charStart": 1751,
-            "charEnd": 1818,
+            "charStart": 2324,
+            "charEnd": 2391,
             "contentHash": "7b2db3303db74ae0d22c66c70922d14baba087fbb87f8c5b87cd3802e990b9f0",
             "contextNote": "三、確定性隨機與李雅普諾夫指數 · 第 4 段"
           }
@@ -2648,8 +2740,8 @@
             "sectionTitle": "四、保守系統的幾何結構：劉維爾定理與 KAM 理論",
             "paragraphIndex": 0,
             "exactQuote": "雙擺的渾沌並不等同於毫無規律的白雜訊，更不能與耗散系統中的奇異吸子混為一談。",
-            "charStart": 1977,
-            "charEnd": 2015,
+            "charStart": 2550,
+            "charEnd": 2588,
             "contentHash": "5897f96a9de83f000d33b2fa5234ba06ad4f373c035ea00f1e596f6cd7d516b7",
             "contextNote": "四、保守系統的幾何結構：劉維爾定理與 KAM 理論 · 第 1 段"
           },
@@ -2660,8 +2752,8 @@
             "sectionTitle": "四、保守系統的幾何結構：劉維爾定理與 KAM 理論",
             "paragraphIndex": 0,
             "exactQuote": "在無摩擦阻尼的理想力學模型中，雙擺是一個嚴格能量守恆的保守哈密頓系統（Conservative Hamiltonian System）。",
-            "charStart": 2016,
-            "charEnd": 2084,
+            "charStart": 2589,
+            "charEnd": 2657,
             "contentHash": "df6a59db66273bca90ad26363d0b18cfdf6d184dd78d89ed5381bfdeb912ff2e",
             "contextNote": "四、保守系統的幾何結構：劉維爾定理與 KAM 理論 · 第 1 段"
           },
@@ -2672,8 +2764,8 @@
             "sectionTitle": "四、保守系統的幾何結構：劉維爾定理與 KAM 理論",
             "paragraphIndex": 1,
             "exactQuote": "根據統計力學與分析力學的核心基石——劉維爾定理（Liouville's Theorem），保守系統在相空間中的相體積隨時間演化保持嚴格不變（$\\nabla \\cdot \\mathbf{v} = 0$）。",
-            "charStart": 2193,
-            "charEnd": 2294,
+            "charStart": 2766,
+            "charEnd": 2867,
             "contentHash": "2df5e761cdf72b817e5d0b8a0db16f66269b836f5289ddfea88de7116dd14e1f",
             "contextNote": "四、保守系統的幾何結構：劉維爾定理與 KAM 理論 · 第 2 段"
           },
@@ -2684,8 +2776,8 @@
             "sectionTitle": "四、保守系統的幾何結構：劉維爾定理與 KAM 理論",
             "paragraphIndex": 1,
             "exactQuote": "因此，保守雙擺系統根本不存在相空間體積收縮的「吸子」（Attractor），無論是平凡平衡點吸子、極限環還是碎形維度的奇異吸子，它們皆只存在於具備能量耗散的非保守系統（如洛倫茲氣象對流模型）中。",
-            "charStart": 2295,
-            "charEnd": 2392,
+            "charStart": 2868,
+            "charEnd": 2965,
             "contentHash": "d4739ae00f78d1ab8094e2f5f7afbeb800356e74979d8ec54ea638d487ca901c",
             "contextNote": "四、保守系統的幾何結構：劉維爾定理與 KAM 理論 · 第 2 段"
           },
@@ -2696,8 +2788,8 @@
             "sectionTitle": "四、保守系統的幾何結構：劉維爾定理與 KAM 理論",
             "paragraphIndex": 2,
             "exactQuote": "在保守雙擺中，軌跡被嚴格限制在總能量守恆的三維等能超曲面上。",
-            "charStart": 2593,
-            "charEnd": 2623,
+            "charStart": 3166,
+            "charEnd": 3196,
             "contentHash": "b22b21ae1472ba6e5a1f5f4eea51360e49c8e55fa1a8e330fdcbd58755cd6f3b",
             "contextNote": "四、保守系統的幾何結構：劉維爾定理與 KAM 理論 · 第 3 段"
           },
@@ -2708,8 +2800,8 @@
             "sectionTitle": "四、保守系統的幾何結構：劉維爾定理與 KAM 理論",
             "paragraphIndex": 2,
             "exactQuote": "根據柯爾莫哥洛夫-阿諾德-莫澤定理（KAM 定理），當非線性擾動增強時，可積系統的擬週期不變環面（KAM 環面）會逐漸在共振區域破裂，形成由穩定規則島（Islands of Stability）與渾沌海洋（Chaotic Sea）交錯糾纏的龐加萊截面（Poincaré Section）。",
-            "charStart": 2624,
-            "charEnd": 2768,
+            "charStart": 3197,
+            "charEnd": 3341,
             "contentHash": "9a84c96b8c741d8472608091a4280dcdfce93fb6b1447d22483f01c8df58415f",
             "contextNote": "四、保守系統的幾何結構：劉維爾定理與 KAM 理論 · 第 3 段"
           },
@@ -2720,8 +2812,8 @@
             "sectionTitle": "四、保守系統的幾何結構：劉維爾定理與 KAM 理論",
             "paragraphIndex": 3,
             "exactQuote": "即使單一軌跡無法在長時域內精確預測，整個系統在相空間的同宿切纏（Homoclinic Tangle）依然展現出極致的幾何對稱與拓撲美感。",
-            "charStart": 2945,
-            "charEnd": 3013,
+            "charStart": 3518,
+            "charEnd": 3586,
             "contentHash": "61fefba5316168786ff695ad4156e155ee205c889ee183e57b6286513cef3623",
             "contextNote": "四、保守系統的幾何結構：劉維爾定理與 KAM 理論 · 第 4 段"
           },
@@ -2732,8 +2824,8 @@
             "sectionTitle": "四、保守系統的幾何結構：劉維爾定理與 KAM 理論",
             "paragraphIndex": 3,
             "exactQuote": "雙擺以最簡潔的機械構件揭示了一條深刻的自然法則：宇宙的複雜與隨機，並非來自外在雜訊的干擾，而是深植於物理定律最本質的非線性幾何之中。",
-            "charStart": 3014,
-            "charEnd": 3080,
+            "charStart": 3587,
+            "charEnd": 3653,
             "contentHash": "b53721a1d5c89baa22cd47aedd84faa17cc46e5b56e54735414b5e2156486ff9",
             "contextNote": "四、保守系統的幾何結構：劉維爾定理與 KAM 理論 · 第 4 段"
           }
@@ -2742,8 +2834,8 @@
         "interactiveComponentId": null
       }
     ],
-    "totalWordCount": 1783,
-    "lastIndexedAt": "2026-11-04T13:07:47.501Z"
+    "totalWordCount": 2065,
+    "lastIndexedAt": "2026-11-05T09:30:14.796Z"
   },
   {
     "id": "art-jwst-cosmos-web-lensing",
@@ -4284,7 +4376,7 @@
     ],
     "summary": "1867 年，麥克斯韋提出了一個挑戰熱力學第二定律的經典假想幽靈：一個能夠精確觀測每個分子速度的微觀智能，只需無摩擦地開關閘門，便能在不消耗任何功的情況下使系統溫差自發增大。一個多世紀以來，從斯齊拉德、蘭道爾到貝內特，物理學家最終發現：資訊不是虛無的概念，抹除資訊必然伴隨真實的能量耗散。",
     "leadParagraph": "熱力學第二定律宣告了宇宙的單向命運：孤立系統的總熵永不自發減少，熱量絕無法自發地從低溫物體流向高溫物體而不引起其他變化。然而，十九世紀最卓越的理論物理學家詹姆斯·克拉克·麥克斯韋（James Clerk Maxwell）卻指出了一道看似無法迴避的漏洞——如果我們引入一個具備微觀認知能力的「智能操作者」，第二定律是否會輕易瓦解？",
-    "quoteLead": "資訊是物理的（Information is Physical）：獲取分子的速度資訊固然能暫時降低氣體的熱力學熵，但當智能實體有限的記憶體被清空以準備下一輪測量時，蘭道爾極限必然迫使其向環境釋放至少 $k_B T \\\\ln 2$ 的熱量，將宇宙的總熵增忠實補齊。",
+    "quoteLead": "資訊是物理的（Information is Physical）：測量讓我們知道分子在哪裡，回饋控制則讓這份資訊化為做功的機會。在經典對稱記憶模型中，將一個等機率的未知位元重置，至少要向溫度為 $T$ 的環境釋放 $k_B T \\\\ln 2$ 的熱量，完整循環仍須遵守熱力學第二定律。",
     "authors": [
       {
         "name": "MIRARI 理論物理組",
@@ -4307,6 +4399,10 @@
       {
         "id": "ref-toyabe-2010",
         "citation": "Toyabe, S., Sagawa, T., Ueda, M., Muneyuki, E., & Sano, M. (2010). \"Experimental demonstration of information-to-energy conversion and validation of the generalized Jarzynski equality.\" Nature Physics, 6(12), 988-992. doi:10.1038/nphys1821"
+      },
+      {
+        "id": "ref-sagawa-ueda-2012",
+        "citation": "Sagawa, T., & Ueda, M. (2012). Information Thermodynamics: Maxwell's Demon in Nonequilibrium Dynamics, Sections 2, 3 and 6. https://webspace.maths.qmul.ac.uk/r.klages/smallsys/chapters/sagawa_chapter_rev.pdf"
       }
     ],
     "interactiveComponent": "MaxwellDemonSimulator",
@@ -4315,7 +4411,7 @@
     "creationModel": "gemini-2.5-pro",
     "feedbackId": "fb-art-maxwells-demon-entropy",
     "createdAt": "2026-11-01T19:00:00Z",
-    "contentHash": "364e205bad904a65c5b0adc98cfe2bc0e61d787b5910753ba4bd1ebd2b0ecab2",
+    "contentHash": "afd6a25e1e65dc6bcb010c80cca2cb31f76d73659508a1cec69c517c76bf4bdf",
     "sections": [
       {
         "id": "sec-1-ff468e",
@@ -4520,8 +4616,10 @@
         "level": 1,
         "paragraphs": [
           "為拆解這個悖論，匈牙利物理學家利奧·斯齊拉德（Leo Szilard）於 1929 年提出了著名的單分子熱機模型。斯齊拉德證明，即使箱內只有一顆分子，妖若想抽取熱量並轉化為功，首先必須進行「測量」以確定分子到底位於左側還是右側。",
-          "獲取這「左或右」的 1 位元二進位資訊，使妖能夠消除系統位置的不確定性。在等溫膨脹做功 $W = k_B T \\ln 2$ 的過程中，氣體熵減少了：",
-          "$$\\Delta S_{gas} = -k_B \\ln 2$$",
+          "獲取這「左或右」的 1 位元二進位資訊，使妖能夠消除「分子在哪一半」的不確定性。若以 $X$ 代表左右位置、$M$ 代表無誤的測量紀錄，測量前 $H(X)=\\ln 2$，測量後的條件資訊熵 $H(X|M)=0$，這裡以自然對數計量。減少的是給定紀錄後的位置不確定性，並不能直接把它寫成氣體膨脹時的負熵變。",
+          "接著，妖依測量結果讓活塞朝正確方向移動。單分子氣體從半箱 $V/2$ 可逆等溫膨脹到全箱 $V$，由溫度為 $T$ 的熱浴吸熱，並對外做功 $W_{out}=k_B T\\ln 2$。這個膨脹階段的氣體熱力學熵增加：",
+          "$$\\Delta S_{gas} = k_B \\ln\\frac{V}{V/2} = +k_B \\ln 2$$",
+          "同一階段氣體吸收 $Q_{in}=k_B T\\ln 2$，熱浴的熵變為 $-k_B\\ln 2$，可逆膨脹本身的氣體加熱浴總熵變為零。測量建立的資訊與後續膨脹的熱力學熵變，需要分階段記帳。[斯齊拉德引擎與資訊熱力學](https://webspace.maths.qmul.ac.uk/r.klages/smallsys/chapters/sagawa_chapter_rev.pdf)",
           "早期物理學家（如萊昂·布里淵）曾試圖將代價歸咎於「測量過程」——例如妖必須發射光子照射分子才能看清其位置，而光子的散射與吸收會耗散熱量。但這一解釋在 1970 年代被查爾斯·貝內特（Charles Bennett）推翻：理論上，物理測量可以透過可逆計算的方式進行，能耗在極限下可以趨近於零。",
           "真正的熱力學代價，隱藏在一個更幽深的地方：**記憶抹除**。"
         ],
@@ -4551,68 +4649,152 @@
             "contextNote": "三、斯齊拉德引擎與資訊的物理化 · 第 1 段"
           },
           {
-            "sentenceId": "sent-5e6bdaec",
+            "sentenceId": "sent-5bc59f68",
             "articleId": "art-maxwells-demon-entropy",
             "sectionId": "sec-3-300ac7",
             "sectionTitle": "三、斯齊拉德引擎與資訊的物理化",
             "paragraphIndex": 1,
-            "exactQuote": "獲取這「左或右」的 1 位元二進位資訊，使妖能夠消除系統位置的不確定性。",
+            "exactQuote": "獲取這「左或右」的 1 位元二進位資訊，使妖能夠消除「分子在哪一半」的不確定性。",
             "charStart": 1562,
-            "charEnd": 1598,
-            "contentHash": "5e6bdaecc8f9a1746697abe2892fcc2e6f4a8f248f791971cb3bf6bd40049b3d",
+            "charEnd": 1602,
+            "contentHash": "5bc59f68ce7353d394c4e8a63b0cdfc2720e3613089ef030fd7025ad89b4116e",
             "contextNote": "三、斯齊拉德引擎與資訊的物理化 · 第 2 段"
           },
           {
-            "sentenceId": "sent-3a7c6765",
+            "sentenceId": "sent-9370d5b4",
             "articleId": "art-maxwells-demon-entropy",
             "sectionId": "sec-3-300ac7",
             "sectionTitle": "三、斯齊拉德引擎與資訊的物理化",
             "paragraphIndex": 1,
-            "exactQuote": "在等溫膨脹做功 $W = k_B T \\ln 2$ 的過程中，氣體熵減少了：",
-            "charStart": 1599,
-            "charEnd": 1637,
-            "contentHash": "3a7c6765c99333b075415e1f0b0de60582b9d3b0f3769967b3d6a1afdcc176f9",
+            "exactQuote": "若以 $X$ 代表左右位置、$M$ 代表無誤的測量紀錄，測量前 $H(X)=\\ln 2$，測量後的條件資訊熵 $H(X|M)=0$，這裡以自然對數計量。",
+            "charStart": 1603,
+            "charEnd": 1679,
+            "contentHash": "9370d5b4e888e287d30e3be540b84dece80cba48d019fe46242b86ab2e28da9e",
             "contextNote": "三、斯齊拉德引擎與資訊的物理化 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-1a91f370",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-3-300ac7",
+            "sectionTitle": "三、斯齊拉德引擎與資訊的物理化",
+            "paragraphIndex": 1,
+            "exactQuote": "減少的是給定紀錄後的位置不確定性，並不能直接把它寫成氣體膨脹時的負熵變。",
+            "charStart": 1680,
+            "charEnd": 1716,
+            "contentHash": "1a91f3709117342dadc40116f8c90c04e5368395eedf740983162fd536ac4a7b",
+            "contextNote": "三、斯齊拉德引擎與資訊的物理化 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-f1848c97",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-3-300ac7",
+            "sectionTitle": "三、斯齊拉德引擎與資訊的物理化",
+            "paragraphIndex": 2,
+            "exactQuote": "接著，妖依測量結果讓活塞朝正確方向移動。",
+            "charStart": 1871,
+            "charEnd": 1891,
+            "contentHash": "f1848c979cb928f0a1ed6ce289df4a2220b0152bcf6cb95bf8e539860285fb92",
+            "contextNote": "三、斯齊拉德引擎與資訊的物理化 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-b3359053",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-3-300ac7",
+            "sectionTitle": "三、斯齊拉德引擎與資訊的物理化",
+            "paragraphIndex": 2,
+            "exactQuote": "單分子氣體從半箱 $V/2$ 可逆等溫膨脹到全箱 $V$，由溫度為 $T$ 的熱浴吸熱，並對外做功 $W_{out}=k_B T\\ln 2$。",
+            "charStart": 1892,
+            "charEnd": 1963,
+            "contentHash": "b33590532bb39abbc1073d9720c6ed1e30f9fc0974cb0b0c75c8af06be9c63aa",
+            "contextNote": "三、斯齊拉德引擎與資訊的物理化 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-46eec5f3",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-3-300ac7",
+            "sectionTitle": "三、斯齊拉德引擎與資訊的物理化",
+            "paragraphIndex": 2,
+            "exactQuote": "這個膨脹階段的氣體熱力學熵增加：",
+            "charStart": 1964,
+            "charEnd": 1980,
+            "contentHash": "46eec5f327cc5747c2b70e83858fe2c4f81ef405eaf352b6bcdda8e1b3468a4b",
+            "contextNote": "三、斯齊拉德引擎與資訊的物理化 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-b266970c",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-3-300ac7",
+            "sectionTitle": "三、斯齊拉德引擎與資訊的物理化",
+            "paragraphIndex": 4,
+            "exactQuote": "同一階段氣體吸收 $Q_{in}=k_B T\\ln 2$，熱浴的熵變為 $-k_B\\ln 2$，可逆膨脹本身的氣體加熱浴總熵變為零。",
+            "charStart": 2090,
+            "charEnd": 2156,
+            "contentHash": "b266970cee24836fd25b0c9df2d48e9a0c4af9abe03bc51b8f3dc84b7320efe2",
+            "contextNote": "三、斯齊拉德引擎與資訊的物理化 · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-ebb39f01",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-3-300ac7",
+            "sectionTitle": "三、斯齊拉德引擎與資訊的物理化",
+            "paragraphIndex": 4,
+            "exactQuote": "測量建立的資訊與後續膨脹的熱力學熵變，需要分階段記帳。",
+            "charStart": 2157,
+            "charEnd": 2184,
+            "contentHash": "ebb39f013fc88677244bf9424e0ac1f8b49f148be2513804d6a581557708a0b9",
+            "contextNote": "三、斯齊拉德引擎與資訊的物理化 · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-1ff9fa2f",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-3-300ac7",
+            "sectionTitle": "三、斯齊拉德引擎與資訊的物理化",
+            "paragraphIndex": 4,
+            "exactQuote": "[斯齊拉德引擎與資訊熱力學](https://webspace.maths.qmul.ac.uk/r.klages/smallsys/chapters/sagawa_chapter_rev.pdf)",
+            "charStart": 2185,
+            "charEnd": 2284,
+            "contentHash": "1ff9fa2f9c02c5036642d6f56ba6cb5bc8da68f55412e3d6ba97d642a87e9cd5",
+            "contextNote": "三、斯齊拉德引擎與資訊的物理化 · 第 5 段"
           },
           {
             "sentenceId": "sent-ca6c9bf9",
             "articleId": "art-maxwells-demon-entropy",
             "sectionId": "sec-3-300ac7",
             "sectionTitle": "三、斯齊拉德引擎與資訊的物理化",
-            "paragraphIndex": 3,
+            "paragraphIndex": 5,
             "exactQuote": "早期物理學家（如萊昂·布里淵）曾試圖將代價歸咎於「測量過程」——例如妖必須發射光子照射分子才能看清其位置，而光子的散射與吸收會耗散熱量。",
-            "charStart": 1714,
-            "charEnd": 1782,
+            "charStart": 2479,
+            "charEnd": 2547,
             "contentHash": "ca6c9bf9e7d37fde4b02107e4e43a3f68ebaf088fb24da326170a3ceecdea96f",
-            "contextNote": "三、斯齊拉德引擎與資訊的物理化 · 第 4 段"
+            "contextNote": "三、斯齊拉德引擎與資訊的物理化 · 第 6 段"
           },
           {
             "sentenceId": "sent-7233d65b",
             "articleId": "art-maxwells-demon-entropy",
             "sectionId": "sec-3-300ac7",
             "sectionTitle": "三、斯齊拉德引擎與資訊的物理化",
-            "paragraphIndex": 3,
+            "paragraphIndex": 5,
             "exactQuote": "但這一解釋在 1970 年代被查爾斯·貝內特（Charles Bennett）推翻：理論上，物理測量可以透過可逆計算的方式進行，能耗在極限下可以趨近於零。",
-            "charStart": 1783,
-            "charEnd": 1860,
+            "charStart": 2548,
+            "charEnd": 2625,
             "contentHash": "7233d65b4b6807224c2fec9be9597215525568922afc7424408bd1869383f575",
-            "contextNote": "三、斯齊拉德引擎與資訊的物理化 · 第 4 段"
+            "contextNote": "三、斯齊拉德引擎與資訊的物理化 · 第 6 段"
           },
           {
             "sentenceId": "sent-8187c1a0",
             "articleId": "art-maxwells-demon-entropy",
             "sectionId": "sec-3-300ac7",
             "sectionTitle": "三、斯齊拉德引擎與資訊的物理化",
-            "paragraphIndex": 4,
+            "paragraphIndex": 6,
             "exactQuote": "真正的熱力學代價，隱藏在一個更幽深的地方：**記憶抹除**。",
-            "charStart": 2008,
-            "charEnd": 2038,
+            "charStart": 2773,
+            "charEnd": 2803,
             "contentHash": "8187c1a0660f027cf7e088f83470626a4d3cc90c8dc7772536779020e7b2027f",
-            "contextNote": "三、斯齊拉德引擎與資訊的物理化 · 第 5 段"
+            "contextNote": "三、斯齊拉德引擎與資訊的物理化 · 第 7 段"
           }
         ],
         "formulas": [
-          "$$\\Delta S_{gas} = -k_B \\ln 2$$"
+          "$$\\Delta S_{gas} = k_B \\ln\\frac{V}{V/2} = +k_B \\ln 2$$"
         ],
         "interactiveComponentId": null
       },
@@ -4622,12 +4804,12 @@
         "level": 1,
         "paragraphs": [
           "1961 年，IBM 物理學家羅爾夫·蘭道爾（Rolf Landauer）提出了奠定現代資訊熱力學基石的論斷：「資訊是物理的」（Information is Physical）。任何邏輯上不可逆的操作（例如將記憶體重置為 0），都必然對應著物理相空間體積的壓縮。",
-          "設妖的記憶體容量有限。在進行了 $N$ 次分子分類後，妖的記憶庫被填滿。若想讓熱機持續運轉，妖必須將記錄「重置」，以便開始下一輪測量。蘭道爾證明，在環境溫度 $T$ 下，**抹除 1 位元未知資訊，必然要向環境散發至少下列大小的熱量**：",
+          "設妖的記憶體容量有限。在進行了 $N$ 次分子分類後，妖的記憶庫被填滿。若想讓熱機持續運轉，妖必須將記錄「重置」，以便開始下一輪測量。在經典、兩種記憶狀態對稱且等機率的模型中，若不利用額外的相關資訊，在環境溫度 $T$ 下，**將 1 個未知位元抹除為固定狀態，至少須向環境散發下列大小的熱量**：",
           "$$Q_{dissipated} \\ge k_B T \\ln 2 \\approx 2.87 \\times 10^{-21}\\ \\text{J (在室溫 300 K)}$$",
-          "相應地，環境中必然產生至少 $\\Delta S_{env} \\ge +k_B \\ln 2$ 的熵增。",
-          "當我們將氣體分子與麥克斯韋妖的記憶系統視為一個完整的複合封閉系統時，總熵變為：",
+          "這個抹除階段，記憶的邏輯狀態熵由 $k_B\\ln 2$ 降到零，環境的熵至少增加 $\\Delta S_{env,erase}\\ge +k_B\\ln 2$。因此，膨脹時從熱浴取得的做功機會，必須連同讓記憶回到初始狀態的代價一起核算。[貝內特的可逆測量與記憶抹除分析](https://doi.org/10.1007/BF02084158)",
+          "對氣體與記憶都回到初始狀態、兩者相關性也已消除的完整循環，將膨脹及抹除所交換熱量的環境一併納入，總熵變滿足：",
           "$$\\Delta S_{total} = \\Delta S_{gas} + \\Delta S_{demon} + \\Delta S_{env} \\ge 0$$",
-          "麥克斯韋妖並沒有推翻熱力學第二定律。它只不過是將微觀氣體的熱力學熵，暫時轉移並編碼成了自己記憶體中的資訊熵；而當這段資訊最終被抹除回歸虛無時，熱力學定律毫不留情地收回了全部代價。"
+          "麥克斯韋妖並沒有推翻熱力學第二定律。測量先建立位置與記憶的相關性，等溫膨脹再把這份資訊用來取出功，最後還須付出重置記憶的代價。在上述理想循環中，氣體與記憶的總熵變各為零，膨脹造成的熱浴熵減由抹除時的熵增抵銷，完全可逆的極限可達總熵變為零，實際耗散則使總熵增加。"
         ],
         "sentences": [
           {
@@ -4637,8 +4819,8 @@
             "sectionTitle": "四、蘭道爾極限：抹除資訊的熱力學代價",
             "paragraphIndex": 0,
             "exactQuote": "1961 年，IBM 物理學家羅爾夫·蘭道爾（Rolf Landauer）提出了奠定現代資訊熱力學基石的論斷：「資訊是物理的」（Information is Physical）。",
-            "charStart": 2071,
-            "charEnd": 2160,
+            "charStart": 2836,
+            "charEnd": 2925,
             "contentHash": "83ee3e9152bb25ddab0c1913a0fc750d5500d12776c3bc9dbda9c70950db4ea2",
             "contextNote": "四、蘭道爾極限：抹除資訊的熱力學代價 · 第 1 段"
           },
@@ -4649,8 +4831,8 @@
             "sectionTitle": "四、蘭道爾極限：抹除資訊的熱力學代價",
             "paragraphIndex": 0,
             "exactQuote": "任何邏輯上不可逆的操作（例如將記憶體重置為 0），都必然對應著物理相空間體積的壓縮。",
-            "charStart": 2161,
-            "charEnd": 2203,
+            "charStart": 2926,
+            "charEnd": 2968,
             "contentHash": "56135a11d4bc243a84489d00658dd52176b1ecc8d632204e0b1ef5076e331c50",
             "contextNote": "四、蘭道爾極限：抹除資訊的熱力學代價 · 第 1 段"
           },
@@ -4661,8 +4843,8 @@
             "sectionTitle": "四、蘭道爾極限：抹除資訊的熱力學代價",
             "paragraphIndex": 1,
             "exactQuote": "設妖的記憶體容量有限。",
-            "charStart": 2337,
-            "charEnd": 2348,
+            "charStart": 3102,
+            "charEnd": 3113,
             "contentHash": "f8f1925ead931cdc4c4a15a4922f81992149671d1b6f4da89665e8926fc130b0",
             "contextNote": "四、蘭道爾極限：抹除資訊的熱力學代價 · 第 2 段"
           },
@@ -4673,8 +4855,8 @@
             "sectionTitle": "四、蘭道爾極限：抹除資訊的熱力學代價",
             "paragraphIndex": 1,
             "exactQuote": "在進行了 $N$ 次分子分類後，妖的記憶庫被填滿。",
-            "charStart": 2349,
-            "charEnd": 2374,
+            "charStart": 3114,
+            "charEnd": 3139,
             "contentHash": "220a0475612fe901ae69be1028b4d1efa15f8709a456dff3a21af40469cd8ea4",
             "contextNote": "四、蘭道爾極限：抹除資訊的熱力學代價 · 第 2 段"
           },
@@ -4685,45 +4867,69 @@
             "sectionTitle": "四、蘭道爾極限：抹除資訊的熱力學代價",
             "paragraphIndex": 1,
             "exactQuote": "若想讓熱機持續運轉，妖必須將記錄「重置」，以便開始下一輪測量。",
-            "charStart": 2375,
-            "charEnd": 2406,
+            "charStart": 3140,
+            "charEnd": 3171,
             "contentHash": "579f57e3c233fcf0aed97c233fd8d826b9ab7766e4fe89012150aab43b5b08ed",
             "contextNote": "四、蘭道爾極限：抹除資訊的熱力學代價 · 第 2 段"
           },
           {
-            "sentenceId": "sent-2883deb3",
+            "sentenceId": "sent-37d30dc6",
             "articleId": "art-maxwells-demon-entropy",
             "sectionId": "sec-4-087c94",
             "sectionTitle": "四、蘭道爾極限：抹除資訊的熱力學代價",
             "paragraphIndex": 1,
-            "exactQuote": "蘭道爾證明，在環境溫度 $T$ 下，**抹除 1 位元未知資訊，必然要向環境散發至少下列大小的熱量**：",
-            "charStart": 2407,
-            "charEnd": 2459,
-            "contentHash": "2883deb3666506260173d4ad785843edd2316dc7cae075e401b6a54238709feb",
+            "exactQuote": "在經典、兩種記憶狀態對稱且等機率的模型中，若不利用額外的相關資訊，在環境溫度 $T$ 下，**將 1 個未知位元抹除為固定狀態，至少須向環境散發下列大小的熱量**：",
+            "charStart": 3172,
+            "charEnd": 3254,
+            "contentHash": "37d30dc609da80ec5537e682ea61dffc165fabc2a0e659a510c42f326e66d511",
             "contextNote": "四、蘭道爾極限：抹除資訊的熱力學代價 · 第 2 段"
           },
           {
-            "sentenceId": "sent-8de1f0b7",
+            "sentenceId": "sent-a837902b",
             "articleId": "art-maxwells-demon-entropy",
             "sectionId": "sec-4-087c94",
             "sectionTitle": "四、蘭道爾極限：抹除資訊的熱力學代價",
             "paragraphIndex": 3,
-            "exactQuote": "相應地，環境中必然產生至少 $\\Delta S_{env} \\ge +k_B \\ln 2$ 的熵增。",
-            "charStart": 2581,
-            "charEnd": 2631,
-            "contentHash": "8de1f0b7becf36e966297aa97e20dc7e3a46a464140c9274a11cf3bfd725e02e",
+            "exactQuote": "這個抹除階段，記憶的邏輯狀態熵由 $k_B\\ln 2$ 降到零，環境的熵至少增加 $\\Delta S_{env,erase}\\ge +k_B\\ln 2$。",
+            "charStart": 3406,
+            "charEnd": 3483,
+            "contentHash": "a837902b49bdc6fc8913a8c70f8be83a615a3155ca73d6bd3a30fb80795abb19",
             "contextNote": "四、蘭道爾極限：抹除資訊的熱力學代價 · 第 4 段"
           },
           {
-            "sentenceId": "sent-3619ca21",
+            "sentenceId": "sent-071d38e4",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-4-087c94",
+            "sectionTitle": "四、蘭道爾極限：抹除資訊的熱力學代價",
+            "paragraphIndex": 3,
+            "exactQuote": "因此，膨脹時從熱浴取得的做功機會，必須連同讓記憶回到初始狀態的代價一起核算。",
+            "charStart": 3484,
+            "charEnd": 3522,
+            "contentHash": "071d38e43f4efd6fb5eafff8f3959a54caac011336c9335b36774b0f9824f833",
+            "contextNote": "四、蘭道爾極限：抹除資訊的熱力學代價 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-1276c159",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-4-087c94",
+            "sectionTitle": "四、蘭道爾極限：抹除資訊的熱力學代價",
+            "paragraphIndex": 3,
+            "exactQuote": "[貝內特的可逆測量與記憶抹除分析](https://doi.org/10.1007/BF02084158)",
+            "charStart": 3523,
+            "charEnd": 3576,
+            "contentHash": "1276c159323d68f695140b7d82d63ca24ea72ea65676f373649aac2e4b59edaf",
+            "contextNote": "四、蘭道爾極限：抹除資訊的熱力學代價 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-bc79008c",
             "articleId": "art-maxwells-demon-entropy",
             "sectionId": "sec-4-087c94",
             "sectionTitle": "四、蘭道爾極限：抹除資訊的熱力學代價",
             "paragraphIndex": 4,
-            "exactQuote": "當我們將氣體分子與麥克斯韋妖的記憶系統視為一個完整的複合封閉系統時，總熵變為：",
-            "charStart": 2684,
-            "charEnd": 2723,
-            "contentHash": "3619ca21cef1ba9a5d70a5b80c14469998af96d3b71cb36778c71053b88d9f4e",
+            "exactQuote": "對氣體與記憶都回到初始狀態、兩者相關性也已消除的完整循環，將膨脹及抹除所交換熱量的環境一併納入，總熵變滿足：",
+            "charStart": 3747,
+            "charEnd": 3801,
+            "contentHash": "bc79008c367534c2b8ed197aba8181b1092b67fac7e75a2c439555e430e628c7",
             "contextNote": "四、蘭道爾極限：抹除資訊的熱力學代價 · 第 5 段"
           },
           {
@@ -4733,21 +4939,33 @@
             "sectionTitle": "四、蘭道爾極限：抹除資訊的熱力學代價",
             "paragraphIndex": 6,
             "exactQuote": "麥克斯韋妖並沒有推翻熱力學第二定律。",
-            "charStart": 2765,
-            "charEnd": 2783,
+            "charStart": 3858,
+            "charEnd": 3876,
             "contentHash": "582085fee3f418de259af190c3868bdae0afd2074d29a33ed495b5321511a4b9",
             "contextNote": "四、蘭道爾極限：抹除資訊的熱力學代價 · 第 7 段"
           },
           {
-            "sentenceId": "sent-42be21ee",
+            "sentenceId": "sent-89c864d1",
             "articleId": "art-maxwells-demon-entropy",
             "sectionId": "sec-4-087c94",
             "sectionTitle": "四、蘭道爾極限：抹除資訊的熱力學代價",
             "paragraphIndex": 6,
-            "exactQuote": "它只不過是將微觀氣體的熱力學熵，暫時轉移並編碼成了自己記憶體中的資訊熵；而當這段資訊最終被抹除回歸虛無時，熱力學定律毫不留情地收回了全部代價。",
-            "charStart": 2784,
-            "charEnd": 2855,
-            "contentHash": "42be21ee8146ed0cf7d70efc4ade1498eb2b1f0ffdc4a98e62cf5f03860d56e2",
+            "exactQuote": "測量先建立位置與記憶的相關性，等溫膨脹再把這份資訊用來取出功，最後還須付出重置記憶的代價。",
+            "charStart": 3877,
+            "charEnd": 3922,
+            "contentHash": "89c864d1d5a7265988c2c0ee8a4ca3970ebf7696686a5a37b1ee57902f1b98c0",
+            "contextNote": "四、蘭道爾極限：抹除資訊的熱力學代價 · 第 7 段"
+          },
+          {
+            "sentenceId": "sent-a82d2ea5",
+            "articleId": "art-maxwells-demon-entropy",
+            "sectionId": "sec-4-087c94",
+            "sectionTitle": "四、蘭道爾極限：抹除資訊的熱力學代價",
+            "paragraphIndex": 6,
+            "exactQuote": "在上述理想循環中，氣體與記憶的總熵變各為零，膨脹造成的熱浴熵減由抹除時的熵增抵銷，完全可逆的極限可達總熵變為零，實際耗散則使總熵增加。",
+            "charStart": 3923,
+            "charEnd": 3990,
+            "contentHash": "a82d2ea5aa2cfd00d18411e6011c3b0f0645223f630dd4420d6ecb1ab2f3947c",
             "contextNote": "四、蘭道爾極限：抹除資訊的熱力學代價 · 第 7 段"
           }
         ],
@@ -4758,8 +4976,8 @@
         "interactiveComponentId": null
       }
     ],
-    "totalWordCount": 1673,
-    "lastIndexedAt": "2026-11-04T13:07:47.509Z"
+    "totalWordCount": 2262,
+    "lastIndexedAt": "2026-11-05T09:30:14.808Z"
   },
   {
     "id": "art-quantum-hall-anyons",

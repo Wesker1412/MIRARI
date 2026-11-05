@@ -1,184 +1,205 @@
 const { chromium } = require('playwright');
-const path = require('path');
-const fs = require('fs');
+const assert = require('node:assert/strict');
+const path = require('node:path');
+const fs = require('node:fs');
 
-const ARTIFACT_DIR = path.resolve('C:/Users/Wesker/.gemini/antigravity/brain/754bd979-2c00-4d79-ae0f-cfda45f084ce');
+const ROOT = path.resolve(__dirname, '..');
+const ARTIFACT_DIR = path.join(ROOT, '.mirari-cache', 'markdown-verification');
+const BASE_URL = process.env.MARKDOWN_BASE_URL || 'http://127.0.0.1:5173';
 
-const TARGET_ARTICLES = [
-  {
-    slug: 'brownian-ratchet-molecular-motors',
-    title: '布朗棘輪與分子馬達',
-    expectedH3: '1. 勢阱開啟態（On-state，強結合態）',
-    anchorSentenceId: 'sent-7cedeccb'
-  },
-  {
-    slug: 'thorium-229-nuclear-clock-laser',
-    title: '釷-229 核時鐘',
-    expectedH3: '1. 固態晶體中的百萬億原子核',
-    anchorSentenceId: 'sent-52c5aa96'
-  },
-  {
-    slug: 'amygdala-memory-encoding-success',
-    title: '杏仁核記憶編碼',
-    expectedH3: '1. 杏仁核細胞具備精細的「語意類別選擇性」',
-    anchorSentenceId: 'sent-70430e82'
+// Run against a dev server or production preview. PLAYWRIGHT_CHANNEL and
+// PLAYWRIGHT_EXECUTABLE_PATH select an installed browser when needed.
+// Reports and failure screenshots stay in the project's ignored cache directory.
+function plainText(text) {
+  return text
+    .replace(/\$\$[\s\S]*?\$\$|\$[^$]+\$/g, '')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/[*_`]/g, '')
+    .replace(/\s+/g, '');
+}
+
+function expectations(article) {
+  const body = article.sections.flatMap((section) => section.paragraphs).join('\n\n');
+  const lines = body.split(/\r?\n/);
+  return {
+    headings: lines.flatMap((line) => {
+      const match = line.match(/^(#{3,6})\s+(.+)$/);
+      return match ? [{ level: match[1].length, text: plainText(match[2]) }] : [];
+    }),
+    ordered: lines.filter((line) => /^\s*\d+\.\s+/.test(line)).map((line) => plainText(line.replace(/^\s*\d+\.\s+/, ''))),
+    unordered: lines.filter((line) => /^\s*[-*+]\s+/.test(line)).map((line) => plainText(line.replace(/^\s*[-*+]\s+/, ''))),
+    quotes: lines.filter((line) => /^\s*>\s?/.test(line)).map((line) => plainText(line.replace(/^\s*>\s?/, ''))).filter(Boolean),
+    links: [...body.matchAll(/\[([^\]]+)\]\(([^\s)]+)\)/g)].map((match) => ({ text: plainText(match[1]), href: match[2] })),
+    formulas: [
+      ...article.sections.flatMap((section) => section.formulas).map((formula) => formula.slice(2, -2).trim()),
+      ...[body, article.quoteLead || ''].flatMap((text) => [...text.matchAll(/(?<![\\$])\$(?!\$)([^$]+?)\$(?!\$)/g)].map((match) => match[1].trim())),
+    ],
+    simulators: article.sections.filter((section) => section.interactiveComponentId),
+  };
+}
+
+async function renderedText(locator) {
+  return locator.evaluateAll((nodes) => nodes.map((node) => {
+    const clone = node.cloneNode(true);
+    clone.querySelectorAll('.katex').forEach((math) => math.remove());
+    return clone.textContent;
+  }));
+}
+
+async function verifyPage(page, article, expected) {
+  await page.goto(new URL('/articles/' + article.slug, BASE_URL).href, { waitUntil: 'load', timeout: 30000 });
+  await page.getByRole('heading', { level: 1, name: article.title, exact: true }).waitFor();
+  // Sentence spans are created by the React renderer, rather than the static shell.
+  const anchor = article.sections.flatMap((section) => section.sentences)
+    .find((sentence) => /[\p{L}\p{N}]/u.test(sentence.exactQuote));
+  assert.ok(anchor, 'Manifest has no sentence anchors');
+  await page.locator('article [id="' + anchor.sentenceId + '"]').waitFor();
+  const body = page.locator('article');
+
+  for (const section of article.sections) {
+    const heading = body.locator('[id="' + section.id + '"] > h2');
+    assert.equal(await heading.count(), 1, 'Section heading missing: ' + section.title);
+    assert.equal(plainText(await heading.innerText()), plainText(section.title));
   }
-];
+  for (const heading of expected.headings) {
+    const actual = (await renderedText(body.locator('h' + heading.level))).map(plainText);
+    assert.ok(actual.includes(heading.text), 'Markdown heading missing: ' + heading.text);
+  }
+
+  for (const [kind, selector] of [['ordered', 'section[id] ol > li'], ['unordered', 'section[id] ul > li']]) {
+    const items = (await renderedText(body.locator(selector))).map(plainText);
+    for (const expectedItem of expected[kind]) {
+      assert.ok(items.some((item) => item.includes(expectedItem)), kind + ' list item missing: ' + expectedItem);
+    }
+  }
+
+  const formulas = await body.locator('.katex annotation[encoding="application/x-tex"]').allTextContents();
+  for (const formula of expected.formulas) {
+    assert.ok(formulas.some((rendered) => rendered.replace(/\s/g, '') === formula.replace(/\s/g, '')),
+      'Formula did not render as KaTeX: ' + formula);
+  }
+  assert.equal(await body.locator('.katex-error').count(), 0, 'KaTeX reported an invalid formula');
+  const quotes = (await renderedText(body.locator('blockquote'))).map(plainText);
+  for (const quote of expected.quotes) {
+    assert.ok(quotes.some((text) => text.includes(quote)), 'Blockquote missing: ' + quote);
+  }
+  const links = await body.locator('a').evaluateAll((nodes) => nodes.map((node) => ({ text: node.textContent, href: node.getAttribute('href') })));
+  for (const link of expected.links) {
+    assert.ok(links.some((node) => plainText(node.text) === link.text && node.href === link.href),
+      'Markdown link missing or incorrect: ' + link.href);
+  }
+
+  // textContent omits browser-generated list counters and KaTeX annotations.
+  const rawBlocks = await body.locator('section[id] p, section[id] li, section[id] h2, section[id] h3, section[id] blockquote').evaluateAll((nodes) => nodes.flatMap((node) => {
+    const clone = node.cloneNode(true);
+    clone.querySelectorAll('.katex, code').forEach((child) => child.remove());
+    const text = clone.textContent.trim();
+    const rawBlock = /^(?:#{1,6}|>)\s/.test(text) ||
+      (['P', 'LI'].includes(node.tagName) && /^(?:\d+\.|[-*+])\s/.test(text));
+    return rawBlock || text.includes('**') ? [text.slice(0, 120)] : [];
+  }));
+  assert.deepEqual(rawBlocks, [], 'Raw Markdown markers remain in article blocks');
+  for (const sentence of article.sections.flatMap((section) => section.sentences)) {
+    if (!/[\p{L}\p{N}]/u.test(sentence.exactQuote)) continue;
+    assert.equal(await body.locator('[id="' + sentence.sentenceId + '"]').count(), 1,
+      'Sentence anchor missing or duplicated: ' + sentence.sentenceId);
+  }
+
+  for (const section of expected.simulators) {
+    const simulator = body.locator('[id="' + section.id + '"]');
+    const canvas = simulator.locator('canvas').first();
+    await canvas.scrollIntoViewIfNeeded();
+    await page.waitForFunction((sectionId) => {
+      return [...document.getElementById(sectionId).querySelectorAll('canvas')].some((node) => {
+        if (!node.width || !node.height) return false;
+        const context = node.getContext('2d');
+        if (!context) return false;
+        const pixels = context.getImageData(0, 0, node.width, node.height).data;
+        return pixels.some((value, index) => index % 4 === 3 && value > 0);
+      });
+    }, section.id);
+    const slider = simulator.locator('input[type="range"]:enabled').first();
+    if (await slider.count()) {
+      const before = await slider.inputValue();
+      const textBefore = await simulator.innerText();
+      const key = await slider.evaluate((node) => Number(node.value) < Number(node.max) ? 'ArrowRight' : 'ArrowLeft');
+      await slider.focus();
+      await slider.press(key);
+      assert.notEqual(await slider.inputValue(), before, 'Simulator slider did not move');
+      assert.notEqual(await simulator.innerText(), textBefore, 'Simulator did not update after input');
+    } else {
+      const button = simulator.getByRole('button').filter({ visible: true }).first();
+      assert.ok(await button.count(), 'Simulator has no usable control');
+      const before = await simulator.innerHTML();
+      await button.click();
+      assert.notEqual(await simulator.innerHTML(), before, 'Simulator did not react to a control');
+    }
+  }
+
+  assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1),
+    'Full-page horizontal overflow');
+  return {
+    headings: article.sections.length + expected.headings.length,
+    lists: expected.ordered.length + expected.unordered.length,
+    formulas: expected.formulas.length,
+    quotes: expected.quotes.length,
+    links: expected.links.length,
+    simulators: expected.simulators.map((section) => section.interactiveComponentId),
+  };
+}
 
 async function runVerification() {
-  console.log('================================================================');
-  console.log('🧪 MIRARI 文章內部 Markdown 排版驗收 (三篇實證篇章)');
-  console.log('================================================================');
-
-  const browser = await chromium.launch({ headless: true });
-
+  fs.mkdirSync(ARTIFACT_DIR, { recursive: true });
+  const { isArticlePublished } = await import('../src/utils/date.ts');
+  const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/generated/articles-manifest.json'), 'utf8'));
+  const articles = manifest.filter((article) => isArticlePublished(article));
+  assert.ok(articles.length, 'No published articles in the manifest');
+  const report = { baseUrl: BASE_URL, status: 'unverified', results: [] };
+  const saveReport = () => fs.writeFileSync(path.join(ARTIFACT_DIR, 'report.json'), JSON.stringify(report, null, 2));
+  let browser;
   try {
-    for (const art of TARGET_ARTICLES) {
-      console.log(`\n─────────────────────────────────────────────────────────────`);
-      console.log(`📄 驗收篇章: 《${art.title}》 (/articles/${art.slug})`);
-      console.log(`─────────────────────────────────────────────────────────────`);
-
-      // ─── Desktop 驗收 ───
-      const desktopContext = await browser.newContext({
-        viewport: { width: 1280, height: 900 }
-      });
-      const page = await desktopContext.newPage();
-      await page.goto(`http://localhost:5173/articles/${art.slug}`, { waitUntil: 'load', timeout: 15000 });
-      await page.waitForTimeout(800);
-
-      // 1. 檢查子標題 (h3)
-      const h3Elements = await page.$$('h3');
-      console.log(`   · 子標題 (h3) 數量: ${h3Elements.length} 個`);
-      if (h3Elements.length === 0) {
-        throw new Error(`文章未找到任何 <h3> 標題！`);
+    browser = await chromium.launch({
+      headless: true,
+      channel: process.env.PLAYWRIGHT_CHANNEL || undefined,
+      executablePath: process.env.PLAYWRIGHT_EXECUTABLE_PATH || undefined,
+    });
+    for (const article of articles) {
+      const expected = expectations(article);
+      for (const viewport of [{ width: 1280, height: 900 }, { width: 390, height: 844 }]) {
+        const context = await browser.newContext({ viewport, isMobile: viewport.width < 640, hasTouch: viewport.width < 640, reducedMotion: 'reduce' });
+        const page = await context.newPage();
+        const errors = [];
+        let checks;
+        page.on('pageerror', (error) => errors.push(error.message));
+        try {
+          checks = await verifyPage(page, article, expected);
+          assert.deepEqual(errors, [], 'Page raised a runtime error');
+          report.results.push({ slug: article.slug, width: viewport.width, status: 'passed', checks });
+          console.log('PASS', viewport.width, article.slug, JSON.stringify(checks));
+        } catch (error) {
+          report.results.push({ slug: article.slug, width: viewport.width, status: 'failed', checks, error: error.message, runtimeErrors: [...new Set(errors)] });
+          console.error('FAIL', viewport.width, article.slug, error.message);
+          await page.screenshot({ path: path.join(ARTIFACT_DIR, article.slug + '-' + viewport.width + '.png'), fullPage: false }).catch(() => {});
+        } finally {
+          await context.close();
+          saveReport();
+        }
       }
-      const h3Texts = await Promise.all(h3Elements.map(h => h.innerText()));
-      const foundTargetH3 = h3Texts.some(t => t.includes(art.expectedH3.slice(3, 10)));
-      if (!foundTargetH3) {
-        throw new Error(`預期的子標題「${art.expectedH3}」未正確渲染為 <h3>！`);
-      }
-      console.log(`   ✓ 子標題成功渲染為 <h3> (包含: ${h3Texts[0]})`);
-
-      // 2. 檢查沒有 raw ### 殘留
-      const rawHashCount = await page.evaluate(() => {
-        const bodyText = document.querySelector('article')?.innerText || '';
-        const matches = bodyText.match(/^###\s+/gm) || [];
-        return matches.length;
-      });
-      if (rawHashCount > 0) {
-        throw new Error(`文章內部依然殘留 ${rawHashCount} 處原始 '### ' 符號！`);
-      }
-      console.log(`   ✓ 原始 '### ' 符號徹底消除，無語法洩漏！`);
-
-      // 3. 檢查清單 (ol / ul) 與 li
-      const olCount = await page.$$eval('ol', els => els.length);
-      const ulCount = await page.$$eval('ul', els => els.length);
-      const liCount = await page.$$eval('li', els => els.length);
-      console.log(`   · 結構化清單: <ol> ${olCount} 個, <ul> ${ulCount} 個, <li> ${liCount} 個`);
-      if (olCount + ulCount === 0 || liCount === 0) {
-        throw new Error(`文章未找到結構化清單元素！`);
-      }
-
-      // 檢查 li 內部沒有 raw '1. ' 或 '- ' 殘留
-      const rawListMarkersInLi = await page.evaluate(() => {
-        const lis = Array.from(document.querySelectorAll('article li'));
-        return lis.filter(li => /^\s*(\d+\.|[-*+])\s+/.test(li.innerText)).length;
-      });
-      if (rawListMarkersInLi > 0) {
-        throw new Error(`清單項 <li> 內部殘留 ${rawListMarkersInLi} 處原始清單符號！`);
-      }
-      console.log(`   ✓ 清單項 <li> 語義化結構正常，無原始清單符號殘留！`);
-
-      // 4. 檢查粗體 (strong) 與 KaTeX 公式
-      const strongCount = await page.$$eval('strong', els => els.length);
-      const katexCount = await page.$$eval('.katex', els => els.length);
-      console.log(`   · 粗體元素: ${strongCount} 個, KaTeX 數學元素: ${katexCount} 個`);
-      if (strongCount === 0 || katexCount === 0) {
-        throw new Error(`文章粗體或 KaTeX 公式遺失！`);
-      }
-      console.log(`   ✓ 粗體與 KaTeX 行內/區塊公式渲染正常！`);
-
-      // 5. 檢查互動實驗模擬器元件
-      const simulatorExists = await page.evaluate(() => {
-        return !!document.querySelector('canvas, .simulator-panel, [class*="Simulator"]');
-      });
-      if (!simulatorExists) {
-        throw new Error(`互動實驗模擬器元件未正常掛載！`);
-      }
-      console.log(`   ✓ 互動實驗模擬元件成功掛載且可操作！`);
-
-      // 6. 檢查伴讀原文 Highlight 定位與滾動
-      const anchorEl = await page.$(`#${art.anchorSentenceId}`);
-      if (!anchorEl) {
-        throw new Error(`伴讀原文錨點 #${art.anchorSentenceId} 未在 DOM 中找到！`);
-      }
-      console.log(`   ✓ 錨點句子 #${art.anchorSentenceId} 精確存在於 DOM 結構中！`);
-
-      // 截圖存檔桌面版
-      await page.screenshot({
-        path: path.join(ARTIFACT_DIR, `live-markdown-desktop-${art.slug}.png`),
-        fullPage: false
-      });
-      await desktopContext.close();
-
-      // ─── Mobile 驗收 ───
-      const mobileContext = await browser.newContext({
-        viewport: { width: 390, height: 844 },
-        isMobile: true,
-        hasTouch: true
-      });
-      const mobPage = await mobileContext.newPage();
-      await mobPage.goto(`http://localhost:5173/articles/${art.slug}`, { waitUntil: 'load', timeout: 15000 });
-      await mobPage.waitForTimeout(600);
-
-      // 7. 檢查手機版無水平全頁溢出
-      const hasHorizontalOverflow = await mobPage.evaluate(() => {
-        return document.documentElement.scrollWidth > window.innerWidth;
-      });
-      if (hasHorizontalOverflow) {
-        throw new Error(`手機版版面發生水平溢出 (scrollWidth > innerWidth)！`);
-      }
-      console.log(`   ✓ 手機版排版正常，無全頁水平捲動溢出！`);
-
-      // 截圖存檔手機版
-      await mobPage.screenshot({
-        path: path.join(ARTIFACT_DIR, `live-markdown-mobile-${art.slug}.png`),
-        fullPage: false
-      });
-      await mobileContext.close();
     }
-
-    // ─── 額外驗收：亂流篇的 Blockquote ───
-    console.log(`\n─────────────────────────────────────────────────────────────`);
-    console.log(`📄 額外引用區塊驗收: 《柯爾莫哥洛夫湍流能量串級》 (/articles/turbulence-kolmogorov-cascade)`);
-    console.log(`─────────────────────────────────────────────────────────────`);
-    const qPage = await browser.newPage({ viewport: { width: 1280, height: 900 } });
-    await qPage.goto('http://localhost:5173/articles/turbulence-kolmogorov-cascade', { waitUntil: 'load', timeout: 15000 });
-    await qPage.waitForTimeout(600);
-
-    const bquoteCount = await qPage.$$eval('blockquote', els => els.length);
-    console.log(`   · <blockquote> 元素數量: ${bquoteCount} 個`);
-    if (bquoteCount === 0) {
-      throw new Error(`未找到 <blockquote> 引用區塊！`);
-    }
-    const bquoteText = await qPage.$eval('blockquote', el => el.innerText);
-    console.log(`   · 引用內容: ${bquoteText.split('\n')[0]}`);
-    if (bquoteText.includes('>')) {
-      throw new Error(`引用區塊內部殘留 raw '>' 符號！`);
-    }
-    console.log(`   ✓ 引用區塊 <blockquote> 渲染正常，無 raw '>' 符號！`);
-    await qPage.close();
-
-    console.log('\n================================================================');
-    console.log('🎉 MIRARI Markdown 排版所有檢驗項目全部通過！');
-    console.log('================================================================');
-    process.exit(0);
+    report.status = report.results.some((result) => result.status === 'failed') ? 'failed' : 'passed';
+    if (report.status !== 'passed') process.exitCode = 1;
+    console.log('Markdown browser verification:', report.status, report.results.length, 'pages');
+  } catch (error) {
+    report.error = error.message;
+    console.error('實際瀏覽器驗收未驗證:', error.message);
+    process.exitCode = 1;
   } finally {
-    await browser.close();
+    saveReport();
+    if (browser) await browser.close();
   }
 }
 
-runVerification().catch(err => {
-  console.error('\n❌ 驗收失敗:', err);
-  process.exit(1);
+runVerification().catch((error) => {
+  console.error('Markdown verification failed:', error);
+  process.exitCode = 1;
 });

@@ -28,7 +28,7 @@ tags:
   - "不可逆計算"
 summary: "1867 年，麥克斯韋提出了一個挑戰熱力學第二定律的經典假想幽靈：一個能夠精確觀測每個分子速度的微觀智能，只需無摩擦地開關閘門，便能在不消耗任何功的情況下使系統溫差自發增大。一個多世紀以來，從斯齊拉德、蘭道爾到貝內特，物理學家最終發現：資訊不是虛無的概念，抹除資訊必然伴隨真實的能量耗散。"
 leadParagraph: "熱力學第二定律宣告了宇宙的單向命運：孤立系統的總熵永不自發減少，熱量絕無法自發地從低溫物體流向高溫物體而不引起其他變化。然而，十九世紀最卓越的理論物理學家詹姆斯·克拉克·麥克斯韋（James Clerk Maxwell）卻指出了一道看似無法迴避的漏洞——如果我們引入一個具備微觀認知能力的「智能操作者」，第二定律是否會輕易瓦解？"
-quoteLead: "資訊是物理的（Information is Physical）：獲取分子的速度資訊固然能暫時降低氣體的熱力學熵，但當智能實體有限的記憶體被清空以準備下一輪測量時，蘭道爾極限必然迫使其向環境釋放至少 $k_B T \\ln 2$ 的熱量，將宇宙的總熵增忠實補齊。"
+quoteLead: "資訊是物理的（Information is Physical）：測量讓我們知道分子在哪裡，回饋控制則讓這份資訊化為做功的機會。在經典對稱記憶模型中，將一個等機率的未知位元重置，至少要向溫度為 $T$ 的環境釋放 $k_B T \\ln 2$ 的熱量，完整循環仍須遵守熱力學第二定律。"
 authors:
   - name: "MIRARI 理論物理組"
     role: "撰文"
@@ -41,6 +41,8 @@ references:
     citation: "Bennett, C. H. (1982). \"The thermodynamics of computation—a review.\" International Journal of Theoretical Physics, 21(12), 905-940. doi:10.1007/BF02084158"
   - id: "ref-toyabe-2010"
     citation: "Toyabe, S., Sagawa, T., Ueda, M., Muneyuki, E., & Sano, M. (2010). \"Experimental demonstration of information-to-energy conversion and validation of the generalized Jarzynski equality.\" Nature Physics, 6(12), 988-992. doi:10.1038/nphys1821"
+  - id: "ref-sagawa-ueda-2012"
+    citation: "Sagawa, T., & Ueda, M. (2012). Information Thermodynamics: Maxwell's Demon in Nonequilibrium Dynamics, Sections 2, 3 and 6. https://webspace.maths.qmul.ac.uk/r.klages/smallsys/chapters/sagawa_chapter_rev.pdf"
 interactiveComponent: "MaxwellDemonSimulator"
 narrativeStyle: "thought_experiment"
 interactiveType: "particle_system"
@@ -74,9 +76,13 @@ createdAt: "2026-11-01T19:00:00Z"
 
 為拆解這個悖論，匈牙利物理學家利奧·斯齊拉德（Leo Szilard）於 1929 年提出了著名的單分子熱機模型。斯齊拉德證明，即使箱內只有一顆分子，妖若想抽取熱量並轉化為功，首先必須進行「測量」以確定分子到底位於左側還是右側。
 
-獲取這「左或右」的 1 位元二進位資訊，使妖能夠消除系統位置的不確定性。在等溫膨脹做功 $W = k_B T \ln 2$ 的過程中，氣體熵減少了：
+獲取這「左或右」的 1 位元二進位資訊，使妖能夠消除「分子在哪一半」的不確定性。若以 $X$ 代表左右位置、$M$ 代表無誤的測量紀錄，測量前 $H(X)=\ln 2$，測量後的條件資訊熵 $H(X|M)=0$，這裡以自然對數計量。減少的是給定紀錄後的位置不確定性，並不能直接把它寫成氣體膨脹時的負熵變。
 
-$$\Delta S_{gas} = -k_B \ln 2$$
+接著，妖依測量結果讓活塞朝正確方向移動。單分子氣體從半箱 $V/2$ 可逆等溫膨脹到全箱 $V$，由溫度為 $T$ 的熱浴吸熱，並對外做功 $W_{out}=k_B T\ln 2$。這個膨脹階段的氣體熱力學熵增加：
+
+$$\Delta S_{gas} = k_B \ln\frac{V}{V/2} = +k_B \ln 2$$
+
+同一階段氣體吸收 $Q_{in}=k_B T\ln 2$，熱浴的熵變為 $-k_B\ln 2$，可逆膨脹本身的氣體加熱浴總熵變為零。測量建立的資訊與後續膨脹的熱力學熵變，需要分階段記帳。[斯齊拉德引擎與資訊熱力學](https://webspace.maths.qmul.ac.uk/r.klages/smallsys/chapters/sagawa_chapter_rev.pdf)
 
 早期物理學家（如萊昂·布里淵）曾試圖將代價歸咎於「測量過程」——例如妖必須發射光子照射分子才能看清其位置，而光子的散射與吸收會耗散熱量。但這一解釋在 1970 年代被查爾斯·貝內特（Charles Bennett）推翻：理論上，物理測量可以透過可逆計算的方式進行，能耗在極限下可以趨近於零。
 
@@ -86,14 +92,14 @@ $$\Delta S_{gas} = -k_B \ln 2$$
 
 1961 年，IBM 物理學家羅爾夫·蘭道爾（Rolf Landauer）提出了奠定現代資訊熱力學基石的論斷：「資訊是物理的」（Information is Physical）。任何邏輯上不可逆的操作（例如將記憶體重置為 0），都必然對應著物理相空間體積的壓縮。
 
-設妖的記憶體容量有限。在進行了 $N$ 次分子分類後，妖的記憶庫被填滿。若想讓熱機持續運轉，妖必須將記錄「重置」，以便開始下一輪測量。蘭道爾證明，在環境溫度 $T$ 下，**抹除 1 位元未知資訊，必然要向環境散發至少下列大小的熱量**：
+設妖的記憶體容量有限。在進行了 $N$ 次分子分類後，妖的記憶庫被填滿。若想讓熱機持續運轉，妖必須將記錄「重置」，以便開始下一輪測量。在經典、兩種記憶狀態對稱且等機率的模型中，若不利用額外的相關資訊，在環境溫度 $T$ 下，**將 1 個未知位元抹除為固定狀態，至少須向環境散發下列大小的熱量**：
 
 $$Q_{dissipated} \ge k_B T \ln 2 \approx 2.87 \times 10^{-21}\ \text{J (在室溫 300 K)}$$
 
-相應地，環境中必然產生至少 $\Delta S_{env} \ge +k_B \ln 2$ 的熵增。
+這個抹除階段，記憶的邏輯狀態熵由 $k_B\ln 2$ 降到零，環境的熵至少增加 $\Delta S_{env,erase}\ge +k_B\ln 2$。因此，膨脹時從熱浴取得的做功機會，必須連同讓記憶回到初始狀態的代價一起核算。[貝內特的可逆測量與記憶抹除分析](https://doi.org/10.1007/BF02084158)
 
-當我們將氣體分子與麥克斯韋妖的記憶系統視為一個完整的複合封閉系統時，總熵變為：
+對氣體與記憶都回到初始狀態、兩者相關性也已消除的完整循環，將膨脹及抹除所交換熱量的環境一併納入，總熵變滿足：
 
 $$\Delta S_{total} = \Delta S_{gas} + \Delta S_{demon} + \Delta S_{env} \ge 0$$
 
-麥克斯韋妖並沒有推翻熱力學第二定律。它只不過是將微觀氣體的熱力學熵，暫時轉移並編碼成了自己記憶體中的資訊熵；而當這段資訊最終被抹除回歸虛無時，熱力學定律毫不留情地收回了全部代價。
+麥克斯韋妖並沒有推翻熱力學第二定律。測量先建立位置與記憶的相關性，等溫膨脹再把這份資訊用來取出功，最後還須付出重置記憶的代價。在上述理想循環中，氣體與記憶的總熵變各為零，膨脹造成的熱浴熵減由抹除時的熵增抵銷，完全可逆的極限可達總熵變為零，實際耗散則使總熵增加。

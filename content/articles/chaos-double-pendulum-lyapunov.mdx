@@ -40,6 +40,10 @@ references:
     citation: "Strogatz, S. H. (2018). Nonlinear Dynamics and Chaos: With Applications to Physics, Biology, Chemistry, and Engineering (2nd ed.). CRC Press."
   - id: "ref-levien-1993"
     citation: "Levien, R. B., & Tan, S. M. (1993). \"Double pendulum: An experiment in chaos.\" American Journal of Physics, 61(11), 1038-1044. doi:10.1119/1.17335"
+  - id: "ref-tong-dynamics"
+    citation: "Tong, D. (2015). Classical Dynamics, Section 4.1, An Example: The Pendulum. University of Cambridge. https://www.damtp.cam.ac.uk/user/tong/dynamics/dynhtml/S4.html"
+  - id: "ref-jimenez-garcia-2024"
+    citation: "Jiménez López, J., & García-Garrido, V. J. (2024). Chaos and Regularity in the Double Pendulum with Lagrangian Descriptors. arXiv:2403.07000. https://arxiv.org/abs/2403.07000"
 interactiveComponent: "DoublePendulumSimulator"
 narrativeStyle: "first_principles"
 interactiveType: "phase_space"
@@ -50,7 +54,7 @@ createdAt: "2026-11-01T19:00:00Z"
 
 # 一、從單擺的和諧到雙擺的失序
 
-單擺是古典物理學最優雅的基石之一。當單擺的擺角維持在微小幅度時，回復力與位移呈線性比例，運動方程退化為簡諧震盪，擺動週期僅由擺長與重力加速度決定，與振幅無關。即使考慮大角度擺動，單擺的相空間軌跡依然是封閉且平滑的橢圓形軌道。
+單擺是古典物理學最優雅的基石之一。在小角度簡諧近似下，回復力與位移近似成正比，擺動週期近似只由擺長與重力加速度決定，角度與角動量構成的相平面軌跡近似為橢圓。大角度的非線性往返振盪仍有封閉軌道，但形狀偏離橢圓，週期也隨振幅增大。當能量恰好達到擺錘直立所需的位能時，分界軌道（Separatrix）將往返振盪與連續旋轉分開，理想模型沿這條軌道無限逼近直立位置。再提高能量，擺錘便可持續轉圈，軌道在角度按 $2\pi$ 識別的圓柱相空間上繞行。[單擺相圖教材](https://www.damtp.cam.ac.uk/user/tong/dynamics/dynhtml/S4.html)
 
 然而，一旦我們在第一根擺桿的末端樞紐上，懸掛第二根可自由旋轉的擺桿，這個雙自由度力學系統的相空間維度便立即由二維躍升至四維：
 
@@ -58,7 +62,7 @@ $$(\theta_1, \theta_2, p_{\theta_1}, p_{\theta_2})$$
 
 第二根擺桿的瞬時重力力矩與離心力，會即時反作用於第一根擺桿；同時，第一根擺桿的角加速度又為第二根擺桿提供動態變化的旋轉樞軸。這種雙向反饋摧毀了運動方程的線性疊加性，使拉格朗日運動方程式呈現高度非線性的三角函數耦合。
 
-在低能量狀態下（初始角度極小），系統表現為兩種簡正模（Normal Modes）的平穩疊加；但只要初始釋放角度增大到臨界能量閾值以上，系統便跨過分岔點（Bifurcation Point），規則運動徹底瓦解。
+在低能量、小角度的線性近似下，系統表現為兩種簡正模（Normal Modes）的平穩疊加。隨著能量提高，非線性耦合會使相空間出現渾沌區域，但規則的週期或準週期運動仍可與之共存。同一能量下，不同初始條件也可能落在規則島或渾沌區域。能量、擺長與質量比共同影響這幅地圖，沒有一個普遍適用的單一能量閾值，能讓所有規則運動一夕消失。[雙擺規則與渾沌區域研究](https://arxiv.org/abs/2403.07000)
 
 # 二、親手驗證：相相分離與李雅普諾夫發散
 
