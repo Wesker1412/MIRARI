@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
+import { integrateRatchetStep, MAX_LANGEVIN_STEP, ratchetPowerZW, ratchetTimeStep } from './brownianRatchetPhysics';
 
 type RatchetMode = 'isothermal_equilibrium' | 'atp_driven_flashing' | 'high_load_stall';
 
@@ -11,6 +12,7 @@ export const BrownianRatchetSimulator: React.FC = () => {
 
   // Simulation particle state in Refs for 60fps canvas performance
   const particlePosRef = useRef<number>(0.0); // in nm
+  const lastFinitePositionRef = useRef<number>(0);
   const netVelocityRef = useRef<number>(0.0); // nm/s
   const stepCountRef = useRef<number>(0);
 
@@ -65,6 +67,9 @@ export const BrownianRatchetSimulator: React.FC = () => {
     trajectoryRef.current = [];
     simTimeRef.current = 0;
     particlePosRef.current = 0;
+    lastFinitePositionRef.current = 0;
+    flashPhaseRef.current = 0;
+    lastMetricsUpdateRef.current = 0;
     netVelocityRef.current = 0;
     stepCountRef.current = 0;
     setMetrics({ pos: 0, velocity: 0, steps: 0 });
@@ -80,55 +85,50 @@ export const BrownianRatchetSimulator: React.FC = () => {
   // Main Physics Simulation & Canvas Rendering Loop
   useEffect(() => {
     let animId: number;
-    let lastTime = performance.now();
+    let lastTime: number | null = null;
+    let active = true;
 
     const loop = (time: number) => {
-      const dt = Math.min(0.04, (time - lastTime) / 1000);
-      lastTime = time;
-      simTimeRef.current += dt;
+      if (!active) return;
+      // Establish the baseline from RAF itself. Its first timestamp can precede
+      // performance.now() captured during an effect or a slider-driven restart.
+      const dt = ratchetTimeStep(lastTime, time);
+      if (Number.isFinite(time)) lastTime = time;
 
-      // Update flashing state (ATP cycle)
-      flashPhaseRef.current += dt * atpRate * Math.PI * 2;
-      const isPotentialOn =
-        mode === 'isothermal_equilibrium'
-          ? true
-          : Math.sin(flashPhaseRef.current) > -0.2; // 60% on, 40% off (diffusive relaxation)
+      const kBT = 1.38e-2 * temperature; // pN·nm
+      let newPos = Number.isFinite(particlePosRef.current)
+        ? particlePosRef.current
+        : lastFinitePositionRef.current;
 
-      // Langevin Dynamics: γ * dx/dt = - dU/dx - F_load + ξ(t)
-      // Diffusion coefficient D = k_B * T / γ
-      const kB = 1.38e-2; // in pN * nm / K
-      const kBT = kB * temperature; // ~4.14 pN * nm at 300K
-      const gamma = 0.05; // effective friction pN * s / nm
-
-      // Thermal Gaussian noise: <ξ(t) ξ(t')> = 2 * γ * k_B * T * δ(t - t')
-      const noiseAmp = Math.sqrt((2 * kBT * gamma) / dt);
-      const u1 = Math.random() || 1e-6;
-      const u2 = Math.random() || 1e-6;
-      const gaussianNoise = Math.sqrt(-2 * Math.log(u1)) * Math.cos(2 * Math.PI * u2);
-      const thermalForce = gaussianNoise * noiseAmp;
-
-      // Force from asymmetric ratchet potential U(x)
-      let potentialForce = 0;
-      const currentPos = particlePosRef.current;
-      if (isPotentialOn) {
-        const localX = ((currentPos % periodL) + periodL) % periodL;
-        const uMax = (potentialDepth * kBT) / periodL; // pN
-        if (localX < periodL * asymmetryAlpha) {
-          potentialForce = -uMax / asymmetryAlpha;
-        } else {
-          potentialForce = uMax / (1 - asymmetryAlpha);
+      if (dt > 0) {
+        const substeps = Math.ceil(dt / MAX_LANGEVIN_STEP);
+        const step = dt / substeps;
+        for (let index = 0; index < substeps; index++) {
+          const potentialOn = mode === 'isothermal_equilibrium' || Math.sin(flashPhaseRef.current) > -0.2;
+          let potentialForce = 0;
+          if (potentialOn) {
+            const localX = ((newPos % periodL) + periodL) % periodL;
+            const uMax = (potentialDepth * kBT) / periodL;
+            potentialForce = localX < periodL * asymmetryAlpha
+              ? -uMax / asymmetryAlpha
+              : uMax / (1 - asymmetryAlpha);
+          }
+          const effectiveLoad = mode === 'isothermal_equilibrium' ? 0 : -loadForce;
+          const u1 = Math.random() || 1e-6;
+          const u2 = Math.random();
+          const gaussian = Math.sqrt(-2 * Math.log(u1)) * Math.cos(2 * Math.PI * u2);
+          const candidate = integrateRatchetStep(newPos, potentialForce + effectiveLoad, kBT, step, gaussian);
+          // An invalid proposal never overwrites the last physical state.
+          // Subsequent valid stochastic steps resume from that position.
+          if (candidate !== null) newPos = candidate;
+          flashPhaseRef.current = (flashPhaseRef.current + step * atpRate * Math.PI * 2) % (Math.PI * 2);
         }
+        simTimeRef.current += dt;
       }
 
-      // External mechanical load resisting forward motion
-      const effectiveLoad = mode === 'isothermal_equilibrium' ? 0 : -loadForce;
-      const totalForce = potentialForce + effectiveLoad + thermalForce;
-      const dx = (totalForce / gamma) * dt;
-
-      // Bounded numerical integration step
-      const clampedDx = Math.max(-15 * dt, Math.min(15 * dt, dx));
-      const newPos = currentPos + clampedDx;
       particlePosRef.current = newPos;
+      lastFinitePositionRef.current = newPos;
+      const isPotentialOn = mode === 'isothermal_equilibrium' || Math.sin(flashPhaseRef.current) > -0.2;
 
       // Record displacement trajectory for graph (every ~0.05s)
       const traj = trajectoryRef.current;
@@ -142,7 +142,8 @@ export const BrownianRatchetSimulator: React.FC = () => {
         const dtSpan = traj[traj.length - 1].t - traj[0].t;
         const dxSpan = traj[traj.length - 1].x - traj[0].x;
         if (dtSpan > 0.1) {
-          netVelocityRef.current = dxSpan / dtSpan;
+          const velocity = dxSpan / dtSpan;
+          if (Number.isFinite(velocity)) netVelocityRef.current = velocity;
         }
       }
 
@@ -209,7 +210,7 @@ export const BrownianRatchetSimulator: React.FC = () => {
           // Draw Asymmetric Potential Energy Curve U(x)
           const potBaseY = h * 0.42;
           const potAmpY = 55;
-          const isFlashingOff = mode === 'atp_driven_flashing' && !isPotentialOn;
+          const isFlashingOff = !isPotentialOn;
 
           ctx.strokeStyle = isFlashingOff ? 'rgba(148, 163, 184, 0.25)' : '#f59e0b';
           ctx.lineWidth = isFlashingOff ? 1.5 : 2.5;
@@ -391,15 +392,17 @@ export const BrownianRatchetSimulator: React.FC = () => {
     };
 
     animId = requestAnimationFrame(loop);
-    return () => cancelAnimationFrame(animId);
+    return () => {
+      active = false;
+      cancelAnimationFrame(animId);
+    };
   }, [mode, temperature, atpRate, loadForce, potentialDepth]);
 
   // Derived metrics
-  const mechanicalPowerAW = useMemo(() => {
-    // P = F_load * velocity (pN * nm/s = 10^-12 N * 10^-9 m/s = 10^-21 W = 10^-3 aW)
-    if (mode === 'isothermal_equilibrium' || metrics.velocity <= 0) return 0.0;
-    return (loadForce * metrics.velocity).toFixed(1);
-  }, [mode, loadForce, metrics.velocity]);
+  const mechanicalPowerZW = ratchetPowerZW(
+    mode === 'isothermal_equilibrium' ? 0 : loadForce,
+    metrics.velocity,
+  ).toFixed(1);
 
   return (
     <div className="my-8 rounded-2xl border border-mirari-line bg-white shadow-sm overflow-hidden font-sans">
@@ -598,9 +601,9 @@ export const BrownianRatchetSimulator: React.FC = () => {
               <span className="text-[10px] font-mono uppercase text-mirari-dim block">微觀輸出機械功率 (P = F·v)</span>
               <div className="flex items-baseline space-x-2 mt-0.5">
                 <span className="font-mono text-xl font-bold text-emerald-700">
-                  {mechanicalPowerAW}
+                  {mechanicalPowerZW}
                 </span>
-                <span className="text-xs font-mono text-mirari-muted">× 10⁻¹⁸ W (aW)</span>
+                <span className="text-xs font-mono text-mirari-muted">× 10⁻²¹ W (zW)</span>
               </div>
             </div>
 
