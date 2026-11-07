@@ -1,0 +1,146 @@
+{
+  "articleId": "art-hawk-dove-ess",
+  "slug": "hawk-dove-evolutionary-stable-strategy",
+  "editorialCategory": "scientific_principles",
+  "version": 1,
+  "creationModel": "gemini-2.5-pro",
+  "editorialPassDate": "2026-11-05T09:10:00+08:00",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-maynard-smith-price-1973",
+        "citation": "Maynard Smith, J., & Price, G. R. (1973). \"The logic of animal conflict.\" Nature, 246(5427), 15-18. doi:10.1038/246015a0.",
+        "doi": "10.1038/246015a0",
+        "peerReviewStatus": "已完成同行評審 (Nature)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "John Maynard Smith",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "經檢索核對作者、刊名、卷期頁碼 246:15-18 與 DOI 10.1038/246015a0；確認論文以個體選擇解釋有限衝突並提出 ESS 概念。"
+        },
+        "verifiedClaims": [
+          "動物衝突中的克制可以由個體選擇演化而來，不需要訴諸物種利益",
+          "演化穩定策略定義為族群普遍採用後無法被少量突變策略入侵的策略"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "天擇作用於個體與基因層級",
+            "鷹鴿博弈在 C > V 時沒有純策略 ESS"
+          ],
+          "empiricalFindings": [
+            "多種動物的爭鬥以儀式化展示為主，升級打鬥比例有限"
+          ],
+          "hypothesesAndModels": [
+            "原論文以電腦模擬比較多種條件策略，鷹鴿二策略表述為後續教科書化簡"
+          ]
+        }
+      },
+      {
+        "id": "ref-taylor-jonker-1978",
+        "citation": "Taylor, P. D., & Jonker, L. B. (1978). \"Evolutionarily stable strategies and game dynamics.\" Mathematical Biosciences, 40(1-2), 145-156. doi:10.1016/0025-5564(78)90077-9.",
+        "doi": "10.1016/0025-5564(78)90077-9",
+        "peerReviewStatus": "已完成同行評審 (Mathematical Biosciences)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Peter D. Taylor",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "經檢索核對 DOI 10.1016/0025-5564(78)90077-9；確認論文以策略比例的連續時間動態連結 ESS。"
+        },
+        "verifiedClaims": [
+          "策略比例成長率正比於該策略收益與族群平均收益之差",
+          "ESS 對應於此動態下的漸近穩定靜止點"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "複製者方程式 dx_i/dt = x_i (f_i - f̄)"
+          ],
+          "empiricalFindings": [
+            "本文不涉及新的野外量測數據"
+          ],
+          "hypothesesAndModels": [
+            "無限大族群、隨機配對、無性繁殖式策略傳遞"
+          ]
+        }
+      },
+      {
+        "id": "ref-maynard-smith-1982",
+        "citation": "Maynard Smith, J. (1982). Evolution and the Theory of Games. Cambridge University Press. doi:10.1017/CBO9780511806292.",
+        "doi": "10.1017/CBO9780511806292",
+        "peerReviewStatus": "學術專書 (Cambridge University Press)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "John Maynard Smith",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核對劍橋大學出版社經典專書第一作者、出版年份與第 2 章鷹鴿博弈（Hawks and Doves）收益矩陣與 ESS 演化穩定條件推導。"
+        },
+        "verifiedClaims": [
+          "鷹鴿博弈收益矩陣與 C > V 時 ESS 鷹派比例為 V/C",
+          "布爾喬亞條件策略在鷹鴿博弈中為 ESS"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "混合策略 ESS 的靜態條件"
+          ],
+          "empiricalFindings": [
+            "斑點木蝶爭奪陽光斑點時先佔者常獲勝的觀察被用來對照布爾喬亞策略"
+          ],
+          "hypothesesAndModels": [
+            "對稱與不對稱競爭的簡化博弈模型"
+          ]
+        }
+      }
+    ],
+    "formulasAndUnits": [
+      {
+        "formula": "\\frac{dp}{dt} = \\frac{1}{2} p (1-p) (V - pC)",
+        "unitConsistency": "p 無因次；V 與 C 同為適存度單位，右側單位為適存度乘以時間倒數尺度，時間取相對單位",
+        "verified": true
+      },
+      {
+        "formula": "f_H - f_D = \\frac{V - pC}{2},\\quad \\bar f^* = \\frac{V}{2}\\left(1 - \\frac{V}{C}\\right)",
+        "unitConsistency": "收益差與平均收益皆為適存度單位，與 V、C 一致",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "二策略鷹鴿博弈的複製者方程式 dp/dt = p(1-p)(V-pC)/2",
+      "numericalMethod": "四階龍格-庫塔法，步長 dt = 0.05，積分至 t = 60，並將 p 限制於 [0,1]",
+      "dynamicBehaviorVerified": "C > V 時七條初始比例不同的軌跡皆收斂至 V/C；V >= C 時收斂至 p = 1；數值終點平均值與理論值顯示於介面供比對",
+      "modelAssumptionsAndLimits": "無限大族群、隨機配對、決定性動態、無空間結構與突變；時間為相對單位，不對應實際世代"
+    },
+    "noFakeCitations": true,
+    "noFictionalReviewers": true
+  },
+  "readability": {
+    "language": "繁體中文",
+    "pedagogyProgression": "儀式化打鬥現象 -> 物種利益解釋的漏洞 -> 鷹鴿思想實驗與收益矩陣 -> 兩個極端都不穩定 -> 複製者動態推導 V/C -> 互動模擬 -> 條件策略與科學邊界",
+    "technicalTermsDemystified": [
+      {
+        "term": "演化穩定策略 (ESS)",
+        "intuitiveExplanation": "大家都這樣做時，任何少數改用別的做法的個體都撈不到更多好處，所以這個做法守得住"
+      },
+      {
+        "term": "複製者動態 (Replicator Dynamics)",
+        "intuitiveExplanation": "收益高於平均的策略在下一代占比變大，收益低於平均的策略占比縮小"
+      },
+      {
+        "term": "適存度 (Fitness)",
+        "intuitiveExplanation": "衡量個體能留下多少後代的尺度，模型中的資源價值與受傷代價都以它計算"
+      }
+    ],
+    "toneReview": "平實清楚，以思想實驗推進，數學只保留推導 V/C 所需的步驟"
+  },
+  "aestheticsAndNarrative": {
+    "avoidFormulaicCliches": "以紅鹿與響尾蛇的克制行為開篇，未使用套話式開場與結尾",
+    "coreQuestion": "在每個個體都只顧自己的前提下，動物打鬥中的克制如何能穩定存在？",
+    "interactiveRole": "HawkDoveReplicatorSimulator 讓讀者調整 V 與 C，看不同初始比例的族群如何收斂到 V/C，並觀察 C < V 時鴿派被淘汰",
+    "narrativeStyle": "thought_experiment",
+    "interactiveType": "replicator_dynamics"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "釐清 ESS 不等於族群最佳結果，明確算出穩定點平均收益低於全員鴿派",
+    "補上 V >= C 的情形，避免讀者誤以為 V/C 在任何參數下都是平衡點",
+    "註明鷹鴿二策略表述為後續化簡，1973 年原論文模擬了多種條件策略"
+  ],
+  "unconfirmedLimits": [
+    "未處理有限族群漂變、空間結構與重複博弈對結果的影響",
+    "野外 V 與 C 難以換算為同一適存度單位，文中物種例子僅作定性對照"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "articleId": "art-bcs-superconductivity",
+  "slug": "bcs-superconductivity-cooper-pairs",
+  "title": "零電阻與完美抗磁：BCS 理論與庫柏對的玻色凝聚",
+  "knowledgePoints": [
+    {
+      "id": "kp-bcs-cooper-instability",
+      "label": "聲子媒介與庫柏對形成",
+      "suggestedQuestion": "帶負電的電子是如何克服庫侖排斥力結成庫柏對的？",
+      "keywords": ["庫柏對", "虛聲子", "晶格畸變", "自旋相反", "費米海不穩定性"],
+      "plainExplanation": "高速電子掠過晶格時吸引帶正電的離子產生滯後形變，留下局部正電荷高密度凹陷；隨後路過的反向自旋電子受到該凹陷吸引，通過交換虛聲子克服了庫侖斥力，結成總動量與自旋皆為零的束縛態庫柏對，表現為複合玻色子。",
+      "anchorSentenceId": "sent-ba225372"
+    },
+    {
+      "id": "kp-bcs-meissner-london",
+      "label": "邁斯納效應與能隙保護",
+      "suggestedQuestion": "超導電流為什麼能永不衰減，且能將磁力線完全排出體外？",
+      "keywords": ["邁斯納效應", "超導能隙", "倫敦穿透深度", "宏觀量子波函數", "零電阻"],
+      "plainExplanation": "千億庫柏對集體凝聚到單一宏觀波函數中，在費米面打開了保護性的超導能隙，微觀晶格熱碰撞無法提供足夠能量撕裂電子對，實現了零電阻；波函數的相位剛性在物體表面激發超導屏蔽電流，使磁場在數十奈米的倫敦深度內指數衰減為零，達成完美抗磁性。",
+      "anchorSentenceId": "sent-32e3815d"
+    },
+    {
+      "id": "kp-bcs-isotope-effect",
+      "label": "同位素效應與理論驗證",
+      "suggestedQuestion": "同位素效應是如何證實晶格振動在超導中扮演關鍵角色的？",
+      "keywords": ["同位素效應", "德拜頻率", "賈埃弗穿隧", "BCS 常數", "諾貝爾獎"],
+      "plainExplanation": "BCS 理論預言超導轉變溫度 Tc 與晶格離子質量 M 滿足負二分之一冪律關係。實驗精確測得水銀和錫的不同同位素 Tc 隨離子質量嚴格按該冪律變化，鐵證了聲子媒介機制的正確性；隨後賈埃弗穿隧實驗直接讀出能隙大小，全面確立了 BCS 理論。",
+      "anchorSentenceId": "sent-d4941baa"
+    }
+  ]
+}

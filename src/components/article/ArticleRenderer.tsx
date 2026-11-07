@@ -181,6 +181,11 @@ export const ArticleRenderer: React.FC<ArticleRendererProps> = ({
                 );
               }
 
+              // Retrieve matching canonical sentences for this paragraph index
+              const matchingSentences = (section.sentences || []).filter(
+                (s: SentenceEvidence) => s.paragraphIndex === pIdx
+              );
+
               // 4. Markdown Table: | Col 1 | Col 2 |
               const rawLines = paraText.split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
               const isTable =
@@ -190,6 +195,8 @@ export const ArticleRenderer: React.FC<ArticleRendererProps> = ({
                 rawLines[1].includes('---');
 
               if (isTable) {
+                const primarySent = matchingSentences[0];
+                const safeBlockId = getSafeSentenceId(primarySent?.sentenceId);
                 const headers = rawLines[0]
                   .split('|')
                   .map((s) => s.trim())
@@ -212,7 +219,7 @@ export const ArticleRenderer: React.FC<ArticleRendererProps> = ({
                     .filter((_, idx, arr) => idx > 0 && idx < arr.length - 1)
                 );
                 return (
-                  <div key={pIdx} className="my-6 overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0">
+                  <div key={pIdx} id={safeBlockId} data-sentence-id={safeBlockId} className="my-6 overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0">
                     <div className="inline-block min-w-full align-middle">
                       <table className="min-w-full text-left text-sm border-collapse border border-mirari-line rounded-lg overflow-hidden">
                         <thead className="bg-mirari-paper-dark border-b border-mirari-line font-serif font-bold text-mirari-ink">
@@ -247,11 +254,6 @@ export const ArticleRenderer: React.FC<ArticleRendererProps> = ({
                 );
               }
 
-              // Retrieve matching canonical sentences for this paragraph index
-              const matchingSentences = (section.sentences || []).filter(
-                (s: SentenceEvidence) => s.paragraphIndex === pIdx
-              );
-
               // 5. Blockquote: Lines starting with >
               const isBlockquote = rawLines.every((l) => l.startsWith('>'));
               if (isBlockquote) {
@@ -281,23 +283,44 @@ export const ArticleRenderer: React.FC<ArticleRendererProps> = ({
                   const level = headingMatch[1].length;
                   const headingTitle = headingMatch[2].trim();
 
+                  // Find if matchingSentences has a sentence that represents this standalone heading
+                  const headingSent = matchingSentences.find((s) => {
+                    if (!s.exactQuote.startsWith('#')) return false;
+                    const afterHeading = s.exactQuote.replace(/^(#{1,6})\s+[^\r\n]*\r?\n?/, '').trim();
+                    return afterHeading.length === 0;
+                  });
+                  const safeHeadingId = headingSent ? getSafeSentenceId(headingSent.sentenceId) : undefined;
+                  const headingHighlight = headingSent ? getHighlightClass(headingSent.sentenceId) : '';
+
                   const renderHeadingElement = () => {
                     if (level === 3) {
                       return (
-                        <h3 className="font-serif text-xl sm:text-2xl font-bold text-mirari-ink tracking-tight mt-8 mb-4 pt-2">
+                        <h3
+                          id={safeHeadingId}
+                          data-sentence-id={safeHeadingId}
+                          className={`font-serif text-xl sm:text-2xl font-bold text-mirari-ink tracking-tight mt-8 mb-4 pt-2 transition-colors duration-300 ${headingHighlight}`}
+                        >
                           {renderInlineContent(headingTitle)}
                         </h3>
                       );
                     }
                     if (level === 4) {
                       return (
-                        <h4 className="font-serif text-lg sm:text-xl font-bold text-mirari-ink tracking-tight mt-6 mb-3">
+                        <h4
+                          id={safeHeadingId}
+                          data-sentence-id={safeHeadingId}
+                          className={`font-serif text-lg sm:text-xl font-bold text-mirari-ink tracking-tight mt-6 mb-3 transition-colors duration-300 ${headingHighlight}`}
+                        >
                           {renderInlineContent(headingTitle)}
                         </h4>
                       );
                     }
                     return (
-                      <h2 className="font-serif text-2xl font-bold text-mirari-ink tracking-tight mt-8 mb-4">
+                      <h2
+                        id={safeHeadingId}
+                        data-sentence-id={safeHeadingId}
+                        className={`font-serif text-2xl font-bold text-mirari-ink tracking-tight mt-8 mb-4 transition-colors duration-300 ${headingHighlight}`}
+                      >
                         {renderInlineContent(headingTitle)}
                       </h2>
                     );

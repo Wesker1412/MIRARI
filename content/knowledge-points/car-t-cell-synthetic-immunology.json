@@ -1,0 +1,31 @@
+{
+  "articleId": "art-car-t-immunology",
+  "slug": "car-t-cell-synthetic-immunology",
+  "title": "重新編程免疫軍團：CAR-T 細胞療法的合成受體與抗原逃逸攻防",
+  "knowledgePoints": [
+    {
+      "id": "kp-cart-receptor-architecture",
+      "label": "CAR 合成受體四模組架構",
+      "suggestedQuestion": "CAR 人造受體是如何讓 T 細胞跳過 MHC 審查識別腫瘤的？",
+      "keywords": ["scFv", "CD3zeta", "共刺激域", "CD28", "4-1BB", "活體藥物"],
+      "plainExplanation": "CAR 將識別腫瘤天然立體抗原（如 CD19）的單鏈抗體 scFv，透過鉸鏈與跨膜區，直接連結到細胞內的 CD3 激發鏈與 CD28 或 4-1BB 共刺激訊號域。這打破了天然 TCR 依賴 MHC 呈遞的限制，直接將抗體的超高親和力與 T 細胞的殺傷擴增力融為一體。",
+      "anchorSentenceId": "sent-27b92f71"
+    },
+    {
+      "id": "kp-cart-synapse-proofreading",
+      "label": "合成免疫突觸與殺傷動力學",
+      "suggestedQuestion": "CAR-T 細胞是如何精確在腫瘤細胞膜上打洞溶解癌細胞的？",
+      "keywords": ["動能校對", "免疫突觸", "穿孔素", "顆粒酶", "細胞凋亡"],
+      "plainExplanation": "CAR-T 與腫瘤接觸形成合成免疫突觸，若抗原結合時間超過動能校對閾值，細胞骨架便極化釋放穿孔素，在癌細胞膜上打出 10 奈米的穿透孔洞，隨後顆粒酶 B 注入切割級聯蛋白，在短短數十分鐘內誘發癌細胞程序性崩潰凋亡。",
+      "anchorSentenceId": "sent-f124705e"
+    },
+    {
+      "id": "kp-cart-clinical-whitehead",
+      "label": "臨床完全緩解與細胞因子風暴",
+      "suggestedQuestion": "艾蜜莉·懷海德案例如何開啟細胞活體藥物的醫學時代？",
+      "keywords": ["艾蜜莉懷海德", "完全緩解", "細胞因子釋放風暴", "CRS", "托珠單抗"],
+      "plainExplanation": "2012 年晚期白血病兒童艾蜜莉接受首例兒童 CAR-T 治療，經歷劇烈的細胞因子釋放風暴後，以 IL-6 拮抗劑成功控制，數百億癌細胞被徹底掃清並達成完全緩解。她體內的 CAR-T 記憶細胞持續存活超過十年，成為腫瘤細胞療法史上的代表性里程碑。",
+      "anchorSentenceId": "sent-c803a0a4"
+    }
+  ]
+}

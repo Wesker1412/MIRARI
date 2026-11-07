@@ -1,0 +1,138 @@
+{
+  "articleId": "art-bcs-superconductivity",
+  "slug": "bcs-superconductivity-cooper-pairs",
+  "editorialCategory": "scientific_principles",
+  "version": 1,
+  "creationModel": "gemini-2.5-pro",
+  "editorialPassDate": "2026-11-07T09:15:00+08:00",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-bcs-1957",
+        "citation": "Bardeen, J., Cooper, L. N., & Schrieffer, J. R. (1957). \"Theory of Superconductivity.\" Physical Review, 108(5), 1175-1204. doi:10.1103/PhysRev.108.1175.",
+        "peerReviewStatus": "經典微觀凝聚態物理奠基論文 (Physical Review)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "John Bardeen",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實巴丁、庫柏與施里弗 1957 年 BCS 論文，確認基態變分波函數、能隙方程與 2Δ(0)/k_B T_c ≈ 3.528 普適常數之推導嚴密無誤。"
+        },
+        "verifiedClaims": [
+          "在弱耦合極限下，由聲子媒介引起的電子間淨吸引力使費米面附近的庫柏對發生玻色凝聚",
+          "費米面處打開有限能隙 2Δ(T)，保護集體超流態免於低能雜質彈性碰撞散射，從而實現絕對零電阻"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "金屬導電中的德魯德模型與布洛赫波理論",
+            "電子服從費米-狄拉克統計與包立不相容原理"
+          ],
+          "empiricalFindings": [
+            "賈埃弗穿隧實驗直接在能譜上測得能隙 2Δ，且同位素效應指數接近 0.5"
+          ],
+          "hypothesesAndModels": [
+            "將電子-聲子相互作用簡化為德拜頻率截斷常數吸引勢 V 的 BCS 簡化哈密頓量模型"
+          ]
+        }
+      },
+      {
+        "id": "ref-cooper-1956",
+        "citation": "Cooper, L. N. (1956). \"Bound Electron Pairs in a Degenerate Fermi Gas.\" Physical Review, 104(4), 1189-1190. doi:10.1103/PhysRev.104.1189.",
+        "peerReviewStatus": "已完成同行評審 (Physical Review)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Leon N. Cooper",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實庫柏 1956 年論文中費米海中二體束縛態推導，確認在任意微弱吸引勢下束縛能必存在且呈非微擾奇異性 exp(-2/N(0)V)。"
+        },
+        "verifiedClaims": [
+          "在簡併費米氣體中，即使吸引勢任意微小，動量與自旋相反的一對電子亦必然形成束縛態",
+          "束縛態能量低於未配對電子態能量，證明常規費米液體基態在吸引相互作用下必然失穩"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "真空中的兩體薛丁格方程要求吸引勢阱達到一定深度才能形成束縛態",
+            "金屬內部的費米面因包立原理封閉了內部態，實質上將散射相空間限制在二維殼層"
+          ],
+          "empiricalFindings": [
+            "常規低溫金屬在接近絕對零度時比熱呈現指數衰減特徵"
+          ],
+          "hypothesesAndModels": [
+            "忽略多體碰撞的二體薛丁格方程簡化模型"
+          ]
+        }
+      },
+      {
+        "id": "ref-meissner-1933",
+        "citation": "Meissner, W., & Ochsenfeld, R. (1933). \"Ein neuer Effekt bei Eintritt der Supraleitfähigkeit.\" Naturwissenschaften, 21(44), 787-788. doi:10.1007/BF01504252.",
+        "peerReviewStatus": "經典實驗物理奠基論文 (Naturwissenschaften)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Walther Meissner",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實邁斯納與奧克森菲爾德 1933 年論文中金屬錫與鉛在磁場冷卻下主動排出磁力線之實測記錄，確認 B=0 係平衡態相變特性。"
+        },
+        "verifiedClaims": [
+          "超導體在轉變為超導態時主動將內部磁感應強度驅逐為零，展現完美抗磁性",
+          "超導態為宏觀熱力學平衡相，而非單純的無限導電率極限"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "馬克士威方程組中理想導體的感應渦電流特性"
+          ],
+          "empiricalFindings": [
+            "冷卻進入超導態的金屬圓柱周圍磁場強度翻倍，內部磁感應強度嚴格為零"
+          ],
+          "hypothesesAndModels": [
+            "倫敦兄弟提出倫敦穿透深度 λ_L 描述磁場在表面的指數衰減模型"
+          ]
+        }
+      }
+    ],
+    "formulasAndUnits": [
+      {
+        "formula": "\\Delta(0) = 1.764 k_B T_c, \\quad \\Delta(T) \\approx 1.74 \\Delta(0) \\sqrt{1 - \\frac{T}{T_c}}",
+        "unitConsistency": "波茲曼常數 k_B 單位 [J/K]，臨界溫度 T_c 單位 [K]，兩者乘積為能量 [J 或 eV]，能隙 Δ 因次為能量，溫度比例 T/T_c 為純數，平方根無因次，因次嚴格自洽",
+        "verified": true
+      },
+      {
+        "formula": "\\nabla^2 \\mathbf{B} = \\frac{1}{\\lambda_L^2} \\mathbf{B}, \\quad \\lambda_L = \\sqrt{\\frac{m}{\\mu_0 n_s e^2}}",
+        "unitConsistency": "質量 m [kg]，磁導率 μ₀ [N/A² = kg·m/(A²·s²)]，電子密度 n_s [m⁻³]，電荷 e [C = A·s]，代入後 λ_L 因次為 [m]，拉普拉斯算子因次為 [m⁻²]，方程兩側因次一致",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "BCS 自洽平均場能隙方程 Δ(T)，倫敦穿透深度微分方程 ∇²B = B/λ_L² 與臨界磁場拋物線經驗方程",
+      "numericalMethod": "能隙隱式非線性方程二分法數值解，配合二維網格磁力線偏折向量場求解，時間步長 dt = 0.02 s",
+      "dynamicBehaviorVerified": "隨溫度 T 逼近 T_c，能隙 Δ(T) 依照 (1 - T/T_c)^0.5 柔順關閉至零；外加磁場加載時，超導體內部磁感應強度在數十奈米內衰減至零，呈現完美邁斯納態",
+      "modelAssumptionsAndLimits": "模型限於第一類常規 s 波超導體與弱耦合 BCS 極限，未納入第二類超導體阿布里科索夫渦旋網格與強關聯 d 波對稱性"
+    },
+    "noFakeCitations": true,
+    "noFictionalReviewers": true
+  },
+  "readability": {
+    "language": "繁體中文",
+    "pedagogyProgression": "超導閉合圓環百年不衰電流直覺 -> 理想導體 vs 邁斯納效應的本質區別 -> 庫柏對與聲子微觀紅娘機制 -> 能隙開閉與抗磁排斥互動實驗 -> BCS 宏觀量子波函數 -> 同位素效應與能隙穿隧測量 -> 麥克米蘭極限與高溫超導邊界",
+    "technicalTermsDemystified": [
+      {
+        "term": "庫柏對 (Cooper Pairs)",
+        "intuitiveExplanation": "電子藉由晶格點陣的微弱形變（聲子）作為媒介，在費米海表面跨越排斥障礙結伴而成的電子雙人組"
+      },
+      {
+        "term": "邁斯納效應 (Meissner Effect)",
+        "intuitiveExplanation": "超導體主動把體內所有磁力線徹底驅逐出境的完美抗磁現象，並不是單純的零電阻，而是一種全新的巨觀量子平衡相"
+      },
+      {
+        "term": "超導能隙 (Energy Gap)",
+        "intuitiveExplanation": "凝聚態電子給自己築起的能量防禦護城河，外界雜質若無法提供足夠的能量打碎庫柏對，就無法阻擋電子奔湧"
+      }
+    ]
+  },
+  "aestheticsAndNarrative": {
+    "coreQuestion": "相互排斥的電子究竟如何克服靜電斥力結伴成對，創造出永不衰減的宏觀超流？",
+    "interactiveRole": "SuperconductivityBcsSimulator 讓讀者親自調節溫度與外加磁場，動態觀察費米面上超導能隙的開合，以及超導體內部如何將磁力線沿著倫敦穿透深度徹底推擠出體外"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "特別澄清了『理想導體』與『超導體』在磁通量行為上的熱力學本質差異，強調邁斯納態是主動熱力學相變而非感應電流凍結",
+    "修正了過往將庫柏對吸引力簡化為直接引力的誤導，精確闡釋帶正電離子晶格滯後響應交換虛聲子的物理實質"
+  ],
+  "unconfirmedLimits": [
+    "BCS 理論的麥克米蘭極限（約 30-40 K）無法解釋銅氧化物與鐵基高溫超導體的配對機制，後者涉及強關聯電子與反鐵磁自旋漲落"
+  ]
+}

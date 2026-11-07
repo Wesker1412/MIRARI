@@ -1,0 +1,137 @@
+{
+  "articleId": "art-car-t-immunology",
+  "slug": "car-t-cell-synthetic-immunology",
+  "editorialCategory": "journal_interpretation",
+  "version": 1,
+  "creationModel": "gemini-2.5-pro",
+  "editorialPassDate": "2026-11-07T09:10:00+08:00",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-june-2018-science",
+        "citation": "June, C. H., O'Connor, R. S., Kawalekar, O. U., Ghassemi, S., & Milone, M. C. (2018). \"CAR T cell immunotherapy for human cancer.\" Science, 359(6382), 1361-1365. doi:10.1126/science.aar6711.",
+        "peerReviewStatus": "已完成同行評審 (Science 綜述與機制研究)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Carl H. June",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實卡爾·瓊 2018 年 Science 論文中嵌合抗原受體四代分子設計演進，確認 CD28 糖解代激情與 4-1BB 粒線體氧化代持久性之代謝分歧機制無誤。"
+        },
+        "verifiedClaims": [
+          "CAR 分子將單株抗體 scFv 胞外靶向性與胞內 CD3ζ 及共刺激域串聯，實現非 MHC 限制性之高親和力識別",
+          "4-1BB 共刺激域顯著增強 CAR-T 細胞在體內的持久存活能力與記憶幹細胞分化表型"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "常規 T 細胞 TCR 依賴 MHC-I 呈遞胜肽，而多數腫瘤通過關閉 MHC 實現免疫逃逸",
+            "CD3ζ 鏈包含 3 個 ITAM 基序，磷酸化後啟動下游酪胺酸激酶瀑布"
+          ],
+          "empiricalFindings": [
+            "抗 CD19 CAR-T 在難治復發型急淋白血病患者中達到高達 80-90% 的客觀緩解率"
+          ],
+          "hypothesesAndModels": [
+            "合成免疫突觸形成中的動能校對（Kinetic Proofreading）與機械張力活化模型"
+          ]
+        }
+      },
+      {
+        "id": "ref-lim-june-2017-cell",
+        "citation": "Lim, W. A., & June, C. H. (2017). \"The Principles of Engineering Immune Cells to Treat Cancer.\" Cell, 168(4), 724-740. doi:10.1016/j.cell.2017.01.016.",
+        "peerReviewStatus": "已完成同行評審 (Cell 前沿原理探討)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Wendell A. Lim",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實合成免疫學工程原理，確認合成受體親和力閾值、突觸間隙距離（15 nm 排除 CD45 磷酸酶）及抗原密度識別動力學無誤。"
+        },
+        "verifiedClaims": [
+          "免疫細胞可視為具有自主感測、運算與執行能力的活體工程平台",
+          "合成突觸藉由物理擠出長胞外域磷酸酶 CD45，打破激酶-磷酸酶平衡從而觸發不可逆活化"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "動能分離模型（Kinetic Segregation Model）解釋受體聚集與訊號啟動機制"
+          ],
+          "empiricalFindings": [
+            "腫瘤表面抗原密度低於每細胞數百分子時，常規 CAR-T 無法形成穩定突觸導致殺傷衰竭"
+          ],
+          "hypothesesAndModels": [
+            "多輸入邏輯門（AND gate, NOT gate）在合成細胞受體中的電路工程預測"
+          ]
+        }
+      },
+      {
+        "id": "ref-maude-2014-nejm",
+        "citation": "Maude, S. L., Frey, N., Shaw, P. A., et al. (2014). \"Chimeric antigen receptor T cells for sustained remissions in leukemia.\" The New England Journal of Medicine, 371(16), 1507-1517. doi:10.1056/NEJMoa1407222.",
+        "peerReviewStatus": "已完成同行評審 (The New England Journal of Medicine)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Shannon L. Maude",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實賓夕法尼亞大學臨床試驗 30 例復發難治急淋白血病數據，確認 27 例（90%）達成骨髓完全緩解，並記錄細胞因子釋放風暴（CRS）與托珠單抗治療。"
+        },
+        "verifiedClaims": [
+          "CTL019 在臨床難治性白血病兒童及成人中達成 90% 完全緩解率",
+          "重度細胞因子釋放風暴可藉由 IL-6 受體拮抗劑托珠單抗迅速逆轉且不減損抗腫瘤療效"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "CAR-T 在體內遭遇靶抗原後迅速擴增數萬倍，並大量釋放干擾素-γ、IL-6 與 TNF-α"
+          ],
+          "empiricalFindings": [
+            "30 名患者中有 27 名達成完全骨髓細胞學緩解，追蹤期長達兩年無病生存"
+          ],
+          "hypothesesAndModels": [
+            "CAR-T 細胞在骨髓與周邊血中的兩相指數衰減與長期記憶維持動力學模型"
+          ]
+        }
+      }
+    ],
+    "formulasAndUnits": [
+      {
+        "formula": "P_{\\text{act}} = \\exp\\left(-\\frac{\\tau_{\\text{proof}}}{\\tau_{\\text{bond}}}\\right)",
+        "unitConsistency": "結合壽命 τ_{bond} 與生化校對閾值 τ_{proof} 因次皆為時間 [s]，兩者比值為純數，指數冪無因次，活化機率 P_{act} 介於 0 到 1 之間，因次完全自洽",
+        "verified": true
+      },
+      {
+        "formula": "\\frac{d[T]}{dt} = r_T [T] \\frac{[C]}{K_m + [C]} - d_T [T], \\quad \\frac{d[C]}{dt} = r_C [C] - k_{\\text{kill}} [T] [C]",
+        "unitConsistency": "細胞濃度 [T], [C] 單位為 [cells/μL]，增殖率 r 與凋亡率 d 單位為 [s⁻¹]，殺傷常數 k_{kill} 單位為 [μL/(cells·s)]，兩側因次皆為 [cells/(μL·s)]，嚴格自洽",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "捕食者-獵物修正動力學微分方程組，包含共刺激域分歧係數、抗原密度閾值活化項與耗竭累積項",
+      "numericalMethod": "四階龍格-庫塔法 (RK4)，時間步長 dt = 0.05 h，動態雙相細胞密度與微觀二維網格狩獵視覺化",
+      "dynamicBehaviorVerified": "CD28 模型展現早期暴發性殺傷伴隨較快耗竭；4-1BB 展現平緩但持久的長效壓制；抗原密度過低時模擬器精確重現抗原逃逸現象",
+      "modelAssumptionsAndLimits": "未考慮實體瘤微環境中的細胞外基質物理穿透阻力與 Treg 細胞主動免疫抑制因子"
+    },
+    "noFakeCitations": true,
+    "noFictionalReviewers": true
+  },
+  "readability": {
+    "language": "繁體中文",
+    "pedagogyProgression": "癌細胞 MHC 隱身斗篷引導 -> CAR 人造分子的四重工程模組架構 -> CD28 與 4-1BB 兩種共刺激域的代謝分歧 -> 微觀細胞狩獵互動實驗 -> 動能校對物理機制 -> Emily Whitehead 臨床實證 -> 抗原逃逸與實體瘤瓶頸",
+    "technicalTermsDemystified": [
+      {
+        "term": "嵌合抗原受體 (CAR)",
+        "intuitiveExplanation": "將抗體的『鷹眼天線』與 T 細胞的『戰鬥開關』強行拼裝成的人造受體，讓免疫細胞無需中介呈遞就能直接咬住癌細胞"
+      },
+      {
+        "term": "共刺激結構域 (Co-stimulatory Domain)",
+        "intuitiveExplanation": "CAR-T 的後燃推力器，CD28 像超級跑車起步暴烈但耗油快，4-1BB 像耐力混合動力，讓細胞能在體內巡邏數年之久"
+      },
+      {
+        "term": "抗原逃逸 (Antigen Escape)",
+        "intuitiveExplanation": "癌細胞在 CAR-T 的追殺下，透過突變徹底扔掉或減少表面標靶（如 CD19），讓 CAR-T 再次陷入失明的防禦反撲"
+      }
+    ]
+  },
+  "aestheticsAndNarrative": {
+    "coreQuestion": "為什麼癌細胞能在免疫系統的眼皮底下拉起隱身斗篷，而人造的活體細胞又如何撕破這層偽裝？",
+    "interactiveRole": "CarTCellKineticsSimulator 讓讀者化身合成生物學家，自由調控共刺激域、抗原密度與效靶比，親歷細胞狩獵、完全緩解與抗原逃逸的微觀攻防"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "修正臨床部分對 CRS（細胞因子風暴）過於恐慌或過於輕描淡寫的兩極化傾向，客觀解析其作為大量細胞活化副產物的病理機制與托珠單抗的精確壓制",
+    "在科學邊界章節補充說明實體瘤物理基質屏障與高壓間質流，避免給予讀者 CAR-T 立即能治癒所有癌症的過度樂觀錯覺"
+  ],
+  "unconfirmedLimits": [
+    "雙靶向（如 CD19/CD22）與通用型（Allogeneic off-the-shelf）CAR-T 的臨床隨機雙盲對照試驗仍在進行中，其長期移植物抗宿主病（GvHD）控制率仍待更長時間驗證"
+  ]
+}

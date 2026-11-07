@@ -1,0 +1,31 @@
+{
+  "articleId": "art-hawk-dove-ess",
+  "slug": "hawk-dove-evolutionary-stable-strategy",
+  "title": "演化穩定策略與鷹鴿博弈：為什麼動物打鬥大多點到為止？",
+  "knowledgePoints": [
+    {
+      "id": "kp-hawkdove-ess-definition",
+      "label": "演化穩定策略",
+      "suggestedQuestion": "什麼是演化穩定策略？它和對族群最好的策略有什麼不同？",
+      "keywords": ["演化穩定策略", "ESS", "入侵", "突變", "梅納德·史密斯", "普萊斯"],
+      "plainExplanation": "演化穩定策略是指當整個族群都採用它時，少量出現的其他策略都拿不到更高收益，因此無法擴散入侵。它只要求在天擇下守得住，不保證族群整體收益最高。",
+      "anchorSentenceId": "sent-a30d57b8"
+    },
+    {
+      "id": "kp-hawkdove-replicator-equilibrium",
+      "label": "複製者動態與 V/C",
+      "suggestedQuestion": "為什麼鷹鴿博弈中鷹派比例會收斂到 V/C？",
+      "keywords": ["複製者動態", "V/C", "靜止點", "鷹派比例", "泰勒", "容克"],
+      "plainExplanation": "複製者方程式 dp/dt = p(1-p)(V-pC)/2 說明：鷹派比例低於 V/C 時鷹派收益較高而增加，高於 V/C 時鴿派收益較高而使鷹派減少，所以只要鷹鴿並存，族群就會被拉回 V/C。",
+      "anchorSentenceId": "sent-75029bd8"
+    },
+    {
+      "id": "kp-hawkdove-individual-vs-group",
+      "label": "個體利益與群體收益",
+      "suggestedQuestion": "為什麼演化穩定的鷹鴿混合族群，平均收益反而比全員鴿派低？",
+      "keywords": ["群體選擇", "平均收益", "納許均衡", "克制", "個體選擇"],
+      "plainExplanation": "在受傷代價高於資源價值時，穩定點的族群平均收益是 V/2 乘以 (1 - V/C)，低於全員鴿派的 V/2。天擇找到的是沒有個體想單方面偏離的平衡，而不是對大家最有利的安排。",
+      "anchorSentenceId": "sent-8cf3f2e7"
+    }
+  ]
+}

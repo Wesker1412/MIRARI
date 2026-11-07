@@ -1,0 +1,31 @@
+{
+  "articleId": "art-coriolis-geostrophic",
+  "slug": "coriolis-effect-geostrophic-balance",
+  "title": "旋轉星球的隱形偏折：科氏力、地轉平衡與大氣急流",
+  "knowledgePoints": [
+    {
+      "id": "kp-coriolis-force-acceleration",
+      "label": "科氏力幾何本質",
+      "suggestedQuestion": "為什麼科氏力永遠垂直於運動方向且不做功？",
+      "keywords": ["科氏力", "旋轉參考系", "慣性力", "叉積", "不作功", "偏轉"],
+      "plainExplanation": "科氏力並非真實的物理推力，而是物體在旋轉木馬般的非慣性座標系中運動時產生的幾何視差。因為加速度數學形式為負兩倍角速度與速度向量的叉積，其方向永遠垂直於物體的速度向量，所以它只能強行改變運動方向，完全不能改變運動速率，在物理上做功永遠為零。",
+      "anchorSentenceId": "sent-26c43c9d"
+    },
+    {
+      "id": "kp-coriolis-geostrophic-balance",
+      "label": "地轉平衡與白貝羅定律",
+      "suggestedQuestion": "高空氣流為什麼會沿著等壓線平行吹拂而不是吹向低壓？",
+      "keywords": ["地轉平衡", "白貝羅定律", "氣壓梯度力", "平行等壓線", "高空急流"],
+      "plainExplanation": "在沒有地面摩擦的高空，空氣最初在氣壓差推動下朝向低壓加速；但隨著風速增加，向右偏轉的科氏力同步增強，直到科氏力與氣壓梯度力大小相等、方向完全相反達成平衡。此時淨合力為零，風便不再流向低壓，而是轉為嚴格平行於等壓線吹拂。",
+      "anchorSentenceId": "sent-a35d608c"
+    },
+    {
+      "id": "kp-coriolis-rossby-scale",
+      "label": "羅斯貝數與適用尺度",
+      "suggestedQuestion": "為什麼洗手槽旋渦的方向不受地球自轉科氏力的影響？",
+      "keywords": ["羅斯貝數", "尺度效應", "水槽旋渦", "大氣尺度", "颱風"],
+      "plainExplanation": "科氏力是否主導取決於無因次羅斯貝數 Ro。在只有一公尺大小的水槽或馬桶中，水流的慣性力是微弱科氏力的一萬倍以上，旋渦方向由水龍頭衝水幾何形狀決定；只有在超過數百公里的宏觀大氣與洋流中，羅斯貝數遠小於一，地球自轉的偏折力才會發揮主導作用。",
+      "anchorSentenceId": "sent-c2ac8388"
+    }
+  ]
+}

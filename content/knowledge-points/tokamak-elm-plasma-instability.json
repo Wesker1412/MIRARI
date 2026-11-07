@@ -1,0 +1,31 @@
+{
+  "articleId": "art-tokamak-elm-instability",
+  "slug": "tokamak-elm-plasma-instability",
+  "title": "托卡馬克邊界局部模（ELMs）",
+  "knowledgePoints": [
+    {
+      "id": "kp-elm-pedestal-cycle",
+      "label": "H 模台基與 ELM 循環",
+      "suggestedQuestion": "H 模的台基為什麼會週期性地崩塌？",
+      "keywords": ["H 模", "台基", "ELM", "輸運障壁", "週期性崩塌"],
+      "plainExplanation": "加熱功率超過門檻後，電漿邊緣幾公分內的紊流被壓住，形成一道又陡又高的台基，核心性能跟著提升。但台基越堆越陡，到某個瞬間就像堤防潰口一樣突然爆發，數百微秒內把一部分儲能甩到器壁上，然後重新堆高，週而復始，這就是邊界局部模。",
+      "anchorSentenceId": "sent-1f0b309c"
+    },
+    {
+      "id": "kp-elm-peeling-ballooning",
+      "label": "剝離-氣球模穩定邊界",
+      "suggestedQuestion": "壓力梯度和邊緣電流是怎麼一起把台基撕開的？",
+      "keywords": ["剝離模", "氣球模", "自舉電流", "壓力梯度", "穩定邊界"],
+      "plainExplanation": "台基有兩股驅動力：陡峭的壓力梯度會在環外側像吹氣球一樣鼓出去（氣球模），而壓力梯度自發產生的自舉電流會把邊界表面剝開（剝離模）。兩者一起上升，狀態點最後撞上耦合的穩定邊界，台基就被撕開。",
+      "anchorSentenceId": "sent-a3470919"
+    },
+    {
+      "id": "kp-elm-rmp-suppression",
+      "label": "共振磁擾動抑制 ELM",
+      "suggestedQuestion": "為什麼加一點非軸對稱磁擾動就能讓大型 ELM 消失？",
+      "keywords": ["RMP", "共振磁擾動", "DIII-D", "ITER", "ELM 抑制"],
+      "plainExplanation": "外加的小幅度共振磁擾動讓邊緣多了一個持續的洩漏管道，壓力梯度在撞上穩定邊界之前就達到平衡停住，像在水庫加了溢洪道，不再等到潰堤才一次放水。不過它只在特定運轉窗口有效，確切機制仍有爭論。",
+      "anchorSentenceId": "sent-22d0abbd"
+    }
+  ]
+}

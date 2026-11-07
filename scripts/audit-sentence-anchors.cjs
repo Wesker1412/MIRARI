@@ -14,8 +14,9 @@ function normalizeForComparison(text) {
     .replace(/\$[\s\S]*?\$/g, ' ')
     .replace(/\\\[[\s\S]*?\\\]/g, ' ')
     .replace(/\\\([\s\S]*?\\\)/g, ' ')
-    // Remove leading heading line if at start
-    .replace(/^(#{1,6})\s+[^\r\n]*\r?\n?/, '')
+    // Remove leading heading line if followed by body text, or strip heading prefix if standalone
+    .replace(/^(#{1,6})\s+[^\r\n]*\r?\n(?=[\s\S])/g, '')
+    .replace(/^(#{1,6})\s+/g, '')
     // Remove list markers at line start
     .replace(/^(\d+\.|[-*+])\s+/gm, '')
     // Remove blockquote prefix

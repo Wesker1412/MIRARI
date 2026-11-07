@@ -112,6 +112,154 @@
     ]
   },
   {
+    "articleId": "art-atp-synthase-rotary",
+    "slug": "atp-synthase-rotary-catalysis",
+    "title": "生命的質子渦輪：ATP 合成酶的旋轉催化之舞",
+    "knowledgePoints": [
+      {
+        "id": "kp-atp-proton-motive-force",
+        "label": "質子動勢能 (PMF)",
+        "suggestedQuestion": "粒線體如何將電子傳遞鏈的化學能轉化為電壓蓄水池？",
+        "keywords": [
+          "質子動勢能",
+          "化學滲透",
+          "跨膜電位",
+          "pH 梯度",
+          "粒線體內膜"
+        ],
+        "plainExplanation": "呼吸鏈複合體在傳遞電子時充當質子泵，將氫離子強行泵入膜間隙，在僅 5 奈米厚的內膜兩側建立了約 140 到 180 毫伏的跨膜電位與約 1 個單位的 pH 濃度差。兩者合成約 200 毫伏的質子動勢能，形成相當於每公尺四千萬伏特的超高電場蓄能大壩。",
+        "anchorSentenceId": "sent-2591d857"
+      },
+      {
+        "id": "kp-atp-binding-change",
+        "label": "結合改變旋轉催化",
+        "suggestedQuestion": "ATP 合成酶的催化頭如何通過旋轉將 ADP 轉化為 ATP？",
+        "keywords": [
+          "結合改變機制",
+          "博耶",
+          "F1 催化頭",
+          "開放態",
+          "鬆弛態",
+          "緊密態"
+        ],
+        "plainExplanation": "膜內 c 環在質子驅動下旋轉，牽動非對稱的甘瑪中心軸偏心自轉。中心軸如同凸輪般強迫周圍的三個催化亞基依序經歷開放態（釋放 ATP）、鬆弛態（捕獲原料 ADP 和磷酸）與緊密態（機械應力強行縮合脫水合成 ATP），每旋轉一圈精確產出三個 ATP 分子。",
+        "anchorSentenceId": "sent-1110054a"
+      },
+      {
+        "id": "kp-atp-noji-direct-observation",
+        "label": "單分子光學旋轉驗證",
+        "suggestedQuestion": "科學家是如何用顯微鏡親眼看到分子馬達的旋轉的？",
+        "keywords": [
+          "野地博行",
+          "肌動蛋白絲",
+          "螢光顯微鏡",
+          "120度步進",
+          "單分子實驗"
+        ],
+        "plainExplanation": "1997 年日本科學家野地博行將 ATP 合成酶催化頭固定在玻璃上，在露出的旋轉軸末端掛上一根數微米長的螢光肌動蛋白絲作為指針。在顯微鏡下，所有人親眼目睹指針以每秒上百轉的速度、精確以 120 度為單位逆時針步進跳躍，直接證實了分子旋轉假說。",
+        "anchorSentenceId": "sent-b04f970f"
+      }
+    ]
+  },
+  {
+    "articleId": "art-bcs-superconductivity",
+    "slug": "bcs-superconductivity-cooper-pairs",
+    "title": "零電阻與完美抗磁：BCS 理論與庫柏對的玻色凝聚",
+    "knowledgePoints": [
+      {
+        "id": "kp-bcs-cooper-instability",
+        "label": "聲子媒介與庫柏對形成",
+        "suggestedQuestion": "帶負電的電子是如何克服庫侖排斥力結成庫柏對的？",
+        "keywords": [
+          "庫柏對",
+          "虛聲子",
+          "晶格畸變",
+          "自旋相反",
+          "費米海不穩定性"
+        ],
+        "plainExplanation": "高速電子掠過晶格時吸引帶正電的離子產生滯後形變，留下局部正電荷高密度凹陷；隨後路過的反向自旋電子受到該凹陷吸引，通過交換虛聲子克服了庫侖斥力，結成總動量與自旋皆為零的束縛態庫柏對，表現為複合玻色子。",
+        "anchorSentenceId": "sent-ba225372"
+      },
+      {
+        "id": "kp-bcs-meissner-london",
+        "label": "邁斯納效應與能隙保護",
+        "suggestedQuestion": "超導電流為什麼能永不衰減，且能將磁力線完全排出體外？",
+        "keywords": [
+          "邁斯納效應",
+          "超導能隙",
+          "倫敦穿透深度",
+          "宏觀量子波函數",
+          "零電阻"
+        ],
+        "plainExplanation": "千億庫柏對集體凝聚到單一宏觀波函數中，在費米面打開了保護性的超導能隙，微觀晶格熱碰撞無法提供足夠能量撕裂電子對，實現了零電阻；波函數的相位剛性在物體表面激發超導屏蔽電流，使磁場在數十奈米的倫敦深度內指數衰減為零，達成完美抗磁性。",
+        "anchorSentenceId": "sent-32e3815d"
+      },
+      {
+        "id": "kp-bcs-isotope-effect",
+        "label": "同位素效應與理論驗證",
+        "suggestedQuestion": "同位素效應是如何證實晶格振動在超導中扮演關鍵角色的？",
+        "keywords": [
+          "同位素效應",
+          "德拜頻率",
+          "賈埃弗穿隧",
+          "BCS 常數",
+          "諾貝爾獎"
+        ],
+        "plainExplanation": "BCS 理論預言超導轉變溫度 Tc 與晶格離子質量 M 滿足負二分之一冪律關係。實驗精確測得水銀和錫的不同同位素 Tc 隨離子質量嚴格按該冪律變化，鐵證了聲子媒介機制的正確性；隨後賈埃弗穿隧實驗直接讀出能隙大小，全面確立了 BCS 理論。",
+        "anchorSentenceId": "sent-d4941baa"
+      }
+    ]
+  },
+  {
+    "articleId": "art-bell-inequality-entanglement",
+    "slug": "bell-inequality-quantum-entanglement",
+    "title": "超光速幽靈與局域實在論之死：貝爾不等式與量子糾纏檢驗",
+    "knowledgePoints": [
+      {
+        "id": "kp-bell-chsh-inequality",
+        "label": "CHSH 局域實在論極限",
+        "suggestedQuestion": "貝爾與 CHSH 不等式是如何為古典物理劃定界限的？",
+        "keywords": [
+          "CHSH 不等式",
+          "局域實在論",
+          "古典極限",
+          "S<=2",
+          "隱變數"
+        ],
+        "plainExplanation": "在任何遵守愛因斯坦局域實在論（粒子在測量前已有客觀確定值、相互作用不超過光速）的理論中，雙探測器在四種角度下的測量關聯值所構成的 CHSH 參數 S，在數學上絕對不可能大於 2。這是古典世界與隱變數理論不可逾越的絕對防線。",
+        "anchorSentenceId": "sent-7b669981"
+      },
+      {
+        "id": "kp-bell-tsirelson-bound",
+        "label": "量子違背與齊雷爾森界限",
+        "suggestedQuestion": "量子力學預言的 CHSH 關聯最大強度是多少？",
+        "keywords": [
+          "齊雷爾森極限",
+          "2.828",
+          "非局域性",
+          "量子糾纏",
+          "單態光子"
+        ],
+        "plainExplanation": "處於自旋單態的量子糾纏對，其測量關聯期望值服從負餘弦函數。在最佳的齊雷爾森檢偏夾角下，四項關聯值疊加可達到 S = 2√2 ≈ 2.828，以超過 41% 的驚人強度直接突破古典極限 2.0，展現出微觀世界無可辯駁的非局域量子關聯。",
+        "anchorSentenceId": "sent-e512e39c"
+      },
+      {
+        "id": "kp-bell-aspect-experiment",
+        "label": "阿斯佩實驗與光速漏洞封閉",
+        "suggestedQuestion": "1982 年阿斯佩實驗是如何封死定域通訊漏洞的？",
+        "keywords": [
+          "阿斯佩",
+          "通訊漏洞",
+          "高速光學開關",
+          "2022諾貝爾獎",
+          "非局域性證明"
+        ],
+        "plainExplanation": "阿斯佩在糾纏光子已經離開發射源、正在半空中飛行的 40 奈秒極短時間內，利用高速光開關每隔 10 奈秒隨機切換檢偏角度。兩個探測端相隔 12 公尺，即使光速也來不及互相串通。實驗測得 S ≈ 2.70，徹底以實驗否定了定域隱變數理論，獲 2022 年諾貝爾獎。",
+        "anchorSentenceId": "sent-c3fb7b30"
+      }
+    ]
+  },
+  {
     "articleId": "art-bismuth-sulfide-photovoltaics",
     "slug": "bismuth-sulfide-pseudo-direct-recombination",
     "title": "光與電荷的漫長告別：硫化鉍如何以「擬直接能隙」改寫太陽能材料法則？",
@@ -218,6 +366,56 @@
     ]
   },
   {
+    "articleId": "art-car-t-immunology",
+    "slug": "car-t-cell-synthetic-immunology",
+    "title": "重新編程免疫軍團：CAR-T 細胞療法的合成受體與抗原逃逸攻防",
+    "knowledgePoints": [
+      {
+        "id": "kp-cart-receptor-architecture",
+        "label": "CAR 合成受體四模組架構",
+        "suggestedQuestion": "CAR 人造受體是如何讓 T 細胞跳過 MHC 審查識別腫瘤的？",
+        "keywords": [
+          "scFv",
+          "CD3zeta",
+          "共刺激域",
+          "CD28",
+          "4-1BB",
+          "活體藥物"
+        ],
+        "plainExplanation": "CAR 將識別腫瘤天然立體抗原（如 CD19）的單鏈抗體 scFv，透過鉸鏈與跨膜區，直接連結到細胞內的 CD3 激發鏈與 CD28 或 4-1BB 共刺激訊號域。這打破了天然 TCR 依賴 MHC 呈遞的限制，直接將抗體的超高親和力與 T 細胞的殺傷擴增力融為一體。",
+        "anchorSentenceId": "sent-27b92f71"
+      },
+      {
+        "id": "kp-cart-synapse-proofreading",
+        "label": "合成免疫突觸與殺傷動力學",
+        "suggestedQuestion": "CAR-T 細胞是如何精確在腫瘤細胞膜上打洞溶解癌細胞的？",
+        "keywords": [
+          "動能校對",
+          "免疫突觸",
+          "穿孔素",
+          "顆粒酶",
+          "細胞凋亡"
+        ],
+        "plainExplanation": "CAR-T 與腫瘤接觸形成合成免疫突觸，若抗原結合時間超過動能校對閾值，細胞骨架便極化釋放穿孔素，在癌細胞膜上打出 10 奈米的穿透孔洞，隨後顆粒酶 B 注入切割級聯蛋白，在短短數十分鐘內誘發癌細胞程序性崩潰凋亡。",
+        "anchorSentenceId": "sent-f124705e"
+      },
+      {
+        "id": "kp-cart-clinical-whitehead",
+        "label": "臨床完全緩解與細胞因子風暴",
+        "suggestedQuestion": "艾蜜莉·懷海德案例如何開啟細胞活體藥物的醫學時代？",
+        "keywords": [
+          "艾蜜莉懷海德",
+          "完全緩解",
+          "細胞因子釋放風暴",
+          "CRS",
+          "托珠單抗"
+        ],
+        "plainExplanation": "2012 年晚期白血病兒童艾蜜莉接受首例兒童 CAR-T 治療，經歷劇烈的細胞因子釋放風暴後，以 IL-6 拮抗劑成功控制，數百億癌細胞被徹底掃清並達成完全緩解。她體內的 CAR-T 記憶細胞持續存活超過十年，成為腫瘤細胞療法史上的代表性里程碑。",
+        "anchorSentenceId": "sent-c803a0a4"
+      }
+    ]
+  },
+  {
     "articleId": "art-chaos-double-pendulum",
     "slug": "chaos-double-pendulum-lyapunov",
     "title": "渾沌的邊界：雙擺與確定性系統的不可預測性",
@@ -268,6 +466,158 @@
         ],
         "plainExplanation": "雙擺的翻滾不是外來噪聲，它的每一幀運動都嚴格服從完全確定的牛頓力學方程，總機械能分毫不差地守恆。由完全精確、沒有任何隨機項的物理定律，自發誕生出無法長久預測的混沌行為，這正是經典物理學最迷人的哲學意涵。",
         "anchorSentenceId": "sent-df6a59db"
+      }
+    ]
+  },
+  {
+    "articleId": "art-coriolis-geostrophic",
+    "slug": "coriolis-effect-geostrophic-balance",
+    "title": "旋轉星球的隱形偏折：科氏力、地轉平衡與大氣急流",
+    "knowledgePoints": [
+      {
+        "id": "kp-coriolis-force-acceleration",
+        "label": "科氏力幾何本質",
+        "suggestedQuestion": "為什麼科氏力永遠垂直於運動方向且不做功？",
+        "keywords": [
+          "科氏力",
+          "旋轉參考系",
+          "慣性力",
+          "叉積",
+          "不作功",
+          "偏轉"
+        ],
+        "plainExplanation": "科氏力並非真實的物理推力，而是物體在旋轉木馬般的非慣性座標系中運動時產生的幾何視差。因為加速度數學形式為負兩倍角速度與速度向量的叉積，其方向永遠垂直於物體的速度向量，所以它只能強行改變運動方向，完全不能改變運動速率，在物理上做功永遠為零。",
+        "anchorSentenceId": "sent-26c43c9d"
+      },
+      {
+        "id": "kp-coriolis-geostrophic-balance",
+        "label": "地轉平衡與白貝羅定律",
+        "suggestedQuestion": "高空氣流為什麼會沿著等壓線平行吹拂而不是吹向低壓？",
+        "keywords": [
+          "地轉平衡",
+          "白貝羅定律",
+          "氣壓梯度力",
+          "平行等壓線",
+          "高空急流"
+        ],
+        "plainExplanation": "在沒有地面摩擦的高空，空氣最初在氣壓差推動下朝向低壓加速；但隨著風速增加，向右偏轉的科氏力同步增強，直到科氏力與氣壓梯度力大小相等、方向完全相反達成平衡。此時淨合力為零，風便不再流向低壓，而是轉為嚴格平行於等壓線吹拂。",
+        "anchorSentenceId": "sent-a35d608c"
+      },
+      {
+        "id": "kp-coriolis-rossby-scale",
+        "label": "羅斯貝數與適用尺度",
+        "suggestedQuestion": "為什麼洗手槽旋渦的方向不受地球自轉科氏力的影響？",
+        "keywords": [
+          "羅斯貝數",
+          "尺度效應",
+          "水槽旋渦",
+          "大氣尺度",
+          "颱風"
+        ],
+        "plainExplanation": "科氏力是否主導取決於無因次羅斯貝數 Ro。在只有一公尺大小的水槽或馬桶中，水流的慣性力是微弱科氏力的一萬倍以上，旋渦方向由水龍頭衝水幾何形狀決定；只有在超過數百公里的宏觀大氣與洋流中，羅斯貝數遠小於一，地球自轉的偏折力才會發揮主導作用。",
+        "anchorSentenceId": "sent-c2ac8388"
+      }
+    ]
+  },
+  {
+    "articleId": "art-gravitational-waves-kerr",
+    "slug": "gravitational-waves-kerr-black-hole",
+    "title": "穿透事件視界的重力迴響：重力波克爾黑洞無毛定理檢驗",
+    "knowledgePoints": [
+      {
+        "id": "kp-bh-no-hair-theorem",
+        "label": "克爾黑洞無毛定理",
+        "suggestedQuestion": "為什麼無論吞噬了什麼物質，黑洞最終都只剩下質量與自旋？",
+        "keywords": [
+          "無毛定理",
+          "克爾黑洞",
+          "質量",
+          "自旋",
+          "事件視界",
+          "引力坍縮"
+        ],
+        "plainExplanation": "根據廣義相對論，任何複雜物質在引力坍縮穿透視界的過程中，所有關於形狀、成分、磁場與高階多極矩的細節，全部會以重力波的形式被徹底輻射乾淨。最終在真空留下的克爾黑洞是全宇宙最簡約的天體，僅由質量與自旋角動量這兩個參數完全表徵。",
+        "anchorSentenceId": "sent-879b902a"
+      },
+      {
+        "id": "kp-bh-quasi-normal-modes",
+        "label": "準簡正模與時空鈴宕",
+        "suggestedQuestion": "雙黑洞合併後的『鈴宕』重力波是如何產生的？",
+        "keywords": [
+          "鈴宕",
+          "準簡正模",
+          "圖科爾斯基方程",
+          "複數頻率",
+          "阻尼時間"
+        ],
+        "plainExplanation": "兩顆黑洞碰撞合併時，新生黑洞高度扭曲，如同一口被重錘敲響的巨鐘。它通過釋放特定頻率的微擾重力波迅速平復表面褶皺，這段衰減振盪稱為鈴宕。其頻率由實數振盪週期與虛數指數衰減時間組成，能量同時向外宇宙輻射並向視界內部耗散。",
+        "anchorSentenceId": "sent-9b781d3c"
+      },
+      {
+        "id": "kp-bh-gw150914-testing",
+        "label": "黑洞光譜學實測檢驗",
+        "suggestedQuestion": "LIGO 如何利用 GW150914 的餘波獨立驗證廣義相對論？",
+        "keywords": [
+          "GW150914",
+          "黑洞光譜學",
+          "基模",
+          "泛音",
+          "伊西",
+          "獨立解算"
+        ],
+        "plainExplanation": "2019 年物理學家重新分析首個重力波事件 GW150914，在峰值後數毫秒內以高信噪比同時分離出了鈴宕的基模與第一泛音。兩個獨立模式分別反解出的黑洞質量與自旋完全自洽，無毛定理的微擾偏差被嚴格限制在小於 20%，首次完成黑洞光譜學檢驗。",
+        "anchorSentenceId": "sent-0bd6900a"
+      }
+    ]
+  },
+  {
+    "articleId": "art-hawk-dove-ess",
+    "slug": "hawk-dove-evolutionary-stable-strategy",
+    "title": "演化穩定策略與鷹鴿博弈：為什麼動物打鬥大多點到為止？",
+    "knowledgePoints": [
+      {
+        "id": "kp-hawkdove-ess-definition",
+        "label": "演化穩定策略",
+        "suggestedQuestion": "什麼是演化穩定策略？它和對族群最好的策略有什麼不同？",
+        "keywords": [
+          "演化穩定策略",
+          "ESS",
+          "入侵",
+          "突變",
+          "梅納德·史密斯",
+          "普萊斯"
+        ],
+        "plainExplanation": "演化穩定策略是指當整個族群都採用它時，少量出現的其他策略都拿不到更高收益，因此無法擴散入侵。它只要求在天擇下守得住，不保證族群整體收益最高。",
+        "anchorSentenceId": "sent-a30d57b8"
+      },
+      {
+        "id": "kp-hawkdove-replicator-equilibrium",
+        "label": "複製者動態與 V/C",
+        "suggestedQuestion": "為什麼鷹鴿博弈中鷹派比例會收斂到 V/C？",
+        "keywords": [
+          "複製者動態",
+          "V/C",
+          "靜止點",
+          "鷹派比例",
+          "泰勒",
+          "容克"
+        ],
+        "plainExplanation": "複製者方程式 dp/dt = p(1-p)(V-pC)/2 說明：鷹派比例低於 V/C 時鷹派收益較高而增加，高於 V/C 時鴿派收益較高而使鷹派減少，所以只要鷹鴿並存，族群就會被拉回 V/C。",
+        "anchorSentenceId": "sent-75029bd8"
+      },
+      {
+        "id": "kp-hawkdove-individual-vs-group",
+        "label": "個體利益與群體收益",
+        "suggestedQuestion": "為什麼演化穩定的鷹鴿混合族群，平均收益反而比全員鴿派低？",
+        "keywords": [
+          "群體選擇",
+          "平均收益",
+          "納許均衡",
+          "克制",
+          "個體選擇"
+        ],
+        "plainExplanation": "在受傷代價高於資源價值時，穩定點的族群平均收益是 V/2 乘以 (1 - V/C)，低於全員鴿派的 V/2。天擇找到的是沒有個體想單方面偏離的平衡，而不是對大家最有利的安排。",
+        "anchorSentenceId": "sent-8cf3f2e7"
       }
     ]
   },
@@ -596,6 +946,55 @@
     ]
   },
   {
+    "articleId": "art-tokamak-elm-instability",
+    "slug": "tokamak-elm-plasma-instability",
+    "title": "托卡馬克邊界局部模（ELMs）",
+    "knowledgePoints": [
+      {
+        "id": "kp-elm-pedestal-cycle",
+        "label": "H 模台基與 ELM 循環",
+        "suggestedQuestion": "H 模的台基為什麼會週期性地崩塌？",
+        "keywords": [
+          "H 模",
+          "台基",
+          "ELM",
+          "輸運障壁",
+          "週期性崩塌"
+        ],
+        "plainExplanation": "加熱功率超過門檻後，電漿邊緣幾公分內的紊流被壓住，形成一道又陡又高的台基，核心性能跟著提升。但台基越堆越陡，到某個瞬間就像堤防潰口一樣突然爆發，數百微秒內把一部分儲能甩到器壁上，然後重新堆高，週而復始，這就是邊界局部模。",
+        "anchorSentenceId": "sent-1f0b309c"
+      },
+      {
+        "id": "kp-elm-peeling-ballooning",
+        "label": "剝離-氣球模穩定邊界",
+        "suggestedQuestion": "壓力梯度和邊緣電流是怎麼一起把台基撕開的？",
+        "keywords": [
+          "剝離模",
+          "氣球模",
+          "自舉電流",
+          "壓力梯度",
+          "穩定邊界"
+        ],
+        "plainExplanation": "台基有兩股驅動力：陡峭的壓力梯度會在環外側像吹氣球一樣鼓出去（氣球模），而壓力梯度自發產生的自舉電流會把邊界表面剝開（剝離模）。兩者一起上升，狀態點最後撞上耦合的穩定邊界，台基就被撕開。",
+        "anchorSentenceId": "sent-a3470919"
+      },
+      {
+        "id": "kp-elm-rmp-suppression",
+        "label": "共振磁擾動抑制 ELM",
+        "suggestedQuestion": "為什麼加一點非軸對稱磁擾動就能讓大型 ELM 消失？",
+        "keywords": [
+          "RMP",
+          "共振磁擾動",
+          "DIII-D",
+          "ITER",
+          "ELM 抑制"
+        ],
+        "plainExplanation": "外加的小幅度共振磁擾動讓邊緣多了一個持續的洩漏管道，壓力梯度在撞上穩定邊界之前就達到平衡停住，像在水庫加了溢洪道，不再等到潰堤才一次放水。不過它只在特定運轉窗口有效，確切機制仍有爭論。",
+        "anchorSentenceId": "sent-22d0abbd"
+      }
+    ]
+  },
+  {
     "articleId": "art-turbulence-kolmogorov-cascade",
     "slug": "turbulence-kolmogorov-cascade",
     "title": "暴風中的分形旋渦：柯爾莫哥洛夫能譜與湍流的能量串級",
@@ -644,6 +1043,56 @@
         ],
         "plainExplanation": "旋渦不可能無限碎裂下去。當尺度縮小到柯爾莫哥洛夫微尺度時，流體的黏滯摩擦力重新佔據主導，微小旋渦的動能在此尺度被分子黏滯摩擦直接轉化為水或空氣分子的熱運動，這就是湍流能量瀑布的最終終點。",
         "anchorSentenceId": "sent-c76d063b"
+      }
+    ]
+  },
+  {
+    "articleId": "art-turing-reaction-diffusion",
+    "slug": "turing-patterns-reaction-diffusion",
+    "title": "均勻化學湯裡的豹紋：圖靈斑圖如何從無到有地自發湧現？",
+    "knowledgePoints": [
+      {
+        "id": "kp-turing-diffusion-instability",
+        "label": "擴散驅動不穩定",
+        "suggestedQuestion": "擴散不是只會抹平差異嗎？為什麼它反而能製造圖案？",
+        "keywords": [
+          "圖靈不穩定",
+          "擴散",
+          "均勻態",
+          "對稱破缺",
+          "形態發生"
+        ],
+        "plainExplanation": "單一物質擴散只會讓濃度變均勻；但當兩種會互相反應的物質擴散速度差很多時，抹平作用對它們不公平。原本穩定的均勻狀態會因此變得不穩定，隨機的微小起伏被放大成具有固定間距的斑點或條紋。",
+        "anchorSentenceId": "sent-8171a140"
+      },
+      {
+        "id": "kp-turing-activator-inhibitor",
+        "label": "短程活化與長程抑制",
+        "suggestedQuestion": "斑點之間的固定間距是怎麼決定的？",
+        "keywords": [
+          "活化物",
+          "抑制物",
+          "正回饋",
+          "特徵波長",
+          "間距"
+        ],
+        "plainExplanation": "活化物在局部自我放大形成熱點，同時產生擴散較快的抑制物，在熱點周圍築起一圈壓制區。新熱點只能在抑制物濃度降低的更遠處出現，因此熱點之間自然保持一段由反應速率與擴散係數決定的距離。",
+        "anchorSentenceId": "sent-03089198"
+      },
+      {
+        "id": "kp-turing-cima-experiment",
+        "label": "CIMA 反應實證",
+        "suggestedQuestion": "圖靈斑圖第一次在化學實驗中被觀察到是什麼時候？",
+        "keywords": [
+          "CIMA",
+          "Castets",
+          "De Kepper",
+          "凝膠反應器",
+          "澱粉",
+          "1990"
+        ],
+        "plainExplanation": "1990 年 Castets 與 De Kepper 等人在連續補料的凝膠反應器中進行亞氯酸鹽-碘化物-丙二酸反應，澱粉指示劑讓碘物種移動變慢、拉開擴散比，首次拍到穩定靜止、具有固有波長的圖靈斑點。",
+        "anchorSentenceId": "sent-c8cff9db"
       }
     ]
   },

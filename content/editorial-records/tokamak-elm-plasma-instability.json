@@ -1,0 +1,81 @@
+{
+  "articleId": "art-tokamak-elm-instability",
+  "slug": "tokamak-elm-plasma-instability",
+  "editorialCategory": "scientific_principles",
+  "version": 1,
+  "creationModel": "gemini-2.5-pro",
+  "editorialPassDate": "2026-11-05T23:58:00+08:00",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-wagner-1982-prl",
+        "citation": "Wagner, F., et al. (1982). Regime of Improved Confinement and High Beta in Neutral-Beam-Heated Divertor Discharges of the ASDEX Tokamak. Physical Review Letters, 49(19), 1408-1412. doi:10.1103/PhysRevLett.49.1408.",
+        "peerReviewStatus": "已完成同行評審 (Physical Review Letters)",
+        "verifiedClaims": ["ASDEX 於 1982 年在中性束加熱偏濾器放電中發現約束改善的 H 模"],
+        "distinctions": {
+          "establishedKnowledge": ["H 模與邊緣輸運障壁（台基）的存在已在多座托卡馬克重現"],
+          "empiricalFindings": ["H 模放電伴隨週期性邊緣爆發（ELM）"],
+          "hypothesesAndModels": []
+        }
+      },
+      {
+        "id": "ref-snyder-2002-pop",
+        "citation": "Snyder, P. B., et al. (2002). Edge localized modes and the pedestal: A model based on coupled peeling-ballooning modes. Physics of Plasmas, 9(5), 2037-2043. doi:10.1063/1.1449463.",
+        "peerReviewStatus": "已完成同行評審 (Physics of Plasmas)",
+        "verifiedClaims": ["Type-I ELM 觸發可由壓力梯度與邊緣電流耦合之剝離-氣球模穩定邊界描述"],
+        "distinctions": {
+          "establishedKnowledge": ["自舉電流隨壓力梯度增加並在低碰撞率時增強"],
+          "empiricalFindings": ["台基高度測量與剝離-氣球穩定邊界預測大致相符"],
+          "hypothesesAndModels": ["剝離-氣球模型預測觸發時機，不完整預測單次能量損失"]
+        }
+      },
+      {
+        "id": "ref-evans-2004-prl",
+        "citation": "Evans, T. E., et al. (2004). Suppression of Large Edge-Localized Modes in High-Confinement DIII-D Plasmas with a Stochastic Magnetic Boundary. Physical Review Letters, 92(23), 235003. doi:10.1103/PhysRevLett.92.235003.",
+        "peerReviewStatus": "已完成同行評審 (Physical Review Letters)",
+        "verifiedClaims": ["DIII-D 以共振磁擾動抑制大型 ELM"],
+        "distinctions": {
+          "establishedKnowledge": ["RMP 可在特定安全因子窗口內抑制 Type-I ELM"],
+          "empiricalFindings": ["RMP 下台基壓力梯度降低且大型 ELM 消失"],
+          "hypothesesAndModels": ["磁力線隨機化圖像不足以解釋全部觀測，旋轉屏蔽仍在研究"]
+        }
+      }
+    ],
+    "formulasAndUnits": [
+      {
+        "formula": "\\alpha = -\\frac{2\\mu_0 R q^2}{B^2} \\frac{dp}{dr}",
+        "unitConsistency": "μ0 [H/m]、R [m]、B² [T²]、dp/dr [Pa/m]；μ0·R·(dp/dr)/B² 因次為純數，α 無量綱",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "示意性兩變數台基模型：dα/dt = P − Dα，dj/dt = (α·f(ν*) − j)/τ，越過線性剝離-氣球邊界時按比例崩塌",
+      "numericalMethod": "顯式歐拉積分，歸一化時間步長，requestAnimationFrame 動畫",
+      "dynamicBehaviorVerified": "D=0 時呈鋸齒狀週期崩塌且頻率隨功率上升；D 足夠大時穩態 α∞=P/D 落在邊界內，鋸齒消失",
+      "modelAssumptionsAndLimits": "歸一化單位與線性穩定邊界，只呈現定性結構，不含非線性 MHD 崩塌動力學與真實裝置參數"
+    },
+    "noFakeCitations": true,
+    "noFictionalReviewers": true
+  },
+  "readability": {
+    "language": "繁體中文",
+    "pedagogyProgression": "H 模台基現象 -> ELM 週期崩塌與 ITER 熱負載 -> 剝離-氣球耦合機制 -> 歸一化壓力梯度與兩變數模型 -> RMP 抑制",
+    "technicalTermsDemystified": [
+      { "term": "台基 (Pedestal)", "intuitiveExplanation": "電漿邊緣幾公分內溫度密度陡升的薄層，核心剖面像坐在它頂上" },
+      { "term": "自舉電流 (Bootstrap Current)", "intuitiveExplanation": "壓力梯度本身自發產生、沿磁場流動的電流，不需外部驅動" },
+      { "term": "共振磁擾動 (RMP)", "intuitiveExplanation": "外加的微小非軸對稱磁場，讓邊緣多一條洩漏管道，像水庫的溢洪道" }
+    ]
+  },
+  "aestheticsAndNarrative": {
+    "coreQuestion": "讓聚變電漿約束變好的那道台基，為什麼會一次次自己崩塌？",
+    "interactiveRole": "ElmPedestalSimulator 同時顯示 α、j 的時間序列與穩定圖軌跡，讓讀者調節功率、碰撞率與 RMP 看鋸齒循環出現或消失"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "明確標示模擬器為歸一化示意模型，避免讀者將數值對應到特定裝置",
+    "區分剝離-氣球模型能預測觸發時機但不能完整預測單次 ELM 能量損失"
+  ],
+  "unconfirmedLimits": [
+    "RMP 抑制能否在 ITER 參數下穩定重現仍待驗證",
+    "Zohm (1996) 綜述之卷期頁碼未於本次逐頁核對"
+  ]
+}

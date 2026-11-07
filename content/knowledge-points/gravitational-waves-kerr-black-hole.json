@@ -1,0 +1,31 @@
+{
+  "articleId": "art-gravitational-waves-kerr",
+  "slug": "gravitational-waves-kerr-black-hole",
+  "title": "穿透事件視界的重力迴響：重力波克爾黑洞無毛定理檢驗",
+  "knowledgePoints": [
+    {
+      "id": "kp-bh-no-hair-theorem",
+      "label": "克爾黑洞無毛定理",
+      "suggestedQuestion": "為什麼無論吞噬了什麼物質，黑洞最終都只剩下質量與自旋？",
+      "keywords": ["無毛定理", "克爾黑洞", "質量", "自旋", "事件視界", "引力坍縮"],
+      "plainExplanation": "根據廣義相對論，任何複雜物質在引力坍縮穿透視界的過程中，所有關於形狀、成分、磁場與高階多極矩的細節，全部會以重力波的形式被徹底輻射乾淨。最終在真空留下的克爾黑洞是全宇宙最簡約的天體，僅由質量與自旋角動量這兩個參數完全表徵。",
+      "anchorSentenceId": "sent-879b902a"
+    },
+    {
+      "id": "kp-bh-quasi-normal-modes",
+      "label": "準簡正模與時空鈴宕",
+      "suggestedQuestion": "雙黑洞合併後的『鈴宕』重力波是如何產生的？",
+      "keywords": ["鈴宕", "準簡正模", "圖科爾斯基方程", "複數頻率", "阻尼時間"],
+      "plainExplanation": "兩顆黑洞碰撞合併時，新生黑洞高度扭曲，如同一口被重錘敲響的巨鐘。它通過釋放特定頻率的微擾重力波迅速平復表面褶皺，這段衰減振盪稱為鈴宕。其頻率由實數振盪週期與虛數指數衰減時間組成，能量同時向外宇宙輻射並向視界內部耗散。",
+      "anchorSentenceId": "sent-9b781d3c"
+    },
+    {
+      "id": "kp-bh-gw150914-testing",
+      "label": "黑洞光譜學實測檢驗",
+      "suggestedQuestion": "LIGO 如何利用 GW150914 的餘波獨立驗證廣義相對論？",
+      "keywords": ["GW150914", "黑洞光譜學", "基模", "泛音", "伊西", "獨立解算"],
+      "plainExplanation": "2019 年物理學家重新分析首個重力波事件 GW150914，在峰值後數毫秒內以高信噪比同時分離出了鈴宕的基模與第一泛音。兩個獨立模式分別反解出的黑洞質量與自旋完全自洽，無毛定理的微擾偏差被嚴格限制在小於 20%，首次完成黑洞光譜學檢驗。",
+      "anchorSentenceId": "sent-0bd6900a"
+    }
+  ]
+}

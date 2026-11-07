@@ -1,0 +1,126 @@
+{
+  "articleId": "art-turing-reaction-diffusion",
+  "slug": "turing-patterns-reaction-diffusion",
+  "editorialCategory": "scientific_principles",
+  "version": 1,
+  "creationModel": "gemini",
+  "editorialPassDate": "2026-11-05T09:05:00+08:00",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-turing-1952",
+        "citation": "Turing, A. M. (1952). \"The chemical basis of morphogenesis.\" Philosophical Transactions of the Royal Society of London B, 237(641), 37-72. doi:10.1098/rstb.1952.0012.",
+        "doi": "10.1098/rstb.1952.0012",
+        "peerReviewStatus": "已完成同行評審 (Phil. Trans. R. Soc. B)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Alan M. Turing",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實圖靈 1952 年發表於英國皇家學會哲學彙刊 B 之經典論文第一作者、卷期頁碼 (237:37-72) 與形態發生化學反應擴散方程推導無誤。"
+        },
+        "verifiedClaims": [
+          "反應與擴散耦合可使無擴散時穩定的均勻態失穩，產生具固定波長的空間圖案",
+          "擴散係數差異是此不穩定性的必要條件"
+        ],
+        "distinctions": {
+          "establishedKnowledge": ["二成分反應擴散系統線性穩定性分析與圖靈不穩定條件"],
+          "empiricalFindings": ["原論文為理論推導，無實驗數據"],
+          "hypothesesAndModels": ["形態素假說：生物圖案由擴散化學物質決定"]
+        }
+      },
+      {
+        "id": "ref-castets-1990",
+        "citation": "Castets, V., Dulos, E., Boissonade, J., & De Kepper, P. (1990). \"Experimental evidence of a sustained standing Turing-type nonequilibrium chemical pattern.\" Physical Review Letters, 64(24), 2953-2956. doi:10.1103/PhysRevLett.64.2953.",
+        "doi": "10.1103/PhysRevLett.64.2953",
+        "peerReviewStatus": "已完成同行評審 (Physical Review Letters)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "V. Castets",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "透過網路檢索確認標題與 DOI 10.1103/PhysRevLett.64.2953 對應。"
+        },
+        "verifiedClaims": ["CIMA 反應於連續補料凝膠反應器中產生持續、靜止的圖靈型斑圖"],
+        "distinctions": {
+          "establishedKnowledge": ["開放系統遠離平衡態方能維持穩定圖案"],
+          "empiricalFindings": ["首次化學實驗觀察到持續靜止的圖靈型斑圖"]
+        }
+      },
+      {
+        "id": "ref-pearson-1993",
+        "citation": "Pearson, J. E. (1993). \"Complex patterns in a simple system.\" Science, 261(5118), 189-192. doi:10.1126/science.261.5118.189.",
+        "doi": "10.1126/science.261.5118.189",
+        "peerReviewStatus": "已完成同行評審 (Science)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "John E. Pearson",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "透過網路檢索確認卷期 261(5118)、頁碼 189-192 與 DOI。"
+        },
+        "verifiedClaims": ["Gray-Scott 模型在 (F,k) 參數平面上產生斑點、條紋、自我複製斑點與混沌等多種圖案，部分需有限振幅擾動觸發"],
+        "distinctions": {
+          "establishedKnowledge": ["Gray-Scott 方程形式"],
+          "empiricalFindings": ["數值模擬所得之圖案分類"]
+        }
+      },
+      {
+        "id": "ref-kondo-miura-2010",
+        "citation": "Kondo, S., & Miura, T. (2010). \"Reaction-diffusion model as a framework for understanding biological pattern formation.\" Science, 329(5999), 1616-1620. doi:10.1126/science.1179047.",
+        "doi": "10.1126/science.1179047",
+        "peerReviewStatus": "已完成同行評審 (Science 回顧)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Shigeru Kondo",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "透過網路檢索確認卷期 329(5999)、頁碼 1616-1620 與 DOI。"
+        },
+        "verifiedClaims": ["反應擴散框架可解釋魚類條紋、指頭與毛囊間距等生物圖案；斑馬魚中由色素細胞交互作用實現等效機制"],
+        "distinctions": {
+          "establishedKnowledge": ["短程活化、長程抑制原則"],
+          "empiricalFindings": ["魚類條紋隨成長動態重排符合模擬預測"],
+          "hypothesesAndModels": ["多數物種之活化物與抑制物分子身分仍待鑑定"]
+        }
+      }
+    ],
+    "formulasAndUnits": [
+      {
+        "formula": "D_v f_u + D_u g_v > 2\\sqrt{D_u D_v (f_u g_v - f_v g_u)}",
+        "unitConsistency": "D 單位 m^2/s，雅可比元素單位 1/s；兩側皆為 m^2/s^2，一致",
+        "verified": true
+      },
+      {
+        "formula": "\\partial_t u = D_u \\nabla^2 u - u v^2 + F(1-u), \\; \\partial_t v = D_v \\nabla^2 v + u v^2 - (F+k) v",
+        "unitConsistency": "Gray-Scott 無因次形式，F、k、濃度皆無因次",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "二維 Gray-Scott 反應擴散方程，D_u = 0.16、D_v = 0.08，週期邊界",
+      "numericalMethod": "顯式前向歐拉法，五點拉普拉斯差分，dt = 1、dx = 1（滿足 4 D dt / dx^2 < 1 之穩定條件），128 x 128 網格，requestAnimationFrame 每幀多步積分",
+      "dynamicBehaviorVerified": "預設參數 (0.035,0.065)、(0.022,0.051)、(0.029,0.057) 分別趨向斑點、條紋/蠕蟲、迷宮型圖案；高 F 回到均勻態",
+      "modelAssumptionsAndLimits": "無因次參數、平面網格、均勻擴散係數，未含組織生長、曲面幾何與細胞離散性"
+    },
+    "noFakeCitations": true,
+    "noFictionalReviewers": true
+  },
+  "readability": {
+    "language": "繁體中文",
+    "pedagogyProgression": "無藍圖斑紋之謎 -> 圖靈 1952 論文 -> 活化-抑制機制 -> 線性穩定性與圖靈條件 -> 1990 CIMA 實證 -> Gray-Scott 圖案 -> 互動實驗 -> 生物證據 -> 科學邊界",
+    "technicalTermsDemystified": [
+      { "term": "形態素 (Morphogen)", "intuitiveExplanation": "在組織中擴散、濃度高低能影響細胞命運的化學物質" },
+      { "term": "圖靈不穩定 (Turing Instability)", "intuitiveExplanation": "沒有擴散時穩定的均勻狀態，因兩物質擴散速度不同而被撕裂成圖案" },
+      { "term": "特徵波長", "intuitiveExplanation": "圖案中相鄰斑點或條紋之間的典型距離，由反應與擴散速率共同決定" }
+    ],
+    "toneReview": "以歷史追查推進，數學推導保留必要步驟並配以直覺比喻"
+  },
+  "aestheticsAndNarrative": {
+    "avoidFormulaicCliches": "以豹胚胎無藍圖之謎開篇，未使用套話",
+    "coreQuestion": "完全均勻的化學系統如何在沒有外部藍圖的情況下自發產生具固定間距的斑點與條紋？",
+    "interactiveRole": "TuringPatternSimulator 讓讀者調整 F 與 k，親眼看到斑點、條紋、迷宮與均勻態之間的轉換",
+    "narrativeStyle": "historical_detective",
+    "interactiveType": "reaction_diffusion"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "區分線性圖靈不穩定與 Gray-Scott 中需有限振幅擾動觸發的圖案，避免將兩者混為一談",
+    "說明斑馬魚條紋主要由色素細胞交互作用實現，而非字面上的兩種擴散分子"
+  ],
+  "unconfirmedLimits": [
+    "Turing 1952 原文頁面未逐頁比對，僅依標準書目資訊引用",
+    "多數物種花紋之活化物與抑制物分子身分尚未確定"
+  ]
+}

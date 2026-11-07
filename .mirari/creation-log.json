@@ -1,5 +1,5 @@
 {
-  "lastRunTimestamp": "2026-11-04T07:15:57.449Z",
+  "lastRunTimestamp": "2026-11-07T08:00:00.000Z",
   "scheduledCron": "0 9 * * *",
   "timezone": "Asia/Taipei (UTC+8)",
   "creationModel": "gemini-2.5-pro",
@@ -300,6 +300,154 @@
             "Frenkel, Bol & Indiveri (2023) Proc. IEEE doi:10.1109/JPROC.2023.3273520"
           ],
           "editorialRecordPath": "content/editorial-records/spiking-neural-networks-neuromorphic.json"
+        }
+      ]
+    },
+    {
+      "runId": "mirari-auto-run-20261105-0900",
+      "timestamp": "2026-11-05T15:54:34.878Z",
+      "note": "09:00 排程觸發；子代理中途遇配額限制，於 23:53 接續完成",
+      "targetCount": 3,
+      "succeededCount": 3,
+      "failedCount": 0,
+      "journalInterpretationSkippedReason": "無法可靠核實近期突破，依規則不編造",
+      "articles": [
+        {
+          "id": "art-tokamak-elm-instability",
+          "slug": "tokamak-elm-plasma-instability",
+          "discipline": "聚變能源與高溫電漿物理",
+          "interactiveComponent": "ElmPedestalSimulator",
+          "status": "published",
+          "editorialRecordPath": "content/editorial-records/tokamak-elm-plasma-instability.json"
+        },
+        {
+          "id": "art-hawk-dove-ess",
+          "slug": "hawk-dove-evolutionary-stable-strategy",
+          "discipline": "演化博弈論與行為生態學",
+          "interactiveComponent": "HawkDoveReplicatorSimulator",
+          "status": "published",
+          "editorialRecordPath": "content/editorial-records/hawk-dove-evolutionary-stable-strategy.json"
+        },
+        {
+          "id": "art-turing-reaction-diffusion",
+          "slug": "turing-patterns-reaction-diffusion",
+          "discipline": "非線性化學與發育生物學",
+          "interactiveComponent": "TuringPatternSimulator",
+          "status": "published",
+          "editorialRecordPath": "content/editorial-records/turing-patterns-reaction-diffusion.json"
+        }
+      ]
+    },
+    {
+      "runId": "mirari-auto-run-20261106-0900",
+      "timestamp": "2026-11-06T09:00:00.000Z",
+      "targetCount": 3,
+      "succeededCount": 3,
+      "failedCount": 0,
+      "articles": [
+        {
+          "id": "art-coriolis-geostrophic",
+          "slug": "coriolis-effect-geostrophic-balance",
+          "title": "旋轉星球上的隱形偏折：科氏力與大氣地轉平衡",
+          "discipline": "大氣動力學與地球物理流體力學",
+          "interactiveComponent": "CoriolisAtmosphereSimulator",
+          "interactiveType": "fluid_dynamics_particles",
+          "narrativeStyle": "first_principles",
+          "status": "published",
+          "sources": [
+            "Coriolis (1835) J. Ec. Polytech.",
+            "Rossby (1939) J. Mar. Res."
+          ],
+          "editorialRecordPath": "content/editorial-records/coriolis-effect-geostrophic-balance.json"
+        },
+        {
+          "id": "art-atp-synthase-rotary",
+          "slug": "atp-synthase-rotary-catalysis",
+          "title": "生命引擎的微觀齒輪：ATP 合成酶的質子動力勢與旋轉催化",
+          "discipline": "生物物理學與分子奈米機器",
+          "interactiveComponent": "AtpSynthaseSimulator",
+          "interactiveType": "rotary_catalysis",
+          "narrativeStyle": "molecular_machine",
+          "status": "published",
+          "sources": [
+            "Boyer (1997) Annu. Rev. Biochem.",
+            "Noji et al. (1997) Nature",
+            "Mitchell (1961) Nature"
+          ],
+          "editorialRecordPath": "content/editorial-records/atp-synthase-rotary-catalysis.json"
+        },
+        {
+          "id": "art-gravitational-waves-kerr",
+          "slug": "gravitational-waves-kerr-black-hole",
+          "title": "穿透事件視界的重力迴響：重力波克爾黑洞無毛定理檢驗",
+          "discipline": "廣義相對論與重力波天體物理",
+          "interactiveComponent": "BlackHoleRingdownSimulator",
+          "interactiveType": "qnm_ringdown_oscilloscope",
+          "narrativeStyle": "research_interpretation",
+          "status": "published",
+          "sources": [
+            "Abbott et al. (2016) Phys. Rev. Lett.",
+            "Isi et al. (2019) Phys. Rev. Lett.",
+            "Teukolsky (1973) Astrophys. J."
+          ],
+          "editorialRecordPath": "content/editorial-records/gravitational-waves-kerr-black-hole.json"
+        }
+      ]
+    },
+    {
+      "runId": "mirari-auto-run-20261107-0900",
+      "timestamp": "2026-11-07T09:00:00.000Z",
+      "targetCount": 3,
+      "succeededCount": 3,
+      "failedCount": 0,
+      "articles": [
+        {
+          "id": "art-bell-inequality-entanglement",
+          "slug": "bell-inequality-quantum-entanglement",
+          "title": "超光速幽靈與局域實在論之死：貝爾不等式與量子糾纏檢驗",
+          "discipline": "量子物理學與量子資訊理論",
+          "interactiveComponent": "BellInequalitySimulator",
+          "interactiveType": "polarization_correlation",
+          "narrativeStyle": "philosophical_physics",
+          "status": "published",
+          "sources": [
+            "Bell (1964) Physics",
+            "Clauser et al. (1969) Phys. Rev. Lett.",
+            "Aspect et al. (1982) Phys. Rev. Lett."
+          ],
+          "editorialRecordPath": "content/editorial-records/bell-inequality-quantum-entanglement.json"
+        },
+        {
+          "id": "art-car-t-immunology",
+          "slug": "car-t-cell-synthetic-immunology",
+          "title": "重新編程免疫軍團：CAR-T 細胞療法的合成受體與抗原逃逸攻防",
+          "discipline": "合成生物學與腫瘤免疫治療",
+          "interactiveComponent": "CarTCellKineticsSimulator",
+          "interactiveType": "cellular_kinetics",
+          "narrativeStyle": "synthetic_biology_design",
+          "status": "published",
+          "sources": [
+            "June et al. (2018) Science",
+            "Lim & June (2017) Cell",
+            "Maude et al. (2014) N. Engl. J. Med."
+          ],
+          "editorialRecordPath": "content/editorial-records/car-t-cell-synthetic-immunology.json"
+        },
+        {
+          "id": "art-bcs-superconductivity",
+          "slug": "bcs-superconductivity-cooper-pairs",
+          "title": "零電阻與完美抗磁：BCS 理論與庫柏對的玻色凝聚",
+          "discipline": "凝聚態物理學與超導量子理論",
+          "interactiveComponent": "SuperconductivityBcsSimulator",
+          "interactiveType": "energy_gap_meissner",
+          "narrativeStyle": "first_principles",
+          "status": "published",
+          "sources": [
+            "Bardeen, Cooper & Schrieffer (1957) Phys. Rev.",
+            "Cooper (1956) Phys. Rev.",
+            "Meissner & Ochsenfeld (1933) Naturwissenschaften"
+          ],
+          "editorialRecordPath": "content/editorial-records/bcs-superconductivity-cooper-pairs.json"
         }
       ]
     }

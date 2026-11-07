@@ -1,0 +1,31 @@
+{
+  "articleId": "art-turing-reaction-diffusion",
+  "slug": "turing-patterns-reaction-diffusion",
+  "title": "均勻化學湯裡的豹紋：圖靈斑圖如何從無到有地自發湧現？",
+  "knowledgePoints": [
+    {
+      "id": "kp-turing-diffusion-instability",
+      "label": "擴散驅動不穩定",
+      "suggestedQuestion": "擴散不是只會抹平差異嗎？為什麼它反而能製造圖案？",
+      "keywords": ["圖靈不穩定", "擴散", "均勻態", "對稱破缺", "形態發生"],
+      "plainExplanation": "單一物質擴散只會讓濃度變均勻；但當兩種會互相反應的物質擴散速度差很多時，抹平作用對它們不公平。原本穩定的均勻狀態會因此變得不穩定，隨機的微小起伏被放大成具有固定間距的斑點或條紋。",
+      "anchorSentenceId": "sent-8171a140"
+    },
+    {
+      "id": "kp-turing-activator-inhibitor",
+      "label": "短程活化與長程抑制",
+      "suggestedQuestion": "斑點之間的固定間距是怎麼決定的？",
+      "keywords": ["活化物", "抑制物", "正回饋", "特徵波長", "間距"],
+      "plainExplanation": "活化物在局部自我放大形成熱點，同時產生擴散較快的抑制物，在熱點周圍築起一圈壓制區。新熱點只能在抑制物濃度降低的更遠處出現，因此熱點之間自然保持一段由反應速率與擴散係數決定的距離。",
+      "anchorSentenceId": "sent-03089198"
+    },
+    {
+      "id": "kp-turing-cima-experiment",
+      "label": "CIMA 反應實證",
+      "suggestedQuestion": "圖靈斑圖第一次在化學實驗中被觀察到是什麼時候？",
+      "keywords": ["CIMA", "Castets", "De Kepper", "凝膠反應器", "澱粉", "1990"],
+      "plainExplanation": "1990 年 Castets 與 De Kepper 等人在連續補料的凝膠反應器中進行亞氯酸鹽-碘化物-丙二酸反應，澱粉指示劑讓碘物種移動變慢、拉開擴散比，首次拍到穩定靜止、具有固有波長的圖靈斑點。",
+      "anchorSentenceId": "sent-c8cff9db"
+    }
+  ]
+}

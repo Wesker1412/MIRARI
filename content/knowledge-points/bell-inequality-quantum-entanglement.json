@@ -1,0 +1,31 @@
+{
+  "articleId": "art-bell-inequality-entanglement",
+  "slug": "bell-inequality-quantum-entanglement",
+  "title": "超光速幽靈與局域實在論之死：貝爾不等式與量子糾纏檢驗",
+  "knowledgePoints": [
+    {
+      "id": "kp-bell-chsh-inequality",
+      "label": "CHSH 局域實在論極限",
+      "suggestedQuestion": "貝爾與 CHSH 不等式是如何為古典物理劃定界限的？",
+      "keywords": ["CHSH 不等式", "局域實在論", "古典極限", "S<=2", "隱變數"],
+      "plainExplanation": "在任何遵守愛因斯坦局域實在論（粒子在測量前已有客觀確定值、相互作用不超過光速）的理論中，雙探測器在四種角度下的測量關聯值所構成的 CHSH 參數 S，在數學上絕對不可能大於 2。這是古典世界與隱變數理論不可逾越的絕對防線。",
+      "anchorSentenceId": "sent-7b669981"
+    },
+    {
+      "id": "kp-bell-tsirelson-bound",
+      "label": "量子違背與齊雷爾森界限",
+      "suggestedQuestion": "量子力學預言的 CHSH 關聯最大強度是多少？",
+      "keywords": ["齊雷爾森極限", "2.828", "非局域性", "量子糾纏", "單態光子"],
+      "plainExplanation": "處於自旋單態的量子糾纏對，其測量關聯期望值服從負餘弦函數。在最佳的齊雷爾森檢偏夾角下，四項關聯值疊加可達到 S = 2√2 ≈ 2.828，以超過 41% 的驚人強度直接突破古典極限 2.0，展現出微觀世界無可辯駁的非局域量子關聯。",
+      "anchorSentenceId": "sent-e512e39c"
+    },
+    {
+      "id": "kp-bell-aspect-experiment",
+      "label": "阿斯佩實驗與光速漏洞封閉",
+      "suggestedQuestion": "1982 年阿斯佩實驗是如何封死定域通訊漏洞的？",
+      "keywords": ["阿斯佩", "通訊漏洞", "高速光學開關", "2022諾貝爾獎", "非局域性證明"],
+      "plainExplanation": "阿斯佩在糾纏光子已經離開發射源、正在半空中飛行的 40 奈秒極短時間內，利用高速光開關每隔 10 奈秒隨機切換檢偏角度。兩個探測端相隔 12 公尺，即使光速也來不及互相串通。實驗測得 S ≈ 2.70，徹底以實驗否定了定域隱變數理論，獲 2022 年諾貝爾獎。",
+      "anchorSentenceId": "sent-c3fb7b30"
+    }
+  ]
+}

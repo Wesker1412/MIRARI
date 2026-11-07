@@ -12,6 +12,15 @@ import { WeakLensingShearSimulator } from '../article/WeakLensingShearSimulator'
 import { AnyonBraidingSimulator } from '../article/AnyonBraidingSimulator';
 import { NeutralDriftSimulator } from '../article/NeutralDriftSimulator';
 import { SpikingNeuronSimulator } from '../article/SpikingNeuronSimulator';
+import { ElmPedestalSimulator } from '../article/ElmPedestalSimulator';
+import { HawkDoveReplicatorSimulator } from '../article/HawkDoveReplicatorSimulator';
+import { TuringPatternSimulator } from '../article/TuringPatternSimulator';
+import { CoriolisAtmosphereSimulator } from '../article/CoriolisAtmosphereSimulator';
+import { AtpSynthaseSimulator } from '../article/AtpSynthaseSimulator';
+import { BlackHoleRingdownSimulator } from '../article/BlackHoleRingdownSimulator';
+import { BellInequalitySimulator } from '../article/BellInequalitySimulator';
+import { CarTCellKineticsSimulator } from '../article/CarTCellKineticsSimulator';
+import { SuperconductivityBcsSimulator } from '../article/SuperconductivityBcsSimulator';
 
 export interface InteractiveParameterMeta {
   name: string;
@@ -537,6 +546,78 @@ export const INTERACTIVE_COMPONENTS: Record<string, InteractiveComponentMeta> = 
       '突觸操作能耗 (Synaptic Operations SOP)',
     ],
     component: SpikingNeuronSimulator,
+  },
+  ElmPedestalSimulator: {
+    id: 'ElmPedestalSimulator',
+    nameZh: '托卡馬克台基與邊界局部模模擬器',
+    descriptionZh: '以歸一化兩變數模型呈現壓力梯度與邊緣電流的累積、撞上剝離-氣球穩定邊界後的崩塌循環，以及共振磁擾動如何讓循環停止。',
+    parameters: [],
+    keyConcepts: ['H 模 (H-mode)', '台基 (Pedestal)', '邊界局部模 (ELM)', '剝離-氣球模 (Peeling-Ballooning)', '共振磁擾動 (RMP)'],
+    component: ElmPedestalSimulator,
+  },
+  HawkDoveReplicatorSimulator: {
+    id: 'HawkDoveReplicatorSimulator',
+    nameZh: '鷹鴿博弈複製者動態模擬器',
+    descriptionZh: '調整資源價值 V 與受傷代價 C，觀察鷹派比例在複製者動態下收斂到演化穩定比例 V/C。',
+    parameters: [],
+    keyConcepts: ['演化穩定策略 (ESS)', '鷹鴿博弈 (Hawk-Dove Game)', '複製者動態 (Replicator Dynamics)', '混合策略平衡'],
+    component: HawkDoveReplicatorSimulator,
+  },
+  TuringPatternSimulator: {
+    id: 'TuringPatternSimulator',
+    nameZh: '圖靈斑圖反應擴散模擬器',
+    descriptionZh: '以 Gray-Scott 反應擴散模型即時生成斑點、條紋與迷宮紋理，調整進料率與移除率觀察斑圖轉變。',
+    parameters: [],
+    keyConcepts: ['圖靈不穩定性 (Turing Instability)', '反應擴散 (Reaction-Diffusion)', '活化-抑制 (Activator-Inhibitor)', 'Gray-Scott 模型'],
+    component: TuringPatternSimulator,
+  },
+  CoriolisAtmosphereSimulator: {
+    id: 'CoriolisAtmosphereSimulator',
+    nameZh: '科氏力與大氣地轉平衡模擬器',
+    descriptionZh: '旋轉參考系科氏加速度 -2Ω×v、氣壓梯度力與科氏力平衡，展示地轉風如何沿等壓線平行吹拂。',
+    parameters: [],
+    keyConcepts: ['科氏力 (Coriolis Force)', '地轉平衡 (Geostrophic Balance)', '氣壓梯度力 (Pressure Gradient Force)', '氣旋與反氣旋 (Cyclones & Anticyclones)'],
+    component: CoriolisAtmosphereSimulator,
+  },
+  AtpSynthaseSimulator: {
+    id: 'AtpSynthaseSimulator',
+    nameZh: 'ATP 合成酶化學滲透與旋轉催化模擬器',
+    descriptionZh: '粒線體內膜跨膜質子動力勢 Δp、F0 質子渦輪旋轉與 F1 催化頭三態構象交替合成 ATP。',
+    parameters: [],
+    keyConcepts: ['化學滲透學說 (Chemiosmosis)', '質子動力勢 (Proton Motive Force)', '旋轉催化 (Rotary Catalysis)', 'ATP 合成酶 (ATP Synthase)'],
+    component: AtpSynthaseSimulator,
+  },
+  BlackHoleRingdownSimulator: {
+    id: 'BlackHoleRingdownSimulator',
+    nameZh: '克爾黑洞無毛定理與重力波鈴宕譜學模擬器',
+    descriptionZh: '雙黑洞合併後克爾殘餘黑洞之準簡正模複數頻率 (ω220, τ220) 與無毛定理獨立光譜檢驗。',
+    parameters: [],
+    keyConcepts: ['重力波 (Gravitational Waves)', '黑洞鈴宕 (Black Hole Ringdown)', '準簡正模 (Quasi-Normal Modes)', '無毛定理 (No-Hair Theorem)'],
+    component: BlackHoleRingdownSimulator,
+  },
+  BellInequalitySimulator: {
+    id: 'BellInequalitySimulator',
+    nameZh: '貝爾不等式與 CHSH 量子糾纏檢驗模擬器',
+    descriptionZh: '偏振糾纏光子對雙通道檢偏角關聯度 E(a,b)，實測 CHSH 參數 S 突破古典極限 2.0 達到 2.828。',
+    parameters: [],
+    keyConcepts: ['量子糾纏 (Quantum Entanglement)', '貝爾不等式 (Bell Inequality)', 'CHSH 關聯 (CHSH Correlation)', '局域實在論 (Local Realism)'],
+    component: BellInequalitySimulator,
+  },
+  CarTCellKineticsSimulator: {
+    id: 'CarTCellKineticsSimulator',
+    nameZh: 'CAR-T 合成免疫受體動力學與抗原逃逸模擬器',
+    descriptionZh: 'scFv 靶抗原識別、CD28/4-1BB 共刺激訊號對決、動態殺傷動力學與抗原逃逸門檻。',
+    parameters: [],
+    keyConcepts: ['CAR-T 細胞療法 (CAR T-Cell Therapy)', '合成免疫學 (Synthetic Immunology)', '共刺激受體 (Co-stimulatory Domains)', '抗原逃逸 (Antigen Escape)'],
+    component: CarTCellKineticsSimulator,
+  },
+  SuperconductivityBcsSimulator: {
+    id: 'SuperconductivityBcsSimulator',
+    nameZh: 'BCS 超導能隙與邁斯納完美抗磁模擬器',
+    descriptionZh: '電子-聲子吸引力形成庫柏對、費米面超導能隙 Δ(T) 開閉與邁斯納磁通排斥。',
+    parameters: [],
+    keyConcepts: ['BCS 理論 (BCS Theory)', '庫柏對 (Cooper Pairs)', '超導能隙 (Superconducting Gap)', '邁斯納效應 (Meissner Effect)', '倫敦穿透深度 (London Penetration Depth)'],
+    component: SuperconductivityBcsSimulator,
   },
 };
 

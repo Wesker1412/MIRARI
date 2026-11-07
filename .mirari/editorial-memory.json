@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastUpdated": "2026-11-04T07:15:57.445Z",
+  "lastUpdated": "2026-11-07T08:00:00.000Z",
   "editorialMemoryDescription": "MIRARI 自主編輯品質管理記憶庫：記錄近期篇章學科分佈、敘事風格、互動模式與編輯檢查規則，提供每日自主創作管線跨日延續性與防重複依據。",
   "recentArticles": [
     {
@@ -158,6 +158,111 @@
       "coreConcept": "LIF 脈衝神經元、事件驅動稀疏計算與天機/Loihi 存算一體架構",
       "pedagogyKey": "20 瓦人腦對比 GPU 功耗牆破題，拆解記憶體牆與 SOP/MAC 能耗",
       "limitsIdentified": "SNN 不可微訓練困境與大模型精度落差"
+    },
+    {
+      "articleId": "art-tokamak-elm-instability",
+      "slug": "tokamak-elm-plasma-instability",
+      "editorialCategory": "scientific_principles",
+      "discipline": "聚變能源與高溫電漿物理",
+      "narrativeStyle": "depth_narrative",
+      "interactiveType": "plasma_instability",
+      "interactiveComponent": "ElmPedestalSimulator",
+      "coreConcept": "H 模台基、剝離-氣球模與 RMP 抑制 ELM",
+      "limitsIdentified": "歸一化示意模型，非線性 MHD 未納入"
+    },
+    {
+      "articleId": "art-hawk-dove-ess",
+      "slug": "hawk-dove-evolutionary-stable-strategy",
+      "editorialCategory": "scientific_principles",
+      "discipline": "演化博弈論與行為生態學",
+      "narrativeStyle": "thought_experiment",
+      "interactiveType": "replicator_dynamics",
+      "interactiveComponent": "HawkDoveReplicatorSimulator",
+      "coreConcept": "鷹鴿博弈 ESS 與複製者動態收斂至 V/C",
+      "limitsIdentified": "無限族群、對稱對局、無結構族群"
+    },
+    {
+      "articleId": "art-turing-reaction-diffusion",
+      "slug": "turing-patterns-reaction-diffusion",
+      "editorialCategory": "scientific_principles",
+      "discipline": "非線性化學與發育生物學",
+      "narrativeStyle": "historical_detective",
+      "interactiveType": "reaction_diffusion",
+      "interactiveComponent": "TuringPatternSimulator",
+      "coreConcept": "圖靈不穩定性與 Gray-Scott 斑圖",
+      "limitsIdentified": "二維均勻介質，真實發育涉及多基因網路"
+    },
+    {
+      "articleId": "art-coriolis-geostrophic",
+      "slug": "coriolis-effect-geostrophic-balance",
+      "editorialCategory": "scientific_principles",
+      "discipline": "大氣動力學與地球物理流體力學",
+      "narrativeStyle": "first_principles",
+      "interactiveType": "fluid_dynamics_particles",
+      "interactiveComponent": "CoriolisAtmosphereSimulator",
+      "coreConcept": "科氏力幾何偏轉與二維地轉平衡風場",
+      "pedagogyKey": "旋轉參考系拋球視差破題，解析氣壓梯度力與科氏力平衡向量，破解馬桶旋渦迷思",
+      "limitsIdentified": "二維正壓大氣模型，忽略斜壓波與垂直對流"
+    },
+    {
+      "articleId": "art-atp-synthase-rotary",
+      "slug": "atp-synthase-rotary-catalysis",
+      "editorialCategory": "scientific_principles",
+      "discipline": "生物物理學與分子奈米機器",
+      "narrativeStyle": "molecular_machine",
+      "interactiveType": "rotary_catalysis",
+      "interactiveComponent": "AtpSynthaseSimulator",
+      "coreConcept": "質子化學滲透梯度驅動 Fo-F1 旋轉催化三拍構象",
+      "pedagogyKey": "水力渦輪水壩比喻跨膜質子動力勢，以微米螢光金珠實測旋轉步進，解構 120 度催化循環",
+      "limitsIdentified": "固定化體外重組系統，未納入粒線體脊曲率與質子微域效應"
+    },
+    {
+      "articleId": "art-gravitational-waves-kerr",
+      "slug": "gravitational-waves-kerr-black-hole",
+      "editorialCategory": "journal_interpretation",
+      "discipline": "廣義相對論與重力波天體物理",
+      "narrativeStyle": "research_interpretation",
+      "interactiveType": "qnm_ringdown_oscilloscope",
+      "interactiveComponent": "BlackHoleRingdownSimulator",
+      "coreConcept": "克爾黑洞無毛定理檢驗與準簡正模複數頻率光譜學",
+      "pedagogyKey": "青銅大鐘敲擊衰減餘音類比黑洞鈴宕，解構圖科爾斯基方程基模與泛音超定驗證",
+      "limitsIdentified": "現役探測器靈敏度限制下高階空間諧波信噪比不足與波峰起始時間模糊帶"
+    },
+    {
+      "articleId": "art-bell-inequality-entanglement",
+      "slug": "bell-inequality-quantum-entanglement",
+      "editorialCategory": "scientific_principles",
+      "discipline": "量子物理學與量子資訊理論",
+      "narrativeStyle": "philosophical_physics",
+      "interactiveType": "polarization_correlation",
+      "interactiveComponent": "BellInequalitySimulator",
+      "coreConcept": "局域實在論證偽、CHSH 不等式與齊雷爾森 2√2 量子極限",
+      "pedagogyKey": "手套裝箱比喻局域隱變數直覺，以雙通道偏振計數推導代數極限，對比量子單態餘弦關聯",
+      "limitsIdentified": "理想單態糾纏源與無損探測器假設，未涉及類空間隔引力紅移微擾"
+    },
+    {
+      "articleId": "art-car-t-immunology",
+      "slug": "car-t-cell-synthetic-immunology",
+      "editorialCategory": "journal_interpretation",
+      "discipline": "合成生物學與腫瘤免疫治療",
+      "narrativeStyle": "synthetic_biology_design",
+      "interactiveType": "cellular_kinetics",
+      "interactiveComponent": "CarTCellKineticsSimulator",
+      "coreConcept": "嵌合抗原受體模組化設計、共刺激域代謝分歧與抗原逃逸攻防",
+      "pedagogyKey": "癌細胞 MHC 隱身斗篷引導，解構 scFv-CD3ζ-共刺激域四模組，探討動能校對與實體瘤高牆",
+      "limitsIdentified": "未納入實體瘤細胞外基質三維物理滲透阻力與 Treg 免疫抑制微環境"
+    },
+    {
+      "articleId": "art-bcs-superconductivity",
+      "slug": "bcs-superconductivity-cooper-pairs",
+      "editorialCategory": "scientific_principles",
+      "discipline": "凝聚態物理學與超導量子理論",
+      "narrativeStyle": "first_principles",
+      "interactiveType": "energy_gap_meissner",
+      "interactiveComponent": "SuperconductivityBcsSimulator",
+      "coreConcept": "庫柏對聲子媒介吸引力、費米面能隙與邁斯納完美抗磁性",
+      "pedagogyKey": "超導閉合圓環永恆電流破題，聲子正電荷滯後凹陷撮合相反自旋電子，解構倫敦穿透深度",
+      "limitsIdentified": "弱耦合 s 波常規超導模型，無法解釋高溫銅氧化物與鐵基非傳統超導機理"
     }
   ],
   "cumulativeGuidelines": {
@@ -175,14 +280,14 @@
           "displayName": "科學原理與思想實驗",
           "scope": "收錄一般科普、經典科學知識、科學現象、數學原理、理論解釋及思想實驗",
           "purpose": "主要目的是讓讀者理解科學，而非追逐最新消息。不限制物理學，也不要求每篇一定具有思想實驗",
-          "currentArticles": 8
+          "currentArticles": 15
         },
         "journal_interpretation": {
           "displayName": "期刊解讀",
           "scope": "最新科學發現、重要研究成果、研發技術突破及具有話題性的科學事件",
           "selectionCriteria": "以新聞時效性、科學價值與話題性作為選題依據。涵蓋最新學術研究、重大科學發現、技術研發突破、科學機構發布的重要成果及值得公眾關注的科學事件",
           "rigorRule": "不要求每篇都必須以單篇同儕審查論文為主題，但必須核對可信來源，清楚區分：已完成同行審查的研究、尚未同行審查的預印本、機構或企業提出但尚待獨立驗證的成果。不得為了追逐話題性誇大研究結果",
-          "currentArticles": 5
+          "currentArticles": 7
         }
       },
       "classificationPrinciple": "根據文章的主要編輯目的分類：主要在解釋某個科學知識或原理 -> scientific_principles；主要在報導或解讀近期科學發現、研究成果、技術突破或科學事件 -> journal_interpretation。不能僅因引用了新論文就歸類為期刊解讀，不能僅因內容涉及經典科學原理就排除其作為最新研究報導的可能。兩大分類互斥且與學科標籤獨立",
@@ -211,12 +316,5 @@
       ]
     }
   },
-  "candidateThemesQueue": [
-    {
-      "topic": "聚變能源與高溫電漿",
-      "proposedInquiry": "托卡馬克磁約束不穩定性：邊界局部模（ELMs）如何破壞上億度的微型人造太陽？",
-      "recommendedNarrativeStyle": "depth_narrative",
-      "recommendedInteractiveType": "plasma_instability"
-    }
-  ]
+  "candidateThemesQueue": []
 }
