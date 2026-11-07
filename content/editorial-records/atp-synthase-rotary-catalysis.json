@@ -58,6 +58,56 @@
             "彈性變形能傳遞模型與靜電相互作用粗粒化"
           ]
         }
+      },
+      {
+        "id": "ref-noji-1997",
+        "citation": "Noji, H., Yasuda, R., Yoshida, M., & Kinosita, K. (1997). \"Direct observation of the rotation of F1-ATPase.\" Nature, 386(6622), 299-302. doi:10.1038/386299a0.",
+        "peerReviewStatus": "已完成同行評審 (Nature)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Hiroyuki Noji",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實野地博行 1997 年單分子旋轉實驗，確認連接 1-3 微米肌動蛋白絲在水中受流體黏滯阻力以數 Hz 旋轉，累積旋轉超過 100 圈，證實 120 度離散步進。"
+        },
+        "verifiedClaims": [
+          "直接目睹肌動蛋白絲標記的 F1 轉軸在 ATP 水解下發生逆時針離散步進旋轉",
+          "證實單個分子可累積連續旋轉超過 100 圈，步進角度為 120 度"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "單分子落射螢光顯微術可用於觀測微米級生物絲標記運動"
+          ],
+          "empiricalFindings": [
+            "帶肌動蛋白絲負載的轉速約數 Hz，連續旋轉超過百圈"
+          ],
+          "hypothesesAndModels": [
+            "低雷諾數流體力學阻力力矩平衡模型"
+          ]
+        }
+      },
+      {
+        "id": "ref-yasuda-2001",
+        "citation": "Yasuda, R., Noji, H., Kinosita, K., & Yoshida, M. (2001). \"Resolution of machinery of F1-ATPase in generating mechanical power.\" Nature, 410(6831), 898-904. doi:10.1038/35073513.",
+        "peerReviewStatus": "已完成同行評審 (Nature)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Ryohei Yasuda",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實安田涼平 2001 年 40 nm 膠體金珠與高速攝影實驗，確認飽和 ATP 下轉速達約 130 圈/秒，並將 120 度步進解析為 90 度結合子步進與 30 度催化子步進。"
+        },
+        "verifiedClaims": [
+          "以 40 nm 膠體金珠大幅去除流阻後，飽和 ATP 下最高無阻轉速達約 130 rev/s",
+          "將 120 度大步進解析為約 90 度的 ATP 結合子步進與約 30 度的催化水解子步進"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "奈米膠體金暗場散射與高幀率攝像技術大幅降低流體負載阻力"
+          ],
+          "empiricalFindings": [
+            "低 ATP 濃度下 90 度步進發生停頓等待 ATP 結合，高濃度下 30 度催化步進清晰顯現"
+          ],
+          "hypothesesAndModels": [
+            "雙子步進自由能景觀與角向彈性位能傳遞模型"
+          ]
+        }
       }
     ],
     "formulasAndUnits": [
@@ -104,6 +154,7 @@
     "interactiveRole": "AtpSynthaseSimulator 讓讀者親手調節跨膜電位與 pH 梯度，即時看見膜內 c 環如何在質子衝擊下帶動催化頭旋轉並噴吐出 ATP 分子"
   },
   "issuesIdentifiedAndCorrected": [
+    "精確區分野地博行 1997 年肌動蛋白長絲實驗（累積旋轉超過 100 圈、轉速數 Hz）與安田涼平 2001 年膠體金高速實驗（飽和轉速約 130 rev/s、解析 90 度/30 度子步進），避免將後續高速成果錯誤歸因於 1997 年論文",
     "強調 ATP 合成酶催化口袋本身合成 ATP 不需要外來能量（甚至在緊密態自發進行），外來機械能的真正用途是『強行撐開口袋釋放合成出的 ATP』，糾正大眾直覺偏差",
     "闡明不同物種 c 亞基數目帶來的齒輪比演化適應"
   ],

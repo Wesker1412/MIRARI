@@ -439,7 +439,7 @@
       }
     ],
     "totalWordCount": 1930,
-    "lastIndexedAt": "2026-11-07T08:04:47.418Z"
+    "lastIndexedAt": "2026-11-07T14:49:43.053Z"
   },
   {
     "id": "art-amygdala-memory-encoding",
@@ -975,7 +975,7 @@
       }
     ],
     "totalWordCount": 2692,
-    "lastIndexedAt": "2026-11-07T08:04:47.422Z"
+    "lastIndexedAt": "2026-11-07T14:49:43.056Z"
   },
   {
     "id": "art-atp-synthase-rotary",
@@ -1023,10 +1023,14 @@
       {
         "id": "ref-noji-1997",
         "citation": "Noji, H., Yasuda, R., Yoshida, M., & Kinosita, K. (1997). \"Direct observation of the rotation of F1-ATPase.\" Nature, 386(6622), 299-302. doi:10.1038/386299a0."
+      },
+      {
+        "id": "ref-yasuda-2001",
+        "citation": "Yasuda, R., Noji, H., Kinosita, K., & Yoshida, M. (2001). \"Resolution of machinery of F1-ATPase in generating mechanical power.\" Nature, 410(6831), 898-904. doi:10.1038/35073513."
       }
     ],
     "interactiveComponent": "AtpSynthaseSimulator",
-    "contentHash": "9ff723477297a216e1de38651978146e3860cfdf3ed5175a7a7870eeb9dc2c4a",
+    "contentHash": "53905661a2d3f8b4177bdcd8b8275282d038c472162ca01cb1731f9cd4fe615e",
     "sections": [
       {
         "id": "sec-1-f696c9",
@@ -1449,7 +1453,8 @@
         "level": 1,
         "paragraphs": [
           "博耶的旋轉催化模型雖然在理論上極具美感，但在很長一段時間內，學界缺乏直接的物理觀測證據。",
-          "直到 1997 年，日本東京工業大學的野地博行（Hiroyuki Noji）與木下一彥（Kazuhiko Kinosita）等人，在《Nature》上發表了一項堪稱單分子生物物理巔峰之作的實驗：\n他們將 $F_1$ 催化頭固定在玻璃載玻片上，並在露出的 $\\gamma$ 轉軸末端，用生物素標記連接了一根長達數微米的微米級**螢光肌動蛋白絲（Actin Filament）**。\n當他們向溶液中加入 ATP 時（驅動逆反應旋轉），在落射螢光顯微鏡下，所有人親眼目睹了那根長長的螢光絲，以每秒上百轉的驚人速度、呈不折不扣的**逆時針方向離散旋轉**！\n高解析度相機清晰捕捉到了每次精確跨越 **$120^\\circ$** 的步進跳躍——博耶的旋轉假說在肉眼前得到了徹底證實，博耶也於同年榮獲諾貝爾化學獎。"
+          "直到 1997 年，日本東京工業大學的野地博行（Hiroyuki Noji）與木下一彥（Kazuhiko Kinosita）等人，在《Nature》上發表了單分子生物物理學的奠基之作：\n他們將 $F_1$ 催化頭固定在載玻片表面，並在露出的 $\\gamma$ 轉軸末端，連接了一根長約 1 至 3 微米的**螢光肌動蛋白絲（Actin Filament）**。\n當向溶液中加入 ATP 時，在落射螢光顯微鏡下，研究人員直接目睹了肌動蛋白絲發生**嚴格的逆時針方向離散旋轉**；受制於微米長絲在水中的巨大流體黏滯阻力，長絲以每秒數轉（約數赫茲）的速度旋轉，並清晰記錄到單個分子**連續累積旋轉超過 100 圈**，每次跨越 $120^\\circ$ 的步進跳躍——博耶的旋轉假說在肉眼前得到了徹底證實，博耶也於同年榮獲諾貝爾化學獎。",
+          "2001 年，安田涼平（Ryohei Yasuda）與野地博行等人在《Nature》進一步利用直徑僅 40 奈米的微小膠體金珠與每秒數千幀的高速攝影技術，大幅去除了流體阻力。在飽和 ATP 濃度下，研究團隊直接測得無阻負載的最高轉速達到驚人的**每秒約 130 圈**，並將每次 $120^\\circ$ 的大步進進一步精確拆解為約 **$90^\\circ$ 的 ATP 結合子步進**與約 **$30^\\circ$ 的水解催化釋放子步進**，徹底揭示了旋轉催化在毫秒微觀尺度下的精密時序。"
         ],
         "sentences": [
           {
@@ -1465,40 +1470,52 @@
             "contextNote": "五、看見不可見：野地博行的單分子旋轉證實 · 第 1 段"
           },
           {
-            "sentenceId": "sent-b04f970f",
+            "sentenceId": "sent-11e9043b",
             "articleId": "art-atp-synthase-rotary",
             "sectionId": "sec-5-0d977f",
             "sectionTitle": "五、看見不可見：野地博行的單分子旋轉證實",
             "paragraphIndex": 1,
-            "exactQuote": "直到 1997 年，日本東京工業大學的野地博行（Hiroyuki Noji）與木下一彥（Kazuhiko Kinosita）等人，在《Nature》上發表了一項堪稱單分子生物物理巔峰之作的實驗：\n他們將 $F_1$ 催化頭固定在玻璃載玻片上，並在露出的 $\\gamma$ 轉軸末端，用生物素標記連接了一根長達數微米的微米級**螢光肌動蛋白絲（Actin Filament）**。",
+            "exactQuote": "直到 1997 年，日本東京工業大學的野地博行（Hiroyuki Noji）與木下一彥（Kazuhiko Kinosita）等人，在《Nature》上發表了單分子生物物理學的奠基之作：\n他們將 $F_1$ 催化頭固定在載玻片表面，並在露出的 $\\gamma$ 轉軸末端，連接了一根長約 1 至 3 微米的**螢光肌動蛋白絲（Actin Filament）**。",
             "charStart": 4613,
-            "charEnd": 4802,
-            "contentHash": "b04f970fb81d524f075ba37df227d5510aa41c1186f529e5626137452f4e1fd2",
+            "charEnd": 4793,
+            "contentHash": "11e9043b1701e48bf0a6b4051e30f66152350287f7b6fc95cd0410206b04d7b8",
             "contextNote": "五、看見不可見：野地博行的單分子旋轉證實 · 第 2 段"
           },
           {
-            "sentenceId": "sent-ea20702b",
+            "sentenceId": "sent-3ef31b1c",
             "articleId": "art-atp-synthase-rotary",
             "sectionId": "sec-5-0d977f",
             "sectionTitle": "五、看見不可見：野地博行的單分子旋轉證實",
             "paragraphIndex": 1,
-            "exactQuote": "當他們向溶液中加入 ATP 時（驅動逆反應旋轉），在落射螢光顯微鏡下，所有人親眼目睹了那根長長的螢光絲，以每秒上百轉的驚人速度、呈不折不扣的**逆時針方向離散旋轉**！",
-            "charStart": 4803,
-            "charEnd": 4887,
-            "contentHash": "ea20702b5acdb69b0d8d5ce5824dccc70f360c2c63916b492bdaf1aa343f9889",
+            "exactQuote": "當向溶液中加入 ATP 時，在落射螢光顯微鏡下，研究人員直接目睹了肌動蛋白絲發生**嚴格的逆時針方向離散旋轉**；受制於微米長絲在水中的巨大流體黏滯阻力，長絲以每秒數轉（約數赫茲）的速度旋轉，並清晰記錄到單個分子**連續累積旋轉超過 100 圈**，每次跨越 $120^\\circ$ 的步進跳躍——博耶的旋轉假說在肉眼前得到了徹底證實，博耶也於同年榮獲諾貝爾化學獎。",
+            "charStart": 4794,
+            "charEnd": 4977,
+            "contentHash": "3ef31b1c6da678b6734ea7edf7fe02b714663ad77587f341e3852539d708b0e0",
             "contextNote": "五、看見不可見：野地博行的單分子旋轉證實 · 第 2 段"
           },
           {
-            "sentenceId": "sent-11ef40b0",
+            "sentenceId": "sent-17f767ba",
             "articleId": "art-atp-synthase-rotary",
             "sectionId": "sec-5-0d977f",
             "sectionTitle": "五、看見不可見：野地博行的單分子旋轉證實",
-            "paragraphIndex": 1,
-            "exactQuote": "高解析度相機清晰捕捉到了每次精確跨越 **$120^\\circ$** 的步進跳躍——博耶的旋轉假說在肉眼前得到了徹底證實，博耶也於同年榮獲諾貝爾化學獎。",
-            "charStart": 4888,
-            "charEnd": 4964,
-            "contentHash": "11ef40b0166d1d648112f3124852a6d54f5c49ae2dad8955e74ffe341e54b257",
-            "contextNote": "五、看見不可見：野地博行的單分子旋轉證實 · 第 2 段"
+            "paragraphIndex": 2,
+            "exactQuote": "2001 年，安田涼平（Ryohei Yasuda）與野地博行等人在《Nature》進一步利用直徑僅 40 奈米的微小膠體金珠與每秒數千幀的高速攝影技術，大幅去除了流體阻力。",
+            "charStart": 5344,
+            "charEnd": 5431,
+            "contentHash": "17f767ba19c70d35307c4f66cd3785e9b6752c8ba6190912d1e5e69443c61ab7",
+            "contextNote": "五、看見不可見：野地博行的單分子旋轉證實 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-5bf540fa",
+            "articleId": "art-atp-synthase-rotary",
+            "sectionId": "sec-5-0d977f",
+            "sectionTitle": "五、看見不可見：野地博行的單分子旋轉證實",
+            "paragraphIndex": 2,
+            "exactQuote": "在飽和 ATP 濃度下，研究團隊直接測得無阻負載的最高轉速達到驚人的**每秒約 130 圈**，並將每次 $120^\\circ$ 的大步進進一步精確拆解為約 **$90^\\circ$ 的 ATP 結合子步進**與約 **$30^\\circ$ 的水解催化釋放子步進**，徹底揭示了旋轉催化在毫秒微觀尺度下的精密時序。",
+            "charStart": 5432,
+            "charEnd": 5589,
+            "contentHash": "5bf540fabec6207bc09275428d9e3df967ba18eda801e675b7363b41f2ea35eb",
+            "contextNote": "五、看見不可見：野地博行的單分子旋轉證實 · 第 3 段"
           }
         ],
         "formulas": [],
@@ -1521,8 +1538,8 @@
             "sectionTitle": "六、科學邊界：化學力學效率與能量演化極限",
             "paragraphIndex": 0,
             "exactQuote": "在讚嘆大自然的分子工程傑作時，MIRARI 科學組恪守嚴謹的定量視角，為讀者劃定明確的物理邊界：",
-            "charStart": 5318,
-            "charEnd": 5366,
+            "charStart": 5836,
+            "charEnd": 5884,
             "contentHash": "f569e2a6ac2c9cc1622f38afe954c431f1a85ff60dd1c0bc11dac47d89006878",
             "contextNote": "六、科學邊界：化學力學效率與能量演化極限 · 第 1 段"
           },
@@ -1533,8 +1550,8 @@
             "sectionTitle": "六、科學邊界：化學力學效率與能量演化極限",
             "paragraphIndex": 1,
             "exactQuote": "1. **熱力學轉換效率的奇蹟**：\n   單個 ATP 水解或合成涉及約 $\\Delta G \\approx 50\\text{ kJ/mol}$（約 $80 - 100\\text{ pN}\\cdot\\text{nm}$）的自由能。",
-            "charStart": 5417,
-            "charEnd": 5533,
+            "charStart": 5935,
+            "charEnd": 6051,
             "contentHash": "c60362a544f07643820ee128f5d0a4f71c1b35ac1a3c8269e8e2a1a66aaa562b",
             "contextNote": "六、科學邊界：化學力學效率與能量演化極限 · 第 2 段"
           },
@@ -1545,8 +1562,8 @@
             "sectionTitle": "六、科學邊界：化學力學效率與能量演化極限",
             "paragraphIndex": 1,
             "exactQuote": "野地博行等人在單分子光學扭矩測量中證實，在飽和負載條件下，ATP 合成酶的機械-化學能量轉換效率高達驚人的 **接近 100%（實測約 85% 到 95%）**。",
-            "charStart": 5534,
-            "charEnd": 5615,
+            "charStart": 6052,
+            "charEnd": 6133,
             "contentHash": "db2040181c24fddc92832a7195652f414aadaf95c28192296ec1aeb04218f1ae",
             "contextNote": "六、科學邊界：化學力學效率與能量演化極限 · 第 2 段"
           },
@@ -1557,8 +1574,8 @@
             "sectionTitle": "六、科學邊界：化學力學效率與能量演化極限",
             "paragraphIndex": 1,
             "exactQuote": "它在極端低雷諾數熱風暴環境下運作，卻幾乎沒有任何額外的機械摩擦浪費。",
-            "charStart": 5616,
-            "charEnd": 5650,
+            "charStart": 6134,
+            "charEnd": 6168,
             "contentHash": "622a6e2d68c76c20719fc82ab7d1fb129666a80795f6724526747cd0a576603b",
             "contextNote": "六、科學邊界：化學力學效率與能量演化極限 · 第 2 段"
           },
@@ -1569,8 +1586,8 @@
             "sectionTitle": "六、科學邊界：化學力學效率與能量演化極限",
             "paragraphIndex": 1,
             "exactQuote": "2. **不同物種間的齒輪比差異（c 亞基數目）**：\n   不同物種的 $c$ 環亞基數量存在顯著演化多樣性：酵母菌為 10 個，菠菜葉綠體為 14 個，而人類粒線體通常為 8 個。",
-            "charStart": 5651,
-            "charEnd": 5743,
+            "charStart": 6169,
+            "charEnd": 6261,
             "contentHash": "32f7c7788517aca6fa3b84f2baf152ab45edd9aa1dd9f744af510c0ec5cedaff",
             "contextNote": "六、科學邊界：化學力學效率與能量演化極限 · 第 2 段"
           },
@@ -1581,8 +1598,8 @@
             "sectionTitle": "六、科學邊界：化學力學效率與能量演化極限",
             "paragraphIndex": 1,
             "exactQuote": "亞基數目決定了合成一個 ATP 需要消耗多少個質子（$H^+ / \\text{ATP}$ 齒輪比）。",
-            "charStart": 5744,
-            "charEnd": 5794,
+            "charStart": 6262,
+            "charEnd": 6312,
             "contentHash": "3035239864318bb2554665ebb3569534ea79f79076b94c57c4d2af9452bb2f7b",
             "contextNote": "六、科學邊界：化學力學效率與能量演化極限 · 第 2 段"
           },
@@ -1593,8 +1610,8 @@
             "sectionTitle": "六、科學邊界：化學力學效率與能量演化極限",
             "paragraphIndex": 1,
             "exactQuote": "人類的 8 亞基設計意味著轉一圈只需 8 個質子就能生產 3 個 ATP（平均每產一個 ATP 僅耗 2.67 個質子），體現了哺乳動物對能量利用效率的極致追求。",
-            "charStart": 5795,
-            "charEnd": 5876,
+            "charStart": 6313,
+            "charEnd": 6394,
             "contentHash": "2c107bcf31446cb1cd7949c5f7fc6c838b954c264197587a4266e30154aace0c",
             "contextNote": "六、科學邊界：化學力學效率與能量演化極限 · 第 2 段"
           },
@@ -1605,8 +1622,8 @@
             "sectionTitle": "六、科學邊界：化學力學效率與能量演化極限",
             "paragraphIndex": 1,
             "exactQuote": "3. **質子滲漏與生熱代價**：\n   並非所有質子動力勢都百分之百流入 ATP 合成酶。",
-            "charStart": 5877,
-            "charEnd": 5923,
+            "charStart": 6395,
+            "charEnd": 6441,
             "contentHash": "3c240af7cec648ea94b818068fdd1a8b950709fc01ea875872f250bfd8e5b847",
             "contextNote": "六、科學邊界：化學力學效率與能量演化極限 · 第 2 段"
           },
@@ -1617,8 +1634,8 @@
             "sectionTitle": "六、科學邊界：化學力學效率與能量演化極限",
             "paragraphIndex": 1,
             "exactQuote": "棕色脂肪組織中的解偶聯蛋白（UCP1 / Thermogenin）能短路質子梯度，讓質子不經旋轉輪機直接漏回基質，將化學勢能百分之百轉化為純熱量，維持新生兒與冬眠動物的體溫。",
-            "charStart": 5924,
-            "charEnd": 6011,
+            "charStart": 6442,
+            "charEnd": 6529,
             "contentHash": "1a447a54a133b7dbe33971b6fb2b27df6f17e995e3b36c777cc762b0dc03c531",
             "contextNote": "六、科學邊界：化學力學效率與能量演化極限 · 第 2 段"
           },
@@ -1629,8 +1646,8 @@
             "sectionTitle": "六、科學邊界：化學力學效率與能量演化極限",
             "paragraphIndex": 2,
             "exactQuote": "從米切爾的化學滲透假說，到博耶的旋轉催化，再到野地博行的單分子光學驗證，人類用半個世紀的艱辛探索，終於揭開了生命最核心的運算機制：每一次心跳與思索，都是億萬座奈米旋轉渦輪機在質子瀑布中為生命演奏的永恆迴響。",
-            "charStart": 6603,
-            "charEnd": 6706,
+            "charStart": 7121,
+            "charEnd": 7224,
             "contentHash": "6c9c4388482e6fa16c4868520b3a8b6cfbc5f3ff8ec4d3aa4108f863083ea404",
             "contextNote": "六、科學邊界：化學力學效率與能量演化極限 · 第 3 段"
           }
@@ -1639,8 +1656,8 @@
         "interactiveComponentId": null
       }
     ],
-    "totalWordCount": 3434,
-    "lastIndexedAt": "2026-11-07T08:04:47.427Z"
+    "totalWordCount": 3670,
+    "lastIndexedAt": "2026-11-07T14:49:43.058Z"
   },
   {
     "id": "art-bcs-superconductivity",
@@ -1691,7 +1708,7 @@
       }
     ],
     "interactiveComponent": "SuperconductivityBcsSimulator",
-    "contentHash": "ee7145aa2d163a4d82989e51d95d557d0d9322e66ce5c62420bd26586833afda",
+    "contentHash": "02526474dd2dcdecdf4b7eb13f6e21d4aa5fd63393a5681834c1709c87399d3f",
     "sections": [
       {
         "id": "sec-1-430201",
@@ -1699,7 +1716,7 @@
         "level": 1,
         "paragraphs": [
           "自從 1911 年卡末林·翁內斯（Heike Kamerlingh Onnes）發現水銀在 4.2 K 突現超導性以來，半個世紀之久，量子物理巨匠們（包括愛因斯坦、波耳、海森堡與費曼）無一不在超導理論前鎩羽而歸。",
-          "早期的物理學家曾試圖把超導簡單理解為「電導率趨向於無窮大的理想導體」。\n然而，1933 年華爾特·邁斯納（Walther Meissner）與羅伯特·奧克森菲爾德（Robert Ochsenfeld）的劃時代實驗，徹底粉碎了這個簡化的經典圖像：\n當一個處於外磁場中的金屬球被冷卻至臨界溫度 $T_c$ 以下時，它不僅展現出零電阻，更主動**將體內的所有磁力線徹底驅逐出境**！\n無論金屬是在磁場加載前還是加載後冷卻，超導體內部永遠維持**磁感應強度嚴格為零（$\\mathbf{B} = 0$）**——這便是**邁斯納效應（Meissner Effect）**。",
+          "早期的物理學家曾試圖把超導簡單理解為「電導率趨向於無窮大的理想導體」。\n然而，1933 年華爾特·邁斯納（Walther Meissner）與羅伯特·奧克森菲爾德（Robert Ochsenfeld）的劃時代實驗，徹底粉碎了這個簡化的經典圖像：\n當一個處於弱外磁場中的金屬球被冷卻至臨界溫度 $T_c$ 以下時，它不僅展現出零電阻，更主動**將本體內部（超越表面倫敦穿透深度 $\\lambda_L$ 處）的磁力線排斥出境**！\n在弱磁場下的熱力學平衡態中，第一類超導體本體深處維持**磁感應強度為零（$\\mathbf{B} = 0$）**——這便是**邁斯納效應（Meissner Effect）**。（若為第二類超導體，當外磁場超過下臨界磁場 $H_{c1}$ 時，磁場會以量子化磁通渦旋的形式穿透進入材料形成混合態，直到上臨界磁場 $H_{c2}$ 超導態才被完全破壞。）",
           "理想導體只會因法拉第電磁感應而「凍結」原有的磁通量；而超導體是自發的**熱力學平衡相變**，展現出純粹的**完美抗磁性（Perfect Diamagnetism）**。",
           "這意味著超導絕非微觀雜質減少的量變，而是一場深刻的巨觀量子相變。"
         ],
@@ -1729,27 +1746,51 @@
             "contextNote": "一、世紀謎題：零電阻只是導電極限嗎？ · 第 2 段"
           },
           {
-            "sentenceId": "sent-8408126d",
+            "sentenceId": "sent-dc2024c6",
             "articleId": "art-bcs-superconductivity",
             "sectionId": "sec-1-430201",
             "sectionTitle": "一、世紀謎題：零電阻只是導電極限嗎？",
             "paragraphIndex": 1,
-            "exactQuote": "然而，1933 年華爾特·邁斯納（Walther Meissner）與羅伯特·奧克森菲爾德（Robert Ochsenfeld）的劃時代實驗，徹底粉碎了這個簡化的經典圖像：\n當一個處於外磁場中的金屬球被冷卻至臨界溫度 $T_c$ 以下時，它不僅展現出零電阻，更主動**將體內的所有磁力線徹底驅逐出境**！",
+            "exactQuote": "然而，1933 年華爾特·邁斯納（Walther Meissner）與羅伯特·奧克森菲爾德（Robert Ochsenfeld）的劃時代實驗，徹底粉碎了這個簡化的經典圖像：\n當一個處於弱外磁場中的金屬球被冷卻至臨界溫度 $T_c$ 以下時，它不僅展現出零電阻，更主動**將本體內部（超越表面倫敦穿透深度 $\\lambda_L$ 處）的磁力線排斥出境**！",
             "charStart": 251,
-            "charEnd": 403,
-            "contentHash": "8408126d9350cc933d0d8273e2675643f388eb003da3fed38804ffd76027be46",
+            "charEnd": 428,
+            "contentHash": "dc2024c6bc5086ecfb3ba917fd3ab2a6c65e23fafc73b2b8429f8e767088b487",
             "contextNote": "一、世紀謎題：零電阻只是導電極限嗎？ · 第 2 段"
           },
           {
-            "sentenceId": "sent-ad5982bc",
+            "sentenceId": "sent-e4d0fa68",
             "articleId": "art-bcs-superconductivity",
             "sectionId": "sec-1-430201",
             "sectionTitle": "一、世紀謎題：零電阻只是導電極限嗎？",
             "paragraphIndex": 1,
-            "exactQuote": "無論金屬是在磁場加載前還是加載後冷卻，超導體內部永遠維持**磁感應強度嚴格為零（$\\mathbf{B} = 0$）**——這便是**邁斯納效應（Meissner Effect）**。",
-            "charStart": 404,
-            "charEnd": 495,
-            "contentHash": "ad5982bc299464c6a3e3698aae774e14cc7c3d46b334d414d1e304f8b6472aa8",
+            "exactQuote": "在弱磁場下的熱力學平衡態中，第一類超導體本體深處維持**磁感應強度為零（$\\mathbf{B} = 0$）**——這便是**邁斯納效應（Meissner Effect）**。",
+            "charStart": 429,
+            "charEnd": 516,
+            "contentHash": "e4d0fa685be85f58188d59700aee2f45057087d4b2b254735a626c36535ef1bc",
+            "contextNote": "一、世紀謎題：零電阻只是導電極限嗎？ · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-ddd7eabc",
+            "articleId": "art-bcs-superconductivity",
+            "sectionId": "sec-1-430201",
+            "sectionTitle": "一、世紀謎題：零電阻只是導電極限嗎？",
+            "paragraphIndex": 1,
+            "exactQuote": "（若為第二類超導體，當外磁場超過下臨界磁場 $H_{c1}$ 時，磁場會以量子化磁通渦旋的形式穿透進入材料形成混合態，直到上臨界磁場 $H_{c2}$ 超導態才被完全破壞。",
+            "charStart": 517,
+            "charEnd": 603,
+            "contentHash": "ddd7eabccc4063e7230a2e29dcc746b25ff3471b2d6775cf0354a890d660af11",
+            "contextNote": "一、世紀謎題：零電阻只是導電極限嗎？ · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-f2e44c6c",
+            "articleId": "art-bcs-superconductivity",
+            "sectionId": "sec-1-430201",
+            "sectionTitle": "一、世紀謎題：零電阻只是導電極限嗎？",
+            "paragraphIndex": 1,
+            "exactQuote": "）",
+            "charStart": 604,
+            "charEnd": 605,
+            "contentHash": "f2e44c6c9545f08ba725de2c18e7dcc548cb28425cf6847278b68c3f03f59819",
             "contextNote": "一、世紀謎題：零電阻只是導電極限嗎？ · 第 2 段"
           },
           {
@@ -1759,8 +1800,8 @@
             "sectionTitle": "一、世紀謎題：零電阻只是導電極限嗎？",
             "paragraphIndex": 2,
             "exactQuote": "理想導體只會因法拉第電磁感應而「凍結」原有的磁通量；而超導體是自發的**熱力學平衡相變**，展現出純粹的**完美抗磁性（Perfect Diamagnetism）**。",
-            "charStart": 778,
-            "charEnd": 862,
+            "charStart": 996,
+            "charEnd": 1080,
             "contentHash": "850429a5de4f9655531cfe53ae05f442c332eaf7417a378509fad5982074ba68",
             "contextNote": "一、世紀謎題：零電阻只是導電極限嗎？ · 第 3 段"
           },
@@ -1771,8 +1812,8 @@
             "sectionTitle": "一、世紀謎題：零電阻只是導電極限嗎？",
             "paragraphIndex": 3,
             "exactQuote": "這意味著超導絕非微觀雜質減少的量變，而是一場深刻的巨觀量子相變。",
-            "charStart": 949,
-            "charEnd": 981,
+            "charStart": 1167,
+            "charEnd": 1199,
             "contentHash": "7efad44ed941e1127dcbdea39231dd9e084471f0a8682aaa51bfce2dc845c415",
             "contextNote": "一、世紀謎題：零電阻只是導電極限嗎？ · 第 4 段"
           }
@@ -1801,8 +1842,8 @@
             "sectionTitle": "二、微觀紅娘：費米海中的庫柏不穩定性",
             "paragraphIndex": 0,
             "exactQuote": "超導理論的核心死結在於：電子都帶負電荷，同性相斥的庫侖排斥力高達數個電子伏特（eV）。",
-            "charStart": 1016,
-            "charEnd": 1059,
+            "charStart": 1234,
+            "charEnd": 1277,
             "contentHash": "14714c41a9ba29a7594a3ecd32d4ab5bdde9450b13db7b107907053891048bbf",
             "contextNote": "二、微觀紅娘：費米海中的庫柏不穩定性 · 第 1 段"
           },
@@ -1813,8 +1854,8 @@
             "sectionTitle": "二、微觀紅娘：費米海中的庫柏不穩定性",
             "paragraphIndex": 0,
             "exactQuote": "如果電子彼此避之唯恐不及，它們怎麼可能聚集在一起形成凝聚態？",
-            "charStart": 1060,
-            "charEnd": 1090,
+            "charStart": 1278,
+            "charEnd": 1308,
             "contentHash": "e070b6c1354ffd2d5129a325bfdbc052ead458ea6ba75ff42699c096bb096706",
             "contextNote": "二、微觀紅娘：費米海中的庫柏不穩定性 · 第 1 段"
           },
@@ -1825,8 +1866,8 @@
             "sectionTitle": "二、微觀紅娘：費米海中的庫柏不穩定性",
             "paragraphIndex": 1,
             "exactQuote": "1956 年，年僅二十六歲的里昂·庫柏（Leon Cooper）在普林斯頓高等研究院提出了一個震驚物理界的數學證明——**庫柏對（Cooper Pairs）**：",
-            "charStart": 1166,
-            "charEnd": 1247,
+            "charStart": 1384,
+            "charEnd": 1465,
             "contentHash": "ba225372f679e106d84f4747c360ab7abd5027e1304bfa6c73405e7d74b5fa29",
             "contextNote": "二、微觀紅娘：費米海中的庫柏不穩定性 · 第 2 段"
           },
@@ -1837,8 +1878,8 @@
             "sectionTitle": "二、微觀紅娘：費米海中的庫柏不穩定性",
             "paragraphIndex": 2,
             "exactQuote": "在金屬的費米海（Fermi Sea）頂端，被佔據的電子態已經將底部的所有能階填滿（包立不相容原理）。",
-            "charStart": 1331,
-            "charEnd": 1381,
+            "charStart": 1549,
+            "charEnd": 1599,
             "contentHash": "90d5a4d2b1dbe7ab206fdbcab9352f1089554139d960431003c95274da360add",
             "contextNote": "二、微觀紅娘：費米海中的庫柏不穩定性 · 第 3 段"
           },
@@ -1849,8 +1890,8 @@
             "sectionTitle": "二、微觀紅娘：費米海中的庫柏不穩定性",
             "paragraphIndex": 2,
             "exactQuote": "這時，如果在費米面附近額外引入**哪怕任意微弱的淨吸引相互作用**，原本穩定的費米海基態將會發生拓撲失穩：\n兩個動量與自旋恰好相反的電子：",
-            "charStart": 1382,
-            "charEnd": 1451,
+            "charStart": 1600,
+            "charEnd": 1669,
             "contentHash": "f2fc5f4f496620b04a9013282afcfada48f5113eceb2fefc039f515297698e94",
             "contextNote": "二、微觀紅娘：費米海中的庫柏不穩定性 · 第 3 段"
           },
@@ -1861,8 +1902,8 @@
             "sectionTitle": "二、微觀紅娘：費米海中的庫柏不穩定性",
             "paragraphIndex": 4,
             "exactQuote": "將能越過排斥障礙，形成一個結合能為 $\\Delta$ 的束縛態！",
-            "charStart": 1574,
-            "charEnd": 1606,
+            "charStart": 1792,
+            "charEnd": 1824,
             "contentHash": "dc0aad12734bc46f13f562733d5da35871e3234559f710c62d23a17156564461",
             "contextNote": "二、微觀紅娘：費米海中的庫柏不穩定性 · 第 5 段"
           },
@@ -1873,8 +1914,8 @@
             "sectionTitle": "二、微觀紅娘：費米海中的庫柏不穩定性",
             "paragraphIndex": 5,
             "exactQuote": "### 這股神祕的吸引力究竟從何而來？",
-            "charStart": 1641,
-            "charEnd": 1660,
+            "charStart": 1859,
+            "charEnd": 1878,
             "contentHash": "ba7a32e280b1dd83e661ee474cf729c13da1822f108d3fa264478560b9fc9793",
             "contextNote": "二、微觀紅娘：費米海中的庫柏不穩定性 · 第 6 段"
           },
@@ -1885,8 +1926,8 @@
             "sectionTitle": "二、微觀紅娘：費米海中的庫柏不穩定性",
             "paragraphIndex": 5,
             "exactQuote": "答案是**晶格振動的量子化粒子——聲子（Phonon）**！",
-            "charStart": 1661,
-            "charEnd": 1691,
+            "charStart": 1879,
+            "charEnd": 1909,
             "contentHash": "2c1906f44e22eda719377795911ee743eaefbdf96af788fb7eb1f279f88e63c0",
             "contextNote": "二、微觀紅娘：費米海中的庫柏不穩定性 · 第 6 段"
           },
@@ -1897,8 +1938,8 @@
             "sectionTitle": "二、微觀紅娘：費米海中的庫柏不穩定性",
             "paragraphIndex": 5,
             "exactQuote": "想像一個電子在由帶正電離子構成的晶格點陣中以極高速度飛馳。",
-            "charStart": 1692,
-            "charEnd": 1721,
+            "charStart": 1910,
+            "charEnd": 1939,
             "contentHash": "697cf5e5c1dd2c8e10177ebda1723bce5317a6e60cad75359adaf9cf0e8c7d4a",
             "contextNote": "二、微觀紅娘：費米海中的庫柏不穩定性 · 第 6 段"
           },
@@ -1909,8 +1950,8 @@
             "sectionTitle": "二、微觀紅娘：費米海中的庫柏不穩定性",
             "paragraphIndex": 5,
             "exactQuote": "當它掠過時，正離子受到負電吸引而微微向內移動，但離子的質量是電子的數萬倍，其響應遲鈍而緩慢。",
-            "charStart": 1722,
-            "charEnd": 1768,
+            "charStart": 1940,
+            "charEnd": 1986,
             "contentHash": "b790f654dbf185aa093f22beb491c7726e479ba7fb1c699c13c59342cb6510b5",
             "contextNote": "二、微觀紅娘：費米海中的庫柏不穩定性 · 第 6 段"
           },
@@ -1921,8 +1962,8 @@
             "sectionTitle": "二、微觀紅娘：費米海中的庫柏不穩定性",
             "paragraphIndex": 5,
             "exactQuote": "當電子早已飛向遠方後，局部晶格點陣依然處於正電荷輕微過剩的「形變凹陷」之中。",
-            "charStart": 1769,
-            "charEnd": 1807,
+            "charStart": 1987,
+            "charEnd": 2025,
             "contentHash": "6bbebd3ec9e77cc2cd20de740a00e962d705ac6491d579d0bd1b68c9b189a429",
             "contextNote": "二、微觀紅娘：費米海中的庫柏不穩定性 · 第 6 段"
           },
@@ -1933,8 +1974,8 @@
             "sectionTitle": "二、微觀紅娘：費米海中的庫柏不穩定性",
             "paragraphIndex": 5,
             "exactQuote": "片刻之後，第二個動量相反的電子路過此處，感受到了這團正電荷滯後凹陷的強烈吸引力！",
-            "charStart": 1808,
-            "charEnd": 1848,
+            "charStart": 2026,
+            "charEnd": 2066,
             "contentHash": "759d855a8bc7f547747b7b18dbb1f7c488b2e29a46d8570fafdf748f346ba6e7",
             "contextNote": "二、微觀紅娘：費米海中的庫柏不穩定性 · 第 6 段"
           },
@@ -1945,8 +1986,8 @@
             "sectionTitle": "二、微觀紅娘：費米海中的庫柏不穩定性",
             "paragraphIndex": 6,
             "exactQuote": "**透過交換虛聲子（Virtual Phonon Exchange），兩個電子實現了跨越時間與空間的間接吸引。**",
-            "charStart": 2057,
-            "charEnd": 2114,
+            "charStart": 2275,
+            "charEnd": 2332,
             "contentHash": "3e75700905ea886a941f7d78ec173f71095e20c9198dda5a1a7390875c3a1969",
             "contextNote": "二、微觀紅娘：費米海中的庫柏不穩定性 · 第 7 段"
           },
@@ -1957,8 +1998,8 @@
             "sectionTitle": "二、微觀紅娘：費米海中的庫柏不穩定性",
             "paragraphIndex": 6,
             "exactQuote": "這種微弱的吸引力在低溫下成功壓倒了被周圍電子雲高度屏蔽的庫侖斥力。",
-            "charStart": 2115,
-            "charEnd": 2148,
+            "charStart": 2333,
+            "charEnd": 2366,
             "contentHash": "2863f5da716bd084146e8f43738b6792802b685ce45379d6e3f61c2b9cd371ef",
             "contextNote": "二、微觀紅娘：費米海中的庫柏不穩定性 · 第 7 段"
           }
@@ -1984,8 +2025,8 @@
             "sectionTitle": "三、親手實驗：費米面能隙開閉與邁斯納排斥",
             "paragraphIndex": 0,
             "exactQuote": "在下方互動實驗中，你可以調節溫度比例 $T/T_c$、電子-聲子耦合強度 $N(0)V$ 與外加磁場 $B$，即時觀察費米面處超導能隙 $\\Delta(T)$ 的開啟與關閉，並監測邁斯納效應中超導體如何將磁力線沿著倫敦穿透深度 $\\lambda_L$ 完美推擠出體外：",
-            "charStart": 2242,
-            "charEnd": 2376,
+            "charStart": 2460,
+            "charEnd": 2594,
             "contentHash": "32e3815dd77a34f4263bcb39c3bfe37f102a28aff8bf888bc5ab1b5a86a04eca",
             "contextNote": "三、親手實驗：費米面能隙開閉與邁斯納排斥 · 第 1 段"
           }
@@ -1999,8 +2040,7 @@
         "level": 1,
         "paragraphs": [
           "1957 年，約翰·巴丁（John Bardeen）、里昂·庫柏（Leon Cooper）與約翰·羅伯特·施里弗（John Robert Schrieffer）聯名發表了凝聚態物理歷史上最偉大的論文之一，確立了微觀**BCS 理論**。",
-          "單個電子是自旋為 $1/2$ 的費米子，死死受到包立不相容原理的禁錮，絕不可能跌入同一個量子態。\n然而，由兩個電子結合成的庫柏對，其總自旋為零（$S = 0$），總動量為零（$\\mathbf{K} = 0$）——**它在統計規律上表現為一個複合玻色子（Composite Boson）！**",
-          "在臨界溫度 $T_c$ 以下，數以千億億計的庫柏對，發生了類似玻色-愛因斯坦凝聚的宏觀集體相變，全部坍縮到同一個宏觀基態波函數之中：",
+          "單個電子是自旋為 $1/2$ 的費米子，死死受到包立不相容原理的禁錮，絕不可能跌入同一個量子態。\n然而，由兩個電子結合成的庫柏對，其總自旋為零（$S = 0$），總動量為零（$\\mathbf{K} = 0$）。\n但必須特別釐清：**弱耦合 BCS 超導絕非緊束縛分子的簡單玻色-愛因斯坦凝聚（BEC）**！在常規超導體中，庫柏對的空間尺寸（相干長度 $\\xi_0 \\sim 100 - 1000\\text{ nm}$）遠大於電子之間的平均距離（約 $0.1\\text{ nm}$），數百萬個庫柏對在空間上**高度重疊**。它本質上是費米海表面全體電子通過長程宏觀量子相位關聯，集體自發凝聚成的 BCS 變分基態 $|\\Psi_{\\text{BCS}}\\rangle$，並共享同一個宏觀剛性相位波函數：",
           "$$\\Psi(\\mathbf{r}) = \\sqrt{n_s} e^{i\\phi(\\mathbf{r})}$$",
           "其中 $n_s$ 為超導電子對密度，$\\phi(\\mathbf{r})$ 為全域共享的剛性量子相位。",
           "這產生了兩個震撼的物理推論：\n### 1. 超導能隙（Superconducting Energy Gap）\n在費米面處，打開了一個寬度為 $2\\Delta(T)$ 的 forbidden gap（禁帶能隙）。\n在絕對零度下，BCS 理論給出了一個不依賴於具體金屬材料的**普適無因次比值**：",
@@ -2018,8 +2058,8 @@
             "sectionTitle": "四、BCS 理論的宏觀量子波函數",
             "paragraphIndex": 0,
             "exactQuote": "1957 年，約翰·巴丁（John Bardeen）、里昂·庫柏（Leon Cooper）與約翰·羅伯特·施里弗（John Robert Schrieffer）聯名發表了凝聚態物理歷史上最偉大的論文之一，確立了微觀**BCS 理論**。",
-            "charStart": 2513,
-            "charEnd": 2631,
+            "charStart": 2731,
+            "charEnd": 2849,
             "contentHash": "9c01a5fb85581bad372b992909f23c5651edae9203cf41b6a8ef795540ea476f",
             "contextNote": "四、BCS 理論的宏觀量子波函數 · 第 1 段"
           },
@@ -2030,154 +2070,178 @@
             "sectionTitle": "四、BCS 理論的宏觀量子波函數",
             "paragraphIndex": 1,
             "exactQuote": "單個電子是自旋為 $1/2$ 的費米子，死死受到包立不相容原理的禁錮，絕不可能跌入同一個量子態。",
-            "charStart": 2752,
-            "charEnd": 2800,
+            "charStart": 2970,
+            "charEnd": 3018,
             "contentHash": "d8b2185ee9faeaaba1622bca76eaf9f15b5474dfce0b883bd4fddeb9bc7d7214",
             "contextNote": "四、BCS 理論的宏觀量子波函數 · 第 2 段"
           },
           {
-            "sentenceId": "sent-0462ad04",
+            "sentenceId": "sent-962823ac",
             "articleId": "art-bcs-superconductivity",
             "sectionId": "sec-4-89f291",
             "sectionTitle": "四、BCS 理論的宏觀量子波函數",
             "paragraphIndex": 1,
-            "exactQuote": "然而，由兩個電子結合成的庫柏對，其總自旋為零（$S = 0$），總動量為零（$\\mathbf{K} = 0$）——**它在統計規律上表現為一個複合玻色子（Composite Boson）！**",
-            "charStart": 2801,
-            "charEnd": 2897,
-            "contentHash": "0462ad0490ac72daad9539a792c7aced75e2af5dbba3a1368d68326331a5b988",
+            "exactQuote": "然而，由兩個電子結合成的庫柏對，其總自旋為零（$S = 0$），總動量為零（$\\mathbf{K} = 0$）。",
+            "charStart": 3019,
+            "charEnd": 3075,
+            "contentHash": "962823acdc3d5d1cb717f8a209e39c5fdc27f1f0792f9a917dbe4ed115ae4ffb",
             "contextNote": "四、BCS 理論的宏觀量子波函數 · 第 2 段"
           },
           {
-            "sentenceId": "sent-28041e31",
+            "sentenceId": "sent-f03f0011",
             "articleId": "art-bcs-superconductivity",
             "sectionId": "sec-4-89f291",
             "sectionTitle": "四、BCS 理論的宏觀量子波函數",
-            "paragraphIndex": 2,
-            "exactQuote": "在臨界溫度 $T_c$ 以下，數以千億億計的庫柏對，發生了類似玻色-愛因斯坦凝聚的宏觀集體相變，全部坍縮到同一個宏觀基態波函數之中：",
-            "charStart": 3045,
-            "charEnd": 3111,
-            "contentHash": "28041e315beb660583450e39bdba1cc6f0df0201addb8695a6fcd513225813cb",
-            "contextNote": "四、BCS 理論的宏觀量子波函數 · 第 3 段"
+            "paragraphIndex": 1,
+            "exactQuote": "但必須特別釐清：**弱耦合 BCS 超導絕非緊束縛分子的簡單玻色-愛因斯坦凝聚（BEC）**！",
+            "charStart": 3076,
+            "charEnd": 3123,
+            "contentHash": "f03f0011b03c273d54cfacc6ce923406f917a5153e510033b767010eb7eb2b95",
+            "contextNote": "四、BCS 理論的宏觀量子波函數 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-f81902c3",
+            "articleId": "art-bcs-superconductivity",
+            "sectionId": "sec-4-89f291",
+            "sectionTitle": "四、BCS 理論的宏觀量子波函數",
+            "paragraphIndex": 1,
+            "exactQuote": "在常規超導體中，庫柏對的空間尺寸（相干長度 $\\xi_0 \\sim 100 - 1000\\text{ nm}$）遠大於電子之間的平均距離（約 $0.1\\text{ nm}$），數百萬個庫柏對在空間上**高度重疊**。",
+            "charStart": 3124,
+            "charEnd": 3232,
+            "contentHash": "f81902c38caea6678e6da5c85bf8a82d5bb445a43db7b661c623070387cc3ac0",
+            "contextNote": "四、BCS 理論的宏觀量子波函數 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-0e2f2032",
+            "articleId": "art-bcs-superconductivity",
+            "sectionId": "sec-4-89f291",
+            "sectionTitle": "四、BCS 理論的宏觀量子波函數",
+            "paragraphIndex": 1,
+            "exactQuote": "它本質上是費米海表面全體電子通過長程宏觀量子相位關聯，集體自發凝聚成的 BCS 變分基態 $|\\Psi_{\\text{BCS}}\\rangle$，並共享同一個宏觀剛性相位波函數：",
+            "charStart": 3233,
+            "charEnd": 3322,
+            "contentHash": "0e2f20327fa5efcf900bf1cb8e2adfc9a46e9818e66a91bfc5995c388bd8faaf",
+            "contextNote": "四、BCS 理論的宏觀量子波函數 · 第 2 段"
           },
           {
             "sentenceId": "sent-0e1996b6",
             "articleId": "art-bcs-superconductivity",
             "sectionId": "sec-4-89f291",
             "sectionTitle": "四、BCS 理論的宏觀量子波函數",
-            "paragraphIndex": 4,
+            "paragraphIndex": 3,
             "exactQuote": "其中 $n_s$ 為超導電子對密度，$\\phi(\\mathbf{r})$ 為全域共享的剛性量子相位。",
-            "charStart": 3180,
-            "charEnd": 3230,
+            "charStart": 3675,
+            "charEnd": 3725,
             "contentHash": "0e1996b604332c2df91a0349d68148fb9943911f4ed7db242e540513bf69f519",
-            "contextNote": "四、BCS 理論的宏觀量子波函數 · 第 5 段"
+            "contextNote": "四、BCS 理論的宏觀量子波函數 · 第 4 段"
           },
           {
             "sentenceId": "sent-5acccf64",
             "articleId": "art-bcs-superconductivity",
             "sectionId": "sec-4-89f291",
             "sectionTitle": "四、BCS 理論的宏觀量子波函數",
-            "paragraphIndex": 5,
+            "paragraphIndex": 4,
             "exactQuote": "這產生了兩個震撼的物理推論：\n### 1. 超導能隙（Superconducting Energy Gap）\n在費米面處，打開了一個寬度為 $2\\Delta(T)$ 的 forbidden gap（禁帶能隙）。",
-            "charStart": 3283,
-            "charEnd": 3388,
+            "charStart": 3778,
+            "charEnd": 3883,
             "contentHash": "5acccf64f7201c2b62cf6e868e73ef16e8a65fa9aaf6cc4a89e538725428b02f",
-            "contextNote": "四、BCS 理論的宏觀量子波函數 · 第 6 段"
+            "contextNote": "四、BCS 理論的宏觀量子波函數 · 第 5 段"
           },
           {
             "sentenceId": "sent-7406f34c",
             "articleId": "art-bcs-superconductivity",
             "sectionId": "sec-4-89f291",
             "sectionTitle": "四、BCS 理論的宏觀量子波函數",
-            "paragraphIndex": 5,
+            "paragraphIndex": 4,
             "exactQuote": "在絕對零度下，BCS 理論給出了一個不依賴於具體金屬材料的**普適無因次比值**：",
-            "charStart": 3389,
-            "charEnd": 3430,
+            "charStart": 3884,
+            "charEnd": 3925,
             "contentHash": "7406f34c3cbcfd4bb15fa71874e995fb555569f5b2f1d927e001f803c8e3c483",
-            "contextNote": "四、BCS 理論的宏觀量子波函數 · 第 6 段"
+            "contextNote": "四、BCS 理論的宏觀量子波函數 · 第 5 段"
           },
           {
             "sentenceId": "sent-4819babe",
             "articleId": "art-bcs-superconductivity",
             "sectionId": "sec-4-89f291",
             "sectionTitle": "四、BCS 理論的宏觀量子波函數",
-            "paragraphIndex": 7,
+            "paragraphIndex": 6,
             "exactQuote": "這意味著：外界雜質若想散射一個電子造成電阻，就必須付出至少 $2\\Delta$ 的巨大代價來撕裂一個庫柏對。",
-            "charStart": 3580,
-            "charEnd": 3634,
+            "charStart": 4075,
+            "charEnd": 4129,
             "contentHash": "4819babeb0723620cc6a08dceb2799b0301881845e1af798192707800e7ba9c0",
-            "contextNote": "四、BCS 理論的宏觀量子波函數 · 第 8 段"
+            "contextNote": "四、BCS 理論的宏觀量子波函數 · 第 7 段"
           },
           {
             "sentenceId": "sent-13ea51f0",
             "articleId": "art-bcs-superconductivity",
             "sectionId": "sec-4-89f291",
             "sectionTitle": "四、BCS 理論的宏觀量子波函數",
-            "paragraphIndex": 7,
+            "paragraphIndex": 6,
             "exactQuote": "在熱動能 $k_B T \\ll \\Delta$ 的低溫下，微觀雜質的彈性碰撞根本無法激發任何能量耗散，**宏觀超流電流得以毫無阻力地永恆奔湧（零電阻）**！",
-            "charStart": 3635,
-            "charEnd": 3713,
+            "charStart": 4130,
+            "charEnd": 4208,
             "contentHash": "13ea51f0dfd5a35179725041b6440173702778efc6344d85b1ed0514d663baf2",
-            "contextNote": "四、BCS 理論的宏觀量子波函數 · 第 8 段"
+            "contextNote": "四、BCS 理論的宏觀量子波函數 · 第 7 段"
           },
           {
             "sentenceId": "sent-c2f8c598",
             "articleId": "art-bcs-superconductivity",
             "sectionId": "sec-4-89f291",
             "sectionTitle": "四、BCS 理論的宏觀量子波函數",
-            "paragraphIndex": 8,
+            "paragraphIndex": 7,
             "exactQuote": "### 2. 倫敦方程與邁斯納效應的量子起源\n宏觀波函數的剛性相位，直接導出了超導電流密度與磁向量勢 $\\mathbf{A}$ 的本構關係：$\\mathbf{j}_s = -\\frac{n_s e^2}{m} \\mathbf{A}$。",
-            "charStart": 3848,
-            "charEnd": 3965,
+            "charStart": 4343,
+            "charEnd": 4460,
             "contentHash": "c2f8c5983208b987901234a3619d3156f43359ce6edfb56dfb635ede5e91b811",
-            "contextNote": "四、BCS 理論的宏觀量子波函數 · 第 9 段"
+            "contextNote": "四、BCS 理論的宏觀量子波函數 · 第 8 段"
           },
           {
             "sentenceId": "sent-cccc0839",
             "articleId": "art-bcs-superconductivity",
             "sectionId": "sec-4-89f291",
             "sectionTitle": "四、BCS 理論的宏觀量子波函數",
-            "paragraphIndex": 8,
+            "paragraphIndex": 7,
             "exactQuote": "結合麥克斯韋方程組 $\\nabla \\times \\mathbf{B} = \\mu_0 \\mathbf{j}_s$，便推導出磁場在超導體內部的衰減規律：",
-            "charStart": 3966,
-            "charEnd": 4042,
+            "charStart": 4461,
+            "charEnd": 4537,
             "contentHash": "cccc0839944a1b65a0c344f84ae5330fc8bacd9b4be29f4e113ff88cf3e8363f",
-            "contextNote": "四、BCS 理論的宏觀量子波函數 · 第 9 段"
+            "contextNote": "四、BCS 理論的宏觀量子波函數 · 第 8 段"
           },
           {
             "sentenceId": "sent-ae193157",
             "articleId": "art-bcs-superconductivity",
             "sectionId": "sec-4-89f291",
             "sectionTitle": "四、BCS 理論的宏觀量子波函數",
-            "paragraphIndex": 10,
+            "paragraphIndex": 9,
             "exactQuote": "其中 **$\\lambda_L = \\sqrt{\\frac{m}{\\mu_0 n_s e^2}}$ 為倫敦穿透深度（London Penetration Depth）**。",
-            "charStart": 4239,
-            "charEnd": 4325,
+            "charStart": 4734,
+            "charEnd": 4820,
             "contentHash": "ae193157d12a6ab6a407b622bd2d0c8f1a05c637537ac9a3487b781dd11c06be",
-            "contextNote": "四、BCS 理論的宏觀量子波函數 · 第 11 段"
+            "contextNote": "四、BCS 理論的宏觀量子波函數 · 第 10 段"
           },
           {
             "sentenceId": "sent-bfc9c9e5",
             "articleId": "art-bcs-superconductivity",
             "sectionId": "sec-4-89f291",
             "sectionTitle": "四、BCS 理論的宏觀量子波函數",
-            "paragraphIndex": 10,
+            "paragraphIndex": 9,
             "exactQuote": "磁場在跨入超導體表面後，只能在僅約數十奈米（$\\lambda_L \\sim 30 - 100\\text{ nm}$）的極薄表面層內存在，隨後以指數形式迅速衰減為絕對的零！",
-            "charStart": 4326,
-            "charEnd": 4411,
+            "charStart": 4821,
+            "charEnd": 4906,
             "contentHash": "bfc9c9e5a7871ba717cb0b6184a08085fc4f7118f354fc54d29fd2406751a582",
-            "contextNote": "四、BCS 理論的宏觀量子波函數 · 第 11 段"
+            "contextNote": "四、BCS 理論的宏觀量子波函數 · 第 10 段"
           },
           {
             "sentenceId": "sent-6c7c5fdd",
             "articleId": "art-bcs-superconductivity",
             "sectionId": "sec-4-89f291",
             "sectionTitle": "四、BCS 理論的宏觀量子波函數",
-            "paragraphIndex": 10,
+            "paragraphIndex": 9,
             "exactQuote": "超導體表面的無阻抗屏蔽超電流，完美抵消了內部的一切磁場。",
-            "charStart": 4412,
-            "charEnd": 4440,
+            "charStart": 4907,
+            "charEnd": 4935,
             "contentHash": "6c7c5fddf6760c51f1ae3eae6b379b2e87184da6a79331299126673adc6bcfd2",
-            "contextNote": "四、BCS 理論的宏觀量子波函數 · 第 11 段"
+            "contextNote": "四、BCS 理論的宏觀量子波函數 · 第 10 段"
           }
         ],
         "formulas": [
@@ -2204,8 +2268,8 @@
             "sectionTitle": "五、科學檢驗：同位素效應與能隙穿隧測量",
             "paragraphIndex": 0,
             "exactQuote": "BCS 理論的偉大，在於它不是一個唯象模型，而是能夠給出精確預言的微觀第一性原理理論：",
-            "charStart": 4643,
-            "charEnd": 4686,
+            "charStart": 5138,
+            "charEnd": 5181,
             "contentHash": "3f9b9a8da032ebb0cbccc04a53931675b481946af466977c7f8049da9d5ccad4",
             "contextNote": "五、科學檢驗：同位素效應與能隙穿隧測量 · 第 1 段"
           },
@@ -2216,8 +2280,8 @@
             "sectionTitle": "五、科學檢驗：同位素效應與能隙穿隧測量",
             "paragraphIndex": 1,
             "exactQuote": "1. **同位素效應（Isotope Effect）**：\n   如果聲子媒介假說是對的，那麼晶格離子的質量 $M$ 將直接決定聲子的特徵德拜頻率（$\\omega_D \\propto M^{-1/2}$）。",
-            "charStart": 4732,
-            "charEnd": 4835,
+            "charStart": 5227,
+            "charEnd": 5330,
             "contentHash": "d4941baa7837f1d3cedd89225464b2d1fe53b49fc0ec68c01bb023b26aa32dcf",
             "contextNote": "五、科學檢驗：同位素效應與能隙穿隧測量 · 第 2 段"
           },
@@ -2228,8 +2292,8 @@
             "sectionTitle": "五、科學檢驗：同位素效應與能隙穿隧測量",
             "paragraphIndex": 1,
             "exactQuote": "BCS 理論大膽預言：同一元素的不同同位素，其超導臨界溫度必然滿足 $T_c \\propto M^{-1/2}$。",
-            "charStart": 4836,
-            "charEnd": 4893,
+            "charStart": 5331,
+            "charEnd": 5388,
             "contentHash": "ce9cdf2c155503a122bfa600d1a11a5b7bf5b47ab4e62e87d27c1a5986a5c9a6",
             "contextNote": "五、科學檢驗：同位素效應與能隙穿隧測量 · 第 2 段"
           },
@@ -2240,8 +2304,8 @@
             "sectionTitle": "五、科學檢驗：同位素效應與能隙穿隧測量",
             "paragraphIndex": 1,
             "exactQuote": "汞與錫等同位素的實驗精確證實了指數 $\\alpha \\approx 0.5$ 的冪律關係，為聲子機制提供了無可辯駁的決定性鐵證。",
-            "charStart": 4894,
-            "charEnd": 4958,
+            "charStart": 5389,
+            "charEnd": 5453,
             "contentHash": "619e8b6e58e9b4a3282687214d85f9cbdf5e74746a1685e0d20803bfa3c7bece",
             "contextNote": "五、科學檢驗：同位素效應與能隙穿隧測量 · 第 2 段"
           },
@@ -2252,8 +2316,8 @@
             "sectionTitle": "五、科學檢驗：同位素效應與能隙穿隧測量",
             "paragraphIndex": 1,
             "exactQuote": "2. **賈埃弗的超導單電子穿隧（Giaever Tunneling）**：\n   1960 年，伊瓦爾·賈埃弗（Ivar Giaever）利用超導-絕緣-金屬（S-I-N）薄膜結，測量穿隧電流隨偏壓的變化，直接在伏安曲線上以毫電子伏特（meV）的極致精度，用肉眼「讀出」了 BCS 能隙 $\\Delta(T)$ 的開閉曲線，與理論預測曲線重疊度超越 99%。",
-            "charStart": 4959,
-            "charEnd": 5139,
+            "charStart": 5454,
+            "charEnd": 5634,
             "contentHash": "66c3babc4695d24a903634acad5d2781c21fd0ca244dc30a435e4a3366a693b8",
             "contextNote": "五、科學檢驗：同位素效應與能隙穿隧測量 · 第 2 段"
           },
@@ -2264,8 +2328,8 @@
             "sectionTitle": "五、科學檢驗：同位素效應與能隙穿隧測量",
             "paragraphIndex": 2,
             "exactQuote": "巴丁、庫柏與施里弗因此於 **1972 年共同榮獲諾貝爾物理學獎**（巴丁也成為人類歷史上唯一兩度榮獲諾貝爾物理學獎的科學巨匠）。",
-            "charStart": 5547,
-            "charEnd": 5612,
+            "charStart": 6042,
+            "charEnd": 6107,
             "contentHash": "0861a6fe187601aa1a47aeccfca8e7e834b441fe188929bb70c8dc5b06cbcdb8",
             "contextNote": "五、科學檢驗：同位素效應與能隙穿隧測量 · 第 3 段"
           }
@@ -2279,7 +2343,7 @@
         "level": 1,
         "paragraphs": [
           "在向常規超導理論的壯麗致敬之時，MIRARI 科學組為讀者梳理明確的物理邊界：",
-          "1. **麥克米蘭極限（McMillan Limit ~ 30-40 K）**：\n   基於傳統聲子媒介機制的 BCS 弱耦合與強耦合理論，受制於金屬晶格穩定性與德拜溫度，其臨界溫度存在一個難以逾越的理論天花板——約 30 到 40 開爾文。\n2. **高溫超導（HTS）非常規機制的挑戰**：\n   1986 年柏諾茲與繆勒發現的銅氧化物超導體（Cuprates，最高常壓 $T_c \\sim 135\\text{ K}$）以及後續的鐵基超導體，徹底突破了傳統 BCS 理論的範疇。在強關聯 $d$ 波對稱性、反鐵磁自旋漲落等非聲子機制下，高溫超導機理至今依然是凝聚態物理學中最具挑戰性的未解之謎之一。\n3. **量子拓撲應用基石**：\n   儘管常規 BCS 超導體臨界溫度較低，但其完美的 s 波能隙與極高的宏觀波函數相干性，成為了當代核磁共振（MRI）超導磁體、大型強子對撞機（LHC）加速器磁鐵，以及超導量子計算機（如 Transmon 夸比特）中最穩固不可或缺的物理基石。",
+          "1. **常壓麥克米蘭極限與高壓氫化物的突破**：\n   在常壓金屬中，基於傳統聲子媒介機制的 BCS 理論受制於晶格穩定性與德拜溫度，曾被認為存在約 30 到 40 開爾文的常壓「麥克米蘭極限」。然而，這一經驗天花板在百萬大氣壓（兆帕至吉帕）極端條件下被徹底打破：極輕的氫原子能提供超高聲子頻率與強電子-聲子耦合，例如 Drozdov 等人發現的硫化氫（$\\text{H}_3\\text{S}$ 在約 150-200 GPa 下 $T_c \\approx 203\\text{ K}$）與十氫化鑭（$\\text{LaH}_{10}$ 在約 170-190 GPa 下 $T_c \\approx 250-260\\text{ K}$），均證實了常規電子-聲子配對機制在高壓極限下能攀上接近室溫的嶄新高峰。\n2. **高溫超導（HTS）非常規機制的挑戰**：\n   1986 年柏諾茲與繆勒發現的銅氧化物超導體（Cuprates，最高常壓 $T_c \\sim 135\\text{ K}$）以及後續的鐵基超導體，徹底突破了傳統 BCS 理論的範疇。在強關聯 $d$ 波對稱性、反鐵磁自旋漲落等非聲子機制下，高溫超導機理至今依然是凝聚態物理學中最具挑戰性的未解之謎之一。\n3. **量子拓撲應用基石**：\n   儘管常規 BCS 超導體臨界溫度較低，但其完美的 s 波能隙與極高的宏觀波函數相干性，成為了當代核磁共振（MRI）超導磁體、大型強子對撞機（LHC）加速器磁鐵，以及超導量子計算機（如 Transmon 夸比特）中最穩固不可或缺的物理基石。",
           "BCS 理論向人類展示了量子多體物理的最深邃智慧：在看似微弱的微觀吸引力下，無數微觀粒子能夠擺脫彼此孤立的混亂，以統一的量子步調凝聚為永不衰竭的宏觀巨流。"
         ],
         "sentences": [
@@ -2290,21 +2354,33 @@
             "sectionTitle": "六、科學邊界：常規超導的麥克米蘭極限",
             "paragraphIndex": 0,
             "exactQuote": "在向常規超導理論的壯麗致敬之時，MIRARI 科學組為讀者梳理明確的物理邊界：",
-            "charStart": 5680,
-            "charEnd": 5719,
+            "charStart": 6175,
+            "charEnd": 6214,
             "contentHash": "8bf38b037e9d6270eff0269604ba6d0102ab52aede5a5af1e8c7e031e3e2ef85",
             "contextNote": "六、科學邊界：常規超導的麥克米蘭極限 · 第 1 段"
           },
           {
-            "sentenceId": "sent-9b2502de",
+            "sentenceId": "sent-833888f6",
             "articleId": "art-bcs-superconductivity",
             "sectionId": "sec-6-e22609",
             "sectionTitle": "六、科學邊界：常規超導的麥克米蘭極限",
             "paragraphIndex": 1,
-            "exactQuote": "1. **麥克米蘭極限（McMillan Limit ~ 30-40 K）**：\n   基於傳統聲子媒介機制的 BCS 弱耦合與強耦合理論，受制於金屬晶格穩定性與德拜溫度，其臨界溫度存在一個難以逾越的理論天花板——約 30 到 40 開爾文。",
-            "charStart": 5761,
-            "charEnd": 5882,
-            "contentHash": "9b2502dea8ac7092799eb03b67eb0169482975b25c1d623bf54a3e992e7469e5",
+            "exactQuote": "1. **常壓麥克米蘭極限與高壓氫化物的突破**：\n   在常壓金屬中，基於傳統聲子媒介機制的 BCS 理論受制於晶格穩定性與德拜溫度，曾被認為存在約 30 到 40 開爾文的常壓「麥克米蘭極限」。",
+            "charStart": 6256,
+            "charEnd": 6355,
+            "contentHash": "833888f6fddd5ed576e55d71dc0160c0da3a58c2ed89687e2081549feb34ff27",
+            "contextNote": "六、科學邊界：常規超導的麥克米蘭極限 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-ad4fa83d",
+            "articleId": "art-bcs-superconductivity",
+            "sectionId": "sec-6-e22609",
+            "sectionTitle": "六、科學邊界：常規超導的麥克米蘭極限",
+            "paragraphIndex": 1,
+            "exactQuote": "然而，這一經驗天花板在百萬大氣壓（兆帕至吉帕）極端條件下被徹底打破：極輕的氫原子能提供超高聲子頻率與強電子-聲子耦合，例如 Drozdov 等人發現的硫化氫（$\\text{H}_3\\text{S}$ 在約 150-200 GPa 下 $T_c \\approx 203\\text{ K}$）與十氫化鑭（$\\text{LaH}_{10}$ 在約 170-190 GPa 下 $T_c \\approx 250-260\\text{ K}$），均證實了常規電子-聲子配對機制在高壓極限下能攀上接近室溫的嶄新高峰。",
+            "charStart": 6356,
+            "charEnd": 6607,
+            "contentHash": "ad4fa83df2980883e363314d4bf0ba1e44c0e4799d53ac686dc6a541072074bb",
             "contextNote": "六、科學邊界：常規超導的麥克米蘭極限 · 第 2 段"
           },
           {
@@ -2314,8 +2390,8 @@
             "sectionTitle": "六、科學邊界：常規超導的麥克米蘭極限",
             "paragraphIndex": 1,
             "exactQuote": "2. **高溫超導（HTS）非常規機制的挑戰**：\n   1986 年柏諾茲與繆勒發現的銅氧化物超導體（Cuprates，最高常壓 $T_c \\sim 135\\text{ K}$）以及後續的鐵基超導體，徹底突破了傳統 BCS 理論的範疇。",
-            "charStart": 5883,
-            "charEnd": 6002,
+            "charStart": 6608,
+            "charEnd": 6727,
             "contentHash": "e282bd5efbea15ffbd990a905427cc0928e2a13bb1cf723f5f788fc10a5da3b2",
             "contextNote": "六、科學邊界：常規超導的麥克米蘭極限 · 第 2 段"
           },
@@ -2326,8 +2402,8 @@
             "sectionTitle": "六、科學邊界：常規超導的麥克米蘭極限",
             "paragraphIndex": 1,
             "exactQuote": "在強關聯 $d$ 波對稱性、反鐵磁自旋漲落等非聲子機制下，高溫超導機理至今依然是凝聚態物理學中最具挑戰性的未解之謎之一。",
-            "charStart": 6003,
-            "charEnd": 6063,
+            "charStart": 6728,
+            "charEnd": 6788,
             "contentHash": "68e450d8585eab345efd3cd56feb8e1c6ad0093737f2889535445dcc0360709a",
             "contextNote": "六、科學邊界：常規超導的麥克米蘭極限 · 第 2 段"
           },
@@ -2338,8 +2414,8 @@
             "sectionTitle": "六、科學邊界：常規超導的麥克米蘭極限",
             "paragraphIndex": 1,
             "exactQuote": "3. **量子拓撲應用基石**：\n   儘管常規 BCS 超導體臨界溫度較低，但其完美的 s 波能隙與極高的宏觀波函數相干性，成為了當代核磁共振（MRI）超導磁體、大型強子對撞機（LHC）加速器磁鐵，以及超導量子計算機（如 Transmon 夸比特）中最穩固不可或缺的物理基石。",
-            "charStart": 6064,
-            "charEnd": 6203,
+            "charStart": 6789,
+            "charEnd": 6928,
             "contentHash": "ead904ea954df22b76ae12d6f39740bcdd2a651c0f57f4ca4d79cc078fc3001d",
             "contextNote": "六、科學邊界：常規超導的麥克米蘭極限 · 第 2 段"
           },
@@ -2350,8 +2426,8 @@
             "sectionTitle": "六、科學邊界：常規超導的麥克米蘭極限",
             "paragraphIndex": 2,
             "exactQuote": "BCS 理論向人類展示了量子多體物理的最深邃智慧：在看似微弱的微觀吸引力下，無數微觀粒子能夠擺脫彼此孤立的混亂，以統一的量子步調凝聚為永不衰竭的宏觀巨流。",
-            "charStart": 6647,
-            "charEnd": 6724,
+            "charStart": 7601,
+            "charEnd": 7678,
             "contentHash": "233f727cdc9a1c90ae93402f951e42859fee583a159cb511a19d45ef9c6b31a5",
             "contextNote": "六、科學邊界：常規超導的麥克米蘭極限 · 第 3 段"
           }
@@ -2360,8 +2436,8 @@
         "interactiveComponentId": null
       }
     ],
-    "totalWordCount": 3571,
-    "lastIndexedAt": "2026-11-07T08:04:47.431Z"
+    "totalWordCount": 4016,
+    "lastIndexedAt": "2026-11-07T14:49:43.061Z"
   },
   {
     "id": "art-bell-inequality-entanglement",
@@ -2407,12 +2483,16 @@
         "citation": "Clauser, J. F., Horne, M. A., Shimony, A., & Holt, R. A. (1969). \"Proposed Experiment to Test Local Hidden-Variable Theories.\" Physical Review Letters, 23(15), 880-884. doi:10.1103/PhysRevLett.23.880."
       },
       {
-        "id": "ref-aspect-1982",
+        "id": "ref-aspect-1982-twochannel",
+        "citation": "Aspect, A., Grangier, P., & Roger, G. (1982). \"Experimental Realization of Einstein-Podolsky-Rosen-Bohm Gedankenexperiment: A New Violation of Bell's Inequalities.\" Physical Review Letters, 49(2), 91-94. doi:10.1103/PhysRevLett.49.91."
+      },
+      {
+        "id": "ref-aspect-1982-timevarying",
         "citation": "Aspect, A., Dalibard, J., & Roger, G. (1982). \"Experimental Test of Bell's Inequalities Using Time-Varying Analyzers.\" Physical Review Letters, 49(25), 1804-1807. doi:10.1103/PhysRevLett.49.1804."
       }
     ],
     "interactiveComponent": "BellInequalitySimulator",
-    "contentHash": "b1a53d9c7bb37306b5708fb48adc947bba965f27cb886cdf48fcbbfca28f8faa",
+    "contentHash": "b86875abe23091adccd6aff513bced07c1f00efddffd28dc7c6d71a0101b90ca",
     "sections": [
       {
         "id": "sec-1-e4d31b",
@@ -2856,8 +2936,8 @@
         "level": 1,
         "paragraphs": [
           "這是一場理論物理對真實宇宙的終極宣戰。究竟是愛因斯坦對，還是波耳對？",
-          "1982 年，法國奧賽光學研究所的阿蘭·阿斯佩（Alain Aspect）團隊進行了劃時代的里程碑實驗。\n為了徹底關死「通訊漏洞（Locality Loophole）」，阿斯佩在光子已經在空中飛行的短暫微秒時間內，利用高速光學開關每隔 10 奈秒在兩種檢偏器角度間隨機快速切換。兩個探測端相距 12 公尺，即使信號以光速在兩端傳遞也需要 40 奈秒，因此 Alice 端在測量時，Bob 端絕對不可能有時間提前「暗通款曲」。",
-          "實驗結果無可爭辯：\n**實測 $S = 2.697 \\pm 0.015$，在數個標準差的高精度下決定性地證實了量子力學對貝爾不等式的違背！**",
+          "1982 年，法國奧賽光學研究所的阿蘭·阿斯佩（Alain Aspect）團隊發表了兩項劃時代的里程碑實驗：",
+          "1. **雙通道檢偏器實驗（Aspect, Grangier & Roger, 1982）**：\n   團隊首次使用雙通道偏振分束器，同時測量雙通道符合計數，測得 CHSH 參數實測值為 **$S = 2.697 \\pm 0.015$**，以高達 46 個標準差的極高信賴度突破了古典上限 $S \\le 2$。\n2. **時間變動分析器實驗（Aspect, Dalibard & Roger, 1982）**：\n   為了關閉兩端通信漏洞（Locality Loophole），兩端相距 12 公尺（光傳播需 40 奈秒）。阿斯佩利用聲光開關以接近 **$50\\text{ MHz}$ 的頻率（切換週期約 10 奈秒）進行非同步且不共週期的準週期快速切換**，在光子飛行途中改變光路朝向不同的檢偏器。該時變實驗採用對應配置的貝爾型不等式統計量，測得關聯參數違背量為 **$0.101 \\pm 0.020$**，以約 5 個標準差的統計顯著性排除了定域隱變數理論。",
           "隨後數十年間，克勞澤、阿斯佩與安東·塞林格（Anton Zeilinger）等人逐步封死了探測效率漏洞（Detection Loophole）與自由選擇漏洞（Freedom-of-Choice Loophole），並在 2015 年完成了無任何漏洞的「無漏洞貝爾檢驗（Loophole-free Bell Test）」。\n這三位量子物理先驅於 **2022 年共同榮獲諾貝爾物理學獎**。"
         ],
         "sentences": [
@@ -2886,51 +2966,63 @@
             "contextNote": "五、實驗驗證：阿斯佩與 2022 年諾貝爾獎 · 第 1 段"
           },
           {
-            "sentenceId": "sent-c3fb7b30",
+            "sentenceId": "sent-222d5c67",
             "articleId": "art-bell-inequality-entanglement",
             "sectionId": "sec-5-5575ef",
             "sectionTitle": "五、實驗驗證：阿斯佩與 2022 年諾貝爾獎",
             "paragraphIndex": 1,
-            "exactQuote": "1982 年，法國奧賽光學研究所的阿蘭·阿斯佩（Alain Aspect）團隊進行了劃時代的里程碑實驗。",
+            "exactQuote": "1982 年，法國奧賽光學研究所的阿蘭·阿斯佩（Alain Aspect）團隊發表了兩項劃時代的里程碑實驗：",
             "charStart": 5183,
-            "charEnd": 5235,
-            "contentHash": "c3fb7b3036469e61b0b8d6cc3304375e6c66bf25917b3463b5f4175cfaea81e7",
+            "charEnd": 5237,
+            "contentHash": "222d5c678e98ecb91dd0480307fa064da73c19dc556be529ed04d765b0b474bb",
             "contextNote": "五、實驗驗證：阿斯佩與 2022 年諾貝爾獎 · 第 2 段"
           },
           {
-            "sentenceId": "sent-4db49e1f",
-            "articleId": "art-bell-inequality-entanglement",
-            "sectionId": "sec-5-5575ef",
-            "sectionTitle": "五、實驗驗證：阿斯佩與 2022 年諾貝爾獎",
-            "paragraphIndex": 1,
-            "exactQuote": "為了徹底關死「通訊漏洞（Locality Loophole）」，阿斯佩在光子已經在空中飛行的短暫微秒時間內，利用高速光學開關每隔 10 奈秒在兩種檢偏器角度間隨機快速切換。",
-            "charStart": 5236,
-            "charEnd": 5322,
-            "contentHash": "4db49e1f9dc84a17a38041ae60ffa5fbdd387777dda2e2406f07b35dc0e1bd04",
-            "contextNote": "五、實驗驗證：阿斯佩與 2022 年諾貝爾獎 · 第 2 段"
-          },
-          {
-            "sentenceId": "sent-2cc2cb50",
-            "articleId": "art-bell-inequality-entanglement",
-            "sectionId": "sec-5-5575ef",
-            "sectionTitle": "五、實驗驗證：阿斯佩與 2022 年諾貝爾獎",
-            "paragraphIndex": 1,
-            "exactQuote": "兩個探測端相距 12 公尺，即使信號以光速在兩端傳遞也需要 40 奈秒，因此 Alice 端在測量時，Bob 端絕對不可能有時間提前「暗通款曲」。",
-            "charStart": 5323,
-            "charEnd": 5396,
-            "contentHash": "2cc2cb509d70b3d2302b716923de1a69a1719db0c10373896e34e0ba1fb21b75",
-            "contextNote": "五、實驗驗證：阿斯佩與 2022 年諾貝爾獎 · 第 2 段"
-          },
-          {
-            "sentenceId": "sent-6bfe97ee",
+            "sentenceId": "sent-1c9900f6",
             "articleId": "art-bell-inequality-entanglement",
             "sectionId": "sec-5-5575ef",
             "sectionTitle": "五、實驗驗證：阿斯佩與 2022 年諾貝爾獎",
             "paragraphIndex": 2,
-            "exactQuote": "實驗結果無可爭辯：\n**實測 $S = 2.697 \\pm 0.015$，在數個標準差的高精度下決定性地證實了量子力學對貝爾不等式的違背！**",
-            "charStart": 5611,
-            "charEnd": 5682,
-            "contentHash": "6bfe97eeb3167eec64e806db021763f2c1fec7e10822c0fe79ea884b34dd6f4d",
+            "exactQuote": "1. **雙通道檢偏器實驗（Aspect, Grangier & Roger, 1982）**：\n   團隊首次使用雙通道偏振分束器，同時測量雙通道符合計數，測得 CHSH 參數實測值為 **$S = 2.697 \\pm 0.015$**，以高達 46 個標準差的極高信賴度突破了古典上限 $S \\le 2$。",
+            "charStart": 5294,
+            "charEnd": 5449,
+            "contentHash": "1c9900f69434094223b4343be604f2979d0e0ad9e8ca9fc66e0915dc93beb5da",
+            "contextNote": "五、實驗驗證：阿斯佩與 2022 年諾貝爾獎 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-d1096d88",
+            "articleId": "art-bell-inequality-entanglement",
+            "sectionId": "sec-5-5575ef",
+            "sectionTitle": "五、實驗驗證：阿斯佩與 2022 年諾貝爾獎",
+            "paragraphIndex": 2,
+            "exactQuote": "2. **時間變動分析器實驗（Aspect, Dalibard & Roger, 1982）**：\n   為了關閉兩端通信漏洞（Locality Loophole），兩端相距 12 公尺（光傳播需 40 奈秒）。",
+            "charStart": 5450,
+            "charEnd": 5556,
+            "contentHash": "d1096d88a796cf2e5b2c9a8fc115054540bcbaa505eb9c3cc164afd3153139b6",
+            "contextNote": "五、實驗驗證：阿斯佩與 2022 年諾貝爾獎 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-e7a1e897",
+            "articleId": "art-bell-inequality-entanglement",
+            "sectionId": "sec-5-5575ef",
+            "sectionTitle": "五、實驗驗證：阿斯佩與 2022 年諾貝爾獎",
+            "paragraphIndex": 2,
+            "exactQuote": "阿斯佩利用聲光開關以接近 **$50\\text{ MHz}$ 的頻率（切換週期約 10 奈秒）進行非同步且不共週期的準週期快速切換**，在光子飛行途中改變光路朝向不同的檢偏器。",
+            "charStart": 5557,
+            "charEnd": 5645,
+            "contentHash": "e7a1e897c0b7fa0a76b3bd454ec61983383b3121dea6e2531abdf7edf1252b41",
+            "contextNote": "五、實驗驗證：阿斯佩與 2022 年諾貝爾獎 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-a1ac1904",
+            "articleId": "art-bell-inequality-entanglement",
+            "sectionId": "sec-5-5575ef",
+            "sectionTitle": "五、實驗驗證：阿斯佩與 2022 年諾貝爾獎",
+            "paragraphIndex": 2,
+            "exactQuote": "該時變實驗採用對應配置的貝爾型不等式統計量，測得關聯參數違背量為 **$0.101 \\pm 0.020$**，以約 5 個標準差的統計顯著性排除了定域隱變數理論。",
+            "charStart": 5646,
+            "charEnd": 5727,
+            "contentHash": "a1ac1904081846fd2e7f6c0175a0c4e7f5473e705597d3af34232a642af831c4",
             "contextNote": "五、實驗驗證：阿斯佩與 2022 年諾貝爾獎 · 第 3 段"
           },
           {
@@ -2940,8 +3032,8 @@
             "sectionTitle": "五、實驗驗證：阿斯佩與 2022 年諾貝爾獎",
             "paragraphIndex": 3,
             "exactQuote": "隨後數十年間，克勞澤、阿斯佩與安東·塞林格（Anton Zeilinger）等人逐步封死了探測效率漏洞（Detection Loophole）與自由選擇漏洞（Freedom-of-Choice Loophole），並在 2015 年完成了無任何漏洞的「無漏洞貝爾檢驗（Loophole-free Bell Test）」。",
-            "charStart": 5756,
-            "charEnd": 5916,
+            "charStart": 6161,
+            "charEnd": 6321,
             "contentHash": "0aae147565ae09a7e486bb4adfd955f5f7b52b212e63d3385f394b128fbed92c",
             "contextNote": "五、實驗驗證：阿斯佩與 2022 年諾貝爾獎 · 第 4 段"
           },
@@ -2952,8 +3044,8 @@
             "sectionTitle": "五、實驗驗證：阿斯佩與 2022 年諾貝爾獎",
             "paragraphIndex": 3,
             "exactQuote": "這三位量子物理先驅於 **2022 年共同榮獲諾貝爾物理學獎**。",
-            "charStart": 5917,
-            "charEnd": 5950,
+            "charStart": 6322,
+            "charEnd": 6355,
             "contentHash": "cbdca1258131b2f2609b14c19ac9c3fc52f70ce6eb5d02408902abb0bd8ccbe4",
             "contextNote": "五、實驗驗證：阿斯佩與 2022 年諾貝爾獎 · 第 4 段"
           }
@@ -2978,8 +3070,8 @@
             "sectionTitle": "六、科學邊界：超光速通信的嚴格禁令",
             "paragraphIndex": 0,
             "exactQuote": "在震驚於量子非局域關聯的奇蹟時，MIRARI 科學組恪守嚴密的物理本質，為讀者撥開常見的科幻迷霧：",
-            "charStart": 6147,
-            "charEnd": 6196,
+            "charStart": 6552,
+            "charEnd": 6601,
             "contentHash": "4b7a0fda45bff538f587488946b37b5fcdb713acae75de3706332bb9ab954782",
             "contextNote": "六、科學邊界：超光速通信的嚴格禁令 · 第 1 段"
           },
@@ -2990,8 +3082,8 @@
             "sectionTitle": "六、科學邊界：超光速通信的嚴格禁令",
             "paragraphIndex": 1,
             "exactQuote": "1. **不能用於超光速信息傳輸（No-Communication Theorem）**：\n   大眾最容易產生的誤解是：「既然糾纏關聯是瞬間非局域的，我們是否能利用它造出超光速電報或星際即時通訊？」\n   答案是**絕對不能**。",
-            "charStart": 6248,
-            "charEnd": 6364,
+            "charStart": 6653,
+            "charEnd": 6769,
             "contentHash": "6e66edbd66bb76eb845905dcf744e575cb5bb21e3edb70bae1682a9b17f2d006",
             "contextNote": "六、科學邊界：超光速通信的嚴格禁令 · 第 2 段"
           },
@@ -3002,8 +3094,8 @@
             "sectionTitle": "六、科學邊界：超光速通信的嚴格禁令",
             "paragraphIndex": 1,
             "exactQuote": "Alice 孤立地觀察自己的探測器時，每次看到的測量結果都是完全均勻的純隨機數（50% 機率是 +1，50% 是 -1）。",
-            "charStart": 6365,
-            "charEnd": 6426,
+            "charStart": 6770,
+            "charEnd": 6831,
             "contentHash": "59d79984fa3dbf34b81a0622d9a3839c691847492e69139c80c74bca308407cb",
             "contextNote": "六、科學邊界：超光速通信的嚴格禁令 · 第 2 段"
           },
@@ -3014,8 +3106,8 @@
             "sectionTitle": "六、科學邊界：超光速通信的嚴格禁令",
             "paragraphIndex": 1,
             "exactQuote": "只有當 Alice 與 Bob 透過常規的亞光速經典信道（如電話或光纖）核對彼此的記錄時，糾纏的關聯性才會顯現出來。",
-            "charStart": 6427,
-            "charEnd": 6485,
+            "charStart": 6832,
+            "charEnd": 6890,
             "contentHash": "81c91290e5f11e29fb7db87442dd708fc1f3c56e5cb83426782fdd78df608279",
             "contextNote": "六、科學邊界：超光速通信的嚴格禁令 · 第 2 段"
           },
@@ -3026,8 +3118,8 @@
             "sectionTitle": "六、科學邊界：超光速通信的嚴格禁令",
             "paragraphIndex": 1,
             "exactQuote": "因此，量子糾纏**沒有違反愛因斯坦狹義相對論的因果律**。",
-            "charStart": 6486,
-            "charEnd": 6515,
+            "charStart": 6891,
+            "charEnd": 6920,
             "contentHash": "abaf834ac56d0fd01cd6b5ffb4eae1ccedfd7215c00bed3e42e7e436fd2a262e",
             "contextNote": "六、科學邊界：超光速通信的嚴格禁令 · 第 2 段"
           },
@@ -3038,8 +3130,8 @@
             "sectionTitle": "六、科學邊界：超光速通信的嚴格禁令",
             "paragraphIndex": 1,
             "exactQuote": "2. **實在論 vs 局域性的哲學抉擇**：\n   貝爾不等式的違背意味著：**我們的宇宙不可能同時滿足「局域性」與「實在性」**。",
-            "charStart": 6516,
-            "charEnd": 6583,
+            "charStart": 6921,
+            "charEnd": 6988,
             "contentHash": "786a024dd774af2a8cc670732338e0cad32533a2216162352369a013c16ef2d7",
             "contextNote": "六、科學邊界：超光速通信的嚴格禁令 · 第 2 段"
           },
@@ -3050,8 +3142,8 @@
             "sectionTitle": "六、科學邊界：超光速通信的嚴格禁令",
             "paragraphIndex": 1,
             "exactQuote": "主流哥本哈根詮釋選擇放棄「實在性」（未測量時客觀屬性不存在）；德布羅意-玻姆導航波理論選擇保留「實在性」而擁抱徹底的「非局域性」；多世界詮釋則通過宇宙分裂避免了單一確定結果。",
-            "charStart": 6584,
-            "charEnd": 6671,
+            "charStart": 6989,
+            "charEnd": 7076,
             "contentHash": "2d336092136e73e837802413210082f4aa4f5e56286fa97388b3319ff814ddee",
             "contextNote": "六、科學邊界：超光速通信的嚴格禁令 · 第 2 段"
           },
@@ -3062,8 +3154,8 @@
             "sectionTitle": "六、科學邊界：超光速通信的嚴格禁令",
             "paragraphIndex": 1,
             "exactQuote": "不論選擇哪條哲學詮釋，愛因斯坦所鍾愛的古典機械宇宙觀已經徹底終結。",
-            "charStart": 6672,
-            "charEnd": 6705,
+            "charStart": 7077,
+            "charEnd": 7110,
             "contentHash": "7a185816f57769bdb8b3d748126f75592822a01073437456e2aa3baf791974a0",
             "contextNote": "六、科學邊界：超光速通信的嚴格禁令 · 第 2 段"
           },
@@ -3074,8 +3166,8 @@
             "sectionTitle": "六、科學邊界：超光速通信的嚴格禁令",
             "paragraphIndex": 2,
             "exactQuote": "貝爾不等式的歷史，是人類理性的最高勝利：它證明了哪怕是最深奧、最縹緲的哲學形上學問題，只要透過無懈可擊的數學推導與精緻的實驗儀器，最終都能在冰冷的物理數據前得到終極審判。",
-            "charStart": 7168,
-            "charEnd": 7253,
+            "charStart": 7573,
+            "charEnd": 7658,
             "contentHash": "922c2aa77f48c3c02445a5a761642ededa3ea7255c4159dcf7bcb40f27dbac65",
             "contextNote": "六、科學邊界：超光速通信的嚴格禁令 · 第 3 段"
           }
@@ -3084,8 +3176,8 @@
         "interactiveComponentId": null
       }
     ],
-    "totalWordCount": 3942,
-    "lastIndexedAt": "2026-11-07T08:04:47.433Z"
+    "totalWordCount": 4115,
+    "lastIndexedAt": "2026-11-07T14:49:43.063Z"
   },
   {
     "id": "art-bismuth-sulfide-photovoltaics",
@@ -3143,7 +3235,7 @@
       }
     ],
     "interactiveComponent": "PhotovoltaicRecombinationSimulator",
-    "contentHash": "088457053eb09bc8f08f9c1db39ef1ccee40db53e64e73acd2eeabc5deac52c7",
+    "contentHash": "8c5c42d5028f5e27f6733d51c0efec11d8853889d35aaf4a8224800a4c22628e",
     "sections": [
       {
         "id": "sec-1-ab0c56",
@@ -3347,7 +3439,7 @@
         "level": 1,
         "paragraphs": [
           "由牛津大學物理系（第一作者 Marcello Righetto 與資深通訊作者 Laura M. Herz 等人）領銜的跨國研究團隊，將目光投向了一種歷史悠久、無毒且地殼儲量豐富的二元半導體——**硫化鉍（Bismuth Sulfide, $\\text{Bi}_2\\text{S}_3$）**。",
-          "過去，硫化鉍一直被歸類為「有吸光潛力但效率低落」的邊緣材料，早期製造的實驗器件光電轉換效率始終停留在個位數百分比。多數人認為這是因為該材料內部存在難以消除的缺陷。然而，這篇發表於《Nature》的研究利用高解析角分辨光電子能譜（ARPES）結合極紫外暫態吸收光譜（Transient Absorption Spectroscopy），徹底翻案了過去的認知。",
+          "過去，硫化鉍一直被歸類為「有吸光潛力但效率低落」的邊緣材料，早期製造的實驗器件光電轉換效率始終停留在個位數百分比。多數人認為這是因為該材料內部存在難以消除的缺陷。然而，這篇發表於《Nature》的研究利用超快太赫茲與微波電導光譜、穩態與低溫時間解析螢光（PL）光譜結合第一性原理能帶計算，徹底翻案了過去的認知。",
           "研究團隊發現，硫化鉍具有非常獨特的「擬直接能隙」（Pseudo-direct Bandgap）能帶幾何：\n1. **強垂直光學躍遷**：在布里淵區中心附近，價帶頂與導帶之間存在一個能量約 $1.35\\text{ eV}$ 的強偶極躍遷通道。這個數值恰好坐落在太陽能轉換最佳的肖克利-奎塞爾（Shockley-Queisser）理論能隙區間，賦予了它高達 $10^5\\text{ cm}^{-1}$ 的強大吸光係數。\n2. **飛秒級動量轉移**：關鍵發生在光子被吸收後的幾百飛秒（$10^{-15}\\text{ s}$）之內！被激發到導帶頂端的高能電子，並未留在原地等待與電洞復合，而是透過超快晶格散射，迅速滑落至相鄰一個在晶體動量上微幅偏離的局域能谷（Local Valley Minimum）。\n3. **量子動量屏障**：能谷之間的動量差形成了一個天然的阻擋層。當電子落入這個偏離的能谷後，它若想跳回價帶與電洞直接湮滅，就被動量守恆定律牢牢卡住。"
         ],
         "sentences": [
@@ -3388,15 +3480,15 @@
             "contextNote": "二、硫化鉍的驚喜：擬直接能隙的微觀幾何 · 第 2 段"
           },
           {
-            "sentenceId": "sent-8ec89bd8",
+            "sentenceId": "sent-c2bc3f9b",
             "articleId": "art-bismuth-sulfide-photovoltaics",
             "sectionId": "sec-2-4ae737",
             "sectionTitle": "二、硫化鉍的驚喜：擬直接能隙的微觀幾何",
             "paragraphIndex": 1,
-            "exactQuote": "然而，這篇發表於《Nature》的研究利用高解析角分辨光電子能譜（ARPES）結合極紫外暫態吸收光譜（Transient Absorption Spectroscopy），徹底翻案了過去的認知。",
+            "exactQuote": "然而，這篇發表於《Nature》的研究利用超快太赫茲與微波電導光譜、穩態與低溫時間解析螢光（PL）光譜結合第一性原理能帶計算，徹底翻案了過去的認知。",
             "charStart": 2233,
-            "charEnd": 2330,
-            "contentHash": "8ec89bd863b5dca1ef4dc86535fefa3873347fdcc7ee0cee3b157bcc60c091a1",
+            "charEnd": 2307,
+            "contentHash": "c2bc3f9b270636e1883de02c30c9ed8571e55dfadf4a03ec9d56a8cf1ecd406f",
             "contextNote": "二、硫化鉍的驚喜：擬直接能隙的微觀幾何 · 第 2 段"
           },
           {
@@ -3406,8 +3498,8 @@
             "sectionTitle": "二、硫化鉍的驚喜：擬直接能隙的微觀幾何",
             "paragraphIndex": 2,
             "exactQuote": "研究團隊發現，硫化鉍具有非常獨特的「擬直接能隙」（Pseudo-direct Bandgap）能帶幾何：\n1. **強垂直光學躍遷**：在布里淵區中心附近，價帶頂與導帶之間存在一個能量約 $1.35\\text{ eV}$ 的強偶極躍遷通道。",
-            "charStart": 2511,
-            "charEnd": 2631,
+            "charStart": 2465,
+            "charEnd": 2585,
             "contentHash": "05a65f61d0695520e49aa24d535c6da3a7340540725ccb615179054d4606d45c",
             "contextNote": "二、硫化鉍的驚喜：擬直接能隙的微觀幾何 · 第 3 段"
           },
@@ -3418,8 +3510,8 @@
             "sectionTitle": "二、硫化鉍的驚喜：擬直接能隙的微觀幾何",
             "paragraphIndex": 2,
             "exactQuote": "這個數值恰好坐落在太陽能轉換最佳的肖克利-奎塞爾（Shockley-Queisser）理論能隙區間，賦予了它高達 $10^5\\text{ cm}^{-1}$ 的強大吸光係數。",
-            "charStart": 2632,
-            "charEnd": 2719,
+            "charStart": 2586,
+            "charEnd": 2673,
             "contentHash": "f50154d9c7f35f03d0c03aa52359996e997454516d35f02d9ce4b832c1263e6b",
             "contextNote": "二、硫化鉍的驚喜：擬直接能隙的微觀幾何 · 第 3 段"
           },
@@ -3430,8 +3522,8 @@
             "sectionTitle": "二、硫化鉍的驚喜：擬直接能隙的微觀幾何",
             "paragraphIndex": 2,
             "exactQuote": "2. **飛秒級動量轉移**：關鍵發生在光子被吸收後的幾百飛秒（$10^{-15}\\text{ s}$）之內！",
-            "charStart": 2720,
-            "charEnd": 2775,
+            "charStart": 2674,
+            "charEnd": 2729,
             "contentHash": "9e2a7de0498e398e0e082f2d5a887ed402c1711893c8cdbef77651bb73725323",
             "contextNote": "二、硫化鉍的驚喜：擬直接能隙的微觀幾何 · 第 3 段"
           },
@@ -3442,8 +3534,8 @@
             "sectionTitle": "二、硫化鉍的驚喜：擬直接能隙的微觀幾何",
             "paragraphIndex": 2,
             "exactQuote": "被激發到導帶頂端的高能電子，並未留在原地等待與電洞復合，而是透過超快晶格散射，迅速滑落至相鄰一個在晶體動量上微幅偏離的局域能谷（Local Valley Minimum）。",
-            "charStart": 2776,
-            "charEnd": 2862,
+            "charStart": 2730,
+            "charEnd": 2816,
             "contentHash": "8bb15326fb1180f1330c04404cda603c61c654a60de170b0a2ae03198407c95b",
             "contextNote": "二、硫化鉍的驚喜：擬直接能隙的微觀幾何 · 第 3 段"
           },
@@ -3454,8 +3546,8 @@
             "sectionTitle": "二、硫化鉍的驚喜：擬直接能隙的微觀幾何",
             "paragraphIndex": 2,
             "exactQuote": "3. **量子動量屏障**：能谷之間的動量差形成了一個天然的阻擋層。",
-            "charStart": 2863,
-            "charEnd": 2897,
+            "charStart": 2817,
+            "charEnd": 2851,
             "contentHash": "84391e1a575c8574de39772f570ceebe7d2f29191929c1d829ac8d35c302f259",
             "contextNote": "二、硫化鉍的驚喜：擬直接能隙的微觀幾何 · 第 3 段"
           },
@@ -3466,8 +3558,8 @@
             "sectionTitle": "二、硫化鉍的驚喜：擬直接能隙的微觀幾何",
             "paragraphIndex": 2,
             "exactQuote": "當電子落入這個偏離的能谷後，它若想跳回價帶與電洞直接湮滅，就被動量守恆定律牢牢卡住。",
-            "charStart": 2898,
-            "charEnd": 2940,
+            "charStart": 2852,
+            "charEnd": 2894,
             "contentHash": "54801a0a305971ea9db05daab7c6c0b49de435347a02e4e1022f63e7329066be",
             "contextNote": "二、硫化鉍的驚喜：擬直接能隙的微觀幾何 · 第 3 段"
           }
@@ -3491,8 +3583,8 @@
             "sectionTitle": "三、親手實驗：能帶躍遷與載子復合模擬",
             "paragraphIndex": 0,
             "exactQuote": "在下方互動實驗中，你可以切換「直接能隙」、「間接能隙」與「硫化鉍擬直接能隙」，動態調節光照強度與晶格缺陷濃度，觀察動量空間能帶輪廓與光生電荷濃度衰減曲線的劇烈變化：",
-            "charStart": 3369,
-            "charEnd": 3451,
+            "charStart": 3323,
+            "charEnd": 3405,
             "contentHash": "542c17fa3abdca94d300183d3fc52af8d00437717319e33ae494b9ec6f3f0e79",
             "contextNote": "三、親手實驗：能帶躍遷與載子復合模擬 · 第 1 段"
           }
@@ -3505,25 +3597,25 @@
         "title": "四、數據說話：從光譜測量到載子擴散",
         "level": 1,
         "paragraphs": [
-          "藉由超快飛秒光譜測量，研究團隊量化了這項微觀機制為材料性能帶來的實質改變：",
+          "藉由超快太赫茲電導與時間解析螢光光譜測量，研究團隊量化了這項微觀機制為材料性能帶來的實質改變：",
           "### 1. 雙分子復合係數驟降\n在傳統直接能隙半導體中，光生電荷的雙分子輻射復合率由下式決定：",
           "$$R_{\\text{bimolecular}} = B \\cdot n \\cdot p$$",
-          "其中 $B$ 為輻射復合係數，$n$ 與 $p$ 分別為電子與電洞濃度。在硫化鉍中，由於動量空間解耦效應，$B$ 係數被壓制了超過一個數量級，使得少數載子壽命（$\\tau$）相較於傳統直接能隙材料顯著延長，達到了數百奈秒（$\\sim 500\\text{ ns}$）的量級。",
+          "其中 $B$ 為輻射復合係數，$n$ 與 $p$ 分別為電子與電洞濃度。在硫化鉍中，論文報告其室溫雙分子復合係數約為 $5 \\times 10^{-11}\\text{ cm}^3/\\text{s}$，能帶解耦模型預測其相比同等直接躍遷材料受抑約 75%（降至原本的約四分之一，而非數量級劇降），且實測光生載子在約 $100\\text{ ns}$ 內幾乎完全復合。",
           "### 2. 載子擴散長度（Diffusion Length）的質變\n在太陽能電池中，光生電子能否在復合前活著抵達集電電極，取決於擴散長度：",
           "$$L_D = \\sqrt{D \\cdot \\tau}$$",
-          "其中 $D$ 為載子擴散係數。在硫化鉍薄膜中，延長的壽命使 $L_D$ 突破至數微米級別（$> 1\\text{ }\\mu\\text{m}$）。考慮到該材料的超強吸光係數使得 $100\\text{ nm}$ 厚度的薄膜就能吸收絕大部分陽光，$L_D \\gg 1/\\alpha$ 的條件被完美滿足——這意味著幾乎所有在薄膜內部被激發的電荷，都有極高機率活著逃逸至電極！"
+          "其中 $D$ 為載子擴散係數。在硫化鉍薄膜中，高達 $10^5\\text{ cm}^{-1}$ 的強吸收係數使得 $100\\text{ nm}$ 厚度薄膜的單程理想光吸收率即可達到約 $1 - e^{-1} \\approx 63.2\\%$。然而，受限於約 $100\\text{ ns}$ 內完全復合的壽命與多晶微觀缺陷，目前實驗薄膜的擴散長度並無數微米之實測證據，仍需依賴奈米結構與精密介面工程來實現高電荷收集效率。"
         ],
         "sentences": [
           {
-            "sentenceId": "sent-2814e9f0",
+            "sentenceId": "sent-149152c4",
             "articleId": "art-bismuth-sulfide-photovoltaics",
             "sectionId": "sec-4-b8534c",
             "sectionTitle": "四、數據說話：從光譜測量到載子擴散",
             "paragraphIndex": 0,
-            "exactQuote": "藉由超快飛秒光譜測量，研究團隊量化了這項微觀機制為材料性能帶來的實質改變：",
-            "charStart": 3536,
-            "charEnd": 3573,
-            "contentHash": "2814e9f04305ce571248de71b68c1d7eff3240d31242e07a0ab384dbcb669ecd",
+            "exactQuote": "藉由超快太赫茲電導與時間解析螢光光譜測量，研究團隊量化了這項微觀機制為材料性能帶來的實質改變：",
+            "charStart": 3490,
+            "charEnd": 3537,
+            "contentHash": "149152c496d0a999c9c53a7113e370713858d9f2069efd02884adf60a6884175",
             "contextNote": "四、數據說話：從光譜測量到載子擴散 · 第 1 段"
           },
           {
@@ -3533,8 +3625,8 @@
             "sectionTitle": "四、數據說話：從光譜測量到載子擴散",
             "paragraphIndex": 1,
             "exactQuote": "### 1. 雙分子復合係數驟降\n在傳統直接能隙半導體中，光生電荷的雙分子輻射復合率由下式決定：",
-            "charStart": 3613,
-            "charEnd": 3661,
+            "charStart": 3587,
+            "charEnd": 3635,
             "contentHash": "0614bc2d09af9f3c2726aa301abeba8d0e6a6310dfd9371d37ae47ea2170cf88",
             "contextNote": "四、數據說話：從光譜測量到載子擴散 · 第 2 段"
           },
@@ -3545,21 +3637,21 @@
             "sectionTitle": "四、數據說話：從光譜測量到載子擴散",
             "paragraphIndex": 3,
             "exactQuote": "其中 $B$ 為輻射復合係數，$n$ 與 $p$ 分別為電子與電洞濃度。",
-            "charStart": 3712,
-            "charEnd": 3748,
+            "charStart": 3686,
+            "charEnd": 3722,
             "contentHash": "ada71fd909bae51243c14c1bb117fc26470ba7de5a7667df05d77d35c9027699",
             "contextNote": "四、數據說話：從光譜測量到載子擴散 · 第 4 段"
           },
           {
-            "sentenceId": "sent-0d3429ec",
+            "sentenceId": "sent-14dea6ba",
             "articleId": "art-bismuth-sulfide-photovoltaics",
             "sectionId": "sec-4-b8534c",
             "sectionTitle": "四、數據說話：從光譜測量到載子擴散",
             "paragraphIndex": 3,
-            "exactQuote": "在硫化鉍中，由於動量空間解耦效應，$B$ 係數被壓制了超過一個數量級，使得少數載子壽命（$\\tau$）相較於傳統直接能隙材料顯著延長，達到了數百奈秒（$\\sim 500\\text{ ns}$）的量級。",
-            "charStart": 3749,
-            "charEnd": 3849,
-            "contentHash": "0d3429ec78d43bb35ad6ea8c50af0367a72370f57fc3d0f3b67379b9cbf305c7",
+            "exactQuote": "在硫化鉍中，論文報告其室溫雙分子復合係數約為 $5 \\times 10^{-11}\\text{ cm}^3/\\text{s}$，能帶解耦模型預測其相比同等直接躍遷材料受抑約 75%（降至原本的約四分之一，而非數量級劇降），且實測光生載子在約 $100\\text{ ns}$ 內幾乎完全復合。",
+            "charStart": 3723,
+            "charEnd": 3868,
+            "contentHash": "14dea6ba9e0c1cdbb54ba507ab697a70b39671bae317e2ce649255e7e5efe220",
             "contextNote": "四、數據說話：從光譜測量到載子擴散 · 第 4 段"
           },
           {
@@ -3569,8 +3661,8 @@
             "sectionTitle": "四、數據說話：從光譜測量到載子擴散",
             "paragraphIndex": 4,
             "exactQuote": "### 2. 載子擴散長度（Diffusion Length）的質變\n在太陽能電池中，光生電子能否在復合前活著抵達集電電極，取決於擴散長度：",
-            "charStart": 3988,
-            "charEnd": 4058,
+            "charStart": 4052,
+            "charEnd": 4122,
             "contentHash": "481d11c5251fefe3a39e0c98fa4bf96fd73484c44f7072123fcfe112bb85d6a8",
             "contextNote": "四、數據說話：從光譜測量到載子擴散 · 第 5 段"
           },
@@ -3581,33 +3673,33 @@
             "sectionTitle": "四、數據說話：從光譜測量到載子擴散",
             "paragraphIndex": 6,
             "exactQuote": "其中 $D$ 為載子擴散係數。",
-            "charStart": 4131,
-            "charEnd": 4146,
+            "charStart": 4195,
+            "charEnd": 4210,
             "contentHash": "d91dcb3d010c91f158be2bef2392503ba1c9cc33b36cab033de6f05aa45ad1f3",
             "contextNote": "四、數據說話：從光譜測量到載子擴散 · 第 7 段"
           },
           {
-            "sentenceId": "sent-5d13d778",
+            "sentenceId": "sent-8fdfbeda",
             "articleId": "art-bismuth-sulfide-photovoltaics",
             "sectionId": "sec-4-b8534c",
             "sectionTitle": "四、數據說話：從光譜測量到載子擴散",
             "paragraphIndex": 6,
-            "exactQuote": "在硫化鉍薄膜中，延長的壽命使 $L_D$ 突破至數微米級別（$> 1\\text{ }\\mu\\text{m}$）。",
-            "charStart": 4147,
-            "charEnd": 4203,
-            "contentHash": "5d13d7785e9ff0caf5b0a2060f69f7161c88f4361c5ac0d8ed366bc8385640ce",
+            "exactQuote": "在硫化鉍薄膜中，高達 $10^5\\text{ cm}^{-1}$ 的強吸收係數使得 $100\\text{ nm}$ 厚度薄膜的單程理想光吸收率即可達到約 $1 - e^{-1} \\approx 63.2\\%$。",
+            "charStart": 4211,
+            "charEnd": 4316,
+            "contentHash": "8fdfbeda1ddbe2064f9b85519c987f8cd35c82c14a2f7aa4354aebffd8f348be",
             "contextNote": "四、數據說話：從光譜測量到載子擴散 · 第 7 段"
           },
           {
-            "sentenceId": "sent-c8c4d5bb",
+            "sentenceId": "sent-f5884ff6",
             "articleId": "art-bismuth-sulfide-photovoltaics",
             "sectionId": "sec-4-b8534c",
             "sectionTitle": "四、數據說話：從光譜測量到載子擴散",
             "paragraphIndex": 6,
-            "exactQuote": "考慮到該材料的超強吸光係數使得 $100\\text{ nm}$ 厚度的薄膜就能吸收絕大部分陽光，$L_D \\gg 1/\\alpha$ 的條件被完美滿足——這意味著幾乎所有在薄膜內部被激發的電荷，都有極高機率活著逃逸至電極！",
-            "charStart": 4204,
-            "charEnd": 4315,
-            "contentHash": "c8c4d5bb7344d76428969b5254b7788ba0b22fc66e8fd969be8a9e015c7185ff",
+            "exactQuote": "然而，受限於約 $100\\text{ ns}$ 內完全復合的壽命與多晶微觀缺陷，目前實驗薄膜的擴散長度並無數微米之實測證據，仍需依賴奈米結構與精密介面工程來實現高電荷收集效率。",
+            "charStart": 4317,
+            "charEnd": 4405,
+            "contentHash": "f5884ff6bfd3f29fc6c339f53d34bb42bc3a8aa440a770f798a1c9f9624be82c",
             "contextNote": "四、數據說話：從光譜測量到載子擴散 · 第 7 段"
           }
         ],
@@ -3634,8 +3726,8 @@
             "sectionTitle": "五、科學邊界：它明天能取代矽晶面板嗎？",
             "paragraphIndex": 0,
             "exactQuote": "面對這項令人振奮的材料物理突破，MIRARI 編輯部必須向讀者提供清醒而負責任的客觀視角：",
-            "charStart": 4500,
-            "charEnd": 4545,
+            "charStart": 4616,
+            "charEnd": 4661,
             "contentHash": "5c87791141fefb05c91d997c5843f71df0e871a678262e8d36603e0b61877cf6",
             "contextNote": "五、科學邊界：它明天能取代矽晶面板嗎？ · 第 1 段"
           },
@@ -3646,8 +3738,8 @@
             "sectionTitle": "五、科學邊界：它明天能取代矽晶面板嗎？",
             "paragraphIndex": 1,
             "exactQuote": "1. **機制突破不等於成品效率超越**：\n   該論文的核心貢獻在於**發現並確立了固態物理中的一種全新優質機制**，證明了硫化鉍具備同時滿足高吸光與慢復合的本徵物理潛力。",
-            "charStart": 4593,
-            "charEnd": 4680,
+            "charStart": 4709,
+            "charEnd": 4796,
             "contentHash": "e7cb17af035e40eccd9ea0dcf63c4c6fdb5d22d6c624a58473fe00a1ed01ceae",
             "contextNote": "五、科學邊界：它明天能取代矽晶面板嗎？ · 第 2 段"
           },
@@ -3658,8 +3750,8 @@
             "sectionTitle": "五、科學邊界：它明天能取代矽晶面板嗎？",
             "paragraphIndex": 1,
             "exactQuote": "**研究團隊並未製造出轉換效率超越現有商業單晶矽（約 24–26%）或實驗室鈣鈦礦（約 26%）的完整商業面板**。",
-            "charStart": 4681,
-            "charEnd": 4739,
+            "charStart": 4797,
+            "charEnd": 4855,
             "contentHash": "7aa83d340faf7d4550ac3f86a1fe11c86d9b7e18ec5012cabf13fc67c7b6a792",
             "contextNote": "五、科學邊界：它明天能取代矽晶面板嗎？ · 第 2 段"
           },
@@ -3670,8 +3762,8 @@
             "sectionTitle": "五、科學邊界：它明天能取代矽晶面板嗎？",
             "paragraphIndex": 1,
             "exactQuote": "2. **開路電壓與介面工程的現實挑戰**：\n   目前實驗原型電池的能量轉換效率仍受限於多晶薄膜的晶界缺陷（Grain Boundary Traps）與金屬電極接觸介面的非輻射復合。",
-            "charStart": 4740,
-            "charEnd": 4832,
+            "charStart": 4856,
+            "charEnd": 4948,
             "contentHash": "6191713a944cec30141bc4934b31fe240b825c5488458546d543ed0f42cd5240",
             "contextNote": "五、科學邊界：它明天能取代矽晶面板嗎？ · 第 2 段"
           },
@@ -3682,8 +3774,8 @@
             "sectionTitle": "五、科學邊界：它明天能取代矽晶面板嗎？",
             "paragraphIndex": 1,
             "exactQuote": "如何把微觀能帶物理的優勢，完整兌現為巨觀電池的開路電壓（$V_{oc}$），仍需要材料化學界數年的製程探索。",
-            "charStart": 4833,
-            "charEnd": 4887,
+            "charStart": 4949,
+            "charEnd": 5003,
             "contentHash": "11d27d43e806c95168a36c16f07ee618396cb5520f37d650cd2dedc9a43574aa",
             "contextNote": "五、科學邊界：它明天能取代矽晶面板嗎？ · 第 2 段"
           },
@@ -3694,8 +3786,8 @@
             "sectionTitle": "五、科學邊界：它明天能取代矽晶面板嗎？",
             "paragraphIndex": 1,
             "exactQuote": "3. **環境與經濟意義**：\n   相較於含有重金屬鉛的鈣鈦礦，或是需要超高溫提純的半導體級矽晶圓，硫化鉍具備低毒性、化學穩定性高、地殼豐度大且可低溫溶液塗布處理的巨大潛力。",
-            "charStart": 4888,
-            "charEnd": 4976,
+            "charStart": 5004,
+            "charEnd": 5092,
             "contentHash": "9ddbee2b159c5b31a9695018c22620ee80fa02cd826fc6912bc0a341bc13e5f9",
             "contextNote": "五、科學邊界：它明天能取代矽晶面板嗎？ · 第 2 段"
           },
@@ -3706,8 +3798,8 @@
             "sectionTitle": "五、科學邊界：它明天能取代矽晶面板嗎？",
             "paragraphIndex": 2,
             "exactQuote": "這項研究提醒了我們科學探索的美妙：大自然並非總是逼迫我們在極端之間做非黑即白的妥協；只要我們對晶格與電子的微觀對稱性理解得足夠深刻，物理定律往往會以意想不到的優雅結構，為人類鋪開通往綠色未來的嶄新路徑。",
-            "charStart": 5360,
-            "charEnd": 5461,
+            "charStart": 5476,
+            "charEnd": 5577,
             "contentHash": "a02edafcee082dfe8b9f6549ca9e7cfcc93ea9532d9d69389597e1a957716096",
             "contextNote": "五、科學邊界：它明天能取代矽晶面板嗎？ · 第 3 段"
           }
@@ -3716,8 +3808,8 @@
         "interactiveComponentId": null
       }
     ],
-    "totalWordCount": 2855,
-    "lastIndexedAt": "2026-11-07T08:04:47.436Z"
+    "totalWordCount": 2906,
+    "lastIndexedAt": "2026-11-07T14:49:43.065Z"
   },
   {
     "id": "art-brownian-ratchet-motors",
@@ -4422,7 +4514,7 @@
       }
     ],
     "totalWordCount": 3332,
-    "lastIndexedAt": "2026-11-07T08:04:47.438Z"
+    "lastIndexedAt": "2026-11-07T14:49:43.066Z"
   },
   {
     "id": "art-car-t-immunology",
@@ -4998,7 +5090,7 @@
       }
     ],
     "totalWordCount": 3087,
-    "lastIndexedAt": "2026-11-07T08:04:47.440Z"
+    "lastIndexedAt": "2026-11-07T14:49:43.069Z"
   },
   {
     "id": "art-chaos-double-pendulum",
@@ -5521,7 +5613,7 @@
       }
     ],
     "totalWordCount": 2065,
-    "lastIndexedAt": "2026-11-07T08:04:47.442Z"
+    "lastIndexedAt": "2026-11-07T14:49:43.071Z"
   },
   {
     "id": "art-coriolis-geostrophic",
@@ -6194,7 +6286,7 @@
       }
     ],
     "totalWordCount": 3371,
-    "lastIndexedAt": "2026-11-07T08:04:47.444Z"
+    "lastIndexedAt": "2026-11-07T14:49:43.074Z"
   },
   {
     "id": "art-gravitational-waves-kerr",
@@ -6237,7 +6329,7 @@
       },
       {
         "id": "ref-isi-2019-prl",
-        "citation": "Isi, M., Giesler, M., Farr, W. M., Scheel, M. A., & Teukolsky, S. A. (2019). \"Testing the no-hair theorem with GW150914.\" Physical Review Letters, 123(16), 161101. doi:10.1103/PhysRevLett.123.161101."
+        "citation": "Isi, M., Giesler, M., Farr, W. M., Scheel, M. A., & Teukolsky, S. A. (2019). \"Testing the no-hair theorem with GW150914.\" Physical Review Letters, 123(11), 111102. doi:10.1103/PhysRevLett.123.111102."
       },
       {
         "id": "ref-teukolsky-1973-apj",
@@ -6245,7 +6337,7 @@
       }
     ],
     "interactiveComponent": "BlackHoleRingdownSimulator",
-    "contentHash": "be762052344d67555bead655c1ac5df0fc9ed3549958edc66d0e72f8ac51c0db",
+    "contentHash": "b29d146645e8cac3f4f5596973fa851298fe701478be92863e7ae37d402b0e40",
     "sections": [
       {
         "id": "sec-1-17860f",
@@ -6585,82 +6677,94 @@
         "title": "五、真實數據：GW150914 的里程碑突破",
         "level": 1,
         "paragraphs": [
-          "2019 年，馬克西米利亞諾·伊西（Maximiliano Isi）與威爾·法爾（Will Farr）等人在《Physical Review Letters》發表了劃時代的數據分析成果。",
-          "他們利用先進的貝葉斯噪聲推斷技術，重新審查了人類歷史上首個探測到的重力波事件——**GW150914**。\n研究團隊在合併峰值後僅數毫秒的超短窗口內，以高達 $3.6\\sigma$ 的統計信噪比，成功分離出了**基模（$n=0$）與第一泛音（$n=1$）的疊加信號**！",
-          "數據分析結果震撼了科學界：\n- 基模頻率約為 $f_{220} \\approx 251\\text{ Hz}$，阻尼時間 $\\tau_{220} \\approx 4.0\\text{ ms}$；\n- 泛音頻率在誤差範圍內與克爾幾何預言完全自洽；\n- 綜合推算出的殘餘黑洞質量為 $M \\approx 68.5 M_\\odot$，自旋為 $a \\approx 0.69$。\n- **無毛定理的微擾偏差參數被限制在 10% 到 20% 以內**。",
-          "這是人類歷史上第一次利用純粹的時空震顫，直接檢驗了黑洞事件視界邊界條件的純潔性，將愛因斯坦的克爾度規從幾何推想轉化為堅實的觀測事實。"
+          "2019 年，馬克西米利亞諾·伊西（Maximiliano Isi）等人在《Physical Review Letters》發表了一項開創性的數據分析成果。",
+          "他們利用貝葉斯噪聲推斷技術重新審查 GW150914，在論文中報告在合併峰值後約數毫秒的超短窗口內，檢測到了**基模（$n=0$）與第一泛音（$n=1$）疊加的信號特徵**，並指出基模與泛音解算的質量和自旋自洽，微擾偏差參數在約 20% 誤差內與無毛定理相容。",
+          "當時報道的分析結果包括：\n- 基模頻率約為 $f_{220} \\approx 251\\text{ Hz}$，阻尼時間 $\\tau_{220} \\approx 4.0\\text{ ms}$；\n- 泛音頻率在估算範圍內與克爾幾何預言相容；\n- 推算殘餘黑洞質量約 $68.5 M_\\odot$，自旋約 $0.69$。",
+          "**然而，科學界對這項先驅性研究展開了持續深入的複核。**\n在 2024 至 2025 年間，多個獨立研究組（如 Cotesta 等人、Finch & Moore、Baibhav 等人發表於《Physical Review D》）重新評估了分析中的系統不確定性。後續研究指出，該泛音信號的統計顯著性對**合併時間零點（Peak Time $t_{\\text{peak}}$）的選取極度敏感**；一旦充分考量時間零點不確定性與非線性合併污染，泛音存在的證據強度會顯著減弱。這表明在現役探測器靈敏度下，GW150914 的鈴宕信號尚不能視為無毛定理的決定性定論，而是開啟了黑洞光譜學實證檢驗的大門。"
         ],
         "sentences": [
           {
-            "sentenceId": "sent-b7ca4d49",
+            "sentenceId": "sent-fdd1ab79",
             "articleId": "art-gravitational-waves-kerr",
             "sectionId": "sec-5-49e0f6",
             "sectionTitle": "五、真實數據：GW150914 的里程碑突破",
             "paragraphIndex": 0,
-            "exactQuote": "2019 年，馬克西米利亞諾·伊西（Maximiliano Isi）與威爾·法爾（Will Farr）等人在《Physical Review Letters》發表了劃時代的數據分析成果。",
+            "exactQuote": "2019 年，馬克西米利亞諾·伊西（Maximiliano Isi）等人在《Physical Review Letters》發表了一項開創性的數據分析成果。",
             "charStart": 4052,
-            "charEnd": 4145,
-            "contentHash": "b7ca4d49f86c6f1e97a7e5cd772b8d0cb4446a8a419677de233690616faad29a",
+            "charEnd": 4130,
+            "contentHash": "fdd1ab797c7c976a63f1f98a27e9d76b54e1cde2f347eed3288c7806dfc3e814",
             "contextNote": "五、真實數據：GW150914 的里程碑突破 · 第 1 段"
           },
           {
-            "sentenceId": "sent-0bd6900a",
+            "sentenceId": "sent-b69f4d36",
             "articleId": "art-gravitational-waves-kerr",
             "sectionId": "sec-5-49e0f6",
             "sectionTitle": "五、真實數據：GW150914 的里程碑突破",
             "paragraphIndex": 1,
-            "exactQuote": "他們利用先進的貝葉斯噪聲推斷技術，重新審查了人類歷史上首個探測到的重力波事件——**GW150914**。",
-            "charStart": 4241,
-            "charEnd": 4294,
-            "contentHash": "0bd6900a5aca70895f0e4d3dab8f17734ac525ef9d1e81d56fc91f034e8f7eec",
+            "exactQuote": "他們利用貝葉斯噪聲推斷技術重新審查 GW150914，在論文中報告在合併峰值後約數毫秒的超短窗口內，檢測到了**基模（$n=0$）與第一泛音（$n=1$）疊加的信號特徵**，並指出基模與泛音解算的質量和自旋自洽，微擾偏差參數在約 20% 誤差內與無毛定理相容。",
+            "charStart": 4211,
+            "charEnd": 4341,
+            "contentHash": "b69f4d369c0c57cba12c95d44462eebd35b5f7f0e93f0486fcd28cf4f28cb233",
             "contextNote": "五、真實數據：GW150914 的里程碑突破 · 第 2 段"
           },
           {
-            "sentenceId": "sent-ea8885a4",
-            "articleId": "art-gravitational-waves-kerr",
-            "sectionId": "sec-5-49e0f6",
-            "sectionTitle": "五、真實數據：GW150914 的里程碑突破",
-            "paragraphIndex": 1,
-            "exactQuote": "研究團隊在合併峰值後僅數毫秒的超短窗口內，以高達 $3.6\\sigma$ 的統計信噪比，成功分離出了**基模（$n=0$）與第一泛音（$n=1$）的疊加信號**！",
-            "charStart": 4295,
-            "charEnd": 4376,
-            "contentHash": "ea8885a4c1bdcd245affb6dc47da0aa1aebfcdde5906134beaa426f0e8c3de86",
-            "contextNote": "五、真實數據：GW150914 的里程碑突破 · 第 2 段"
-          },
-          {
-            "sentenceId": "sent-7eb9b756",
+            "sentenceId": "sent-576a855a",
             "articleId": "art-gravitational-waves-kerr",
             "sectionId": "sec-5-49e0f6",
             "sectionTitle": "五、真實數據：GW150914 的里程碑突破",
             "paragraphIndex": 2,
-            "exactQuote": "數據分析結果震撼了科學界：\n- 基模頻率約為 $f_{220} \\approx 251\\text{ Hz}$，阻尼時間 $\\tau_{220} \\approx 4.0\\text{ ms}$；\n- 泛音頻率在誤差範圍內與克爾幾何預言完全自洽；\n- 綜合推算出的殘餘黑洞質量為 $M \\approx 68.5 M_\\odot$，自旋為 $a \\approx 0.69$。",
-            "charStart": 4514,
-            "charEnd": 4697,
-            "contentHash": "7eb9b7566f43e776b4b3cee6c0a0789250fa53e252ae914066f8aeb76bcc8f39",
+            "exactQuote": "當時報道的分析結果包括：\n- 基模頻率約為 $f_{220} \\approx 251\\text{ Hz}$，阻尼時間 $\\tau_{220} \\approx 4.0\\text{ ms}$；\n- 泛音頻率在估算範圍內與克爾幾何預言相容；\n- 推算殘餘黑洞質量約 $68.5 M_\\odot$，自旋約 $0.69$。",
+            "charStart": 4474,
+            "charEnd": 4630,
+            "contentHash": "576a855af63097bb8298a4c0791e35618a0554f084ea23352cdf25cd1eefda40",
             "contextNote": "五、真實數據：GW150914 的里程碑突破 · 第 3 段"
           },
           {
-            "sentenceId": "sent-970f30c5",
-            "articleId": "art-gravitational-waves-kerr",
-            "sectionId": "sec-5-49e0f6",
-            "sectionTitle": "五、真實數據：GW150914 的里程碑突破",
-            "paragraphIndex": 2,
-            "exactQuote": "- **無毛定理的微擾偏差參數被限制在 10% 到 20% 以內**。",
-            "charStart": 4698,
-            "charEnd": 4733,
-            "contentHash": "970f30c548566be1103627c46ba8f240ee5d6f0d640e965698f7f4086d30f642",
-            "contextNote": "五、真實數據：GW150914 的里程碑突破 · 第 3 段"
-          },
-          {
-            "sentenceId": "sent-8486dbdd",
+            "sentenceId": "sent-a793eb6c",
             "articleId": "art-gravitational-waves-kerr",
             "sectionId": "sec-5-49e0f6",
             "sectionTitle": "五、真實數據：GW150914 的里程碑突破",
             "paragraphIndex": 3,
-            "exactQuote": "這是人類歷史上第一次利用純粹的時空震顫，直接檢驗了黑洞事件視界邊界條件的純潔性，將愛因斯坦的克爾度規從幾何推想轉化為堅實的觀測事實。",
-            "charStart": 4955,
-            "charEnd": 5021,
-            "contentHash": "8486dbdd3611bc1d6df240fda801df27a9865fbdc2abaa99ad5f026d5dd5298f",
+            "exactQuote": "**然而，科學界對這項先驅性研究展開了持續深入的複核。**",
+            "charStart": 4789,
+            "charEnd": 4818,
+            "contentHash": "a793eb6cdaf770047e0ad882a3d21edae9ba427b9acf6f6d65244bf7c76311cc",
+            "contextNote": "五、真實數據：GW150914 的里程碑突破 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-560290be",
+            "articleId": "art-gravitational-waves-kerr",
+            "sectionId": "sec-5-49e0f6",
+            "sectionTitle": "五、真實數據：GW150914 的里程碑突破",
+            "paragraphIndex": 3,
+            "exactQuote": "在 2024 至 2025 年間，多個獨立研究組（如 Cotesta 等人、Finch & Moore、Baibhav 等人發表於《Physical Review D》）重新評估了分析中的系統不確定性。",
+            "charStart": 4819,
+            "charEnd": 4920,
+            "contentHash": "560290bef464a763a9a3e7b16189bf5ff815203a1e9128342e12b6e6bed9ffa4",
+            "contextNote": "五、真實數據：GW150914 的里程碑突破 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-91f6caad",
+            "articleId": "art-gravitational-waves-kerr",
+            "sectionId": "sec-5-49e0f6",
+            "sectionTitle": "五、真實數據：GW150914 的里程碑突破",
+            "paragraphIndex": 3,
+            "exactQuote": "後續研究指出，該泛音信號的統計顯著性對**合併時間零點（Peak Time $t_{\\text{peak}}$）的選取極度敏感**；一旦充分考量時間零點不確定性與非線性合併污染，泛音存在的證據強度會顯著減弱。",
+            "charStart": 4921,
+            "charEnd": 5025,
+            "contentHash": "91f6caad01618dc8dc1113468a99f4025bed4ba83ad696d8f5694bd6157be276",
+            "contextNote": "五、真實數據：GW150914 的里程碑突破 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-2a3e6514",
+            "articleId": "art-gravitational-waves-kerr",
+            "sectionId": "sec-5-49e0f6",
+            "sectionTitle": "五、真實數據：GW150914 的里程碑突破",
+            "paragraphIndex": 3,
+            "exactQuote": "這表明在現役探測器靈敏度下，GW150914 的鈴宕信號尚不能視為無毛定理的決定性定論，而是開啟了黑洞光譜學實證檢驗的大門。",
+            "charStart": 5026,
+            "charEnd": 5088,
+            "contentHash": "2a3e65141e28925cc6a091d96cbefe74711ff015bf0acfcd20622825c97cca22",
             "contextNote": "五、真實數據：GW150914 的里程碑突破 · 第 4 段"
           }
         ],
@@ -6684,8 +6788,8 @@
             "sectionTitle": "六、科學邊界：當前探測極限與未來願景",
             "paragraphIndex": 0,
             "exactQuote": "在為黑洞光譜學的破曉歡呼之際，MIRARI 科學組秉持嚴苛的科學客觀性，為讀者梳理現有技術邊界：",
-            "charStart": 5090,
-            "charEnd": 5138,
+            "charStart": 5388,
+            "charEnd": 5436,
             "contentHash": "7efd7a22e76e80d35c62d98a5f45065ce1145e1c199b53f3b1f37a6447ebfc65",
             "contextNote": "六、科學邊界：當前探測極限與未來願景 · 第 1 段"
           },
@@ -6696,8 +6800,8 @@
             "sectionTitle": "六、科學邊界：當前探測極限與未來願景",
             "paragraphIndex": 1,
             "exactQuote": "1. **併合後即時分析的時間零點爭議（Peak Time Ambiguity）**：\n   在數值相對論中，非線性併合何時結束、何時嚴格進入線性微擾的鈴宕階段，在波形峰值處存在約 $1 - 2$ 個引力時間的微小模糊帶。",
-            "charStart": 5189,
-            "charEnd": 5300,
+            "charStart": 5487,
+            "charEnd": 5598,
             "contentHash": "542f0f60df05ea75b10d6c5dc237188c7555131fc5e6323755cda3a3b147cbf8",
             "contextNote": "六、科學邊界：當前探測極限與未來願景 · 第 2 段"
           },
@@ -6708,8 +6812,8 @@
             "sectionTitle": "六、科學邊界：當前探測極限與未來願景",
             "paragraphIndex": 1,
             "exactQuote": "過早納入數據會受到非線性潮汐撕裂的污染，過晚納入則信噪比已迅速跌入背景噪聲。",
-            "charStart": 5301,
-            "charEnd": 5339,
+            "charStart": 5599,
+            "charEnd": 5637,
             "contentHash": "4b3dd5cc94676316bcffe2362414c84e5fc468cf92eb5ee9ee599fb6e25831ab",
             "contextNote": "六、科學邊界：當前探測極限與未來願景 · 第 2 段"
           },
@@ -6720,8 +6824,8 @@
             "sectionTitle": "六、科學邊界：當前探測極限與未來願景",
             "paragraphIndex": 1,
             "exactQuote": "2. **更高階空間模式（Higher Harmonics）的信噪比限制**：\n   在現役進階 LIGO 與 Virgo 的靈敏度下，只有少數雙黑洞質量比不對稱的大信號能勉強探測到 $l=3, m=3$ 等高階空間模式。",
-            "charStart": 5340,
-            "charEnd": 5451,
+            "charStart": 5638,
+            "charEnd": 5749,
             "contentHash": "147be9ff520793a6cc54cb1b01146b25e5e79841025a105022c43b1a5ccf6e6e",
             "contextNote": "六、科學邊界：當前探測極限與未來願景 · 第 2 段"
           },
@@ -6732,8 +6836,8 @@
             "sectionTitle": "六、科學邊界：當前探測極限與未來願景",
             "paragraphIndex": 1,
             "exactQuote": "絕大多數常規事件的鈴宕階段過於短暫（僅數毫秒），難以進行多模式高精度分離。",
-            "charStart": 5452,
-            "charEnd": 5489,
+            "charStart": 5750,
+            "charEnd": 5787,
             "contentHash": "44d6040b578216f4a303dde6538c942f6b7aa844c0b2a28c33b139ec48a9ecbf",
             "contextNote": "六、科學邊界：當前探測極限與未來願景 · 第 2 段"
           },
@@ -6744,8 +6848,8 @@
             "sectionTitle": "六、科學邊界：當前探測極限與未來願景",
             "paragraphIndex": 1,
             "exactQuote": "3. **下一代探測器的終極展望**：\n   未來的地基愛因斯坦望遠鏡（Einstein Telescope, ET）、宇宙探索者（Cosmic Explorer, CE）以及太空重力波天線 LISA，預計將把鈴宕信號的信噪比提升一到兩個數量級。",
-            "charStart": 5490,
-            "charEnd": 5613,
+            "charStart": 5788,
+            "charEnd": 5911,
             "contentHash": "0ccfe46a6bb78fbfc784835e56e877f64f55ac3da775d123629183740da04c21",
             "contextNote": "六、科學邊界：當前探測極限與未來願景 · 第 2 段"
           },
@@ -6756,8 +6860,8 @@
             "sectionTitle": "六、科學邊界：當前探測極限與未來願景",
             "paragraphIndex": 1,
             "exactQuote": "屆時，科學家將能分離出數十個高階準簡正模，將無毛定理的檢驗精度推進到小數點後數個百分點，甚至有希望窺探廣義相對論在普朗克尺度附近的量子引力修正效應。",
-            "charStart": 5614,
-            "charEnd": 5688,
+            "charStart": 5912,
+            "charEnd": 5986,
             "contentHash": "c02494eac5c1ce09780cdfad54e06807dc5c39267e805b85d5b65d9e7d8a7617",
             "contextNote": "六、科學邊界：當前探測極限與未來願景 · 第 2 段"
           },
@@ -6768,8 +6872,8 @@
             "sectionTitle": "六、科學邊界：當前探測極限與未來願景",
             "paragraphIndex": 2,
             "exactQuote": "黑洞深處的時空之鐘，在寂靜的深空中敲響了億萬年。",
-            "charStart": 6187,
-            "charEnd": 6211,
+            "charStart": 6485,
+            "charEnd": 6509,
             "contentHash": "994d673622348318274fe0211082501a887c675f75f0cc536d77c3a90975e4dc",
             "contextNote": "六、科學邊界：當前探測極限與未來願景 · 第 3 段"
           },
@@ -6780,8 +6884,8 @@
             "sectionTitle": "六、科學邊界：當前探測極限與未來願景",
             "paragraphIndex": 2,
             "exactQuote": "當這串微弱的鈴宕波紋穿透地球上的千米雷射干涉臂時，我們終於聽懂了宇宙最純粹的幾何獨白。",
-            "charStart": 6212,
-            "charEnd": 6255,
+            "charStart": 6510,
+            "charEnd": 6553,
             "contentHash": "1c054419f1e992574860f268a5c81b015068a5e0fd690b643233c3da3a6436fd",
             "contextNote": "六、科學邊界：當前探測極限與未來願景 · 第 3 段"
           }
@@ -6790,8 +6894,8 @@
         "interactiveComponentId": null
       }
     ],
-    "totalWordCount": 3357,
-    "lastIndexedAt": "2026-11-07T08:04:47.448Z"
+    "totalWordCount": 3501,
+    "lastIndexedAt": "2026-11-07T14:49:43.076Z"
   },
   {
     "id": "art-hawk-dove-ess",
@@ -7792,7 +7896,7 @@
       }
     ],
     "totalWordCount": 2689,
-    "lastIndexedAt": "2026-11-07T08:04:47.449Z"
+    "lastIndexedAt": "2026-11-07T14:49:43.078Z"
   },
   {
     "id": "art-jwst-cosmos-web-lensing",
@@ -7813,7 +7917,7 @@
     "format": "interactive_simulation",
     "formatBadgeText": "弱重力透鏡實驗",
     "title": "宇宙的無形骨骼：韋伯望遠鏡如何以微弱重力透鏡繪製暗物質極限地圖？",
-    "subtitle": "Nature Astronomy 最新突破：COSMOS-Web 巡天以 80 萬個背景星系的統計剪切形變，揭開大尺度暗物質絲狀網的亞角秒級高清容貌",
+    "subtitle": "Nature Astronomy 最新突破：COSMOS-Web 巡天以每平方角分 129 個背景星系的精確弱透鏡剪切形變，繪製出角解析度達 1 角分的深空暗物質絲狀網地圖",
     "topicIds": [
       "topic-astrophysics",
       "topic-optics-geometry"
@@ -7826,8 +7930,8 @@
       "COSMOS-Web",
       "凱瑟-斯奎爾斯反演"
     ],
-    "summary": "宇宙中超過 85% 的物質既不發光也不吸收光，是徹底隱形的『暗物質』。我們如何能為完全看不見的東西拍攝一張高清地圖？《Nature Astronomy》最新發表詹姆斯·韋伯太空望遠鏡（JWST）COSMOS-Web 巡天的重磅成果：天文學家利用愛因斯坦廣義相對論的微弱重力透鏡效應，測量近 80 萬個遙遠背景星系微小至 1% 的切向剪切形變，成功反演出橫跨數億光年、分辨率超越哈伯望遠鏡兩倍的暗物質絲狀宇宙骨骼。",
-    "leadParagraph": "抬頭仰望夜空，從燦爛的銀河到萬億光年外的深空星系，人類肉眼與望遠鏡所能捕捉到的一切光芒——恆星、星雲、行星與黑洞吸積盤——加在一起，竟然只佔宇宙全部物質質量的不到 15%。其餘超過 85% 的宇宙實體，是由一種至今未被粒子物理標準模型捕獲、不參與電磁相互作用的幽靈物質——暗物質（Dark Matter）所構成。它們不發光、不反光、不擋光，宛如宇宙深處隱匿的無形巨獸。然而，只要它擁有質量，就無法逃脫愛因斯坦時空幾何的鎖鏈。2026 年發表於《Nature Astronomy》的一項劃時代研究中，國際天文學團隊利用詹姆斯·韋伯太空望遠鏡（JWST）最大規模的巡天項目 COSMOS-Web，以不可思議的亞角秒級解析度，為人類繪製出了迄今最宏大且最細膩的暗物質宇宙網地圖。",
+    "summary": "宇宙中超過 85% 的物質既不發光也不吸收光，是徹底隱形的『暗物質』。我們如何能為完全看不見的東西拍攝一張高清地圖？《Nature Astronomy》最新發表詹姆斯·韋伯太空望遠鏡（JWST）COSMOS-Web 巡天的重磅成果：天文學家利用愛因斯坦廣義相對論的微弱重力透鏡效應，以每平方角分高達 129 個背景星系的剪切測量密度，在 0.77° × 0.70° 天區內重構出角解析度達 1.0 角分、超越哈伯兩倍以上的暗物質絲狀宇宙骨骼。",
+    "leadParagraph": "抬頭仰望夜空，從燦爛的銀河到萬億光年外的深空星系，人類肉眼與望遠鏡所能捕捉到的一切光芒——恆星、星雲、行星與黑洞吸積盤——加在一起，竟然只佔宇宙全部物質質量的不到 15%。其餘超過 85% 的宇宙實體，是由一種至今未被粒子物理標準模型捕獲、不參與電磁相互作用的幽靈物質——暗物質（Dark Matter）所構成。它們不發光、不反光、不擋光，宛如宇宙深處隱匿的無形巨獸。然而，只要它擁有質量，就無法逃脫愛因斯坦時空幾何的鎖鏈。2026 年發表於《Nature Astronomy》的一項劃時代研究中，國際天文學團隊利用詹姆斯·韋伯太空望遠鏡（JWST）最大規模的巡天項目 COSMOS-Web，在 0.77° × 0.70° 的深空視野中，以高達 1.0 角分的重構角解析度（超越過往哈伯望遠鏡兩倍以上），為人類繪製出了迄今最細膩的暗物質宇宙網地圖。",
     "quoteLead": "暗物質隱匿於漆黑的深空之中，但它強大的重力場，將途經它的每一束古老星光都壓出了一絲微不可察的切向弧度。我們正是憑藉這千億道微弱的時空漣漪，摸索出了宇宙骨骼的真容。",
     "authors": [
       {
@@ -7838,7 +7942,7 @@
     "references": [
       {
         "id": "ref-natureastro-2026-scognamiglio",
-        "citation": "Scognamiglio, D., et al. (2026). \"An ultra-high-resolution map of (dark) matter from the COSMOS-Web survey.\" Nature Astronomy, doi:10.1038/s41550-025-02763-9."
+        "citation": "Scognamiglio, D., et al. (2026). \"An ultra-high-resolution map of (dark) matter.\" Nature Astronomy, doi:10.1038/s41550-025-02763-9."
       },
       {
         "id": "ref-kaiser-squires-1993",
@@ -7850,7 +7954,7 @@
       }
     ],
     "interactiveComponent": "WeakLensingShearSimulator",
-    "contentHash": "e6bb8d6975c60c502fa070b7fb6d1575b1da99291660c899787813db7a6920a1",
+    "contentHash": "3236f580197a93264dda87b0f132683ff807010e478c7ffc6d10acb8415ad283",
     "sections": [
       {
         "id": "sec-1-786351",
@@ -8179,8 +8283,8 @@
           "2026 年 1 月發表於《Nature Astronomy》的最新研究，代表了人類微弱重力透鏡觀測的歷史新巔峰。",
           "這項由跨國天文學團隊（第一作者 Diana Scognamiglio 等人）耗時數年完成的 **COSMOS-Web 巡天項目**，利用詹姆斯·韋伯太空望遠鏡（JWST）強大的近紅外相機（NIRCam），在六分儀座（Sextans）連續掃描了高達 **0.54 至 0.77 平方度**的深空天區，累計曝光時間超過 255 小時。",
           "這項研究取得了三個決定性的科學突破：",
-          "### 1. 亞角秒級超高空間解析度\n過去二十年間，哈伯太空望遠鏡（HST）的經典 COSMOS 巡天一直是暗物質地圖的世界標準。然而，JWST 憑藉其 6.5 米直徑的鍍金主鏡與深紅外波段的高靈敏度，**將暗物質地圖的有效空間解析度整整提高了兩倍以上**！它首次以清晰的輪廓描繪出了細長暗物質纖維的內部亞結構，捕獲到了過去在哈伯視野中被噪聲掩蓋的次級暗物質暈。",
-          "### 2. 深入宇宙黎明的超深景深\nJWST 的近紅外波段能穿透宇宙塵埃，清晰觀測到紅移高達 **$z \\sim 2$ 至 $z \\sim 3$**（即宇宙大爆炸後僅 20 至 30 億年）的近 **80 萬個極度微弱的早期背景星系**。更遙遠的背景星系提供了更長的引力透鏡幾何光程（Angular Diameter Distance），使微弱透鏡信噪比（SNR）得到了質的飛躍。",
+          "### 1. 突破至 1.0 角分的超高質量圖空間解析度\n過去二十年間，哈伯太空望遠鏡（HST）的經典 COSMOS 巡天一直是暗物質地圖的世界標準。然而，JWST 憑藉其 6.5 米直徑的鍍金主鏡與深紅外波段的高靈敏度，**將暗物質質量圖的角解析度推進至 $1.00 \\pm 0.01\\text{ arcmin}$，整整提高了兩倍以上**！它首次以清晰的輪廓描繪出了細長暗物質纖維的內部亞結構，捕獲到了過去在哈伯視野中被噪聲掩蓋的次級暗物質暈。",
+          "### 2. 每平方角分 129 個星系的超高背景星系密度\n在微弱透鏡中，噪聲消除能力直接取決於背景星系的表面數密度。COSMOS-Web 巡天利用 NIRCam 的雙波段（F115W 與 F150W）高靈敏觀測，取得了高達 **每平方角分 129 個形狀測量星系** 的空前密度，在整個圖幅內積累了超過二十萬個高品質剪切樣本，並有效探測紅移高達 $z \\sim 2$ 的深空背景。更遙遠、更密集的背景星系大幅提升了統計信噪比，使暗物質絲狀結構在顯著噪聲壓制下清晰浮現。",
           "### 3. 冷暗物質（$\\Lambda\\text{CDM}$）結構形成的終極檢驗\n觀測結果揭示了一幅令人屏息的畫面：\n反演出的暗物質高密度峰值，與巡天中觀測到的數百個發光星系團的位置**呈現出近乎完美的幾何重合**；在各大星系團之間，暗物質絲狀纖維如蛛網般延展數千萬光年，忠實支撐著整個發光宇宙的演化。\n更重要的是，JWST 測得的小尺度暗物質功率譜與密度分佈輪廓（NFW Profile），與基於無碰撞冷暗物質（Cold Dark Matter）的超級電腦宇宙學模擬完全一致，為排查自相互作用暗物質（SIDM）與溫暗物質模型提供了當前最嚴格的觀測限制。"
         ],
         "sentences": [
@@ -8221,27 +8325,27 @@
             "contextNote": "四、Nature Astronomy 突破：JWST COSMOS-Web 巡天實證 · 第 3 段"
           },
           {
-            "sentenceId": "sent-741b8071",
+            "sentenceId": "sent-257c4619",
             "articleId": "art-jwst-cosmos-web-lensing",
             "sectionId": "sec-4-2b374e",
             "sectionTitle": "四、Nature Astronomy 突破：JWST COSMOS-Web 巡天實證",
             "paragraphIndex": 3,
-            "exactQuote": "### 1. 亞角秒級超高空間解析度\n過去二十年間，哈伯太空望遠鏡（HST）的經典 COSMOS 巡天一直是暗物質地圖的世界標準。",
+            "exactQuote": "### 1. 突破至 1.0 角分的超高質量圖空間解析度\n過去二十年間，哈伯太空望遠鏡（HST）的經典 COSMOS 巡天一直是暗物質地圖的世界標準。",
             "charStart": 3959,
-            "charEnd": 4024,
-            "contentHash": "741b8071558c8b9ba5ed0f5a087fd480031ffc32448476143fd505f2f6765cdd",
+            "charEnd": 4034,
+            "contentHash": "257c46193ddb1ef592b7929b5ad67f001eb8a6b5e4bf9c9fabe36fe8def7729e",
             "contextNote": "四、Nature Astronomy 突破：JWST COSMOS-Web 巡天實證 · 第 4 段"
           },
           {
-            "sentenceId": "sent-3482ad62",
+            "sentenceId": "sent-df6f3741",
             "articleId": "art-jwst-cosmos-web-lensing",
             "sectionId": "sec-4-2b374e",
             "sectionTitle": "四、Nature Astronomy 突破：JWST COSMOS-Web 巡天實證",
             "paragraphIndex": 3,
-            "exactQuote": "然而，JWST 憑藉其 6.5 米直徑的鍍金主鏡與深紅外波段的高靈敏度，**將暗物質地圖的有效空間解析度整整提高了兩倍以上**！",
-            "charStart": 4025,
-            "charEnd": 4089,
-            "contentHash": "3482ad6203fa753bc694c8d806c46539aeed2f4691e5eadb522138dd56a628d3",
+            "exactQuote": "然而，JWST 憑藉其 6.5 米直徑的鍍金主鏡與深紅外波段的高靈敏度，**將暗物質質量圖的角解析度推進至 $1.00 \\pm 0.01\\text{ arcmin}$，整整提高了兩倍以上**！",
+            "charStart": 4035,
+            "charEnd": 4131,
+            "contentHash": "df6f374159edbd1af743b0c7f0e9016a642105130e0d512f7d7aa784020c0ed3",
             "contextNote": "四、Nature Astronomy 突破：JWST COSMOS-Web 巡天實證 · 第 4 段"
           },
           {
@@ -8251,33 +8355,45 @@
             "sectionTitle": "四、Nature Astronomy 突破：JWST COSMOS-Web 巡天實證",
             "paragraphIndex": 3,
             "exactQuote": "它首次以清晰的輪廓描繪出了細長暗物質纖維的內部亞結構，捕獲到了過去在哈伯視野中被噪聲掩蓋的次級暗物質暈。",
-            "charStart": 4090,
-            "charEnd": 4142,
+            "charStart": 4132,
+            "charEnd": 4184,
             "contentHash": "a951ccd7a103177119e920479bb2e4924ca5056278d330a65f14124668c47ab8",
             "contextNote": "四、Nature Astronomy 突破：JWST COSMOS-Web 巡天實證 · 第 4 段"
           },
           {
-            "sentenceId": "sent-f31d76d9",
+            "sentenceId": "sent-3d99de99",
             "articleId": "art-jwst-cosmos-web-lensing",
             "sectionId": "sec-4-2b374e",
             "sectionTitle": "四、Nature Astronomy 突破：JWST COSMOS-Web 巡天實證",
             "paragraphIndex": 4,
-            "exactQuote": "### 2. 深入宇宙黎明的超深景深\nJWST 的近紅外波段能穿透宇宙塵埃，清晰觀測到紅移高達 **$z \\sim 2$ 至 $z \\sim 3$**（即宇宙大爆炸後僅 20 至 30 億年）的近 **80 萬個極度微弱的早期背景星系**。",
-            "charStart": 4326,
-            "charEnd": 4446,
-            "contentHash": "f31d76d97e01aa3ab9111508dcca56df3b446f907ca1bad4a700c6ddc22536cb",
+            "exactQuote": "### 2. 每平方角分 129 個星系的超高背景星系密度\n在微弱透鏡中，噪聲消除能力直接取決於背景星系的表面數密度。",
+            "charStart": 4410,
+            "charEnd": 4469,
+            "contentHash": "3d99de992458a6b83491933629e843a9cad12e4454f791cb9d23727eb921112f",
             "contextNote": "四、Nature Astronomy 突破：JWST COSMOS-Web 巡天實證 · 第 5 段"
           },
           {
-            "sentenceId": "sent-603d7ece",
+            "sentenceId": "sent-b2755a73",
             "articleId": "art-jwst-cosmos-web-lensing",
             "sectionId": "sec-4-2b374e",
             "sectionTitle": "四、Nature Astronomy 突破：JWST COSMOS-Web 巡天實證",
             "paragraphIndex": 4,
-            "exactQuote": "更遙遠的背景星系提供了更長的引力透鏡幾何光程（Angular Diameter Distance），使微弱透鏡信噪比（SNR）得到了質的飛躍。",
-            "charStart": 4447,
-            "charEnd": 4518,
-            "contentHash": "603d7ecee81d9aab1191e15cdb12c39d55ff129ef0113143ae0cd54dedbed283",
+            "exactQuote": "COSMOS-Web 巡天利用 NIRCam 的雙波段（F115W 與 F150W）高靈敏觀測，取得了高達 **每平方角分 129 個形狀測量星系** 的空前密度，在整個圖幅內積累了超過二十萬個高品質剪切樣本，並有效探測紅移高達 $z \\sim 2$ 的深空背景。",
+            "charStart": 4470,
+            "charEnd": 4602,
+            "contentHash": "b2755a73666fd5290eb899a58f28fe0187b327f7fda585f1437856e173282ef1",
+            "contextNote": "四、Nature Astronomy 突破：JWST COSMOS-Web 巡天實證 · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-a3862418",
+            "articleId": "art-jwst-cosmos-web-lensing",
+            "sectionId": "sec-4-2b374e",
+            "sectionTitle": "四、Nature Astronomy 突破：JWST COSMOS-Web 巡天實證",
+            "paragraphIndex": 4,
+            "exactQuote": "更遙遠、更密集的背景星系大幅提升了統計信噪比，使暗物質絲狀結構在顯著噪聲壓制下清晰浮現。",
+            "charStart": 4603,
+            "charEnd": 4647,
+            "contentHash": "a38624183fe59b4860870a968bd2eb9c51282b3a2b549a67ec7c691b093362e2",
             "contextNote": "四、Nature Astronomy 突破：JWST COSMOS-Web 巡天實證 · 第 5 段"
           },
           {
@@ -8287,8 +8403,8 @@
             "sectionTitle": "四、Nature Astronomy 突破：JWST COSMOS-Web 巡天實證",
             "paragraphIndex": 5,
             "exactQuote": "### 3. 冷暗物質（$\\Lambda\\text{CDM}$）結構形成的終極檢驗\n觀測結果揭示了一幅令人屏息的畫面：\n反演出的暗物質高密度峰值，與巡天中觀測到的數百個發光星系團的位置**呈現出近乎完美的幾何重合**；在各大星系團之間，暗物質絲狀纖維如蛛網般延展數千萬光年，忠實支撐著整個發光宇宙的演化。",
-            "charStart": 4712,
-            "charEnd": 4864,
+            "charStart": 4885,
+            "charEnd": 5037,
             "contentHash": "de940c6094efada5fead465c04792bbe1ccd317aa5c6651be4a1d79c1efc527c",
             "contextNote": "四、Nature Astronomy 突破：JWST COSMOS-Web 巡天實證 · 第 6 段"
           },
@@ -8299,8 +8415,8 @@
             "sectionTitle": "四、Nature Astronomy 突破：JWST COSMOS-Web 巡天實證",
             "paragraphIndex": 5,
             "exactQuote": "更重要的是，JWST 測得的小尺度暗物質功率譜與密度分佈輪廓（NFW Profile），與基於無碰撞冷暗物質（Cold Dark Matter）的超級電腦宇宙學模擬完全一致，為排查自相互作用暗物質（SIDM）與溫暗物質模型提供了當前最嚴格的觀測限制。",
-            "charStart": 4865,
-            "charEnd": 4990,
+            "charStart": 5038,
+            "charEnd": 5163,
             "contentHash": "e6acf2089952174db6ad9d49b091a44c788c53080207a4df0fd34ec3235a4ce6",
             "contextNote": "四、Nature Astronomy 突破：JWST COSMOS-Web 巡天實證 · 第 6 段"
           }
@@ -8315,7 +8431,7 @@
         "paragraphs": [
           "在為這張人類迄今最清晰的暗物質地圖喝采時，MIRARI 編輯部必須以嚴謹的態度為讀者界定其科學本質：",
           "1. **統計反演 vs 直接拍攝**：\n   讀者在新聞圖片中看到的深紫色或藍色暗物質雲霧，**並不是望遠鏡直接拍攝到的光學照片，而是利用數十萬個星系橢圓形變透過 Kaiser-Squires 算法反演出的數學重構熱圖（Mass Map）**。我們拍攝的是背景星系的形變，看見的是暗物質留下的時空引力足跡。\n2. **質相投影簡化**：\n   二維弱透鏡反演給出的是沿著視線方向積分後的**投影面質量密度 $\\Sigma$**。要將這張二維投影拆解為真實的三維宇宙空間切片，仍需要結合精確的星系光度紅移（Photometric Redshifts）與斷層掃描技術（Tomography）。\n3. **未解的重子反饋（Baryonic Feedback）**：\n   在極小尺度（次星系尺度，$< 100\\text{ kpc}$）下，超新星爆發與超大質量黑洞吸積盤噴流會將普通重子氣體向外強烈吹散，進而引發暗物質暈核心的引力弛豫。如何精確剝離重子物理對透鏡剪切的干擾，依然是未來 Euclid 與羅曼（Roman）太空望遠鏡巡天必須攻克的關鍵課題。",
-          "暗物質雖然無聲、無形、無光，但它並非虛無。當韋伯望遠鏡的鏡片凝聚起八十萬個遙遠星系的微弱光芒時，愛因斯坦寫下的時空幾何，終於替我們揭開了這具沉睡在宇宙黑暗深處的百億年無形骨骼。"
+          "暗物質雖然無聲、無形、無光，但它並非虛無。當韋伯望遠鏡的鏡片凝聚起數十萬個遙遠星系的微弱光芒時，愛因斯坦寫下的時空幾何，終於替我們揭開了這具沉睡在宇宙黑暗深處的百億年無形骨骼。"
         ],
         "sentences": [
           {
@@ -8325,8 +8441,8 @@
             "sectionTitle": "五、科學邊界：統計反演不等於光學成像",
             "paragraphIndex": 0,
             "exactQuote": "在為這張人類迄今最清晰的暗物質地圖喝采時，MIRARI 編輯部必須以嚴謹的態度為讀者界定其科學本質：",
-            "charStart": 5271,
-            "charEnd": 5321,
+            "charStart": 5444,
+            "charEnd": 5494,
             "contentHash": "1c56b7dbaa89ac45f7d3b5e3681381b4c5c16f1f3f10cf7b4da8b9567b01f611",
             "contextNote": "五、科學邊界：統計反演不等於光學成像 · 第 1 段"
           },
@@ -8337,8 +8453,8 @@
             "sectionTitle": "五、科學邊界：統計反演不等於光學成像",
             "paragraphIndex": 1,
             "exactQuote": "1. **統計反演 vs 直接拍攝**：\n   讀者在新聞圖片中看到的深紫色或藍色暗物質雲霧，**並不是望遠鏡直接拍攝到的光學照片，而是利用數十萬個星系橢圓形變透過 Kaiser-Squires 算法反演出的數學重構熱圖（Mass Map）**。",
-            "charStart": 5374,
-            "charEnd": 5497,
+            "charStart": 5547,
+            "charEnd": 5670,
             "contentHash": "7033bffb8604986d48a262baf9142c4f019fd7ae08399ba4af3ef6ba02403d28",
             "contextNote": "五、科學邊界：統計反演不等於光學成像 · 第 2 段"
           },
@@ -8349,8 +8465,8 @@
             "sectionTitle": "五、科學邊界：統計反演不等於光學成像",
             "paragraphIndex": 1,
             "exactQuote": "我們拍攝的是背景星系的形變，看見的是暗物質留下的時空引力足跡。",
-            "charStart": 5498,
-            "charEnd": 5529,
+            "charStart": 5671,
+            "charEnd": 5702,
             "contentHash": "a395a603289d963a733cb8ea0fc586800ebc2e30dd8c51fde28808b6b77d4493",
             "contextNote": "五、科學邊界：統計反演不等於光學成像 · 第 2 段"
           },
@@ -8361,8 +8477,8 @@
             "sectionTitle": "五、科學邊界：統計反演不等於光學成像",
             "paragraphIndex": 1,
             "exactQuote": "2. **質相投影簡化**：\n   二維弱透鏡反演給出的是沿著視線方向積分後的**投影面質量密度 $\\Sigma$**。",
-            "charStart": 5530,
-            "charEnd": 5590,
+            "charStart": 5703,
+            "charEnd": 5763,
             "contentHash": "e04326575d5fa501c47815d5c0605b6e1cdfe2cb4000c195cd1f3d8b1f8ba18e",
             "contextNote": "五、科學邊界：統計反演不等於光學成像 · 第 2 段"
           },
@@ -8373,8 +8489,8 @@
             "sectionTitle": "五、科學邊界：統計反演不等於光學成像",
             "paragraphIndex": 1,
             "exactQuote": "要將這張二維投影拆解為真實的三維宇宙空間切片，仍需要結合精確的星系光度紅移（Photometric Redshifts）與斷層掃描技術（Tomography）。",
-            "charStart": 5591,
-            "charEnd": 5671,
+            "charStart": 5764,
+            "charEnd": 5844,
             "contentHash": "b8e34c97e2acd747a7741ef10fccfa463de19cbc4e070b5de799e97049c7674c",
             "contextNote": "五、科學邊界：統計反演不等於光學成像 · 第 2 段"
           },
@@ -8385,8 +8501,8 @@
             "sectionTitle": "五、科學邊界：統計反演不等於光學成像",
             "paragraphIndex": 1,
             "exactQuote": "3. **未解的重子反饋（Baryonic Feedback）**：\n   在極小尺度（次星系尺度，$< 100\\text{ kpc}$）下，超新星爆發與超大質量黑洞吸積盤噴流會將普通重子氣體向外強烈吹散，進而引發暗物質暈核心的引力弛豫。",
-            "charStart": 5672,
-            "charEnd": 5791,
+            "charStart": 5845,
+            "charEnd": 5964,
             "contentHash": "320c5886801be4cc08acd23ef015cbd1c7182668399dddb5462a35a2209fd41c",
             "contextNote": "五、科學邊界：統計反演不等於光學成像 · 第 2 段"
           },
@@ -8397,8 +8513,8 @@
             "sectionTitle": "五、科學邊界：統計反演不等於光學成像",
             "paragraphIndex": 1,
             "exactQuote": "如何精確剝離重子物理對透鏡剪切的干擾，依然是未來 Euclid 與羅曼（Roman）太空望遠鏡巡天必須攻克的關鍵課題。",
-            "charStart": 5792,
-            "charEnd": 5851,
+            "charStart": 5965,
+            "charEnd": 6024,
             "contentHash": "a7c96ce32ff41e78da43106a65898fe58dc8686eeb88145f355cc3063b44a6d6",
             "contextNote": "五、科學邊界：統計反演不等於光學成像 · 第 2 段"
           },
@@ -8409,21 +8525,21 @@
             "sectionTitle": "五、科學邊界：統計反演不等於光學成像",
             "paragraphIndex": 2,
             "exactQuote": "暗物質雖然無聲、無形、無光，但它並非虛無。",
-            "charStart": 6328,
-            "charEnd": 6349,
+            "charStart": 6501,
+            "charEnd": 6522,
             "contentHash": "962505efd976bbae95cda4a3309e8ae0a1667e03f69575cd367c7f44c24aa62e",
             "contextNote": "五、科學邊界：統計反演不等於光學成像 · 第 3 段"
           },
           {
-            "sentenceId": "sent-f3ed615d",
+            "sentenceId": "sent-634a6b36",
             "articleId": "art-jwst-cosmos-web-lensing",
             "sectionId": "sec-5-60d809",
             "sectionTitle": "五、科學邊界：統計反演不等於光學成像",
             "paragraphIndex": 2,
-            "exactQuote": "當韋伯望遠鏡的鏡片凝聚起八十萬個遙遠星系的微弱光芒時，愛因斯坦寫下的時空幾何，終於替我們揭開了這具沉睡在宇宙黑暗深處的百億年無形骨骼。",
-            "charStart": 6350,
-            "charEnd": 6417,
-            "contentHash": "f3ed615d9e1f3ecf3f945e1cc12b0cede7df3544afdd05ade59ff79cc4567d34",
+            "exactQuote": "當韋伯望遠鏡的鏡片凝聚起數十萬個遙遠星系的微弱光芒時，愛因斯坦寫下的時空幾何，終於替我們揭開了這具沉睡在宇宙黑暗深處的百億年無形骨骼。",
+            "charStart": 6523,
+            "charEnd": 6590,
+            "contentHash": "634a6b36fbf7c0fb8cdd802ac311dbf6bdb3da059190abc4ff0e1ccb79f8698a",
             "contextNote": "五、科學邊界：統計反演不等於光學成像 · 第 3 段"
           }
         ],
@@ -8431,8 +8547,8 @@
         "interactiveComponentId": null
       }
     ],
-    "totalWordCount": 3510,
-    "lastIndexedAt": "2026-11-07T08:04:47.451Z"
+    "totalWordCount": 3591,
+    "lastIndexedAt": "2026-11-07T14:49:43.081Z"
   },
   {
     "id": "art-kimura-neutral-evolution",
@@ -9298,7 +9414,7 @@
       }
     ],
     "totalWordCount": 4314,
-    "lastIndexedAt": "2026-11-07T08:04:47.454Z"
+    "lastIndexedAt": "2026-11-07T14:49:43.084Z"
   },
   {
     "id": "art-maxwells-demon-entropy",
@@ -9934,7 +10050,7 @@
       }
     ],
     "totalWordCount": 2262,
-    "lastIndexedAt": "2026-11-07T08:04:47.455Z"
+    "lastIndexedAt": "2026-11-07T14:49:43.086Z"
   },
   {
     "id": "art-quantum-hall-anyons",
@@ -10807,7 +10923,7 @@
       }
     ],
     "totalWordCount": 4789,
-    "lastIndexedAt": "2026-11-07T08:04:47.457Z"
+    "lastIndexedAt": "2026-11-07T14:49:43.087Z"
   },
   {
     "id": "art-snn-neuromorphic-compute",
@@ -11427,7 +11543,7 @@
       }
     ],
     "totalWordCount": 3713,
-    "lastIndexedAt": "2026-11-07T08:04:47.458Z"
+    "lastIndexedAt": "2026-11-07T14:49:43.089Z"
   },
   {
     "id": "art-thorium-nuclear-clock",
@@ -12010,7 +12126,7 @@
       }
     ],
     "totalWordCount": 3193,
-    "lastIndexedAt": "2026-11-07T08:04:47.461Z"
+    "lastIndexedAt": "2026-11-07T14:49:43.090Z"
   },
   {
     "id": "art-tokamak-elm-instability",
@@ -12847,7 +12963,7 @@
       }
     ],
     "totalWordCount": 2669,
-    "lastIndexedAt": "2026-11-07T08:04:47.464Z"
+    "lastIndexedAt": "2026-11-07T14:49:43.092Z"
   },
   {
     "id": "art-turbulence-kolmogorov-cascade",
@@ -12902,7 +13018,7 @@
       }
     ],
     "interactiveComponent": "TurbulenceCascadeSimulator",
-    "contentHash": "554d7ee3d6f9d77c3e8e8f0c00ca4cbf7f6f0f9ebda1ece242502bfe2477be05",
+    "contentHash": "208a6dcc079e7afec28f4e04eb3e601167e4f83c6d8f3412eabd52d45fb46bcf",
     "sections": [
       {
         "id": "sec-1-b192d0",
@@ -13208,20 +13324,44 @@
         "title": "三、親手實驗：湍流能譜與渦度場即時模擬",
         "level": 1,
         "paragraphs": [
-          "在下方互動實驗中，你可以調節雷諾數、能量注入率 $\\varepsilon$ 與流體運動黏度，觀察 2D 瞬時渦度場中大旋渦分裂拉伸為微細渦絲的過程，並在頻譜空間實時驗證柯爾莫哥洛夫 $-5/3$ 冪律直線：",
+          "在下方互動實驗中，你可以調節雷諾數、能量注入率 $\\varepsilon$ 與流體運動黏度，觀察多尺度合成渦旋示意模型中不同頻率流場的動態演示，並對照 K41 理論預測的 $-5/3$ 能譜示意曲線：\n（需特別釐清：三維湍流依賴特有的渦旋拉伸（Vortex Stretching）機制驅動能量由大渦向小渦正向串級；而在純二維流體中，因缺乏渦旋拉伸且渦量平方（Enstrophy）嚴格守恆，會產生能量向大尺度的逆向串級（$k^{-5/3}$）與渦量平方的正向串級（$k^{-3}$，Kraichnan 1967）。本模擬器為多頻合成之視覺化示意模型，並非直接解算三維 Navier-Stokes 方程。）",
           "<InteractiveExperiment id=\"TurbulenceCascadeSimulator\" />"
         ],
         "sentences": [
           {
-            "sentenceId": "sent-97c8bbba",
+            "sentenceId": "sent-89e56821",
             "articleId": "art-turbulence-kolmogorov-cascade",
             "sectionId": "sec-3-ca2e34",
             "sectionTitle": "三、親手實驗：湍流能譜與渦度場即時模擬",
             "paragraphIndex": 0,
-            "exactQuote": "在下方互動實驗中，你可以調節雷諾數、能量注入率 $\\varepsilon$ 與流體運動黏度，觀察 2D 瞬時渦度場中大旋渦分裂拉伸為微細渦絲的過程，並在頻譜空間實時驗證柯爾莫哥洛夫 $-5/3$ 冪律直線：",
+            "exactQuote": "在下方互動實驗中，你可以調節雷諾數、能量注入率 $\\varepsilon$ 與流體運動黏度，觀察多尺度合成渦旋示意模型中不同頻率流場的動態演示，並對照 K41 理論預測的 $-5/3$ 能譜示意曲線：\n（需特別釐清：三維湍流依賴特有的渦旋拉伸（Vortex Stretching）機制驅動能量由大渦向小渦正向串級；而在純二維流體中，因缺乏渦旋拉伸且渦量平方（Enstrophy）嚴格守恆，會產生能量向大尺度的逆向串級（$k^{-5/3}$）與渦量平方的正向串級（$k^{-3}$，Kraichnan 1967）。",
             "charStart": 2883,
-            "charEnd": 2986,
-            "contentHash": "97c8bbba6ebe762b3fd82c9a3056c6ea0b55c2e5690a85c3deac6f830902a369",
+            "charEnd": 3139,
+            "contentHash": "89e5682190eda0af7b4120dbcebe0b0017c0b284e6835e2335b387c28ff9a702",
+            "contextNote": "三、親手實驗：湍流能譜與渦度場即時模擬 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-a6d396f6",
+            "articleId": "art-turbulence-kolmogorov-cascade",
+            "sectionId": "sec-3-ca2e34",
+            "sectionTitle": "三、親手實驗：湍流能譜與渦度場即時模擬",
+            "paragraphIndex": 0,
+            "exactQuote": "本模擬器為多頻合成之視覺化示意模型，並非直接解算三維 Navier-Stokes 方程。",
+            "charStart": 3140,
+            "charEnd": 3184,
+            "contentHash": "a6d396f6680f1dde8c823da1d741967c1c2348bf820274345dc665e740c68656",
+            "contextNote": "三、親手實驗：湍流能譜與渦度場即時模擬 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-f2e44c6c",
+            "articleId": "art-turbulence-kolmogorov-cascade",
+            "sectionId": "sec-3-ca2e34",
+            "sectionTitle": "三、親手實驗：湍流能譜與渦度場即時模擬",
+            "paragraphIndex": 0,
+            "exactQuote": "）",
+            "charStart": 3185,
+            "charEnd": 3186,
+            "contentHash": "f2e44c6c9545f08ba725de2c18e7dcc548cb28425cf6847278b68c3f03f59819",
             "contextNote": "三、親手實驗：湍流能譜與渦度場即時模擬 · 第 1 段"
           }
         ],
@@ -13245,7 +13385,7 @@
           "奇蹟出現了。沒有藉助任何繁複的數值解，僅憑物理對稱性與量綱守恆，柯爾莫哥洛夫推導出了全物理學中最著名的冪律之一：",
           "$$E(k) = C_K \\cdot \\varepsilon^{2/3} \\cdot k^{-5/3}$$",
           "其中 $C_K \\approx 1.5$ 被稱為**柯爾莫哥洛夫常數**。",
-          "在雙對數坐標系中（$\\log E(k)$ 對 $\\log k$），這條曲線展現為一條**斜率嚴格為 $-5/3$ 的筆直降落線**！\n隨後半個世紀內，從風洞試驗、大氣雷達反演、海洋深流探測到天體物理超新星爆發模擬，全世界數以萬計的實驗測量無一例外地證實了這條 $-5/3$ 冪律的存在。"
+          "在雙對數坐標系中（$\\log E(k)$ 對 $\\log k$），這條曲線展現為一條**斜率約為 $-5/3$ 的慣性子區冪律直線**（在考慮微觀間歇性修正後，真實指數微幅偏離至約 $-1.7$ 附近）。\n隨後半個世紀內，從風洞試驗、大氣雷達反演、海洋深流探測到天體物理模擬，全球大量高雷諾數實驗普遍證實了慣性區能量串級遵循接近 $-5/3$ 的標度律分佈。"
         ],
         "sentences": [
           {
@@ -13255,8 +13395,8 @@
             "sectionTitle": "四、柯爾莫哥洛夫的奇蹟：純因次推導出的 -5/3 冪律",
             "paragraphIndex": 0,
             "exactQuote": "1941 年，在莫斯科冰冷的戰時歲月中，安德雷·柯爾莫哥洛夫發表了四篇震撼流體力學界的奠基之作，後人尊稱為 **K41 理論**。",
-            "charStart": 3092,
-            "charEnd": 3157,
+            "charStart": 3490,
+            "charEnd": 3555,
             "contentHash": "f104877512a7a0a69bd6b99560fa027a2f812a2f24fe99baec02bf614d3bafcd",
             "contextNote": "四、柯爾莫哥洛夫的奇蹟：純因次推導出的 -5/3 冪律 · 第 1 段"
           },
@@ -13267,8 +13407,8 @@
             "sectionTitle": "四、柯爾莫哥洛夫的奇蹟：純因次推導出的 -5/3 冪律",
             "paragraphIndex": 1,
             "exactQuote": "柯爾莫哥洛夫提出了一個革命性的假設：\n**在雷諾數極高、遠離邊界的『慣性子區』內，湍流會遺忘它在大尺度被創造時的所有特定方向與幾何細節，展現出統計上的『局部各向同性』（Local Isotropy）與『自相似性』（Self-Similarity）。**",
-            "charStart": 3225,
-            "charEnd": 3351,
+            "charStart": 3623,
+            "charEnd": 3749,
             "contentHash": "0b147cb55c56378e226d43081922421d3c47f861d3562222f3608b1d171e16ff",
             "contextNote": "四、柯爾莫哥洛夫的奇蹟：純因次推導出的 -5/3 冪律 · 第 2 段"
           },
@@ -13279,8 +13419,8 @@
             "sectionTitle": "四、柯爾莫哥洛夫的奇蹟：純因次推導出的 -5/3 冪律",
             "paragraphIndex": 2,
             "exactQuote": "在慣性子區中，能量既沒有被創造，也沒有被黏性耗散，它只是以一個恆定的速率 $\\varepsilon$（單位質量的能量傳遞率，因次為 $\\text{m}^2/\\text{s}^3$）從大旋渦流向小旋渦。",
-            "charStart": 3480,
-            "charEnd": 3580,
+            "charStart": 3878,
+            "charEnd": 3978,
             "contentHash": "9f4286b2f76490d938376b4e0e45ea6afc238582648190c28852cbaab40755cb",
             "contextNote": "四、柯爾莫哥洛夫的奇蹟：純因次推導出的 -5/3 冪律 · 第 3 段"
           },
@@ -13291,8 +13431,8 @@
             "sectionTitle": "四、柯爾莫哥洛夫的奇蹟：純因次推導出的 -5/3 冪律",
             "paragraphIndex": 3,
             "exactQuote": "因此，在尺度為 $r$（或對應空間波數 $k \\sim 1/r$）的旋渦中，其動能譜密度 $E(k)$（定義為單位質量流體在波數 $k$ 附近的動能，因次為 $\\text{m}^3/\\text{s}^2$）**只能取決於兩個物理量**：\n1. 能量傳遞速率 $\\varepsilon$（因次 $[L]^2 [T]^{-3}$）\n2. 空間波數 $k$（因次 $[L]^{-1}$）",
-            "charStart": 3683,
-            "charEnd": 3873,
+            "charStart": 4081,
+            "charEnd": 4271,
             "contentHash": "79d316fe213fe19aedc38da7aeb295dcc339d594c35e4f725ed82e849070d940",
             "contextNote": "四、柯爾莫哥洛夫的奇蹟：純因次推導出的 -5/3 冪律 · 第 4 段"
           },
@@ -13303,8 +13443,8 @@
             "sectionTitle": "四、柯爾莫哥洛夫的奇蹟：純因次推導出的 -5/3 冪律",
             "paragraphIndex": 4,
             "exactQuote": "這是一個極其大膽的斷言：**流體的黏度 $\\nu$ 不准出現在方程裡，因為慣性區沒有耗散；宏觀尺度 $L$ 也不准出現在方程裡，因為小旋渦已經遺忘了大渦旋的邊界！**",
-            "charStart": 4066,
-            "charEnd": 4149,
+            "charStart": 4464,
+            "charEnd": 4547,
             "contentHash": "454506a53b19d54e938c00aa3391fd858528965b3a1010c6e9e670f1156d7f0a",
             "contextNote": "四、柯爾莫哥洛夫的奇蹟：純因次推導出的 -5/3 冪律 · 第 5 段"
           },
@@ -13315,8 +13455,8 @@
             "sectionTitle": "四、柯爾莫哥洛夫的奇蹟：純因次推導出的 -5/3 冪律",
             "paragraphIndex": 5,
             "exactQuote": "現在，我們進行純粹的因次分析（Dimensional Analysis）：\n設 $E(k) = C_K \\cdot \\varepsilon^\\alpha \\cdot k^\\beta$，其中 $C_K$ 為無因次常數。",
-            "charStart": 4235,
-            "charEnd": 4343,
+            "charStart": 4633,
+            "charEnd": 4741,
             "contentHash": "82f8e4ab30b9b57cebb69d32c44e060d05a62037f6968bc90a56af3f0984edf8",
             "contextNote": "四、柯爾莫哥洛夫的奇蹟：純因次推導出的 -5/3 冪律 · 第 6 段"
           },
@@ -13327,8 +13467,8 @@
             "sectionTitle": "四、柯爾莫哥洛夫的奇蹟：純因次推導出的 -5/3 冪律",
             "paragraphIndex": 5,
             "exactQuote": "匹配長度 $[L]$ 與時間 $[T]$ 的量綱：",
-            "charStart": 4344,
-            "charEnd": 4369,
+            "charStart": 4742,
+            "charEnd": 4767,
             "contentHash": "c9507de4248a15334c752b54b09d27ed16ecfc5985a4d12135538e7b807637cd",
             "contextNote": "四、柯爾莫哥洛夫的奇蹟：純因次推導出的 -5/3 冪律 · 第 6 段"
           },
@@ -13339,8 +13479,8 @@
             "sectionTitle": "四、柯爾莫哥洛夫的奇蹟：純因次推導出的 -5/3 冪律",
             "paragraphIndex": 7,
             "exactQuote": "由時間 $[T]$ 冪次：\n$$-3\\alpha = -2 \\implies \\alpha = \\frac{2}{3}$$",
-            "charStart": 4506,
-            "charEnd": 4567,
+            "charStart": 4904,
+            "charEnd": 4965,
             "contentHash": "11006f51101d970f4bd23cd9b9ce3ea8366db7b187978026f0a5c9c350f8a170",
             "contextNote": "四、柯爾莫哥洛夫的奇蹟：純因次推導出的 -5/3 冪律 · 第 8 段"
           },
@@ -13351,8 +13491,8 @@
             "sectionTitle": "四、柯爾莫哥洛夫的奇蹟：純因次推導出的 -5/3 冪律",
             "paragraphIndex": 8,
             "exactQuote": "由長度 $[L]$ 冪次：\n$$2\\alpha - \\beta = 3 \\implies 2\\left(\\frac{2}{3}\\right) - \\beta = 3 \\implies \\beta = -\\frac{5}{3}$$",
-            "charStart": 4631,
-            "charEnd": 4745,
+            "charStart": 5029,
+            "charEnd": 5143,
             "contentHash": "cb4bc0a17ffa85d1c32e94686e39990057a5edbf040b8d7eaa23d4405e994e15",
             "contextNote": "四、柯爾莫哥洛夫的奇蹟：純因次推導出的 -5/3 冪律 · 第 9 段"
           },
@@ -13363,8 +13503,8 @@
             "sectionTitle": "四、柯爾莫哥洛夫的奇蹟：純因次推導出的 -5/3 冪律",
             "paragraphIndex": 9,
             "exactQuote": "奇蹟出現了。",
-            "charStart": 4862,
-            "charEnd": 4868,
+            "charStart": 5260,
+            "charEnd": 5266,
             "contentHash": "af1b6c7d30aabef5f6e7570ec9e1735b8cb8cad60d1fbedbe5f8542f18370b13",
             "contextNote": "四、柯爾莫哥洛夫的奇蹟：純因次推導出的 -5/3 冪律 · 第 10 段"
           },
@@ -13375,8 +13515,8 @@
             "sectionTitle": "四、柯爾莫哥洛夫的奇蹟：純因次推導出的 -5/3 冪律",
             "paragraphIndex": 9,
             "exactQuote": "沒有藉助任何繁複的數值解，僅憑物理對稱性與量綱守恆，柯爾莫哥洛夫推導出了全物理學中最著名的冪律之一：",
-            "charStart": 4869,
-            "charEnd": 4919,
+            "charStart": 5267,
+            "charEnd": 5317,
             "contentHash": "2e2d731b87d06cf5bac8aa59c009bb28d889b85b8e93b58180d7ff88ca8a768f",
             "contextNote": "四、柯爾莫哥洛夫的奇蹟：純因次推導出的 -5/3 冪律 · 第 10 段"
           },
@@ -13387,33 +13527,33 @@
             "sectionTitle": "四、柯爾莫哥洛夫的奇蹟：純因次推導出的 -5/3 冪律",
             "paragraphIndex": 11,
             "exactQuote": "其中 $C_K \\approx 1.5$ 被稱為**柯爾莫哥洛夫常數**。",
-            "charStart": 4978,
-            "charEnd": 5015,
+            "charStart": 5376,
+            "charEnd": 5413,
             "contentHash": "a5b753408b936fbea0b2f47cf92b74dfce55b49880c5570ee65db66547302057",
             "contextNote": "四、柯爾莫哥洛夫的奇蹟：純因次推導出的 -5/3 冪律 · 第 12 段"
           },
           {
-            "sentenceId": "sent-2d187446",
+            "sentenceId": "sent-0e5a0725",
             "articleId": "art-turbulence-kolmogorov-cascade",
             "sectionId": "sec-4-9a035b",
             "sectionTitle": "四、柯爾莫哥洛夫的奇蹟：純因次推導出的 -5/3 冪律",
             "paragraphIndex": 12,
-            "exactQuote": "在雙對數坐標系中（$\\log E(k)$ 對 $\\log k$），這條曲線展現為一條**斜率嚴格為 $-5/3$ 的筆直降落線**！",
-            "charStart": 5055,
-            "charEnd": 5121,
-            "contentHash": "2d1874467ce36e382ee123a9df2e83ccc306b0a7114d7e4c846e775b413b2950",
+            "exactQuote": "在雙對數坐標系中（$\\log E(k)$ 對 $\\log k$），這條曲線展現為一條**斜率約為 $-5/3$ 的慣性子區冪律直線**（在考慮微觀間歇性修正後，真實指數微幅偏離至約 $-1.7$ 附近）。",
+            "charStart": 5453,
+            "charEnd": 5555,
+            "contentHash": "0e5a0725f7996fe13f15f567f5ce96e6c871b55bf0b46f8b20524971c465eb8e",
             "contextNote": "四、柯爾莫哥洛夫的奇蹟：純因次推導出的 -5/3 冪律 · 第 13 段"
           },
           {
-            "sentenceId": "sent-d9b0ee1d",
+            "sentenceId": "sent-956a04be",
             "articleId": "art-turbulence-kolmogorov-cascade",
             "sectionId": "sec-4-9a035b",
             "sectionTitle": "四、柯爾莫哥洛夫的奇蹟：純因次推導出的 -5/3 冪律",
             "paragraphIndex": 12,
-            "exactQuote": "隨後半個世紀內，從風洞試驗、大氣雷達反演、海洋深流探測到天體物理超新星爆發模擬，全世界數以萬計的實驗測量無一例外地證實了這條 $-5/3$ 冪律的存在。",
-            "charStart": 5122,
-            "charEnd": 5198,
-            "contentHash": "d9b0ee1db38fe37330e5fdf8b50b4e0efddc47d7aeceb4d02a84517651efce40",
+            "exactQuote": "隨後半個世紀內，從風洞試驗、大氣雷達反演、海洋深流探測到天體物理模擬，全球大量高雷諾數實驗普遍證實了慣性區能量串級遵循接近 $-5/3$ 的標度律分佈。",
+            "charStart": 5556,
+            "charEnd": 5632,
+            "contentHash": "956a04be6b892bacdb7a058d2c8788b4e3115ea9507adddf33473872326c8cd5",
             "contextNote": "四、柯爾莫哥洛夫的奇蹟：純因次推導出的 -5/3 冪律 · 第 13 段"
           }
         ],
@@ -13445,8 +13585,8 @@
             "sectionTitle": "五、微觀的終點：柯爾莫哥洛夫耗散尺度",
             "paragraphIndex": 0,
             "exactQuote": "這場能量級聯瀑布會在什麼尺度終結？",
-            "charStart": 5344,
-            "charEnd": 5361,
+            "charStart": 5814,
+            "charEnd": 5831,
             "contentHash": "30b3692fa79deeb66686ddb55d8fe85339582082bcec36ce815985b8e4f7c48f",
             "contextNote": "五、微觀的終點：柯爾莫哥洛夫耗散尺度 · 第 1 段"
           },
@@ -13457,8 +13597,8 @@
             "sectionTitle": "五、微觀的終點：柯爾莫哥洛夫耗散尺度",
             "paragraphIndex": 1,
             "exactQuote": "當旋渦尺度不斷縮小，波數 $k$ 不斷增大，小旋渦的相對特徵速度下降，直至黏性力重新變得與慣性力平起平坐。",
-            "charStart": 5381,
-            "charEnd": 5434,
+            "charStart": 5851,
+            "charEnd": 5904,
             "contentHash": "c60992381dc427d96b5c78c9f2e418350b750e1f169f039493c457d2b30010a6",
             "contextNote": "五、微觀的終點：柯爾莫哥洛夫耗散尺度 · 第 2 段"
           },
@@ -13469,8 +13609,8 @@
             "sectionTitle": "五、微觀的終點：柯爾莫哥洛夫耗散尺度",
             "paragraphIndex": 1,
             "exactQuote": "這個臨界尺度被稱為**柯爾莫哥洛夫微尺度（Kolmogorov Microscale, $\\eta$）**：",
-            "charStart": 5435,
-            "charEnd": 5489,
+            "charStart": 5905,
+            "charEnd": 5959,
             "contentHash": "c76d063bb81b5914790829f34f5849844947adb9d11506aad30febb8adcb715b",
             "contextNote": "五、微觀的終點：柯爾莫哥洛夫耗散尺度 · 第 2 段"
           },
@@ -13481,8 +13621,8 @@
             "sectionTitle": "五、微觀的終點：柯爾莫哥洛夫耗散尺度",
             "paragraphIndex": 2,
             "exactQuote": "此時，物理量由黏度 $\\nu$（因次 $[L]^2 [T]^{-1}$）與能量耗散率 $\\varepsilon$（因次 $[L]^2 [T]^{-3}$）共同決定。",
-            "charStart": 5599,
-            "charEnd": 5681,
+            "charStart": 6069,
+            "charEnd": 6151,
             "contentHash": "197ccddefc491c4852c464184b02869aa77d48f1a2d4403c6bbd42240df29bee",
             "contextNote": "五、微觀的終點：柯爾莫哥洛夫耗散尺度 · 第 3 段"
           },
@@ -13493,8 +13633,8 @@
             "sectionTitle": "五、微觀的終點：柯爾莫哥洛夫耗散尺度",
             "paragraphIndex": 2,
             "exactQuote": "再次進行因次分析，可唯一解出：",
-            "charStart": 5682,
-            "charEnd": 5697,
+            "charStart": 6152,
+            "charEnd": 6167,
             "contentHash": "53dd20aae5c871e0299ac41b2397767d99cdd7fa4afb12e91f082d5ad42bb3cc",
             "contextNote": "五、微觀的終點：柯爾莫哥洛夫耗散尺度 · 第 3 段"
           },
@@ -13505,8 +13645,8 @@
             "sectionTitle": "五、微觀的終點：柯爾莫哥洛夫耗散尺度",
             "paragraphIndex": 4,
             "exactQuote": "- 在常溫大氣風暴中，大渦旋尺度 $L \\sim 1000\\text{ m}$，而 $\\eta \\sim 1\\text{ mm}$；\n- 在熱咖啡的攪拌中，$L \\sim 5\\text{ cm}$，而 $\\eta \\sim 0.1\\text{ mm}$。",
-            "charStart": 5797,
-            "charEnd": 5924,
+            "charStart": 6267,
+            "charEnd": 6394,
             "contentHash": "ea0320b45b45ad5c9ac2723fa6f301862ba5ef443b658ea3e964a0d603e7144c",
             "contextNote": "五、微觀的終點：柯爾莫哥洛夫耗散尺度 · 第 5 段"
           },
@@ -13517,8 +13657,8 @@
             "sectionTitle": "五、微觀的終點：柯爾莫哥洛夫耗散尺度",
             "paragraphIndex": 5,
             "exactQuote": "從宏觀的 $L$ 到微觀的 $\\eta$，慣性子區跨越的波數範圍由雷諾數直接決定：",
-            "charStart": 6054,
-            "charEnd": 6095,
+            "charStart": 6524,
+            "charEnd": 6565,
             "contentHash": "1a0481dfc5685cdc7738b7ac46ae9532e6d2c9975a514fee95c7068f7f6ac4db",
             "contextNote": "五、微觀的終點：柯爾莫哥洛夫耗散尺度 · 第 6 段"
           },
@@ -13529,8 +13669,8 @@
             "sectionTitle": "五、微觀的終點：柯爾莫哥洛夫耗散尺度",
             "paragraphIndex": 7,
             "exactQuote": "這解釋了為什麼超級電腦至今無法直接數值模擬（Direct Numerical Simulation, DNS）真實飛機的流場：\n要在三維空間完整解析從 $L$ 到 $\\eta$ 的每一個微小旋渦，網格點數必須達到 $(L/\\eta)^3 \\sim Re^{9/4}$。",
-            "charStart": 6139,
-            "charEnd": 6273,
+            "charStart": 6609,
+            "charEnd": 6743,
             "contentHash": "cf5cdf61bf920f9b57778ec488d6618a99d0859ef34c1bd146c65011e8bc9b3b",
             "contextNote": "五、微觀的終點：柯爾莫哥洛夫耗散尺度 · 第 8 段"
           },
@@ -13541,8 +13681,8 @@
             "sectionTitle": "五、微觀的終點：柯爾莫哥洛夫耗散尺度",
             "paragraphIndex": 7,
             "exactQuote": "對於雷諾數高達一千萬的客機，所需計算網格超過 $10^{15}$ 個，超越了人類現有所有超級電腦算力的總和。",
-            "charStart": 6274,
-            "charEnd": 6328,
+            "charStart": 6744,
+            "charEnd": 6798,
             "contentHash": "2e64525f49e3196b39741ec229f16c6daa3efb13551d19b08b78741f36a7e762",
             "contextNote": "五、微觀的終點：柯爾莫哥洛夫耗散尺度 · 第 8 段"
           }
@@ -13570,8 +13710,8 @@
             "sectionTitle": "六、科學邊界：完美冪律背後的「間歇性」幽靈",
             "paragraphIndex": 0,
             "exactQuote": "在讚嘆 K41 理論的幾何優雅之餘，MIRARI 編輯部為讀者保留現代前沿科學視角：",
-            "charStart": 6519,
-            "charEnd": 6561,
+            "charStart": 6989,
+            "charEnd": 7031,
             "contentHash": "2a28148f94f980e056efcb02b2f6f067b56972e059d52f5fbaec2cfc5fc8120d",
             "contextNote": "六、科學邊界：完美冪律背後的「間歇性」幽靈 · 第 1 段"
           },
@@ -13582,8 +13722,8 @@
             "sectionTitle": "六、科學邊界：完美冪律背後的「間歇性」幽靈",
             "paragraphIndex": 1,
             "exactQuote": "1. **各向同性與邊界效應**：\n   $-5/3$ 冪律嚴格適用於遠離壁面、雷諾數極高的完全發展各向同性區域。",
-            "charStart": 6606,
-            "charEnd": 6663,
+            "charStart": 7076,
+            "charEnd": 7133,
             "contentHash": "b6fec2295b8d301516ce71582c8b350454a3cfd41e64e683103ab72495e80521",
             "contextNote": "六、科學邊界：完美冪律背後的「間歇性」幽靈 · 第 2 段"
           },
@@ -13594,8 +13734,8 @@
             "sectionTitle": "六、科學邊界：完美冪律背後的「間歇性」幽靈",
             "paragraphIndex": 1,
             "exactQuote": "在固體表面邊界層（如機翼表面）內部，由於強烈的剪切應力與幾何不對稱，流動會呈現複雜的壁面律（Law of the Wall）與相干條帶結構。",
-            "charStart": 6664,
-            "charEnd": 6734,
+            "charStart": 7134,
+            "charEnd": 7204,
             "contentHash": "f6e88f1f37980ecd1c886b5f70357083525475b3998c0c61da8c4353e80869e3",
             "contextNote": "六、科學邊界：完美冪律背後的「間歇性」幽靈 · 第 2 段"
           },
@@ -13606,8 +13746,8 @@
             "sectionTitle": "六、科學邊界：完美冪律背後的「間歇性」幽靈",
             "paragraphIndex": 1,
             "exactQuote": "2. **間歇性效應（Intermittency）**：\n   柯爾莫哥洛夫在 1941 年假設能量耗散率 $\\varepsilon$ 在空間中是均勻分佈的。",
-            "charStart": 6735,
-            "charEnd": 6814,
+            "charStart": 7205,
+            "charEnd": 7284,
             "contentHash": "8a2e38c2d947b8bae3d68d98a20a8127443a9bd19b82a824403f665367440b26",
             "contextNote": "六、科學邊界：完美冪律背後的「間歇性」幽靈 · 第 2 段"
           },
@@ -13618,8 +13758,8 @@
             "sectionTitle": "六、科學邊界：完美冪律背後的「間歇性」幽靈",
             "paragraphIndex": 1,
             "exactQuote": "但後續實驗發現，在高波數微觀區，能量耗散並非均勻瀰散，而是高度極化地聚集在極度稀疏的『渦絲網絡』中，其餘大部分空間平淡無奇。",
-            "charStart": 6815,
-            "charEnd": 6877,
+            "charStart": 7285,
+            "charEnd": 7347,
             "contentHash": "c595d021ff6b9bb6c3ced80928e63a5321a81af16b2319ed207d0bd19abc1e85",
             "contextNote": "六、科學邊界：完美冪律背後的「間歇性」幽靈 · 第 2 段"
           },
@@ -13630,8 +13770,8 @@
             "sectionTitle": "六、科學邊界：完美冪律背後的「間歇性」幽靈",
             "paragraphIndex": 1,
             "exactQuote": "這種現象被稱為**間歇性**，它使真實能譜指數相較於 $-5/3 \\approx -1.667$ 出現微小修正（約 $-1.68$ 至 $-1.70$），催生了現代多重分形（Multifractal）流體理論。",
-            "charStart": 6878,
-            "charEnd": 6983,
+            "charStart": 7348,
+            "charEnd": 7453,
             "contentHash": "2deed49daa6405dbf2c3d6680c5ea03f6fcc6873643c44acff57b840307be565",
             "contextNote": "六、科學邊界：完美冪律背後的「間歇性」幽靈 · 第 2 段"
           },
@@ -13642,8 +13782,8 @@
             "sectionTitle": "六、科學邊界：完美冪律背後的「間歇性」幽靈",
             "paragraphIndex": 2,
             "exactQuote": "從咖啡杯中的小小漣漪，到土星大氣層奔流不息的六角形風暴，湍流展示了自然界最深邃的二元性：在最不可預測的混沌表象之下，深藏著橫跨萬千尺度、不偏不倚的數學秩序。",
-            "charStart": 7360,
-            "charEnd": 7438,
+            "charStart": 7830,
+            "charEnd": 7908,
             "contentHash": "ebaa02667ab6e8cce8559fc1bcf4664e85506d96ca2f49378e08f37c52c73128",
             "contextNote": "六、科學邊界：完美冪律背後的「間歇性」幽靈 · 第 3 段"
           }
@@ -13652,8 +13792,8 @@
         "interactiveComponentId": null
       }
     ],
-    "totalWordCount": 3937,
-    "lastIndexedAt": "2026-11-07T08:04:47.465Z"
+    "totalWordCount": 4164,
+    "lastIndexedAt": "2026-11-07T14:49:43.093Z"
   },
   {
     "id": "art-turing-reaction-diffusion",
@@ -14560,7 +14700,7 @@
       }
     ],
     "totalWordCount": 3346,
-    "lastIndexedAt": "2026-11-07T08:04:47.467Z"
+    "lastIndexedAt": "2026-11-07T14:49:43.096Z"
   },
   {
     "id": "art-exoplanet-transit",
@@ -15089,6 +15229,6 @@
       }
     ],
     "totalWordCount": 1679,
-    "lastIndexedAt": "2026-11-07T08:04:47.470Z"
+    "lastIndexedAt": "2026-11-07T14:49:43.097Z"
   }
 ]

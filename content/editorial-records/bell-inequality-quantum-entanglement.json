@@ -59,27 +59,52 @@
         }
       },
       {
-        "id": "ref-aspect-1982",
-        "citation": "Aspect, A., Dalibard, J., & Roger, G. (1982). \"Experimental Test of Bell's Inequalities Using Time-Varying Analyzers.\" Physical Review Letters, 49(25), 1804-1807. doi:10.1103/PhysRevLett.49.1804.",
+        "id": "ref-aspect-1982-twochannel",
+        "citation": "Aspect, A., Grangier, P., & Roger, G. (1982). \"Experimental Realization of Einstein-Podolsky-Rosen-Bohm Gedankenexperiment: A New Violation of Bell's Inequalities.\" Physical Review Letters, 49(2), 91-94. doi:10.1103/PhysRevLett.49.91.",
         "peerReviewStatus": "已完成同行評審 (Physical Review Letters)",
         "citationAudit": {
           "verifiedFirstAuthor": "Alain Aspect",
           "originalPublicationPageVerified": true,
-          "auditNotes": "核實阿斯佩 1982 年高速時變檢偏器實驗，確認光子在空中飛行期間每 10 ns 隨機切換檢偏方向，關閉通訊漏洞，實測 S = 2.697 ± 0.015。"
+          "auditNotes": "核實阿斯佩 1982 年雙通道偏振分束器實驗，確認首次直接測量雙通道符合計數，實測 S = 2.697 ± 0.015，以 46 個標準差違背 CHSH 不等式 S <= 2。"
         },
         "verifiedClaims": [
-          "在類空間隔條件下以高速光學開關動態切換檢偏器角度，決定性排除兩端光速通訊的可能",
-          "實測數據在 46 個標準差的高信賴度下打破 S <= 2，決定性證偽定域隱變數理論"
+          "使用雙通道偏振分束器實現對糾纏光子對的直接符合計數測量",
+          "實測 CHSH 關聯參數 S = 2.697 ± 0.015，決定性證偽定域隱變數理論之 S <= 2 限制"
         ],
         "distinctions": {
           "establishedKnowledge": [
             "量子非局域性不允許超光速傳遞經典信息（無通信定理 No-Communication Theorem）"
           ],
           "empiricalFindings": [
-            "阿斯佩團隊測得 CHSH 參數 S = 2.697，與量子力學考慮探測器效率後的理論值完美符合"
+            "雙通道實測 S 參數與量子力學在檢偏器旋轉下的預言在 46 個標準差下高度一致"
           ],
           "hypothesesAndModels": [
-            "光學開關在時鐘驅動下的偽隨機快速切換動力學模型"
+            "檢偏器效率與雙光子空間發射立體角幾何對稱性假設"
+          ]
+        }
+      },
+      {
+        "id": "ref-aspect-1982-timevarying",
+        "citation": "Aspect, A., Dalibard, J., & Roger, G. (1982). \"Experimental Test of Bell's Inequalities Using Time-Varying Analyzers.\" Physical Review Letters, 49(25), 1804-1807. doi:10.1103/PhysRevLett.49.1804.",
+        "peerReviewStatus": "已完成同行評審 (Physical Review Letters)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Alain Aspect",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實阿斯佩 1982 年時變檢偏器實驗，確認採用約 50 MHz 聲光開關非同步切換光路，飛行時間 40 ns 大於切換週期 10 ns 關閉定域漏洞，實測違背量 0.101 ± 0.020。"
+        },
+        "verifiedClaims": [
+          "在類空間隔條件下以接近 50 MHz 聲光開關動態切換檢偏器光路，排除兩端光速通訊可能",
+          "實測貝爾型時變不等式違背量達 0.101 ± 0.020，以約 5 個標準差否定定域因果性"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "類空間隔下兩事件無法建立因果光速通訊"
+          ],
+          "empiricalFindings": [
+            "時變分析器測得五個標準差的顯著違背"
+          ],
+          "hypothesesAndModels": [
+            "聲光開關切換過程的準週期動力學模型"
           ]
         }
       }
@@ -128,6 +153,7 @@
     "interactiveRole": "BellInequalitySimulator 讓讀者親自調節檢偏器角度，從常規設定逐步逼近齊雷爾森角，親眼見證 CHSH 參數穿透古典紅線 2.0 攀升至 2.828 的壯麗景象"
   },
   "issuesIdentifiedAndCorrected": [
+    "精確區分阿斯佩 1982 年雙通道檢偏器實驗（S = 2.697 ± 0.015）與時變分析器實驗（約 50 MHz 聲光切換、違背量 0.101 ± 0.020），避免混淆不同實驗配置與統計量",
     "特別強化對『超光速通信迷思』的物理嚴密澄清，強調無通信定理（No-Communication Theorem）在單側測量中僅能得到純隨機數的本質",
     "修正了將貝爾不等式簡化為純機率反駁的語病，精確呈現其建立在定域因果性與客觀確定性雙重假設上的本質"
   ],

@@ -182,7 +182,7 @@ export const TurbulenceCascadeSimulator: React.FC = () => {
           // Annotations
           ctx.fillStyle = '#94a3b8';
           ctx.font = '10px monospace';
-          ctx.fillText(`2D 瞬時渦度場 ω = ∇×u | 雷諾數 Re = ${reynoldsNumber.toLocaleString()}`, 16, 22);
+          ctx.fillText(`多尺度渦旋示意流場（合成模型） | 雷諾數 Re = ${reynoldsNumber.toLocaleString()}`, 16, 22);
           ctx.fillText(
             `能量耗散率 ε = ${energyInjectionRate.toFixed(1)} m²/s³ | 耗散微尺度 η = ${(kolmogorovEta * 1000).toFixed(2)} mm`,
             16,
@@ -367,7 +367,7 @@ export const TurbulenceCascadeSimulator: React.FC = () => {
           {/* Viewport 1: Vorticity Field */}
           <div className="space-y-1.5">
             <div className="flex items-center justify-between text-xs">
-              <span className="font-semibold text-mirari-ink">空間幾何：2D 渦度場與渦絲拉伸串級</span>
+              <span className="font-semibold text-mirari-ink">空間幾何：多尺度合成渦旋示意模型</span>
               <span className="text-[10px] text-mirari-dim font-mono">
                 積分尺度 L ≈ {(integralScaleL * 100).toFixed(1)} cm
               </span>
@@ -380,7 +380,7 @@ export const TurbulenceCascadeSimulator: React.FC = () => {
           {/* Viewport 2: Power Spectrum E(k) */}
           <div className="space-y-1.5">
             <div className="flex items-center justify-between text-xs">
-              <span className="font-semibold text-mirari-ink">頻譜空間：能譜 E(k) 雙對數圖與 -5/3 理論斜率</span>
+              <span className="font-semibold text-mirari-ink">頻譜空間：K41 理論能譜示意曲線（非流場即時數值解算）</span>
               <span className="text-[10px] text-amber-700 font-mono font-bold">
                 E(k) ∝ ε²/³ · k⁻⁵/³
               </span>
@@ -512,7 +512,7 @@ export const TurbulenceCascadeSimulator: React.FC = () => {
             <span>科學邊界與模型簡化說明：K41 理論與間歇性修正</span>
           </div>
           <p className="leading-relaxed text-amber-800">
-            本模擬器展示的是柯爾莫哥洛夫 1941 年均勻各向同性湍流理論（K41）經典冪律。在真實三維極端高雷諾數流動中，存在能量耗散在空間高度集中成細絲網絡的「間歇性效應」（Intermittency），使真實能譜指數與 -5/3 有約 0.02-0.04 的微小多重分形偏差（She-Leveque 修正），但 -5/3 依舊是人類物理學中最具普適性的流體標度律。
+            本模擬器為教育視覺化示意模型，左側流場採用多頻流函數疊加示意多尺度渦旋，右側為 K41 理論能譜解析曲線，非直接解算三維 Navier-Stokes 方程。特別注意：真實三維湍流依賴渦旋拉伸產生由大到小的正向能量串級（k⁻⁵/³）；而在純二維流體中，由於缺乏渦旋拉伸且渦量平方（Enstrophy）守恆，會產生能量向大尺度的逆向串級與向小尺度的渦量平方串級（Kraichnan 1967）。在真實三維極端高雷諾數流動中，亦存在空間「間歇性效應」，使真實指數微偏離 -5/3。
           </p>
         </div>
       </div>

@@ -9,18 +9,18 @@
     "primarySources": [
       {
         "id": "ref-natureastro-2026-scognamiglio",
-        "citation": "Scognamiglio, D., et al. (2026). \"An ultra-high-resolution map of (dark) matter from the COSMOS-Web survey.\" Nature Astronomy, doi:10.1038/s41550-025-02763-9.",
+        "citation": "Scognamiglio, D., et al. (2026). \"An ultra-high-resolution map of (dark) matter.\" Nature Astronomy, doi:10.1038/s41550-025-02763-9.",
         "doi": "10.1038/s41550-025-02763-9",
         "peerReviewStatus": "已完成同行評審 (Nature Astronomy, 2026-01-20 出刊)",
         "citationAudit": {
           "verifiedFirstAuthor": "Diana Scognamiglio",
           "correspondingAuthors": "G. Leroy, D. Harvey",
           "originalPublicationPageVerified": true,
-          "auditNotes": "核實第一作者 Diana Scognamiglio 及 COSMOS-Web 團隊發表於 Nature Astronomy 之高解析暗物質重力透鏡巡天數據，覆蓋天區 0.54-0.77 deg²，背景星系數量近 80 萬，分辨率較 HST 提升逾兩倍。"
+          "auditNotes": "核實第一作者 Diana Scognamiglio 及 COSMOS-Web 團隊發表於 Nature Astronomy 之高解析暗物質重力透鏡巡天數據，覆蓋天區 0.77° × 0.70°，背景星系剪切密度達每平方角分 129 個，暗物質質量圖角解析度達 1.00 ± 0.01 arcmin，較 HST 提升逾兩倍。"
         },
         "verifiedClaims": [
-          "JWST 近紅外相機 (NIRCam) 在 0.54-0.77 平方度天區內，利用微弱重力透鏡效應重構出解析度超過哈伯太空望遠鏡兩倍之暗物質面密度地圖",
-          "測量背景星系紅移深達 z ~ 2 至 3，以切向剪切統計平均克服個體固有橢圓率噪聲 (σ_e ≈ 0.25)",
+          "JWST 近紅外相機 (NIRCam) 在 0.77° × 0.70° 天區內，利用微弱重力透鏡效應重構出角解析度達 1.0 角分（超過哈伯太空望遠鏡兩倍）之暗物質面密度地圖",
+          "測量每平方角分高達 129 個背景星系之剪切形變，以切向剪切統計平均克服個體固有橢圓率噪聲 (σ_e ≈ 0.25)",
           "暗物質空間集聚峰值與發光星系團位置高度吻合，小尺度次結構分佈嚴格約束冷暗物質 (ΛCDM) 模型"
         ],
         "distinctions": {
@@ -29,7 +29,7 @@
             "暗物質佔宇宙物質總量約 85%，不發光且不參與電磁相互作用"
           ],
           "empiricalFindings": [
-            "JWST COSMOS-Web 首次在亞角秒級超高解析度下描繪出跨越數千萬光年之暗物質絲狀纖維與宇宙空洞結構"
+            "JWST COSMOS-Web 首次在 1.0 角分超高質量圖解析度下描繪出跨越數千萬光年之暗物質絲狀纖維與宇宙空洞結構"
           ],
           "hypothesesAndModels": [
             "冷暗物質 NFW 密度輪廓在次星系尺度 (< 100 kpc) 的尖點/核心理論模型"
@@ -110,14 +110,16 @@
   },
   "aestheticsAndNarrative": {
     "avoidFormulaicCliches": "開篇從夜空恆星僅佔宇宙物質 15% 的震撼事實切入，杜絕「在浩瀚的宇宙中」「總結來說」等套話",
-    "coreQuestion": "我們如何為完全不發光、不反光且不吸收光的隱形暗物質，繪製出亞角秒級超高清的宇宙網骨骼地圖？",
+    "coreQuestion": "我們如何為完全不發光、不反光且不吸收光的隱形暗物質，繪製出 1.0 角分高解析度的宇宙網骨骼地圖？",
     "interactiveRole": "WeakLensingShearSimulator 讓讀者親手操縱暗物質暈質量，親眼看見背景星系如何產生切向對齊，並一鍵啟用反演層直觀看見數學重建的無形骨骼",
     "narrativeStyle": "research_interpretation",
     "interactiveType": "weak_lensing"
   },
   "issuesIdentifiedAndCorrected": [
     "成圖本質嚴謹澄清：反覆向讀者強調新聞報導中的紫色暗物質地圖為『弱透鏡數學反演熱圖』，嚴禁誤導讀者以為韋伯望遠鏡直接拍下了暗物質的發光照片",
-    "第一作者署名核實：嚴格核對 Nature Astronomy 原始出版頁署名順序，確認第一作者為 Diana Scognamiglio（加州理工/JPL 團隊）"
+    "第一作者署名與標題核實：嚴格核對 Nature Astronomy 原始出版頁，論文正式標題為 An ultra-high-resolution map of (dark) matter（去除多餘 survey 名稱），第一作者為 Diana Scognamiglio",
+    "釐清光學儀器解析度與暗物質質量圖角解析度之差異：論文報告暗物質質量圖角解析度為 1.00 ± 0.01 arcmin，不得混淆為儀器亞角秒光學成像解析度",
+    "修正背景星系統計口徑：精確標註為每平方角分 129 個星系之剪切形狀測量樣本，避免與巡天廣域光度偵測總樣本混同"
   ],
   "unconfirmedLimits": [
     "三維斷層掃描中光度紅移不確定性對徑向距離重建的微小偏差仍屬當前宇宙學限制",

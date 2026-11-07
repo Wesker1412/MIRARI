@@ -275,216 +275,285 @@ export const ArticleRenderer: React.FC<ArticleRendererProps> = ({
                 );
               }
 
-              // 6. Subheading at start of paragraph: ### or #### or ## or #
-              const isHeadingStart = /^#{1,6}\s+/.test(paraText);
-              if (isHeadingStart) {
-                const headingMatch = paraText.match(/^(#{1,6})\s+([^\r\n]+)/);
-                if (headingMatch) {
-                  const level = headingMatch[1].length;
-                  const headingTitle = headingMatch[2].trim();
+              // 6. Subheading(s) in paragraph: ### or #### or ## or #
+              const hasHeading = rawLines.some((l) => /^#{1,6}\s+/.test(l));
+              if (hasHeading) {
+                const firstHeadingIdx = rawLines.findIndex((l) => /^#{1,6}\s+/.test(l));
+                const leadInLines = firstHeadingIdx > 0 ? rawLines.slice(0, firstHeadingIdx) : [];
 
-                  // Find if matchingSentences has a sentence that represents this standalone heading
-                  const headingSent = matchingSentences.find((s) => {
-                    if (!s.exactQuote.startsWith('#')) return false;
-                    const afterHeading = s.exactQuote.replace(/^(#{1,6})\s+[^\r\n]*\r?\n?/, '').trim();
-                    return afterHeading.length === 0;
-                  });
-                  const safeHeadingId = headingSent ? getSafeSentenceId(headingSent.sentenceId) : undefined;
-                  const headingHighlight = headingSent ? getHighlightClass(headingSent.sentenceId) : '';
+                interface HeadingBlock {
+                  level: number;
+                  title: string;
+                  lines: string[];
+                }
+                const headingBlocks: HeadingBlock[] = [];
+                let currentBlock: HeadingBlock | null = null;
 
-                  const renderHeadingElement = () => {
-                    if (level === 3) {
-                      return (
-                        <h3
-                          id={safeHeadingId}
-                          data-sentence-id={safeHeadingId}
-                          className={`font-serif text-xl sm:text-2xl font-bold text-mirari-ink tracking-tight mt-8 mb-4 pt-2 transition-colors duration-300 ${headingHighlight}`}
-                        >
-                          {renderInlineContent(headingTitle)}
-                        </h3>
-                      );
+                for (let i = firstHeadingIdx; i < rawLines.length; i++) {
+                  const line = rawLines[i];
+                  const match = line.match(/^(#{1,6})\s+([^\r\n]+)/);
+                  if (match) {
+                    if (currentBlock) {
+                      headingBlocks.push(currentBlock);
                     }
-                    if (level === 4) {
-                      return (
-                        <h4
-                          id={safeHeadingId}
-                          data-sentence-id={safeHeadingId}
-                          className={`font-serif text-lg sm:text-xl font-bold text-mirari-ink tracking-tight mt-6 mb-3 transition-colors duration-300 ${headingHighlight}`}
-                        >
-                          {renderInlineContent(headingTitle)}
-                        </h4>
-                      );
-                    }
-                    return (
-                      <h2
-                        id={safeHeadingId}
-                        data-sentence-id={safeHeadingId}
-                        className={`font-serif text-2xl font-bold text-mirari-ink tracking-tight mt-8 mb-4 transition-colors duration-300 ${headingHighlight}`}
-                      >
-                        {renderInlineContent(headingTitle)}
-                      </h2>
-                    );
-                  };
+                    currentBlock = {
+                      level: match[1].length,
+                      title: match[2].trim(),
+                      lines: [],
+                    };
+                  } else if (currentBlock) {
+                    currentBlock.lines.push(line);
+                  }
+                }
+                if (currentBlock) {
+                  headingBlocks.push(currentBlock);
+                }
 
-                  // Remaining body content after heading line
-                  const lines = paraText.split(/\r?\n/);
-                  const remainingLines = lines.slice(1).filter((l) => l.trim().length > 0);
-                  const hasListInRemaining = remainingLines.some((l) =>
-                    l.trim().match(/^([-*+]|\d+\.)\s+/)
-                  );
-
-                  // If remaining content contains a list
-                  if (hasListInRemaining) {
-                    const firstListIndex = remainingLines.findIndex((l) =>
-                      l.trim().match(/^([-*+]|\d+\.)\s+/)
-                    );
-                    const leadInLines =
-                      firstListIndex > 0 ? remainingLines.slice(0, firstListIndex) : [];
-                    const listLines = parseListItems(remainingLines.slice(firstListIndex));
-                    const isOrdered = /^\d+\./.test(listLines[0].trim());
-
-                    return (
-                      <div key={pIdx} className="space-y-4">
-                        {renderHeadingElement()}
-                        {leadInLines.length > 0 && (
-                          <p className="leading-relaxed mb-3">
-                            {leadInLines.map((line, idx) => {
-                              const lineSents = getSentencesForLine(line, matchingSentences);
-                              if (lineSents.length > 0) {
-                                return lineSents.map((s) => {
-                                  const safeId = getSafeSentenceId(s.sentenceId);
-                                  const text =
-                                    lineSents.length === 1
-                                      ? stripMarkdownBlockPrefix(line)
-                                      : getSentencePortionForLine(line, s.exactQuote);
-                                  return (
-                                    <span
-                                      key={s.sentenceId}
-                                      id={safeId}
-                                      className={`transition-colors duration-300 ${getHighlightClass(s.sentenceId)}`}
-                                    >
-                                      {renderInlineContent(text)}{' '}
-                                    </span>
-                                  );
-                                });
-                              }
-                              return <React.Fragment key={idx}>{renderInlineContent(line)} </React.Fragment>;
-                            })}
-                          </p>
-                        )}
-                        {isOrdered ? (
-                          <ol className="my-4 space-y-3 list-decimal list-outside pl-6 text-mirari-ink">
-                            {listLines.map((line, lIdx) => {
-                              const cleanItem = line.replace(/^\d+\.\s+/, '').trim();
-                              const lineSents = getSentencesForLine(line, matchingSentences);
+                return (
+                  <div key={pIdx} className="space-y-4">
+                    {/* Optional lead-in text before the first heading */}
+                    {leadInLines.length > 0 && (
+                      <p className="leading-relaxed mb-3">
+                        {leadInLines.map((line, idx) => {
+                          const lineSents = getSentencesForLine(line, matchingSentences);
+                          if (lineSents.length > 0) {
+                            return lineSents.map((s) => {
+                              const safeId = getSafeSentenceId(s.sentenceId);
+                              const text =
+                                lineSents.length === 1
+                                  ? stripMarkdownBlockPrefix(line)
+                                  : getSentencePortionForLine(line, s.exactQuote);
                               return (
-                                <li key={lIdx} className="leading-relaxed pl-1">
-                                  {lineSents.length > 0 ? (
-                                    lineSents.map((s) => {
-                                      const safeId = getSafeSentenceId(s.sentenceId);
-                                      const text = lineSents.length === 1 ? cleanItem : stripMarkdownBlockPrefix(s.exactQuote);
-                                      return (
-                                        <span
-                                          key={s.sentenceId}
-                                          id={safeId}
-                                          className={`transition-colors duration-300 ${getHighlightClass(s.sentenceId)}`}
-                                        >
-                                          {renderInlineContent(text)}{' '}
-                                        </span>
-                                      );
-                                    })
-                                  ) : (
-                                    renderInlineContent(cleanItem)
-                                  )}
-                                </li>
-                              );
-                            })}
-                          </ol>
-                        ) : (
-                          <ul className="my-4 space-y-2.5 list-disc list-outside pl-6 text-mirari-ink">
-                            {listLines.map((line, lIdx) => {
-                              const cleanItem = line.replace(/^[-*+]\s+/, '').trim();
-                              const lineSents = getSentencesForLine(line, matchingSentences);
-                              return (
-                                <li key={lIdx} className="leading-relaxed pl-1">
-                                  {lineSents.length > 0 ? (
-                                    lineSents.map((s) => {
-                                      const safeId = getSafeSentenceId(s.sentenceId);
-                                      const text = lineSents.length === 1 ? cleanItem : stripMarkdownBlockPrefix(s.exactQuote);
-                                      return (
-                                        <span
-                                          key={s.sentenceId}
-                                          id={safeId}
-                                          className={`transition-colors duration-300 ${getHighlightClass(s.sentenceId)}`}
-                                        >
-                                          {renderInlineContent(text)}{' '}
-                                        </span>
-                                      );
-                                    })
-                                  ) : (
-                                    renderInlineContent(cleanItem)
-                                  )}
-                                </li>
-                              );
-                            })}
-                          </ul>
-                        )}
-                        {/* Safeguard: render any unrendered sentence from matchingSentences */}
-                        {matchingSentences
-                          .filter((s) => !usedSentenceIds.has(s.sentenceId) && hasTextContent(s.exactQuote))
-                          .map((s) => {
-                            const safeId = getSafeSentenceId(s.sentenceId);
-                            return (
-                              <p key={s.sentenceId} className="leading-relaxed">
                                 <span
+                                  key={s.sentenceId}
                                   id={safeId}
                                   className={`transition-colors duration-300 ${getHighlightClass(s.sentenceId)}`}
                                 >
-                                  {renderInlineContent(stripMarkdownBlockPrefix(s.exactQuote))}{' '}
+                                  {renderInlineContent(text)}{' '}
                                 </span>
+                              );
+                            });
+                          }
+                          return <React.Fragment key={idx}>{renderInlineContent(line)} </React.Fragment>;
+                        })}
+                      </p>
+                    )}
+
+                    {/* Render each heading block */}
+                    {headingBlocks.map((block, bIdx) => {
+                      // Check if matchingSentences has a standalone sentence for this heading
+                      const headingSent = matchingSentences.find((s) => {
+                        if (!s.exactQuote.startsWith('#')) return false;
+                        const cleanQ = stripMarkdownBlockPrefix(s.exactQuote);
+                        const cleanT = stripMarkdownBlockPrefix(block.title);
+                        return cleanQ === cleanT || cleanQ.includes(cleanT) || cleanT.includes(cleanQ);
+                      });
+                      const safeHeadingId = headingSent ? getSafeSentenceId(headingSent.sentenceId) : undefined;
+                      const headingHighlight = headingSent ? getHighlightClass(headingSent.sentenceId) : '';
+
+                      const renderHeadingTag = () => {
+                        if (block.level === 3) {
+                          return (
+                            <h3
+                              id={safeHeadingId}
+                              data-sentence-id={safeHeadingId}
+                              className={`font-serif text-xl sm:text-2xl font-bold text-mirari-ink tracking-tight mt-8 mb-4 pt-2 transition-colors duration-300 ${headingHighlight}`}
+                            >
+                              {renderInlineContent(block.title)}
+                            </h3>
+                          );
+                        }
+                        if (block.level === 4) {
+                          return (
+                            <h4
+                              id={safeHeadingId}
+                              data-sentence-id={safeHeadingId}
+                              className={`font-serif text-lg sm:text-xl font-bold text-mirari-ink tracking-tight mt-6 mb-3 transition-colors duration-300 ${headingHighlight}`}
+                            >
+                              {renderInlineContent(block.title)}
+                            </h4>
+                          );
+                        }
+                        return (
+                          <h2
+                            id={safeHeadingId}
+                            data-sentence-id={safeHeadingId}
+                            className={`font-serif text-2xl font-bold text-mirari-ink tracking-tight mt-8 mb-4 transition-colors duration-300 ${headingHighlight}`}
+                          >
+                            {renderInlineContent(block.title)}
+                          </h2>
+                        );
+                      };
+
+                      const hasListInBlock = block.lines.some((l) =>
+                        l.trim().match(/^([-*+]|\d+\.)\s+/)
+                      );
+
+                      if (hasListInBlock) {
+                        const firstListIndex = block.lines.findIndex((l) =>
+                          l.trim().match(/^([-*+]|\d+\.)\s+/)
+                        );
+                        const subLeadInLines =
+                          firstListIndex > 0 ? block.lines.slice(0, firstListIndex) : [];
+                        const listLines = parseListItems(block.lines.slice(firstListIndex));
+                        const isOrdered = /^\d+\./.test(listLines[0].trim());
+
+                        return (
+                          <div key={bIdx} className="space-y-4">
+                            {renderHeadingTag()}
+                            {subLeadInLines.length > 0 && (
+                              <p className="leading-relaxed mb-3">
+                                {subLeadInLines.map((line, idx) => {
+                                  const lineSents = getSentencesForLine(line, matchingSentences);
+                                  if (lineSents.length > 0) {
+                                    return lineSents.map((s) => {
+                                      const safeId = getSafeSentenceId(s.sentenceId);
+                                      const text =
+                                        lineSents.length === 1
+                                          ? stripMarkdownBlockPrefix(line)
+                                          : getSentencePortionForLine(line, s.exactQuote);
+                                      return (
+                                        <span
+                                          key={s.sentenceId}
+                                          id={safeId}
+                                          className={`transition-colors duration-300 ${getHighlightClass(s.sentenceId)}`}
+                                        >
+                                          {renderInlineContent(text)}{' '}
+                                        </span>
+                                      );
+                                    });
+                                  }
+                                  return (
+                                    <React.Fragment key={idx}>
+                                      {renderInlineContent(line)}{' '}
+                                    </React.Fragment>
+                                  );
+                                })}
                               </p>
-                            );
-                          })}
-                      </div>
-                    );
-                  }
+                            )}
+                            {isOrdered ? (
+                              <ol className="my-4 space-y-3 list-decimal list-outside pl-6 text-mirari-ink">
+                                {listLines.map((line, lIdx) => {
+                                  const cleanItem = line.replace(/^\d+\.\s+/, '').trim();
+                                  const lineSents = getSentencesForLine(line, matchingSentences);
+                                  return (
+                                    <li key={lIdx} className="leading-relaxed pl-1">
+                                      {lineSents.length > 0 ? (
+                                        lineSents.map((s) => {
+                                          const safeId = getSafeSentenceId(s.sentenceId);
+                                          const text =
+                                            lineSents.length === 1
+                                              ? cleanItem
+                                              : stripMarkdownBlockPrefix(s.exactQuote);
+                                          return (
+                                            <span
+                                              key={s.sentenceId}
+                                              id={safeId}
+                                              className={`transition-colors duration-300 ${getHighlightClass(s.sentenceId)}`}
+                                            >
+                                              {renderInlineContent(text)}{' '}
+                                            </span>
+                                          );
+                                        })
+                                      ) : (
+                                        renderInlineContent(cleanItem)
+                                      )}
+                                    </li>
+                                  );
+                                })}
+                              </ol>
+                            ) : (
+                              <ul className="my-4 space-y-2.5 list-disc list-outside pl-6 text-mirari-ink">
+                                {listLines.map((line, lIdx) => {
+                                  const cleanItem = line.replace(/^[-*+]\s+/, '').trim();
+                                  const lineSents = getSentencesForLine(line, matchingSentences);
+                                  return (
+                                    <li key={lIdx} className="leading-relaxed pl-1">
+                                      {lineSents.length > 0 ? (
+                                        lineSents.map((s) => {
+                                          const safeId = getSafeSentenceId(s.sentenceId);
+                                          const text =
+                                            lineSents.length === 1
+                                              ? cleanItem
+                                              : stripMarkdownBlockPrefix(s.exactQuote);
+                                          return (
+                                            <span
+                                              key={s.sentenceId}
+                                              id={safeId}
+                                              className={`transition-colors duration-300 ${getHighlightClass(s.sentenceId)}`}
+                                            >
+                                              {renderInlineContent(text)}{' '}
+                                            </span>
+                                          );
+                                        })
+                                      ) : (
+                                        renderInlineContent(cleanItem)
+                                      )}
+                                    </li>
+                                  );
+                                })}
+                              </ul>
+                            )}
+                          </div>
+                        );
+                      }
 
-                  // Standard paragraph sentences following the heading
-                  return (
-                    <div key={pIdx} className="space-y-4">
-                      {renderHeadingElement()}
-                      {matchingSentences.length > 0 && (
-                        <p className="leading-relaxed">
-                          {matchingSentences.map((sent: SentenceEvidence, sIdx: number) => {
-                            let textToRender = sent.exactQuote;
-                            // Strip heading prefix from the first sentence so it is not duplicated
-                            if (sIdx === 0 && textToRender.startsWith('#')) {
-                              textToRender = textToRender.replace(/^(#{1,6})\s+[^\r\n]*\r?\n?/, '').trim();
-                            }
-                            if (!textToRender || textToRender === '**') return null;
+                      // Standard paragraph lines following this heading
+                      return (
+                        <div key={bIdx} className="space-y-4">
+                          {renderHeadingTag()}
+                          {block.lines.length > 0 && (
+                            <p className="leading-relaxed">
+                              {block.lines.map((line, lIdx) => {
+                                const lineSents = getSentencesForLine(line, matchingSentences);
+                                if (lineSents.length > 0) {
+                                  return lineSents.map((s) => {
+                                    const safeId = getSafeSentenceId(s.sentenceId);
+                                    const text =
+                                      lineSents.length === 1
+                                        ? stripMarkdownBlockPrefix(line)
+                                        : getSentencePortionForLine(line, s.exactQuote);
+                                    return (
+                                      <span
+                                        key={s.sentenceId}
+                                        id={safeId}
+                                        className={`transition-colors duration-300 ${getHighlightClass(s.sentenceId)}`}
+                                      >
+                                        {renderInlineContent(text)}{' '}
+                                      </span>
+                                    );
+                                  });
+                                }
+                                return (
+                                  <React.Fragment key={lIdx}>
+                                    {renderInlineContent(line)}{' '}
+                                  </React.Fragment>
+                                );
+                              })}
+                            </p>
+                          )}
+                        </div>
+                      );
+                    })}
 
-                            // If next sentence is '**', append it to close bold
-                            const nextSent = matchingSentences[sIdx + 1];
-                            if (nextSent && nextSent.exactQuote.trim() === '**') {
-                              textToRender += '**';
-                            }
-
-                            const safeId = getSafeSentenceId(sent.sentenceId);
-                            return (
-                              <span
-                                key={sent.sentenceId}
-                                id={safeId}
-                                className={`transition-colors duration-300 ${getHighlightClass(sent.sentenceId)}`}
-                              >
-                                {renderInlineContent(textToRender)}{' '}
-                              </span>
-                            );
-                          })}
-                        </p>
-                      )}
-                    </div>
-                  );
-                }
+                    {/* Safeguard: render any unrendered sentence from matchingSentences */}
+                    {matchingSentences
+                      .filter((s) => !usedSentenceIds.has(s.sentenceId) && hasTextContent(s.exactQuote))
+                      .map((s) => {
+                        const safeId = getSafeSentenceId(s.sentenceId);
+                        return (
+                          <p key={s.sentenceId} className="leading-relaxed">
+                            <span
+                              id={safeId}
+                              className={`transition-colors duration-300 ${getHighlightClass(s.sentenceId)}`}
+                            >
+                              {renderInlineContent(stripMarkdownBlockPrefix(s.exactQuote))}{' '}
+                            </span>
+                          </p>
+                        );
+                      })}
+                  </div>
+                );
               }
 
               // 7. Lists (Ordered or Unordered List Block)

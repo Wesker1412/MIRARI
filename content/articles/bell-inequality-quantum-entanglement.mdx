@@ -32,7 +32,9 @@ references:
     citation: "Bell, J. S. (1964). \"On the Einstein Podolsky Rosen paradox.\" Physics Physique Fizika, 1(3), 195-200. doi:10.1103/PhysicsPhysiqueFizika.1.195."
   - id: "ref-chsh-1969"
     citation: "Clauser, J. F., Horne, M. A., Shimony, A., & Holt, R. A. (1969). \"Proposed Experiment to Test Local Hidden-Variable Theories.\" Physical Review Letters, 23(15), 880-884. doi:10.1103/PhysRevLett.23.880."
-  - id: "ref-aspect-1982"
+  - id: "ref-aspect-1982-twochannel"
+    citation: "Aspect, A., Grangier, P., & Roger, G. (1982). \"Experimental Realization of Einstein-Podolsky-Rosen-Bohm Gedankenexperiment: A New Violation of Bell's Inequalities.\" Physical Review Letters, 49(2), 91-94. doi:10.1103/PhysRevLett.49.91."
+  - id: "ref-aspect-1982-timevarying"
     citation: "Aspect, A., Dalibard, J., & Roger, G. (1982). \"Experimental Test of Bell's Inequalities Using Time-Varying Analyzers.\" Physical Review Letters, 49(25), 1804-1807. doi:10.1103/PhysRevLett.49.1804."
 interactiveComponent: "BellInequalitySimulator"
 ---
@@ -113,11 +115,12 @@ $$2\sqrt{2} \approx 2.828 > 2$$
 
 這是一場理論物理對真實宇宙的終極宣戰。究竟是愛因斯坦對，還是波耳對？
 
-1982 年，法國奧賽光學研究所的阿蘭·阿斯佩（Alain Aspect）團隊進行了劃時代的里程碑實驗。
-為了徹底關死「通訊漏洞（Locality Loophole）」，阿斯佩在光子已經在空中飛行的短暫微秒時間內，利用高速光學開關每隔 10 奈秒在兩種檢偏器角度間隨機快速切換。兩個探測端相距 12 公尺，即使信號以光速在兩端傳遞也需要 40 奈秒，因此 Alice 端在測量時，Bob 端絕對不可能有時間提前「暗通款曲」。
+1982 年，法國奧賽光學研究所的阿蘭·阿斯佩（Alain Aspect）團隊發表了兩項劃時代的里程碑實驗：
 
-實驗結果無可爭辯：
-**實測 $S = 2.697 \pm 0.015$，在數個標準差的高精度下決定性地證實了量子力學對貝爾不等式的違背！**
+1. **雙通道檢偏器實驗（Aspect, Grangier & Roger, 1982）**：
+   團隊首次使用雙通道偏振分束器，同時測量雙通道符合計數，測得 CHSH 參數實測值為 **$S = 2.697 \pm 0.015$**，以高達 46 個標準差的極高信賴度突破了古典上限 $S \le 2$。
+2. **時間變動分析器實驗（Aspect, Dalibard & Roger, 1982）**：
+   為了關閉兩端通信漏洞（Locality Loophole），兩端相距 12 公尺（光傳播需 40 奈秒）。阿斯佩利用聲光開關以接近 **$50\text{ MHz}$ 的頻率（切換週期約 10 奈秒）進行非同步且不共週期的準週期快速切換**，在光子飛行途中改變光路朝向不同的檢偏器。該時變實驗採用對應配置的貝爾型不等式統計量，測得關聯參數違背量為 **$0.101 \pm 0.020$**，以約 5 個標準差的統計顯著性排除了定域隱變數理論。
 
 隨後數十年間，克勞澤、阿斯佩與安東·塞林格（Anton Zeilinger）等人逐步封死了探測效率漏洞（Detection Loophole）與自由選擇漏洞（Freedom-of-Choice Loophole），並在 2015 年完成了無任何漏洞的「無漏洞貝爾檢驗（Loophole-free Bell Test）」。
 這三位量子物理先驅於 **2022 年共同榮獲諾貝爾物理學獎**。

@@ -35,12 +35,12 @@
       },
       {
         "id": "ref-isi-2019-prl",
-        "citation": "Isi, M., Giesler, M., Farr, W. M., Scheel, M. A., & Teukolsky, S. A. (2019). \"Testing the no-hair theorem with GW150914.\" Physical Review Letters, 123(16), 161101. doi:10.1103/PhysRevLett.123.161101.",
+        "citation": "Isi, M., Giesler, M., Farr, W. M., Scheel, M. A., & Teukolsky, S. A. (2019). \"Testing the no-hair theorem with GW150914.\" Physical Review Letters, 123(11), 111102. doi:10.1103/PhysRevLett.123.111102.",
         "peerReviewStatus": "已完成同行評審 (Physical Review Letters)",
         "citationAudit": {
           "verifiedFirstAuthor": "Maximiliano Isi",
           "originalPublicationPageVerified": true,
-          "auditNotes": "核實 Isi 等人重新分析 GW150914 鈴宕信號，確認在波峰後成功分離出基模 l=2, m=2, n=0 與第一泛音 n=1，無毛定理偏離參數在 20% 誤差內自洽。"
+          "auditNotes": "核實 Isi 等人 (PRL 123, 111102) 重新分析 GW150914 鈴宕信號，確認論文報告分離出基模與第一泛音特徵，但 2024-2025 年後續獨立分析顯示該泛音證據強度對合併時間零點極其敏感。"
         },
         "verifiedClaims": [
           "在雙黑洞併合峰值後僅數毫秒的超短時窗內，鈴宕信號即可由疊加泛音線性模式準確擬合",
@@ -129,8 +129,9 @@
     "interactiveRole": "BlackHoleRingdownSimulator 讓讀者親自撥動黑洞質量與自旋旋鈕，在示波器上直觀對比基模與第一泛音的疊加衰減波形，體會黑洞光譜學的超定驗證"
   },
   "issuesIdentifiedAndCorrected": [
-    "明確指出合併波峰附近『線性微擾起始時間』的理論模糊帶，避免讀者誤以為鈴宕分析完全不受非線性效應干擾",
-    "修正了早期草稿中將無毛定理表述為絕對公理的偏差，客觀強調當前 GW150914 觀測精度邊界為 10-20% 偏差限制"
+    "校正 Isi et al. (2019) 論文出處為 Physical Review Letters 123(11), 111102 及正確 DOI 10.1103/PhysRevLett.123.111102",
+    "修正將 2019 年泛音結果描述為已獲決定性確認的偏差，客觀補充 2024-2025 年多個研究組關於合併時間零點敏感性與證據減弱之學術爭議，避免過度宣稱已終極驗證無毛定理",
+    "明確指出合併波峰附近『線性微擾起始時間』的理論模糊帶，避免讀者誤以為鈴宕分析完全不受非線性效應干擾"
   ],
   "unconfirmedLimits": [
     "現役探測器靈敏度限制下，高階角向量子數模式 (l=3, m=3) 難以高信噪比分離，更嚴格的檢驗需等待次世代愛因斯坦望遠鏡與 LISA"

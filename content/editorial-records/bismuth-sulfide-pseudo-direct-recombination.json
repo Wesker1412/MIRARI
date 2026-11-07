@@ -17,12 +17,12 @@
           "seniorAuthor": "Laura M. Herz",
           "originalPublicationPageVerified": true,
           "mechanismVsCommercialAudited": true,
-          "auditNotes": "第一作者由原先誤記之 Hoye 正式校正為第一作者 Marcello Righetto (牛津大學 Laura M. Herz 課題組)；確認能隙值 1.35 eV、超快暫態光譜與擬直接能帶解耦機制與 Nature 原始出版頁完全一致。"
+          "auditNotes": "核實第一作者 Marcello Righetto (牛津大學 Laura M. Herz 課題組)；確認能隙值 1.35 eV、超快太赫茲與微波電導光譜、時間解析螢光光譜與擬直接能帶解耦機制與 Nature 原始出版頁完全一致。"
         },
         "verifiedClaims": [
           "硫化鉍 (Bi₂S₃) 在布里淵區中心具有約 1.35 eV 之直接光學躍遷能隙，光吸收係數超過 10⁵ cm⁻¹",
           "光生載子在吸收後數百飛秒內弛豫至鄰近在動量空間微偏之局域導帶底，形成動量屏障",
-          "動量偏離能帶幾何使雙分子輻射復合係數降低逾一個數量級，少數載子壽命達數百奈秒"
+          "動量偏離能帶幾何使雙分子輻射復合率相比同等直接躍遷模型抑制約 75%，室溫復合係數約 5×10⁻¹¹ cm³/s，載子約在 100 ns 內復合完畢"
         ],
         "distinctions": {
           "establishedKnowledge": [
@@ -30,7 +30,7 @@
             "肖克利-奎塞爾 (Shockley-Queisser) 理論極限確立單接面太陽能電池最佳能隙約為 1.1 至 1.4 eV"
           ],
           "empiricalFindings": [
-            "ARPES 與暫態光譜證實硫化鉍兼具垂直直接躍遷高吸收與局域動量偏離延遲復合之擬直接特性"
+            "超快太赫茲電導與時間解析螢光光譜證實硫化鉍兼具垂直直接躍遷高吸收與局域動量偏離延遲復合之擬直接特性"
           ],
           "hypothesesAndModels": [
             "第一性原理密度泛函理論 (DFT) 預測鉍 6p 與硫 3p 軌域雜化對動量能谷深度之微觀貢獻"

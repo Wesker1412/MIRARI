@@ -31,7 +31,7 @@ references:
   - id: "ref-abbott-2016-prl"
     citation: "Abbott, B. P., et al. (LIGO Scientific Collaboration and Virgo Collaboration) (2016). \"Observation of Gravitational Waves from a Binary Black Hole Merger.\" Physical Review Letters, 116(6), 061102. doi:10.1103/PhysRevLett.116.061102."
   - id: "ref-isi-2019-prl"
-    citation: "Isi, M., Giesler, M., Farr, W. M., Scheel, M. A., & Teukolsky, S. A. (2019). \"Testing the no-hair theorem with GW150914.\" Physical Review Letters, 123(16), 161101. doi:10.1103/PhysRevLett.123.161101."
+    citation: "Isi, M., Giesler, M., Farr, W. M., Scheel, M. A., & Teukolsky, S. A. (2019). \"Testing the no-hair theorem with GW150914.\" Physical Review Letters, 123(11), 111102. doi:10.1103/PhysRevLett.123.111102."
   - id: "ref-teukolsky-1973-apj"
     citation: "Teukolsky, S. A. (1973). \"Perturbations of a rotating black hole. I. Fundamental equations for gravitational, electromagnetic, and neutrino-field perturbations.\" The Astrophysical Journal, 185, 635-647. doi:10.1086/152444."
 interactiveComponent: "BlackHoleRingdownSimulator"
@@ -106,18 +106,17 @@ $$(M, a)_{n=0} \equiv (M', a')_{n=1}$$
 
 # 五、真實數據：GW150914 的里程碑突破
 
-2019 年，馬克西米利亞諾·伊西（Maximiliano Isi）與威爾·法爾（Will Farr）等人在《Physical Review Letters》發表了劃時代的數據分析成果。
+2019 年，馬克西米利亞諾·伊西（Maximiliano Isi）等人在《Physical Review Letters》發表了一項開創性的數據分析成果。
 
-他們利用先進的貝葉斯噪聲推斷技術，重新審查了人類歷史上首個探測到的重力波事件——**GW150914**。
-研究團隊在合併峰值後僅數毫秒的超短窗口內，以高達 $3.6\sigma$ 的統計信噪比，成功分離出了**基模（$n=0$）與第一泛音（$n=1$）的疊加信號**！
+他們利用貝葉斯噪聲推斷技術重新審查 GW150914，在論文中報告在合併峰值後約數毫秒的超短窗口內，檢測到了**基模（$n=0$）與第一泛音（$n=1$）疊加的信號特徵**，並指出基模與泛音解算的質量和自旋自洽，微擾偏差參數在約 20% 誤差內與無毛定理相容。
 
-數據分析結果震撼了科學界：
+當時報道的分析結果包括：
 - 基模頻率約為 $f_{220} \approx 251\text{ Hz}$，阻尼時間 $\tau_{220} \approx 4.0\text{ ms}$；
-- 泛音頻率在誤差範圍內與克爾幾何預言完全自洽；
-- 綜合推算出的殘餘黑洞質量為 $M \approx 68.5 M_\odot$，自旋為 $a \approx 0.69$。
-- **無毛定理的微擾偏差參數被限制在 10% 到 20% 以內**。
+- 泛音頻率在估算範圍內與克爾幾何預言相容；
+- 推算殘餘黑洞質量約 $68.5 M_\odot$，自旋約 $0.69$。
 
-這是人類歷史上第一次利用純粹的時空震顫，直接檢驗了黑洞事件視界邊界條件的純潔性，將愛因斯坦的克爾度規從幾何推想轉化為堅實的觀測事實。
+**然而，科學界對這項先驅性研究展開了持續深入的複核。**
+在 2024 至 2025 年間，多個獨立研究組（如 Cotesta 等人、Finch & Moore、Baibhav 等人發表於《Physical Review D》）重新評估了分析中的系統不確定性。後續研究指出，該泛音信號的統計顯著性對**合併時間零點（Peak Time $t_{\text{peak}}$）的選取極度敏感**；一旦充分考量時間零點不確定性與非線性合併污染，泛音存在的證據強度會顯著減弱。這表明在現役探測器靈敏度下，GW150914 的鈴宕信號尚不能視為無毛定理的決定性定論，而是開啟了黑洞光譜學實證檢驗的大門。
 
 # 六、科學邊界：當前探測極限與未來願景
 
