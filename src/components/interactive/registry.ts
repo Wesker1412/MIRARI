@@ -21,6 +21,9 @@ import { BlackHoleRingdownSimulator } from '../article/BlackHoleRingdownSimulato
 import { BellInequalitySimulator } from '../article/BellInequalitySimulator';
 import { CarTCellKineticsSimulator } from '../article/CarTCellKineticsSimulator';
 import { SuperconductivityBcsSimulator } from '../article/SuperconductivityBcsSimulator';
+import { BosonSamplingSimulator } from '../article/BosonSamplingSimulator';
+import { ChandrasekharLimitSimulator } from '../article/ChandrasekharLimitSimulator';
+import { RibozymeKineticsSimulator } from '../article/RibozymeKineticsSimulator';
 
 export interface InteractiveParameterMeta {
   name: string;
@@ -618,6 +621,30 @@ export const INTERACTIVE_COMPONENTS: Record<string, InteractiveComponentMeta> = 
     parameters: [],
     keyConcepts: ['BCS 理論 (BCS Theory)', '庫柏對 (Cooper Pairs)', '超導能隙 (Superconducting Gap)', '邁斯納效應 (Meissner Effect)', '倫敦穿透深度 (London Penetration Depth)'],
     component: SuperconductivityBcsSimulator,
+  },
+  BosonSamplingSimulator: {
+    id: 'BosonSamplingSimulator',
+    nameZh: '玻色子取樣與多光子量子干涉模擬器',
+    descriptionZh: '全同光子在多端口分束器網絡之干涉散射幾率、HOM 聚束效應與 #P-hard 積和式分佈。',
+    parameters: [],
+    keyConcepts: ['玻色子取樣 (Boson Sampling)', '全同粒子 (Identical Particles)', 'HOM 干涉 (HOM Interference)', '矩陣積和式 (Permanent)', '量子優越性 (Quantum Advantage)'],
+    component: BosonSamplingSimulator,
+  },
+  ChandrasekharLimitSimulator: {
+    id: 'ChandrasekharLimitSimulator',
+    nameZh: '錢德拉塞卡極限與白矮星質量-半徑演化模擬器',
+    descriptionZh: '電子簡併壓從非相對論 (5/3) 到極端相對論 (4/3) 軟化、質量反比半徑與 1.44 太陽質量崩塌邊界。',
+    parameters: [],
+    keyConcepts: ['錢德拉塞卡極限 (Chandrasekhar Limit)', '白矮星 (White Dwarf)', '電子簡併壓 (Degeneracy Pressure)', '費米動量 (Fermi Momentum)', '多方球模型 (Polytrope)'],
+    component: ChandrasekharLimitSimulator,
+  },
+  RibozymeKineticsSimulator: {
+    id: 'RibozymeKineticsSimulator',
+    nameZh: '核酶自催化剪切動力學與 Mg²⁺ 輔因子微調模擬器',
+    descriptionZh: '錘頭狀核酶活性口袋立體折疊、Mg²⁺ 輔因子二價金屬活化與自剪切米氏轉化反應。',
+    parameters: [],
+    keyConcepts: ['核酶 (Ribozyme)', 'RNA 世界假說 (RNA World Hypothesis)', '自催化 (Autocatalysis)', '米氏動力學 (Michaelis-Menten Kinetics)', '磷酸二酯鍵轉酯反應 (Transesterification)'],
+    component: RibozymeKineticsSimulator,
   },
 };
 

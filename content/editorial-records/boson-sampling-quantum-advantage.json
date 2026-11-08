@@ -1,0 +1,137 @@
+{
+  "articleId": "art-boson-sampling-quantum",
+  "slug": "boson-sampling-quantum-advantage",
+  "editorialCategory": "scientific_principles",
+  "version": 1,
+  "creationModel": "gemini-2.5-pro",
+  "editorialPassDate": "2026-11-08T09:00:00+08:00",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-aaronson-arkhipov-2011",
+        "citation": "Aaronson, S., & Arkhipov, A. (2011). \"The computational complexity of linear optics.\" Proceedings of the 43rd Annual ACM Symposium on Theory of Computing (STOC '11), 333-342.",
+        "doi": "10.1145/1993636.1993682",
+        "peerReviewStatus": "已完成同行評審 (ACM STOC 2011 經典計算複雜度論文)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Scott Aaronson",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實阿倫森與阿爾希波夫 2011 年 STOC 論文，確認若經典多項式時間算法能精確或逼近玻色子取樣分佈，多項式譜系階層 (PH) 將坍縮至第三層之嚴格證明。"
+        },
+        "verifiedClaims": [
+          "在線性光學么正變換下，全同玻色子躍遷振幅正比於子矩陣的積和式 Perm(U)",
+          "計算積和式在複雜度理論中屬於 #P-hard，且估算隨機高斯矩陣的積和式亦為 #P-hard",
+          "精確玻色子取樣無法被經典隨機多項式時間演算法逼近，否則多項式譜系階層 (Polynomial Hierarchy) 坍縮"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "行列式 (Determinant) 可由高斯消去法在 O(n³) 時間內計算",
+            "玻色子對稱態疊加產生相長與相消干涉"
+          ],
+          "empiricalFindings": [
+            "小規模可程式化光子芯片成功實現 3 至 6 光子 HOM 干涉與積和式躍遷機率分佈驗證"
+          ],
+          "hypothesesAndModels": [
+            "永久式抗猜想 (Permanent Anti-Concentration Conjecture)",
+            "永久式近似猜想 (Permanent of Gaussians Conjecture)"
+          ]
+        }
+      },
+      {
+        "id": "ref-hong-ou-mandel-1987",
+        "citation": "Hong, C. K., Ou, Z. Y., & Mandel, L. (1987). \"Measurement of subpicosecond time intervals between two photons by interference.\" Physical Review Letters, 59(18), 2044-2046.",
+        "doi": "10.1103/PhysRevLett.59.2044",
+        "peerReviewStatus": "已完成同行評審 (Physical Review Letters 經典光學實驗)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "C. K. Hong",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實洪-歐-曼德爾 1987 年 PRL 原文，確認 50:50 對稱分束器下兩全同光子反射態相位反轉抵消透射態之 HOM 凹陷深度與波包重疊積分推導。"
+        },
+        "verifiedClaims": [
+          "兩顆全同單光子同時入射至 50:50 分束器時，雙符合計數率隨兩路延遲差歸零而顯著降至零（HOM dip）",
+          "玻色子波函數交換對稱性導致路徑反對稱項徹底抵消，兩光子強制聚束從同一個端口出射"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "么正分束矩陣之反射係數與透射係數具備相位正交關係：r* t' + t r'* = 0",
+            "光子為自旋為 1 之玻色子，服從對稱化全同粒子態"
+          ],
+          "empiricalFindings": [
+            "實測 HOM 凹陷可見度在理想單模光纖下超越 99%"
+          ],
+          "hypothesesAndModels": [
+            "無耗散無偏振色散之理想點對稱分束器模型"
+          ]
+        }
+      },
+      {
+        "id": "ref-zhong-2020-science",
+        "citation": "Zhong, H.-S., Wang, H., Deng, Y.-H., et al. (2020). \"Quantum computational advantage using photons.\" Science, 370(6523), 1460-1463.",
+        "doi": "10.1126/science.abe8770",
+        "peerReviewStatus": "已完成同行評審 (Science 封面研究)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Han-Sen Zhong (鐘翰森)",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實九章團隊 2020 年 Science 論文，確認採用壓縮真空態（Gaussian Boson Sampling, GBS）之 100 模式光學干涉網絡與 Hafnian 矩陣採樣計算優勢。"
+        },
+        "verifiedClaims": [
+          "九章光學系統在 100 模式干涉儀中探測到最高 76 個光子輸出態，狀態空間高達 10³⁰",
+          "經典富岳超級電腦若以 Torontonian/Hafnian 演算法模擬同等採樣需耗費上億年，光量子系統在微秒量級完成"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "自發參量下轉換 (SPDC) 可製備多光子壓縮真空態",
+            "矩陣 Hafnian 具有與 Permanent 相同的 #P-hard 複雜度"
+          ],
+          "empiricalFindings": [
+            "在存在傳輸損耗與探測效率極限下，實測採樣分佈顯著超越熱態採樣與可區分光子採樣零假設驗證"
+          ],
+          "hypothesesAndModels": [
+            "高階經典採樣演算法（如張量網絡近似截斷）在深度網絡中的計算瓶頸假設"
+          ]
+        }
+      }
+    ],
+    "noFakeCitations": true,
+    "noFictionalReviewers": true,
+    "formulasAndUnits": [
+      {
+        "formula": "\\langle n_1, \\dots, n_M | \\hat{U} | 1_1, \\dots, 1_N \\rangle = \\frac{\\text{Perm}(U_{S,T})}{\\sqrt{n_1! \\cdots n_M!}}",
+        "unitConsistency": "量子力學無因次躍遷機率振幅；積和式 Perm 繼承么正矩陣 U 之無因次性，除以階乘根號維持歸一化因次正確",
+        "verified": true
+      },
+      {
+        "formula": "\\text{Perm}(A) = \\sum_{\\sigma \\in S_n} \\prod_{i=1}^n A_{i, \\sigma(i)}",
+        "unitConsistency": "無因次排列和，求和項數為 n!，所有符號項嚴格取正 (+1)",
+        "verified": true
+      },
+      {
+        "formula": "|\\psi_{\\text{out}}\\rangle = \\frac{1}{\\sqrt{2}}(|2,0\\rangle + |0,2\\rangle)",
+        "unitConsistency": "二維雙光子 HOM 聚束量子態向量，態幅係數平方和 (1/√2)² + (1/√2)² = 1，歸一化無因次性完全滿足",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "兩模式 50:50 分束器么正躍遷矩陣 U = [ [1/√2, 1/√2], [1/√2, -1/√2] ] 與四模式隨機 Haar 矩陣子矩陣積和式 Perm(U)",
+      "numericalMethod": "精確 Ryser 算法計算積和式 Perm(A)，結合隨機相位蒙地卡羅軌跡生成光子聚束分佈與 HOM 凹陷深度模擬",
+      "modelAssumptionsAndLimits": "模擬器針對 2 模式（HOM 示範）與 4 模式（玻色子取樣網絡示範）進行低維精確求解；未包含大尺度系統不可避免的光子傳輸插損、探測器暗計數與多光子發射噪聲"
+    }
+  },
+  "readability": {
+    "technicalTermsDemystified": [
+      "HOM 效應：不是光子相互吸引，而是分束器兩條干涉路徑波函數剛好相反相消，使單獨分開出來的機率完全歸零",
+      "積和式（Permanent）：長得跟行列式一模一樣，但少了隔項變號的負號，失去對稱相消後計算量從三次方爆炸成階乘複雜度",
+      "高斯玻色取樣（GBS）：利用連續光學壓縮態代替昂貴的單光子源，將積和式推廣為 Hafnian 採樣，大幅提高實驗可擴展性"
+    ]
+  },
+  "aestheticsAndNarrative": {
+    "coreQuestion": "為什麼一塊平凡無奇的被動光學玻璃鏡片網絡，能天然求解經典超級電腦耗盡宇宙年齡也無法枚舉的 #P-hard 複雜度矩陣？",
+    "interactiveRole": "透過 BosonSamplingSimulator 讓讀者親手調整光子不可區分度與相位延遲，親眼目睹 HOM 聚束凹陷的出現，並在 4 模式網絡中切換全同光子與經典粒子，體驗積和式對輸出機率態的戲劇性重構"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "釐清光子聚束並非源於某種物理吸引力或媒介相互作用，而是源於量子力學全同波函數路徑干涉的統計本質",
+    "修正坊間將玻色子取樣等同於通用量子計算的誤解，明確指明玻色子取樣為專用非通用（non-universal）採樣模型"
+  ],
+  "unconfirmedLimits": [
+    "張量網絡算法與經典稀疏矩陣逼近在特定低噪聲或高損耗邊界下的精確經典模擬邊界仍為當前學界爭論熱點"
+  ]
+}

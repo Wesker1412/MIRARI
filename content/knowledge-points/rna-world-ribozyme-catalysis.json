@@ -1,0 +1,52 @@
+{
+  "articleId": "art-rna-world-ribozyme",
+  "slug": "rna-world-ribozyme-catalysis",
+  "title": "生命黎明的自催化奇蹟：RNA 世界假說與核酶的分子演化",
+  "knowledgePoints": [
+    {
+      "id": "kp-ribozyme-2prime-hydroxyl",
+      "label": "2'-OH 羥基與立體活性口袋",
+      "suggestedQuestion": "RNA 為什麼能像蛋白質酵素一樣催化化學反應，而 DNA 卻不行？",
+      "keywords": [
+        "2'-OH羥基",
+        "立體催化",
+        "核糖核酸",
+        "雙鏈剛性",
+        "親核試劑",
+        "結構折疊"
+      ],
+      "plainExplanation": "DNA 缺少核糖二號位的氧原子（去氧核糖），使其偏好形成剛硬對稱的雙螺旋儲存代碼；而 RNA 保留了活潑的 2'-OH 羥基，不僅能自由折疊出複雜的三維立體口袋與金屬離子配合，更能直接充當質子轉移的化學催化工具，兼具了資訊攜帶者與化學催化劑的雙重超能力。",
+      "anchorSentenceId": "sent-dfca217f"
+    },
+    {
+      "id": "kp-self-splicing-discovery",
+      "label": "自剪切核酶的重大發現",
+      "suggestedQuestion": "切赫與奧特曼如何顛覆了「所有酵素都是蛋白質」的生命科學鐵律？",
+      "keywords": [
+        "自剪切核酶",
+        "切赫",
+        "奧特曼",
+        "四膜蟲",
+        "核糖核酸酶P",
+        "諾貝爾化學獎"
+      ],
+      "plainExplanation": "1980 年代初，切赫在試管中徹底去除所有蛋白質雜質後，四膜蟲的 RNA 內含子依然在鎂離子誘導下精準完成了自身剪切與拼接；奧特曼則證明核糖核酸酶 P 的催化活性核心完全在 RNA 分子而非蛋白質次單元，徹底推翻了一世紀以來生化學界對蛋白質催化壟斷的教條。",
+      "anchorSentenceId": "sent-4bf59c03"
+    },
+    {
+      "id": "kp-ribosome-peptidyl-transferase",
+      "label": "核糖體活體化石與肽鍵合成",
+      "suggestedQuestion": "現代活細胞內部如何保留遠古 RNA 世界的活體遺跡？",
+      "keywords": [
+        "核糖體",
+        "肽醯轉移酶",
+        "23S rRNA",
+        "活體化石",
+        "生命起源",
+        "RNA世界"
+      ],
+      "plainExplanation": "現代所有活細胞用來合成蛋白質的生命工廠——核糖體，其核心催化中心（肽醯轉移酶活性口袋）在 18 埃範圍內完全找不到任何蛋白質氨基酸殘基，百分之百由 23S rRNA 核苷酸鏈折疊而成。這項晶體學突破證明蛋白質是古老核酶的產物，核糖體本身就是遠古 RNA 世界留存在現代生命體的活體化石。",
+      "anchorSentenceId": "sent-6b56b523"
+    }
+  ]
+}

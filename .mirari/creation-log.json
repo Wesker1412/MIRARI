@@ -1,5 +1,5 @@
 {
-  "lastRunTimestamp": "2026-11-07T08:00:00.000Z",
+  "lastRunTimestamp": "2026-11-08T09:00:00.000Z",
   "scheduledCron": "0 9 * * *",
   "timezone": "Asia/Taipei (UTC+8)",
   "creationModel": "gemini-2.5-pro",
@@ -448,6 +448,62 @@
             "Meissner & Ochsenfeld (1933) Naturwissenschaften"
           ],
           "editorialRecordPath": "content/editorial-records/bcs-superconductivity-cooper-pairs.json"
+        }
+      ]
+    },
+    {
+      "runId": "mirari-auto-run-20261108-0900",
+      "timestamp": "2026-11-08T09:00:00.000Z",
+      "targetCount": 3,
+      "succeededCount": 3,
+      "failedCount": 0,
+      "articles": [
+        {
+          "id": "art-boson-sampling-quantum",
+          "slug": "boson-sampling-quantum-advantage",
+          "title": "光子的不可計算之舞：玻色子取樣與量子霸權的複雜度之網",
+          "discipline": "量子光學與計算複雜度",
+          "interactiveComponent": "BosonSamplingSimulator",
+          "interactiveType": "hom_boson_sampling",
+          "narrativeStyle": "first_principles",
+          "status": "published",
+          "sources": [
+            "Aaronson & Arkhipov (2011) STOC '11 doi:10.1145/1993636.1993682",
+            "Hong, Ou & Mandel (1987) Phys. Rev. Lett. doi:10.1103/PhysRevLett.59.2044",
+            "Zhong et al. (2020) Science doi:10.1126/science.abe8770"
+          ],
+          "editorialRecordPath": "content/editorial-records/boson-sampling-quantum-advantage.json"
+        },
+        {
+          "id": "art-chandrasekhar-limit",
+          "slug": "chandrasekhar-limit-white-dwarf",
+          "title": "恆星命運的重力休止符：錢德拉塞卡極限與電子簡併壓的極致博弈",
+          "discipline": "天體物理學與相對論統計力學",
+          "interactiveComponent": "ChandrasekharLimitSimulator",
+          "interactiveType": "relativistic_hydrostatics",
+          "narrativeStyle": "historical_detective",
+          "status": "published",
+          "sources": [
+            "Chandrasekhar (1931) Astrophys. J. doi:10.1086/143324",
+            "Fowler (1926) Mon. Not. R. Astron. Soc. doi:10.1093/mnras/87.2.114"
+          ],
+          "editorialRecordPath": "content/editorial-records/chandrasekhar-limit-white-dwarf.json"
+        },
+        {
+          "id": "art-rna-world-ribozyme",
+          "slug": "rna-world-ribozyme-catalysis",
+          "title": "生命黎明的自催化奇蹟：RNA 世界假說與核酶的分子演化",
+          "discipline": "分子演化與生化催化動力學",
+          "interactiveComponent": "RibozymeKineticsSimulator",
+          "interactiveType": "ribozyme_kinetics",
+          "narrativeStyle": "depth_narrative",
+          "status": "published",
+          "sources": [
+            "Kruger et al. (1982) Cell doi:10.1016/0092-8674(82)90414-7",
+            "Nissen, Steitz et al. (2000) Science doi:10.1126/science.289.5481.920",
+            "Gilbert (1986) Nature doi:10.1038/319618a0"
+          ],
+          "editorialRecordPath": "content/editorial-records/rna-world-ribozyme-catalysis.json"
         }
       ]
     }

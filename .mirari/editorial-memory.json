@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastUpdated": "2026-11-07T08:00:00.000Z",
+  "lastUpdated": "2026-11-08T09:00:00.000Z",
   "editorialMemoryDescription": "MIRARI 自主編輯品質管理記憶庫：記錄近期篇章學科分佈、敘事風格、互動模式與編輯檢查規則，提供每日自主創作管線跨日延續性與防重複依據。",
   "recentArticles": [
     {
@@ -263,6 +263,42 @@
       "coreConcept": "庫柏對聲子媒介吸引力、費米面能隙與邁斯納完美抗磁性",
       "pedagogyKey": "超導閉合圓環永恆電流破題，聲子正電荷滯後凹陷撮合相反自旋電子，解構倫敦穿透深度",
       "limitsIdentified": "弱耦合 s 波常規超導模型，無法解釋高溫銅氧化物與鐵基非傳統超導機理"
+    },
+    {
+      "articleId": "art-boson-sampling-quantum",
+      "slug": "boson-sampling-quantum-advantage",
+      "editorialCategory": "scientific_principles",
+      "discipline": "量子光學與計算複雜度",
+      "narrativeStyle": "first_principles",
+      "interactiveType": "hom_boson_sampling",
+      "interactiveComponent": "BosonSamplingSimulator",
+      "coreConcept": "HOM 雙光子聚束、矩陣積和式與 #P-hard 量子優越性",
+      "pedagogyKey": "從雙光子干涉抵消分流破題，對比行列式與積和式對稱性，解構光子網絡不可計算性",
+      "limitsIdentified": "無耗散理想模型，未納入大規模多模干涉損耗與暗計數"
+    },
+    {
+      "articleId": "art-chandrasekhar-limit",
+      "slug": "chandrasekhar-limit-white-dwarf",
+      "editorialCategory": "scientific_principles",
+      "discipline": "天體物理學與相對論統計力學",
+      "narrativeStyle": "historical_detective",
+      "interactiveType": "relativistic_hydrostatics",
+      "interactiveComponent": "ChandrasekharLimitSimulator",
+      "coreConcept": "電子簡併壓、極端相對論狀態方程變軟與 1.44 太陽質量極限",
+      "pedagogyKey": "十九歲青年輪船手稿破題，以泡利不相容原理空間租金類比量子壓力，解構超光速極限下壓力軟化",
+      "limitsIdentified": "零溫純碳氧白矮星簡化模型，未包含強磁場差速自轉"
+    },
+    {
+      "articleId": "art-rna-world-ribozyme",
+      "slug": "rna-world-ribozyme-catalysis",
+      "editorialCategory": "scientific_principles",
+      "discipline": "分子演化與生化催化動力學",
+      "narrativeStyle": "depth_narrative",
+      "interactiveType": "ribozyme_kinetics",
+      "interactiveComponent": "RibozymeKineticsSimulator",
+      "coreConcept": "核酶自剪切催化、2'-OH 羥基多功能性與核糖體活體化石",
+      "pedagogyKey": "以雞生蛋蛋生雞悖論切入，解構 RNA 雙重身份，晶體學驗證 23S rRNA 催化核心",
+      "limitsIdentified": "二元均相反應近似，未納入細胞內擁擠環境與多聚體協同變構"
     }
   ],
   "cumulativeGuidelines": {
@@ -280,7 +316,7 @@
           "displayName": "科學原理與思想實驗",
           "scope": "收錄一般科普、經典科學知識、科學現象、數學原理、理論解釋及思想實驗",
           "purpose": "主要目的是讓讀者理解科學，而非追逐最新消息。不限制物理學，也不要求每篇一定具有思想實驗",
-          "currentArticles": 15
+          "currentArticles": 18
         },
         "journal_interpretation": {
           "displayName": "期刊解讀",

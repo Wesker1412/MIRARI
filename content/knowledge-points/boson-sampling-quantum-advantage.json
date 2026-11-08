@@ -1,0 +1,52 @@
+{
+  "articleId": "art-boson-sampling-quantum",
+  "slug": "boson-sampling-quantum-advantage",
+  "title": "光子的不可計算之舞：玻色子取樣與量子霸權的複雜度之網",
+  "knowledgePoints": [
+    {
+      "id": "kp-hom-bunching",
+      "label": "HOM 雙光子聚束效應",
+      "suggestedQuestion": "為什麼兩個完全相同的光子穿過分束器時永遠不會分開？",
+      "keywords": [
+        "HOM干涉",
+        "雙光子聚束",
+        "全同玻色子",
+        "分束器",
+        "波函數干涉",
+        "量子光學"
+      ],
+      "plainExplanation": "當兩個頻率、偏振與波包形狀完全一致的全同光子，同時從不同入口射入對稱分束器時，由於波函數相消干涉，「兩顆光子各自從不同端口出來」的兩種歷史路徑相位差剛好是 180 度而徹底抵消。結果光子必定攜手從同一個出口飛出，這就是玻色子天然的聚束本能。",
+      "anchorSentenceId": "sent-db34db3a"
+    },
+    {
+      "id": "kp-permanent-p-hard",
+      "label": "積和式與 #P-hard 複雜度",
+      "suggestedQuestion": "為什麼矩陣積和式比行列式難算無數倍？",
+      "keywords": [
+        "積和式",
+        "Permanent",
+        "行列式",
+        "P-hard",
+        "計算複雜度",
+        "對稱性"
+      ],
+      "plainExplanation": "行列式在計算不同排列時會交替乘上正負號，這帶來了美妙的代數對稱性，使得高斯消去法在立方時間內就能求出答案。然而積和式缺少了負號相消的數學保護，每一項都必須以正號相加，使得計算它等價於枚舉所有可能的排列組合，在計算複雜度上屬於最困難的 #P-hard 問題。",
+      "anchorSentenceId": "sent-c0c026ae"
+    },
+    {
+      "id": "kp-quantum-supremacy-gbs",
+      "label": "量子優越性與高斯玻色取樣",
+      "suggestedQuestion": "玻色子取樣如何證明量子電腦在特定問題上超越經典超級電腦？",
+      "keywords": [
+        "量子優越性",
+        "高斯玻色取樣",
+        "九章",
+        "採樣複雜度",
+        "光量子計算",
+        "不可偽造"
+      ],
+      "plainExplanation": "多光子在多模式分束網絡中傳播時，量子物理定律天然且即時地在輸出端完成了極其複雜的矩陣積和式採樣分佈。經典超級電腦若要生成完全相同的機率分佈樣本，需要耗費上萬年枚舉海量矩陣狀態；而光子網絡幾微秒就能吐出一個真隨機樣本，在無容錯量子纠錯前提下率先證明了量子加速優勢。",
+      "anchorSentenceId": "sent-7ce66929"
+    }
+  ]
+}
