@@ -1,0 +1,110 @@
+{
+  "articleId": "art-muon-g-2-discrepancy",
+  "slug": "muon-g-2-standard-model-discrepancy",
+  "editorialCategory": "journal_interpretation",
+  "version": 1,
+  "creationModel": "gemini-2.5-pro",
+  "editorialPassDate": "2026-11-09T09:00:00+08:00",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-fnal-2023-prl",
+        "citation": "Aguillard, D. P., et al. (Muon g-2 Collaboration) (2023). \"Measurement of the Positive Muon Anomalous Magnetic Moment to 0.20 ppm.\" Physical Review Letters, 131(16), 161802.",
+        "doi": "10.1103/PhysRevLett.131.161802",
+        "peerReviewStatus": "已完成同行評審 (Physical Review Letters 封面焦點實驗研究)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "D. P. Aguillard (Muon g-2 Collaboration)",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實費米實驗室 2023 年 PRL 原文，確認 Run 1-3 合併實測值 a_mu = 116592059(22) x 10^-11 (0.20 ppm 精度) 與色散白皮書理論值 5.1σ 偏差推導過程無誤。"
+        },
+        "verifiedClaims": [
+          "費米實驗室測得正渺子反常磁矩為 116592059(22) x 10^-11，綜合測量精度達到 0.20 ppm",
+          "在魔術動量 p ≈ 3.094 GeV/c (γ ≈ 29.3) 下，反常進動差頻 omega_a 與外加磁場嚴格成正比，靜電聚焦場干擾項被精確消除",
+          "實測值相較 2020 年理論白皮書色散理論值高出 (249 ± 48) x 10^-11，統計顯著度達 5.1 個標準差"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "狄拉克方程式預言點狀費米子內稟 g = 2",
+            "施溫格單圈 QED 修正 α / (2π) ≈ 0.0011614",
+            "弱作用力最大宇稱不守恆導致高能衰變正電子沿母體自旋方向優先出射"
+          ],
+          "empiricalFindings": [
+            "PbF2 晶體量能器探測到正電子計數遵循五參數指數包絡正弦調製曲線 N(t)"
+          ],
+          "hypothesesAndModels": [
+            "超對稱粒子圈圖（Smuon/Chargino）或暗光子 A' 對反常磁矩的額外微擾貢獻假設"
+          ]
+        }
+      },
+      {
+        "id": "ref-bmw-2021-nature",
+        "citation": "Borsanyi, S., et al. (BMW Collaboration) (2021). \"Leading hadronic contribution to the muon magnetic moment from lattice QCD.\" Nature, 593(7857), 51-55.",
+        "doi": "10.1038/s41586-021-03418-1",
+        "peerReviewStatus": "已完成同行評審 (Nature 封面突破性第一性原理計算)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Szabolcs Borsanyi (BMW Collaboration)",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 BMW 2021 年 Nature 論文，確認利用歐幾里得四維晶格第一性原理蒙地卡羅路徑積分計算強子真空極化領頭項 a_mu^HVP = 707.5(5.5) x 10^-10 (0.8% 總不確定度) 無誤。"
+        },
+        "verifiedClaims": [
+          "格點量子色動力學 (Lattice QCD) 首次在控制統計與系統誤差下將 HVP 不確定度壓縮至 0.8%",
+          "BMW 格點數值使標準模型總預測值提升至 116591954 x 10^-11，將實驗與理論的張力從 5.1σ 顯著縮減至 1.5σ 至 2.0σ 區間"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "低能量子色動力學 (QCD) 耦合常數發散，非微擾效應無法以傳統微擾費曼圖展開",
+            "夸克與膠子歐幾里得作用量可在離散四維虛數時間晶格上直接求解"
+          ],
+          "empiricalFindings": [
+            "超級電腦多晶格間距 (a → 0) 連續極限外推與有限體積效應修正"
+          ],
+          "hypothesesAndModels": [
+            "若格點 HVP 數值正確，色散關係將使電磁運行耦合常數 α(M_Z) 產生微小上移，引發弱電精確擬合中對希格斯質量的關聯張力"
+          ]
+        }
+      }
+    ],
+    "noFakeCitations": true,
+    "noFictionalReviewers": true,
+    "formulasAndUnits": [
+      {
+        "formula": "a_\\mu \\equiv \\frac{g - 2}{2}",
+        "unitConsistency": "朗德 g 因子與反常磁矩 a_mu 均為無因次純數，定義自洽",
+        "verified": true
+      },
+      {
+        "formula": "\\omega_a = a_\\mu \\frac{e B}{m_\\mu}",
+        "unitConsistency": "角頻率因次 rad/s 或 s⁻¹；e [C] × B [T = kg/(C·s)] / m_mu [kg] = s⁻¹，單位完全一致",
+        "verified": true
+      },
+      {
+        "formula": "N(t) = N_0 e^{-t/\\tau} \\left[ 1 + A \\cos(\\omega_a t + \\phi) \\right]",
+        "unitConsistency": "粒子探測計數率因次 s⁻¹ 或無因次計數；指數項 t/τ 與三角函數相位 ω_a t 均為無因次量，因次完全自洽",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "托馬斯-巴格曼-米歇爾-泰勒格迪 (T-BMT) 自旋進動方程與五參數正電子時間衰變調製方程 N(t)",
+      "numericalMethod": "二維數值時步積分模擬渺子在 1.45 T 磁場下的迴旋與自旋差頻，實時解析色散模型與格點 BMW 模型之頻譜差異",
+      "modelAssumptionsAndLimits": "模擬器針對儲存環核心切面進行單粒子至束流平均調製近似；未納入垂直俯仰角 (pitch correction)、電場非均勻多極矩微擾及量能器堆疊脈衝 (pileup) 噪聲"
+    }
+  },
+  "readability": {
+    "technicalTermsDemystified": [
+      "反常磁矩 a_mu：粒子不是一塊平靜的旋轉磁鐵，真空中瞬間生滅的虛粒子像一層微觀雲霧拉扯它，讓它的磁力比狄拉克理論預測的大了千分之一左右",
+      "魔術動量：將渺子加速到特定光速比例（動量約 3.094 GeV/c）時，強電場產生的干擾磁力在數學上完全自我抵消，讓物理學家能純粹測量自旋",
+      "格點 QCD：把時空分割成無數超微小立體格點，讓超級電腦直接暴力模擬夸克和膠子在微觀空間中的強烈糾纏，繞過紙筆算不出的非微擾數學深淵"
+    ]
+  },
+  "aestheticsAndNarrative": {
+    "coreQuestion": "當一塊重質量渺子在超純磁場中旋轉時，真空中究竟藏著哪些尚未被人類寫入物理教科書的幽靈粒子？",
+    "interactiveRole": "透過 MuonPrecessionSimulator 讓讀者親自調節磁場強度，切換 Fermilab 實測數據、傳統色散白皮書理論與 BMW 格點超算模型，親眼看見 5.1σ 巨大偏離如何在調製曲線中顯現，並直觀感受格點修正如何讓理論曲線與實驗重新貼合"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "釐清 5.1σ 偏差僅在對比傳統色散積分預測時成立，納入最新格點 QCD 計算後理論與實驗張力顯著縮減至約 1.5-2σ",
+    "深入闡述魔術動量消除靜電場干擾項的精確相對論物理機制，糾正將儲存環視為純靜磁場環境的過度簡化認識"
+  ],
+  "unconfirmedLimits": [
+    "CMD-3 新實驗截面與 BaBar/KLOE 舊截面的系統誤差來源、以及格點 QCD 數值上調對弱電擬合 α(M_Z) 牽引的跨領域矛盾目前仍待粒子物理界進一步獨立實驗核驗"
+  ]
+}

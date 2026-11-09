@@ -1,0 +1,52 @@
+{
+  "articleId": "art-percolation-phase-transition",
+  "slug": "percolation-theory-phase-transition",
+  "title": "突變的幾何序曲：滲流理論與無限團簇的臨界之網",
+  "knowledgePoints": [
+    {
+      "id": "kp-percolation-threshold-phase-transition",
+      "label": "滲流閾值與幾何相變",
+      "suggestedQuestion": "為什麼隨機連通的微觀晶格會在某個臨界機率瞬間爆發出宏觀導通網絡？",
+      "keywords": [
+        "滲流閾值",
+        "臨界機率",
+        "幾何相變",
+        "無限團簇",
+        "突變現象",
+        "全域連通"
+      ],
+      "plainExplanation": "在低佔據率下，系統充滿了分散的微小孤島，宏觀導電率嚴格為零。當隨機佔據率逐漸提升並越過臨界閾值 pc（例如二維方格點滲流約 0.5927）的一瞬間，無數孤島突然碰撞融合為一個貫穿系統頂部與底部的巨大無限團簇，使巨觀性質在沒有任何溫度或分子間力變化的情況下，純粹因幾何拓撲連接而發生劇烈相變。",
+      "anchorSentenceId": "sent-16083cb3"
+    },
+    {
+      "id": "kp-percolation-universality-exponents",
+      "label": "普適性定律與臨界指數",
+      "suggestedQuestion": "為什麼不同形狀的晶格甚至森林大火與傳染病傳播遵循完全相同的臨界指數？",
+      "keywords": [
+        "普適性",
+        "臨界指數",
+        "分形維度",
+        "自相似性",
+        "空間維度",
+        "標度律"
+      ],
+      "plainExplanation": "儘管方形、六角形或三角形晶格的臨界機率數值各不相同，但描寫相變劇烈程度的關鍵冪律指數（如無限團簇增長指數 beta 和關聯長度發散指數 nu）在同一維度下完全恆等。這證明臨界相變的本質完全脫離了微觀材料細節，只由空間維度決定，呈現出自然界宏大的統一幾何理性。",
+      "anchorSentenceId": "sent-82331986"
+    },
+    {
+      "id": "kp-percolation-union-find-algorithm",
+      "label": "並查集與高效連通度識別",
+      "suggestedQuestion": "計算機如何以接近常數的時間在海量網格中快速追蹤並合併隨機團簇？",
+      "keywords": [
+        "並查集",
+        "Union-Find",
+        "Hoshen-Kopelman",
+        "路徑壓縮",
+        "按秩合併",
+        "團簇標記"
+      ],
+      "plainExplanation": "面對數萬個網格節點，傳統遍歷算法極度緩慢。統計物理學家採用了帶有路徑壓縮與按秩合併的不相交集合並查集（Hoshen-Kopelman 算法），使得每個節點能以近乎一步到位的速度找到所屬集合的根節點，在常數時間內完成團簇合併與連通性判斷，讓大規模物理模擬能在每秒 60 幀下即時流暢運轉。",
+      "anchorSentenceId": "sent-1484e61a"
+    }
+  ]
+}

@@ -24,6 +24,9 @@ import { SuperconductivityBcsSimulator } from '../article/SuperconductivityBcsSi
 import { BosonSamplingSimulator } from '../article/BosonSamplingSimulator';
 import { ChandrasekharLimitSimulator } from '../article/ChandrasekharLimitSimulator';
 import { RibozymeKineticsSimulator } from '../article/RibozymeKineticsSimulator';
+import { MuonPrecessionSimulator } from '../article/MuonPrecessionSimulator';
+import { PrimeEditingSimulator } from '../article/PrimeEditingSimulator';
+import { PercolationGridSimulator } from '../article/PercolationGridSimulator';
 
 export interface InteractiveParameterMeta {
   name: string;
@@ -645,6 +648,30 @@ export const INTERACTIVE_COMPONENTS: Record<string, InteractiveComponentMeta> = 
     parameters: [],
     keyConcepts: ['核酶 (Ribozyme)', 'RNA 世界假說 (RNA World Hypothesis)', '自催化 (Autocatalysis)', '米氏動力學 (Michaelis-Menten Kinetics)', '磷酸二酯鍵轉酯反應 (Transesterification)'],
     component: RibozymeKineticsSimulator,
+  },
+  MuonPrecessionSimulator: {
+    id: 'MuonPrecessionSimulator',
+    nameZh: 'Muon g-2 反常進動與量子真空虛粒子模擬器',
+    descriptionZh: '狄拉克磁偶極矩異常 a_mu = (g-2)/2、進動差頻 omega_a 與格點 QCD/色散理論對照。',
+    parameters: [],
+    keyConcepts: ['渺子異常磁矩 (Muon g-2)', '量子電動力學 (QED)', '反常進動 (Anomalous Precession)', '強子真空極化 (HVP)', '格點量子色動力學 (Lattice QCD)'],
+    component: MuonPrecessionSimulator,
+  },
+  PrimeEditingSimulator: {
+    id: 'PrimeEditingSimulator',
+    nameZh: 'Prime Editing（引導編輯）分子搜索替換反應模擬器',
+    descriptionZh: 'nCas9 缺口酶與工程化逆轉錄酶原位合成、pegRNA 引物退火與無 DSB 錯配修復旁路。',
+    parameters: [],
+    keyConcepts: ['引導編輯 (Prime Editing)', 'pegRNA (Prime Editing Guide RNA)', '逆轉錄酶 (Reverse Transcriptase)', '缺口內切酶 (Nickase)', '錯配修復 (Mismatch Repair)'],
+    component: PrimeEditingSimulator,
+  },
+  PercolationGridSimulator: {
+    id: 'PercolationGridSimulator',
+    nameZh: 'Percolation（滲流理論）晶格幾何相變與臨界連通模擬器',
+    descriptionZh: '隨機佔據晶格、並查集連通團簇識別、無限團簇強度 P_inf 與臨界機率 pc 普適性相變。',
+    parameters: [],
+    keyConcepts: ['滲流理論 (Percolation Theory)', '臨界點 (Critical Probability)', '幾何相變 (Geometric Phase Transition)', '無限團簇 (Infinite Cluster)', '普適性 (Universality)'],
+    component: PercolationGridSimulator,
   },
 };
 

@@ -1,0 +1,52 @@
+{
+  "articleId": "art-crispr-prime-editing",
+  "slug": "crispr-prime-editing-reverse-transcriptase",
+  "title": "奈米文字處理器的分子拼寫：引導編輯（Prime Editing）如何改寫遺傳密碼？",
+  "knowledgePoints": [
+    {
+      "id": "kp-prime-editing-search-replace",
+      "label": "搜尋與替換式原位逆轉錄",
+      "suggestedQuestion": "引導編輯（Prime Editing）與傳統 CRISPR 剪刀有什麼本質區別？",
+      "keywords": [
+        "引導編輯",
+        "文字處理器",
+        "pegRNA",
+        "原位逆轉錄",
+        "精準替換",
+        "無供體DNA"
+      ],
+      "plainExplanation": "傳統 CRISPR 像一把粗暴的剪刀，把 DNA 兩條鏈全部切斷讓細胞隨機修復；而引導編輯像文字處理器的搜尋與替換功能，它透過 pegRNA 精確鎖定目標序列，並以 RNA 尾端的模板為指南，藉由逆轉錄酶直接在切口處原位寫入預期的目標字母，完全不依賴外源供體 DNA 與隨機修復。",
+      "anchorSentenceId": "sent-51bc6e00"
+    },
+    {
+      "id": "kp-prime-editing-ncas9-nickase",
+      "label": "nCas9 缺口酶與零 DSB",
+      "suggestedQuestion": "為什麼引導編輯只切單鏈就能徹底避免基因組大片段損傷？",
+      "keywords": [
+        "nCas9",
+        "缺口酶",
+        "單鏈缺口",
+        "零雙鏈斷裂",
+        "染色體易位",
+        "安全性"
+      ],
+      "plainExplanation": "天然 Cas9 具有兩個切割中心會把雙鏈全切斷引發嚴重的染色體混亂。引導編輯將其中一個催化中心突變失活（H840A），改造成只能切開單側鏈條的缺口酶。另一條完整的 DNA 鏈保持作為物理支架，既提供了 3'-OH 引物末端供逆轉錄酶啟動合成，又從根本上阻斷了染色體易位或大片段缺失的危險。",
+      "anchorSentenceId": "sent-6a2ef44c"
+    },
+    {
+      "id": "kp-prime-editing-mmr-evasion",
+      "label": "錯配修復屏蔽與高純度編輯",
+      "suggestedQuestion": "細胞內部的錯配修復系統如何阻礙編輯，科學家又是如何克服的？",
+      "keywords": [
+        "錯配修復",
+        "MMR",
+        "MLH1dn",
+        "PEmax",
+        "雜合雙鏈",
+        "編輯純度"
+      ],
+      "plainExplanation": "當新編碼寫入一條單鏈後，細胞的天然防衛衛士（錯配修復系統 MMR）會誤以為這是複製錯誤，主動將含有新編碼的鏈條挖除復原。新一代 PEmax 系統透過引入顯性負性 MLH1 蛋白（MLH1dn），在轉染窗口期短暫可逆地壓制修復系統的破壞，使目標編輯產物效率暴增數倍，達到 80% 以上的高純度整合。",
+      "anchorSentenceId": "sent-960fc391"
+    }
+  ]
+}

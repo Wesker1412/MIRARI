@@ -1,0 +1,108 @@
+{
+  "articleId": "art-percolation-phase-transition",
+  "slug": "percolation-theory-phase-transition",
+  "editorialCategory": "scientific_principles",
+  "version": 1,
+  "creationModel": "gemini-2.5-pro",
+  "editorialPassDate": "2026-11-09T09:00:00+08:00",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-broadbent-1957",
+        "citation": "Broadbent, S. R., & Hammersley, J. M. (1957). \"Percolation processes: Crystals and mazes.\" Mathematical Proceedings of the Cambridge Philosophical Society, 53(3), 629-641.",
+        "doi": "10.1017/S0305004100032680",
+        "peerReviewStatus": "已完成同行評審 (劍橋哲學學會數學學報 經典開創性論文)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Simon R. Broadbent",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實布羅德本特與漢默斯利 1957 年開創性論文，確認首次形式化提出滲流過程（Percolation Processes）、隨機介質傳輸幾何與臨界閾值定義無誤。"
+        },
+        "verifiedClaims": [
+          "滲流理論提供了一種完全由介質幾何隨機性支配的無熱運動連續相變數學模型",
+          "在無限網絡極限下，存在一個明確的臨界機率 pc，使得巨型連通成分在 pc 以上以非零機率存在"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "熱力學二階相變中序參量在居里點連續為零，關聯長度發散",
+            "幾何晶格上的隨機圖連通性遵循博弈與相變規律"
+          ],
+          "empiricalFindings": [
+            "多孔介質流體滲透與導電填料顆粒在達到臨界體積比時的電阻率突降"
+          ],
+          "hypothesesAndModels": [
+            "無關聯隨機獨立佔據假設（Bernoulli percolation）"
+          ]
+        }
+      },
+      {
+        "id": "ref-kesten-1980",
+        "citation": "Kesten, H. (1980). \"The critical probability of bond percolation on the square lattice equals 1/2.\" Communications in Mathematical Physics, 74(1), 41-59.",
+        "doi": "10.1007/BF01197755",
+        "peerReviewStatus": "已完成同行評審 (Communications in Mathematical Physics 里程碑嚴格數學證明)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Harry Kesten",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實凱斯滕 1980 年嚴格證明論文，確認利用 Russo-Seymour-Welsh 理論與自對偶幾何嚴格證明正方形晶格邊滲流 pc = 1/2 之定理無誤。"
+        },
+        "verifiedClaims": [
+          "二維正方形晶格之邊滲流臨界機率嚴格恆等於 1/2",
+          "自對偶性保證了亞臨界相中橫向阻斷與超臨界相中縱向導通的嚴格拓撲對稱"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "正方形晶格的對偶晶格仍為正方形晶格",
+            "在 p = 1/2 時開通邊與關閉邊的幾何分佈互為對偶"
+          ],
+          "empiricalFindings": [
+            "大規模蒙地卡羅數值模擬以極致精度驗證 pc = 0.5000000..."
+          ],
+          "hypothesesAndModels": [
+            "無限晶格熱力學極限幾何模型"
+          ]
+        }
+      }
+    ],
+    "noFakeCitations": true,
+    "noFictionalReviewers": true,
+    "formulasAndUnits": [
+      {
+        "formula": "P_\\infty(p) \\propto (p - p_c)^\\beta \\quad (p \\to p_c^+)",
+        "unitConsistency": "無因次無限團簇強度比值，機率與臨界指數均為無因次純數，因次完全自洽",
+        "verified": true
+      },
+      {
+        "formula": "\\xi(p) \\propto |p - p_c|^{-\\nu}",
+        "unitConsistency": "關聯長度因次為晶格常數單位 [a] 或無因次晶格步數，冪律底數為無因次機率差，因次自洽",
+        "verified": true
+      },
+      {
+        "formula": "D_f = d - \\frac{\\beta}{\\nu} = 2 - \\frac{5/36}{4/3} = \\frac{91}{48} \\approx 1.896",
+        "unitConsistency": "豪斯多夫分形維度，純數維度無因次，因次完全自洽",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "二維點滲流伯努利分佈幾何相變方程、Hoshen-Kopelman 團簇標記動態平衡與無限團簇冪律標度方程",
+      "numericalMethod": "帶路徑壓縮與按秩合併的不相交集合並查集（Disjoint-Set Union-Find）即時解算連通分量與頂底貫穿狀態，更新幀率 60 fps",
+      "modelAssumptionsAndLimits": "模擬器採用有限尺寸二維正方形晶格 (16x16 至 40x40)；受有限尺寸效應 (Finite-Size Scaling) 影響，相變邊界呈現平滑過渡而非熱力學極限下的嚴格奇異點"
+    }
+  },
+  "readability": {
+    "technicalTermsDemystified": [
+      "滲流閾值 pc：就像往水槽裡扔石子，一開始石子都是分散的；但當石子鋪到某個臨界密度的一剎那，一條踩著石子過河的通路突然憑空誕生",
+      "無限團簇：不是體積無限大，而是在系統尺度上能夠一頭連到另一頭的「巨型大動脈」",
+      "普適性：不管是正方形格子、六邊形蜂巢還是三角形網格，儘管臨界機率不同，但突變時的暴增加速度（臨界指數）分毫不差、完全一致"
+    ]
+  },
+  "aestheticsAndNarrative": {
+    "coreQuestion": "在沒有任何熱量注入與相互作用力的純幾何無序世界中，大自然如何憑藉機率的積累演繹出驚心動魄的宏觀相變？",
+    "interactiveRole": "透過 PercolationGridSimulator 讓讀者自由滑動佔據機率 p，親眼見證微觀離散小島在越過 pc ≈ 0.593 的剎那間瞬間合流為貫通全場的藍色巨型網絡，並即時比對 P_inf(p) 理論 S 曲線與分形臨界發散"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "釐清滲流相變與傳統熱力學相變的本質區別在於其為純粹的幾何拓撲連通相變，無需引入溫度或哈密頓量體系",
+    "闡明有限尺寸效應對臨界點的平滑化干擾，解釋為何在小型模擬網格中貫穿現象會在 pc 附近呈現一定隨機漲落"
+  ],
+  "unconfirmedLimits": [
+    "長程關聯滲流（Correlated percolation）與高維空間（d ≥ 6 上臨界維度，此時平均場理論精確成立）的臨界標度在複雜非歐幾何網絡中的嚴格解析延拓仍是前沿數學課題"
+  ]
+}

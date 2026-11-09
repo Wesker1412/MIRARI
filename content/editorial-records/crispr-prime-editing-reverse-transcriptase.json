@@ -1,0 +1,109 @@
+{
+  "articleId": "art-crispr-prime-editing",
+  "slug": "crispr-prime-editing-reverse-transcriptase",
+  "editorialCategory": "journal_interpretation",
+  "version": 1,
+  "creationModel": "gemini-2.5-pro",
+  "editorialPassDate": "2026-11-09T09:00:00+08:00",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-anzalone-2019-nature",
+        "citation": "Anzalone, A. V., Randolph, P. B., Davis, J. R., et al. (2019). \"Search-and-replace genome editing without double-strand breaks or donor DNA.\" Nature, 576(7785), 149-157.",
+        "doi": "10.1038/s41586-019-1711-4",
+        "peerReviewStatus": "已完成同行評審 (Nature 里程碑開創性研究)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Andrew V. Anzalone",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實戴維·劉團隊 2019 年 Nature 論文，確認融合 nCas9(H840A) 與工程化 M-MLV 逆轉錄酶，利用 pegRNA (PBS + RT 模板) 實現無 DSB、無供體 DNA 的搜尋與替換編輯機制。"
+        },
+        "verifiedClaims": [
+          "Prime Editing 在人類細胞中實現所有 12 種鹼基替換、1 至 44 bp 精確插入及 1 至 80 bp 精確缺失",
+          "相較傳統 Cas9 + 供體 DNA 的同源重組 (HDR)，引導編輯的副產物 Indel 率大幅降低 10 至 100 倍",
+          "PE3 策略透過在非編輯鏈引入輔助缺口，可使編輯效率提高 3 至 4 倍"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "CRISPR-Cas9 造成 DNA 雙鏈斷裂 (DSB) 會引發不可控的非同源末端連接 (NHEJ) 隨機插入缺失",
+            "M-MLV 逆轉錄酶能以 RNA 為模板合成互補單鏈 cDNA"
+          ],
+          "empiricalFindings": [
+            "在 HEK293T、K562 及原代小鼠皮質神經元中成功校正鐮刀型貧血症與泰-薩克斯病等致病點突變與缺失"
+          ],
+          "hypothesesAndModels": [
+            "3' 編輯瓣與 5' 未編輯瓣的熱力學雜交微觀平衡模型"
+          ]
+        }
+      },
+      {
+        "id": "ref-chen-2021-cell",
+        "citation": "Chen, P. J., Hussmann, J. A., Yan, J., et al. (2021). \"Enhanced prime editing systems by manipulating cellular mismatch repair.\" Cell, 184(22), 5635-5652.",
+        "doi": "10.1016/j.cell.2021.09.018",
+        "peerReviewStatus": "已完成同行評審 (Cell 封面重磅機制突破)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Peter J. Chen",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 2021 年 Cell 論文，確認內源性錯配修復 (MMR) 系統偏向性切除引導編輯中間體，透過顯性負性 MLH1 (MLH1dn) 瞬時抑制可將編輯效率提升 2 至 5 倍。"
+        },
+        "verifiedClaims": [
+          "細胞內源性 DNA 錯配修復 (MMR) 系統會識別異源雙鏈中間體並優先降解載有編輯的鏈條",
+          "共表達顯性負性 MLH1 變體 (MLH1dn) 可瞬時阻斷 MMR 降解通路，使顛換突變與小插入效率顯著躍升且副產物低於 2%"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "MutSα (MSH2-MSH6) 與 MutLα (MLH1-PMS2) 負責識別並修復複製過程中的鹼基錯配",
+            "具有切口的新生鏈是 MMR 切除系統的主要靶標"
+          ],
+          "empiricalFindings": [
+            "高通量 CRISPR 干擾篩選證實消減 MSH2 或 MLH1 可全面解禁引導編輯受阻位點"
+          ],
+          "hypothesesAndModels": [
+            "MLH1dn 競爭性佔據 MutSα 結合界面但不具備催化活性的非致突變假說"
+          ]
+        }
+      }
+    ],
+    "noFakeCitations": true,
+    "noFictionalReviewers": true,
+    "formulasAndUnits": [
+      {
+        "formula": "\\Delta G_{\\text{anneal}} = \\Delta H - T \\Delta S",
+        "unitConsistency": "吉布斯自由能因次 J/mol 或 kcal/mol；ΔH (kJ/mol) 與 TΔS (K · kJ/(mol·K) = kJ/mol) 因次完全一致",
+        "verified": true
+      },
+      {
+        "formula": "T_m \\approx 2(A+T) + 4(G+C) \\quad [^\\circ\\text{C}]",
+        "unitConsistency": "Wallace 經驗經驗公式，產出攝氏溫度 °C，因次自洽",
+        "verified": true
+      },
+      {
+        "formula": "\\text{Purity} = \\frac{\\text{Correct Product}}{\\text{Correct Product} + \\text{Indels}} \\times 100\\%",
+        "unitConsistency": "無因次編輯純度百分比，分子分母單位一致",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "核酸雙鏈退火熱力學方程、FEN1 單鏈內切酶動力學與 MMR 錯配修復競爭動態平衡方程",
+      "numericalMethod": "五步離散分子反應動力學推進，基於 PBS 與 RT 模板長度參數實時計算雜交自由能與目標編輯/副產物純度比例",
+      "modelAssumptionsAndLimits": "模擬器採用單分子靶標位點代表性動力學近似；未納入全基因組脫靶 (off-target) 位點同源匹配及染色質三維緻密包裝對可及性的微觀阻力"
+    }
+  },
+  "readability": {
+    "technicalTermsDemystified": [
+      "引導編輯（Prime Editing）：像電腦文字處理器的「搜尋與替換」，不僅能找到目標錯字，還能利用自身攜帶的範本直接打字更正，完全不破壞周圍的紙張（DNA 雙鏈）",
+      "pegRNA：一條加長版的超級嚮導 RNA，前半段負責尋路導航，尾巴上還掛著寫有正確答案的微型抄寫模板",
+      "錯配修復（MMR）：細胞內部的「巡警」，本意是防止基因突變，但有時會好心辦壞事把剛寫入的正確新代碼當作錯誤給挖除；給巡警短暫蒙上眼睛就能大幅提高更正成功率"
+    ]
+  },
+  "aestheticsAndNarrative": {
+    "coreQuestion": "在生命 30 億對字母的浩瀚藍圖中，人類如何能在完全不切斷雙螺旋骨架的前提下，以原子級精準度完成無痕跡的搜尋與替換？",
+    "interactiveRole": "透過 PrimeEditingSimulator 讓讀者親歷 5 大分子步驟，手動微調 PBS 與 RT 模板長度，切換 PE2、PE3 與 PEmax+MLH1dn 架構，直觀目睹細胞防禦系統與編輯純度之間的動態消長"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "釐清引導編輯並非完全不需要任何切割，而是由 nCas9 進行安全的「單鏈缺口」切割，保留另一條鏈作為連續支撐",
+    "深入解析細胞內源錯配修復 (MMR) 抑制在提升純度上的決定性機理，破除單純依賴提高逆轉錄酶活性即可解決效率瓶頸的片面理解"
+  ],
+  "unconfirmedLimits": [
+    "大分子融合蛋白（超過 6.3 kb）在人體臨床體內靶向遞送時對非病毒載體（如 LNP 或 eVLP）的包裝效率與器官特異性仍是當前臨床轉化核心瓶頸"
+  ]
+}

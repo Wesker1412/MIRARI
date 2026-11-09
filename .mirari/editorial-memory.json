@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastUpdated": "2026-11-08T09:00:00.000Z",
+  "lastUpdated": "2026-11-09T09:00:00.000Z",
   "editorialMemoryDescription": "MIRARI 自主編輯品質管理記憶庫：記錄近期篇章學科分佈、敘事風格、互動模式與編輯檢查規則，提供每日自主創作管線跨日延續性與防重複依據。",
   "recentArticles": [
     {
@@ -299,6 +299,42 @@
       "coreConcept": "核酶自剪切催化、2'-OH 羥基多功能性與核糖體活體化石",
       "pedagogyKey": "以雞生蛋蛋生雞悖論切入，解構 RNA 雙重身份，晶體學驗證 23S rRNA 催化核心",
       "limitsIdentified": "二元均相反應近似，未納入細胞內擁擠環境與多聚體協同變構"
+    },
+    {
+      "articleId": "art-muon-g-2-discrepancy",
+      "slug": "muon-g-2-standard-model-discrepancy",
+      "editorialCategory": "journal_interpretation",
+      "discipline": "高能粒子物理學與量子場論",
+      "narrativeStyle": "research_interpretation",
+      "interactiveType": "muon_precession",
+      "interactiveComponent": "MuonPrecessionSimulator",
+      "coreConcept": "渺子 g-2 異常、魔術動量消除電場干擾與格點 QCD 填補理論間隙",
+      "pedagogyKey": "旋轉磁針量子真空雲霧破題，以相對論魔術動量純化進動方程，解構色散積分與格點超算之爭",
+      "limitsIdentified": "未納入垂直俯仰角微擾、電場多極矩與量能器堆疊脈衝噪聲"
+    },
+    {
+      "articleId": "art-crispr-prime-editing",
+      "slug": "crispr-prime-editing-reverse-transcriptase",
+      "editorialCategory": "journal_interpretation",
+      "discipline": "合成生物學與分子遺傳工程",
+      "narrativeStyle": "synthetic_biology_design",
+      "interactiveType": "prime_editing_kinetics",
+      "interactiveComponent": "PrimeEditingSimulator",
+      "coreConcept": "nCas9 缺口酶原位逆轉錄、pegRNA 搜尋替換與錯配修復 (MMR) 旁路",
+      "pedagogyKey": "文字處理器搜尋與替換比喻破題，解構 3' 編輯瓣與 5' 未編輯瓣熱力學競爭，揭秘 MLH1dn 抑制防禦",
+      "limitsIdentified": "單分子靶標動力學近似，未納入大分子 AAV 體內遞送容量限制"
+    },
+    {
+      "articleId": "art-percolation-phase-transition",
+      "slug": "percolation-theory-phase-transition",
+      "editorialCategory": "scientific_principles",
+      "discipline": "統計物理學與臨界現象理論",
+      "narrativeStyle": "first_principles",
+      "interactiveType": "percolation_grid",
+      "interactiveComponent": "PercolationGridSimulator",
+      "coreConcept": "隨機晶格幾何相變、臨界閾值 pc 與普適臨界指數",
+      "pedagogyKey": "咖啡粉滲水與森林雷火破題，以並查集即時追蹤團簇合併，解析無限團簇分形幾何與普適性",
+      "limitsIdentified": "有限晶格尺寸效應平滑化奇異點，長程關聯滲流未納入"
     }
   ],
   "cumulativeGuidelines": {
@@ -316,14 +352,14 @@
           "displayName": "科學原理與思想實驗",
           "scope": "收錄一般科普、經典科學知識、科學現象、數學原理、理論解釋及思想實驗",
           "purpose": "主要目的是讓讀者理解科學，而非追逐最新消息。不限制物理學，也不要求每篇一定具有思想實驗",
-          "currentArticles": 18
+          "currentArticles": 19
         },
         "journal_interpretation": {
           "displayName": "期刊解讀",
           "scope": "最新科學發現、重要研究成果、研發技術突破及具有話題性的科學事件",
           "selectionCriteria": "以新聞時效性、科學價值與話題性作為選題依據。涵蓋最新學術研究、重大科學發現、技術研發突破、科學機構發布的重要成果及值得公眾關注的科學事件",
           "rigorRule": "不要求每篇都必須以單篇同儕審查論文為主題，但必須核對可信來源，清楚區分：已完成同行審查的研究、尚未同行審查的預印本、機構或企業提出但尚待獨立驗證的成果。不得為了追逐話題性誇大研究結果",
-          "currentArticles": 7
+          "currentArticles": 9
         }
       },
       "classificationPrinciple": "根據文章的主要編輯目的分類：主要在解釋某個科學知識或原理 -> scientific_principles；主要在報導或解讀近期科學發現、研究成果、技術突破或科學事件 -> journal_interpretation。不能僅因引用了新論文就歸類為期刊解讀，不能僅因內容涉及經典科學原理就排除其作為最新研究報導的可能。兩大分類互斥且與學科標籤獨立",

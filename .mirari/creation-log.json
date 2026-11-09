@@ -1,5 +1,5 @@
 {
-  "lastRunTimestamp": "2026-11-08T09:00:00.000Z",
+  "lastRunTimestamp": "2026-11-09T09:00:00.000Z",
   "scheduledCron": "0 9 * * *",
   "timezone": "Asia/Taipei (UTC+8)",
   "creationModel": "gemini-2.5-pro",
@@ -504,6 +504,63 @@
             "Gilbert (1986) Nature doi:10.1038/319618a0"
           ],
           "editorialRecordPath": "content/editorial-records/rna-world-ribozyme-catalysis.json"
+        }
+      ]
+    },
+    {
+      "runId": "mirari-auto-run-20261109-0900",
+      "timestamp": "2026-11-09T09:00:00.000Z",
+      "targetCount": 3,
+      "succeededCount": 3,
+      "failedCount": 0,
+      "articles": [
+        {
+          "id": "art-muon-g-2-discrepancy",
+          "slug": "muon-g-2-standard-model-discrepancy",
+          "title": "穿透量子真空的微秒反常：渺子 g-2 實驗與標準模型的新物理博弈",
+          "discipline": "高能粒子物理學與量子場論",
+          "interactiveComponent": "MuonPrecessionSimulator",
+          "interactiveType": "muon_precession",
+          "narrativeStyle": "research_interpretation",
+          "status": "published",
+          "sources": [
+            "Aguillard et al. (Muon g-2 Collaboration) (2023) Phys. Rev. Lett. doi:10.1103/PhysRevLett.131.161802",
+            "Borsanyi et al. (BMW Collaboration) (2021) Nature doi:10.1038/s41586-021-03418-1",
+            "Aoyama et al. (2020) Phys. Rep. doi:10.1016/j.physrep.2020.07.006"
+          ],
+          "editorialRecordPath": "content/editorial-records/muon-g-2-standard-model-discrepancy.json"
+        },
+        {
+          "id": "art-crispr-prime-editing",
+          "slug": "crispr-prime-editing-reverse-transcriptase",
+          "title": "奈米文字處理器的分子拼寫：引導編輯（Prime Editing）如何改寫遺傳密碼？",
+          "discipline": "合成生物學與分子遺傳工程",
+          "interactiveComponent": "PrimeEditingSimulator",
+          "interactiveType": "prime_editing_kinetics",
+          "narrativeStyle": "synthetic_biology_design",
+          "status": "published",
+          "sources": [
+            "Anzalone et al. (2019) Nature doi:10.1038/s41586-019-1711-4",
+            "Chen et al. (2021) Cell doi:10.1016/j.cell.2021.09.018",
+            "Doman et al. (2023) Cell doi:10.1016/j.cell.2023.07.039"
+          ],
+          "editorialRecordPath": "content/editorial-records/crispr-prime-editing-reverse-transcriptase.json"
+        },
+        {
+          "id": "art-percolation-phase-transition",
+          "slug": "percolation-theory-phase-transition",
+          "title": "突變的幾何序曲：滲流理論與無限團簇的臨界之網",
+          "discipline": "統計物理學與臨界現象理論",
+          "interactiveComponent": "PercolationGridSimulator",
+          "interactiveType": "percolation_grid",
+          "narrativeStyle": "first_principles",
+          "status": "published",
+          "sources": [
+            "Broadbent & Hammersley (1957) Math. Proc. Camb. Philos. Soc. doi:10.1017/S0305004100032680",
+            "Kesten (1980) Commun. Math. Phys. doi:10.1007/BF01197755",
+            "Stauffer & Aharony (2018) Introduction to Percolation Theory doi:10.1201/9781315274386"
+          ],
+          "editorialRecordPath": "content/editorial-records/percolation-theory-phase-transition.json"
         }
       ]
     }
