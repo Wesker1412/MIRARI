@@ -9,7 +9,7 @@ format: "depth"
 formatBadgeText: "合成生物"
 title: "奈米文字處理器的分子拼寫：引導編輯（Prime Editing）如何改寫遺傳密碼？"
 subtitle: "拋棄暴力雙鏈斷裂與外源供體 DNA：工程化逆轉錄酶如何在活細胞基因組中實現精準搜尋與替換？"
-summary: "傳統 CRISPR-Cas9 宛如一把暴力剪刀，透過造成危險的 DNA 雙鏈斷裂迫使細胞進行不可控修復。戴維·劉團隊開創的 Prime Editing（引導編輯）融合了單鏈缺口酶與工程化逆轉錄酶，以 pegRNA 為模板原位書寫遺傳資訊，並巧妙繞過錯配修復防線，實現了無 DSB、無供體 DNA 的精準分子搜尋與替換。"
+summary: "傳統 CRISPR-Cas9 宛如一把暴力剪刀，透過造成危險的 DNA 雙鏈斷裂迫使細胞進行不可控修復。戴維·劉團隊開創的 Prime Editing（引導編輯）融合了單鏈缺口酶與工程化逆轉錄酶，以 pegRNA 為模板原位書寫遺傳資訊，並巧妙繞過錯配修復防線，大幅降低對雙鏈斷裂與外源供體 DNA 的依賴，實現了高保真的分子搜尋與替換。"
 topicIds:
   - "synthetic_biology"
   - "genetics"
@@ -24,7 +24,7 @@ tags:
 difficultyLevel: "advanced"
 interactiveComponent: "PrimeEditingSimulator"
 estimatedReadTimeMinutes: 15
-leadParagraph: "如果把人類基因組比作一部長達 30 億個字母的宏偉生命手稿，那麼數千種導致人類嚴重遺傳性疾病的基因突變，往往僅僅源於單個字母的拼寫錯誤。第一代 CRISPR 工具本質上是一把分子手術剪刀，依賴引發危險的雙鏈斷裂；而引導編輯（Prime Editing）透過單鏈缺口酶與逆轉錄酶的精巧結合，實現了原位無損的分子文字搜尋與替換。"
+leadParagraph: "如果把人類基因組比作一部長達 30 億個字母的宏偉生命手稿，那麼數千種導致人類嚴重遺傳性疾病的基因突變，往往僅僅源於單個字母的拼寫錯誤。第一代 CRISPR 工具本質上是一把分子手術剪刀，依賴引發危險的雙鏈斷裂；而引導編輯（Prime Editing）透過單鏈缺口酶與逆轉錄酶的精巧結合，大幅降低對雙鏈斷裂的依賴，實現了原位的高保真分子文字搜尋與替換。"
 quoteLead: "引導編輯的誕生，標誌著基因組操控告別了粗暴的破壞修復時代，邁向具有確定性的奈米級分子拼寫。"
 authors:
   - name: "MIRARI 分子生物學與基因工程組"
@@ -40,7 +40,7 @@ references:
     doi: "10.1038/s41586-019-1711-4"
   - authors: "Chen, P. J., Hussmann, J. A., Yan, J., et al."
     year: "2021"
-    title: "Enhanced prime editing systems by manipulating cellular mismatch repair"
+    title: "Enhanced prime editing systems by manipulating cellular determinants of editing outcomes"
     journal: "Cell"
     volume: "184"
     issue: "22"
@@ -96,7 +96,7 @@ references:
 
 科研團隊透過將組氨酸突變為丙氨酸（H840A），使得 HNH 催化中心完全失活，僅保留 RuvC 的單側活性。
 
-這意味著 nCas9 在結合基因組 DNA 時，只會在靶標鏈上劃開一條極微小的單鏈缺口（Nick），保留完整的另一條鏈作為結構支架，從物理源頭上杜絕了形成雙鏈斷裂的風險。
+這意味著 nCas9 在結合基因組 DNA 時，只會在靶標鏈上劃開一條極微小的單鏈缺口（Nick），保留未切割的互補鏈作為結構支架，從而大幅降低了對刻意雙鏈斷裂（DSB）的依賴（儘管在特定構象或輔助缺口情況下仍可能產生極低頻率的非預期 DSB 與副產物）。
 
 在 nCas9 的碳末端（C-terminus），研究人員透過一條高彈性的多肽連接子（Polypeptide Linker），共價串聯了一枚經過人為定向進化的**莫洛尼鼠白血病病毒逆轉錄酶（M-MLV Reverse Transcriptase, RT）**。
 
@@ -181,7 +181,7 @@ FEN1 在生理功能上專門負責清除 DNA 複製與岡崎片段成熟過程�
 
 1. **PE3 策略**：在 pegRNA 進行主鏈編輯的同時，引入第二條常規 sgRNA，在距離編輯位點 40 至 90 bp 的非編輯鏈上誘發另一個單鏈缺口。這個輔助缺口巧妙地「欺騙」了細胞修復機器，引導修復系統優先以降解非編輯鏈為代價，使編輯鏈成為最終複製模板，將編輯效率瞬間提升了 3 至 4 倍。
 2. **PEmax 核心結構進化**：透過對 Cas9 密碼子全面優化、在連接子中加入突變錨定結構，並將 M-MLV 逆轉錄酶導入五個關鍵耐熱與加工性突變（D200N/L603W/T330P/L139P/T306K），極大提升了酶的熱穩定性與延伸速率。
-3. **MLH1dn 顯性負性旁路（PE4 / PE5）**：研究人員設計了一種工程化截短型 MLH1 蛋白（MLH1dn）。它能強烈競爭性結合內源性 MMR 複合體，但自身完全喪失內切酶招募能力，從而在轉染編輯的關鍵窗口期（約 48 小時內）暫時、可逆地屏蔽細胞的錯配修復反應，將點突變與顛換編輯效率暴推至 70% 至 90% 的前所未有高度，同時副產物 Indel 率嚴格壓制在 2% 以下。
+3. **MLH1dn 顯性負性旁路（PE4 / PE5）**：研究人員設計了一種工程化截短型 MLH1 蛋白（MLH1dn）。它能強烈競爭性結合內源性 MMR 複合體，但自身完全喪失內切酶招募能力，從而在轉染編輯的關鍵窗口期（約 48 小時內）暫時、可逆地屏蔽細胞的錯配修復反應。在 HEK293T 等特定測試細胞系與特定靶點位點上，該策略將部分點突變與顛換編輯效率推升至 70% 至 90%，相較傳統 PE 提升數倍，並在多數受試位點將副產物 Indel 率控制在較低水平（通常約數百分比以內，但具體效率與副產物分佈強烈取決於細胞類型、靶點序列結構與遞送方式）。
 
 ## 全球遺傳疾病的分子圖景與未來挑戰
 
@@ -218,6 +218,6 @@ PE 融合蛋白的編碼長度超過 6.3 kb，遠遠超出了單個腺相關病�
 ## 參考文獻與延伸閱讀
 
 1. **Anzalone, A. V., Randolph, P. B., Davis, J. R., et al.** (2019). "Search-and-replace genome editing without double-strand breaks or donor DNA." *Nature*, 576(7785), 149–157. [doi:10.1038/s41586-019-1711-4](https://doi.org/10.1038/s41586-019-1711-4)
-2. **Chen, P. J., Hussmann, J. A., Yan, J., et al.** (2021). "Enhanced prime editing systems by manipulating cellular mismatch repair." *Cell*, 184(22), 5635–5652. [doi:10.1016/j.cell.2021.09.018](https://doi.org/10.1016/j.cell.2021.09.018)
+2. **Chen, P. J., Hussmann, J. A., Yan, J., et al.** (2021). "Enhanced prime editing systems by manipulating cellular determinants of editing outcomes." *Cell*, 184(22), 5635–5652. [doi:10.1016/j.cell.2021.09.018](https://doi.org/10.1016/j.cell.2021.09.018)
 3. **Doman, J. L., Pandey, S., Neugebauer, M. E., et al.** (2023). "Phage-assisted evolution and protein engineering yield compact, highly active prime editors." *Cell*, 186(18), 3983–4000. [doi:10.1016/j.cell.2023.07.039](https://doi.org/10.1016/j.cell.2023.07.039)
 4. **Nelson, J. W., Randolph, P. B., Shen, S. P., et al.** (2022). "Engineered pegRNAs improve prime editing efficiency." *Nature Biotechnology*, 40(3), 402–410. [doi:10.1038/s41587-021-01039-7](https://doi.org/10.1038/s41587-021-01039-7)

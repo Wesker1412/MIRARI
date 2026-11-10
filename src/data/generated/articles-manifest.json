@@ -439,7 +439,7 @@
       }
     ],
     "totalWordCount": 1930,
-    "lastIndexedAt": "2026-11-10T01:11:20.139Z"
+    "lastIndexedAt": "2026-11-10T07:56:33.512Z"
   },
   {
     "id": "art-amygdala-memory-encoding",
@@ -975,7 +975,7 @@
       }
     ],
     "totalWordCount": 2692,
-    "lastIndexedAt": "2026-11-10T01:11:20.143Z"
+    "lastIndexedAt": "2026-11-10T07:56:33.517Z"
   },
   {
     "id": "art-atp-synthase-rotary",
@@ -1026,11 +1026,11 @@
       },
       {
         "id": "ref-yasuda-2001",
-        "citation": "Yasuda, R., Noji, H., Kinosita, K., & Yoshida, M. (2001). \"Resolution of machinery of F1-ATPase in generating mechanical power.\" Nature, 410(6831), 898-904. doi:10.1038/35073513."
+        "citation": "Yasuda, R., Noji, H., Yoshida, M., Kinosita, K., Jr., & Itoh, H. (2001). \"Resolution of distinct rotational substeps by submillisecond kinetic analysis of F1-ATPase.\" Nature, 410(6831), 898-904. doi:10.1038/35073513."
       }
     ],
     "interactiveComponent": "AtpSynthaseSimulator",
-    "contentHash": "53905661a2d3f8b4177bdcd8b8275282d038c472162ca01cb1731f9cd4fe615e",
+    "contentHash": "3314ea4e00bbbecc2592ea17b40f022942c3791742dfe9e3b200058fca2e961e",
     "sections": [
       {
         "id": "sec-1-f696c9",
@@ -1657,7 +1657,7 @@
       }
     ],
     "totalWordCount": 3670,
-    "lastIndexedAt": "2026-11-10T01:11:20.148Z"
+    "lastIndexedAt": "2026-11-10T07:56:33.524Z"
   },
   {
     "id": "art-bcs-superconductivity",
@@ -1705,10 +1705,18 @@
       {
         "id": "ref-meissner-1933",
         "citation": "Meissner, W., & Ochsenfeld, R. (1933). \"Ein neuer Effekt bei Eintritt der Supraleitfähigkeit.\" Naturwissenschaften, 21(44), 787-788. doi:10.1007/BF01504252."
+      },
+      {
+        "id": "ref-drozdov-2015-nature",
+        "citation": "Drozdov, A. P., Eremets, M. I., Troyan, I. A., Ksenofontov, V., & Shylin, S. I. (2015). \"Conventional superconductivity at 203 kelvin at high pressures in the sulfur hydride system.\" Nature, 525(7567), 73-76. doi:10.1038/nature14964."
+      },
+      {
+        "id": "ref-drozdov-2019-nature",
+        "citation": "Drozdov, A. P., Kong, P. P., Minkov, V. S., Besedin, S. P., Kuzovnikov, M. A., Mozaffari, S., Balicas, L., Balakirev, F. F., Graf, D. E., Prakapenka, V. B., Greenberg, E., Knyazev, D. A., Tkacz, M., & Eremets, M. I. (2019). \"Superconductivity at 250 K in lanthanum hydride under high pressures.\" Nature, 569(7757), 528-531. doi:10.1038/s41586-019-1201-8."
       }
     ],
     "interactiveComponent": "SuperconductivityBcsSimulator",
-    "contentHash": "02526474dd2dcdecdf4b7eb13f6e21d4aa5fd63393a5681834c1709c87399d3f",
+    "contentHash": "b1fd3b1aa0cf68ad4dd9365b011a3eb69ba10c7a5f9eca26a57702198760273e",
     "sections": [
       {
         "id": "sec-1-430201",
@@ -2343,7 +2351,7 @@
         "level": 1,
         "paragraphs": [
           "在向常規超導理論的壯麗致敬之時，MIRARI 科學組為讀者梳理明確的物理邊界：",
-          "1. **常壓麥克米蘭極限與高壓氫化物的突破**：\n   在常壓金屬中，基於傳統聲子媒介機制的 BCS 理論受制於晶格穩定性與德拜溫度，曾被認為存在約 30 到 40 開爾文的常壓「麥克米蘭極限」。然而，這一經驗天花板在百萬大氣壓（兆帕至吉帕）極端條件下被徹底打破：極輕的氫原子能提供超高聲子頻率與強電子-聲子耦合，例如 Drozdov 等人發現的硫化氫（$\\text{H}_3\\text{S}$ 在約 150-200 GPa 下 $T_c \\approx 203\\text{ K}$）與十氫化鑭（$\\text{LaH}_{10}$ 在約 170-190 GPa 下 $T_c \\approx 250-260\\text{ K}$），均證實了常規電子-聲子配對機制在高壓極限下能攀上接近室溫的嶄新高峰。\n2. **高溫超導（HTS）非常規機制的挑戰**：\n   1986 年柏諾茲與繆勒發現的銅氧化物超導體（Cuprates，最高常壓 $T_c \\sim 135\\text{ K}$）以及後續的鐵基超導體，徹底突破了傳統 BCS 理論的範疇。在強關聯 $d$ 波對稱性、反鐵磁自旋漲落等非聲子機制下，高溫超導機理至今依然是凝聚態物理學中最具挑戰性的未解之謎之一。\n3. **量子拓撲應用基石**：\n   儘管常規 BCS 超導體臨界溫度較低，但其完美的 s 波能隙與極高的宏觀波函數相干性，成為了當代核磁共振（MRI）超導磁體、大型強子對撞機（LHC）加速器磁鐵，以及超導量子計算機（如 Transmon 夸比特）中最穩固不可或缺的物理基石。",
+          "1. **常壓麥克米蘭極限與高壓氫化物的突破**：\n   在常壓金屬中，基於傳統聲子媒介機制的 BCS 理論受制於晶格穩定性與德拜溫度，曾被認為存在約 30 到 40 開爾文的常壓「麥克米蘭極限」。然而，這一經驗天花板在上百 GPa、約百萬大氣壓量級的極端條件下被徹底打破：極輕的氫原子能提供超高聲子頻率與強電子-聲子耦合，例如 Drozdov 等人發現的硫化氫（$\\text{H}_3\\text{S}$ 在約 150-200 GPa 下 $T_c \\approx 203\\text{ K}$）與十氫化鑭（$\\text{LaH}_{10}$ 在約 170-190 GPa 下 $T_c \\approx 250-260\\text{ K}$），均證實了常規電子-聲子配對機制在高壓極限下能攀上接近室溫的嶄新高峰。\n2. **高溫超導（HTS）非常規機制的挑戰**：\n   1986 年柏諾茲與繆勒發現的銅氧化物超導體（Cuprates，最高常壓 $T_c \\sim 135\\text{ K}$）以及後續的鐵基超導體，徹底突破了傳統 BCS 理論的範疇。在強關聯 $d$ 波對稱性、反鐵磁自旋漲落等非聲子機制下，高溫超導機理至今依然是凝聚態物理學中最具挑戰性的未解之謎之一。\n3. **量子拓撲應用基石**：\n   儘管常規 BCS 超導體臨界溫度較低，但其完美的 s 波能隙與極高的宏觀波函數相干性，成為了當代核磁共振（MRI）超導磁體、大型強子對撞機（LHC）加速器磁鐵，以及超導量子計算機（如 Transmon 夸比特）中最穩固不可或缺的物理基石。",
           "BCS 理論向人類展示了量子多體物理的最深邃智慧：在看似微弱的微觀吸引力下，無數微觀粒子能夠擺脫彼此孤立的混亂，以統一的量子步調凝聚為永不衰竭的宏觀巨流。"
         ],
         "sentences": [
@@ -2372,15 +2380,15 @@
             "contextNote": "六、科學邊界：常規超導的麥克米蘭極限 · 第 2 段"
           },
           {
-            "sentenceId": "sent-ad4fa83d",
+            "sentenceId": "sent-f4510d12",
             "articleId": "art-bcs-superconductivity",
             "sectionId": "sec-6-e22609",
             "sectionTitle": "六、科學邊界：常規超導的麥克米蘭極限",
             "paragraphIndex": 1,
-            "exactQuote": "然而，這一經驗天花板在百萬大氣壓（兆帕至吉帕）極端條件下被徹底打破：極輕的氫原子能提供超高聲子頻率與強電子-聲子耦合，例如 Drozdov 等人發現的硫化氫（$\\text{H}_3\\text{S}$ 在約 150-200 GPa 下 $T_c \\approx 203\\text{ K}$）與十氫化鑭（$\\text{LaH}_{10}$ 在約 170-190 GPa 下 $T_c \\approx 250-260\\text{ K}$），均證實了常規電子-聲子配對機制在高壓極限下能攀上接近室溫的嶄新高峰。",
+            "exactQuote": "然而，這一經驗天花板在上百 GPa、約百萬大氣壓量級的極端條件下被徹底打破：極輕的氫原子能提供超高聲子頻率與強電子-聲子耦合，例如 Drozdov 等人發現的硫化氫（$\\text{H}_3\\text{S}$ 在約 150-200 GPa 下 $T_c \\approx 203\\text{ K}$）與十氫化鑭（$\\text{LaH}_{10}$ 在約 170-190 GPa 下 $T_c \\approx 250-260\\text{ K}$），均證實了常規電子-聲子配對機制在高壓極限下能攀上接近室溫的嶄新高峰。",
             "charStart": 6356,
-            "charEnd": 6607,
-            "contentHash": "ad4fa83df2980883e363314d4bf0ba1e44c0e4799d53ac686dc6a541072074bb",
+            "charEnd": 6611,
+            "contentHash": "f4510d12788ae1b7c320672e72806acd51a95818cb793a125b1c03d103afdb03",
             "contextNote": "六、科學邊界：常規超導的麥克米蘭極限 · 第 2 段"
           },
           {
@@ -2390,8 +2398,8 @@
             "sectionTitle": "六、科學邊界：常規超導的麥克米蘭極限",
             "paragraphIndex": 1,
             "exactQuote": "2. **高溫超導（HTS）非常規機制的挑戰**：\n   1986 年柏諾茲與繆勒發現的銅氧化物超導體（Cuprates，最高常壓 $T_c \\sim 135\\text{ K}$）以及後續的鐵基超導體，徹底突破了傳統 BCS 理論的範疇。",
-            "charStart": 6608,
-            "charEnd": 6727,
+            "charStart": 6612,
+            "charEnd": 6731,
             "contentHash": "e282bd5efbea15ffbd990a905427cc0928e2a13bb1cf723f5f788fc10a5da3b2",
             "contextNote": "六、科學邊界：常規超導的麥克米蘭極限 · 第 2 段"
           },
@@ -2402,8 +2410,8 @@
             "sectionTitle": "六、科學邊界：常規超導的麥克米蘭極限",
             "paragraphIndex": 1,
             "exactQuote": "在強關聯 $d$ 波對稱性、反鐵磁自旋漲落等非聲子機制下，高溫超導機理至今依然是凝聚態物理學中最具挑戰性的未解之謎之一。",
-            "charStart": 6728,
-            "charEnd": 6788,
+            "charStart": 6732,
+            "charEnd": 6792,
             "contentHash": "68e450d8585eab345efd3cd56feb8e1c6ad0093737f2889535445dcc0360709a",
             "contextNote": "六、科學邊界：常規超導的麥克米蘭極限 · 第 2 段"
           },
@@ -2414,8 +2422,8 @@
             "sectionTitle": "六、科學邊界：常規超導的麥克米蘭極限",
             "paragraphIndex": 1,
             "exactQuote": "3. **量子拓撲應用基石**：\n   儘管常規 BCS 超導體臨界溫度較低，但其完美的 s 波能隙與極高的宏觀波函數相干性，成為了當代核磁共振（MRI）超導磁體、大型強子對撞機（LHC）加速器磁鐵，以及超導量子計算機（如 Transmon 夸比特）中最穩固不可或缺的物理基石。",
-            "charStart": 6789,
-            "charEnd": 6928,
+            "charStart": 6793,
+            "charEnd": 6932,
             "contentHash": "ead904ea954df22b76ae12d6f39740bcdd2a651c0f57f4ca4d79cc078fc3001d",
             "contextNote": "六、科學邊界：常規超導的麥克米蘭極限 · 第 2 段"
           },
@@ -2426,8 +2434,8 @@
             "sectionTitle": "六、科學邊界：常規超導的麥克米蘭極限",
             "paragraphIndex": 2,
             "exactQuote": "BCS 理論向人類展示了量子多體物理的最深邃智慧：在看似微弱的微觀吸引力下，無數微觀粒子能夠擺脫彼此孤立的混亂，以統一的量子步調凝聚為永不衰竭的宏觀巨流。",
-            "charStart": 7601,
-            "charEnd": 7678,
+            "charStart": 7609,
+            "charEnd": 7686,
             "contentHash": "233f727cdc9a1c90ae93402f951e42859fee583a159cb511a19d45ef9c6b31a5",
             "contextNote": "六、科學邊界：常規超導的麥克米蘭極限 · 第 3 段"
           }
@@ -2436,8 +2444,8 @@
         "interactiveComponentId": null
       }
     ],
-    "totalWordCount": 4016,
-    "lastIndexedAt": "2026-11-10T01:11:20.151Z"
+    "totalWordCount": 4019,
+    "lastIndexedAt": "2026-11-10T07:56:33.530Z"
   },
   {
     "id": "art-bell-inequality-entanglement",
@@ -2492,7 +2500,7 @@
       }
     ],
     "interactiveComponent": "BellInequalitySimulator",
-    "contentHash": "b86875abe23091adccd6aff513bced07c1f00efddffd28dc7c6d71a0101b90ca",
+    "contentHash": "6ed5afe5b3ae9557f3b1d036917c8c83b664b411320ddbbcff2680f8761157b0",
     "sections": [
       {
         "id": "sec-1-e4d31b",
@@ -2937,7 +2945,7 @@
         "paragraphs": [
           "這是一場理論物理對真實宇宙的終極宣戰。究竟是愛因斯坦對，還是波耳對？",
           "1982 年，法國奧賽光學研究所的阿蘭·阿斯佩（Alain Aspect）團隊發表了兩項劃時代的里程碑實驗：",
-          "1. **雙通道檢偏器實驗（Aspect, Grangier & Roger, 1982）**：\n   團隊首次使用雙通道偏振分束器，同時測量雙通道符合計數，測得 CHSH 參數實測值為 **$S = 2.697 \\pm 0.015$**，以高達 46 個標準差的極高信賴度突破了古典上限 $S \\le 2$。\n2. **時間變動分析器實驗（Aspect, Dalibard & Roger, 1982）**：\n   為了關閉兩端通信漏洞（Locality Loophole），兩端相距 12 公尺（光傳播需 40 奈秒）。阿斯佩利用聲光開關以接近 **$50\\text{ MHz}$ 的頻率（切換週期約 10 奈秒）進行非同步且不共週期的準週期快速切換**，在光子飛行途中改變光路朝向不同的檢偏器。該時變實驗採用對應配置的貝爾型不等式統計量，測得關聯參數違背量為 **$0.101 \\pm 0.020$**，以約 5 個標準差的統計顯著性排除了定域隱變數理論。",
+          "1. **雙通道檢偏器實驗（Aspect, Grangier & Roger, 1982）**：\n   團隊首次使用雙通道偏振分束器，同時測量雙通道符合計數，測得 CHSH 參數實測值為 **$S = 2.697 \\pm 0.015$**，以高達 46 個標準差的極高信賴度突破了古典上限 $S \\le 2$。\n2. **時間變動分析器實驗（Aspect, Dalibard & Roger, 1982）**：\n   為了關閉兩端通信漏洞（Locality Loophole），兩端相距 12 公尺（光傳播需 40 奈秒）。阿斯佩利用聲光開關以接近 **$50\\text{ MHz}$ 的頻率（完整振盪週期約 20 奈秒，半週期切換間隔約 10 奈秒）進行非同步且不共週期的準週期快速切換**，在光子飛行途中改變光路朝向不同的檢偏器。該時變實驗採用對應配置的貝爾型不等式統計量，測得關聯參數違背量為 **$0.101 \\pm 0.020$**，以約 5 個標準差的統計顯著性排除了定域隱變數理論。",
           "隨後數十年間，克勞澤、阿斯佩與安東·塞林格（Anton Zeilinger）等人逐步封死了探測效率漏洞（Detection Loophole）與自由選擇漏洞（Freedom-of-Choice Loophole），並在 2015 年完成了無任何漏洞的「無漏洞貝爾檢驗（Loophole-free Bell Test）」。\n這三位量子物理先驅於 **2022 年共同榮獲諾貝爾物理學獎**。"
         ],
         "sentences": [
@@ -3002,15 +3010,15 @@
             "contextNote": "五、實驗驗證：阿斯佩與 2022 年諾貝爾獎 · 第 3 段"
           },
           {
-            "sentenceId": "sent-e7a1e897",
+            "sentenceId": "sent-1667194b",
             "articleId": "art-bell-inequality-entanglement",
             "sectionId": "sec-5-5575ef",
             "sectionTitle": "五、實驗驗證：阿斯佩與 2022 年諾貝爾獎",
             "paragraphIndex": 2,
-            "exactQuote": "阿斯佩利用聲光開關以接近 **$50\\text{ MHz}$ 的頻率（切換週期約 10 奈秒）進行非同步且不共週期的準週期快速切換**，在光子飛行途中改變光路朝向不同的檢偏器。",
+            "exactQuote": "阿斯佩利用聲光開關以接近 **$50\\text{ MHz}$ 的頻率（完整振盪週期約 20 奈秒，半週期切換間隔約 10 奈秒）進行非同步且不共週期的準週期快速切換**，在光子飛行途中改變光路朝向不同的檢偏器。",
             "charStart": 5557,
-            "charEnd": 5645,
-            "contentHash": "e7a1e897c0b7fa0a76b3bd454ec61983383b3121dea6e2531abdf7edf1252b41",
+            "charEnd": 5662,
+            "contentHash": "1667194bab34121a086f902eac23426e88304b6ce76b23540bdd3ac652ccfbd4",
             "contextNote": "五、實驗驗證：阿斯佩與 2022 年諾貝爾獎 · 第 3 段"
           },
           {
@@ -3020,8 +3028,8 @@
             "sectionTitle": "五、實驗驗證：阿斯佩與 2022 年諾貝爾獎",
             "paragraphIndex": 2,
             "exactQuote": "該時變實驗採用對應配置的貝爾型不等式統計量，測得關聯參數違背量為 **$0.101 \\pm 0.020$**，以約 5 個標準差的統計顯著性排除了定域隱變數理論。",
-            "charStart": 5646,
-            "charEnd": 5727,
+            "charStart": 5663,
+            "charEnd": 5744,
             "contentHash": "a1ac1904081846fd2e7f6c0175a0c4e7f5473e705597d3af34232a642af831c4",
             "contextNote": "五、實驗驗證：阿斯佩與 2022 年諾貝爾獎 · 第 3 段"
           },
@@ -3032,8 +3040,8 @@
             "sectionTitle": "五、實驗驗證：阿斯佩與 2022 年諾貝爾獎",
             "paragraphIndex": 3,
             "exactQuote": "隨後數十年間，克勞澤、阿斯佩與安東·塞林格（Anton Zeilinger）等人逐步封死了探測效率漏洞（Detection Loophole）與自由選擇漏洞（Freedom-of-Choice Loophole），並在 2015 年完成了無任何漏洞的「無漏洞貝爾檢驗（Loophole-free Bell Test）」。",
-            "charStart": 6161,
-            "charEnd": 6321,
+            "charStart": 6195,
+            "charEnd": 6355,
             "contentHash": "0aae147565ae09a7e486bb4adfd955f5f7b52b212e63d3385f394b128fbed92c",
             "contextNote": "五、實驗驗證：阿斯佩與 2022 年諾貝爾獎 · 第 4 段"
           },
@@ -3044,8 +3052,8 @@
             "sectionTitle": "五、實驗驗證：阿斯佩與 2022 年諾貝爾獎",
             "paragraphIndex": 3,
             "exactQuote": "這三位量子物理先驅於 **2022 年共同榮獲諾貝爾物理學獎**。",
-            "charStart": 6322,
-            "charEnd": 6355,
+            "charStart": 6356,
+            "charEnd": 6389,
             "contentHash": "cbdca1258131b2f2609b14c19ac9c3fc52f70ce6eb5d02408902abb0bd8ccbe4",
             "contextNote": "五、實驗驗證：阿斯佩與 2022 年諾貝爾獎 · 第 4 段"
           }
@@ -3070,8 +3078,8 @@
             "sectionTitle": "六、科學邊界：超光速通信的嚴格禁令",
             "paragraphIndex": 0,
             "exactQuote": "在震驚於量子非局域關聯的奇蹟時，MIRARI 科學組恪守嚴密的物理本質，為讀者撥開常見的科幻迷霧：",
-            "charStart": 6552,
-            "charEnd": 6601,
+            "charStart": 6586,
+            "charEnd": 6635,
             "contentHash": "4b7a0fda45bff538f587488946b37b5fcdb713acae75de3706332bb9ab954782",
             "contextNote": "六、科學邊界：超光速通信的嚴格禁令 · 第 1 段"
           },
@@ -3082,8 +3090,8 @@
             "sectionTitle": "六、科學邊界：超光速通信的嚴格禁令",
             "paragraphIndex": 1,
             "exactQuote": "1. **不能用於超光速信息傳輸（No-Communication Theorem）**：\n   大眾最容易產生的誤解是：「既然糾纏關聯是瞬間非局域的，我們是否能利用它造出超光速電報或星際即時通訊？」\n   答案是**絕對不能**。",
-            "charStart": 6653,
-            "charEnd": 6769,
+            "charStart": 6687,
+            "charEnd": 6803,
             "contentHash": "6e66edbd66bb76eb845905dcf744e575cb5bb21e3edb70bae1682a9b17f2d006",
             "contextNote": "六、科學邊界：超光速通信的嚴格禁令 · 第 2 段"
           },
@@ -3094,8 +3102,8 @@
             "sectionTitle": "六、科學邊界：超光速通信的嚴格禁令",
             "paragraphIndex": 1,
             "exactQuote": "Alice 孤立地觀察自己的探測器時，每次看到的測量結果都是完全均勻的純隨機數（50% 機率是 +1，50% 是 -1）。",
-            "charStart": 6770,
-            "charEnd": 6831,
+            "charStart": 6804,
+            "charEnd": 6865,
             "contentHash": "59d79984fa3dbf34b81a0622d9a3839c691847492e69139c80c74bca308407cb",
             "contextNote": "六、科學邊界：超光速通信的嚴格禁令 · 第 2 段"
           },
@@ -3106,8 +3114,8 @@
             "sectionTitle": "六、科學邊界：超光速通信的嚴格禁令",
             "paragraphIndex": 1,
             "exactQuote": "只有當 Alice 與 Bob 透過常規的亞光速經典信道（如電話或光纖）核對彼此的記錄時，糾纏的關聯性才會顯現出來。",
-            "charStart": 6832,
-            "charEnd": 6890,
+            "charStart": 6866,
+            "charEnd": 6924,
             "contentHash": "81c91290e5f11e29fb7db87442dd708fc1f3c56e5cb83426782fdd78df608279",
             "contextNote": "六、科學邊界：超光速通信的嚴格禁令 · 第 2 段"
           },
@@ -3118,8 +3126,8 @@
             "sectionTitle": "六、科學邊界：超光速通信的嚴格禁令",
             "paragraphIndex": 1,
             "exactQuote": "因此，量子糾纏**沒有違反愛因斯坦狹義相對論的因果律**。",
-            "charStart": 6891,
-            "charEnd": 6920,
+            "charStart": 6925,
+            "charEnd": 6954,
             "contentHash": "abaf834ac56d0fd01cd6b5ffb4eae1ccedfd7215c00bed3e42e7e436fd2a262e",
             "contextNote": "六、科學邊界：超光速通信的嚴格禁令 · 第 2 段"
           },
@@ -3130,8 +3138,8 @@
             "sectionTitle": "六、科學邊界：超光速通信的嚴格禁令",
             "paragraphIndex": 1,
             "exactQuote": "2. **實在論 vs 局域性的哲學抉擇**：\n   貝爾不等式的違背意味著：**我們的宇宙不可能同時滿足「局域性」與「實在性」**。",
-            "charStart": 6921,
-            "charEnd": 6988,
+            "charStart": 6955,
+            "charEnd": 7022,
             "contentHash": "786a024dd774af2a8cc670732338e0cad32533a2216162352369a013c16ef2d7",
             "contextNote": "六、科學邊界：超光速通信的嚴格禁令 · 第 2 段"
           },
@@ -3142,8 +3150,8 @@
             "sectionTitle": "六、科學邊界：超光速通信的嚴格禁令",
             "paragraphIndex": 1,
             "exactQuote": "主流哥本哈根詮釋選擇放棄「實在性」（未測量時客觀屬性不存在）；德布羅意-玻姆導航波理論選擇保留「實在性」而擁抱徹底的「非局域性」；多世界詮釋則通過宇宙分裂避免了單一確定結果。",
-            "charStart": 6989,
-            "charEnd": 7076,
+            "charStart": 7023,
+            "charEnd": 7110,
             "contentHash": "2d336092136e73e837802413210082f4aa4f5e56286fa97388b3319ff814ddee",
             "contextNote": "六、科學邊界：超光速通信的嚴格禁令 · 第 2 段"
           },
@@ -3154,8 +3162,8 @@
             "sectionTitle": "六、科學邊界：超光速通信的嚴格禁令",
             "paragraphIndex": 1,
             "exactQuote": "不論選擇哪條哲學詮釋，愛因斯坦所鍾愛的古典機械宇宙觀已經徹底終結。",
-            "charStart": 7077,
-            "charEnd": 7110,
+            "charStart": 7111,
+            "charEnd": 7144,
             "contentHash": "7a185816f57769bdb8b3d748126f75592822a01073437456e2aa3baf791974a0",
             "contextNote": "六、科學邊界：超光速通信的嚴格禁令 · 第 2 段"
           },
@@ -3166,8 +3174,8 @@
             "sectionTitle": "六、科學邊界：超光速通信的嚴格禁令",
             "paragraphIndex": 2,
             "exactQuote": "貝爾不等式的歷史，是人類理性的最高勝利：它證明了哪怕是最深奧、最縹緲的哲學形上學問題，只要透過無懈可擊的數學推導與精緻的實驗儀器，最終都能在冰冷的物理數據前得到終極審判。",
-            "charStart": 7573,
-            "charEnd": 7658,
+            "charStart": 7607,
+            "charEnd": 7692,
             "contentHash": "922c2aa77f48c3c02445a5a761642ededa3ea7255c4159dcf7bcb40f27dbac65",
             "contextNote": "六、科學邊界：超光速通信的嚴格禁令 · 第 3 段"
           }
@@ -3176,8 +3184,8 @@
         "interactiveComponentId": null
       }
     ],
-    "totalWordCount": 4115,
-    "lastIndexedAt": "2026-11-10T01:11:20.154Z"
+    "totalWordCount": 4130,
+    "lastIndexedAt": "2026-11-10T07:56:33.533Z"
   },
   {
     "id": "art-bismuth-sulfide-photovoltaics",
@@ -3809,7 +3817,7 @@
       }
     ],
     "totalWordCount": 2906,
-    "lastIndexedAt": "2026-11-10T01:11:20.156Z"
+    "lastIndexedAt": "2026-11-10T07:56:33.536Z"
   },
   {
     "id": "art-boson-sampling-quantum",
@@ -4525,7 +4533,7 @@
       }
     ],
     "totalWordCount": 3703,
-    "lastIndexedAt": "2026-11-10T01:11:20.158Z"
+    "lastIndexedAt": "2026-11-10T07:56:33.542Z"
   },
   {
     "id": "art-brownian-ratchet-motors",
@@ -5230,7 +5238,7 @@
       }
     ],
     "totalWordCount": 3332,
-    "lastIndexedAt": "2026-11-10T01:11:20.161Z"
+    "lastIndexedAt": "2026-11-10T07:56:33.545Z"
   },
   {
     "id": "art-car-t-immunology",
@@ -5806,7 +5814,7 @@
       }
     ],
     "totalWordCount": 3087,
-    "lastIndexedAt": "2026-11-10T01:11:20.163Z"
+    "lastIndexedAt": "2026-11-10T07:56:33.548Z"
   },
   {
     "id": "art-chandrasekhar-limit",
@@ -6526,7 +6534,7 @@
       }
     ],
     "totalWordCount": 3556,
-    "lastIndexedAt": "2026-11-10T01:11:20.165Z"
+    "lastIndexedAt": "2026-11-10T07:56:33.550Z"
   },
   {
     "id": "art-chaos-double-pendulum",
@@ -7049,7 +7057,7 @@
       }
     ],
     "totalWordCount": 2065,
-    "lastIndexedAt": "2026-11-10T01:11:20.169Z"
+    "lastIndexedAt": "2026-11-10T07:56:33.553Z"
   },
   {
     "id": "art-coriolis-geostrophic",
@@ -7722,7 +7730,7 @@
       }
     ],
     "totalWordCount": 3371,
-    "lastIndexedAt": "2026-11-10T01:11:20.170Z"
+    "lastIndexedAt": "2026-11-10T07:56:33.554Z"
   },
   {
     "id": "art-crispr-prime-editing",
@@ -7735,7 +7743,7 @@
     "formatBadgeText": "合成生物",
     "title": "奈米文字處理器的分子拼寫：引導編輯（Prime Editing）如何改寫遺傳密碼？",
     "subtitle": "拋棄暴力雙鏈斷裂與外源供體 DNA：工程化逆轉錄酶如何在活細胞基因組中實現精準搜尋與替換？",
-    "summary": "傳統 CRISPR-Cas9 宛如一把暴力剪刀，透過造成危險的 DNA 雙鏈斷裂迫使細胞進行不可控修復。戴維·劉團隊開創的 Prime Editing（引導編輯）融合了單鏈缺口酶與工程化逆轉錄酶，以 pegRNA 為模板原位書寫遺傳資訊，並巧妙繞過錯配修復防線，實現了無 DSB、無供體 DNA 的精準分子搜尋與替換。",
+    "summary": "傳統 CRISPR-Cas9 宛如一把暴力剪刀，透過造成危險的 DNA 雙鏈斷裂迫使細胞進行不可控修復。戴維·劉團隊開創的 Prime Editing（引導編輯）融合了單鏈缺口酶與工程化逆轉錄酶，以 pegRNA 為模板原位書寫遺傳資訊，並巧妙繞過錯配修復防線，大幅降低對雙鏈斷裂與外源供體 DNA 的依賴，實現了高保真的分子搜尋與替換。",
     "topicIds": [
       "synthetic_biology",
       "genetics",
@@ -7752,7 +7760,7 @@
     "difficultyLevel": "advanced",
     "interactiveComponent": "PrimeEditingSimulator",
     "estimatedReadTimeMinutes": 15,
-    "leadParagraph": "如果把人類基因組比作一部長達 30 億個字母的宏偉生命手稿，那麼數千種導致人類嚴重遺傳性疾病的基因突變，往往僅僅源於單個字母的拼寫錯誤。第一代 CRISPR 工具本質上是一把分子手術剪刀，依賴引發危險的雙鏈斷裂；而引導編輯（Prime Editing）透過單鏈缺口酶與逆轉錄酶的精巧結合，實現了原位無損的分子文字搜尋與替換。",
+    "leadParagraph": "如果把人類基因組比作一部長達 30 億個字母的宏偉生命手稿，那麼數千種導致人類嚴重遺傳性疾病的基因突變，往往僅僅源於單個字母的拼寫錯誤。第一代 CRISPR 工具本質上是一把分子手術剪刀，依賴引發危險的雙鏈斷裂；而引導編輯（Prime Editing）透過單鏈缺口酶與逆轉錄酶的精巧結合，大幅降低對雙鏈斷裂的依賴，實現了原位的高保真分子文字搜尋與替換。",
     "quoteLead": "引導編輯的誕生，標誌著基因組操控告別了粗暴的破壞修復時代，邁向具有確定性的奈米級分子拼寫。",
     "authors": [
       {
@@ -7774,7 +7782,7 @@
       {
         "authors": "Chen, P. J., Hussmann, J. A., Yan, J., et al.",
         "year": "2021",
-        "title": "Enhanced prime editing systems by manipulating cellular mismatch repair",
+        "title": "Enhanced prime editing systems by manipulating cellular determinants of editing outcomes",
         "journal": "Cell",
         "volume": "184",
         "issue": "22",
@@ -7802,7 +7810,7 @@
         "doi": "10.1038/s41587-021-01039-7"
       }
     ],
-    "contentHash": "9bea37dc3cc581552b7bcef31dc23b1036fdcdc449a9e02344239b72185533ad",
+    "contentHash": "ab1762264dbc4c30bbaf969977f0c8667fc60a0925e174a2e4579930d4dbc157",
     "sections": [
       {
         "id": "sec-1-0c184f",
@@ -7930,7 +7938,7 @@
           "融合蛋白的核心基石是經過點突變改造的 Cas9 缺口酶——**nCas9(H840A)**。",
           "天然的 Cas9 具有兩個催化活性口袋：RuvC 結構域負責切割非互補鏈，HNH 結構域負責切割與 RNA 配對的互補鏈。",
           "科研團隊透過將組氨酸突變為丙氨酸（H840A），使得 HNH 催化中心完全失活，僅保留 RuvC 的單側活性。",
-          "這意味著 nCas9 在結合基因組 DNA 時，只會在靶標鏈上劃開一條極微小的單鏈缺口（Nick），保留完整的另一條鏈作為結構支架，從物理源頭上杜絕了形成雙鏈斷裂的風險。",
+          "這意味著 nCas9 在結合基因組 DNA 時，只會在靶標鏈上劃開一條極微小的單鏈缺口（Nick），保留未切割的互補鏈作為結構支架，從而大幅降低了對刻意雙鏈斷裂（DSB）的依賴（儘管在特定構象或輔助缺口情況下仍可能產生極低頻率的非預期 DSB 與副產物）。",
           "在 nCas9 的碳末端（C-terminus），研究人員透過一條高彈性的多肽連接子（Polypeptide Linker），共價串聯了一枚經過人為定向進化的**莫洛尼鼠白血病病毒逆轉錄酶（M-MLV Reverse Transcriptase, RT）**。",
           "傳統觀念中，逆轉錄酶的作用是在病毒生命週期中將整條長 RNA 反轉錄為 cDNA。",
           "但在引導編輯中，這枚工程化逆轉錄酶被馴化為一個聽話的「原位打印機」——它停留在單鏈缺口邊緣，隨時等待局部雜交信號的觸發。",
@@ -8000,15 +8008,15 @@
             "contextNote": "分子三位一體：引導編輯器的工程化架構 · 第 5 段"
           },
           {
-            "sentenceId": "sent-6a2ef44c",
+            "sentenceId": "sent-e35920bd",
             "articleId": "art-crispr-prime-editing",
             "sectionId": "sec-2-c9287a",
             "sectionTitle": "分子三位一體：引導編輯器的工程化架構",
             "paragraphIndex": 5,
-            "exactQuote": "這意味著 nCas9 在結合基因組 DNA 時，只會在靶標鏈上劃開一條極微小的單鏈缺口（Nick），保留完整的另一條鏈作為結構支架，從物理源頭上杜絕了形成雙鏈斷裂的風險。",
+            "exactQuote": "這意味著 nCas9 在結合基因組 DNA 時，只會在靶標鏈上劃開一條極微小的單鏈缺口（Nick），保留未切割的互補鏈作為結構支架，從而大幅降低了對刻意雙鏈斷裂（DSB）的依賴（儘管在特定構象或輔助缺口情況下仍可能產生極低頻率的非預期 DSB 與副產物）。",
             "charStart": 2305,
-            "charEnd": 2390,
-            "contentHash": "6a2ef44c25eb4eb78e23fcfd2fbf06fb2e3e6f8004d260073b13267e785caaad",
+            "charEnd": 2433,
+            "contentHash": "e35920bdc54ed0f9441f344d9c01cb8ac2a9abb91ab4d2eac9112edccb3b9d14",
             "contextNote": "分子三位一體：引導編輯器的工程化架構 · 第 6 段"
           },
           {
@@ -8018,8 +8026,8 @@
             "sectionTitle": "分子三位一體：引導編輯器的工程化架構",
             "paragraphIndex": 6,
             "exactQuote": "在 nCas9 的碳末端（C-terminus），研究人員透過一條高彈性的多肽連接子（Polypeptide Linker），共價串聯了一枚經過人為定向進化的**莫洛尼鼠白血病病毒逆轉錄酶（M-MLV Reverse Transcriptase, RT）**。",
-            "charStart": 2478,
-            "charEnd": 2608,
+            "charStart": 2564,
+            "charEnd": 2694,
             "contentHash": "7093ce40a84623638caa37be0acd627f2449d4c928fdbf8444bd2e8931be7e57",
             "contextNote": "分子三位一體：引導編輯器的工程化架構 · 第 7 段"
           },
@@ -8030,8 +8038,8 @@
             "sectionTitle": "分子三位一體：引導編輯器的工程化架構",
             "paragraphIndex": 7,
             "exactQuote": "傳統觀念中，逆轉錄酶的作用是在病毒生命週期中將整條長 RNA 反轉錄為 cDNA。",
-            "charStart": 2741,
-            "charEnd": 2782,
+            "charStart": 2827,
+            "charEnd": 2868,
             "contentHash": "a6cd9cde793592ee4ea6980fb0e5e61cd944fc0de28dc5c7b277667f11950e0c",
             "contextNote": "分子三位一體：引導編輯器的工程化架構 · 第 8 段"
           },
@@ -8042,8 +8050,8 @@
             "sectionTitle": "分子三位一體：引導編輯器的工程化架構",
             "paragraphIndex": 8,
             "exactQuote": "但在引導編輯中，這枚工程化逆轉錄酶被馴化為一個聽話的「原位打印機」——它停留在單鏈缺口邊緣，隨時等待局部雜交信號的觸發。",
-            "charStart": 2826,
-            "charEnd": 2886,
+            "charStart": 2912,
+            "charEnd": 2972,
             "contentHash": "972e951373e0e11a2734effe04c59accdef72a35fd772856259fd029083114bf",
             "contextNote": "分子三位一體：引導編輯器的工程化架構 · 第 9 段"
           },
@@ -8054,8 +8062,8 @@
             "sectionTitle": "分子三位一體：引導編輯器的工程化架構",
             "paragraphIndex": 9,
             "exactQuote": "承載這套系統最高智慧的，是全長超過 130 個核苷酸的 **pegRNA**。",
-            "charStart": 2949,
-            "charEnd": 2988,
+            "charStart": 3035,
+            "charEnd": 3074,
             "contentHash": "7b46b881485de63e6419071c9cc9926f22eefca9e9fe6fe2b20f806cf4ce4bb2",
             "contextNote": "分子三位一體：引導編輯器的工程化架構 · 第 10 段"
           },
@@ -8066,8 +8074,8 @@
             "sectionTitle": "分子三位一體：引導編輯器的工程化架構",
             "paragraphIndex": 10,
             "exactQuote": "它不僅包含前半段負責在基因組 30 億對鹼基中進行序列辨識的 20 nt 嚮導序列（Spacer）與 Cas9 骨架環，更在其 3' 末端額外延伸出兩段至關重要的功能模組：",
-            "charStart": 3030,
-            "charEnd": 3116,
+            "charStart": 3116,
+            "charEnd": 3202,
             "contentHash": "34c8228f07ef6d63e1b05047b64186aaa1d2e81d7f1718964c08ca30aaf98b01",
             "contextNote": "分子三位一體：引導編輯器的工程化架構 · 第 11 段"
           },
@@ -8078,8 +8086,8 @@
             "sectionTitle": "分子三位一體：引導編輯器的工程化架構",
             "paragraphIndex": 11,
             "exactQuote": "1. **引物結合位點（Primer Binding Site, PBS）**：通常長度為 11 至 15 個核苷酸，其序列與基因組靶標鏈切口上游的單鏈 DNA 完全反向互補。",
-            "charStart": 3205,
-            "charEnd": 3293,
+            "charStart": 3291,
+            "charEnd": 3379,
             "contentHash": "cb321c5c5c764f6cc449130be62b39553e4592a323e5985f4aca5070f5f288bb",
             "contextNote": "分子三位一體：引導編輯器的工程化架構 · 第 12 段"
           },
@@ -8090,8 +8098,8 @@
             "sectionTitle": "分子三位一體：引導編輯器的工程化架構",
             "paragraphIndex": 11,
             "exactQuote": "2. **逆轉錄模板（RT Template）**：長度通常在 10 至 30 個核苷酸之間，前半段精確編碼了科學家想要引入的目標編輯（無論是單個字母的置換、外源片段的精準插入還是特定編碼的刪除），後半段則與下遊基因組序列完全吻合，充當重組同源臂。",
-            "charStart": 3294,
-            "charEnd": 3418,
+            "charStart": 3380,
+            "charEnd": 3504,
             "contentHash": "742d8c11ec190bed18d8a3876a9c804ba3b2d562fdb9adf7b852048f22e7cedb",
             "contextNote": "分子三位一體：引導編輯器的工程化架構 · 第 12 段"
           }
@@ -8137,8 +8145,8 @@
             "sectionTitle": "逆轉錄酶的微觀編程：五步原位搜尋與替換",
             "paragraphIndex": 0,
             "exactQuote": "當引導編輯系統進入細胞核後，一系列精密如瑞士鐘錶般的分子化學反應依序上演：",
-            "charStart": 3634,
-            "charEnd": 3671,
+            "charStart": 3720,
+            "charEnd": 3757,
             "contentHash": "5b5d951af5c7cbbb51700c9e09f34a3d1d66045f9c89908b1b68e903994638cf",
             "contextNote": "逆轉錄酶的微觀編程：五步原位搜尋與替換 · 第 1 段"
           },
@@ -8149,8 +8157,8 @@
             "sectionTitle": "逆轉錄酶的微觀編程：五步原位搜尋與替換",
             "paragraphIndex": 1,
             "exactQuote": "### 第一步：R-Loop 形成與靶標辨識",
-            "charStart": 3711,
-            "charEnd": 3733,
+            "charStart": 3797,
+            "charEnd": 3819,
             "contentHash": "8814c91d020555318b3d8445067e057ad1fed470285c24759cede973e9b8698a",
             "contextNote": "逆轉錄酶的微觀編程：五步原位搜尋與替換 · 第 2 段"
           },
@@ -8161,8 +8169,8 @@
             "sectionTitle": "逆轉錄酶的微觀編程：五步原位搜尋與替換",
             "paragraphIndex": 2,
             "exactQuote": "nCas9 複合體沿著染色質快速滑移，一旦在目標區域識別出特定的前間隔鄰近基序（PAM, 例如 5'-NGG-3'），原本緊密纏繞的 DNA 雙螺旋便被強行解開，形成一個直徑約 2 奈米的局部泡狀結構（R-loop）。",
-            "charStart": 3758,
-            "charEnd": 3867,
+            "charStart": 3844,
+            "charEnd": 3953,
             "contentHash": "c3cc123f3308800c6ca4e1821a01d936d7518687bbc29b6a1164ca32822c1c61",
             "contextNote": "逆轉錄酶的微觀編程：五步原位搜尋與替換 · 第 3 段"
           },
@@ -8173,8 +8181,8 @@
             "sectionTitle": "逆轉錄酶的微觀編程：五步原位搜尋與替換",
             "paragraphIndex": 3,
             "exactQuote": "pegRNA 的 Spacer 序列與 DNA 互補鏈精準配對結合。",
-            "charStart": 3979,
-            "charEnd": 4013,
+            "charStart": 4065,
+            "charEnd": 4099,
             "contentHash": "2faa6bbc089befa398c1c9996f4ffca04be327549cb6f1bb6f2b46871312b006",
             "contextNote": "逆轉錄酶的微觀編程：五步原位搜尋與替換 · 第 4 段"
           },
@@ -8185,8 +8193,8 @@
             "sectionTitle": "逆轉錄酶的微觀編程：五步原位搜尋與替換",
             "paragraphIndex": 4,
             "exactQuote": "### 第二步：單鏈精確切口生成",
-            "charStart": 4050,
-            "charEnd": 4066,
+            "charStart": 4136,
+            "charEnd": 4152,
             "contentHash": "345d784db3d1e261a743062041422f182c79f8b46dca5a3f1bc374b114170f59",
             "contextNote": "逆轉錄酶的微觀編程：五步原位搜尋與替換 · 第 5 段"
           },
@@ -8197,8 +8205,8 @@
             "sectionTitle": "逆轉錄酶的微觀編程：五步原位搜尋與替換",
             "paragraphIndex": 5,
             "exactQuote": "nCas9 活化的 RuvC 催化中心精準揮刀，在非互補鏈的 PAM 序列上游剛好 3 個鹼基處切開一個磷酸二酯鍵。",
-            "charStart": 4085,
-            "charEnd": 4143,
+            "charStart": 4171,
+            "charEnd": 4229,
             "contentHash": "a9a2497eef39b0a48e4202324fe98d823478ca0280e578ebc0a0354c99ea2945",
             "contextNote": "逆轉錄酶的微觀編程：五步原位搜尋與替換 · 第 6 段"
           },
@@ -8209,8 +8217,8 @@
             "sectionTitle": "逆轉錄酶的微觀編程：五步原位搜尋與替換",
             "paragraphIndex": 6,
             "exactQuote": "這一切割動作在原位產生了一個關鍵的活性基團：具有自由親核活性的 **3'-羥基末端（3'-OH）**。",
-            "charStart": 4204,
-            "charEnd": 4255,
+            "charStart": 4290,
+            "charEnd": 4341,
             "contentHash": "cf7b6215ebcafae702cbb7fe3005c9b6bb714190417e91c6898ad98e51a3f7aa",
             "contextNote": "逆轉錄酶的微觀編程：五步原位搜尋與替換 · 第 7 段"
           },
@@ -8221,8 +8229,8 @@
             "sectionTitle": "逆轉錄酶的微觀編程：五步原位搜尋與替換",
             "paragraphIndex": 7,
             "exactQuote": "### 第三步：PBS 退火與原位逆轉錄啟動",
-            "charStart": 4309,
-            "charEnd": 4331,
+            "charStart": 4395,
+            "charEnd": 4417,
             "contentHash": "dfbb808ce17d719bb3775d4c958e06202c0865f40ec4501e8c9a5cff86d9f7fa",
             "contextNote": "逆轉錄酶的微觀編程：五步原位搜尋與替換 · 第 8 段"
           },
@@ -8233,8 +8241,8 @@
             "sectionTitle": "逆轉錄酶的微觀編程：五步原位搜尋與替換",
             "paragraphIndex": 8,
             "exactQuote": "原本遊離漂浮的 3'-OH 單鏈 DNA 懸臂，隨即與 pegRNA 尾部的 PBS 序列發生分子間雜交退火。",
-            "charStart": 4356,
-            "charEnd": 4411,
+            "charStart": 4442,
+            "charEnd": 4497,
             "contentHash": "692c9a010c39a745c3923be72b2ace70585c90cbcb25ea1d50f349b4227e6098",
             "contextNote": "逆轉錄酶的微觀編程：五步原位搜尋與替換 · 第 9 段"
           },
@@ -8245,8 +8253,8 @@
             "sectionTitle": "逆轉錄酶的微觀編程：五步原位搜尋與替換",
             "paragraphIndex": 9,
             "exactQuote": "這一步遵循嚴格的熱力學雜交規律。",
-            "charStart": 4469,
-            "charEnd": 4485,
+            "charStart": 4555,
+            "charEnd": 4571,
             "contentHash": "b54902c0e6ca9d0c4ebeb21323085252d25bc129368bc3f76f65f24e09050427",
             "contextNote": "逆轉錄酶的微觀編程：五步原位搜尋與替換 · 第 10 段"
           },
@@ -8257,8 +8265,8 @@
             "sectionTitle": "逆轉錄酶的微觀編程：五步原位搜尋與替換",
             "paragraphIndex": 10,
             "exactQuote": "雜交雙鏈的熱力學融解溫度（Melting Temperature, $T_m$）以及吉布斯自由能變化：",
-            "charStart": 4504,
-            "charEnd": 4555,
+            "charStart": 4590,
+            "charEnd": 4641,
             "contentHash": "9b07ba320f1debb36b107369824335239b8b85e0f3573c6a0941c6b0df7ecf99",
             "contextNote": "逆轉錄酶的微觀編程：五步原位搜尋與替換 · 第 11 段"
           },
@@ -8269,8 +8277,8 @@
             "sectionTitle": "逆轉錄酶的微觀編程：五步原位搜尋與替換",
             "paragraphIndex": 12,
             "exactQuote": "直接決定了退火的穩定性。",
-            "charStart": 4609,
-            "charEnd": 4621,
+            "charStart": 4695,
+            "charEnd": 4707,
             "contentHash": "3d7f9b1fe8e8606475809d0d4ddd6271cc32d97341057c408fbe941d930ca23c",
             "contextNote": "逆轉錄酶的微觀編程：五步原位搜尋與替換 · 第 13 段"
           },
@@ -8281,8 +8289,8 @@
             "sectionTitle": "逆轉錄酶的微觀編程：五步原位搜尋與替換",
             "paragraphIndex": 13,
             "exactQuote": "如果 PBS 過短（例如小於 10 nt），結合自由能不足以在室溫生理條件下穩定維持構象，逆轉錄無法有效啟動；若 PBS 過長，則可能引發自身分子內髮夾折疊（Self-dimerization）或非特異性錯配。",
-            "charStart": 4636,
-            "charEnd": 4741,
+            "charStart": 4722,
+            "charEnd": 4827,
             "contentHash": "876fc94d48eb9b294bd3a5e9e099fb8e6c21719d1b14c370cb55cdbe5c3a77fc",
             "contextNote": "逆轉錄酶的微觀編程：五步原位搜尋與替換 · 第 14 段"
           },
@@ -8293,8 +8301,8 @@
             "sectionTitle": "逆轉錄酶的微觀編程：五步原位搜尋與替換",
             "paragraphIndex": 14,
             "exactQuote": "一旦退火成功，3'-OH 末端便被送入緊鄰的 M-MLV 逆轉錄酶催化活性口袋中充當引物。",
-            "charStart": 4849,
-            "charEnd": 4894,
+            "charStart": 4935,
+            "charEnd": 4980,
             "contentHash": "254ed0187e733afaed15c9540f92e3278001a77f9a7749219bbe9b8efd0b6ffe",
             "contextNote": "逆轉錄酶的微觀編程：五步原位搜尋與替換 · 第 15 段"
           },
@@ -8305,8 +8313,8 @@
             "sectionTitle": "逆轉錄酶的微觀編程：五步原位搜尋與替換",
             "paragraphIndex": 15,
             "exactQuote": "逆轉錄酶隨即抓取細胞核內的游離脫氧核糖核苷三磷酸（dNTPs），以 pegRNA 延伸部的 RT 模板為物理藍本，原位直接合成出一條攜帶預期目標突變的新生單鏈 DNA。",
-            "charStart": 4942,
-            "charEnd": 5026,
+            "charStart": 5028,
+            "charEnd": 5112,
             "contentHash": "25424e6f5fac371a94e47aaf2713a93bf72229d0b9c18d33af3e1024555d76ab",
             "contextNote": "逆轉錄酶的微觀編程：五步原位搜尋與替換 · 第 16 段"
           },
@@ -8317,8 +8325,8 @@
             "sectionTitle": "逆轉錄酶的微觀編程：五步原位搜尋與替換",
             "paragraphIndex": 16,
             "exactQuote": "### 第四步：分子瓣狀競爭與 FEN1 酶切",
-            "charStart": 5113,
-            "charEnd": 5136,
+            "charStart": 5199,
+            "charEnd": 5222,
             "contentHash": "9ca6ce23c81e5b2df0df9fc3a85bc4ed672d5bf66c29898a022a37b04f47fdb0",
             "contextNote": "逆轉錄酶的微觀編程：五步原位搜尋與替換 · 第 17 段"
           },
@@ -8329,8 +8337,8 @@
             "sectionTitle": "逆轉錄酶的微觀編程：五步原位搜尋與替換",
             "paragraphIndex": 17,
             "exactQuote": "逆轉錄結束後，染色體切口處出現了一個極其奇特的拓撲結構：",
-            "charStart": 5162,
-            "charEnd": 5190,
+            "charStart": 5248,
+            "charEnd": 5276,
             "contentHash": "5947a702da4da3b2e4884162ba39bda448ca9a4b1a08f5f113ada804e8d9a531",
             "contextNote": "逆轉錄酶的微觀編程：五步原位搜尋與替換 · 第 18 段"
           },
@@ -8341,8 +8349,8 @@
             "sectionTitle": "逆轉錄酶的微觀編程：五步原位搜尋與替換",
             "paragraphIndex": 18,
             "exactQuote": "局部同時存在兩條單鏈懸臂——一條是剛合成出來、帶有目標編輯的 **3' 單鏈瓣（3' Flap）**；另一條則是原本存在於基因組上、未經修改的 **5' 單鏈瓣（5' Flap）**。",
-            "charStart": 5221,
-            "charEnd": 5313,
+            "charStart": 5307,
+            "charEnd": 5399,
             "contentHash": "a80ed3063601415d75dfdcd1f071dd8962253595a9d08f665f402be908ef98f6",
             "contextNote": "逆轉錄酶的微觀編程：五步原位搜尋與替換 · 第 19 段"
           },
@@ -8353,8 +8361,8 @@
             "sectionTitle": "逆轉錄酶的微觀編程：五步原位搜尋與替換",
             "paragraphIndex": 19,
             "exactQuote": "兩者在雙螺旋結構的互補配對中展開激烈的熱力學動態競爭。",
-            "charStart": 5408,
-            "charEnd": 5435,
+            "charStart": 5494,
+            "charEnd": 5521,
             "contentHash": "1d36c0f8cfc26fd679e2b1e9f39008baab7789f5a29ea0bf18371c2950dfd37a",
             "contextNote": "逆轉錄酶的微觀編程：五步原位搜尋與替換 · 第 20 段"
           },
@@ -8365,8 +8373,8 @@
             "sectionTitle": "逆轉錄酶的微觀編程：五步原位搜尋與替換",
             "paragraphIndex": 20,
             "exactQuote": "此時，真核細胞內稟的核酸瓣狀內切酶（Flap Endonuclease 1, FEN1）介入了這場博弈。",
-            "charStart": 5465,
-            "charEnd": 5517,
+            "charStart": 5551,
+            "charEnd": 5603,
             "contentHash": "75ca15bf1acf54783b1260146faeb571e2765c75da24847797c3c72699cc8dcd",
             "contextNote": "逆轉錄酶的微觀編程：五步原位搜尋與替換 · 第 21 段"
           },
@@ -8377,8 +8385,8 @@
             "sectionTitle": "逆轉錄酶的微觀編程：五步原位搜尋與替換",
             "paragraphIndex": 21,
             "exactQuote": "FEN1 在生理功能上專門負責清除 DNA 複製與岡崎片段成熟過程中的 5' 游離單鏈凸起。",
-            "charStart": 5572,
-            "charEnd": 5618,
+            "charStart": 5658,
+            "charEnd": 5704,
             "contentHash": "9baf214b131f50a73a9703f3901593fbfde35cedad2f677f79bc3b0da30d7e56",
             "contextNote": "逆轉錄酶的微觀編程：五步原位搜尋與替換 · 第 22 段"
           },
@@ -8389,8 +8397,8 @@
             "sectionTitle": "逆轉錄酶的微觀編程：五步原位搜尋與替換",
             "paragraphIndex": 22,
             "exactQuote": "當 3' 編輯瓣成功與互補鏈雜交嵌合後，被排擠擠出的 5' 原始瓣會被 FEN1 迅速識別並精確剪除。",
-            "charStart": 5667,
-            "charEnd": 5718,
+            "charStart": 5753,
+            "charEnd": 5804,
             "contentHash": "a9e9885af6da7f85673eae9903eab777eaa11eef788c7fd6bdb04d03920faa57",
             "contextNote": "逆轉錄酶的微觀編程：五步原位搜尋與替換 · 第 23 段"
           },
@@ -8401,8 +8409,8 @@
             "sectionTitle": "逆轉錄酶的微觀編程：五步原位搜尋與替換",
             "paragraphIndex": 23,
             "exactQuote": "隨後，細胞內的 DNA 連接酶（DNA Ligase）催化最後一個磷酸二酯鍵閉合，將攜帶編輯的單鏈正式無縫縫合回染色體骨架。",
-            "charStart": 5772,
-            "charEnd": 5834,
+            "charStart": 5858,
+            "charEnd": 5920,
             "contentHash": "082597e7b3fb9aafa1c2b47170650e088b0fb38b35db3ba87b3151aeac8b3cd6",
             "contextNote": "逆轉錄酶的微觀編程：五步原位搜尋與替換 · 第 24 段"
           }
@@ -8425,7 +8433,7 @@
           "一旦探測到鹼基對錯配或微小的插入缺失環（Indel loops），MMR 就會招募 MutL$\\alpha$（MLH1-PMS2）內切酶。",
           "更要命的是，MMR 具有強烈的「偏向性」：它會優先將剛合成、含有切口標記的新生鏈（恰恰是載有目標突變的那條鏈）當作「複製錯誤」徹底挖除，並以未編輯的母鏈為模板重新填補，使得好不容易寫入的編輯成果付之一炬！",
           "為了粉碎 MMR 的阻擊，引導編輯技術經歷了連續的架構進化：",
-          "1. **PE3 策略**：在 pegRNA 進行主鏈編輯的同時，引入第二條常規 sgRNA，在距離編輯位點 40 至 90 bp 的非編輯鏈上誘發另一個單鏈缺口。這個輔助缺口巧妙地「欺騙」了細胞修復機器，引導修復系統優先以降解非編輯鏈為代價，使編輯鏈成為最終複製模板，將編輯效率瞬間提升了 3 至 4 倍。\n2. **PEmax 核心結構進化**：透過對 Cas9 密碼子全面優化、在連接子中加入突變錨定結構，並將 M-MLV 逆轉錄酶導入五個關鍵耐熱與加工性突變（D200N/L603W/T330P/L139P/T306K），極大提升了酶的熱穩定性與延伸速率。\n3. **MLH1dn 顯性負性旁路（PE4 / PE5）**：研究人員設計了一種工程化截短型 MLH1 蛋白（MLH1dn）。它能強烈競爭性結合內源性 MMR 複合體，但自身完全喪失內切酶招募能力，從而在轉染編輯的關鍵窗口期（約 48 小時內）暫時、可逆地屏蔽細胞的錯配修復反應，將點突變與顛換編輯效率暴推至 70% 至 90% 的前所未有高度，同時副產物 Indel 率嚴格壓制在 2% 以下。"
+          "1. **PE3 策略**：在 pegRNA 進行主鏈編輯的同時，引入第二條常規 sgRNA，在距離編輯位點 40 至 90 bp 的非編輯鏈上誘發另一個單鏈缺口。這個輔助缺口巧妙地「欺騙」了細胞修復機器，引導修復系統優先以降解非編輯鏈為代價，使編輯鏈成為最終複製模板，將編輯效率瞬間提升了 3 至 4 倍。\n2. **PEmax 核心結構進化**：透過對 Cas9 密碼子全面優化、在連接子中加入突變錨定結構，並將 M-MLV 逆轉錄酶導入五個關鍵耐熱與加工性突變（D200N/L603W/T330P/L139P/T306K），極大提升了酶的熱穩定性與延伸速率。\n3. **MLH1dn 顯性負性旁路（PE4 / PE5）**：研究人員設計了一種工程化截短型 MLH1 蛋白（MLH1dn）。它能強烈競爭性結合內源性 MMR 複合體，但自身完全喪失內切酶招募能力，從而在轉染編輯的關鍵窗口期（約 48 小時內）暫時、可逆地屏蔽細胞的錯配修復反應。在 HEK293T 等特定測試細胞系與特定靶點位點上，該策略將部分點突變與顛換編輯效率推升至 70% 至 90%，相較傳統 PE 提升數倍，並在多數受試位點將副產物 Indel 率控制在較低水平（通常約數百分比以內，但具體效率與副產物分佈強烈取決於細胞類型、靶點序列結構與遞送方式）。"
         ],
         "sentences": [
           {
@@ -8435,8 +8443,8 @@
             "sectionTitle": "突破細胞防線：PEmax 與錯配修復（MMR）的博弈",
             "paragraphIndex": 0,
             "exactQuote": "然而，在第一代與第二代引導編輯系統（PE1、PE2）的早期實驗中，研究人員發現儘管系統設計無懈可擊，在許多哺乳動物細胞（尤其是人類胚胎幹細胞和原代細胞）中，最終的純淨編輯效率往往徘徊在 10% 至 30% 之間，難以進一步躍升。",
-            "charStart": 5899,
-            "charEnd": 6013,
+            "charStart": 5985,
+            "charEnd": 6099,
             "contentHash": "84e59b21375a0f5fef3a66687c23e92f153d8d429d82cfc0313ce4040b340c80",
             "contextNote": "突破細胞防線：PEmax 與錯配修復（MMR）的博弈 · 第 1 段"
           },
@@ -8447,8 +8455,8 @@
             "sectionTitle": "突破細胞防線：PEmax 與錯配修復（MMR）的博弈",
             "paragraphIndex": 1,
             "exactQuote": "這層看不見的隱形天花板究竟來自何方？",
-            "charStart": 6130,
-            "charEnd": 6148,
+            "charStart": 6216,
+            "charEnd": 6234,
             "contentHash": "41425a4fd7a55a027b05ba5cfb9db939dc31855269def582698885ccb2ff2aa1",
             "contextNote": "突破細胞防線：PEmax 與錯配修復（MMR）的博弈 · 第 2 段"
           },
@@ -8459,8 +8467,8 @@
             "sectionTitle": "突破細胞防線：PEmax 與錯配修復（MMR）的博弈",
             "paragraphIndex": 2,
             "exactQuote": "2021 年，戴維·劉團隊與布羅德研究所的合作者在《Cell》發表的兩篇背靠背論文揭開了謎底：真正的阻礙並非來自編輯器本身，而是細胞內長久演化出的一套古老安全衛士——**DNA 錯配修復系統（Mismatch Repair, MMR）**。",
-            "charStart": 6169,
-            "charEnd": 6289,
+            "charStart": 6255,
+            "charEnd": 6375,
             "contentHash": "97ff364172e39e6d8c813bd66700967e1b21a4b4976e75e1e4ba429eb7265b67",
             "contextNote": "突破細胞防線：PEmax 與錯配修復（MMR）的博弈 · 第 3 段"
           },
@@ -8471,8 +8479,8 @@
             "sectionTitle": "突破細胞防線：PEmax 與錯配修復（MMR）的博弈",
             "paragraphIndex": 3,
             "exactQuote": "當攜帶目標編輯的 3' 瓣成功縫合後，該位點在一段時間內處於「一條鏈已修改、另一條鏈維持原狀」的非對稱雜合雙鏈（Heteroduplex）狀態。",
-            "charStart": 6412,
-            "charEnd": 6484,
+            "charStart": 6498,
+            "charEnd": 6570,
             "contentHash": "09012b20e109b1ef1af49ab9be84c01dc8b466e0d889619614ae9d8320b1502d",
             "contextNote": "突破細胞防線：PEmax 與錯配修復（MMR）的博弈 · 第 4 段"
           },
@@ -8483,8 +8491,8 @@
             "sectionTitle": "突破細胞防線：PEmax 與錯配修復（MMR）的博弈",
             "paragraphIndex": 4,
             "exactQuote": "細胞核內的 MMR 監控蛋白複合體（MutS$\\alpha$ 異二聚體 MSH2-MSH6 或 MutS$\\beta$ 異二聚體 MSH2-MSH3）以極高靈敏度掃描全基因組。",
-            "charStart": 6559,
-            "charEnd": 6647,
+            "charStart": 6645,
+            "charEnd": 6733,
             "contentHash": "f802bcad09b02c4c0f261e13375f84761500cc7573eadfab9c9e56d3356cf056",
             "contextNote": "突破細胞防線：PEmax 與錯配修復（MMR）的博弈 · 第 5 段"
           },
@@ -8495,8 +8503,8 @@
             "sectionTitle": "突破細胞防線：PEmax 與錯配修復（MMR）的博弈",
             "paragraphIndex": 5,
             "exactQuote": "一旦探測到鹼基對錯配或微小的插入缺失環（Indel loops），MMR 就會招募 MutL$\\alpha$（MLH1-PMS2）內切酶。",
-            "charStart": 6738,
-            "charEnd": 6807,
+            "charStart": 6824,
+            "charEnd": 6893,
             "contentHash": "bfc42f17533eb907cec6c0c7985ab0e90ddb7aa17b12a6b63af946756f0e5406",
             "contextNote": "突破細胞防線：PEmax 與錯配修復（MMR）的博弈 · 第 6 段"
           },
@@ -8507,8 +8515,8 @@
             "sectionTitle": "突破細胞防線：PEmax 與錯配修復（MMR）的博弈",
             "paragraphIndex": 6,
             "exactQuote": "更要命的是，MMR 具有強烈的「偏向性」：它會優先將剛合成、含有切口標記的新生鏈（恰恰是載有目標突變的那條鏈）當作「複製錯誤」徹底挖除，並以未編輯的母鏈為模板重新填補，使得好不容易寫入的編輯成果付之一炬！",
-            "charStart": 6879,
-            "charEnd": 6981,
+            "charStart": 6965,
+            "charEnd": 7067,
             "contentHash": "8108de774df7e5d04e0c102d9a6a69f385b160612270a51c14b1baab2de84bd3",
             "contextNote": "突破細胞防線：PEmax 與錯配修復（MMR）的博弈 · 第 7 段"
           },
@@ -8519,8 +8527,8 @@
             "sectionTitle": "突破細胞防線：PEmax 與錯配修復（MMR）的博弈",
             "paragraphIndex": 7,
             "exactQuote": "為了粉碎 MMR 的阻擊，引導編輯技術經歷了連續的架構進化：",
-            "charStart": 7086,
-            "charEnd": 7116,
+            "charStart": 7172,
+            "charEnd": 7202,
             "contentHash": "1be119ae16547bf364d1b807f26ba5b54c75227ed9f2c0c597134212d7abc499",
             "contextNote": "突破細胞防線：PEmax 與錯配修復（MMR）的博弈 · 第 8 段"
           },
@@ -8531,8 +8539,8 @@
             "sectionTitle": "突破細胞防線：PEmax 與錯配修復（MMR）的博弈",
             "paragraphIndex": 8,
             "exactQuote": "1. **PE3 策略**：在 pegRNA 進行主鏈編輯的同時，引入第二條常規 sgRNA，在距離編輯位點 40 至 90 bp 的非編輯鏈上誘發另一個單鏈缺口。",
-            "charStart": 7149,
-            "charEnd": 7231,
+            "charStart": 7235,
+            "charEnd": 7317,
             "contentHash": "0745fdb0f6683c6796e537f3c7c44ed59b1151ab7202a983f5fddd3771cc32a1",
             "contextNote": "突破細胞防線：PEmax 與錯配修復（MMR）的博弈 · 第 9 段"
           },
@@ -8543,8 +8551,8 @@
             "sectionTitle": "突破細胞防線：PEmax 與錯配修復（MMR）的博弈",
             "paragraphIndex": 8,
             "exactQuote": "這個輔助缺口巧妙地「欺騙」了細胞修復機器，引導修復系統優先以降解非編輯鏈為代價，使編輯鏈成為最終複製模板，將編輯效率瞬間提升了 3 至 4 倍。",
-            "charStart": 7232,
-            "charEnd": 7304,
+            "charStart": 7318,
+            "charEnd": 7390,
             "contentHash": "f1709fdb02385e338df0e9b076689969ff71e7a833af935565061f607fba2ac5",
             "contextNote": "突破細胞防線：PEmax 與錯配修復（MMR）的博弈 · 第 9 段"
           },
@@ -8555,8 +8563,8 @@
             "sectionTitle": "突破細胞防線：PEmax 與錯配修復（MMR）的博弈",
             "paragraphIndex": 8,
             "exactQuote": "2. **PEmax 核心結構進化**：透過對 Cas9 密碼子全面優化、在連接子中加入突變錨定結構，並將 M-MLV 逆轉錄酶導入五個關鍵耐熱與加工性突變（D200N/L603W/T330P/L139P/T306K），極大提升了酶的熱穩定性與延伸速率。",
-            "charStart": 7305,
-            "charEnd": 7432,
+            "charStart": 7391,
+            "charEnd": 7518,
             "contentHash": "a3b20701a3f0e4232162bbec5a75a9444f7ef5a6715f06cc766dddf62f44c49d",
             "contextNote": "突破細胞防線：PEmax 與錯配修復（MMR）的博弈 · 第 9 段"
           },
@@ -8567,21 +8575,33 @@
             "sectionTitle": "突破細胞防線：PEmax 與錯配修復（MMR）的博弈",
             "paragraphIndex": 8,
             "exactQuote": "3. **MLH1dn 顯性負性旁路（PE4 / PE5）**：研究人員設計了一種工程化截短型 MLH1 蛋白（MLH1dn）。",
-            "charStart": 7433,
-            "charEnd": 7497,
+            "charStart": 7519,
+            "charEnd": 7583,
             "contentHash": "d8a2fa1e6cbdabd9a535029b6fa90560e516b4d0ea768afc001c42021fc200fd",
             "contextNote": "突破細胞防線：PEmax 與錯配修復（MMR）的博弈 · 第 9 段"
           },
           {
-            "sentenceId": "sent-960fc391",
+            "sentenceId": "sent-adee1ecc",
             "articleId": "art-crispr-prime-editing",
             "sectionId": "sec-4-b1d977",
             "sectionTitle": "突破細胞防線：PEmax 與錯配修復（MMR）的博弈",
             "paragraphIndex": 8,
-            "exactQuote": "它能強烈競爭性結合內源性 MMR 複合體，但自身完全喪失內切酶招募能力，從而在轉染編輯的關鍵窗口期（約 48 小時內）暫時、可逆地屏蔽細胞的錯配修復反應，將點突變與顛換編輯效率暴推至 70% 至 90% 的前所未有高度，同時副產物 Indel 率嚴格壓制在 2% 以下。",
-            "charStart": 7498,
-            "charEnd": 7633,
-            "contentHash": "960fc3913910be88c52979be8132182b27866ae9362ec09abec645070596107d",
+            "exactQuote": "它能強烈競爭性結合內源性 MMR 複合體，但自身完全喪失內切酶招募能力，從而在轉染編輯的關鍵窗口期（約 48 小時內）暫時、可逆地屏蔽細胞的錯配修復反應。",
+            "charStart": 7584,
+            "charEnd": 7661,
+            "contentHash": "adee1ecc04b6861e6dfe4e4608d83341094b854773757737c4aef761704e51b9",
+            "contextNote": "突破細胞防線：PEmax 與錯配修復（MMR）的博弈 · 第 9 段"
+          },
+          {
+            "sentenceId": "sent-9231e9f8",
+            "articleId": "art-crispr-prime-editing",
+            "sectionId": "sec-4-b1d977",
+            "sectionTitle": "突破細胞防線：PEmax 與錯配修復（MMR）的博弈",
+            "paragraphIndex": 8,
+            "exactQuote": "在 HEK293T 等特定測試細胞系與特定靶點位點上，該策略將部分點突變與顛換編輯效率推升至 70% 至 90%，相較傳統 PE 提升數倍，並在多數受試位點將副產物 Indel 率控制在較低水平（通常約數百分比以內，但具體效率與副產物分佈強烈取決於細胞類型、靶點序列結構與遞送方式）。",
+            "charStart": 7662,
+            "charEnd": 7804,
+            "contentHash": "9231e9f834fecea0b0c04f05a778a8c7c75720c61c7a6d929ee69a706a3a86da",
             "contextNote": "突破細胞防線：PEmax 與錯配修復（MMR）的博弈 · 第 9 段"
           }
         ],
@@ -8617,8 +8637,8 @@
             "sectionTitle": "全球遺傳疾病的分子圖景與未來挑戰",
             "paragraphIndex": 0,
             "exactQuote": "在目前臨床已知的 75,000 多種人類單基因遺傳突變中，各種類型的分佈極為複雜：",
-            "charStart": 8118,
-            "charEnd": 8159,
+            "charStart": 8373,
+            "charEnd": 8414,
             "contentHash": "1d55f60ea6f4f84c61ea1f6976206d59cea855d9b28834cf203a45883458c65a",
             "contextNote": "全球遺傳疾病的分子圖景與未來挑戰 · 第 1 段"
           },
@@ -8629,8 +8649,8 @@
             "sectionTitle": "全球遺傳疾病的分子圖景與未來挑戰",
             "paragraphIndex": 1,
             "exactQuote": "約 48% 為單鹼基轉換（Transition，過渡突變），約 30% 為單鹼基顛換（Transversion），其餘 20% 以上則是由微小片段插入、缺失或重複串聯導致的讀碼框移位。",
-            "charStart": 8203,
-            "charEnd": 8295,
+            "charStart": 8458,
+            "charEnd": 8550,
             "contentHash": "d88697ebb90a7b585055a1f6ffb149e1fde3e8a8a195aa15b8cf5fa8457495cc",
             "contextNote": "全球遺傳疾病的分子圖景與未來挑戰 · 第 2 段"
           },
@@ -8641,8 +8661,8 @@
             "sectionTitle": "全球遺傳疾病的分子圖景與未來挑戰",
             "paragraphIndex": 2,
             "exactQuote": "傳統的鹼基編輯器只能覆蓋不到一半的突變類型，且受限於嚴格的 PAM 幾何窗口（若靶點周圍缺乏合適的 NGG，則脫氨酶無法觸及）；",
-            "charStart": 8390,
-            "charEnd": 8454,
+            "charStart": 8645,
+            "charEnd": 8709,
             "contentHash": "0fdf16d34a8cf67fc507f791e91c0a0d88786add54c6ae64d77800380c153a7f",
             "contextNote": "全球遺傳疾病的分子圖景與未來挑戰 · 第 3 段"
           },
@@ -8653,8 +8673,8 @@
             "sectionTitle": "全球遺傳疾病的分子圖景與未來挑戰",
             "paragraphIndex": 3,
             "exactQuote": "而引導編輯器憑藉其可程式化長度的 RT 模板，理論上能夠精確矯正**高達 89% 的已知人類致病遺傳變異**！",
-            "charStart": 8521,
-            "charEnd": 8576,
+            "charStart": 8776,
+            "charEnd": 8831,
             "contentHash": "7f5655e4b78b9b984c362372111de8d0dc19036d221bcc8dabc735fa37683583",
             "contextNote": "全球遺傳疾病的分子圖景與未來挑戰 · 第 4 段"
           },
@@ -8665,8 +8685,8 @@
             "sectionTitle": "全球遺傳疾病的分子圖景與未來挑戰",
             "paragraphIndex": 4,
             "exactQuote": "從鐮刀型紅血球貧血症（$\\beta$-珠蛋白基因 HBB 點突變）、囊腫性纖維化（CFTR 基因 $\\Delta\\text{F508}$ 三鹼基缺失），到早衰症與泰-薩克斯病（Tay-Sachs disease），引導編輯在體外患者細胞與多種活體動物模型中均展現出令人震驚的精準度與無疤痕治癒潛力。",
-            "charStart": 8634,
-            "charEnd": 8783,
+            "charStart": 8889,
+            "charEnd": 9038,
             "contentHash": "43ca863b1b74be26f8e757c0a62f91ea26a4b7175452021fec3b93255fd1f204",
             "contextNote": "全球遺傳疾病的分子圖景與未來挑戰 · 第 5 段"
           },
@@ -8677,8 +8697,8 @@
             "sectionTitle": "全球遺傳疾病的分子圖景與未來挑戰",
             "paragraphIndex": 5,
             "exactQuote": "然而，走向人體臨床轉化的道路上依然橫亙著數道嚴格的生物物理瓶頸：",
-            "charStart": 8935,
-            "charEnd": 8967,
+            "charStart": 9190,
+            "charEnd": 9222,
             "contentHash": "d45a1de994bf832c2d382ef9dfa259fa4f7cd48c699a0b2c2ed2e2b2059d048d",
             "contextNote": "全球遺傳疾病的分子圖景與未來挑戰 · 第 6 段"
           },
@@ -8689,8 +8709,8 @@
             "sectionTitle": "全球遺傳疾病的分子圖景與未來挑戰",
             "paragraphIndex": 6,
             "exactQuote": "首先是**大分子活體遞送障礙**。",
-            "charStart": 9002,
-            "charEnd": 9019,
+            "charStart": 9257,
+            "charEnd": 9274,
             "contentHash": "38976290435dc3e25d9f4f28bc2386c64d67cb6bbe0c871fe2f191c27040bdcc",
             "contextNote": "全球遺傳疾病的分子圖景與未來挑戰 · 第 7 段"
           },
@@ -8701,8 +8721,8 @@
             "sectionTitle": "全球遺傳疾病的分子圖景與未來挑戰",
             "paragraphIndex": 7,
             "exactQuote": "PE 融合蛋白的編碼長度超過 6.3 kb，遠遠超出了單個腺相關病毒（AAV，容量極限約 4.7 kb）的包裝極限。",
-            "charStart": 9039,
-            "charEnd": 9097,
+            "charStart": 9294,
+            "charEnd": 9352,
             "contentHash": "a7680205406ba8ece164b7ab7c3d9b8ceed4bbe41d5d82172340cd2f7fe1dcac",
             "contextNote": "全球遺傳疾病的分子圖景與未來挑戰 · 第 8 段"
           },
@@ -8713,8 +8733,8 @@
             "sectionTitle": "全球遺傳疾病的分子圖景與未來挑戰",
             "paragraphIndex": 8,
             "exactQuote": "目前科學家正在透過雙 AAV 分裂內含肽（Split-intein）技術、工程化病毒樣顆粒（eVLPs）以及脂質奈米顆粒（LNPs）封裝體外轉錄 mRNA 的非病毒載體途徑，全力攻克活體靶向遞送。",
-            "charStart": 9158,
-            "charEnd": 9256,
+            "charStart": 9413,
+            "charEnd": 9511,
             "contentHash": "87d1e2af75920090970613fff7ff26ec71e8a2107ea1a89554e2430980ab8967",
             "contextNote": "全球遺傳疾病的分子圖景與未來挑戰 · 第 9 段"
           },
@@ -8725,8 +8745,8 @@
             "sectionTitle": "全球遺傳疾病的分子圖景與未來挑戰",
             "paragraphIndex": 9,
             "exactQuote": "其次是 **pegRNA 的體內降解與副產物優化**。",
-            "charStart": 9357,
-            "charEnd": 9384,
+            "charStart": 9612,
+            "charEnd": 9639,
             "contentHash": "33faa32a46b2c14cc523f8af90d21092e61f01085bd971d0865bc29ca822af97",
             "contextNote": "全球遺傳疾病的分子圖景與未來挑戰 · 第 10 段"
           },
@@ -8737,8 +8757,8 @@
             "sectionTitle": "全球遺傳疾病的分子圖景與未來挑戰",
             "paragraphIndex": 10,
             "exactQuote": "長達 130 nt 以上的單鏈 RNA 在細胞質中極易受到核酸外切酶的攻擊降解。",
-            "charStart": 9414,
-            "charEnd": 9454,
+            "charStart": 9669,
+            "charEnd": 9709,
             "contentHash": "238cdae4834ed82b87afb17b99bec55a332f106de2f29c1cdabc3b426b743cfc",
             "contextNote": "全球遺傳疾病的分子圖景與未來挑戰 · 第 11 段"
           },
@@ -8749,8 +8769,8 @@
             "sectionTitle": "全球遺傳疾病的分子圖景與未來挑戰",
             "paragraphIndex": 11,
             "exactQuote": "近年發展出的增強型 epegRNA（引入 tev-preQ1 RNA 結構基序防止 3' 末端瓦解）以及雙向引導編輯（Twin Prime Editing, TwinPE），正在將一次性精準插入的 DNA 片段長度擴展至數千個鹼基對。",
-            "charStart": 9497,
-            "charEnd": 9614,
+            "charStart": 9752,
+            "charEnd": 9869,
             "contentHash": "12d4c72d3647470124cd094b8f0fc30a6c2a964067c0f89121aa570a6d7dbbf3",
             "contextNote": "全球遺傳疾病的分子圖景與未來挑戰 · 第 12 段"
           },
@@ -8761,8 +8781,8 @@
             "sectionTitle": "全球遺傳疾病的分子圖景與未來挑戰",
             "paragraphIndex": 12,
             "exactQuote": "引導編輯的橫空出世，標誌著人類對遺傳物質的操控正式告別了「依賴細胞自發應激修復」的原始手工業時代，邁向了具有工程確定性、可編程設計的分子合成生物學新紀元。",
-            "charStart": 9734,
-            "charEnd": 9811,
+            "charStart": 9989,
+            "charEnd": 10066,
             "contentHash": "837fb4d9c1380ac4fdfe943cf6418f056479fd467e76bee4b403cc6a551d2521",
             "contextNote": "全球遺傳疾病的分子圖景與未來挑戰 · 第 13 段"
           },
@@ -8773,8 +8793,8 @@
             "sectionTitle": "全球遺傳疾病的分子圖景與未來挑戰",
             "paragraphIndex": 13,
             "exactQuote": "生命手稿上那些曾經宣判生命終局的拼寫錯誤，正在這支奈米級文字處理器的字裡行間，被一個字母一個字母地重新溫柔校準。",
-            "charStart": 9891,
-            "charEnd": 9947,
+            "charStart": 10146,
+            "charEnd": 10202,
             "contentHash": "354b7c64e01e6b294856a54aaa2ac3401c7c1029e7ee599bd29763a8fa10c564",
             "contextNote": "全球遺傳疾病的分子圖景與未來挑戰 · 第 14 段"
           },
@@ -8785,8 +8805,8 @@
             "sectionTitle": "全球遺傳疾病的分子圖景與未來挑戰",
             "paragraphIndex": 14,
             "exactQuote": "---",
-            "charStart": 10006,
-            "charEnd": 10009,
+            "charStart": 10261,
+            "charEnd": 10264,
             "contentHash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
             "contextNote": "全球遺傳疾病的分子圖景與未來挑戰 · 第 15 段"
           }
@@ -8799,19 +8819,19 @@
         "title": "參考文獻與延伸閱讀",
         "level": 2,
         "paragraphs": [
-          "1. **Anzalone, A. V., Randolph, P. B., Davis, J. R., et al.** (2019). \"Search-and-replace genome editing without double-strand breaks or donor DNA.\" *Nature*, 576(7785), 149–157. [doi:10.1038/s41586-019-1711-4](https://doi.org/10.1038/s41586-019-1711-4)\n2. **Chen, P. J., Hussmann, J. A., Yan, J., et al.** (2021). \"Enhanced prime editing systems by manipulating cellular mismatch repair.\" *Cell*, 184(22), 5635–5652. [doi:10.1016/j.cell.2021.09.018](https://doi.org/10.1016/j.cell.2021.09.018)\n3. **Doman, J. L., Pandey, S., Neugebauer, M. E., et al.** (2023). \"Phage-assisted evolution and protein engineering yield compact, highly active prime editors.\" *Cell*, 186(18), 3983–4000. [doi:10.1016/j.cell.2023.07.039](https://doi.org/10.1016/j.cell.2023.07.039)\n4. **Nelson, J. W., Randolph, P. B., Shen, S. P., et al.** (2022). \"Engineered pegRNAs improve prime editing efficiency.\" *Nature Biotechnology*, 40(3), 402–410. [doi:10.1038/s41587-021-01039-7](https://doi.org/10.1038/s41587-021-01039-7)"
+          "1. **Anzalone, A. V., Randolph, P. B., Davis, J. R., et al.** (2019). \"Search-and-replace genome editing without double-strand breaks or donor DNA.\" *Nature*, 576(7785), 149–157. [doi:10.1038/s41586-019-1711-4](https://doi.org/10.1038/s41586-019-1711-4)\n2. **Chen, P. J., Hussmann, J. A., Yan, J., et al.** (2021). \"Enhanced prime editing systems by manipulating cellular determinants of editing outcomes.\" *Cell*, 184(22), 5635–5652. [doi:10.1016/j.cell.2021.09.018](https://doi.org/10.1016/j.cell.2021.09.018)\n3. **Doman, J. L., Pandey, S., Neugebauer, M. E., et al.** (2023). \"Phage-assisted evolution and protein engineering yield compact, highly active prime editors.\" *Cell*, 186(18), 3983–4000. [doi:10.1016/j.cell.2023.07.039](https://doi.org/10.1016/j.cell.2023.07.039)\n4. **Nelson, J. W., Randolph, P. B., Shen, S. P., et al.** (2022). \"Engineered pegRNAs improve prime editing efficiency.\" *Nature Biotechnology*, 40(3), 402–410. [doi:10.1038/s41587-021-01039-7](https://doi.org/10.1038/s41587-021-01039-7)"
         ],
         "sentences": [
           {
-            "sentenceId": "sent-6c6ed80c",
+            "sentenceId": "sent-f372a169",
             "articleId": "art-crispr-prime-editing",
             "sectionId": "sec-6-6704b8",
             "sectionTitle": "參考文獻與延伸閱讀",
             "paragraphIndex": 0,
-            "exactQuote": "1. **Anzalone, A. V., Randolph, P. B., Davis, J. R., et al.** (2019). \"Search-and-replace genome editing without double-strand breaks or donor DNA.\" *Nature*, 576(7785), 149–157. [doi:10.1038/s41586-019-1711-4](https://doi.org/10.1038/s41586-019-1711-4)\n2. **Chen, P. J., Hussmann, J. A., Yan, J., et al.** (2021). \"Enhanced prime editing systems by manipulating cellular mismatch repair.\" *Cell*, 184(22), 5635–5652. [doi:10.1016/j.cell.2021.09.018](https://doi.org/10.1016/j.cell.2021.09.018)\n3. **Doman, J. L., Pandey, S., Neugebauer, M. E., et al.** (2023). \"Phage-assisted evolution and protein engineering yield compact, highly active prime editors.\" *Cell*, 186(18), 3983–4000. [doi:10.1016/j.cell.2023.07.039](https://doi.org/10.1016/j.cell.2023.07.039)\n4. **Nelson, J. W., Randolph, P. B., Shen, S. P., et al.** (2022). \"Engineered pegRNAs improve prime editing efficiency.\" *Nature Biotechnology*, 40(3), 402–410. [doi:10.1038/s41587-021-01039-7](https://doi.org/10.1038/s41587-021-01039-7)",
-            "charStart": 10015,
-            "charEnd": 11015,
-            "contentHash": "6c6ed80cee1f01957bc57387316441cbf3d7b063d432a6cd74c93ac51ec34537",
+            "exactQuote": "1. **Anzalone, A. V., Randolph, P. B., Davis, J. R., et al.** (2019). \"Search-and-replace genome editing without double-strand breaks or donor DNA.\" *Nature*, 576(7785), 149–157. [doi:10.1038/s41586-019-1711-4](https://doi.org/10.1038/s41586-019-1711-4)\n2. **Chen, P. J., Hussmann, J. A., Yan, J., et al.** (2021). \"Enhanced prime editing systems by manipulating cellular determinants of editing outcomes.\" *Cell*, 184(22), 5635–5652. [doi:10.1016/j.cell.2021.09.018](https://doi.org/10.1016/j.cell.2021.09.018)\n3. **Doman, J. L., Pandey, S., Neugebauer, M. E., et al.** (2023). \"Phage-assisted evolution and protein engineering yield compact, highly active prime editors.\" *Cell*, 186(18), 3983–4000. [doi:10.1016/j.cell.2023.07.039](https://doi.org/10.1016/j.cell.2023.07.039)\n4. **Nelson, J. W., Randolph, P. B., Shen, S. P., et al.** (2022). \"Engineered pegRNAs improve prime editing efficiency.\" *Nature Biotechnology*, 40(3), 402–410. [doi:10.1038/s41587-021-01039-7](https://doi.org/10.1038/s41587-021-01039-7)",
+            "charStart": 10270,
+            "charEnd": 11287,
+            "contentHash": "f372a169be5f164490d932a94db7d55585bc4f608d53c106bf5d37561c0c1080",
             "contextNote": "參考文獻與延伸閱讀 · 第 1 段"
           }
         ],
@@ -8819,8 +8839,8 @@
         "interactiveComponentId": null
       }
     ],
-    "totalWordCount": 5743,
-    "lastIndexedAt": "2026-11-10T01:11:20.172Z"
+    "totalWordCount": 5882,
+    "lastIndexedAt": "2026-11-10T07:56:33.560Z"
   },
   {
     "id": "art-eht-polarization-magnetic-fields",
@@ -8832,8 +8852,8 @@
     "format": "depth",
     "formatBadgeText": "天文物理",
     "title": "凝視深淵的磁力線：事件視界望遠鏡如何以偏振光解開黑洞噴流之謎？",
-    "subtitle": "跨越地球尺度的毫米波干涉陣列，首次在 M87* 與 Sgr A* 陰影光環上捕捉到螺旋偏振圖紋，證實磁阻滯盤與時空能量抽取",
-    "summary": "2019 年事件視界望遠鏡（EHT）公佈了人類首張黑洞照片，但那僅僅是光強總量的模糊剪影。2021 與 2024 年，EHT 相繼發布了 M87* 與銀河系中心 Sgr A* 的高解析度線性偏振（Polarization）圖像。螺旋狀的電向量角結構直接揭示了環繞事件視界的強大有序磁場，為長年爭論的磁阻滯吸積盤（MAD）與布蘭福德-茲納傑克相對論噴流發動機提供了最決定性的觀測鐵證。",
+    "subtitle": "跨越地球尺度的毫米波干涉陣列，首次在 M87* 與 Sgr A* 陰影光環上捕捉到螺旋偏振圖紋，強烈支持磁阻滯盤與磁場驅動噴流模型",
+    "summary": "2019 年事件視界望遠鏡（EHT）公佈了人類首張黑洞照片，但那僅僅是光強總量的模糊剪影。2021 與 2024 年，EHT 相繼發布了 M87* 與銀河系中心 Sgr A* 的高解析度線性偏振（Polarization）圖像。螺旋狀的電向量角結構直接揭示了環繞事件視界的強大有序磁場，為長年爭論的磁阻滯吸積盤（MAD）與磁場驅動相對論噴流模型提供了強有力的觀測支持。",
     "topicIds": [
       "astrophysics",
       "general_relativity",
@@ -8877,7 +8897,17 @@
         "volume": "910",
         "issue": "1",
         "pages": "L13",
-        "doi": "10.3847/2041-8213/abe488"
+        "doi": "10.3847/2041-8213/abe4de"
+      },
+      {
+        "authors": "Event Horizon Telescope Collaboration, Akiyama, K., Alberdi, A., et al.",
+        "year": "2023",
+        "title": "First M87 Event Horizon Telescope Results. IX. Detection of Near-horizon Circular Polarization",
+        "journal": "The Astrophysical Journal Letters",
+        "volume": "957",
+        "issue": "2",
+        "pages": "L20",
+        "doi": "10.3847/2041-8213/acff70"
       },
       {
         "authors": "Event Horizon Telescope Collaboration, Akiyama, K., Alberdi, A., et al.",
@@ -8900,7 +8930,7 @@
         "doi": "10.1093/mnras/179.3.433"
       }
     ],
-    "contentHash": "5e93b31e3db2b6e5bc5d09504c8a6254bc0df85ea61f37a314189ccc895395f9",
+    "contentHash": "8254ffe7df87d1e7dac050cbea17073ae3bc3a3d14568ad2d1f42ddf4b047c6b",
     "sections": [
       {
         "id": "sec-1-bf9b9f",
@@ -9250,7 +9280,7 @@
           "理論競賽的核心集中在吸積流的兩種極限拓撲形態：",
           "### 1. 標準弱磁演化盤（SANE, Standard and Normal Evolution）\n- **磁場特性**：磁場較弱，主要由差動旋轉剪切產生的**環向磁場（Toroidal Field, $B_\\phi$）**主導。\n- **力學平衡**：重力與氣體熱壓力佔據絕對統治，磁場僅僅是隨波逐流的微弱被動雜質。\n- **預測偏振**：環向磁場產生的偏振電向量主要沿徑向垂直分佈，模擬給出的 EVPA 圖形與觀測嚴重不符。",
           "### 2. 磁阻滯吸積盤（MAD, Magnetically Arrested Disk）\n- **磁場特性**：外部吸積流將大量大尺度對齊的**極向磁場（Poloidal Field, $B_p$）**向內持續搬運並堆積在事件視界邊緣。\n- **力學平衡**：聚集的磁通量達到飽和臨界閾值（$\\phi_{\\text{BH}} \\sim 50$），強大的磁壓力足以硬生生扼住甚至反彈向內墜落的引力流，形成週期性的磁通量爆發阻滯。\n- **預測偏振**：強極向磁場在黑洞自旋拖拽下形成螺旋扭曲，GRMHD 偏振光線追蹤計算出的 EVPA 螺旋花紋與 EHT 實測數據達到了令人驚嘆的吻合！",
-          "這一對比具有劃時代的意義：**M87* 證實了「磁阻滯盤（MAD）」在超大質量黑洞周圍真實存在！**"
+          "這一對比具有劃時代的意義：在被檢驗的廣義相對論磁流體力學模型庫中，觀測結果強烈支持 M87* 附近存在磁場主導的磁阻滯吸積盤（MAD）狀態，並與磁場驅動噴流的理論相容。"
         ],
         "sentences": [
           {
@@ -9350,15 +9380,15 @@
             "contextNote": "世紀對決：磁阻滯盤（MAD）擊敗標準演化盤（SANE） · 第 4 段"
           },
           {
-            "sentenceId": "sent-985ba5a7",
+            "sentenceId": "sent-4618b537",
             "articleId": "art-eht-polarization-magnetic-fields",
             "sectionId": "sec-3-5570d2",
             "sectionTitle": "世紀對決：磁阻滯盤（MAD）擊敗標準演化盤（SANE）",
             "paragraphIndex": 4,
-            "exactQuote": "這一對比具有劃時代的意義：**M87* 證實了「磁阻滯盤（MAD）」在超大質量黑洞周圍真實存在！**",
+            "exactQuote": "這一對比具有劃時代的意義：在被檢驗的廣義相對論磁流體力學模型庫中，觀測結果強烈支持 M87* 附近存在磁場主導的磁阻滯吸積盤（MAD）狀態，並與磁場驅動噴流的理論相容。",
             "charStart": 4640,
-            "charEnd": 4690,
-            "contentHash": "985ba5a760b334bffdbf9adc96716b0c956109271ff567712ba698b135fe6a05",
+            "charEnd": 4724,
+            "contentHash": "4618b537ca4189cd9d5f614b032a2185fbd5fc94dce56a5dda99467377fc48ce",
             "contextNote": "世紀對決：磁阻滯盤（MAD）擊敗標準演化盤（SANE） · 第 5 段"
           }
         ],
@@ -9370,27 +9400,27 @@
         "title": "汲取時空的飛輪：布蘭福德-茲納傑克機制",
         "level": 2,
         "paragraphs": [
-          "MAD 狀態的確立，為困擾天文學界近半個世紀的「黑洞巨型噴流能量來源」給出了終極答案。",
+          "MAD 狀態的強烈支持，為理解困擾天文學界近半個世紀的黑洞巨型噴流能量來源提供了關鍵契機。",
           "早在 1977 年，羅傑·布蘭福德（Roger Blandford）與羅曼·茲納傑克（Roman Znajek）在英國皇家天文學會月刊（MNRAS）上發表了一篇里程碑式的理論論文，提出了著名的 **布蘭福德-茲納傑克機制（Blandford-Znajek Process, BZ 機制）**。",
           "他們證明，旋轉的克爾黑洞並非只進不出的終點站，其視界外圍的**能層（Ergosphere）**本身就是一座巨大的飛輪蓄能庫。在能層內部，任何物體包括時空本身，都被強制跟隨黑洞旋轉（參考系拖曳，Frame Dragging）。",
           "當 MAD 狀態的強極向磁通量 $\\Phi_{\\text{BH}}$ 穿透黑洞視界時，旋轉時空會將磁力線像橡皮筋一樣強行扭曲纏繞，激發出巨大的真空坡印廷能流通量（Poynting Flux）。",
-          "黑洞向外噴發的相對論能量功率 $P_{\\text{BZ}}$ 滿足經典公式：",
-          "$$P_{\\text{BZ}} = \\kappa \\left(\\frac{\\Omega_H c}{R_g}\\right)^2 \\Phi_{\\text{BH}}^2$$",
-          "其中 $\\Omega_H = \\frac{a_*}{2 r_H}$ 為事件視界無量綱角速度，$\\Phi_{\\text{BH}}$ 為穿透黑洞的總無規磁通量，$\\kappa$ 是與磁層幾何相關的常數。",
-          "如果沒有 MAD 狀態提供的高強度磁通量 $\\Phi_{\\text{BH}}$，BZ 機制的能量提取效率將微不足道。而 EHT 的偏振觀測證實，M87* 視界處的磁場強度高達 $1 \\sim 30 \\text{ Gauss}$，累積的磁通量足以驅動高達 $10^{44} \\text{ erg/s}$ 的噴流功率！",
+          "黑洞向外噴發的相對論能量功率 $P_{\\text{BZ}}$ 在標準高斯/CGS 單位制下表述為：",
+          "$$P_{\\text{BZ}} \\approx \\frac{\\kappa}{4\\pi c} \\Phi_{\\text{BH}}^2 \\Omega_H^2 f(\\omega_H)$$",
+          "其中 $\\Omega_H = \\frac{a_* c}{2 r_H} = \\left(\\frac{c}{2 r_g}\\right) \\left(\\frac{a_*}{1 + \\sqrt{1 - a_*^2}}\\right)$ 為具有量綱（$\\text{s}^{-1}$）的事件視界角速度（其中 $r_g = GM/c^2$ 為重力半徑，$r_H = r_g(1 + \\sqrt{1 - a_*^2})$ 為事件視界半徑，$a_*$ 為無量綱自旋參數）；$\\Phi_{\\text{BH}} = \\frac{1}{2}\\int_{\\text{horizon}} |B^r| dA$ 為穿透黑洞半球視界的極向磁通量；$\\kappa$ 為取決於磁層幾何形態的無量綱數值常數（例如單極磁場約為 $0.053$、拋物面幾何約為 $0.044$）；而 $f(\\omega_H) \\approx 1 + 1.38 \\omega_H^2 - 9.2 \\omega_H^4$ 為以無量綱視界頻率 $\\omega_H = \\Omega_H r_g / c = \\frac{a_*}{2(1 + \\sqrt{1 - a_*^2})}$ 為自變數的高自旋時空幾何修正函數（在低自旋極限下 $\\omega_H \\to 0, f \\to 1$）。",
+          "如果沒有 MAD 狀態提供的高強度磁通量 $\\Phi_{\\text{BH}}$，BZ 機制的能量提取效率將微不足道。而 EHT 的偏振模型分析推算，M87* 視界處的磁場強度約在 $1 \\sim 30 \\text{ Gauss}$ 範圍，累積的磁通量足以在理論上驅動與觀測相符的噴流功率（約 $10^{42} \\sim 10^{44} \\text{ erg/s}$）！",
           "黑洞不再只是一隻被動吞噬萬物的深淵巨獸，它是一座利用旋轉時空與強磁場耦合的、宇宙中最極致的相對論磁流體發電機。"
         ],
         "sentences": [
           {
-            "sentenceId": "sent-43e8c0a8",
+            "sentenceId": "sent-dcdac20c",
             "articleId": "art-eht-polarization-magnetic-fields",
             "sectionId": "sec-4-4378a8",
             "sectionTitle": "汲取時空的飛輪：布蘭福德-茲納傑克機制",
             "paragraphIndex": 0,
-            "exactQuote": "MAD 狀態的確立，為困擾天文學界近半個世紀的「黑洞巨型噴流能量來源」給出了終極答案。",
-            "charStart": 4743,
-            "charEnd": 4786,
-            "contentHash": "43e8c0a83d5b571296063c29702575fcb1db009ee1572e6b8f84c4306323bdfd",
+            "exactQuote": "MAD 狀態的強烈支持，為理解困擾天文學界近半個世紀的黑洞巨型噴流能量來源提供了關鍵契機。",
+            "charStart": 4811,
+            "charEnd": 4856,
+            "contentHash": "dcdac20c1e3cbd8bbb9ace60126364769dd9a24fb2fa5057e5d5ba9b063f0ed3",
             "contextNote": "汲取時空的飛輪：布蘭福德-茲納傑克機制 · 第 1 段"
           },
           {
@@ -9400,8 +9430,8 @@
             "sectionTitle": "汲取時空的飛輪：布蘭福德-茲納傑克機制",
             "paragraphIndex": 1,
             "exactQuote": "早在 1977 年，羅傑·布蘭福德（Roger Blandford）與羅曼·茲納傑克（Roman Znajek）在英國皇家天文學會月刊（MNRAS）上發表了一篇里程碑式的理論論文，提出了著名的 **布蘭福德-茲納傑克機制（Blandford-Znajek Process, BZ 機制）**。",
-            "charStart": 4832,
-            "charEnd": 4978,
+            "charStart": 4904,
+            "charEnd": 5050,
             "contentHash": "2d8b9f996182748c1847d5ec5e8af06167885e23f5a41f52947149c8d4b3d9fd",
             "contextNote": "汲取時空的飛輪：布蘭福德-茲納傑克機制 · 第 2 段"
           },
@@ -9412,8 +9442,8 @@
             "sectionTitle": "汲取時空的飛輪：布蘭福德-茲納傑克機制",
             "paragraphIndex": 2,
             "exactQuote": "他們證明，旋轉的克爾黑洞並非只進不出的終點站，其視界外圍的**能層（Ergosphere）**本身就是一座巨大的飛輪蓄能庫。",
-            "charStart": 5127,
-            "charEnd": 5189,
+            "charStart": 5199,
+            "charEnd": 5261,
             "contentHash": "3397a09cfa1b8590a92bb1bf4861a8bfba108a7a8fe8539f6ea539a9f75d7e4f",
             "contextNote": "汲取時空的飛輪：布蘭福德-茲納傑克機制 · 第 3 段"
           },
@@ -9424,8 +9454,8 @@
             "sectionTitle": "汲取時空的飛輪：布蘭福德-茲納傑克機制",
             "paragraphIndex": 2,
             "exactQuote": "在能層內部，任何物體包括時空本身，都被強制跟隨黑洞旋轉（參考系拖曳，Frame Dragging）。",
-            "charStart": 5190,
-            "charEnd": 5240,
+            "charStart": 5262,
+            "charEnd": 5312,
             "contentHash": "6b12b39eae77f555bf85062a16d427a89f439d4759be867712c8e93f85c46b70",
             "contextNote": "汲取時空的飛輪：布蘭福德-茲納傑克機制 · 第 3 段"
           },
@@ -9436,33 +9466,33 @@
             "sectionTitle": "汲取時空的飛輪：布蘭福德-茲納傑克機制",
             "paragraphIndex": 3,
             "exactQuote": "當 MAD 狀態的強極向磁通量 $\\Phi_{\\text{BH}}$ 穿透黑洞視界時，旋轉時空會將磁力線像橡皮筋一樣強行扭曲纏繞，激發出巨大的真空坡印廷能流通量（Poynting Flux）。",
-            "charStart": 5355,
-            "charEnd": 5451,
+            "charStart": 5427,
+            "charEnd": 5523,
             "contentHash": "22ec56f0b6d2db6d32fcfc818312f70a4df378bca17a0cf4d64af54fda1a718e",
             "contextNote": "汲取時空的飛輪：布蘭福德-茲納傑克機制 · 第 4 段"
           },
           {
-            "sentenceId": "sent-3e93f8fc",
+            "sentenceId": "sent-c50f42b4",
             "articleId": "art-eht-polarization-magnetic-fields",
             "sectionId": "sec-4-4378a8",
             "sectionTitle": "汲取時空的飛輪：布蘭福德-茲納傑克機制",
             "paragraphIndex": 4,
-            "exactQuote": "黑洞向外噴發的相對論能量功率 $P_{\\text{BZ}}$ 滿足經典公式：",
-            "charStart": 5550,
-            "charEnd": 5588,
-            "contentHash": "3e93f8fc444537d7490bffb94ae5618ecb0bda13daa8cea0b89e7304f64cdf26",
+            "exactQuote": "黑洞向外噴發的相對論能量功率 $P_{\\text{BZ}}$ 在標準高斯/CGS 單位制下表述為：",
+            "charStart": 5622,
+            "charEnd": 5671,
+            "contentHash": "c50f42b45abd345cbd5b0a1f1c54614684bcf2b4dbebdb67369ce1abba2128aa",
             "contextNote": "汲取時空的飛輪：布蘭福德-茲納傑克機制 · 第 5 段"
           },
           {
-            "sentenceId": "sent-e4e6d90d",
+            "sentenceId": "sent-a61faab8",
             "articleId": "art-eht-polarization-magnetic-fields",
             "sectionId": "sec-4-4378a8",
             "sectionTitle": "汲取時空的飛輪：布蘭福德-茲納傑克機制",
             "paragraphIndex": 6,
-            "exactQuote": "其中 $\\Omega_H = \\frac{a_*}{2 r_H}$ 為事件視界無量綱角速度，$\\Phi_{\\text{BH}}$ 為穿透黑洞的總無規磁通量，$\\kappa$ 是與磁層幾何相關的常數。",
-            "charStart": 5629,
-            "charEnd": 5728,
-            "contentHash": "e4e6d90d9eaf0339a9796739f5f2bdf4af47d69ce416dfde3a258f7a2a4c00b2",
+            "exactQuote": "其中 $\\Omega_H = \\frac{a_* c}{2 r_H} = \\left(\\frac{c}{2 r_g}\\right) \\left(\\frac{a_*}{1 + \\sqrt{1 - a_*^2}}\\right)$ 為具有量綱（$\\text{s}^{-1}$）的事件視界角速度（其中 $r_g = GM/c^2$ 為重力半徑，$r_H = r_g(1 + \\sqrt{1 - a_*^2})$ 為事件視界半徑，$a_*$ 為無量綱自旋參數）；$\\Phi_{\\text{BH}} = \\frac{1}{2}\\int_{\\text{horizon}} |B^r| dA$ 為穿透黑洞半球視界的極向磁通量；$\\kappa$ 為取決於磁層幾何形態的無量綱數值常數（例如單極磁場約為 $0.053$、拋物面幾何約為 $0.044$）；而 $f(\\omega_H) \\approx 1 + 1.38 \\omega_H^2 - 9.2 \\omega_H^4$ 為以無量綱視界頻率 $\\omega_H = \\Omega_H r_g / c = \\frac{a_*}{2(1 + \\sqrt{1 - a_*^2})}$ 為自變數的高自旋時空幾何修正函數（在低自旋極限下 $\\omega_H \\to 0, f \\to 1$）。",
+            "charStart": 5723,
+            "charEnd": 6281,
+            "contentHash": "a61faab809be03c252364a60ce5835ccbeafe1cf6dd10151e131b5156e3c88df",
             "contextNote": "汲取時空的飛輪：布蘭福德-茲納傑克機制 · 第 7 段"
           },
           {
@@ -9472,21 +9502,21 @@
             "sectionTitle": "汲取時空的飛輪：布蘭福德-茲納傑克機制",
             "paragraphIndex": 7,
             "exactQuote": "如果沒有 MAD 狀態提供的高強度磁通量 $\\Phi_{\\text{BH}}$，BZ 機制的能量提取效率將微不足道。",
-            "charStart": 5830,
-            "charEnd": 5888,
+            "charStart": 6842,
+            "charEnd": 6900,
             "contentHash": "afa4d3abdb0fe45dff966c1a3e5892f2f0fc75262c771b96560b26f58ccd82f6",
             "contextNote": "汲取時空的飛輪：布蘭福德-茲納傑克機制 · 第 8 段"
           },
           {
-            "sentenceId": "sent-2549804c",
+            "sentenceId": "sent-a35d4e8c",
             "articleId": "art-eht-polarization-magnetic-fields",
             "sectionId": "sec-4-4378a8",
             "sectionTitle": "汲取時空的飛輪：布蘭福德-茲納傑克機制",
             "paragraphIndex": 7,
-            "exactQuote": "而 EHT 的偏振觀測證實，M87* 視界處的磁場強度高達 $1 \\sim 30 \\text{ Gauss}$，累積的磁通量足以驅動高達 $10^{44} \\text{ erg/s}$ 的噴流功率！",
-            "charStart": 5889,
-            "charEnd": 5988,
-            "contentHash": "2549804c8a61ff1bd4e663e1fd94db6dd8e53643db23584844df25b93a1326cb",
+            "exactQuote": "而 EHT 的偏振模型分析推算，M87* 視界處的磁場強度約在 $1 \\sim 30 \\text{ Gauss}$ 範圍，累積的磁通量足以在理論上驅動與觀測相符的噴流功率（約 $10^{42} \\sim 10^{44} \\text{ erg/s}$）！",
+            "charStart": 6901,
+            "charEnd": 7027,
+            "contentHash": "a35d4e8c991d0e43c204ecfc3996048dce03f5112fae8d361da0140837482812",
             "contextNote": "汲取時空的飛輪：布蘭福德-茲納傑克機制 · 第 8 段"
           },
           {
@@ -9496,14 +9526,14 @@
             "sectionTitle": "汲取時空的飛輪：布蘭福德-茲納傑克機制",
             "paragraphIndex": 8,
             "exactQuote": "黑洞不再只是一隻被動吞噬萬物的深淵巨獸，它是一座利用旋轉時空與強磁場耦合的、宇宙中最極致的相對論磁流體發電機。",
-            "charStart": 6148,
-            "charEnd": 6203,
+            "charStart": 7214,
+            "charEnd": 7269,
             "contentHash": "ed2738429c05531b0f808b480d46c0ee6cf941f920b229d6a9a7e53a717bae90",
             "contextNote": "汲取時空的飛輪：布蘭福德-茲納傑克機制 · 第 9 段"
           }
         ],
         "formulas": [
-          "$$P_{\\text{BZ}} = \\kappa \\left(\\frac{\\Omega_H c}{R_g}\\right)^2 \\Phi_{\\text{BH}}^2$$"
+          "$$P_{\\text{BZ}} \\approx \\frac{\\kappa}{4\\pi c} \\Phi_{\\text{BH}}^2 \\Omega_H^2 f(\\omega_H)$$"
         ],
         "interactiveComponentId": null
       },
@@ -9516,7 +9546,7 @@
           "與質量高達太陽 65 億倍、噴流長達數千光年的 M87* 相比，Sgr A* 質量僅為太陽的 400 萬倍，且處於近乎完全沉寂的弱輻射狀態。",
           "令人震撼的是，在兩者質量相差超過一千五百倍、所處星系環境天差地別的極端對比下，**Sgr A* 的光環同樣展現出與 M87* 驚人相似的螺旋偏振圖樣！**",
           "這表明，強有序的磁場結構並非少數極端活躍星系核的專利，而是所有超大質量黑洞在強重力吸積邊界的**普適特徵（Universal Feature）**。",
-          "未來的次世代事件視界望遠鏡（ngEHT）與太空甚長基線干涉陣列，將在 345 GHz 更高頻率以及圓偏振（Circular Polarization, Stokes $V$）維度上展開進一步巡檢。黑洞邊緣那些由磁場編織出的光之指紋，正帶領人類一步步逼近重力與量子交匯的最深處。"
+          "在圓偏振方面，EHT 團隊已於 2023 年發表了 M87* 近事件視界尺度的圓偏振（Stokes $V$）偵測研究，為等離子體組成與法拉第轉換提供了珍貴線索；但受限於干涉陣列基線覆蓋不足、望遠鏡增益校準不確定性，以及微弱的圓偏振訊號，重建影像的形態仍存在顯著不確定性。未來的次世代事件視界望遠鏡（ngEHT）與太空甚長基線干涉陣列，將在 345 GHz 更高頻率與全偏振維度上顯著提升角解析度、靈敏度與動態範圍。黑洞邊緣那些由磁場編織出的光之指紋，正帶領人類一步步逼近重力與量子交匯的最深處。"
         ],
         "sentences": [
           {
@@ -9526,8 +9556,8 @@
             "sectionTitle": "銀河之心 Sgr A* 的共鳴與未來全色偏振",
             "paragraphIndex": 0,
             "exactQuote": "2024 年 3 月，EHT 團隊進一步公佈了銀河系中心黑洞人馬座 A*（Sgr A*）的線性偏振圖像。",
-            "charStart": 6261,
-            "charEnd": 6313,
+            "charStart": 7327,
+            "charEnd": 7379,
             "contentHash": "4c92f5cd2fe176556b86c6a352c9fe95e739ecc029886c0f5400a133075bdb89",
             "contextNote": "銀河之心 Sgr A* 的共鳴與未來全色偏振 · 第 1 段"
           },
@@ -9538,8 +9568,8 @@
             "sectionTitle": "銀河之心 Sgr A* 的共鳴與未來全色偏振",
             "paragraphIndex": 1,
             "exactQuote": "與質量高達太陽 65 億倍、噴流長達數千光年的 M87* 相比，Sgr A* 質量僅為太陽的 400 萬倍，且處於近乎完全沉寂的弱輻射狀態。",
-            "charStart": 6368,
-            "charEnd": 6438,
+            "charStart": 7434,
+            "charEnd": 7504,
             "contentHash": "43990b7e81fa7f20d23357a5e5e961db6744f0abf03aa70b49beedc0c8179270",
             "contextNote": "銀河之心 Sgr A* 的共鳴與未來全色偏振 · 第 2 段"
           },
@@ -9550,8 +9580,8 @@
             "sectionTitle": "銀河之心 Sgr A* 的共鳴與未來全色偏振",
             "paragraphIndex": 2,
             "exactQuote": "令人震撼的是，在兩者質量相差超過一千五百倍、所處星系環境天差地別的極端對比下，**Sgr A* 的光環同樣展現出與 M87* 驚人相似的螺旋偏振圖樣！**",
-            "charStart": 6511,
-            "charEnd": 6588,
+            "charStart": 7577,
+            "charEnd": 7654,
             "contentHash": "e748a12666d4030d69137bedcc7d164f4ddbc520f3a7ab000568a9afc04d2562",
             "contextNote": "銀河之心 Sgr A* 的共鳴與未來全色偏振 · 第 3 段"
           },
@@ -9562,21 +9592,33 @@
             "sectionTitle": "銀河之心 Sgr A* 的共鳴與未來全色偏振",
             "paragraphIndex": 3,
             "exactQuote": "這表明，強有序的磁場結構並非少數極端活躍星系核的專利，而是所有超大質量黑洞在強重力吸積邊界的**普適特徵（Universal Feature）**。",
-            "charStart": 6668,
-            "charEnd": 6742,
+            "charStart": 7734,
+            "charEnd": 7808,
             "contentHash": "ab172acf6383fdf4074a9b9203a8622f535d6a77841a45b0fb9d0e2c568e27f1",
             "contextNote": "銀河之心 Sgr A* 的共鳴與未來全色偏振 · 第 4 段"
           },
           {
-            "sentenceId": "sent-f46390cc",
+            "sentenceId": "sent-6f135afb",
             "articleId": "art-eht-polarization-magnetic-fields",
             "sectionId": "sec-5-899a86",
             "sectionTitle": "銀河之心 Sgr A* 的共鳴與未來全色偏振",
             "paragraphIndex": 4,
-            "exactQuote": "未來的次世代事件視界望遠鏡（ngEHT）與太空甚長基線干涉陣列，將在 345 GHz 更高頻率以及圓偏振（Circular Polarization, Stokes $V$）維度上展開進一步巡檢。",
-            "charStart": 6819,
-            "charEnd": 6917,
-            "contentHash": "f46390cc6eeed848638225328caca6a755e0aa1a8423696722360f6250cb6903",
+            "exactQuote": "在圓偏振方面，EHT 團隊已於 2023 年發表了 M87* 近事件視界尺度的圓偏振（Stokes $V$）偵測研究，為等離子體組成與法拉第轉換提供了珍貴線索；但受限於干涉陣列基線覆蓋不足、望遠鏡增益校準不確定性，以及微弱的圓偏振訊號，重建影像的形態仍存在顯著不確定性。",
+            "charStart": 7885,
+            "charEnd": 8020,
+            "contentHash": "6f135afb8ec82959f37d2722b38675cd140d50b64b3aa32825aac4db4adf25fa",
+            "contextNote": "銀河之心 Sgr A* 的共鳴與未來全色偏振 · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-5b7b15c0",
+            "articleId": "art-eht-polarization-magnetic-fields",
+            "sectionId": "sec-5-899a86",
+            "sectionTitle": "銀河之心 Sgr A* 的共鳴與未來全色偏振",
+            "paragraphIndex": 4,
+            "exactQuote": "未來的次世代事件視界望遠鏡（ngEHT）與太空甚長基線干涉陣列，將在 345 GHz 更高頻率與全偏振維度上顯著提升角解析度、靈敏度與動態範圍。",
+            "charStart": 8021,
+            "charEnd": 8093,
+            "contentHash": "5b7b15c05a9d305d745ca49721befb984c407f1126c11826664aae6c9b68d22b",
             "contextNote": "銀河之心 Sgr A* 的共鳴與未來全色偏振 · 第 5 段"
           },
           {
@@ -9586,8 +9628,8 @@
             "sectionTitle": "銀河之心 Sgr A* 的共鳴與未來全色偏振",
             "paragraphIndex": 4,
             "exactQuote": "黑洞邊緣那些由磁場編織出的光之指紋，正帶領人類一步步逼近重力與量子交匯的最深處。",
-            "charStart": 6918,
-            "charEnd": 6958,
+            "charStart": 8094,
+            "charEnd": 8134,
             "contentHash": "1c501005f236518cd7b344c76bafdd84d54fa7f95f5ef2d18f3123684114d015",
             "contextNote": "銀河之心 Sgr A* 的共鳴與未來全色偏振 · 第 5 段"
           }
@@ -9596,8 +9638,8 @@
         "interactiveComponentId": null
       }
     ],
-    "totalWordCount": 3717,
-    "lastIndexedAt": "2026-11-10T01:11:20.174Z"
+    "totalWordCount": 4301,
+    "lastIndexedAt": "2026-11-10T07:56:33.565Z"
   },
   {
     "id": "art-gravitational-waves-kerr",
@@ -9645,10 +9687,14 @@
       {
         "id": "ref-teukolsky-1973-apj",
         "citation": "Teukolsky, S. A. (1973). \"Perturbations of a rotating black hole. I. Fundamental equations for gravitational, electromagnetic, and neutrino-field perturbations.\" The Astrophysical Journal, 185, 635-647. doi:10.1086/152444."
+      },
+      {
+        "id": "ref-cotesta-2022-prl",
+        "citation": "Cotesta, R., Carullo, G., Berti, E., & Cardoso, V. (2022). \"Analysis of Ringdown Overtones in GW150914.\" Physical Review Letters, 129(11), 111102. doi:10.1103/PhysRevLett.129.111102."
       }
     ],
     "interactiveComponent": "BlackHoleRingdownSimulator",
-    "contentHash": "b29d146645e8cac3f4f5596973fa851298fe701478be92863e7ae37d402b0e40",
+    "contentHash": "6497a9af1b6580aa5fbc34a8b26e9680d6caeae6833ad1d7ffe52ea7ce371741",
     "sections": [
       {
         "id": "sec-1-17860f",
@@ -9991,7 +10037,7 @@
           "2019 年，馬克西米利亞諾·伊西（Maximiliano Isi）等人在《Physical Review Letters》發表了一項開創性的數據分析成果。",
           "他們利用貝葉斯噪聲推斷技術重新審查 GW150914，在論文中報告在合併峰值後約數毫秒的超短窗口內，檢測到了**基模（$n=0$）與第一泛音（$n=1$）疊加的信號特徵**，並指出基模與泛音解算的質量和自旋自洽，微擾偏差參數在約 20% 誤差內與無毛定理相容。",
           "當時報道的分析結果包括：\n- 基模頻率約為 $f_{220} \\approx 251\\text{ Hz}$，阻尼時間 $\\tau_{220} \\approx 4.0\\text{ ms}$；\n- 泛音頻率在估算範圍內與克爾幾何預言相容；\n- 推算殘餘黑洞質量約 $68.5 M_\\odot$，自旋約 $0.69$。",
-          "**然而，科學界對這項先驅性研究展開了持續深入的複核。**\n在 2024 至 2025 年間，多個獨立研究組（如 Cotesta 等人、Finch & Moore、Baibhav 等人發表於《Physical Review D》）重新評估了分析中的系統不確定性。後續研究指出，該泛音信號的統計顯著性對**合併時間零點（Peak Time $t_{\\text{peak}}$）的選取極度敏感**；一旦充分考量時間零點不確定性與非線性合併污染，泛音存在的證據強度會顯著減弱。這表明在現役探測器靈敏度下，GW150914 的鈴宕信號尚不能視為無毛定理的決定性定論，而是開啟了黑洞光譜學實證檢驗的大門。"
+          "**然而，科學界對這項先驅性研究展開了持續深入的複核。**\n自 2022 年起，多個獨立研究組（如 Cotesta 等人於 2022 年發表於《Physical Review Letters》，以及後續 Finch & Moore、Baibhav 等人於 2024 至 2025 年間發表於《Physical Review D》的研究）重新評估了分析中的系統不確定性。後續研究指出，該泛音信號的統計顯著性對**合併時間零點（Peak Time $t_{\\text{peak}}$）的選取極度敏感**；一旦充分考量時間零點不確定性與非線性合併污染，泛音存在的證據強度會顯著減弱。這表明在現役探測器靈敏度下，GW150914 的鈴宕信號尚不能視為無毛定理的決定性定論，而是開啟了黑洞光譜學實證檢驗的大門。"
         ],
         "sentences": [
           {
@@ -10043,15 +10089,15 @@
             "contextNote": "五、真實數據：GW150914 的里程碑突破 · 第 4 段"
           },
           {
-            "sentenceId": "sent-560290be",
+            "sentenceId": "sent-b4560159",
             "articleId": "art-gravitational-waves-kerr",
             "sectionId": "sec-5-49e0f6",
             "sectionTitle": "五、真實數據：GW150914 的里程碑突破",
             "paragraphIndex": 3,
-            "exactQuote": "在 2024 至 2025 年間，多個獨立研究組（如 Cotesta 等人、Finch & Moore、Baibhav 等人發表於《Physical Review D》）重新評估了分析中的系統不確定性。",
+            "exactQuote": "自 2022 年起，多個獨立研究組（如 Cotesta 等人於 2022 年發表於《Physical Review Letters》，以及後續 Finch & Moore、Baibhav 等人於 2024 至 2025 年間發表於《Physical Review D》的研究）重新評估了分析中的系統不確定性。",
             "charStart": 4819,
-            "charEnd": 4920,
-            "contentHash": "560290bef464a763a9a3e7b16189bf5ff815203a1e9128342e12b6e6bed9ffa4",
+            "charEnd": 4973,
+            "contentHash": "b4560159fcdd15f8f7be740c68b3653b2629dc66ce9129aa0337844ac464c6e2",
             "contextNote": "五、真實數據：GW150914 的里程碑突破 · 第 4 段"
           },
           {
@@ -10061,8 +10107,8 @@
             "sectionTitle": "五、真實數據：GW150914 的里程碑突破",
             "paragraphIndex": 3,
             "exactQuote": "後續研究指出，該泛音信號的統計顯著性對**合併時間零點（Peak Time $t_{\\text{peak}}$）的選取極度敏感**；一旦充分考量時間零點不確定性與非線性合併污染，泛音存在的證據強度會顯著減弱。",
-            "charStart": 4921,
-            "charEnd": 5025,
+            "charStart": 4974,
+            "charEnd": 5078,
             "contentHash": "91f6caad01618dc8dc1113468a99f4025bed4ba83ad696d8f5694bd6157be276",
             "contextNote": "五、真實數據：GW150914 的里程碑突破 · 第 4 段"
           },
@@ -10073,8 +10119,8 @@
             "sectionTitle": "五、真實數據：GW150914 的里程碑突破",
             "paragraphIndex": 3,
             "exactQuote": "這表明在現役探測器靈敏度下，GW150914 的鈴宕信號尚不能視為無毛定理的決定性定論，而是開啟了黑洞光譜學實證檢驗的大門。",
-            "charStart": 5026,
-            "charEnd": 5088,
+            "charStart": 5079,
+            "charEnd": 5141,
             "contentHash": "2a3e65141e28925cc6a091d96cbefe74711ff015bf0acfcd20622825c97cca22",
             "contextNote": "五、真實數據：GW150914 的里程碑突破 · 第 4 段"
           }
@@ -10099,8 +10145,8 @@
             "sectionTitle": "六、科學邊界：當前探測極限與未來願景",
             "paragraphIndex": 0,
             "exactQuote": "在為黑洞光譜學的破曉歡呼之際，MIRARI 科學組秉持嚴苛的科學客觀性，為讀者梳理現有技術邊界：",
-            "charStart": 5388,
-            "charEnd": 5436,
+            "charStart": 5494,
+            "charEnd": 5542,
             "contentHash": "7efd7a22e76e80d35c62d98a5f45065ce1145e1c199b53f3b1f37a6447ebfc65",
             "contextNote": "六、科學邊界：當前探測極限與未來願景 · 第 1 段"
           },
@@ -10111,8 +10157,8 @@
             "sectionTitle": "六、科學邊界：當前探測極限與未來願景",
             "paragraphIndex": 1,
             "exactQuote": "1. **併合後即時分析的時間零點爭議（Peak Time Ambiguity）**：\n   在數值相對論中，非線性併合何時結束、何時嚴格進入線性微擾的鈴宕階段，在波形峰值處存在約 $1 - 2$ 個引力時間的微小模糊帶。",
-            "charStart": 5487,
-            "charEnd": 5598,
+            "charStart": 5593,
+            "charEnd": 5704,
             "contentHash": "542f0f60df05ea75b10d6c5dc237188c7555131fc5e6323755cda3a3b147cbf8",
             "contextNote": "六、科學邊界：當前探測極限與未來願景 · 第 2 段"
           },
@@ -10123,8 +10169,8 @@
             "sectionTitle": "六、科學邊界：當前探測極限與未來願景",
             "paragraphIndex": 1,
             "exactQuote": "過早納入數據會受到非線性潮汐撕裂的污染，過晚納入則信噪比已迅速跌入背景噪聲。",
-            "charStart": 5599,
-            "charEnd": 5637,
+            "charStart": 5705,
+            "charEnd": 5743,
             "contentHash": "4b3dd5cc94676316bcffe2362414c84e5fc468cf92eb5ee9ee599fb6e25831ab",
             "contextNote": "六、科學邊界：當前探測極限與未來願景 · 第 2 段"
           },
@@ -10135,8 +10181,8 @@
             "sectionTitle": "六、科學邊界：當前探測極限與未來願景",
             "paragraphIndex": 1,
             "exactQuote": "2. **更高階空間模式（Higher Harmonics）的信噪比限制**：\n   在現役進階 LIGO 與 Virgo 的靈敏度下，只有少數雙黑洞質量比不對稱的大信號能勉強探測到 $l=3, m=3$ 等高階空間模式。",
-            "charStart": 5638,
-            "charEnd": 5749,
+            "charStart": 5744,
+            "charEnd": 5855,
             "contentHash": "147be9ff520793a6cc54cb1b01146b25e5e79841025a105022c43b1a5ccf6e6e",
             "contextNote": "六、科學邊界：當前探測極限與未來願景 · 第 2 段"
           },
@@ -10147,8 +10193,8 @@
             "sectionTitle": "六、科學邊界：當前探測極限與未來願景",
             "paragraphIndex": 1,
             "exactQuote": "絕大多數常規事件的鈴宕階段過於短暫（僅數毫秒），難以進行多模式高精度分離。",
-            "charStart": 5750,
-            "charEnd": 5787,
+            "charStart": 5856,
+            "charEnd": 5893,
             "contentHash": "44d6040b578216f4a303dde6538c942f6b7aa844c0b2a28c33b139ec48a9ecbf",
             "contextNote": "六、科學邊界：當前探測極限與未來願景 · 第 2 段"
           },
@@ -10159,8 +10205,8 @@
             "sectionTitle": "六、科學邊界：當前探測極限與未來願景",
             "paragraphIndex": 1,
             "exactQuote": "3. **下一代探測器的終極展望**：\n   未來的地基愛因斯坦望遠鏡（Einstein Telescope, ET）、宇宙探索者（Cosmic Explorer, CE）以及太空重力波天線 LISA，預計將把鈴宕信號的信噪比提升一到兩個數量級。",
-            "charStart": 5788,
-            "charEnd": 5911,
+            "charStart": 5894,
+            "charEnd": 6017,
             "contentHash": "0ccfe46a6bb78fbfc784835e56e877f64f55ac3da775d123629183740da04c21",
             "contextNote": "六、科學邊界：當前探測極限與未來願景 · 第 2 段"
           },
@@ -10171,8 +10217,8 @@
             "sectionTitle": "六、科學邊界：當前探測極限與未來願景",
             "paragraphIndex": 1,
             "exactQuote": "屆時，科學家將能分離出數十個高階準簡正模，將無毛定理的檢驗精度推進到小數點後數個百分點，甚至有希望窺探廣義相對論在普朗克尺度附近的量子引力修正效應。",
-            "charStart": 5912,
-            "charEnd": 5986,
+            "charStart": 6018,
+            "charEnd": 6092,
             "contentHash": "c02494eac5c1ce09780cdfad54e06807dc5c39267e805b85d5b65d9e7d8a7617",
             "contextNote": "六、科學邊界：當前探測極限與未來願景 · 第 2 段"
           },
@@ -10183,8 +10229,8 @@
             "sectionTitle": "六、科學邊界：當前探測極限與未來願景",
             "paragraphIndex": 2,
             "exactQuote": "黑洞深處的時空之鐘，在寂靜的深空中敲響了億萬年。",
-            "charStart": 6485,
-            "charEnd": 6509,
+            "charStart": 6591,
+            "charEnd": 6615,
             "contentHash": "994d673622348318274fe0211082501a887c675f75f0cc536d77c3a90975e4dc",
             "contextNote": "六、科學邊界：當前探測極限與未來願景 · 第 3 段"
           },
@@ -10195,8 +10241,8 @@
             "sectionTitle": "六、科學邊界：當前探測極限與未來願景",
             "paragraphIndex": 2,
             "exactQuote": "當這串微弱的鈴宕波紋穿透地球上的千米雷射干涉臂時，我們終於聽懂了宇宙最純粹的幾何獨白。",
-            "charStart": 6510,
-            "charEnd": 6553,
+            "charStart": 6616,
+            "charEnd": 6659,
             "contentHash": "1c054419f1e992574860f268a5c81b015068a5e0fd690b643233c3da3a6436fd",
             "contextNote": "六、科學邊界：當前探測極限與未來願景 · 第 3 段"
           }
@@ -10205,8 +10251,8 @@
         "interactiveComponentId": null
       }
     ],
-    "totalWordCount": 3501,
-    "lastIndexedAt": "2026-11-10T01:11:20.178Z"
+    "totalWordCount": 3547,
+    "lastIndexedAt": "2026-11-10T07:56:33.567Z"
   },
   {
     "id": "art-hawk-dove-ess",
@@ -11207,7 +11253,7 @@
       }
     ],
     "totalWordCount": 2689,
-    "lastIndexedAt": "2026-11-10T01:11:20.181Z"
+    "lastIndexedAt": "2026-11-10T07:56:33.568Z"
   },
   {
     "id": "art-jwst-cosmos-web-lensing",
@@ -11859,7 +11905,7 @@
       }
     ],
     "totalWordCount": 3591,
-    "lastIndexedAt": "2026-11-10T01:11:20.183Z"
+    "lastIndexedAt": "2026-11-10T07:56:33.569Z"
   },
   {
     "id": "art-kimura-neutral-evolution",
@@ -12725,7 +12771,7 @@
       }
     ],
     "totalWordCount": 4314,
-    "lastIndexedAt": "2026-11-10T01:11:20.187Z"
+    "lastIndexedAt": "2026-11-10T07:56:33.575Z"
   },
   {
     "id": "art-levinthal-paradox-funnel",
@@ -13536,7 +13582,7 @@
       }
     ],
     "totalWordCount": 3540,
-    "lastIndexedAt": "2026-11-10T01:11:20.188Z"
+    "lastIndexedAt": "2026-11-10T07:56:33.577Z"
   },
   {
     "id": "art-magic-angle-graphene",
@@ -14392,7 +14438,7 @@
       }
     ],
     "totalWordCount": 4149,
-    "lastIndexedAt": "2026-11-10T01:11:20.190Z"
+    "lastIndexedAt": "2026-11-10T07:56:33.580Z"
   },
   {
     "id": "art-maxwells-demon-entropy",
@@ -15028,7 +15074,7 @@
       }
     ],
     "totalWordCount": 2262,
-    "lastIndexedAt": "2026-11-10T01:11:20.191Z"
+    "lastIndexedAt": "2026-11-10T07:56:33.582Z"
   },
   {
     "id": "art-muon-g-2-discrepancy",
@@ -15078,6 +15124,15 @@
         "doi": "10.1103/PhysRevLett.131.161802"
       },
       {
+        "authors": "Muon g-2 Theory Initiative",
+        "year": "2025",
+        "title": "The anomalous magnetic moment of the muon in the Standard Model: an update",
+        "journal": "arXiv preprint",
+        "volume": "arXiv:2505.21476",
+        "pages": "1–58",
+        "doi": "10.48550/arXiv.2505.21476"
+      },
+      {
         "authors": "Borsanyi, S., et al. (BMW Collaboration)",
         "year": "2021",
         "title": "Leading hadronic contribution to the muon magnetic moment from lattice QCD",
@@ -15107,7 +15162,7 @@
         "doi": "10.1088/0034-4885/70/5/R03"
       }
     ],
-    "contentHash": "eda73b6f79f1d522ee8b62ecdcf905f2cba895de975b70092204d03bc6c953cc",
+    "contentHash": "d67832b56db308165245df9ad526977e234545d3f0a4c3f7c7afa0bde32c2f6c",
     "sections": [
       {
         "id": "sec-1-3a7d16",
@@ -15619,7 +15674,7 @@
           "$$a_\\mu^{\\text{Exp, FNAL}} = 116592059(22) \\times 10^{-11}$$",
           "將實測值與 2020 年理論白皮書相減，兩者的差值達到了：",
           "$$\\Delta a_\\mu = a_\\mu^{\\text{Exp}} - a_\\mu^{\\text{SM, WP2020}} = (249 \\pm 48) \\times 10^{-11}$$",
-          "顯著度達到驚人的 $5.1\\sigma$。"
+          "顯著度達到當時被廣泛報導的 $5.1\\sigma$ 歷史性偏差（此數值是與 2020 年基於傳統正負電子對撞色散關係的舊理論白皮書基準進行比對的結果）。"
         ],
         "sentences": [
           {
@@ -15851,15 +15906,15 @@
             "contextNote": "費米實驗室的終極審判：魔術動量與反常進動 · 第 25 段"
           },
           {
-            "sentenceId": "sent-471268eb",
+            "sentenceId": "sent-9e25eccc",
             "articleId": "art-muon-g-2-discrepancy",
             "sectionId": "sec-4-90e36a",
             "sectionTitle": "費米實驗室的終極審判：魔術動量與反常進動",
             "paragraphIndex": 26,
-            "exactQuote": "顯著度達到驚人的 $5.1\\sigma$。",
+            "exactQuote": "顯著度達到當時被廣泛報導的 $5.1\\sigma$ 歷史性偏差（此數值是與 2020 年基於傳統正負電子對撞色散關係的舊理論白皮書基準進行比對的結果）。",
             "charStart": 6820,
-            "charEnd": 6841,
-            "contentHash": "471268ebb2d76050b02dfaec7a695f841d5f64c7a0da14153eff90c3f6cb7d11",
+            "charEnd": 6896,
+            "contentHash": "9e25eccc913b4126e1d44cbc892c4c98b46f3d7e7a3757affe5f7322e34ff5c7",
             "contextNote": "費米實驗室的終極審判：魔術動量與反常進動 · 第 27 段"
           }
         ],
@@ -15897,8 +15952,8 @@
             "sectionTitle": "格點 QCD 的逆襲：非微擾超算引發的物理迷霧",
             "paragraphIndex": 0,
             "exactQuote": "正當實驗團隊準備慶祝新物理誕生之際，來自理論計算領域的重磅突破打破了定局。",
-            "charStart": 6865,
-            "charEnd": 6902,
+            "charStart": 6975,
+            "charEnd": 7012,
             "contentHash": "992a27bc5600c7d0307ad6eeae21efa553b4ce37d413feae7dc664e3b570e61d",
             "contextNote": "格點 QCD 的逆襲：非微擾超算引發的物理迷霧 · 第 1 段"
           },
@@ -15909,8 +15964,8 @@
             "sectionTitle": "格點 QCD 的逆襲：非微擾超算引發的物理迷霧",
             "paragraphIndex": 1,
             "exactQuote": "以布達佩斯-馬賽-烏帕塔爾（BMW）協作組為首的研究團隊，在歐洲多台百萬億次（PFLOPS）頂級超級電腦上，利用**格點量子色動力學（Lattice QCD）**進行了前所未有的第一性原理非微擾求解。",
-            "charStart": 6942,
-            "charEnd": 7042,
+            "charStart": 7052,
+            "charEnd": 7152,
             "contentHash": "f917769c7c657ff6189e0fa3a12c7c2fafab1580bd46b8446d27133670631bd2",
             "contextNote": "格點 QCD 的逆襲：非微擾超算引發的物理迷霧 · 第 2 段"
           },
@@ -15921,8 +15976,8 @@
             "sectionTitle": "格點 QCD 的逆襲：非微擾超算引發的物理迷霧",
             "paragraphIndex": 2,
             "exactQuote": "格點 QCD 將四維時空連續體離散化為微觀晶格（空間步長 $a \\approx 0.05\\text{ fm}$），在虛數時間中直接對夸克與膠子的歐幾里得作用量進行海量馬可夫鏈蒙地卡羅路徑積分。",
-            "charStart": 7145,
-            "charEnd": 7241,
+            "charStart": 7255,
+            "charEnd": 7351,
             "contentHash": "bfc9ee78142e2bbfb61bb5d3cbaa16a7d07ec04418ea26714e03928125629890",
             "contextNote": "格點 QCD 的逆襲：非微擾超算引發的物理迷霧 · 第 3 段"
           },
@@ -15933,8 +15988,8 @@
             "sectionTitle": "格點 QCD 的逆襲：非微擾超算引發的物理迷霧",
             "paragraphIndex": 3,
             "exactQuote": "2021 年，BMW 合作組在《Nature》發表封面論文，首次將格點 QCD 計算強子真空極化（HVP）的總體不確定度壓縮至 0.8% 的極致精度，並在 2024 年進一步鞏固了數值穩健性。",
-            "charStart": 7340,
-            "charEnd": 7436,
+            "charStart": 7450,
+            "charEnd": 7546,
             "contentHash": "e77a336839d0d67f6ba8a1e1605dd959d1b3fda0f6c913582685ef0cdbf705cc",
             "contextNote": "格點 QCD 的逆襲：非微擾超算引發的物理迷霧 · 第 4 段"
           },
@@ -15945,8 +16000,8 @@
             "sectionTitle": "格點 QCD 的逆襲：非微擾超算引發的物理迷霧",
             "paragraphIndex": 4,
             "exactQuote": "令人震撼的是，格點 QCD 算出的 HVP 數值顯著高於傳統正負電子對撞色散積分的結果：",
-            "charStart": 7535,
-            "charEnd": 7579,
+            "charStart": 7645,
+            "charEnd": 7689,
             "contentHash": "f51700ffa2aa7c0b7bbd3ab90ea1c4ed8502d878ec9d5a1a1306cd1a3ad00fbe",
             "contextNote": "格點 QCD 的逆襲：非微擾超算引發的物理迷霧 · 第 5 段"
           },
@@ -15957,8 +16012,8 @@
             "sectionTitle": "格點 QCD 的逆襲：非微擾超算引發的物理迷霧",
             "paragraphIndex": 6,
             "exactQuote": "當採用 BMW 的格點計算結果替換傳統色散數值後，標準模型預測值大幅躍升至：",
-            "charStart": 7626,
-            "charEnd": 7664,
+            "charStart": 7736,
+            "charEnd": 7774,
             "contentHash": "af02a75da1cff3d7175587528854907449ae1ff8c7b996ed43bb6666dccc21c1",
             "contextNote": "格點 QCD 的逆襲：非微擾超算引發的物理迷霧 · 第 7 段"
           },
@@ -15969,8 +16024,8 @@
             "sectionTitle": "格點 QCD 的逆襲：非微擾超算引發的物理迷霧",
             "paragraphIndex": 8,
             "exactQuote": "此時，理論與費米實驗室實測數據的落差縮小到了僅約 $1.5\\sigma$ 至 $2.0\\sigma$——原先高達 $5.1\\sigma$ 的新物理信號，在統計上幾乎完全消融於誤差帶之內！",
-            "charStart": 7705,
-            "charEnd": 7798,
+            "charStart": 7815,
+            "charEnd": 7908,
             "contentHash": "e1fc60f959eacebad5e38c9a6fff6e430e3f15d0d9b44e7ac8082a62e2af026b",
             "contextNote": "格點 QCD 的逆襲：非微擾超算引發的物理迷霧 · 第 9 段"
           }
@@ -16003,8 +16058,8 @@
             "sectionTitle": "兩難困局：新物理、強子截面誤差，還是格點系統偏移？",
             "paragraphIndex": 0,
             "exactQuote": "格點 QCD 的這一結果，在粒子物理學界引發了巨大的連鎖反應，將理論家推入了一場深刻的兩難困局：",
-            "charStart": 7894,
-            "charEnd": 7942,
+            "charStart": 8004,
+            "charEnd": 8052,
             "contentHash": "20d7336770c1a4e94748faa969c25d98870314e0f6398ca464d03ca2c723929d",
             "contextNote": "兩難困局：新物理、強子截面誤差，還是格點系統偏移？ · 第 1 段"
           },
@@ -16015,8 +16070,8 @@
             "sectionTitle": "兩難困局：新物理、強子截面誤差，還是格點系統偏移？",
             "paragraphIndex": 1,
             "exactQuote": "首先，如果格點 QCD 的計算是正確的，那麼過去幾十年依賴的 $e^+e^- \\to \\pi^+\\pi^-$ 實驗截面數據必定存在未被識別的系統誤差。",
-            "charStart": 7993,
-            "charEnd": 8068,
+            "charStart": 8103,
+            "charEnd": 8178,
             "contentHash": "3aef7716f161aeaf4f51158667d74351fce7b736826c33ad60a6e3a84e3a20a4",
             "contextNote": "兩難困局：新物理、強子截面誤差，還是格點系統偏移？ · 第 2 段"
           },
@@ -16027,8 +16082,8 @@
             "sectionTitle": "兩難困局：新物理、強子截面誤差，還是格點系統偏移？",
             "paragraphIndex": 2,
             "exactQuote": "然而，如果強子光子真空極化真的如格點預測那樣大，根據量子色動力學的色散解析延拓，這將連帶修正電磁運行耦合常數 $\\alpha(M_Z^2)$。",
-            "charStart": 8146,
-            "charEnd": 8217,
+            "charStart": 8256,
+            "charEnd": 8327,
             "contentHash": "8e167d34a3f856d2c18ebdf7ed3789b2de43ab798df2fd7c733a424f4dfa7fab",
             "contextNote": "兩難困局：新物理、強子截面誤差，還是格點系統偏移？ · 第 3 段"
           },
@@ -16039,8 +16094,8 @@
             "sectionTitle": "兩難困局：新物理、強子截面誤差，還是格點系統偏移？",
             "paragraphIndex": 3,
             "exactQuote": "這一微小上移將破壞整個弱電精密物理（Electroweak Precision Fits）的黃金平衡，使標準模型對希格斯玻色子質量的間接預測偏離實際觀測值達數個標準差。",
-            "charStart": 8291,
-            "charEnd": 8375,
+            "charStart": 8401,
+            "charEnd": 8485,
             "contentHash": "9364859d6788258b2cfb8a32b7362e63024c95f563ce2a80183d2849ef76cfef",
             "contextNote": "兩難困局：新物理、強子截面誤差，還是格點系統偏移？ · 第 4 段"
           },
@@ -16051,8 +16106,8 @@
             "sectionTitle": "兩難困局：新物理、強子截面誤差，還是格點系統偏移？",
             "paragraphIndex": 4,
             "exactQuote": "換言之，「解決了渺子 g-2 的矛盾，卻點燃了弱電統一尺度的另一場大火」。",
-            "charStart": 8462,
-            "charEnd": 8499,
+            "charStart": 8572,
+            "charEnd": 8609,
             "contentHash": "07ba839b5e078cf58e1e70b4f2655233409407fbab6a9ae2307ceb2047510cf3",
             "contextNote": "兩難困局：新物理、強子截面誤差，還是格點系統偏移？ · 第 5 段"
           },
@@ -16063,8 +16118,8 @@
             "sectionTitle": "兩難困局：新物理、強子截面誤差，還是格點系統偏移？",
             "paragraphIndex": 5,
             "exactQuote": "其次，新西伯利亞 CMD-3 合作組在 2023 年發布的最新高精度正負電子對撞實驗數據，測得的雙開子截面竟意外高於先前的 BaBar 與 KLOE 實驗，其推導的色散結果反而向格點數值靠近；但與此同時，其他對撞機的再分析卻仍支持傳統較低截面。",
-            "charStart": 8539,
-            "charEnd": 8661,
+            "charStart": 8649,
+            "charEnd": 8771,
             "contentHash": "547c414f07e979752f4aca255b47f43a2feaad02c9d90b0a47cb483c1998ac7a",
             "contextNote": "兩難困局：新物理、強子截面誤差，還是格點系統偏移？ · 第 6 段"
           },
@@ -16075,8 +16130,8 @@
             "sectionTitle": "兩難困局：新物理、強子截面誤差，還是格點系統偏移？",
             "paragraphIndex": 6,
             "exactQuote": "這表明，當前的實驗測量體系內部也存在著尚未釐清的系統性分歧。",
-            "charStart": 8786,
-            "charEnd": 8816,
+            "charStart": 8896,
+            "charEnd": 8926,
             "contentHash": "2aecd377333611b63ec0d70961870a0e9168493fe837785b490d9ee810c38704",
             "contextNote": "兩難困局：新物理、強子截面誤差，還是格點系統偏移？ · 第 7 段"
           },
@@ -16087,8 +16142,8 @@
             "sectionTitle": "兩難困局：新物理、強子截面誤差，還是格點系統偏移？",
             "paragraphIndex": 7,
             "exactQuote": "第三，新物理模型（如超對稱粒子 SUSY 圈圖、具有動能混合的輕質量暗光子 $A'$、二希格斯二重態 2HDM 或輕 Leptoquark）雖然能在數學上完美彌補那 $249 \\times 10^{-11}$ 的空缺，但隨著歐洲核子研究組織大型強子對撞機（LHC）在最高能量標度下對超對稱粒子的搜索持續給出虛無結果，新物理的參數空間正在被迅速壓縮。",
-            "charStart": 8849,
-            "charEnd": 9023,
+            "charStart": 8959,
+            "charEnd": 9133,
             "contentHash": "ded2961088490b9feae73d4e75fa5f5e54e11f859f38b970263e4b375ec39323",
             "contextNote": "兩難困局：新物理、強子截面誤差，還是格點系統偏移？ · 第 8 段"
           }
@@ -16102,7 +16157,7 @@
         "level": 2,
         "paragraphs": [
           "渺子 g-2 的世紀爭鳴，非但沒有因為格點數據的介入而平息，反而標誌著高能物理進入了一個「以精度為王」的全新時代。",
-          "費米實驗室的最終數據分析即將完整發布，預期將把實測不確定度進一步壓低至不可思議的 0.14 ppm。",
+          "2025 年 6 月 3 日，費米實驗室正式發布了綜合全部六期運行（Runs 1–6）的最終實驗測量結果，將不確定度大幅壓縮至創紀錄的 127 ppb（0.127 ppm），並報告了世界最新實驗綜合平均值 $a_\\mu^{\\text{Exp}} = 116592071.5(14.5) \\times 10^{-11}$。與此同時，理論界在 2025 年彙整了多個獨立格點 QCD 協作組的高精度強子真空極化計算（arXiv:2505.21476），給出最新的標準模型理論預測值 $a_\\mu^{\\text{SM}} = 116592033(62) \\times 10^{-11}$。在最新理論基準下，實驗與理論的落差已大幅收斂至 $1\\sigma$ 誤差範圍之內，高能物理界的焦點隨之轉向徹底釐清正負電子對撞色散數據與格點計算之間的系統性差異。",
           "與此同時，日本 J-PARC 正在推進一項全新的低能超慢渺子束流實驗，完全不依賴魔術動量與強聚焦電場，而是利用超純無散焦磁場從完全獨立的實驗體系驗證進動信號。",
           "在理論端，十多個獨立的國際格點計算團隊正在跨平台交叉核驗強子中程窗（Intermediate Window）量，精度已逼近千分之數階。",
           "這場圍繞著小數點後第九位微弱數值的史詩級角逐再次證明：",
@@ -16118,21 +16173,45 @@
             "sectionTitle": "未來展望：在極致精度的刀鋒上",
             "paragraphIndex": 0,
             "exactQuote": "渺子 g-2 的世紀爭鳴，非但沒有因為格點數據的介入而平息，反而標誌著高能物理進入了一個「以精度為王」的全新時代。",
-            "charStart": 9200,
-            "charEnd": 9257,
+            "charStart": 9310,
+            "charEnd": 9367,
             "contentHash": "f6524f3ee33eed39a6f90e07b9bec70c3429a5a3f7d57caae3488dd2077c423e",
             "contextNote": "未來展望：在極致精度的刀鋒上 · 第 1 段"
           },
           {
-            "sentenceId": "sent-9d1a0f35",
+            "sentenceId": "sent-3968ab54",
             "articleId": "art-muon-g-2-discrepancy",
             "sectionId": "sec-7-31c6aa",
             "sectionTitle": "未來展望：在極致精度的刀鋒上",
             "paragraphIndex": 1,
-            "exactQuote": "費米實驗室的最終數據分析即將完整發布，預期將把實測不確定度進一步壓低至不可思議的 0.14 ppm。",
-            "charStart": 9317,
-            "charEnd": 9367,
-            "contentHash": "9d1a0f356614a2d6e0362e5cbe7e3b5afe0a0b312ff60553ef080a7ca1bb0e8a",
+            "exactQuote": "2025 年 6 月 3 日，費米實驗室正式發布了綜合全部六期運行（Runs 1–6）的最終實驗測量結果，將不確定度大幅壓縮至創紀錄的 127 ppb（0.127 ppm），並報告了世界最新實驗綜合平均值 $a_\\mu^{\\text{Exp}} = 116592071.5(14.5) \\times 10^{-11}$。",
+            "charStart": 9427,
+            "charEnd": 9587,
+            "contentHash": "3968ab5482f27d559700b128c28f0ca2dd7d131273af5d23e4ab9cab8864a088",
+            "contextNote": "未來展望：在極致精度的刀鋒上 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-e975b31b",
+            "articleId": "art-muon-g-2-discrepancy",
+            "sectionId": "sec-7-31c6aa",
+            "sectionTitle": "未來展望：在極致精度的刀鋒上",
+            "paragraphIndex": 1,
+            "exactQuote": "與此同時，理論界在 2025 年彙整了多個獨立格點 QCD 協作組的高精度強子真空極化計算（arXiv:2505.21476），給出最新的標準模型理論預測值 $a_\\mu^{\\text{SM}} = 116592033(62) \\times 10^{-11}$。",
+            "charStart": 9588,
+            "charEnd": 9719,
+            "contentHash": "e975b31b50fbeb63d83362eed2da6ca4f5fa15cb4e1eca6cdbe5499e6364bdd3",
+            "contextNote": "未來展望：在極致精度的刀鋒上 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-d3171117",
+            "articleId": "art-muon-g-2-discrepancy",
+            "sectionId": "sec-7-31c6aa",
+            "sectionTitle": "未來展望：在極致精度的刀鋒上",
+            "paragraphIndex": 1,
+            "exactQuote": "在最新理論基準下，實驗與理論的落差已大幅收斂至 $1\\sigma$ 誤差範圍之內，高能物理界的焦點隨之轉向徹底釐清正負電子對撞色散數據與格點計算之間的系統性差異。",
+            "charStart": 9720,
+            "charEnd": 9801,
+            "contentHash": "d3171117a340f13de10e425bbfc1d2e8bf226c4c18b34374b68e16cd358c3a74",
             "contextNote": "未來展望：在極致精度的刀鋒上 · 第 2 段"
           },
           {
@@ -16142,8 +16221,8 @@
             "sectionTitle": "未來展望：在極致精度的刀鋒上",
             "paragraphIndex": 2,
             "exactQuote": "與此同時，日本 J-PARC 正在推進一項全新的低能超慢渺子束流實驗，完全不依賴魔術動量與強聚焦電場，而是利用超純無散焦磁場從完全獨立的實驗體系驗證進動信號。",
-            "charStart": 9420,
-            "charEnd": 9499,
+            "charStart": 10176,
+            "charEnd": 10255,
             "contentHash": "c5888c5531092af60d657ce86e8a4d6eb4a46edc798abb9d695f975ebbdc5b1d",
             "contextNote": "未來展望：在極致精度的刀鋒上 · 第 3 段"
           },
@@ -16154,8 +16233,8 @@
             "sectionTitle": "未來展望：在極致精度的刀鋒上",
             "paragraphIndex": 3,
             "exactQuote": "在理論端，十多個獨立的國際格點計算團隊正在跨平台交叉核驗強子中程窗（Intermediate Window）量，精度已逼近千分之數階。",
-            "charStart": 9581,
-            "charEnd": 9648,
+            "charStart": 10337,
+            "charEnd": 10404,
             "contentHash": "b14c7b5296c04d8b6945679122f33501290d35cf9b29ff64c595931069821991",
             "contextNote": "未來展望：在極致精度的刀鋒上 · 第 4 段"
           },
@@ -16166,8 +16245,8 @@
             "sectionTitle": "未來展望：在極致精度的刀鋒上",
             "paragraphIndex": 4,
             "exactQuote": "這場圍繞著小數點後第九位微弱數值的史詩級角逐再次證明：",
-            "charStart": 9718,
-            "charEnd": 9745,
+            "charStart": 10474,
+            "charEnd": 10501,
             "contentHash": "8f809fe5b85ecc0fd049f2898b3794d897eaf7a114b6e2a7f44e45e5556bf79f",
             "contextNote": "未來展望：在極致精度的刀鋒上 · 第 5 段"
           },
@@ -16178,8 +16257,8 @@
             "sectionTitle": "未來展望：在極致精度的刀鋒上",
             "paragraphIndex": 5,
             "exactQuote": "量子真空絕非一片死寂的虛無，而是寫滿了宇宙未知法則的繁密深海。",
-            "charStart": 9775,
-            "charEnd": 9806,
+            "charStart": 10531,
+            "charEnd": 10562,
             "contentHash": "b9cb311b4c28b83c1b84f5d315e1ffa5a757c97cd31286a73a60c04a7f1c54b1",
             "contextNote": "未來展望：在極致精度的刀鋒上 · 第 6 段"
           },
@@ -16190,8 +16269,8 @@
             "sectionTitle": "未來展望：在極致精度的刀鋒上",
             "paragraphIndex": 6,
             "exactQuote": "無論最終的勝利者是顛覆標準模型的新基本粒子，還是人類駕馭非微擾強相互作用超算演算法的終極成熟，這枚微小的量子磁針，都已經深刻重塑了我們對微觀物質世界的理解疆界。",
-            "charStart": 9840,
-            "charEnd": 9920,
+            "charStart": 10596,
+            "charEnd": 10676,
             "contentHash": "4f5cf902563d3ed3002a26e09d5d6df9d152ea100bb41c6c6640b2bbe0218a56",
             "contextNote": "未來展望：在極致精度的刀鋒上 · 第 7 段"
           },
@@ -16202,8 +16281,8 @@
             "sectionTitle": "未來展望：在極致精度的刀鋒上",
             "paragraphIndex": 7,
             "exactQuote": "---",
-            "charStart": 10003,
-            "charEnd": 10006,
+            "charStart": 10759,
+            "charEnd": 10762,
             "contentHash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
             "contextNote": "未來展望：在極致精度的刀鋒上 · 第 8 段"
           }
@@ -16216,19 +16295,19 @@
         "title": "參考文獻與延伸閱讀",
         "level": 2,
         "paragraphs": [
-          "1. **Muon g-2 Collaboration (Aguillard, D. P., et al.)** (2023). \"Measurement of the Positive Muon Anomalous Magnetic Moment to 0.20 ppm.\" *Physical Review Letters*, 131(16), 161802. [doi:10.1103/PhysRevLett.131.161802](https://doi.org/10.1103/PhysRevLett.131.161802)\n2. **Budapest-Marseille-Wuppertal Collaboration (Borsanyi, S., et al.)** (2021). \"Leading hadronic contribution to the muon magnetic moment from lattice QCD.\" *Nature*, 593(7857), 51–55. [doi:10.1038/s41586-021-03418-1](https://doi.org/10.1038/s41586-021-03418-1)\n3. **Aoyama, T., et al.** (2020). \"The anomalous magnetic moment of the muon in the Standard Model.\" *Physics Reports*, 887, 1–166. [doi:10.1016/j.physrep.2020.07.006](https://doi.org/10.1016/j.physrep.2020.07.006)\n4. **Miller, J. P., de Rafael, E., & Roberts, B. L.** (2007). \"Muon (g-2): experiment and theory.\" *Reports on Progress in Physics*, 70(5), 795–881. [doi:10.1088/0034-4885/70/5/R03](https://doi.org/10.1088/0034-4885/70/5/R03)"
+          "1. **Muon g-2 Collaboration (Aguillard, D. P., et al.)** (2023). \"Measurement of the Positive Muon Anomalous Magnetic Moment to 0.20 ppm.\" *Physical Review Letters*, 131(16), 161802. [doi:10.1103/PhysRevLett.131.161802](https://doi.org/10.1103/PhysRevLett.131.161802)\n2. **Muon g-2 Theory Initiative** (2025). \"The anomalous magnetic moment of the muon in the Standard Model: an update.\" *arXiv preprint*, [arXiv:2505.21476](https://arxiv.org/abs/2505.21476)\n3. **Budapest-Marseille-Wuppertal Collaboration (Borsanyi, S., et al.)** (2021). \"Leading hadronic contribution to the muon magnetic moment from lattice QCD.\" *Nature*, 593(7857), 51–55. [doi:10.1038/s41586-021-03418-1](https://doi.org/10.1038/s41586-021-03418-1)\n4. **Aoyama, T., et al.** (2020). \"The anomalous magnetic moment of the muon in the Standard Model.\" *Physics Reports*, 887, 1–166. [doi:10.1016/j.physrep.2020.07.006](https://doi.org/10.1016/j.physrep.2020.07.006)\n5. **Miller, J. P., de Rafael, E., & Roberts, B. L.** (2007). \"Muon (g-2): experiment and theory.\" *Reports on Progress in Physics*, 70(5), 795–881. [doi:10.1088/0034-4885/70/5/R03](https://doi.org/10.1088/0034-4885/70/5/R03)"
         ],
         "sentences": [
           {
-            "sentenceId": "sent-52f0e602",
+            "sentenceId": "sent-bee5e44a",
             "articleId": "art-muon-g-2-discrepancy",
             "sectionId": "sec-8-6704b8",
             "sectionTitle": "參考文獻與延伸閱讀",
             "paragraphIndex": 0,
-            "exactQuote": "1. **Muon g-2 Collaboration (Aguillard, D. P., et al.)** (2023). \"Measurement of the Positive Muon Anomalous Magnetic Moment to 0.20 ppm.\" *Physical Review Letters*, 131(16), 161802. [doi:10.1103/PhysRevLett.131.161802](https://doi.org/10.1103/PhysRevLett.131.161802)\n2. **Budapest-Marseille-Wuppertal Collaboration (Borsanyi, S., et al.)** (2021). \"Leading hadronic contribution to the muon magnetic moment from lattice QCD.\" *Nature*, 593(7857), 51–55. [doi:10.1038/s41586-021-03418-1](https://doi.org/10.1038/s41586-021-03418-1)\n3. **Aoyama, T., et al.** (2020). \"The anomalous magnetic moment of the muon in the Standard Model.\" *Physics Reports*, 887, 1–166. [doi:10.1016/j.physrep.2020.07.006](https://doi.org/10.1016/j.physrep.2020.07.006)\n4. **Miller, J. P., de Rafael, E., & Roberts, B. L.** (2007). \"Muon (g-2): experiment and theory.\" *Reports on Progress in Physics*, 70(5), 795–881. [doi:10.1088/0034-4885/70/5/R03](https://doi.org/10.1088/0034-4885/70/5/R03)",
-            "charStart": 10012,
-            "charEnd": 10984,
-            "contentHash": "52f0e60271da6ac49b7d8ed50bba8da67749cbcc20403fbaf6b43f82a2c293c2",
+            "exactQuote": "1. **Muon g-2 Collaboration (Aguillard, D. P., et al.)** (2023). \"Measurement of the Positive Muon Anomalous Magnetic Moment to 0.20 ppm.\" *Physical Review Letters*, 131(16), 161802. [doi:10.1103/PhysRevLett.131.161802](https://doi.org/10.1103/PhysRevLett.131.161802)\n2. **Muon g-2 Theory Initiative** (2025). \"The anomalous magnetic moment of the muon in the Standard Model: an update.\" *arXiv preprint*, [arXiv:2505.21476](https://arxiv.org/abs/2505.21476)\n3. **Budapest-Marseille-Wuppertal Collaboration (Borsanyi, S., et al.)** (2021). \"Leading hadronic contribution to the muon magnetic moment from lattice QCD.\" *Nature*, 593(7857), 51–55. [doi:10.1038/s41586-021-03418-1](https://doi.org/10.1038/s41586-021-03418-1)\n4. **Aoyama, T., et al.** (2020). \"The anomalous magnetic moment of the muon in the Standard Model.\" *Physics Reports*, 887, 1–166. [doi:10.1016/j.physrep.2020.07.006](https://doi.org/10.1016/j.physrep.2020.07.006)\n5. **Miller, J. P., de Rafael, E., & Roberts, B. L.** (2007). \"Muon (g-2): experiment and theory.\" *Reports on Progress in Physics*, 70(5), 795–881. [doi:10.1088/0034-4885/70/5/R03](https://doi.org/10.1088/0034-4885/70/5/R03)",
+            "charStart": 10768,
+            "charEnd": 11931,
+            "contentHash": "bee5e44a177b93a3ea384bbca10a61c6493836fa2c2ee6b57cef77b7ca2fd541",
             "contextNote": "參考文獻與延伸閱讀 · 第 1 段"
           }
         ],
@@ -16236,8 +16315,8 @@
         "interactiveComponentId": null
       }
     ],
-    "totalWordCount": 6865,
-    "lastIndexedAt": "2026-11-10T01:11:20.193Z"
+    "totalWordCount": 7385,
+    "lastIndexedAt": "2026-11-10T07:56:33.584Z"
   },
   {
     "id": "art-percolation-phase-transition",
@@ -17378,7 +17457,7 @@
       }
     ],
     "totalWordCount": 5617,
-    "lastIndexedAt": "2026-11-10T01:11:20.195Z"
+    "lastIndexedAt": "2026-11-10T07:56:33.587Z"
   },
   {
     "id": "art-quantum-hall-anyons",
@@ -18251,7 +18330,7 @@
       }
     ],
     "totalWordCount": 4789,
-    "lastIndexedAt": "2026-11-10T01:11:20.198Z"
+    "lastIndexedAt": "2026-11-10T07:56:33.593Z"
   },
   {
     "id": "art-rna-world-ribozyme",
@@ -18900,7 +18979,7 @@
       }
     ],
     "totalWordCount": 3321,
-    "lastIndexedAt": "2026-11-10T01:11:20.202Z"
+    "lastIndexedAt": "2026-11-10T07:56:33.596Z"
   },
   {
     "id": "art-snn-neuromorphic-compute",
@@ -19520,7 +19599,7 @@
       }
     ],
     "totalWordCount": 3713,
-    "lastIndexedAt": "2026-11-10T01:11:20.204Z"
+    "lastIndexedAt": "2026-11-10T07:56:33.597Z"
   },
   {
     "id": "art-thorium-nuclear-clock",
@@ -20103,7 +20182,7 @@
       }
     ],
     "totalWordCount": 3193,
-    "lastIndexedAt": "2026-11-10T01:11:20.205Z"
+    "lastIndexedAt": "2026-11-10T07:56:33.600Z"
   },
   {
     "id": "art-tokamak-elm-instability",
@@ -20940,7 +21019,7 @@
       }
     ],
     "totalWordCount": 2669,
-    "lastIndexedAt": "2026-11-10T01:11:20.207Z"
+    "lastIndexedAt": "2026-11-10T07:56:33.602Z"
   },
   {
     "id": "art-turbulence-kolmogorov-cascade",
@@ -20992,10 +21071,14 @@
       {
         "id": "ref-sreenivasan-1999",
         "citation": "Sreenivasan, K. R. (1999). \"Fluid turbulence.\" Reviews of Modern Physics, 71(2), S383-S395. doi:10.1103/RevModPhys.71.S383."
+      },
+      {
+        "id": "ref-kraichnan-1967",
+        "citation": "Kraichnan, R. H. (1967). \"Inertial Ranges in Two-Dimensional Turbulence.\" The Physics of Fluids, 10(7), 1417-1423. doi:10.1063/1.1762301."
       }
     ],
     "interactiveComponent": "TurbulenceCascadeSimulator",
-    "contentHash": "208a6dcc079e7afec28f4e04eb3e601167e4f83c6d8f3412eabd52d45fb46bcf",
+    "contentHash": "5a035956e3dcfe7fb81799810fb174955ee55cf371ca8a9a2f88de54a0ad7aef",
     "sections": [
       {
         "id": "sec-1-b192d0",
@@ -21770,7 +21853,7 @@
       }
     ],
     "totalWordCount": 4164,
-    "lastIndexedAt": "2026-11-10T01:11:20.209Z"
+    "lastIndexedAt": "2026-11-10T07:56:33.604Z"
   },
   {
     "id": "art-turing-reaction-diffusion",
@@ -22677,7 +22760,7 @@
       }
     ],
     "totalWordCount": 3346,
-    "lastIndexedAt": "2026-11-10T01:11:20.211Z"
+    "lastIndexedAt": "2026-11-10T07:56:33.607Z"
   },
   {
     "id": "art-exoplanet-transit",
@@ -23206,6 +23289,6 @@
       }
     ],
     "totalWordCount": 1679,
-    "lastIndexedAt": "2026-11-10T01:11:20.214Z"
+    "lastIndexedAt": "2026-11-10T07:56:33.609Z"
   }
 ]

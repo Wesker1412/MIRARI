@@ -20,7 +20,7 @@
     },
     {
       "id": "kp-eht-mad-vs-sane",
-      "label": "磁阻滯吸積盤（MAD）的證實",
+      "label": "磁阻滯吸積盤（MAD）觀測支持",
       "suggestedQuestion": "黑洞吸積盤上的磁場如何硬生生對抗黑洞的無情吞噬？",
       "keywords": [
         "磁阻滯盤",
@@ -30,8 +30,8 @@
         "GRMHD模擬",
         "吸積流"
       ],
-      "plainExplanation": "過去天文學家不確定磁場是隨波逐流的弱雜質（SANE）還是能對抗重力的主宰者（MAD）。EHT 偏振數據證實了磁阻滯盤模型：大量垂直穿透盤面的極向磁場在視界邊緣高度聚集，其強大的磁壓力足以硬生生阻滯住不斷下墜的氣體，使得黑洞周圍呈現高度有序的螺旋磁結構。",
-      "anchorSentenceId": "sent-985ba5a7"
+      "plainExplanation": "過去天文學家不確定磁場是隨波逐流的弱雜質（SANE）還是能對抗重力的主宰者（MAD）。EHT 偏振觀測與數值模型比對強烈支持磁阻滯盤模型：大量垂直穿透盤面的極向磁場在視界邊緣高度聚集，其強大的磁壓力足以阻滯住不斷下墜的氣體，使得黑洞周圍呈現高度有序的螺旋磁結構。",
+      "anchorSentenceId": "sent-4618b537"
     },
     {
       "id": "kp-eht-blandford-znajek-engine",

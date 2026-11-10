@@ -37,7 +37,7 @@
       {
         "id": "ref-eht-2021-m87-viii",
         "citation": "Event Horizon Telescope Collaboration (2021). \"First M87 Event Horizon Telescope Results. VIII. Magnetic Field Structure near The Event Horizon.\" The Astrophysical Journal Letters, 910(1), L13.",
-        "doi": "10.3847/2041-8213/abe488",
+        "doi": "10.3847/2041-8213/abe4de",
         "peerReviewStatus": "已完成同行評審 (The Astrophysical Journal Letters 專刊論文)",
         "citationAudit": {
           "verifiedFirstAuthor": "Kazunori Akiyama, et al. (Event Horizon Telescope Collaboration)",
@@ -71,8 +71,8 @@
         "verified": true
       },
       {
-        "formula": "P_{\\text{BZ}} = \\kappa \\left(\\frac{\\Omega_H c}{R_g}\\right)^2 \\Phi_{\\text{BH}}^2",
-        "unitConsistency": "功率因次為 W 或 erg/s；角速度 Ω_H c / R_g 因次 s⁻¹，磁通量 Φ_BH 因次 G·cm²；在 CGS 電磁高斯單位制下因次完全符合能流功率",
+        "formula": "P_{\\text{BZ}} \\approx \\frac{\\kappa}{4\\pi c} \\Phi_{\\text{BH}}^2 \\Omega_H^2 f(\\omega_H)",
+        "unitConsistency": "在 CGS 高斯單位制下，磁通量 Φ_BH 單位為 G·cm²，角速度 Ω_H = a_* c / (2 r_H) 單位為 s⁻¹，光速 c 單位為 cm/s；Φ_BH² Ω_H² / c 單位為 G²·cm³·s⁻¹ = erg/s，κ 與 f(ω_H)（其中 ω_H = Ω_H r_g / c）為無量綱幾何與自旋修正因子，因次完全符合能量功率",
         "verified": true
       },
       {
