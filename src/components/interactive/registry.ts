@@ -27,6 +27,9 @@ import { RibozymeKineticsSimulator } from '../article/RibozymeKineticsSimulator'
 import { MuonPrecessionSimulator } from '../article/MuonPrecessionSimulator';
 import { PrimeEditingSimulator } from '../article/PrimeEditingSimulator';
 import { PercolationGridSimulator } from '../article/PercolationGridSimulator';
+import { MagicAngleMoireSimulator } from '../article/MagicAngleMoireSimulator';
+import { BlackHolePolarizationSimulator } from '../article/BlackHolePolarizationSimulator';
+import { ProteinFoldingFunnelSimulator } from '../article/ProteinFoldingFunnelSimulator';
 
 export interface InteractiveParameterMeta {
   name: string;
@@ -672,6 +675,30 @@ export const INTERACTIVE_COMPONENTS: Record<string, InteractiveComponentMeta> = 
     parameters: [],
     keyConcepts: ['滲流理論 (Percolation Theory)', '臨界點 (Critical Probability)', '幾何相變 (Geometric Phase Transition)', '無限團簇 (Infinite Cluster)', '普適性 (Universality)'],
     component: PercolationGridSimulator,
+  },
+  MagicAngleMoireSimulator: {
+    id: 'MagicAngleMoireSimulator',
+    nameZh: '魔角雙層石墨烯（MATBG）莫爾平帶與強關聯物態模擬器',
+    descriptionZh: 'Bistritzer-MacDonald 連續介質模型、莫爾超週期 lambda_M、平帶帶寬 W 壓縮與莫特絕緣/超導相圖。',
+    parameters: [],
+    keyConcepts: ['魔角雙層石墨烯 (Magic-Angle Graphene)', '莫爾超晶格 (Moiré Superlattice)', '平帶 (Flat Band)', '莫特絕緣體 (Mott Insulator)', '非常規超導 (Unconventional Superconductivity)'],
+    component: MagicAngleMoireSimulator,
+  },
+  BlackHolePolarizationSimulator: {
+    id: 'BlackHolePolarizationSimulator',
+    nameZh: '事件視界望遠鏡（EHT）黑洞偏振成像與相對論噴流模擬器',
+    descriptionZh: '同步輻射線性偏振電向量角（EVPA）、磁阻滯吸積盤（MAD）與布蘭福德-茲納傑克磁能抽取。',
+    parameters: [],
+    keyConcepts: ['事件視界望遠鏡 (EHT)', '線性偏振 (Linear Polarization)', '電向量位置角 (EVPA)', '磁阻滯盤 (MAD)', '布蘭福德-茲納傑克機制 (Blandford-Znajek Process)'],
+    component: BlackHolePolarizationSimulator,
+  },
+  ProteinFoldingFunnelSimulator: {
+    id: 'ProteinFoldingFunnelSimulator',
+    nameZh: '蛋白質折疊自由能漏斗與萊文索爾佯謬模擬器',
+    descriptionZh: '粗糙高維自由能漏斗、天然接觸序參量 Q、最小受挫原理與熔球態動力學中間體。',
+    parameters: [],
+    keyConcepts: ['萊文索爾佯謬 (Levinthal\'s Paradox)', '自由能漏斗 (Energy Funnel)', '最小受挫原理 (Minimal Frustration)', '天然接觸分數 (Native Contacts Q)', '熔球態 (Molten Globule)'],
+    component: ProteinFoldingFunnelSimulator,
   },
 };
 

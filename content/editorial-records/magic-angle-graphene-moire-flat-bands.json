@@ -1,0 +1,109 @@
+{
+  "articleId": "art-magic-angle-graphene",
+  "slug": "magic-angle-graphene-moire-flat-bands",
+  "editorialCategory": "journal_interpretation",
+  "version": 1,
+  "creationModel": "gemini-2.5-pro",
+  "editorialPassDate": "2026-11-10T09:00:00+08:00",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-cao-2018-nature-sc",
+        "citation": "Cao, Y., Fatemi, V., Fang, S., et al. (2018). \"Unconventional superconductivity in magic-angle graphene superlattices.\" Nature, 556(7699), 43-50.",
+        "doi": "10.1038/nature26160",
+        "peerReviewStatus": "已完成同行評審 (Nature 封面突破性實驗研究)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Yuan Cao (Pablo Jarillo-Herrero Group)",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 MIT 團隊 2018 年 Nature 原文，確認在扭轉角 θ ≈ 1.05°-1.16°、臨界溫度 Tc ≈ 1.7 K 下觀測到非常規超導穹頂包裹半填充莫特絕緣態。"
+        },
+        "verifiedClaims": [
+          "在第一魔角 1.08° 旋轉雙層石墨烯中，於半填充莫特絕緣態兩側注入少量載子即可觸發超導電性，最高臨界溫度達 1.7 K",
+          "超導態展現與高溫銅氧化物超導體驚人相似的相圖穹頂結構，但完全擺脫了化學替代雜質的困擾，純粹由靜電閘極電壓調諧"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "單層石墨烯在低能下為無質量狄拉克費米子，費米速度 v_F ≈ 10^6 m/s",
+            "莫爾超晶格週期 λ_M = a_0 / (2 sin(θ/2)) 隨扭轉角縮小而顯著擴大"
+          ],
+          "empiricalFindings": [
+            "在液氦溫區下測得四端電阻斷崖式跌落至超導零電阻",
+            "量子震盪實驗確定費米面在莫特相與超導相之間的重組行為"
+          ],
+          "hypothesesAndModels": [
+            "非常規庫柏對配對對稱性（d 波、d+id 波或純電子關聯機制）之微觀本質模型爭辯"
+          ]
+        }
+      },
+      {
+        "id": "ref-bistritzer-2011-pnas",
+        "citation": "Bistritzer, R. & MacDonald, A. H. (2011). \"Moiré bands in twisted double-layer graphene.\" Proceedings of the National Academy of Sciences, 108(30), 12233-12237.",
+        "doi": "10.1073/pnas.1108174108",
+        "peerReviewStatus": "已完成同行評審 (PNAS 里程碑理論物理論文)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Rafi Bistritzer & Allan H. MacDonald",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 Bistritzer-MacDonald 連續介質模型原文，確認在偶合參數 α ≈ 1/√3 (θ ≈ 1.08°) 處狄拉克費米速度重整化因子 (1 - 3α²)/(1 + 6α²) 嚴格歸零，預言極平能帶。"
+        },
+        "verifiedClaims": [
+          "建立連續介質有效哈密頓量模型，成功推導層間隧穿躍遷導致狄拉克費米速度在魔角處消失",
+          "預言在 1.05° 附近迷你布里淵區中心產生帶寬僅約數毫電子伏特的孤立超平帶"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "石墨烯狄拉克錐低能有效算符 -i ħ v_F σ · ∇",
+            "六角莫爾超晶格在倒易空間中的高對稱點 Γ_M, K_M, M_M"
+          ],
+          "empiricalFindings": [
+            "超級電腦連續介質能帶數值對角化解算的帶寬與費米速度曲線"
+          ],
+          "hypothesesAndModels": [
+            "剛性無弛豫晶格近似（後續研究修正了原子層內局域弛豫對平帶拓撲間隙的影響）"
+          ]
+        }
+      }
+    ],
+    "noFakeCitations": true,
+    "noFictionalReviewers": true,
+    "formulasAndUnits": [
+      {
+        "formula": "\\lambda_M = \\frac{a_0}{2 \\sin(\\theta / 2)} \\approx \\frac{a_0}{\\theta}",
+        "unitConsistency": "晶格常數 a_0 與莫爾週期 λ_M 均為長度單位 nm；角度 θ 與其正弦均為無因次純數，長度因次一致",
+        "verified": true
+      },
+      {
+        "formula": "v_F^*(\\theta) \\approx v_F \\frac{1 - 3\\alpha^2}{1 + 6\\alpha^2}",
+        "unitConsistency": "費米速度 v_F 與重整化速度 v_F^* 因次為 m/s；α 為無因次偶合參數，分子分母皆為純數，因次完全自洽",
+        "verified": true
+      },
+      {
+        "formula": "\\frac{U}{W} \\gg 1",
+        "unitConsistency": "哈伯德庫侖排斥能 U 與能帶帶寬 W 均為能量單位 eV 或 meV，比值為無因次強度指標，完全自洽",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "Bistritzer-MacDonald 平帶模型色散特徵方程、莫爾超晶格週期公式與微型布里淵區能量數值求解",
+      "numericalMethod": "即時三束 120° 平面波疊加求解實空間莫爾干涉光強分佈，配合動態帶寬縮放與閘極靜電填充相圖映射",
+      "modelAssumptionsAndLimits": "模擬器採用剛性無原子面內剪切鬆弛的二維週期勢近似；實際樣品在 AA/AB 疇邊界存在約 0.1 Å 的面外波紋起伏與面內微觀晶格弛豫效應"
+    }
+  },
+  "readability": {
+    "technicalTermsDemystified": [
+      "莫爾超晶格：就像兩張紗窗稍微轉一點點就會出現放大的大花紋，兩片碳原子薄膜旋轉後，也會形成尺度放大五十倍的超級網格，把電子關在裡面",
+      "平帶（Flat Band）：正常導體裡電子跑得飛快（能帶很陡），但在魔角下能帶被壓得像鏡面一樣平，電子的動能被徹底凍結，只能待在原地感受彼此的排斥力",
+      "莫特絕緣體：按理說每個格子只塞了一半電子的材料應該是導體，但因為每個電子都嫌旁邊的電子太擠太討厭（庫侖排斥太強），結果誰都不肯動，反而變成了絕緣體"
+    ]
+  },
+  "aestheticsAndNarrative": {
+    "coreQuestion": "為什麼兩片最平凡的鉛筆芯碳原子薄膜，只要輕輕旋轉 1.08 度，就能誕生出高溫超導與強關聯電子的量子奇蹟？",
+    "interactiveRole": "透過 MagicAngleMoireSimulator 讓讀者手動滑動扭轉角與閘極電壓，直觀目睹 1.08 度臨界點處莫爾花紋的 AA 電子局域化爆發、能帶瞬間被壓平的動態色散，以及莫特相與超導穹頂在不同填充數下的即時轉變"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "嚴格區分單層石墨烯弱相互作用狄拉克半金屬與魔角雙層強關聯莫特絕緣態的物理本質，強調動能凍結 (U/W >> 1) 是產生相關聯態的先決條件",
+    "修正早期科普中將超導機制直接等同於傳統 BCS 聲子配對的片面觀點，點出其相圖與高溫銅氧化物非常規超導的深層親緣性"
+  ],
+  "unconfirmedLimits": [
+    "魔角石墨烯中超導配對的微觀對稱性（究竟是自旋單態 d 波、向列相配對還是非聲子自旋漲落媒介）目前在理論與高精度低溫實驗界仍有激烈的學術爭鳴"
+  ]
+}

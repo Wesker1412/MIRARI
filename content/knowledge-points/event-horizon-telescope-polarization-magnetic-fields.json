@@ -1,0 +1,52 @@
+{
+  "articleId": "art-eht-polarization-magnetic-fields",
+  "slug": "event-horizon-telescope-polarization-magnetic-fields",
+  "title": "凝視深淵的磁力線：事件視界望遠鏡如何以偏振光解開黑洞噴流之謎？",
+  "knowledgePoints": [
+    {
+      "id": "kp-eht-linear-polarization-evpa",
+      "label": "線性偏振與磁場幾何指紋",
+      "suggestedQuestion": "為什麼給黑洞光環加上偏光濾鏡，就能看清不可見的宇宙磁力線？",
+      "keywords": [
+        "事件視界望遠鏡",
+        "線性偏振",
+        "同步輻射",
+        "電向量位置角",
+        "法拉第旋轉",
+        "斯托克斯參量"
+      ],
+      "plainExplanation": "極高溫電漿中的電子在強磁場中接近光速繞轉時，發射出的同步輻射電場會沿著垂直於磁場的方向規則擺動，形成線偏振光。事件視界望遠鏡測得的偏振電向量螺旋圖紋，如同直接為黑洞邊緣的磁力骨骼拍下一張 X 光片，直觀描繪了磁場在強重力彎曲時空下的投影形狀。",
+      "anchorSentenceId": "sent-c4b0356f"
+    },
+    {
+      "id": "kp-eht-mad-vs-sane",
+      "label": "磁阻滯吸積盤（MAD）的證實",
+      "suggestedQuestion": "黑洞吸積盤上的磁場如何硬生生對抗黑洞的無情吞噬？",
+      "keywords": [
+        "磁阻滯盤",
+        "SANE模型",
+        "極向磁場",
+        "磁壓對抗引力",
+        "GRMHD模擬",
+        "吸積流"
+      ],
+      "plainExplanation": "過去天文學家不確定磁場是隨波逐流的弱雜質（SANE）還是能對抗重力的主宰者（MAD）。EHT 偏振數據證實了磁阻滯盤模型：大量垂直穿透盤面的極向磁場在視界邊緣高度聚集，其強大的磁壓力足以硬生生阻滯住不斷下墜的氣體，使得黑洞周圍呈現高度有序的螺旋磁結構。",
+      "anchorSentenceId": "sent-985ba5a7"
+    },
+    {
+      "id": "kp-eht-blandford-znajek-engine",
+      "label": "布蘭福德-茲納傑克時空發動機",
+      "suggestedQuestion": "沒有物質能逃出的黑洞，為什麼能噴射出橫跨數千光年的相對論噴流？",
+      "keywords": [
+        "布蘭福德-茲納傑克機制",
+        "相對論噴流",
+        "時空拖曳",
+        "克爾黑洞能層",
+        "自旋能量抽取",
+        "磁層發電機"
+      ],
+      "plainExplanation": "旋轉黑洞外圍存在一個時空本身都在飛速旋轉的區域（能層）。當磁阻滯盤帶來的強大磁力線穿透這個區域時，旋轉的時空會像擰麻花一樣扭曲磁力線，將黑洞本身的自旋動能沿著轉軸方向抽取出來，轉化為威力無比的電磁能流，將周圍粒子加速到 99% 光速並噴向宇宙深空。",
+      "anchorSentenceId": "sent-ed273842"
+    }
+  ]
+}

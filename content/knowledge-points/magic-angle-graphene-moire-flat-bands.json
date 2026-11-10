@@ -1,0 +1,52 @@
+{
+  "articleId": "art-magic-angle-graphene",
+  "slug": "magic-angle-graphene-moire-flat-bands",
+  "title": "平帶之上的量子交響：魔角扭轉雙層石墨烯如何開啟強關聯電子時代？",
+  "knowledgePoints": [
+    {
+      "id": "kp-matbg-moire-superlattice",
+      "label": "莫爾超晶格與動能凍結",
+      "suggestedQuestion": "為什麼兩片石墨烯僅僅旋轉 1.08 度，電子的運動速度就會直接降到近乎為零？",
+      "keywords": [
+        "魔角石墨烯",
+        "莫爾超晶格",
+        "平帶物理",
+        "費米速度",
+        "Bistritzer-MacDonald模型",
+        "量子隧穿"
+      ],
+      "plainExplanation": "單層石墨烯中電子跑得極快，如同沒有質量的光子。但當兩層石墨烯疊加並旋轉 1.08 度時，兩套六角蜂巢網格會干涉出放大五十倍的宏觀莫爾暗紋。層間電子量子隧穿使得不同層的狄拉克錐相互雜化抵消，在費米能級附近將原本陡峭的能帶徹底壓平，電子動能被完全凍結在 AA 堆疊區域中。",
+      "anchorSentenceId": "sent-2402afb8"
+    },
+    {
+      "id": "kp-matbg-mott-insulator",
+      "label": "庫侖排斥與關聯莫特絕緣體",
+      "suggestedQuestion": "原本是極佳導體的碳材料，為什麼會在特定電壓下自發變成絕緣體？",
+      "keywords": [
+        "莫特絕緣體",
+        "庫侖排斥",
+        "強關聯電子",
+        "半填充態",
+        "哈伯德模型",
+        "關聯能隙"
+      ],
+      "plainExplanation": "在普通材料中電子依靠巨大的動能四處遊走，輕易穿透彼此。然而在魔角平帶下，電子動能被壓到僅剩數毫電子伏特，相鄰電子之間的靜電庫侖排斥力佔據了壓倒性統治地位。當每個莫爾超胞剛好塞進兩個電子時，強大的互斥力使所有電子動彈不得，導體在沒有任何化學雜質的情況下自發鎖死成絕緣體。",
+      "anchorSentenceId": "sent-8adcd730"
+    },
+    {
+      "id": "kp-matbg-unconventional-superconductivity",
+      "label": "純碳材料中的非常規超導穹頂",
+      "suggestedQuestion": "為什麼魔角石墨烯的超導現象被認為是解開高溫銅氧化物超導謎題的關鍵鑰匙？",
+      "keywords": [
+        "非常規超導",
+        "超導穹頂",
+        "銅氧化物",
+        "靜電摻雜",
+        "庫柏對",
+        "扭轉電子學"
+      ],
+      "plainExplanation": "傳統超導需要笨重的低溫聲子輔助配對，而高溫銅氧化物機制因化學雜質紛亂而爭論四十年。魔角石墨烯是純粹由碳原子構成的乾淨晶體，只需微調閘極電壓注入少許載子，莫特絕緣體兩側就會自發湧現一模一樣的超導穹頂，為人類提供了可即時調諧、無化學雜質干擾的理想量子超導沙盒。",
+      "anchorSentenceId": "sent-a7789b14"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "lastRunTimestamp": "2026-11-09T09:00:00.000Z",
+  "lastRunTimestamp": "2026-11-10T09:00:00.000Z",
   "scheduledCron": "0 9 * * *",
   "timezone": "Asia/Taipei (UTC+8)",
   "creationModel": "gemini-2.5-pro",
@@ -561,6 +561,63 @@
             "Stauffer & Aharony (2018) Introduction to Percolation Theory doi:10.1201/9781315274386"
           ],
           "editorialRecordPath": "content/editorial-records/percolation-theory-phase-transition.json"
+        }
+      ]
+    },
+    {
+      "runId": "mirari-auto-run-20261110-0900",
+      "timestamp": "2026-11-10T09:00:00.000Z",
+      "targetCount": 3,
+      "succeededCount": 3,
+      "failedCount": 0,
+      "articles": [
+        {
+          "id": "art-magic-angle-graphene",
+          "slug": "magic-angle-graphene-moire-flat-bands",
+          "title": "平帶之上的量子交響：魔角扭轉雙層石墨烯如何開啟強關聯電子時代？",
+          "discipline": "凝聚態物理與莫爾量子材料",
+          "interactiveComponent": "MagicAngleMoireSimulator",
+          "interactiveType": "magic_angle_moire",
+          "narrativeStyle": "research_interpretation",
+          "status": "published",
+          "sources": [
+            "Cao et al. (2018) Nature doi:10.1038/nature26160",
+            "Cao et al. (2018) Nature doi:10.1038/nature26154",
+            "Bistritzer & MacDonald (2011) PNAS doi:10.1073/pnas.1108174108"
+          ],
+          "editorialRecordPath": "content/editorial-records/magic-angle-graphene-moire-flat-bands.json"
+        },
+        {
+          "id": "art-eht-polarization-magnetic-fields",
+          "slug": "event-horizon-telescope-polarization-magnetic-fields",
+          "title": "凝視深淵的磁力線：事件視界望遠鏡如何以偏振光解開黑洞噴流之謎？",
+          "discipline": "高能天體物理學與廣義相對論",
+          "interactiveComponent": "BlackHolePolarizationSimulator",
+          "interactiveType": "black_hole_polarization",
+          "narrativeStyle": "geometric_observation",
+          "status": "published",
+          "sources": [
+            "Event Horizon Telescope Collaboration (2021) Astrophys. J. Lett. doi:10.3847/2041-8213/abe71d",
+            "Event Horizon Telescope Collaboration (2021) Astrophys. J. Lett. doi:10.3847/2041-8213/abe488",
+            "Event Horizon Telescope Collaboration (2024) Astrophys. J. Lett. doi:10.3847/2041-8213/ad2df0"
+          ],
+          "editorialRecordPath": "content/editorial-records/event-horizon-telescope-polarization-magnetic-fields.json"
+        },
+        {
+          "id": "art-levinthal-paradox-funnel",
+          "slug": "levinthal-paradox-protein-folding-funnel",
+          "title": "走出高維迷宮：萊文索爾佯謬與蛋白質折疊的自由能漏斗",
+          "discipline": "分子生物物理學與統計熱力學",
+          "interactiveComponent": "ProteinFoldingFunnelSimulator",
+          "interactiveType": "protein_folding_funnel",
+          "narrativeStyle": "thought_experiment",
+          "status": "published",
+          "sources": [
+            "Levinthal (1968) J. Chim. Phys. doi:10.1051/jcp/1968650044",
+            "Onuchic et al. (1997) Annu. Rev. Phys. Chem. doi:10.1146/annurev.physchem.48.1.545",
+            "Dill & MacCallum (2012) Science doi:10.1126/science.1219021"
+          ],
+          "editorialRecordPath": "content/editorial-records/levinthal-paradox-protein-folding-funnel.json"
         }
       ]
     }

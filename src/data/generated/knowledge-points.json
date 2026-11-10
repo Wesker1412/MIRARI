@@ -676,6 +676,58 @@
     ]
   },
   {
+    "articleId": "art-eht-polarization-magnetic-fields",
+    "slug": "event-horizon-telescope-polarization-magnetic-fields",
+    "title": "凝視深淵的磁力線：事件視界望遠鏡如何以偏振光解開黑洞噴流之謎？",
+    "knowledgePoints": [
+      {
+        "id": "kp-eht-linear-polarization-evpa",
+        "label": "線性偏振與磁場幾何指紋",
+        "suggestedQuestion": "為什麼給黑洞光環加上偏光濾鏡，就能看清不可見的宇宙磁力線？",
+        "keywords": [
+          "事件視界望遠鏡",
+          "線性偏振",
+          "同步輻射",
+          "電向量位置角",
+          "法拉第旋轉",
+          "斯托克斯參量"
+        ],
+        "plainExplanation": "極高溫電漿中的電子在強磁場中接近光速繞轉時，發射出的同步輻射電場會沿著垂直於磁場的方向規則擺動，形成線偏振光。事件視界望遠鏡測得的偏振電向量螺旋圖紋，如同直接為黑洞邊緣的磁力骨骼拍下一張 X 光片，直觀描繪了磁場在強重力彎曲時空下的投影形狀。",
+        "anchorSentenceId": "sent-c4b0356f"
+      },
+      {
+        "id": "kp-eht-mad-vs-sane",
+        "label": "磁阻滯吸積盤（MAD）的證實",
+        "suggestedQuestion": "黑洞吸積盤上的磁場如何硬生生對抗黑洞的無情吞噬？",
+        "keywords": [
+          "磁阻滯盤",
+          "SANE模型",
+          "極向磁場",
+          "磁壓對抗引力",
+          "GRMHD模擬",
+          "吸積流"
+        ],
+        "plainExplanation": "過去天文學家不確定磁場是隨波逐流的弱雜質（SANE）還是能對抗重力的主宰者（MAD）。EHT 偏振數據證實了磁阻滯盤模型：大量垂直穿透盤面的極向磁場在視界邊緣高度聚集，其強大的磁壓力足以硬生生阻滯住不斷下墜的氣體，使得黑洞周圍呈現高度有序的螺旋磁結構。",
+        "anchorSentenceId": "sent-985ba5a7"
+      },
+      {
+        "id": "kp-eht-blandford-znajek-engine",
+        "label": "布蘭福德-茲納傑克時空發動機",
+        "suggestedQuestion": "沒有物質能逃出的黑洞，為什麼能噴射出橫跨數千光年的相對論噴流？",
+        "keywords": [
+          "布蘭福德-茲納傑克機制",
+          "相對論噴流",
+          "時空拖曳",
+          "克爾黑洞能層",
+          "自旋能量抽取",
+          "磁層發電機"
+        ],
+        "plainExplanation": "旋轉黑洞外圍存在一個時空本身都在飛速旋轉的區域（能層）。當磁阻滯盤帶來的強大磁力線穿透這個區域時，旋轉的時空會像擰麻花一樣扭曲磁力線，將黑洞本身的自旋動能沿著轉軸方向抽取出來，轉化為威力無比的電磁能流，將周圍粒子加速到 99% 光速並噴向宇宙深空。",
+        "anchorSentenceId": "sent-ed273842"
+      }
+    ]
+  },
+  {
     "articleId": "art-gravitational-waves-kerr",
     "slug": "gravitational-waves-kerr-black-hole",
     "title": "穿透事件視界的重力迴響：重力波克爾黑洞無毛定理檢驗",
@@ -881,6 +933,110 @@
         ],
         "plainExplanation": "突變的命運取決於天擇選擇強度 s 與族群大小 Ne 的乘積 2Ne·s。當 |2Ne·s| 小於 1 時，微弱的生存優劣勢會被每代隨機抽樣的巨大噪聲徹底淹沒，天擇機制實質失效，即使是輕微有害的突變也能像中性基因一樣自由漂變並在族群中擴散固定。",
         "anchorSentenceId": "sent-4b9d24e0"
+      }
+    ]
+  },
+  {
+    "articleId": "art-levinthal-paradox-funnel",
+    "slug": "levinthal-paradox-protein-folding-funnel",
+    "title": "走出高維迷宮：萊文索爾佯謬與蛋白質折疊的自由能漏斗",
+    "knowledgePoints": [
+      {
+        "id": "kp-levinthal-astronomical-search",
+        "label": "萊文索爾佯謬與天文數字盲搜",
+        "suggestedQuestion": "為什麼一條僅僅包含百個胺基酸的蛋白質鏈，隨機嘗試構象需要比宇宙年齡還要漫長的時間？",
+        "keywords": [
+          "萊文索爾佯謬",
+          "構象空間",
+          "隨機搜索",
+          "二面角自由度",
+          "天文數字",
+          "折疊時標"
+        ],
+        "plainExplanation": "每個胺基酸具有旋轉主鏈二面角，即使極其保守地只考慮三種可能取向，100 個殘基也有多達 10 的 94 次方種空間排列，遠超宇宙基本粒子總數。如果蛋白質像盲人摸象一樣依靠隨機熱碰撞逐一嘗試，即使每百飛秒試一次也要耗費 10 的 73 次方年，但真實細胞卻在千分之一秒內完成折疊，構成了經典佯謬。",
+        "anchorSentenceId": "sent-fee2c07e"
+      },
+      {
+        "id": "kp-levinthal-energy-funnel-gradient",
+        "label": "自由能漏斗與熵-焓自發滑落",
+        "suggestedQuestion": "統計物理學家如何用「漏斗」打破高爾夫球洞的傳統偏見？",
+        "keywords": [
+          "自由能漏斗",
+          "能量景觀",
+          "疏水塌縮",
+          "構象熵減",
+          "焓驅動",
+          "熱力學坡度"
+        ],
+        "plainExplanation": "蛋白質構象空間並非平坦的高爾夫球場，而是一個向天然基態傾斜的高維漏斗。雖然折疊會損失多肽鏈的構象熵，但疏水殘基抱團躲避水分子（疏水塌縮）以及大量氫鍵和鹽橋的形成釋放了巨大的結合焓，總自由能大幅下降，驅使多肽鏈順著陡峭的熱力學斜坡自發滑落到底部的天然功能構象。",
+        "anchorSentenceId": "sent-e21c5a13"
+      },
+      {
+        "id": "kp-levinthal-minimal-frustration",
+        "label": "最小受挫原理與平滑演化景觀",
+        "suggestedQuestion": "為什麼天然蛋白質不會在折疊的半路上卡在錯誤的結構陷阱中？",
+        "keywords": [
+          "最小受挫原理",
+          "自旋玻璃",
+          "熔球態",
+          "天然接觸協同性",
+          "動力學陷阱",
+          "分子演化"
+        ],
+        "plainExplanation": "隨機合成的化學多肽往往充滿相互矛盾的吸引力（受挫），會像玻璃一樣凍結在錯亂形狀中。然而天然蛋白質經歷了數十億年自然選擇的極致打磨，遵循最小受挫原理：天然構象所需的相互作用具備極高的協同優勢，將能量漏斗內壁的顛簸能壘降到極小，使分子能在室溫熱擾動下輕鬆躍過微小陷阱、順暢入軌。",
+        "anchorSentenceId": "sent-6b809ddc"
+      }
+    ]
+  },
+  {
+    "articleId": "art-magic-angle-graphene",
+    "slug": "magic-angle-graphene-moire-flat-bands",
+    "title": "平帶之上的量子交響：魔角扭轉雙層石墨烯如何開啟強關聯電子時代？",
+    "knowledgePoints": [
+      {
+        "id": "kp-matbg-moire-superlattice",
+        "label": "莫爾超晶格與動能凍結",
+        "suggestedQuestion": "為什麼兩片石墨烯僅僅旋轉 1.08 度，電子的運動速度就會直接降到近乎為零？",
+        "keywords": [
+          "魔角石墨烯",
+          "莫爾超晶格",
+          "平帶物理",
+          "費米速度",
+          "Bistritzer-MacDonald模型",
+          "量子隧穿"
+        ],
+        "plainExplanation": "單層石墨烯中電子跑得極快，如同沒有質量的光子。但當兩層石墨烯疊加並旋轉 1.08 度時，兩套六角蜂巢網格會干涉出放大五十倍的宏觀莫爾暗紋。層間電子量子隧穿使得不同層的狄拉克錐相互雜化抵消，在費米能級附近將原本陡峭的能帶徹底壓平，電子動能被完全凍結在 AA 堆疊區域中。",
+        "anchorSentenceId": "sent-2402afb8"
+      },
+      {
+        "id": "kp-matbg-mott-insulator",
+        "label": "庫侖排斥與關聯莫特絕緣體",
+        "suggestedQuestion": "原本是極佳導體的碳材料，為什麼會在特定電壓下自發變成絕緣體？",
+        "keywords": [
+          "莫特絕緣體",
+          "庫侖排斥",
+          "強關聯電子",
+          "半填充態",
+          "哈伯德模型",
+          "關聯能隙"
+        ],
+        "plainExplanation": "在普通材料中電子依靠巨大的動能四處遊走，輕易穿透彼此。然而在魔角平帶下，電子動能被壓到僅剩數毫電子伏特，相鄰電子之間的靜電庫侖排斥力佔據了壓倒性統治地位。當每個莫爾超胞剛好塞進兩個電子時，強大的互斥力使所有電子動彈不得，導體在沒有任何化學雜質的情況下自發鎖死成絕緣體。",
+        "anchorSentenceId": "sent-8adcd730"
+      },
+      {
+        "id": "kp-matbg-unconventional-superconductivity",
+        "label": "純碳材料中的非常規超導穹頂",
+        "suggestedQuestion": "為什麼魔角石墨烯的超導現象被認為是解開高溫銅氧化物超導謎題的關鍵鑰匙？",
+        "keywords": [
+          "非常規超導",
+          "超導穹頂",
+          "銅氧化物",
+          "靜電摻雜",
+          "庫柏對",
+          "扭轉電子學"
+        ],
+        "plainExplanation": "傳統超導需要笨重的低溫聲子輔助配對，而高溫銅氧化物機制因化學雜質紛亂而爭論四十年。魔角石墨烯是純粹由碳原子構成的乾淨晶體，只需微調閘極電壓注入少許載子，莫特絕緣體兩側就會自發湧現一模一樣的超導穹頂，為人類提供了可即時調諧、無化學雜質干擾的理想量子超導沙盒。",
+        "anchorSentenceId": "sent-a7789b14"
       }
     ]
   },
