@@ -8,6 +8,33 @@
   "scientificVerification": {
     "primarySources": [
       {
+        "id": "ref-fnal-2025-prl",
+        "citation": "Aguillard, D. P., et al. (Muon g-2 Collaboration) (2025). \"Measurement of the Positive Muon Anomalous Magnetic Moment to 127 ppb.\" Physical Review Letters, 135(10), 101802.",
+        "doi": "10.1103/7clf-sm2v",
+        "peerReviewStatus": "已完成同行評審 (Physical Review Letters 最終合併實驗測量)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "D. P. Aguillard (Muon g-2 Collaboration)",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實費米實驗室 2025 年 PRL 最終論文，確認 Runs 1-6 合併測量值 a_mu(FNAL) = 1165920705(148) x 10^-12 (127 ppb 精度)，結合 BNL 後之世界實驗平均值 a_mu(World) = 1165920715(145) x 10^-12 (124 ppb 精度)。"
+        },
+        "verifiedClaims": [
+          "費米實驗室最終測量值為 a_mu(FNAL) = 1165920705(148) x 10^-12，達成 127 ppb 實驗精度",
+          "結合布魯克黑文國家實驗室（BNL）早期數據後的全球實驗綜合平均值為 a_mu(World) = 1165920715(145) x 10^-12，精度達到 124 ppb",
+          "在 2025 年多個格點 QCD 協作組最新理論基準 a_mu(SM) = 116592033(62) x 10^-11 下，實驗與理論差距收斂至 1σ 誤差範圍內"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "127 ppb 為費米實驗室單獨最終測量精度，124 ppb 為全球實驗綜合平均精度"
+          ],
+          "empiricalFindings": [
+            "Runs 1-6 累積統計數據使統計與系統誤差雙重壓縮至創紀錄的 127 ppb"
+          ],
+          "hypothesesAndModels": [
+            "色散關係與格點 QCD 計算之間的系統性張力仍待後續深入研究"
+          ]
+        }
+      },
+      {
         "id": "ref-fnal-2023-prl",
         "citation": "Aguillard, D. P., et al. (Muon g-2 Collaboration) (2023). \"Measurement of the Positive Muon Anomalous Magnetic Moment to 0.20 ppm.\" Physical Review Letters, 131(16), 161802.",
         "doi": "10.1103/PhysRevLett.131.161802",
@@ -15,12 +42,12 @@
         "citationAudit": {
           "verifiedFirstAuthor": "D. P. Aguillard (Muon g-2 Collaboration)",
           "originalPublicationPageVerified": true,
-          "auditNotes": "核實費米實驗室 2023 年 PRL 原文，確認 Run 1-3 合併實測值 a_mu = 116592059(22) x 10^-11 (0.20 ppm 精度) 與色散白皮書理論值 5.1σ 偏差推導過程無誤。"
+          "auditNotes": "核實費米實驗室 2023 年 PRL 原文：Fermilab Runs 1-3 單獨實測值為 116592055(24) x 10^-11 (0.20 ppm)，與布魯克黑文 E821 合併所得 2023 世界實驗平均為 116592059(22) x 10^-11，對比 WP2020 色散預測呈約 5.1σ 歷史偏差。"
         },
         "verifiedClaims": [
-          "費米實驗室測得正渺子反常磁矩為 116592059(22) x 10^-11，綜合測量精度達到 0.20 ppm",
+          "費米實驗室 Runs 1-3 單獨測量值為 116592055(24) x 10^-11 (0.20 ppm)；結合 BNL E821 後的 2023 世界實驗平均為 116592059(22) x 10^-11",
           "在魔術動量 p ≈ 3.094 GeV/c (γ ≈ 29.3) 下，反常進動差頻 omega_a 與外加磁場嚴格成正比，靜電聚焦場干擾項被精確消除",
-          "實測值相較 2020 年理論白皮書色散理論值高出 (249 ± 48) x 10^-11，統計顯著度達 5.1 個標準差"
+          "2023 年世界實驗平均相較 WP2020 標準模型理論預測高出 (249 ± 48) x 10^-11，統計顯著度約 5.1 個標準差"
         ],
         "distinctions": {
           "establishedKnowledge": [
@@ -62,6 +89,32 @@
             "若格點 HVP 數值正確，色散關係將使電磁運行耦合常數 α(M_Z) 產生微小上移，引發弱電精確擬合中對希格斯質量的關聯張力"
           ]
         }
+      },
+      {
+        "id": "ref-wp2025-update",
+        "citation": "Aliberti, R., et al. (Muon g-2 Theory Initiative) (2025). \"The anomalous magnetic moment of the muon in the Standard Model: an update.\" arXiv:2505.21476 (Physics Reports, 1143).",
+        "doi": "10.48550/arXiv.2505.21476",
+        "peerReviewStatus": "已完成同行評審 (Physics Reports 1143；前以 arXiv:2505.21476 預印本發布)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "R. Aliberti (Muon g-2 Theory Initiative)",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 2025 年 Muon g-2 Theory Initiative 白皮書更新 (arXiv:2505.21476 / Physics Reports Vol. 1143)：納入格點 QCD 強子真空極化共識值後，標準模型預測更新為 a_mu^SM = 116592033(62) × 10^-11，使 5.1σ 歷史性對比不再代表 2025 年新版理論下之現行顯著度。"
+        },
+        "verifiedClaims": [
+          "5.1σ 僅為 2023 年實驗值對比 WP2020 舊理論基準的歷史偏差，不是磁矩本身的測量值，也不代表 2025 年新版理論下的現行顯著度",
+          "2025 年理論更新納入多個獨立格點 QCD 協作組結果，與費米實驗室最終測量及全球實驗平均在 1σ 誤差範圍內一致"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "標準模型理論預測需彙整 QED、弱電與強子真空極化/光散射四大項"
+          ],
+          "empiricalFindings": [
+            "e+e- 色散數據與格點 QCD 計算間仍存跨方法系統張力"
+          ],
+          "hypothesesAndModels": [
+            "不同 HVP 計算架構（格點第一性原理 vs e+e- 截面色散）之系統誤差歸因模型"
+          ]
+        }
       }
     ],
     "noFakeCitations": true,
@@ -98,10 +151,13 @@
   },
   "aestheticsAndNarrative": {
     "coreQuestion": "當一塊重質量渺子在超純磁場中旋轉時，真空中究竟藏著哪些尚未被人類寫入物理教科書的幽靈粒子？",
-    "interactiveRole": "透過 MuonPrecessionSimulator 讓讀者親自調節磁場強度，切換 Fermilab 實測數據、傳統色散白皮書理論與 BMW 格點超算模型，親眼看見 5.1σ 巨大偏離如何在調製曲線中顯現，並直觀感受格點修正如何讓理論曲線與實驗重新貼合"
+    "interactiveRole": "透過 MuonPrecessionSimulator 讓讀者親自調節磁場強度，切換 2023 世界實驗平均（FNAL Runs 1–3 + BNL E821）、WP2020 傳統色散理論與 BMW 格點超算模型，親眼看見相對 WP2020 的約 5.1σ 歷史偏差如何在調製曲線中顯現，並直觀感受格點修正如何讓理論曲線與實驗重新貼合"
   },
   "issuesIdentifiedAndCorrected": [
-    "釐清 5.1σ 偏差僅在對比傳統色散積分預測時成立，納入最新格點 QCD 計算後理論與實驗張力顯著縮減至約 1.5-2σ",
+    "修正 2023 年 5.1σ 科學歸屬：明確說明約 5.1σ 為 2023 年費米實驗室 Runs 1–3 與布魯克黑文 E821 合併所得世界實驗平均（116592059(22)×10⁻¹¹）對比 WP2020 標準模型理論預測的歷史偏差，而非 Fermilab 單獨測量（116592055(24)×10⁻¹¹）的比較結果",
+    "明確區分費米實驗室最終測量精度（127 ppb，a_mu^FNAL = 1165920705(148)×10⁻¹²）與全球實驗綜合平均精度（124 ppb，a_mu^World = 1165920715(145)×10⁻¹²），補入 Aguillard et al. (2025) PRL 135, 101802 (doi:10.1103/7clf-sm2v) 與標準 references citation 格式",
+    "將摘要、導言、知識點 (kp-muon-fermilab-discrepancy) 與模擬器標示統一校正為歷史比較基準：說明 5.1σ 為 2023 年實驗對比 WP2020 舊理論基準的歷史偏差，非磁矩測量值亦非 2025 年理論 (arXiv:2505.21476, Aliberti et al., 2025) 下的現行顯著度",
+    "釐清 5.1σ 偏差僅在對比傳統色散積分預測時成立，納入最新格點 QCD 計算後理論與實驗張力顯著縮減至約 1.5-2σ（於 2025 年共識理論下收斂至 1σ 以內）",
     "深入闡述魔術動量消除靜電場干擾項的精確相對論物理機制，糾正將儲存環視為純靜磁場環境的過度簡化認識"
   ],
   "unconfirmedLimits": [

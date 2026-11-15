@@ -58,6 +58,73 @@
     ]
   },
   {
+    "articleId": "art-active-matter-vicsek",
+    "slug": "active-matter-vicsek-flocking-transition",
+    "title": "鳥群為何不用總指揮也能整齊轉向？主動物質與 Vicsek 群集相變",
+    "knowledgePoints": [
+      {
+        "id": "kp-active-matter-symmetry-breaking",
+        "label": "主動物質與非平衡對稱性破缺",
+        "suggestedQuestion": "什麼是「主動物質」？它與一般平衡態熱力學系統有什麼根本差異？",
+        "keywords": [
+          "主動物質",
+          "自驅動粒子",
+          "時間反演對稱",
+          "細緻平衡",
+          "動量不守恆",
+          "非平衡定態"
+        ],
+        "plainExplanation": "在傳統平衡態物理中，分子只在熱庫溫度驅動下隨機碰撞，遵守時間反演對稱與細緻平衡。但主動物質（如鳥群、游動細菌或細胞骨架馬達）的每個個體都在微觀尺度就地消耗自由能並轉化為定向推進力，不僅在單粒子層級打破了時間反演對稱與細緻平衡，在與背景介質摩擦交換衝量時也不遵守單體動量守恆，使群體能自發打破旋轉對稱性形成宏觀遷移。",
+        "anchorSentenceId": "sent-7dbdfb5a"
+      },
+      {
+        "id": "kp-vicsek-alignment-order-parameter",
+        "label": "Vicsek 局部對齊與極性序參量",
+        "suggestedQuestion": "Vicsek 模型如何僅靠兩條簡單規則就重現從無序散飛到整齊同向的相變？",
+        "keywords": [
+          "Vicsek 模型",
+          "極性序參量",
+          "度量半徑",
+          "角度雜訊",
+          "圓周平均",
+          "自驅動粒子"
+        ],
+        "plainExplanation": "在二維週期性空間中，每個 Vicsek 粒子以固定速率 v₀ 前進，並在每一時間步把自己的航向調整為半徑 R 內所有鄰居的平均方向，再疊加均勻分佈於 [-η/2, η/2] 的隨機角度雜訊 Δθ。以極性序參量 Φ = |Σ vᵢ| / (N v₀) 量測同步程度：高雜訊時粒子方向相互抵銷使 Φ 趨近 0；當雜訊低於門檻且密度足夠時，速度向量同向疊加使 Φ 躍升至接近 1。",
+        "anchorSentenceId": "sent-25099c5d"
+      },
+      {
+        "id": "kp-toner-tu-convective-order",
+        "label": "Toner–Tu 對流輸運與二維長程有序",
+        "suggestedQuestion": "Mermin–Wagner 定理不是禁止二維短程系統出現長程有序嗎？為什麼二維鳥群辦得到？",
+        "keywords": [
+          "Mermin–Wagner 定理",
+          "Toner–Tu 理論",
+          "對流輸運",
+          "長程極性有序",
+          "哥德斯通漲落",
+          "重整化群"
+        ],
+        "plainExplanation": "平衡態的二維 XY 模型若只有固定格點上的自旋，長波長熱漲落會依對數發散而摧毀長程有序（Mermin–Wagner 定理）。然而 Toner 與 Tu（1995）證明，主動物質裡的粒子並非原地不動的自旋，而是會沿速度方向實際移動：非線性對流項 (v·∇)v 把密度與取向漲落耦合起來，讓粒子能直接帶著方向資訊穿越橫向距離，從而抑制漲落發散並在二維平面建立真正的長程極性有序。",
+        "anchorSentenceId": "sent-81b9bde7"
+      },
+      {
+        "id": "kp-first-order-bands-starling-scale-free",
+        "label": "一階移動團帶相變與歐椋鳥無尺度關聯",
+        "suggestedQuestion": "Vicsek 群集相變是連續的還是不連續的？真實歐椋鳥群又與標準模型有何不同？",
+        "keywords": [
+          "一階相變",
+          "移動密集團帶",
+          "有限尺度效應",
+          "無尺度關聯",
+          "歐椋鳥",
+          "拓撲交互作用"
+        ],
+        "plainExplanation": "Vicsek 等人（1995）最初因系統尺寸有限而誤以為轉變是平滑的二階相變；但 Grégoire 與 Chaté（2004）在大尺度模擬中證實，臨界區間會形成橫掃無序氣體的「移動高密度團帶」，導致 Φ 出現一階不連續跳變與相共存。相對地，Cavagna 等人（2010）在羅馬測得真實歐椋鳥群的速度漲落關聯長度 ξ 與鳥群總尺寸 L 成線性正比（無尺度關聯），且真實鳥類依循固定鄰居數的「拓撲交互作用」，而非基礎 Vicsek 模型的固定度量半徑 R。",
+        "anchorSentenceId": "sent-36a61ffd"
+      }
+    ]
+  },
+  {
     "articleId": "art-amygdala-memory-encoding",
     "slug": "amygdala-memory-encoding-success",
     "title": "情緒的刻痕：杏仁核特定神經元活動如何預測長久記憶的誕生？",
@@ -256,6 +323,181 @@
         ],
         "plainExplanation": "1982 年阿斯佩團隊進行了劃時代實驗：雙通道偏振實驗測得 S = 2.697 ± 0.015 突破古典上限；時變分析器實驗則在光子飛行途中以約 50 MHz 聲光開關非同步快速切換光路，徹底排除兩端光速通訊的定域漏洞，以約 5 個標準差否定定域隱變數，阿斯佩因此榮獲 2022 年諾貝爾物理學獎。",
         "anchorSentenceId": "sent-1667194b"
+      }
+    ]
+  },
+  {
+    "articleId": "art-bz-chemical-oscillator",
+    "slug": "belousov-zhabotinsky-chemical-oscillator",
+    "title": "不會停歇的化學脈搏：BZ 振盪反應與非平衡態激發波",
+    "knowledgePoints": [
+      {
+        "id": "kp-bz-second-law-nonequilibrium",
+        "label": "非平衡耗散結構與熱力學第二定律",
+        "suggestedQuestion": "化學反應不是應該一直往平衡態單調前進嗎？為什麼 BZ 反應不會違反熱力學第二定律？",
+        "keywords": [
+          "熱力學第二定律",
+          "非平衡態",
+          "耗散結構",
+          "細緻平衡",
+          "自由能儲槽"
+        ],
+        "plainExplanation": "熱力學第二定律禁止的是「在平衡點附近」來回振盪。BZ 反應之所以能規律跳動，是因為溶液中有高濃度的丙二酸與溴酸鹽充當能量儲槽（或在反應器中持續進料），整個系統正遠離平衡態並不斷消耗自由能、總體持續熵增；來回擺盪的只是中間產物濃度，就像水車借由水流落差而持續轉動一樣。",
+        "anchorSentenceId": "sent-594efb59"
+      },
+      {
+        "id": "kp-bz-fkn-oregonator",
+        "label": "Oregonator 雙變量模型與極限環",
+        "suggestedQuestion": "溶液中的分子究竟靠什麼機制輪流切換顏色，形成像時鐘一樣精準的極限環？",
+        "keywords": [
+          "FKN 機制",
+          "Oregonator",
+          "自催化",
+          "延遲負回饋",
+          "極限環"
+        ],
+        "plainExplanation": "FKN 機制將反應核心簡化為兩股互相拉扯的力量：活化劑亞溴酸一旦突破抑制門檻，就會透過自催化正回饋瞬間暴增並把鈰離子氧化變色；但隨後被催生出來的溴離子則扮演延遲煞車（負回饋），把活化劑再次壓回低點進入休息期。當進料參數進入霍普夫分岔區間，兩者濃度便會在相平面上鎖定成一條週期固定的封閉極限環。",
+        "anchorSentenceId": "sent-82453e7b"
+      },
+      {
+        "id": "kp-bz-excitable-spiral-waves",
+        "label": "可激發介質的行波湮滅與螺旋波",
+        "suggestedQuestion": "培養皿裡的化學螺旋波和池塘水波有什麼根本不同？為什麼兩道波相撞後會消失？",
+        "keywords": [
+          "可激發介質",
+          "螺旋波",
+          "碰撞湮滅",
+          "不反應期",
+          "反應擴散"
+        ],
+        "plainExplanation": "水波靠慣性與彈性傳播，兩道水波相撞會互相穿過；但 BZ 化學波屬於可激發介質，波前每前進一格都在消耗當地的化學燃料，後方緊跟著剛用完反應物而無法再度被點燃的「不反應期」尾流。因此兩道化學波迎面相撞時誰也無法穿過對方的尾流，只好雙雙湮滅；而若將波前折斷，自由端點就會向旁捲曲自轉成穩定的阿基米德螺旋波。",
+        "anchorSentenceId": "sent-67be5a4d"
+      }
+    ]
+  },
+  {
+    "articleId": "art-biomolecular-condensates",
+    "slug": "biomolecular-condensates-phase-separation",
+    "title": "無膜胞器如何自己凝聚成型？生物大分子液－液相分離與 Flory-Huggins 熱力學",
+    "knowledgePoints": [
+      {
+        "id": "kp-llps-p-granules-liquid",
+        "label": "P 顆粒的液滴流體行為與溶解－凝聚定位",
+        "suggestedQuestion": "沒有細胞膜包裹的 P 顆粒如何表現得像液滴？胚胎又是如何把它們集中在後端的？",
+        "keywords": [
+          "P 顆粒",
+          "無膜胞器",
+          "液－液相分離",
+          "表面張力",
+          "溶解與凝聚"
+        ],
+        "plainExplanation": "2009 年 Brangwynne 等人觀察秀麗隱杆線蟲受精卵發現，P 顆粒並非堅硬固塊，碰撞時會像油珠一樣融合並在表面張力下迅速弛豫成球形，受水流剪切時還會出現滴落與潤濕現象。更特別的是，它們集中在胚胎後端不是靠馬達把整顆固體搬過去，而是受極性梯度調控，讓細胞前端的蛋白質解散回溶、後端同時過飽和凝聚出來。",
+        "anchorSentenceId": "sent-50f516d1"
+      },
+      {
+        "id": "kp-llps-stickers-spacers",
+        "label": "多價「黏扣－間隔區」與本質無序區",
+        "suggestedQuestion": "為什麼蛋白質的本質無序區（IDR）特別容易促成液－液相分離，而且凝聚後還能維持流動性？",
+        "keywords": [
+          "本質無序區",
+          "黏扣與間隔區",
+          "多價交互作用",
+          "支架蛋白",
+          "可逆交聯"
+        ],
+        "plainExplanation": "這類相分離蛋白質常具有「黏扣－間隔區」的分子設計：沿著柔軟無固定結構的胺基酸長鏈（間隔區），重複鑲嵌著許多微弱吸引位點（黏扣，例如芳香族 π–π 作用或陽離子－π 作用）。單一個黏扣的結合力很弱、隨時會熱解離，但幾十個黏扣串成一條長鏈後，就能集體交織成動態的微米級網狀液滴，既能濃縮特定分子又保持液態交換能力。",
+        "anchorSentenceId": "sent-7594db42"
+      },
+      {
+        "id": "kp-llps-flory-huggins-binodal-spinodal",
+        "label": "Flory-Huggins 熱力學：雙節線與旋節線",
+        "suggestedQuestion": "在相圖上，「雙節線內的成核生長」和「旋節線內的旋節分解」有什麼本質上的不同？",
+        "keywords": [
+          "Flory-Huggins",
+          "雙節線",
+          "旋節線",
+          "成核與生長",
+          "旋節分解"
+        ],
+        "plainExplanation": "Flory-Huggins 理論將混合自由能拆成「平動混合熵（被鏈長 N 削減為 1/N）」與「分子吸引交互作用 χ」。當 χ 跨過臨界點後，雙節線代表稀相與濃相共存的熱力學邊界：在雙節線與旋節線之間的介穩區，溶液需要跨越核化能障才能長出離散液滴並融合；一旦進入自由能曲率轉負（∂²F/∂φ² < 0）的旋節線內側，均勻態會無能障自發裂變，瞬間形成互相貫通的雙連續海綿網絡。",
+        "anchorSentenceId": "sent-c4148187"
+      },
+      {
+        "id": "kp-llps-active-fluid-pathology",
+        "label": "細胞主動調控與液－固病理硬化邊界",
+        "suggestedQuestion": "真實細胞裡的無膜胞器完全等於燒杯裡的平衡態 Flory-Huggins 溶液嗎？它和神經退化疾病有何關聯？",
+        "keywords": [
+          "非平衡主動流體",
+          "ATP 調控",
+          "轉譯後修飾",
+          "FUS",
+          "液－固硬化"
+        ],
+        "plainExplanation": "不是的。經典 Flory-Huggins 描述的是雙組分被動平衡態，照理所有液滴最終會吞併成單一大球；但真實細胞是多組分非平衡主動流體，會消耗 ATP 驅動 RNA 解旋酶與分子伴侶，並用磷酸化等轉譯後修飾動態調整交聯強度。此外，原本具流動性的凝聚體若因老化或 FUS、TDP-43 等蛋白突變而過度鎖死，就可能從液滴轉變為不可逆凝膠或類澱粉纖維聚集體，與 ALS 及額顳葉失智症等疾病相關。",
+        "anchorSentenceId": "sent-afc7e50b"
+      }
+    ]
+  },
+  {
+    "articleId": "art-biomolecular-diffusion-af3",
+    "slug": "biomolecular-diffusion-structure-prediction",
+    "title": "從高斯噪聲雲雕琢生命複合物：AlphaFold 3 與全原子擴散生成結構生物學",
+    "knowledgePoints": [
+      {
+        "id": "kp-af3-beyond-frames",
+        "label": "揚棄剛體框架邁向全原子預測",
+        "suggestedQuestion": "為什麼 AlphaFold 2 無法直接預測小分子藥物或 DNA，而 AlphaFold 3 可以？",
+        "keywords": [
+          "AlphaFold 3",
+          "剛體殘基框架",
+          "不變點注意力",
+          "全原子座標",
+          "分子複合物"
+        ],
+        "plainExplanation": "AlphaFold 2 把每個胺基酸綁定成固定三角形剛體並用扭轉角拼裝側鏈，這套規則在缺乏肽鍵骨架的藥物小分子與核酸上完全失效。AlphaFold 3 徹底拿掉剛體框架，改把蛋白質、核酸與小分子的所有原子一視同仁當成三維點雲來直接生成座標。",
+        "anchorSentenceId": "sent-6c64c5be"
+      },
+      {
+        "id": "kp-af3-pairformer",
+        "label": "輕量化 MSA 與 48 層 Pairformer",
+        "suggestedQuestion": "Pairformer 和 AlphaFold 2 的 Evoformer 相比做了什麼關鍵簡化？",
+        "keywords": [
+          "Pairformer",
+          "Evoformer",
+          "多序列比對",
+          "成對表徵",
+          "共演化訊號"
+        ],
+        "plainExplanation": "AlphaFold 2 的 Evoformer 在 48 層裡反覆運算龐大的多序列比對矩陣；AlphaFold 3 則改為先用短短 4 層 MSA 模組把演化線索壓縮進成對關係表徵，主幹 48 層 Pairformer 專注更新原子或殘基之間的幾何關係，大幅減輕記憶體負擔並容納無演化史的化學小分子。",
+        "anchorSentenceId": "sent-df14caa0"
+      },
+      {
+        "id": "kp-af3-diffusion-multiscale",
+        "label": "多尺度逆向擴散去噪成形",
+        "suggestedQuestion": "全原子擴散模組如何從一團隨機噪聲雲還原出精準的結合口袋？",
+        "keywords": [
+          "擴散模型",
+          "分數匹配",
+          "逆向去噪",
+          "噪聲尺度",
+          "立體化學"
+        ],
+        "plainExplanation": "擴散模組從高維高斯噪聲雲出發逐步去噪：在高噪聲階段先決定蛋白結構域與配體的相對位置，中等噪聲階段勾勒出螺旋與結合口袋凹槽，最後在低噪聲階段精修鍵長、芳香環平面與氫鍵角度。",
+        "anchorSentenceId": "sent-0bb6a0c5"
+      },
+      {
+        "id": "kp-af3-hallucination-limits",
+        "label": "無序區幻覺與靜態快照極限",
+        "suggestedQuestion": "生成式擴散架構帶來了哪些新的幻覺風險與物理限制？",
+        "keywords": [
+          "生成式幻覺",
+          "本質無序區",
+          "交叉蒸餾",
+          "pLDDT",
+          "分子動力學"
+        ],
+        "plainExplanation": "因為擴散模型訓練目標是從噪聲變出合理原子密度，遇到本質上沒有固定形狀的無序蛋白區域時，容易憑空捏造出不存在的假螺旋（幻覺），必須靠交叉蒸餾抑制並檢查 pLDDT 與 PAE；此外它輸出的是靜態平衡快照，不等於完整的分子動力學熱力學軌跡。",
+        "anchorSentenceId": "sent-72064f53"
       }
     ]
   },
@@ -574,6 +816,69 @@
     ]
   },
   {
+    "articleId": "art-circadian-feedback-oscillator",
+    "slug": "circadian-rhythm-feedback-oscillator",
+    "title": "細胞裡的分子擺輪：從轉錄負回饋到 KaiABC 離體晝夜振盪",
+    "knowledgePoints": [
+      {
+        "id": "kp-circadian-goodwin-delay",
+        "label": "古德溫負回饋與極限環條件",
+        "suggestedQuestion": "細胞裡的基因負回饋迴路需要什麼條件才不會停止擺動、能持續走完 24 小時？",
+        "keywords": [
+          "古德溫模型",
+          "TTFL",
+          "希爾係數",
+          "格里菲斯定理",
+          "極限環"
+        ],
+        "plainExplanation": "單純的負回饋往往只會震盪兩下就停在平衡點。古德溫模型證明，要讓 mRNA 與抑制蛋白維持永不衰減的極限環振盪，系統必須同時具備多步驟串聯的時間延遲，以及足夠陡峭的非線性開關（高希爾係數），讓反應不斷衝過頭而形成循環。",
+        "anchorSentenceId": "sent-50970729"
+      },
+      {
+        "id": "kp-circadian-kaiabc-invitro",
+        "label": "KaiABC 無細胞試管離體振盪",
+        "suggestedQuestion": "沒有 DNA 和基因轉錄，蛋白質在試管裡真的能自己計時 24 小時嗎？",
+        "keywords": [
+          "KaiABC",
+          "離體振盪",
+          "轉譯後振盪器",
+          "藍綠菌",
+          "ATP"
+        ],
+        "plainExplanation": "2005 年中嶋與近藤團隊打破了「時鐘必須靠基因轉錄」的教條：他們把純化的 KaiA、KaiB、KaiC 三種藍綠菌蛋白與 ATP 放進沒有 DNA 與核糖體的試管裡，竟重現了穩定維持多日、週期約 24 小時且具溫度補償的磷酸化節律。",
+        "anchorSentenceId": "sent-d8c5ceac"
+      },
+      {
+        "id": "kp-circadian-ordered-phospho",
+        "label": "秩序化磷酸化循環與 KaiA 螯合",
+        "suggestedQuestion": "KaiA、KaiB、KaiC 三種蛋白質是怎麼在試管裡依序推進而不亂掉的？",
+        "keywords": [
+          "秩序化磷酸化",
+          "Ser431",
+          "Thr432",
+          "KaiA 螯合",
+          "自激酶與磷酸酶"
+        ],
+        "plainExplanation": "KaiC 單體有 S 與 T 兩個磷酸化位點，會沿著 U → T → ST → S → U 單向循環。前半段 KaiA 幫 KaiC 逐步加上磷酸根；一旦轉化成足夠的 S 態，KaiC 就會抓住 KaiB 並把游離 KaiA 全部鎖死，使 KaiC 切換成自我去磷酸化清空狀態，清空後才釋放 KaiA 重新啟動。",
+        "anchorSentenceId": "sent-1118aa81"
+      },
+      {
+        "id": "kp-circadian-temp-compensation",
+        "label": "溫度補償與拮抗活化能平衡",
+        "suggestedQuestion": "一般化學反應升溫十度會快一倍，為什麼生理時鐘發燒時卻不會快轉？",
+        "keywords": [
+          "溫度補償",
+          "Q10 係數",
+          "阿瑞尼斯定律",
+          "活化能平衡",
+          "相位反應曲線"
+        ],
+        "plainExplanation": "生理時鐘並不是靠某個不受溫度影響的魔法酵素，而是演化出彼此拮抗的反應分支：當溫度升高時，推動前進的磷酸化或合成速率與踩煞車的去磷酸化或抑制速率同步提升，兩者效應相互抵銷，使總週期維持 Q10 ≈ 1.0 的恆定。",
+        "anchorSentenceId": "sent-fc1406ef"
+      }
+    ]
+  },
+  {
     "articleId": "art-coriolis-geostrophic",
     "slug": "coriolis-effect-geostrophic-balance",
     "title": "旋轉星球的隱形偏折：科氏力、地轉平衡與大氣急流",
@@ -672,6 +977,55 @@
         ],
         "plainExplanation": "當新編碼寫入一條單鏈後，細胞的天然防衛衛士（錯配修復系統 MMR）會誤以為這是複製錯誤，主動將含有新編碼的鏈條挖除復原。新一代 PEmax 系統透過引入顯性負性 MLH1 蛋白（MLH1dn），在轉染窗口期短暫可逆地壓制修復系統的破壞，使目標編輯產物效率顯著提升，在特定測試位點達到 70% 至 90% 的高整合度。",
         "anchorSentenceId": "sent-d8a2fa1e"
+      }
+    ]
+  },
+  {
+    "articleId": "art-entorhinal-grid-cells",
+    "slug": "entorhinal-grid-cells-spatial-map",
+    "title": "大腦內建的六角測量網：內嗅皮層網格細胞與空間座標系",
+    "knowledgePoints": [
+      {
+        "id": "kp-grid-cell-hexagonal-lattice",
+        "label": "內嗅皮層網格細胞與六角形空間晶格",
+        "suggestedQuestion": "網格細胞和海馬迴的位置細胞有什麼差別？為什麼它畫得出幾何六角形？",
+        "keywords": [
+          "網格細胞",
+          "位置細胞",
+          "內側內嗅皮層",
+          "六角晶格",
+          "網格間距"
+        ],
+        "plainExplanation": "海馬迴位置細胞像貼在特定家具旁的便利貼，換個房間就會徹底重排；但內側內嗅皮層第 II 層的單一網格細胞，會在整個移動空間中每隔固定距離反覆放電，把活動位置連成一張等邊三角形密鋪的六角蜂巢網格。這套座標網即使在完全黑暗或更換箱體後依然保留相同的相對幾何結構，彷彿大腦自備的測量座標紙。",
+        "anchorSentenceId": "sent-3c363b08"
+      },
+      {
+        "id": "kp-grid-cell-can-torus",
+        "label": "連續吸引子網路的環面拓撲與路徑積分",
+        "suggestedQuestion": "在完全沒有視覺地標的黑暗中，神經迴路是怎麼把移動速度換算成網格座標的？",
+        "keywords": [
+          "路徑積分",
+          "連續吸引子網路",
+          "環面拓撲",
+          "活動峰",
+          "速度調製"
+        ],
+        "plainExplanation": "連續吸引子網路（CAN）理論把網格細胞片層想像成一個邊界首尾相接的甜甜圈（二維環面）。細胞之間近距互相激發、中距互相抑制，使神經活動自發凝結成六角斑點；當動物朝某方向移動時，來自前庭與本體感覺的速度訊號會推動這個活動斑點在甜甜圈表面平滑滑行，繞完一圈剛好對應真實世界前進一個網格間距 λ。",
+        "anchorSentenceId": "sent-285a26f4"
+      },
+      {
+        "id": "kp-grid-cell-multiscale-drift",
+        "label": "多尺度離散模組與邊界細胞校正漂移",
+        "suggestedQuestion": "純靠內部速度積分難免會有誤差累積，大腦怎麼避免空間座標越走越偏？",
+        "keywords": [
+          "多尺度模組",
+          "累積漂移誤差",
+          "邊界細胞",
+          "相位重設",
+          "週期混疊"
+        ],
+        "plainExplanation": "大腦使用多組間距按約 √2 倍跳躍的離散網格模組來像游標卡尺般編碼大尺度距離，解決單一週期重複混疊的問題。然而在黑暗中純靠路徑積分仍會因為神經雜訊使座標誤差隨時間逐漸擴大（與時間平方根成正比）；一旦動物遇見熟悉牆壁或視覺地標，邊界細胞便會施加「相位重設」訊號，瞬間把飄移的內在晶格釘回正確位置。",
+        "anchorSentenceId": "sent-a00c12a1"
       }
     ]
   },
@@ -937,6 +1291,73 @@
     ]
   },
   {
+    "articleId": "art-kuramoto-synchronization",
+    "slug": "kuramoto-model-collective-synchronization",
+    "title": "無聲的指揮家：倉本模型與集體同步的臨界相變",
+    "knowledgePoints": [
+      {
+        "id": "kp-kuramoto-order-parameter",
+        "label": "複序參量與平均場牽引",
+        "suggestedQuestion": "倉本模型如何把成千上萬隻螢火蟲彼此的複雜交互作用簡化成一個平均場？",
+        "keywords": [
+          "倉本模型",
+          "複序參量",
+          "平均場",
+          "相位同調度",
+          "極限環",
+          "質心向量"
+        ],
+        "plainExplanation": "把每個振盪子的相位畫在複平面單位圓上，所有點的平均幾何質心就是複序參量 r·exp(iψ)。群體完全混亂時質心留在圓心（r≈0），一致齊步時質心趨近圓周（r→1）。原本繁雜的 N 體耦合方程可化簡為每個振盪子單獨追隨這個集體質心的運動，達成優雅的平均場解耦。",
+        "anchorSentenceId": "sent-25409bf3"
+      },
+      {
+        "id": "kp-kuramoto-critical-threshold",
+        "label": "臨界耦合閾值與鎖相二分",
+        "suggestedQuestion": "為什麼群體同步不是慢慢變整齊，而是在跨過特定門檻後突然出現？",
+        "keywords": [
+          "臨界耦合",
+          "鎖相振盪子",
+          "漂移振盪子",
+          "自洽方程",
+          "固有頻率分佈",
+          "洛倫茲分佈"
+        ],
+        "plainExplanation": "在平均場模型中，固有頻率接近中心的個體容易被集體場捕獲並停止相對漂移（鎖相），而天生太快或太慢的個體則持續繞圈漂移且對同步淨貢獻為零。透過自洽積分求解，只有當耦合強度跨過 Kc = 2/(π·g(0)) 時，無序態才會失穩並瞬間點燃同步。",
+        "anchorSentenceId": "sent-591b2199"
+      },
+      {
+        "id": "kp-kuramoto-nonequilibrium-phase",
+        "label": "非平衡態的二階超臨界相變",
+        "suggestedQuestion": "沒有溫度也沒有能量的振盪子群體，為什麼會展現跟超導體一樣的相變標度律？",
+        "keywords": [
+          "非平衡相變",
+          "超臨界分岔",
+          "臨界指數",
+          "普適性",
+          "朗道阻尼",
+          "二階相變"
+        ],
+        "plainExplanation": "當耦合強度 K 剛超過臨界值 Kc 時，序參量會依循 r ∝ √(K - Kc) 的平方根規律成長，這與平衡態鐵磁體和超導體的 β = 1/2 臨界指數完全相同。奇妙的是，倉本系統沒有溫度也沒有能量函數，純粹憑藉非線性動態反饋就在相位空間複製了二階連續相變。",
+        "anchorSentenceId": "sent-95a2c9ad"
+      },
+      {
+        "id": "kp-kuramoto-power-grid",
+        "label": "電網失步與病理同步風險",
+        "suggestedQuestion": "倉本同步理論如何解釋大停電與癲癇等現實世界現象？",
+        "keywords": [
+          "交流電網",
+          "擺動方程",
+          "失步跳脫",
+          "腦波同步",
+          "心臟起搏",
+          "網路拓撲"
+        ],
+        "plainExplanation": "在交流電網中，各座發電機轉子相當於具轉動慣量的耦合振盪子，必須共同鎖相在 60 赫茲上；一旦關鍵輸電線跳脫使等效耦合跌破臨界閾值，機組便會在數秒內失步引發連鎖大停電。反之在大腦皮層，過度跨越同步閾值則可能將正常節律推向癲癇般的病理性全體同步。",
+        "anchorSentenceId": "sent-5be06e1c"
+      }
+    ]
+  },
+  {
     "articleId": "art-levinthal-paradox-funnel",
     "slug": "levinthal-paradox-protein-folding-funnel",
     "title": "走出高維迷宮：萊文索爾佯謬與蛋白質折疊的自由能漏斗",
@@ -1095,24 +1516,91 @@
     ]
   },
   {
+    "articleId": "art-cof-carbon-capture",
+    "slug": "metal-organic-frameworks-carbon-capture",
+    "title": "把二氧化碳從空氣裡撈出來：網格化學與 COF-999 的吸附熱力學",
+    "knowledgePoints": [
+      {
+        "id": "kp-dac-thermodynamic-limit",
+        "label": "400 ppm 稀薄空氣捕碳極限",
+        "suggestedQuestion": "為什麼直接從戶外空氣捕碳比從發電廠煙囪捕碳困難這麼多？",
+        "keywords": [
+          "直接空氣捕捉",
+          "400 ppm",
+          "混合熵",
+          "熱力學最小功",
+          "水氣競爭",
+          "分壓"
+        ],
+        "plainExplanation": "發電廠煙道氣含有約 10% 至 15% 的二氧化碳，而戶外空氣僅含約 400 ppm（萬分之四），濃縮這團極稀薄氣體的理論熱力學最小功高達每莫耳 19.4 千焦耳，幾乎是煙道氣的四倍；加上空氣中的水蒸氣濃度是二氧化碳的數十倍，極易搶佔吸附材料位點。",
+        "anchorSentenceId": "sent-ea0dedaa"
+      },
+      {
+        "id": "kp-cof999-water-synergy",
+        "label": "水氣協同倍增吸附容量",
+        "suggestedQuestion": "為什麼 COF-999 在 50% 濕度下捕捉二氧化碳的容量反而比乾燥時翻倍？",
+        "keywords": [
+          "COF-999",
+          "多胺鏈",
+          "水氣協同",
+          "胺基甲酸酯",
+          "碳酸氫鹽",
+          "化學計量"
+        ],
+        "plainExplanation": "在乾燥環境下，每抓住 1 個二氧化碳分子需要消耗 2 個胺基位點生成胺基甲酸酯，使 COF-999 容量僅約 0.96 mmol/g；但在 50% 相對濕度下，水分子參與質子轉移並引導形成碳酸氫鹽路徑，讓胺基利用效率從 2:1 提升為 1:1，吸附容量一舉攀升至 2.05 mmol/g。",
+        "anchorSentenceId": "sent-afc0b07f"
+      },
+      {
+        "id": "kp-cof999-low-temp-regeneration",
+        "label": "60°C 低溫再生與動力學",
+        "suggestedQuestion": "COF-999 為什麼只需要 60°C 就能放氣再生，而不像傳統鹼液法需要高溫？",
+        "keywords": [
+          "低溫再生",
+          "結合焓",
+          "凡特霍夫方程",
+          "半飽和時間",
+          "烯烴鍵結",
+          "循環壽命"
+        ],
+        "plainExplanation": "傳統氫氧化鉀吸收法需要 800°C 以上的煆燒高溫才能解離碳酸鈣，耗能巨大。COF-999 以強韌的碳-碳烯烴鍵構築通暢一維奈米孔道，約 18.8 分鐘即可達半飽和，且多胺位點的結合焓落在適中區間，僅需加熱至 60°C 即可釋放二氧化碳並完成逾百次戶外循環。",
+        "anchorSentenceId": "sent-0287cc12"
+      },
+      {
+        "id": "kp-cof999-engineering-gap",
+        "label": "實驗室材料與工程放大邊界",
+        "suggestedQuestion": "COF-999 的 Nature 突破距離百萬噸級商業碳捕捉工廠還有哪些工程難關？",
+        "keywords": [
+          "工程放大",
+          "接觸器壓降",
+          "成型技術",
+          "合成成本",
+          "氣候耐受",
+          "科學邊界"
+        ],
+        "plainExplanation": "實驗室百次戶外循環證明了克級粉末樣品的化學耐用性，但真正放大到百萬噸級氣候工程時，還必須克服將粉末成型為低阻力整塊體以降低鼓風機電耗、壓低芳香單體的精細化工合成成本，以及因應含硫氮氧化物等工業污染空氣的長期耐受挑戰。",
+        "anchorSentenceId": "sent-00beca8d"
+      }
+    ]
+  },
+  {
     "articleId": "art-muon-g-2-discrepancy",
     "slug": "muon-g-2-standard-model-discrepancy",
     "title": "穿透量子真空的微秒反常：渺子 g-2 實驗與標準模型的新物理博弈",
     "knowledgePoints": [
       {
         "id": "kp-muon-fermilab-discrepancy",
-        "label": "費米實驗室 5.1σ 反常偏離",
-        "suggestedQuestion": "為什麼渺子 g-2 的五標準差偏差被視為可能顛覆標準模型的物理大事件？",
+        "label": "2023 年世界實驗平均與 WP2020 的約 5.1σ 歷史偏差",
+        "suggestedQuestion": "為什麼 2023 年常被報導的 5.1σ 偏差不是 Fermilab 單獨結果，也不等於 2025 年結論？",
         "keywords": [
           "渺子反常磁矩",
-          "費米實驗室",
-          "5.1個標準差",
-          "標準模型",
-          "新物理發現",
+          "世界實驗平均",
+          "5.1σ歷史偏差",
+          "WP2020",
+          "127 ppb",
           "量子場論"
         ],
-        "plainExplanation": "如果真空只是空無一物，粒子自旋的磁性將完全由狄拉克方程給出（g=2）。但量子真空中成對虛粒子的瞬間生滅會帶來微弱的磁性修正。費米實驗室以 0.2 ppm 極高精度測得的實測值比理論計算大出數十億分之一，統計偏離達 5.1 個標準差，意味著純屬巧合的機率不到三百五十萬分之一，暗示可能存在未知的新粒子或額外維度。",
-        "anchorSentenceId": "sent-b8d544fe"
+        "plainExplanation": "如果真空只是空無一物，基本費米子的 g 因子將嚴格等於 2；但量子真空中虛粒子的瞬間生滅會帶來額外磁性修正。2023 年，由費米實驗室 Runs 1–3 與布魯克黑文 E821 測量合併所得的世界實驗平均值，與 WP2020 標準模型理論預測比較時，曾出現約 5.1σ 的歷史偏差。這並非磁矩本身的測量值，在 2025 年費米實驗室最終結果（127 ppb；全球實驗平均 124 ppb）與彙整格點 QCD 的新版理論預測（arXiv:2505.21476）基準下，實驗與理論差距已縮減至 1σ 以內。",
+        "anchorSentenceId": "sent-d6d64871"
       },
       {
         "id": "kp-muon-magic-momentum",
@@ -1143,6 +1631,125 @@
         ],
         "plainExplanation": "量子色動力學在低能下無法用傳統公式展開。過去理論依賴對撞機實驗數據推算強子真空極化；然而 BMW 協作組在超級電腦上將時空切成微觀網格進行直接路徑積分，算出強子真空極化的數值明顯大於傳統方法，將理論值大幅向上推升，使得理論與實測的差距縮小至僅 1.5 到 2 個標準差，讓新物理信號重新陷入迷霧。",
         "anchorSentenceId": "sent-7f5792a7"
+      }
+    ]
+  },
+  {
+    "articleId": "art-optical-tweezers-dna",
+    "slug": "optical-tweezers-dna-nanomechanics",
+    "title": "光鑷與單分子生物力學：一束雷射如何拉直生命雙螺旋？",
+    "knowledgePoints": [
+      {
+        "id": "kp-optical-trap-gradient-force",
+        "label": "雷射梯度力與光學彈簧",
+        "suggestedQuestion": "沒有質量的光子為什麼不會只把微粒推飛，反而能把微米玻璃珠穩穩抓在焦點中心？",
+        "keywords": [
+          "光鑷",
+          "梯度力",
+          "散射力",
+          "動量守恆",
+          "虎克定律",
+          "亞瑟阿什金"
+        ],
+        "plainExplanation": "透明高折射率微球浸泡在水中時就像一顆微型透鏡。當高聚焦雷射束穿過微球時，靠近光軸中心較強的光線折射後動量方向改變，根據牛頓第三定律，微球會受到一股反作用力將它拉回光強最高的焦點中心；只要光束會聚角夠大，這股梯度回復力就會壓過推力，形成遵守虎克定律的微觀光學彈簧。",
+        "anchorSentenceId": "sent-def6635d"
+      },
+      {
+        "id": "kp-dna-entropic-elasticity-wlc",
+        "label": "DNA 熵彈性與蠕蟲鏈模型",
+        "suggestedQuestion": "輕輕拉直一條捲成線團的 DNA 分子時，光鑷測到的彈力究竟是從哪裡來的？",
+        "keywords": [
+          "熵彈性",
+          "蠕蟲鏈模型",
+          "WLC",
+          "駐留長度",
+          "構象熵",
+          "熱擾動"
+        ],
+        "plainExplanation": "在低於 10 皮牛頓（pN）的拉力下，DNA 骨架上的共價鍵根本還沒被拉長。水分子的劇烈熱碰撞會自然把長鏈敲打成無數種捲曲形狀；當外力把分子拉直，可用的排列形狀大幅減少（熵減），自由能上升而產生想縮回亂團的回復力，可以用特徵剛性長度約 50 奈米的蠕蟲鏈模型精確描述。",
+        "anchorSentenceId": "sent-905bcb84"
+      },
+      {
+        "id": "kp-dna-65pn-overstretching",
+        "label": "65 皮牛頓合作過拉伸相變",
+        "suggestedQuestion": "把雙股 DNA 拉到極限張力 65 皮牛頓（pN）時，為什麼會出現一段長度暴增 1.7 倍的平坦平台？",
+        "keywords": [
+          "過拉伸相變",
+          "65 pN",
+          "S-DNA",
+          "力致熔解",
+          "合作性",
+          "1.7 倍"
+        ],
+        "plainExplanation": "當張力攀升到約 65 pN 臨界點時，標準 B 型雙螺旋會爆發劇烈的合作性結構轉換：在幾乎不增加額外拉力的窄小區間內，螺旋迅速解旋攤平（或依鹽度發生局部雙股剝離），使整條分子總長度瞬間拉長至原始輪廓長度的 1.7 倍，宛如發生一場一維分子相變。",
+        "anchorSentenceId": "sent-09955733"
+      }
+    ]
+  },
+  {
+    "articleId": "art-orbital-resonance-tidal-heating",
+    "slug": "orbital-resonance-tidal-heating",
+    "title": "拉普拉斯共振與潮汐加熱：冰封深空裡的百兆瓦火山爐心",
+    "knowledgePoints": [
+      {
+        "id": "kp-tidal-io-power-anomaly",
+        "label": "埃歐百兆瓦火山熱流",
+        "suggestedQuestion": "木衛一距離太陽那麼遠、只收到地球約 4% 的陽光，為什麼表面會有上百兆瓦的劇烈火山活動？",
+        "keywords": [
+          "木衛一",
+          "埃歐",
+          "潮汐失控熔融",
+          "100 TW",
+          "航海家一號",
+          "5.2 AU"
+        ],
+        "plainExplanation": "木衛一距離太陽約 5.2 天文單位，陽光能量僅及地球約 4%，放射性元素衰變所能提供的表面熱通量也僅約 0.01 至 0.02 W/m²。然而它卻以約 10 的 14 次方瓦（約 100 TW）、平均每平方公尺約 2.5 瓦的驚人內源熱通量沸騰噴發，關鍵動力正是木星巨大引力場造成的週期性潮汐揉捏。",
+        "anchorSentenceId": "sent-4353840f"
+      },
+      {
+        "id": "kp-tidal-viscoelastic-dissipation",
+        "label": "黏彈潮汐形變與相位遲滯",
+        "suggestedQuestion": "萬有引力本身是保守力，為什麼能持續把軌道能量轉化為岩石內部的熱能？",
+        "keywords": [
+          "黏彈性",
+          "潮汐隆起",
+          "相位角",
+          "品質因子 Q",
+          "勒夫數 k2",
+          "遲滯迴圈"
+        ],
+        "plainExplanation": "如果軌道是完美的圓形且同步自轉，潮汐隆起會靜止不動而不會生熱。但木衛一在橢圓軌道上公轉，距離木星忽近忽遠使地表每隔 1.77 天就起伏數十公尺；岩石具備黏彈性，形變會略微落後於引力施力，產生內摩擦遲滯迴圈，將大量機械能直接耗散為地函熱能。",
+        "anchorSentenceId": "sent-ac088ea8"
+      },
+      {
+        "id": "kp-laplace-421-resonance",
+        "label": "拉普拉斯 4:2:1 軌道共振鎖",
+        "suggestedQuestion": "潮汐摩擦照理說會把橢圓軌道磨成圓形，為什麼木衛一的偏心率歷經數十億年依然沒有歸零？",
+        "keywords": [
+          "拉普拉斯共振",
+          "4:2:1 共振",
+          "受迫偏心率",
+          "軌道圓化",
+          "木衛二",
+          "木衛三"
+        ],
+        "plainExplanation": "單獨衛星的潮汐耗散確實會在數千萬年內把軌道磨圓並使火山熄滅。但木衛一、木衛二與木衛三被鎖定在嚴格的 4:2:1 公轉週期整數比中：每當埃歐轉 4 圈，歐羅巴轉 2 圈、加尼美德轉 1 圈，外側衛星週期性的引力拉扯就像推鞦韆一樣不斷幫埃歐補充偏心率，使火山爐心長燃不熄。",
+        "anchorSentenceId": "sent-7b960645"
+      },
+      {
+        "id": "kp-europa-subsurface-ocean",
+        "label": "歐羅巴冰下海洋與潮汐宜居帶",
+        "suggestedQuestion": "同樣的軌道共振如何影響木衛二歐羅巴，並改變我們對外星宜居環境的想像？",
+        "keywords": [
+          "木衛二",
+          "歐羅巴",
+          "冰下海洋",
+          "天體生物學",
+          "熱液噴口",
+          "宜居帶"
+        ],
+        "plainExplanation": "歐羅巴同樣受拉普拉斯共振維持著約 0.009 的偏心率。雖然它離木星較遠、潮汐熱流不足以熔化整顆岩石，但這股不靠陽光、源於引力耗散的穩定熱能，正好能在厚重水冰殼底下維持一個深達百公里的全球性液態鹽水海洋，將潛在生命搖籃的疆界推向遠離恆星的深空冰衛。",
+        "anchorSentenceId": "sent-631f0a82"
       }
     ]
   },
@@ -1199,6 +1806,132 @@
     ]
   },
   {
+    "articleId": "art-pta-gravitational-waves",
+    "slug": "pulsar-timing-array-gravitational-waves",
+    "title": "銀河尺度的重力波天線：脈衝星計時陣列與 Hellings-Downs 曲線如何傾聽奈赫茲宇宙背景？",
+    "knowledgePoints": [
+      {
+        "id": "kp-pta-galactic-clock",
+        "label": "奈赫茲重力波與銀河尺度的脈衝星天線",
+        "suggestedQuestion": "既然已經有 LIGO 和未來的 LISA，為什麼科學家還需要靠銀河系裡的毫秒脈衝星來偵測重力波？",
+        "keywords": [
+          "奈赫茲重力波",
+          "毫秒脈衝星",
+          "脈衝星計時陣列",
+          "LIGO 頻段限制",
+          "宇宙時鐘"
+        ],
+        "plainExplanation": "LIGO 臂長僅數公里且受地面地震與重力梯度噪訊限制，只能聽見十赫茲以上的高頻併合訊號；而超大質量黑洞雙星緩慢互繞發出的奈赫茲（10⁻⁹ 至 10⁻⁷ Hz）重力波，單一波長便橫跨數光年。天文學家利用自轉穩定度堪比原子鐘的數十顆毫秒脈衝星，以地球與遙遠脈衝星之間數千光年的光路徑為手臂，將整個銀河系變成長基線的重力波干涉天線。",
+        "anchorSentenceId": "sent-f195cad5"
+      },
+      {
+        "id": "kp-pta-earth-pulsar-terms",
+        "label": "地球項同調訊號與脈衝星項自噪訊",
+        "suggestedQuestion": "重力波穿過地球與脈衝星之間時，為什麼會拆成「地球項」和「脈衝星項」？這兩者有什麼差別？",
+        "keywords": [
+          "計時殘差",
+          "地球項",
+          "脈衝星項",
+          "時空度規微擾",
+          "到達時間"
+        ],
+        "plainExplanation": "重力波造成脈衝抵達時間偏離模型預測的「計時殘差」，只取決於光子離開脈衝星當下的應變（脈衝星項）與抵達地球當下的應變（地球項）之差。因為每顆脈衝星距離地球都有數百到數千光年，遠超過重力波波長，不同星體各自帶來的脈衝星項相位完全隨機、互不相關；唯獨所有脈衝星在地球這一端共享同一瞬間的時空應變，使得地球項在全陣列中表現出同調的幾何關聯。",
+        "anchorSentenceId": "sent-4c4737b2"
+      },
+      {
+        "id": "kp-pta-hellings-downs",
+        "label": "Hellings–Downs 曲線與四極空間指紋",
+        "suggestedQuestion": "單顆脈衝星也會自己產生雜訊，我們怎麼確定測到的波動是重力波，而不是原子鐘漂移或太陽系星曆誤差？",
+        "keywords": [
+          "Hellings-Downs 曲線",
+          "四極矩",
+          "空間角關聯",
+          "單極與偶極誤差",
+          "橫向無跡張量"
+        ],
+        "plainExplanation": "如果地面基準原子鐘走時不準，所有脈衝星會同步出現一致的單極偏差；若是太陽系星曆表算錯地球位置，誤差則會隨天球夾角餘弦呈現單調的偶極分佈。唯有廣義相對論的各向同性四極重力波背景，會在任兩顆脈衝星夾角 θ 之間產生獨特的 Hellings–Downs 曲線：共線極限從自關聯的 1 跳降至 0.5，在 90 度附近因垂直軸壓縮而轉為負值（約 -0.145），到 180 度正對面再回升至 +0.25。",
+        "anchorSentenceId": "sent-e5282146"
+      },
+      {
+        "id": "kp-pta-nanograv-15yr",
+        "label": "NANOGrav 15 年 3–4σ 證據與訊號起源辨析",
+        "suggestedQuestion": "NANOGrav 2023 年發表的 15 年結果代表已經 100% 發現超大質量黑洞雙星了嗎？",
+        "keywords": [
+          "NANOGrav 15 年資料集",
+          "貝氏因子",
+          "特徵應變頻譜",
+          "超大質量黑洞雙星",
+          "宇宙學替代假說"
+        ],
+        "plainExplanation": "還須保持科學謹慎。NANOGrav 分析 67 顆脈衝星後，對「共同低頻紅噪訊」測得極高貝氏因子（> 10¹⁴），對 Hellings–Downs 四極關聯則測得貝氏因子約 200 至 1000、相當於約 3–4σ 的統計「證據」，尚未達到粒子與重力波界 5σ 的「發現」門檻。此外，在固定斜率 γ = 13/3 下測得的應變振幅 A_GWB = 2.4⁺⁰·⁷₋₀·₆ × 10⁻¹⁵ 雖與超大質量黑洞雙星相符，但目前頻譜仍不足以排除宇宙弦、早期宇宙相變或純量誘導重力波等宇宙學起源。",
+        "anchorSentenceId": "sent-12e5f856"
+      }
+    ]
+  },
+  {
+    "articleId": "art-quantum-surface-code",
+    "slug": "quantum-error-correction-surface-code",
+    "title": "棋盤上的容錯臨界點：表面碼如何讓量子位元越糾越穩？",
+    "knowledgePoints": [
+      {
+        "id": "kp-surface-code-stabilizers",
+        "label": "不可複製定理與穩定子奇偶測量",
+        "suggestedQuestion": "量子態不能像古典資料那樣備份複製，那表面碼是如何察覺量子位元出錯的？",
+        "keywords": [
+          "不可複製定理",
+          "穩定子",
+          "奇偶性測量",
+          "邏輯量子位元",
+          "輔助位元"
+        ],
+        "plainExplanation": "量子力學不允許複製任意未知疊加態，直接讀取個別量子位元又會使其塌縮毀損。表面碼的巧思在於不問「每個位元是 0 還是 1」，而是派輔助位元去檢查相鄰四顆資料位元的「聯合奇偶性」（例如兩兩相加是奇數還是偶數）。這樣既能立刻察覺哪一區發生了翻轉，又完全不會偷看到邏輯資料本身。",
+        "anchorSentenceId": "sent-fdee6daa"
+      },
+      {
+        "id": "kp-surface-code-syndrome-decoding",
+        "label": "X/Z 症候群與邊界跨越容錯機制",
+        "suggestedQuestion": "穩定子亮起異常訊號後，解碼器如何修復誤差？什麼情況下才會糾錯失敗？",
+        "keywords": [
+          "症候群",
+          "位元翻轉",
+          "相位翻轉",
+          "解碼器",
+          "碼距"
+        ],
+        "plainExplanation": "在表面碼棋盤上，Z 穩定子負責抓出位元翻轉（X 誤差），X 穩定子則抓出相位翻轉（Z 誤差）。當一連串資料位元出錯時，只有錯誤鏈條的兩個端點會亮起成對的症候群警報，解碼器只需沿最短路徑配對抵消即可。唯有當錯誤多到連成一條橫跨整個棋盤邊界的長鏈（至少 (d+1)/2 顆位元出錯），解碼器才會誤判而產生邏輯錯誤。",
+        "anchorSentenceId": "sent-23b04d2a"
+      },
+      {
+        "id": "kp-surface-code-threshold-willow",
+        "label": "表面碼容錯閾值與 Willow 指數壓制",
+        "suggestedQuestion": "什麼是「低於表面碼容錯閾值」？為什麼 Λ = 2.14 被視為關鍵突破？",
+        "keywords": [
+          "容錯閾值",
+          "錯誤壓制因子",
+          "Willow 處理器",
+          "碼距擴張",
+          "損益平衡點"
+        ],
+        "plainExplanation": "只有當硬體單顆物理位元與閘操作的出錯率低於容錯閾值（約 1% 量級）時，把棋盤做大（碼距 d 從 3 擴增到 5 再到 7）才不會越接越亂，反而讓邏輯錯誤率呈指數下降。Willow 實驗測得壓制因子 Λ = 2.14 ± 0.02（大於 1 代表跨過門檻），使 101 顆位元構成的 d=7 記憶單循環錯誤率降至 0.143%，壽命超越最佳單顆物理位元 2.4 倍。",
+        "anchorSentenceId": "sent-ddf67178"
+      },
+      {
+        "id": "kp-surface-code-memory-vs-universal",
+        "label": "量子記憶保存與通用計算的距離",
+        "suggestedQuestion": "Willow 跨過閾值之後，是否代表通用容錯量子電腦已經實現了？",
+        "keywords": [
+          "量子記憶",
+          "通用量子計算",
+          "魔術態蒸餾",
+          "漏損誤差",
+          "資源開銷"
+        ],
+        "plainExplanation": "還沒有。Willow 實證的是「原地保存量子態不退相干」的容錯記憶能力，距離能執行複雜演算法的通用容錯量子電腦仍有巨大距離。實作邏輯運算需要跨邏輯位元的雙位元閘與高耗能的魔術態蒸餾，且要把邏輯錯誤率壓低到演算法所需的十億分之一以下，單一邏輯位元仍可能需要上千顆物理位元，並須解決漏損與宇宙射線引發的關聯突發誤差。",
+        "anchorSentenceId": "sent-fb896ea6"
+      }
+    ]
+  },
+  {
     "articleId": "art-quantum-hall-anyons",
     "slug": "quantum-hall-anyon-braiding",
     "title": "二維空間的拓撲編織：分數霍爾效應與任意子的非阿貝爾奇景",
@@ -1250,6 +1983,73 @@
         ],
         "plainExplanation": "非阿貝爾任意子擁有簡併的量子基態子空間，交換次序不同會觸發不同的么正矩陣旋轉。由於量子資訊不是儲存在單個粒子的坐標中，而是分佈在整體時空編織結裡，局域環境的熱噪聲或微觀路徑抖動只要沒有剪斷繩結，運算結果就嚴格保持精確，天生免疫量子退相干。",
         "anchorSentenceId": "sent-bb6e1dd2"
+      }
+    ]
+  },
+  {
+    "articleId": "art-quantum-tunneling-stm",
+    "slug": "quantum-tunneling-stm-atomic-imaging",
+    "title": "以針尖觸摸電子波：量子穿隧與掃描穿隧顯微鏡的原子成像術",
+    "knowledgePoints": [
+      {
+        "id": "kp-stm-exponential-tunneling",
+        "label": "指數級穿隧靈敏度",
+        "suggestedQuestion": "為什麼 STM 不接觸表面就能分辨比一根頭髮小百萬倍的單原子起伏？",
+        "keywords": [
+          "量子穿隧",
+          "指數衰減",
+          "真空位壘",
+          "功函數",
+          "埃級解析度",
+          "穿隧電流"
+        ],
+        "plainExplanation": "金屬針尖與樣品之間的真空就像一道能量高牆，古典力學下的電子無法翻越，但量子波函數會以指數形式滲透這道位壘。只要兩者間距改變區區 1 埃（0.1 奈米），穿隧電流就會劇變將近十倍，使最尖端突出那一顆原子自動承擔絕大多數電流，達成免透鏡的原子級聚焦。",
+        "anchorSentenceId": "sent-c3cf0835"
+      },
+      {
+        "id": "kp-stm-tersoff-hamann-ldos",
+        "label": "局部電子態密度成像",
+        "suggestedQuestion": "STM 拍出來的原子影像真的是原子核的硬球形狀嗎？",
+        "keywords": [
+          "局部電子態密度",
+          "LDOS",
+          "Tersoff-Hamann",
+          "費米能級",
+          "電子雲",
+          "波函數"
+        ],
+        "plainExplanation": "根據 Tersoff–Hamann 理論，STM 在小偏壓下測量的其實是樣品表面費米能級附近的局部電子態密度（LDOS）輪廓，而不是原子核的幾何硬球。因此吸走電子的氧原子在影像中常呈現凹陷暗坑，切換正負偏壓還能看到不同元素的電子軌域。",
+        "anchorSentenceId": "sent-9976e3a0"
+      },
+      {
+        "id": "kp-stm-scanning-modes",
+        "label": "定高與定電流掃描模式",
+        "suggestedQuestion": "掃描穿隧顯微鏡如何在定高與定電流兩種模式下繪製表面地形？",
+        "keywords": [
+          "定高模式",
+          "定電流模式",
+          "壓電陶瓷",
+          "回饋伺服",
+          "等高面",
+          "LDOS"
+        ],
+        "plainExplanation": "定高模式將針尖鎖死在固定高度快速掃過，記錄電流跨越數個數量級的劇烈震盪，速度極快但容易撞上原子台階；定電流模式則透過壓電回饋迴路即時升降針尖以維持電流恆定，針尖走過的垂直軌跡正好描繪出局部電子態密度的等高面。",
+        "anchorSentenceId": "sent-812a9fa7"
+      },
+      {
+        "id": "kp-stm-quantum-corral",
+        "label": "量子圍欄與電子駐波",
+        "suggestedQuestion": "科學家怎麼用 48 顆鐵原子圍出量子圍欄並拍出電子駐波？",
+        "keywords": [
+          "量子圍欄",
+          "原子操縱",
+          "表面態電子",
+          "駐波",
+          "貝索函數",
+          "銅晶體"
+        ],
+        "plainExplanation": "1993 年物理學家利用 STM 針尖的微弱吸引力，在低溫銅單晶表面將 48 顆鐵原子推擠排列成圓環。這圈鐵原子像圍牆一樣反射只能在表面二維遊走的電子波，形成如池塘漣漪般的同心圓駐波，被 STM 清晰拍下並直接印證電子的波動本性。",
+        "anchorSentenceId": "sent-dda20254"
       }
     ]
   },
@@ -1361,6 +2161,71 @@
     ]
   },
   {
+    "articleId": "art-supershear-earthquake-rupture",
+    "slug": "supershear-earthquake-rupture-mechanics",
+    "title": "超剪切地震斷層破裂：衝破岩石音障的地下馬赫錐",
+    "knowledgePoints": [
+      {
+        "id": "kp-supershear-forbidden-zone",
+        "label": "瑞利波速上限與能量禁區",
+        "suggestedQuestion": "為什麼古典地震學認為斷層破裂的速度不能超過地殼裡的瑞利表面波速？",
+        "keywords": [
+          "瑞利波速",
+          "能量釋放率",
+          "速度禁區",
+          "Mode II 裂紋",
+          "破裂速度"
+        ],
+        "plainExplanation": "在經典平面內剪力破裂理論中，裂紋向前撕裂需要彈性應變能流向尖端；當破裂速度逼近瑞利波速 c_R（約 0.92 倍 S 波速）時，尖端能量釋放率會降為零，而在 c_R 到 c_S 之間更呈現負值禁區，因此破裂無法靠平穩連續加速跨過這道障礙。",
+        "anchorSentenceId": "sent-06145dd6"
+      },
+      {
+        "id": "kp-burridge-andrews-daughter-crack",
+        "label": "Burridge–Andrews 子裂紋躍遷",
+        "suggestedQuestion": "既然存在速度禁區，超剪切地震到底是怎麼「跳過」音障超越 S 波速度的？",
+        "keywords": [
+          "Burridge-Andrews 機制",
+          "子裂紋",
+          "應力比 S",
+          "1.77",
+          "埃舍爾比速度",
+          "超剪切"
+        ],
+        "plainExplanation": "當斷層初始剪應力相當接近岩石強度、使無因次應力比 S 小於 1.77 時，主裂紋前方以 S 波速度搶先奔跑的剪應力尖峰會提前擊穿前方完好岩石，直接引爆一條全新的「子裂紋」。子裂紋合併後便完成不連續的速度跳躍，直接空降至超越 S 波的超剪切區間並趨近 √2 倍 S 波速。",
+        "anchorSentenceId": "sent-b7618b1b"
+      },
+      {
+        "id": "kp-turkey-2023-early-supershear",
+        "label": "2023 土耳其強震極早期超剪切",
+        "suggestedQuestion": "2023 年土耳其卡赫拉曼馬拉什 Mw 7.8 強震中，科學家觀測到了什麼樣的早期超剪切證據？",
+        "keywords": [
+          "卡赫拉曼馬拉什地震",
+          "Mw 7.8",
+          "分支斷層",
+          "1.55 cS",
+          "近場強震站",
+          "東安納托利亞斷層"
+        ],
+        "plainExplanation": "2025 年最新近場強震站波形分析顯示，在 2023 年土耳其 Mw 7.8 主震最初起爆的努爾達吉–帕扎爾哲克分支斷層上，破裂甚至還沒進入主斷層、僅推進極短距離時，速度便驟然跨越 S 波速並躍遷至約 1.55 倍 S 波速的超剪切狀態，解釋了早期極端破壞性動能的來源。",
+        "anchorSentenceId": "sent-33100710"
+      },
+      {
+        "id": "kp-shear-mach-cone-hazard",
+        "label": "剪力馬赫錐與遠場低衰減脈衝",
+        "suggestedQuestion": "超剪切地震產生的地下「馬赫錐」為什麼會讓遠離震央數十公里的城市遭受意外重創？",
+        "keywords": [
+          "剪力馬赫錐",
+          "馬赫半錐角",
+          "非衰減能量",
+          "速度脈衝",
+          "相長干涉"
+        ],
+        "plainExplanation": "當破裂前緣跑得比自己輻射出的 S 波還快，沿途釋放的無數 S 波子波會在切線包絡面上互相疊加成一道銳利的 V 形剪力馬赫錐衝擊波。這股相長干涉波束不會像普通球面地震波那樣隨距離快速衰減，而是把高頻劇烈的地面速度脈衝直接灌向遠方城市。",
+        "anchorSentenceId": "sent-b836d6de"
+      }
+    ]
+  },
+  {
     "articleId": "art-thorium-nuclear-clock",
     "slug": "thorium-229-nuclear-clock-laser",
     "title": "原子核內的宇宙脈搏：釷-229 光學核時鐘如何運作？",
@@ -1459,6 +2324,69 @@
         ],
         "plainExplanation": "外加的小幅度共振磁擾動讓邊緣多了一個持續的洩漏管道，壓力梯度在撞上穩定邊界之前就達到平衡停住，像在水庫加了溢洪道，不再等到潰堤才一次放水。不過它只在特定運轉窗口有效，確切機制仍有爭論。",
         "anchorSentenceId": "sent-22d0abbd"
+      }
+    ]
+  },
+  {
+    "articleId": "art-topological-insulators-edge",
+    "slug": "topological-insulators-bulk-boundary",
+    "title": "邊界上的單行道：拓撲絕緣體、陳數與體邊對應",
+    "knowledgePoints": [
+      {
+        "id": "kp-topo-chiral-edge",
+        "label": "手性邊界態與背向散射免疫",
+        "suggestedQuestion": "為什麼拓撲絕緣體邊緣的波遇到晶格缺口時不會反彈，而是自己繞過去？",
+        "keywords": [
+          "陳絕緣體",
+          "手性邊界態",
+          "背向散射",
+          "單向傳播",
+          "拓撲保護"
+        ],
+        "plainExplanation": "在一般波導裡，前進和後退的通道並存於同一能量下，波撞上障礙就會反射回去。但在破壞時間反演對稱性的陳絕緣體邊界上，每個邊緣在能隙區間內只允許波朝單一方向通行（手性邊界態），物理上沒有逆向頻道可供反彈，因此波包只能沿著障礙物的新輪廓平順繞行。",
+        "anchorSentenceId": "sent-04ace4f0"
+      },
+      {
+        "id": "kp-topo-chern-number",
+        "label": "動量空間貝里曲率與陳數",
+        "suggestedQuestion": "決定材料是不是拓撲絕緣體的「陳數」到底在算什麼？",
+        "keywords": [
+          "陳數",
+          "貝里曲率",
+          "布里淵區",
+          "拓撲不變量",
+          "量子霍爾效應"
+        ],
+        "plainExplanation": "把晶體的波函數放在動量空間的環面上平滑移動時，波函數內部相位會產生幾何扭轉，其局部曲率稱為貝里曲率。把整個布里淵區的貝里曲率加總起來除以 2π，必然得到一個精確的整數——陳數。只要內部能隙不關閉，小雜質就無法改變這個整數。",
+        "anchorSentenceId": "sent-4f4fc851"
+      },
+      {
+        "id": "kp-topo-bulk-boundary",
+        "label": "體邊對應與邊界能隙閉合",
+        "suggestedQuestion": "材料內部明明是絕緣體，為什麼邊界上一定會長出能導電或導波的通道？",
+        "keywords": [
+          "體邊對應",
+          "能隙閉合",
+          "連續形變",
+          "交界面",
+          "拓撲相變"
+        ],
+        "plainExplanation": "拓撲材料內部的陳數是 1，外面真空或普通材料的陳數是 0。因為整數不可能在不關閉能隙的情況下連續從 1 跳成 0，所以兩者交會的邊界薄層處能隙被迫歸零閉合，剛好在能隙中央留下連接價帶與導帶的手性邊界通道。",
+        "anchorSentenceId": "sent-f36c06e7"
+      },
+      {
+        "id": "kp-topo-z2-helical",
+        "label": "陳絕緣體 vs ℤ₂ 螺旋邊界態",
+        "suggestedQuestion": "不加外磁場的 ℤ₂ 拓撲絕緣體和量子霍爾陳絕緣體有什麼不同？",
+        "keywords": [
+          "Z2 拓撲絕緣體",
+          "時間反演對稱性",
+          "螺旋邊界態",
+          "自旋軌道耦合",
+          "克拉默斯定理"
+        ],
+        "plainExplanation": "陳絕緣體打破了時間反演對稱性，只留單向車道，連磁性雜質也擋不住它；而保留時間反演對稱的 ℤ₂ 拓撲絕緣體靠強自旋軌道耦合形成「自旋向上順時針、自旋向下逆時針」的雙向螺旋車道，能免疫非磁性雜質，但遇到磁性雜質打破對稱性時仍會發生背向散射。",
+        "anchorSentenceId": "sent-9906ea47"
       }
     ]
   },

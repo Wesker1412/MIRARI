@@ -11,8 +11,8 @@ export const MuonPrecessionSimulator: React.FC = () => {
   const animFrameRef = useRef<number | null>(null);
 
   // 異常磁矩 a_mu = (g - 2) / 2 x 10^11
-  // 實驗值 (Fermilab 2023): a_mu = 116592059 x 10^-11
-  // 色散理論值 (White Paper 2020): a_mu = 116591810 x 10^-11 (差約 249 x 10^-11, ~5.1σ)
+  // 2023 世界實驗平均 (FNAL Runs 1-3 + BNL E821): a_mu = 116592059(22) x 10^-11
+  // 色散理論值 (White Paper 2020): a_mu = 116591810 x 10^-11 (差約 249 x 10^-11, 約 5.1σ)
   // 格點 QCD (BMW 2021): a_mu = 116591954 x 10^-11 (差約 105 x 10^-11, 顯著縮小差異)
   const aMuValues = {
     experiment: 116592059,
@@ -230,8 +230,8 @@ export const MuonPrecessionSimulator: React.FC = () => {
 
   const modelLabels = useMemo(() => ({
     experiment: {
-      name: 'Fermilab 實驗實測 (2023)',
-      desc: 'FNAL 實測綜合值，精確度達 0.20 ppm，具備 5.1σ 顯著異常',
+      name: '2023 世界實驗平均 (FNAL+E821)',
+      desc: 'FNAL Runs 1–3 與 BNL E821 合併世界實驗平均（±22），對比 WP2020 舊預測呈約 5.1σ 歷史偏差',
       color: 'text-sky-400 border-sky-500/50 bg-sky-950/20',
     },
     dispersive: {
@@ -301,7 +301,7 @@ export const MuonPrecessionSimulator: React.FC = () => {
             {selectedAmu.toLocaleString()}
           </div>
           <div className="text-[10px] text-slate-500">
-            {theoreticalModel === 'experiment' ? '實測精度 ±22 (0.2 ppm)' : theoreticalModel === 'lattice_bmw' ? '格點誤差 ±131' : '色散理論值'}
+            {theoreticalModel === 'experiment' ? '2023 世界平均誤差 ±22' : theoreticalModel === 'lattice_bmw' ? '格點誤差 ±131' : '色散理論值'}
           </div>
         </div>
 
@@ -325,7 +325,7 @@ export const MuonPrecessionSimulator: React.FC = () => {
             {deltaAmuPpm >= 0 ? `+${deltaAmuPpm.toFixed(2)}` : deltaAmuPpm.toFixed(2)} ppm
           </div>
           <div className="text-[10px] text-slate-500">
-            {theoreticalModel === 'experiment' ? '5.1σ 統計顯著度' : theoreticalModel === 'lattice_bmw' ? '與實驗差異大幅緩解' : '基準模型 (0 ppm)'}
+            {theoreticalModel === 'experiment' ? '相對 WP2020 約 5.1σ 歷史偏差' : theoreticalModel === 'lattice_bmw' ? '與實驗差異大幅緩解' : '基準模型 (0 ppm)'}
           </div>
         </div>
 
