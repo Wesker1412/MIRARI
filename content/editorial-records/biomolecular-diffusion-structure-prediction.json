@@ -1,0 +1,108 @@
+{
+  "articleId": "art-biomolecular-diffusion-af3",
+  "slug": "biomolecular-diffusion-structure-prediction",
+  "editorialCategory": "journal_interpretation",
+  "version": 1,
+  "creationModel": "gemini-2.5-pro",
+  "editorialPassDate": "2026-11-12T08:00:00+08:00",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-abramson-2024-nature",
+        "citation": "Abramson, J., Adler, J., Dunger, J., Evans, R., Green, T., Pritzel, A., ... & Jumper, J. M. (2024). \"Accurate structure prediction of biomolecular interactions with AlphaFold 3.\" Nature, 630(8016), 493–500.",
+        "doi": "10.1038/s41586-024-07487-w",
+        "peerReviewStatus": "已完成同行評審 (Nature)",
+        "verifiedClaims": [
+          "AlphaFold 3 以 4 層輕量化 MSA 模組與 48 層 Pairformer 取代 Evoformer，並以直接作用於全原子三維座標的擴散模組取代剛體框架與 IPA",
+          "統一架構可同時預測蛋白質、DNA/RNA、小分子配體、離子與共價修飾複合物，但仍存在無序區偽螺旋幻覺（需以交叉蒸餾緩解）、手性／碰撞風險與靜態快照極限"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "多尺度擴散去噪在高噪聲時決定整體結構域佈局，低噪聲時精修鍵長與側鏈幾何"
+          ],
+          "empiricalFindings": [
+            "在 PoseBusters 等蛋白質－配體對接基準測試上顯著超越傳統對接軟體"
+          ],
+          "hypothesesAndModels": [
+            "生成式擴散採樣所得之多組低能構象不等同於真實熱力學波茲曼自由能系綜"
+          ]
+        }
+      },
+      {
+        "id": "ref-jumper-2021-nature",
+        "citation": "Jumper, J., Evans, R., Pritzel, A., Green, T., Figurnov, M., Ronneberger, O., ... & Hassabis, D. (2021). \"Highly accurate protein structure prediction with AlphaFold.\" Nature, 596(7873), 583–589.",
+        "doi": "10.1038/s41586-021-03819-2",
+        "peerReviewStatus": "已完成同行評審 (Nature)",
+        "verifiedClaims": [
+          "AlphaFold 2 依賴 48 層 Evoformer 與基於胺基酸局部剛體框架的不變點注意力機制 (IPA) 達成單體蛋白質高精準結構預測"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "胺基酸主鏈 N-Cα-C 剛體框架與側鏈 χ 角參數化僅適用於標準多肽鏈"
+          ],
+          "empiricalFindings": [],
+          "hypothesesAndModels": []
+        }
+      },
+      {
+        "id": "ref-song-2021-iclr",
+        "citation": "Song, Y., Sohl-Dickstein, J., Kingma, D. P., Kumar, A., Ermon, S., & Poole, B. (2021). \"Score-Based Generative Modeling through Stochastic Differential Equations.\" ICLR 2021, arXiv:2011.13456.",
+        "doi": "10.48550/arXiv.2011.13456",
+        "peerReviewStatus": "已完成同行評審 (ICLR 2021)",
+        "verifiedClaims": [
+          "連續時間分數匹配生成模型可透過隨機微分方程與逆向分數梯度將各向同性高斯噪聲逐步去噪還原為目標數據分佈"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "逆向擴散 SDE 由條件對數機率密度梯度 ∇_x log p_t(x|z) 引導"
+          ],
+          "empiricalFindings": [],
+          "hypothesesAndModels": []
+        }
+      }
+    ],
+    "noFakeCitations": true,
+    "noFictionalReviewers": true,
+    "formulasAndUnits": [
+      {
+        "formula": "d\\mathbf{x} = \\left[\\mathbf{f}(\\mathbf{x}, t) - \\frac{1}{2} g(t)^2 \\nabla_{\\mathbf{x}} \\log p_t(\\mathbf{x} \\mid \\mathbf{z}_{\\text{pair}})\\right] dt + g(t)\\,d\\bar{\\mathbf{w}}",
+        "unitConsistency": "座標微分 d x 單位為 Å（或無因次歸一化座標），漂移項 f dt 與擴散項 g dw（dw ~ √dt）因次一致，分數 ∇_x log p_t 量綱為座標長度倒數，乘以 g² dt 後量綱嚴格自洽",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "依噪聲排程 σ(t) = 95·t^1.55 與訊號縮放因子構建蛋白質結合口袋、本質無序尾端 (IDR) 及芳香環小分子配體之逆向去噪軌跡，並依 Pairformer 共演化約束強度計算成對誤差矩陣 PAE 與局部置信度 pLDDT",
+      "numericalMethod": "三維投影原子點雲實時去噪渲染，結合深度排序、26×26 成對對齊誤差熱圖與多種子高斯採樣變異",
+      "modelAssumptionsAndLimits": "模擬器以低維代表性口袋與環狀配體原子展示多尺度去噪、IDR 置信度偏低與種子隨機性之機制；真實 AlphaFold 3 模型擁有數萬至數十萬原子注意力與 48 層 Pairformer 參數"
+    }
+  },
+  "readability": {
+    "language": "繁體中文",
+    "pedagogyProgression": "AF2 剛體殘基框架在小分子與核酸上的局限 -> AF3 輕量化 MSA + 48 層 Pairformer + 全原子擴散模組 -> 高/中/低噪聲尺度分工 -> 無序區幻覺、立體化學碰撞與靜態快照之真實邊界",
+    "technicalTermsDemystified": [
+      {
+        "term": "Pairformer",
+        "intuitiveExplanation": "將笨重的多序列比對壓縮掉之後，專注更新「誰靠誰近、誰跟誰成角」成對幾何關係的 48 層核心神經網路"
+      },
+      {
+        "term": "全原子擴散模組 (All-Atom Diffusion)",
+        "intuitiveExplanation": "不再把胺基酸當成預製積木塊，而是直接把每個原子當作空間點雲，像從模糊濃霧中逐漸對焦雕刻出蛋白質與藥物結合的立體輪廓"
+      },
+      {
+        "term": "生成式幻覺 (Hallucination)",
+        "intuitiveExplanation": "因為擴散模型習慣在去噪時交出一張看起來有模有樣的原子圖，遇到原本毫無固定形狀的無序蛋白區時，可能憑空編造出不存在的假螺旋"
+      }
+    ]
+  },
+  "aestheticsAndNarrative": {
+    "coreQuestion": "為什麼捨棄胺基酸剛體框架並改用從高斯噪聲雲去噪的擴散模型，就能將蛋白質、核酸與藥物小分子統一進同一個結構預測器？",
+    "interactiveRole": "MolecularDiffusionSimulator 讓讀者親自拖動擴散時間步 t 觀察結合口袋與配體如何從噪聲中逐級收斂，並調節 Pairformer 約束與樣本種子檢視 PAE 矩陣與無序區不確定性"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "釐清 AlphaFold 3 並非完全捨棄多序列比對，而是將其濃縮於前置 4 層 MSA 模組後再交由 48 層 Pairformer",
+    "明確揭露生成式擴散結構仍是靜態低能快照集合，不等價於能解析過渡態路徑與真實熱力學權重的分子動力學軌跡"
+  ],
+  "unconfirmedLimits": [
+    "對於尚未被實驗晶體或冷凍電鏡覆蓋的新穎合成藥物化學空間與大幅度誘導契合構象轉換，模型泛化能力仍受限於訓練結構分佈"
+  ]
+}

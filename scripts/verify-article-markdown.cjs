@@ -152,7 +152,8 @@ async function runVerification() {
   fs.mkdirSync(ARTIFACT_DIR, { recursive: true });
   const { isArticlePublished } = await import('../src/utils/date.ts');
   const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/generated/articles-manifest.json'), 'utf8'));
-  const articles = manifest.filter((article) => isArticlePublished(article));
+  const targetFilter = process.env.TARGET_SLUGS ? process.env.TARGET_SLUGS.split(',').map(s => s.trim()) : null;
+  const articles = manifest.filter((article) => isArticlePublished(article) && (!targetFilter || targetFilter.includes(article.slug)));
   assert.ok(articles.length, 'No published articles in the manifest');
   const report = { baseUrl: BASE_URL, status: 'unverified', results: [] };
   const saveReport = () => fs.writeFileSync(path.join(ARTIFACT_DIR, 'report.json'), JSON.stringify(report, null, 2));

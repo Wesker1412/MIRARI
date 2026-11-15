@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastUpdated": "2026-11-10T09:00:00.000Z",
+  "lastUpdated": "2026-11-15T09:08:00.000Z",
   "editorialMemoryDescription": "MIRARI 自主編輯品質管理記憶庫：記錄近期篇章學科分佈、敘事風格、互動模式與編輯檢查規則，提供每日自主創作管線跨日延續性與防重複依據。",
   "recentArticles": [
     {
@@ -371,6 +371,186 @@
       "coreConcept": "萊文索爾佯謬、自由能漏斗、最小受挫原理與熔球態中間體",
       "pedagogyKey": "高維迷宮盲搜 10^73 年破題，打破高爾夫球洞平坦假想，推導疏水塌縮與焓驅動自發滑入天然態",
       "limitsIdentified": "單一序參量 Q 粗粒化勢能面，未納入細胞大分子擁擠環境與分子伴侶主動消耗 ATP 變構"
+    },
+    {
+      "articleId": "art-quantum-surface-code",
+      "slug": "quantum-error-correction-surface-code",
+      "editorialCategory": "journal_interpretation",
+      "discipline": "量子計算與容錯編碼",
+      "narrativeStyle": "research_interpretation",
+      "interactiveType": "surface_code",
+      "interactiveComponent": "SurfaceCodeSimulator",
+      "coreConcept": "不可複製定理與表面碼穩定子奇偶測量、Willow 處理器跨越閾值 (Λ = 2.14 ± 0.02)",
+      "pedagogyKey": "古典三複製多數決碰撞不可複製高牆，展開 X/Z 穩定子黑白棋盤與任意子成對症候群解碼",
+      "limitsIdentified": "僅驗證量子記憶體保存壽命，尚未達通用非 Clifford 邏輯閘與百萬位元級工程擴展"
+    },
+    {
+      "articleId": "art-bz-chemical-oscillator",
+      "slug": "belousov-zhabotinsky-chemical-oscillator",
+      "editorialCategory": "scientific_principles",
+      "discipline": "非平衡態化學動力學",
+      "narrativeStyle": "historical_detective",
+      "interactiveType": "chemical_oscillator",
+      "interactiveComponent": "ChemicalOscillatorSimulator",
+      "coreConcept": "FKN 化學自催化負回饋、Oregonator 極限環振盪與二維可激發螺旋波",
+      "pedagogyKey": "以熱力學第二定律禁止平衡態永續震盪破題，釐清離平衡耗散結構如何維持化學脈搏與碎裂螺旋波",
+      "limitsIdentified": "確定性平均場反應擴散偏微分方程近似，未包含奈微米腔室分子漲落雜訊"
+    },
+    {
+      "articleId": "art-entorhinal-grid-cells",
+      "slug": "entorhinal-grid-cells-spatial-map",
+      "editorialCategory": "scientific_principles",
+      "discipline": "系統神經科學與空間導航",
+      "narrativeStyle": "geometric_observation",
+      "interactiveType": "grid_cell_navigation",
+      "interactiveComponent": "GridCellNavigationSimulator",
+      "coreConcept": "內嗅皮層網格細胞六角晶格放電、連續吸引子環面拓撲與多尺度路徑積分",
+      "pedagogyKey": "從鼠腦探索箱驚現正三角形晶格切入，解構速度向量積分與邊界地標校正漂移機制",
+      "limitsIdentified": "二維平面等向路徑積分近似，未完整涵蓋三維飛行空間立體晶格結構爭議"
+    },
+    {
+      "articleId": "art-topological-insulators-edge",
+      "slug": "topological-insulators-bulk-boundary",
+      "editorialCategory": "scientific_principles",
+      "discipline": "拓撲凝態物理與波動光學",
+      "narrativeStyle": "first_principles",
+      "interactiveType": "topological_edge",
+      "interactiveComponent": "TopologicalEdgeSimulator",
+      "coreConcept": "貝里曲率、整數陳數拓撲不變量與體邊對應無背向散射單向通道",
+      "pedagogyKey": "以甜甜圈與咖啡杯拓撲不變量導引布里淵區扭轉，對比普通波導碰撞反彈與手性邊界繞行",
+      "limitsIdentified": "簡化緊束縛陳絕緣體格子模型，未納入光學/聲學系統非線性增益與高頻損耗"
+    },
+    {
+      "articleId": "art-biomolecular-diffusion-af3",
+      "slug": "biomolecular-diffusion-structure-prediction",
+      "editorialCategory": "journal_interpretation",
+      "discipline": "計算結構生物學與生成式科學",
+      "narrativeStyle": "synthetic_biology_design",
+      "interactiveType": "molecular_diffusion",
+      "interactiveComponent": "MolecularDiffusionSimulator",
+      "coreConcept": "AlphaFold 3 輕量化 MSA + 48 層 Pairformer 與全原子座標逆向擴散去噪",
+      "pedagogyKey": "解剖 AF2 剛體殘基框架如何失效於小分子配體，闡述多尺度噪聲去除與無序區幻覺防制",
+      "limitsIdentified": "輸出靜態低自由能構象快照而非分子動力學時間軌跡，泛化受訓練分佈侷限"
+    },
+    {
+      "articleId": "art-circadian-feedback-oscillator",
+      "slug": "circadian-rhythm-feedback-oscillator",
+      "editorialCategory": "scientific_principles",
+      "discipline": "系統生物學與時間生物學",
+      "narrativeStyle": "depth_narrative",
+      "interactiveType": "circadian_clock",
+      "interactiveComponent": "CircadianClockSimulator",
+      "coreConcept": "Goodwin 延遲負回饋霍普夫分岔、KaiABC 離體磷酸化循環與 Q10 溫度補償",
+      "pedagogyKey": "從轉錄延遲回饋躍遷至無基因轉錄試管三蛋白時鐘，實證生化振盪為何無視溫度變化維持 24 小時",
+      "limitsIdentified": "簡化單細胞核心迴路微分方程，未納入多器官神經內分泌與細胞代謝氧還偶聯"
+    },
+    {
+      "articleId": "art-quantum-tunneling-stm",
+      "slug": "quantum-tunneling-stm-atomic-imaging",
+      "editorialCategory": "scientific_principles",
+      "discipline": "量子力學與表面奈米物理",
+      "narrativeStyle": "first_principles",
+      "interactiveType": "quantum_tunneling",
+      "interactiveComponent": "StmTunnelingSimulator",
+      "coreConcept": "真空位壘漸逝波指數穿隧衰減、LDOS 局部態密度成像與鐵原子量子圍欄",
+      "pedagogyKey": "突破阿貝繞射高牆，推導 1 埃距離變化帶來近十倍電流劇變，並破解硬球原子圖像迷思",
+      "limitsIdentified": "一維矩形位壘與 Tersoff-Hamann s 波針尖近似，未涵蓋分子修飾高階多極探針"
+    },
+    {
+      "articleId": "art-cof-carbon-capture",
+      "slug": "metal-organic-frameworks-carbon-capture",
+      "editorialCategory": "journal_interpretation",
+      "discipline": "網格化學與分離熱力學",
+      "narrativeStyle": "journal_interpretation",
+      "interactiveType": "adsorption_thermodynamics",
+      "interactiveComponent": "MofAdsorptionSimulator",
+      "coreConcept": "400 ppm 稀薄碳捕捉熱力學、COF-999 多胺水氣協同倍增吸附與 60°C 低溫再生",
+      "pedagogyKey": "從稀釋氣體最小混合熵功切入，解析水氣如何從競爭毒物反轉為碳酸氫鹽助推劑",
+      "limitsIdentified": "實驗室克級粉末迴圈性能驗證，距離百萬噸級工業反應床壓降與傳質放大仍有差距"
+    },
+    {
+      "articleId": "art-kuramoto-synchronization",
+      "slug": "kuramoto-model-collective-synchronization",
+      "editorialCategory": "scientific_principles",
+      "discipline": "非線性科學與集體動力學",
+      "narrativeStyle": "first_principles",
+      "interactiveType": "nonlinear_dynamics",
+      "interactiveComponent": "KuramotoSyncSimulator",
+      "coreConcept": "倉本耦合振盪子平均場自洽方程、複序參量與臨界耦合閾值 Kc 非平衡相變",
+      "pedagogyKey": "由東南亞螢火蟲齊閃啟發，解析個體頻率分布如何於超臨界耦合點出現鎖相與漂移二分",
+      "limitsIdentified": "一階全連通平均場相耦合簡化，電網轉子需納入二階轉動慣量與拓撲稀疏性"
+    },
+    {
+      "articleId": "art-orbital-resonance-tidal-heating",
+      "slug": "orbital-resonance-tidal-heating",
+      "editorialCategory": "scientific_principles",
+      "discipline": "行星動力學與天體生物學",
+      "narrativeStyle": "physical_derivation",
+      "interactiveType": "orbital_resonance",
+      "interactiveComponent": "OrbitalResonanceSimulator",
+      "coreConcept": "4:2:1 拉普拉斯共振抵抗軌道圓化、黏彈潮汐隆起遲滯與埃歐百兆瓦耗散",
+      "pedagogyKey": "對比 5.2 AU 冰封輻射預算與 100 TW 火山實測矛盾，推演三體週期合相強迫偏心率",
+      "limitsIdentified": "一階低偏心率黏彈品質因子近似，埃歐部分熔融海綿層或全球岩漿海結構尚在探測中"
+    },
+    {
+      "articleId": "art-optical-tweezers-dna",
+      "slug": "optical-tweezers-dna-nanomechanics",
+      "editorialCategory": "scientific_principles",
+      "discipline": "生物物理與單分子雷射光學",
+      "narrativeStyle": "experimental_mechanics",
+      "interactiveType": "optical_tweezers",
+      "interactiveComponent": "OpticalTweezersSimulator",
+      "coreConcept": "高聚焦高斯光束梯度力陷阱、DNA 蠕蟲鏈熵彈性與 65 pN 過拉伸 cooperative 相變",
+      "pedagogyKey": "無質量光子如何靠折射動量變化成為皮牛頓彈簧秤，直擊熱擾動捲縮到雙螺旋解鏈的力譜突變",
+      "limitsIdentified": "平衡態近似模型，忽略極端超螺旋扭矩耦合與不同 GC 序列局部異質性"
+    },
+    {
+      "articleId": "art-supershear-earthquake-rupture",
+      "slug": "supershear-earthquake-rupture-mechanics",
+      "editorialCategory": "journal_interpretation",
+      "discipline": "地震動力學與斷層力學",
+      "narrativeStyle": "journal_interpretation",
+      "interactiveType": "fault_rupture",
+      "interactiveComponent": "FaultRuptureSimulator",
+      "coreConcept": "Burridge-Andrews 子裂紋跳躍 [cR, cS] 禁區、埃舍爾比速度 √2 cS 與 2023 土耳其地震超剪切實證",
+      "pedagogyKey": "從裂紋無法跨越瑞利與 S 波速禁區悖論切入，揭開剪力波衝鋒在先催生子裂紋與馬赫錐之謎",
+      "limitsIdentified": "二維均質線彈性模型近似，真實地殼分層與盆地放大效應需三維有限元素模擬"
+    },
+    {
+      "articleId": "art-active-matter-vicsek",
+      "slug": "active-matter-vicsek-flocking-transition",
+      "editorialCategory": "scientific_principles",
+      "discipline": "非平衡統計物理與主動物質",
+      "narrativeStyle": "physical_derivation",
+      "interactiveType": "vicsek_flocking",
+      "interactiveComponent": "VicsekFlockingSimulator",
+      "coreConcept": "Vicsek 自驅動粒子對齊相變、Toner-Tu 對流項繞過 Mermin-Wagner 定理、一階移動密集團帶與椋鳥無尺度關聯",
+      "pedagogyKey": "從局部極微能量注入打破時間反演對稱切入，辨析連續相變初探與大尺度一階不連續相變修正，對比數值半徑與真實鳥群拓撲近鄰",
+      "limitsIdentified": "二維週期邊界度量半徑近似，未涵蓋三維拓撲互動及流體力學尾流交互作用"
+    },
+    {
+      "articleId": "art-biomolecular-condensates",
+      "slug": "biomolecular-condensates-phase-separation",
+      "editorialCategory": "scientific_principles",
+      "discipline": "軟物質生物物理與分子熱力學",
+      "narrativeStyle": "molecular_machine",
+      "interactiveType": "phase_separation_llps",
+      "interactiveComponent": "PhaseSeparationSimulator",
+      "coreConcept": "Flory-Huggins 混合自由能雙節線與旋節線、IDR 黏扣－間隔區多價吸引與無膜胞器液－液相分離",
+      "pedagogyKey": "由線蟲 P 顆粒液滴融合現象導出長鏈高分子如何壓低平動混合熵並觸發相分離，區分液態濃縮與病理纖維化老化",
+      "limitsIdentified": "二維對稱二元守恆 Cahn-Hilliard 連續場近似，忽略細胞內多組分與 ATP 主動非平衡調控"
+    },
+    {
+      "articleId": "art-pta-gravitational-waves",
+      "slug": "pulsar-timing-array-gravitational-waves",
+      "editorialCategory": "journal_interpretation",
+      "discipline": "奈赫茲重力波天文學與廣義相對論",
+      "narrativeStyle": "research_interpretation",
+      "interactiveType": "pulsar_timing_array",
+      "interactiveComponent": "PulsarTimingSimulator",
+      "coreConcept": "毫秒脈衝星計時陣列地球項／脈衝星項拆解、Hellings-Downs 四極角關聯曲線與 NANOGrav 15 年 3–4σ 證據",
+      "pedagogyKey": "解析為何只有 10^-9 Hz 重力波能被跨千年光程捕捉，辨識 Hellings-Downs 從 0^+ 之 0.5 降至 90° 負值之四極空間指紋並審慎界定顯著性",
+      "limitsIdentified": "均向非極化廣義相對論四極背景模擬，實測仍需扣除太陽系曆表與星際電漿色散誤差"
     }
   ],
   "cumulativeGuidelines": {
@@ -388,14 +568,14 @@
           "displayName": "科學原理與思想實驗",
           "scope": "收錄一般科普、經典科學知識、科學現象、數學原理、理論解釋及思想實驗",
           "purpose": "主要目的是讓讀者理解科學，而非追逐最新消息。不限制物理學，也不要求每篇一定具有思想實驗",
-          "currentArticles": 20
+          "currentArticles": 30
         },
         "journal_interpretation": {
           "displayName": "期刊解讀",
           "scope": "最新科學發現、重要研究成果、研發技術突破及具有話題性的科學事件",
           "selectionCriteria": "以新聞時效性、科學價值與話題性作為選題依據。涵蓋最新學術研究、重大科學發現、技術研發突破、科學機構發布的重要成果及值得公眾關注的科學事件",
           "rigorRule": "不要求每篇都必須以單篇同儕審查論文為主題，但必須核對可信來源，清楚區分：已完成同行審查的研究、尚未同行審查的預印本、機構或企業提出但尚待獨立驗證的成果。不得為了追逐話題性誇大研究結果",
-          "currentArticles": 11
+          "currentArticles": 16
         }
       },
       "classificationPrinciple": "根據文章的主要編輯目的分類：主要在解釋某個科學知識或原理 -> scientific_principles；主要在報導或解讀近期科學發現、研究成果、技術突破或科學事件 -> journal_interpretation。不能僅因引用了新論文就歸類為期刊解讀，不能僅因內容涉及經典科學原理就排除其作為最新研究報導的可能。兩大分類互斥且與學科標籤獨立",

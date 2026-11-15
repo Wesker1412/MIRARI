@@ -1,0 +1,67 @@
+{
+  "articleId": "art-active-matter-vicsek",
+  "slug": "active-matter-vicsek-flocking-transition",
+  "title": "鳥群為何不用總指揮也能整齊轉向？主動物質與 Vicsek 群集相變",
+  "knowledgePoints": [
+    {
+      "id": "kp-active-matter-symmetry-breaking",
+      "label": "主動物質與非平衡對稱性破缺",
+      "suggestedQuestion": "什麼是「主動物質」？它與一般平衡態熱力學系統有什麼根本差異？",
+      "keywords": [
+        "主動物質",
+        "自驅動粒子",
+        "時間反演對稱",
+        "細緻平衡",
+        "動量不守恆",
+        "非平衡定態"
+      ],
+      "plainExplanation": "在傳統平衡態物理中，分子只在熱庫溫度驅動下隨機碰撞，遵守時間反演對稱與細緻平衡。但主動物質（如鳥群、游動細菌或細胞骨架馬達）的每個個體都在微觀尺度就地消耗自由能並轉化為定向推進力，不僅在單粒子層級打破了時間反演對稱與細緻平衡，在與背景介質摩擦交換衝量時也不遵守單體動量守恆，使群體能自發打破旋轉對稱性形成宏觀遷移。",
+      "anchorSentenceId": "sent-7dbdfb5a"
+    },
+    {
+      "id": "kp-vicsek-alignment-order-parameter",
+      "label": "Vicsek 局部對齊與極性序參量",
+      "suggestedQuestion": "Vicsek 模型如何僅靠兩條簡單規則就重現從無序散飛到整齊同向的相變？",
+      "keywords": [
+        "Vicsek 模型",
+        "極性序參量",
+        "度量半徑",
+        "角度雜訊",
+        "圓周平均",
+        "自驅動粒子"
+      ],
+      "plainExplanation": "在二維週期性空間中，每個 Vicsek 粒子以固定速率 v₀ 前進，並在每一時間步把自己的航向調整為半徑 R 內所有鄰居的平均方向，再疊加均勻分佈於 [-η/2, η/2] 的隨機角度雜訊 Δθ。以極性序參量 Φ = |Σ vᵢ| / (N v₀) 量測同步程度：高雜訊時粒子方向相互抵銷使 Φ 趨近 0；當雜訊低於門檻且密度足夠時，速度向量同向疊加使 Φ 躍升至接近 1。",
+      "anchorSentenceId": "sent-25099c5d"
+    },
+    {
+      "id": "kp-toner-tu-convective-order",
+      "label": "Toner–Tu 對流輸運與二維長程有序",
+      "suggestedQuestion": "Mermin–Wagner 定理不是禁止二維短程系統出現長程有序嗎？為什麼二維鳥群辦得到？",
+      "keywords": [
+        "Mermin–Wagner 定理",
+        "Toner–Tu 理論",
+        "對流輸運",
+        "長程極性有序",
+        "哥德斯通漲落",
+        "重整化群"
+      ],
+      "plainExplanation": "平衡態的二維 XY 模型若只有固定格點上的自旋，長波長熱漲落會依對數發散而摧毀長程有序（Mermin–Wagner 定理）。然而 Toner 與 Tu（1995）證明，主動物質裡的粒子並非原地不動的自旋，而是會沿速度方向實際移動：非線性對流項 (v·∇)v 把密度與取向漲落耦合起來，讓粒子能直接帶著方向資訊穿越橫向距離，從而抑制漲落發散並在二維平面建立真正的長程極性有序。",
+      "anchorSentenceId": "sent-81b9bde7"
+    },
+    {
+      "id": "kp-first-order-bands-starling-scale-free",
+      "label": "一階移動團帶相變與歐椋鳥無尺度關聯",
+      "suggestedQuestion": "Vicsek 群集相變是連續的還是不連續的？真實歐椋鳥群又與標準模型有何不同？",
+      "keywords": [
+        "一階相變",
+        "移動密集團帶",
+        "有限尺度效應",
+        "無尺度關聯",
+        "歐椋鳥",
+        "拓撲交互作用"
+      ],
+      "plainExplanation": "Vicsek 等人（1995）最初因系統尺寸有限而誤以為轉變是平滑的二階相變；但 Grégoire 與 Chaté（2004）在大尺度模擬中證實，臨界區間會形成橫掃無序氣體的「移動高密度團帶」，導致 Φ 出現一階不連續跳變與相共存。相對地，Cavagna 等人（2010）在羅馬測得真實歐椋鳥群的速度漲落關聯長度 ξ 與鳥群總尺寸 L 成線性正比（無尺度關聯），且真實鳥類依循固定鄰居數的「拓撲交互作用」，而非基礎 Vicsek 模型的固定度量半徑 R。",
+      "anchorSentenceId": "sent-36a61ffd"
+    }
+  ]
+}

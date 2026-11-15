@@ -1,0 +1,49 @@
+{
+  "articleId": "art-bz-chemical-oscillator",
+  "slug": "belousov-zhabotinsky-chemical-oscillator",
+  "title": "不會停歇的化學脈搏：BZ 振盪反應與非平衡態激發波",
+  "knowledgePoints": [
+    {
+      "id": "kp-bz-second-law-nonequilibrium",
+      "label": "非平衡耗散結構與熱力學第二定律",
+      "suggestedQuestion": "化學反應不是應該一直往平衡態單調前進嗎？為什麼 BZ 反應不會違反熱力學第二定律？",
+      "keywords": [
+        "熱力學第二定律",
+        "非平衡態",
+        "耗散結構",
+        "細緻平衡",
+        "自由能儲槽"
+      ],
+      "plainExplanation": "熱力學第二定律禁止的是「在平衡點附近」來回振盪。BZ 反應之所以能規律跳動，是因為溶液中有高濃度的丙二酸與溴酸鹽充當能量儲槽（或在反應器中持續進料），整個系統正遠離平衡態並不斷消耗自由能、總體持續熵增；來回擺盪的只是中間產物濃度，就像水車借由水流落差而持續轉動一樣。",
+      "anchorSentenceId": "sent-594efb59"
+    },
+    {
+      "id": "kp-bz-fkn-oregonator",
+      "label": "Oregonator 雙變量模型與極限環",
+      "suggestedQuestion": "溶液中的分子究竟靠什麼機制輪流切換顏色，形成像時鐘一樣精準的極限環？",
+      "keywords": [
+        "FKN 機制",
+        "Oregonator",
+        "自催化",
+        "延遲負回饋",
+        "極限環"
+      ],
+      "plainExplanation": "FKN 機制將反應核心簡化為兩股互相拉扯的力量：活化劑亞溴酸一旦突破抑制門檻，就會透過自催化正回饋瞬間暴增並把鈰離子氧化變色；但隨後被催生出來的溴離子則扮演延遲煞車（負回饋），把活化劑再次壓回低點進入休息期。當進料參數進入霍普夫分岔區間，兩者濃度便會在相平面上鎖定成一條週期固定的封閉極限環。",
+      "anchorSentenceId": "sent-82453e7b"
+    },
+    {
+      "id": "kp-bz-excitable-spiral-waves",
+      "label": "可激發介質的行波湮滅與螺旋波",
+      "suggestedQuestion": "培養皿裡的化學螺旋波和池塘水波有什麼根本不同？為什麼兩道波相撞後會消失？",
+      "keywords": [
+        "可激發介質",
+        "螺旋波",
+        "碰撞湮滅",
+        "不反應期",
+        "反應擴散"
+      ],
+      "plainExplanation": "水波靠慣性與彈性傳播，兩道水波相撞會互相穿過；但 BZ 化學波屬於可激發介質，波前每前進一格都在消耗當地的化學燃料，後方緊跟著剛用完反應物而無法再度被點燃的「不反應期」尾流。因此兩道化學波迎面相撞時誰也無法穿過對方的尾流，只好雙雙湮滅；而若將波前折斷，自由端點就會向旁捲曲自轉成穩定的阿基米德螺旋波。",
+      "anchorSentenceId": "sent-67be5a4d"
+    }
+  ]
+}

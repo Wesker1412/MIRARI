@@ -1,0 +1,166 @@
+{
+  "articleId": "art-supershear-earthquake-rupture",
+  "slug": "supershear-earthquake-rupture-mechanics",
+  "editorialCategory": "journal_interpretation",
+  "version": 1,
+  "creationModel": "gemini-3.1-pro",
+  "editorialPassDate": "2026-11-14T10:00:00+08:00",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-andrews-1976-jgr",
+        "citation": "Andrews, D. J. (1976). \"Rupture velocity of plane strain shear cracks.\" Journal of Geophysical Research, 81(32), 5679–5687.",
+        "doi": "10.1029/JB081i032p05679",
+        "peerReviewStatus": "已完成同行評審 (Journal of Geophysical Research)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "D. J. Andrews",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 1976 年經典二維平面應變 Mode II 破裂動力學數值模擬論文，確立 S < 1.77 時透過子裂紋成核越過 [c_R, c_S] 禁區的 Burridge–Andrews 機制。"
+        },
+        "verifiedClaims": [
+          "二維純剪裂紋存在 [c_R, c_S] 負能量釋放率禁區，無法靠連續加速跨越",
+          "當無因次應力比 S = (τ_u - τ_0)/(τ_0 - τ_r) < 1.77 時，主裂紋前方 S 波剪應力尖峰可激發子裂紋完成超剪切躍遷"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "地殼典型波速比例 c_R ≈ 0.92 c_S，埃舍爾比穩定超剪切特徵速度為 √2 c_S ≈ 1.414 c_S"
+          ],
+          "empiricalFindings": [
+            "實驗室光彈力學與多起大型平直走滑地震觀測到超越 S 波速度之破裂傳播"
+          ],
+          "hypothesesAndModels": [
+            "三維有限斷層寬度與異質應力場會微幅調變臨界 S_c 門檻（不必然精確等於二維的 1.77）"
+          ]
+        }
+      },
+      {
+        "id": "ref-dieterich-1979-jgr",
+        "citation": "Dieterich, J. H. (1979). \"Modeling of rock friction: 1. Experimental results and constitutive equations.\" Journal of Geophysical Research: Solid Earth, 84(B5), 2161–2168.",
+        "doi": "10.1029/JB084iB05p02161",
+        "peerReviewStatus": "已完成同行評審 (JGR: Solid Earth)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "James H. Dieterich",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實岩石摩擦本構方程奠基實驗論文，定義靜摩擦屈服峰值 τ_u 至動態滑移殘餘摩擦 τ_r 之摩擦演化物理基礎。"
+        },
+        "verifiedClaims": [
+          "岩石斷層摩擦強度取決於滑移速率與接觸面狀態演化，決定了動態滑移弱化過程中的 τ_u 與 τ_r 差值"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "摩擦從靜態峰值 τ_u 弱化至動態殘餘值 τ_r 是地震動態應力降釋放的物理前提"
+          ],
+          "empiricalFindings": [
+            "花崗岩等結晶岩三軸與雙剪摩擦實驗測得對數速率與狀態依賴性"
+          ],
+          "hypothesesAndModels": [
+            "高速滑移下的閃熱弱化與熱壓效應對傳統低速 Dieterich 律之延伸修正"
+          ]
+        }
+      },
+      {
+        "id": "ref-jia-2023-science",
+        "citation": "Jia, Z., Jin, Z., Marchandon, M., Ulrich, T., Gabriel, A.-A., Fan, W., Shearer, P., Zou, X., Rekoske, J., Bulut, F., Garagon, A., & Fialko, Y. (2023). \"The complex dynamics of the 2023 Kahramanmaraş, Turkey, Mw 7.8–7.7 earthquake doublet.\" Science, 381(6661), 985–990.",
+        "doi": "10.1126/science.adi0685",
+        "peerReviewStatus": "已完成同行評審 (Science)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Zhe Jia",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 2023 年土耳其雙震跨斷層動力學反演研究，重構 Mw 7.8 由分支斷層起爆並觸發主斷層與 9 小時後 Mw 7.7 強震的多段破裂鏈。"
+        },
+        "verifiedClaims": [
+          "2023 年 Mw 7.8 卡赫拉曼馬拉什地震由東安納托利亞斷層旁的分支斷層起爆，並呈現複雜多斷層串聯與超剪切特徵段"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "走滑雙震系統透過靜態與動態庫侖應力轉移觸發鄰近斷層"
+          ],
+          "empiricalFindings": [
+            "聯合 InSAR、高頻 GNSS 與地震波反演確認了分支斷層與主斷層破裂幾何時序"
+          ],
+          "hypothesesAndModels": [
+            "三維動態反演中所假設的初始區域應力張量均勻化近似"
+          ]
+        }
+      },
+      {
+        "id": "ref-rosakis-2025-natgeo",
+        "citation": "Rosakis, A., Abdelmeguid, M., & Elbanna, A. (2025). \"Near-field evidence for early supershear rupture of the Mw 7.8 Kahramanmaraş earthquake in Turkey.\" Nature Geoscience, 18(6), 534–541.",
+        "doi": "10.1038/s41561-025-01707-2",
+        "peerReviewStatus": "已完成同行評審 (Nature Geoscience)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Ares Rosakis",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 2025 年 Nature Geoscience 近場強震紀錄研究，指出 Mw 7.8 主震於分支斷層起爆極早期即躍遷至約 1.55 c_S 超剪切速度。"
+        },
+        "verifiedClaims": [
+          "近場強震站速度波形紀錄證實 2023 年土耳其 Mw 7.8 地震在起始分支斷層極早期即發生向約 1.55 c_S 的超剪切躍遷"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "超剪切破裂產生的剪力馬赫錐遵循 sin(θ_M) = c_S / v_r 且具低幾何衰減特性"
+          ],
+          "empiricalFindings": [
+            "分支斷層鄰近強震站捕捉到馬赫錐特徵的斷層平行速度脈衝與震波時序特徵"
+          ],
+          "hypothesesAndModels": [
+            "極早期躍遷在三維異質斷層結構上的成核臨界長度推算"
+          ]
+        }
+      }
+    ],
+    "formulasAndUnits": [
+      {
+        "formula": "S = \\frac{\\tau_u - \\tau_0}{\\tau_0 - \\tau_r}",
+        "unitConsistency": "應力 τ_u, τ_0, τ_r 單位均為 MPa，分子與分母因次相同，應力比 S 為無因次純數",
+        "verified": true
+      },
+      {
+        "formula": "\\sin \\theta_M = \\frac{c_S}{v_r}",
+        "unitConsistency": "波速 c_S 與破裂速度 v_r 單位均為 km/s，比值無因次，要求 v_r > c_S 方有實數馬赫半錐角 θ_M",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "二維彈性波前傳播（P/S 波速圓）、Burridge–Andrews 子裂紋躍遷條件（S < 1.77）與遠場合成速度脈衝（馬赫錐相長干涉包絡）",
+      "numericalMethod": "即時幾何波前與馬赫半錐角 θ_M = arcsin(c_S / v_r) 計算，結合依距離衰減律 r^-0.32（馬赫波束）vs r^-0.88（球面波擴散）之遠場波形合成",
+      "dynamicBehaviorVerified": "調整 S >= 1.77 時斷層停留在亞瑞利速度（< 0.92 c_S），無馬赫錐形成；調降 S < 1.77 後子裂紋於前方成核並跳躍至 > 1.41 c_S（含 1.55 c_S 模式），視覺形成 V 形馬赫錐並使遠場速度脈衝劇增",
+      "modelAssumptionsAndLimits": "模擬器以均質各向同性半無限彈性介質呈現運動學波前與馬赫錐幾何，省略三維沉積盆地放大效應與斷層幾何彎曲障礙"
+    },
+    "noFakeCitations": true,
+    "noFictionalReviewers": true
+  },
+  "readability": {
+    "language": "繁體中文",
+    "pedagogyProgression": "空氣音障類比岩石波速禁區 -> Andrews S 比值與子裂紋越障機制 -> 2023 土耳其雙震分支斷層 1.55 cS 近場實證 -> 剪力馬赫錐非衰減遠場危害",
+    "technicalTermsDemystified": [
+      {
+        "term": "地震應力比 S",
+        "intuitiveExplanation": "衡量斷層目前蓄滿了多少剪應力的倒數指標：S 越小代表斷層已經被緊繃到臨界爆裂邊緣，一點點波動就能觸發超剪切"
+      },
+      {
+        "term": "子裂紋 (Daughter Crack)",
+        "intuitiveExplanation": "主裂紋還沒跑到之前，搶先跑在前面 S 波應力尖峰直接把前方岩石震裂出的新起爆點，讓破裂靠接力完成速度跳級"
+      },
+      {
+        "term": "剪力馬赫錐 (Shear Mach Cone)",
+        "intuitiveExplanation": "斷層跑得比自己發出的橫波還要快時，沿路發射的波前堆疊成一道 V 形地下音爆衝擊波，能量高度集中直擊遠方"
+      }
+    ],
+    "toneReview": "兼顧線性斷裂力學推導與 2023–2025 最新地震學實測詮釋，行文克制嚴謹"
+  },
+  "aestheticsAndNarrative": {
+    "avoidFormulaicCliches": "以超音速音爆與岩石剪力波障對比開篇，邏輯緊湊，零套話",
+    "coreQuestion": "斷層如何在理論禁忌的 [c_R, c_S] 速度帶完成跳躍，並在 2023 年土耳其強震極早期便掀起地底剪力馬赫錐？",
+    "interactiveRole": "FaultRuptureSimulator 讓讀者操控應力比 S 與遠場測站距離，親眼目睹 S < 1.77 時子裂紋成核、V 形馬赫錐展開與遠場速度波形脈衝暴衝",
+    "narrativeStyle": "journal_interpretation",
+    "interactiveType": "fault_rupture"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "嚴格區分 2023 年 Science 多物理場總體反演（Jia et al., 2023）與 2025 年 Nature Geoscience 近場分支斷層早發 1.55 c_S 超剪切實證（Rosakis et al., 2025）各自貢獻",
+    "準確定義二維平面應變臨界門檻 S_c = 1.77 並標註三維空間異質條件的適用邊界"
+  ],
+  "unconfirmedLimits": [
+    "真實地球地殼分層波速與沉積盆地共振耦合下，超剪切馬赫衝擊波與工程結構非線性破壞之定量損傷函數仍為地震工程前沿課題"
+  ]
+}

@@ -30,6 +30,21 @@ import { PercolationGridSimulator } from '../article/PercolationGridSimulator';
 import { MagicAngleMoireSimulator } from '../article/MagicAngleMoireSimulator';
 import { BlackHolePolarizationSimulator } from '../article/BlackHolePolarizationSimulator';
 import { ProteinFoldingFunnelSimulator } from '../article/ProteinFoldingFunnelSimulator';
+import { SurfaceCodeSimulator } from '../article/SurfaceCodeSimulator';
+import { ChemicalOscillatorSimulator } from '../article/ChemicalOscillatorSimulator';
+import { GridCellNavigationSimulator } from '../article/GridCellNavigationSimulator';
+import { OrbitalResonanceSimulator } from '../article/OrbitalResonanceSimulator';
+import { OpticalTweezersSimulator } from '../article/OpticalTweezersSimulator';
+import { FaultRuptureSimulator } from '../article/FaultRuptureSimulator';
+import { StmTunnelingSimulator } from '../article/StmTunnelingSimulator';
+import { MofAdsorptionSimulator } from '../article/MofAdsorptionSimulator';
+import { KuramotoSyncSimulator } from '../article/KuramotoSyncSimulator';
+import { TopologicalEdgeSimulator } from '../article/TopologicalEdgeSimulator';
+import { MolecularDiffusionSimulator } from '../article/MolecularDiffusionSimulator';
+import { CircadianClockSimulator } from '../article/CircadianClockSimulator';
+import { VicsekFlockingSimulator } from '../article/VicsekFlockingSimulator';
+import { PhaseSeparationSimulator } from '../article/PhaseSeparationSimulator';
+import { PulsarTimingSimulator } from '../article/PulsarTimingSimulator';
 
 export interface InteractiveParameterMeta {
   name: string;
@@ -699,6 +714,126 @@ export const INTERACTIVE_COMPONENTS: Record<string, InteractiveComponentMeta> = 
     parameters: [],
     keyConcepts: ['萊文索爾佯謬 (Levinthal\'s Paradox)', '自由能漏斗 (Energy Funnel)', '最小受挫原理 (Minimal Frustration)', '天然接觸分數 (Native Contacts Q)', '熔球態 (Molten Globule)'],
     component: ProteinFoldingFunnelSimulator,
+  },
+  SurfaceCodeSimulator: {
+    id: 'SurfaceCodeSimulator',
+    nameZh: '量子糾錯表面碼（Surface Code）閾值與穩定子解碼模擬器',
+    descriptionZh: '互動式資料與輔助量子位元格點陣列，觀察碼距 d=3/5/7 在低於容錯閾值時的 Λ 指數錯誤壓制效應。',
+    parameters: [],
+    keyConcepts: ['表面碼 (Surface Code)', '穩定子測量 (Stabilizer Measurements)', '容錯閾值 (Error Threshold)', '錯誤壓制因子 Λ', '症候群解碼 (Syndrome Decoding)'],
+    component: SurfaceCodeSimulator,
+  },
+  ChemicalOscillatorSimulator: {
+    id: 'ChemicalOscillatorSimulator',
+    nameZh: 'BZ 化學振盪與 Oregonator 可激發螺旋波模擬器',
+    descriptionZh: '基於 FKN 機制與反應擴散模型之二維螺旋波培養皿及極限環相平面動態模擬器。',
+    parameters: [],
+    keyConcepts: ['BZ 反應 (Belousov-Zhabotinsky Reaction)', 'FKN 機制與 Oregonator', '極限環 (Limit Cycle)', '耗散結構 (Dissipative Structure)', '螺旋波 (Spiral Waves)'],
+    component: ChemicalOscillatorSimulator,
+  },
+  GridCellNavigationSimulator: {
+    id: 'GridCellNavigationSimulator',
+    nameZh: '內嗅皮層網格細胞六角晶格與路徑積分模擬器',
+    descriptionZh: '呈現大腦 MEC 層 II 網格細胞在空間探索中的六角週期性放電場、連續吸引子環面拓撲與路徑積分漂移校正。',
+    parameters: [],
+    keyConcepts: ['網格細胞 (Grid Cells)', '路徑積分 (Path Integration)', '連續吸引子網路 (CAN)', '六角晶格放電場', '多尺度空間模組'],
+    component: GridCellNavigationSimulator,
+  },
+  OrbitalResonanceSimulator: {
+    id: 'OrbitalResonanceSimulator',
+    nameZh: '拉普拉斯 4:2:1 軌道共振與木衛一潮汐加熱模擬器',
+    descriptionZh: '可視化伽利略衛星 4:2:1 平均運動共振、受迫軌道偏心率泵浦、黏彈潮汐隆起與百兆瓦耗散功率變化。',
+    parameters: [],
+    keyConcepts: ['拉普拉斯共振 (Laplace Resonance)', '潮汐加熱 (Tidal Heating)', '強迫偏心率 (Forced Eccentricity)', '黏彈品質因子 Q', '軌道圓化 (Orbital Circularization)'],
+    component: OrbitalResonanceSimulator,
+  },
+  OpticalTweezersSimulator: {
+    id: 'OpticalTweezersSimulator',
+    nameZh: '光鑷梯度力陷阱與單分子 DNA 過拉伸力譜模擬器',
+    descriptionZh: '結合高斯光學陷阱微球捕獲與蠕蟲鏈 (WLC) 熵彈性模型，即時繪製 65 pN 過拉伸相變力-伸長曲線。',
+    parameters: [],
+    keyConcepts: ['光鑷 (Optical Tweezers)', '光學梯度力 (Gradient Force)', '熵彈性 (Entropic Elasticity)', '蠕蟲鏈模型 (WLC)', 'DNA 過拉伸轉變 (65 pN Overstretching)'],
+    component: OpticalTweezersSimulator,
+  },
+  FaultRuptureSimulator: {
+    id: 'FaultRuptureSimulator',
+    nameZh: '超剪切地震斷層破裂與剪力馬赫錐動力學模擬器',
+    descriptionZh: '可視化 P 波、S 波與破裂前緣傳播，調節無因次應力比 S 觸發子裂紋躍遷至超剪切狀態與 V 形馬赫錐衝擊波。',
+    parameters: [],
+    keyConcepts: ['超剪切破裂 (Supershear Rupture)', 'Burridge-Andrews 機制', '埃舍爾比速度 (√2 c_s)', '剪力馬赫錐 (Shear Mach Cone)', '速率與狀態摩擦定律'],
+    component: FaultRuptureSimulator,
+  },
+  StmTunnelingSimulator: {
+    id: 'StmTunnelingSimulator',
+    nameZh: '掃描穿隧顯微鏡 (STM) 量子穿隧與量子圍欄模擬器',
+    descriptionZh: '呈現真空位壘電子波函數指數衰減 I ∝ exp(-2κd)、定高/定電流掃描模式及量子圍欄電子駐波 LDOS 成像。',
+    parameters: [],
+    keyConcepts: ['量子穿隧 (Quantum Tunneling)', '掃描穿隧顯微鏡 (STM)', '局部電子態密度 (LDOS)', '衰減常數 κ', '量子圍欄 (Quantum Corral)'],
+    component: StmTunnelingSimulator,
+  },
+  MofAdsorptionSimulator: {
+    id: 'MofAdsorptionSimulator',
+    nameZh: 'COF-999 開放空氣碳捕捉與水氣協同吸附動力學模擬器',
+    descriptionZh: '模擬 400 ppm 微量 CO₂ 與水氣在網格化學孔道中的競爭吸附、50% 濕度翻倍效應與 60°C 低溫再生循環。',
+    parameters: [],
+    keyConcepts: ['直接空氣捕獲 (DAC)', '共價有機骨架 (COF-999)', '朗繆爾競爭吸附', '水氣協同胺基甲酸酯機制', '低溫再生循環'],
+    component: MofAdsorptionSimulator,
+  },
+  KuramotoSyncSimulator: {
+    id: 'KuramotoSyncSimulator',
+    nameZh: '倉本模型 (Kuramoto Model) 非線性集體同步相變模擬器',
+    descriptionZh: '即時 RK4 積分 60 個異質振盪子在單位圓上的相位鎖定演化，展示越過臨界耦合 Kc 後複序參量 r(t) 的超臨界分岔湧現。',
+    parameters: [],
+    keyConcepts: ['倉本模型 (Kuramoto Model)', '集體同步 (Collective Synchronization)', '複序參量 (Order Parameter)', '臨界耦合閾值 Kc', '二階超臨界分岔'],
+    component: KuramotoSyncSimulator,
+  },
+  TopologicalEdgeSimulator: {
+    id: 'TopologicalEdgeSimulator',
+    nameZh: '拓撲絕緣體與單向手性邊界態無散射繞行模擬器',
+    descriptionZh: '比較平庸絕緣體 (C=0) 遇晶格缺陷劇烈背散射與陳絕緣體 (C=1) 受體邊對應保護之單向無反射繞行波包傳輸。',
+    parameters: [],
+    keyConcepts: ['拓撲絕緣體 (Topological Insulator)', '陳數 (Chern Number)', '體邊對應 (Bulk-Boundary Correspondence)', '貝里曲率 (Berry Curvature)', '無背向散射邊界態'],
+    component: TopologicalEdgeSimulator,
+  },
+  MolecularDiffusionSimulator: {
+    id: 'MolecularDiffusionSimulator',
+    nameZh: 'AlphaFold 3 全原子逆向擴散去噪與結合口袋模擬器',
+    descriptionZh: '展示 Pairformer 條件表徵引導下的高斯座標噪聲雲逆向去噪軌跡，配合蛋白-配體成對誤差矩陣 PAE/PDE 與 pLDDT 置信度動態。',
+    parameters: [],
+    keyConcepts: ['AlphaFold 3', 'Pairformer 主幹架構', '全原子擴散模組 (Diffusion Module)', 'pLDDT / PAE / PDE 置信度', '靜態構象 vs 分子動力學邊界'],
+    component: MolecularDiffusionSimulator,
+  },
+  CircadianClockSimulator: {
+    id: 'CircadianClockSimulator',
+    nameZh: '生理時鐘延遲負回饋與 KaiABC 離體磷酸化振盪模擬器',
+    descriptionZh: '實時耦合 ODE 求解 Goodwin 轉錄負回饋與藍綠菌 KaiC 秩序化磷酸化極限環，並支援光脈衝相位反應 (PRC) 與溫度補償 (Q10 ≈ 1) 驗證。',
+    parameters: [],
+    keyConcepts: ['晝夜節律 (Circadian Rhythm)', '轉錄-轉譯負回饋迴路 (TTFL)', 'KaiABC 離體振盪器', '溫度補償 (Temperature Compensation)', '相位反應曲線 (PRC)'],
+    component: CircadianClockSimulator,
+  },
+  VicsekFlockingSimulator: {
+    id: 'VicsekFlockingSimulator',
+    nameZh: 'Vicsek 主動物質群集運動與移動密集團帶相變模擬器',
+    descriptionZh: '即時求解二維週期邊界自驅動粒子 Vicsek 動力學（含胞格近鄰檢索與極性序參量 Φ(t) 時間演化），呈現非平衡極性對稱破缺與高密度移動團帶。',
+    parameters: [],
+    keyConcepts: ['主動物質 (Active Matter)', 'Vicsek 群集相變', '極性序參量 Φ', 'Toner-Tu 流體力學', '無尺度關聯 (Scale-Free Correlations)'],
+    component: VicsekFlockingSimulator,
+  },
+  PhaseSeparationSimulator: {
+    id: 'PhaseSeparationSimulator',
+    nameZh: 'Flory-Huggins 熱力學與 2D 液－液相分離（LLPS）模擬器',
+    descriptionZh: '即時求解二維週期網格守恆 Cahn-Hilliard／Flory-Huggins 相場偏微分方程，並同步繪製公切線雙節線與旋節線相圖，展示成核生長與旋節分解。',
+    parameters: [],
+    keyConcepts: ['液－液相分離 (LLPS)', 'Flory-Huggins 混合自由能', '雙節線與成核生長 (Binodal)', '旋節線與旋節分解 (Spinodal)', '奧斯瓦爾德熟化 (Ostwald Ripening)'],
+    component: PhaseSeparationSimulator,
+  },
+  PulsarTimingSimulator: {
+    id: 'PulsarTimingSimulator',
+    nameZh: '脈衝星計時陣列 (PTA) 與 Hellings-Downs 四極空間關聯模擬器',
+    descriptionZh: '互動展示銀河脈衝星夾角變化下的四極時空拉伸、地球項同調到達時間殘差與 Hellings-Downs 角關聯理論曲線及蒙地卡羅散佈。',
+    parameters: [],
+    keyConcepts: ['脈衝星計時陣列 (PTA)', 'Hellings-Downs 曲線', '地球項與脈衝星項', '奈赫茲重力波背景', '超大質量雙黑洞'],
+    component: PulsarTimingSimulator,
   },
 };
 

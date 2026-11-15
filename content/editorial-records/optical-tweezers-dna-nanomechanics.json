@@ -1,0 +1,142 @@
+{
+  "articleId": "art-optical-tweezers-dna",
+  "slug": "optical-tweezers-dna-nanomechanics",
+  "editorialCategory": "scientific_principles",
+  "version": 1,
+  "creationModel": "gemini-3.1-pro",
+  "editorialPassDate": "2026-11-14T10:00:00+08:00",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-ashkin-1986-ol",
+        "citation": "Ashkin, A., Dziedzic, J. M., Bjorkholm, J. E., & Chu, S. (1986). \"Observation of a single-beam gradient force optical trap for dielectric particles.\" Optics Letters, 11(5), 288–290.",
+        "doi": "10.1364/OL.11.000288",
+        "peerReviewStatus": "已完成同行評審 (Optics Letters)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Arthur Ashkin",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 1986 年單束梯度力光學陷阱奠基論文，確認高數值孔徑聚焦高斯光束透過折射動量交換產生穩定三維梯度回復力。"
+        },
+        "verifiedClaims": [
+          "當高折射率透明微粒進入強聚焦雷射束，反向軸向梯度力可克服輻射散射壓形成三維光學陷阱",
+          "小位移下光阱回復力呈線性虎克響應 F = -k_trap * Δx"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "光子動量 p = h/λ = E/c，總光功率 P 對應動量流率 F_rad ~ P/c（100 mW 約 330 pN）"
+          ],
+          "empiricalFindings": [
+            "1986 年實驗首次以單束聚焦雷射在水中捕獲次微米至微米介電微球"
+          ],
+          "hypothesesAndModels": [
+            "米氏散射區（顆粒尺寸約等於波長）須結合電磁場多極展開精確求解剛度"
+          ]
+        }
+      },
+      {
+        "id": "ref-bustamante-1994-science",
+        "citation": "Bustamante, C., Marko, J. F., Siggia, E. D., & Smith, S. B. (1994). \"Entropic elasticity of lambda-phage DNA.\" Science, 265(5178), 1599–1600.",
+        "doi": "10.1126/science.8079175",
+        "peerReviewStatus": "已完成同行評審 (Science)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Carlos Bustamante",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 λ 噬菌體雙股 DNA 單分子熵彈性與 Marko–Siggia 蠕蟲鏈（WLC）模型插值擬合，確認生理條件駐留長度 Lp ≈ 50 nm。"
+        },
+        "verifiedClaims": [
+          "雙股 DNA 在低拉力區受熱力學構象熵主導，遵循駐留長度 Lp ≈ 50 nm 的 WLC 模型而非自由連接鏈模型"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "室溫 298 K 下熱能尺度 k_B T ≈ 4.11 pN·nm",
+            "λ-DNA 雙螺旋輪廓總長約 16.4 μm（48,502 bp）"
+          ],
+          "empiricalFindings": [
+            "單分子實驗力-伸長曲線在 0.1–10 pN 區間與 WLC 公式高度吻合"
+          ],
+          "hypothesesAndModels": [
+            "低鹽濃度對磷酸骨架靜電持久長度（Odijk-Skolnick-Fixman 修正）之微擾模型"
+          ]
+        }
+      },
+      {
+        "id": "ref-smith-1996-science",
+        "citation": "Smith, S. B., Cui, Y., & Bustamante, C. (1996). \"Overstretching B-DNA: The Elastic Response of Individual Double-Stranded and Single-Stranded DNA Molecules.\" Science, 271(5250), 795–799.",
+        "doi": "10.1126/science.271.5250.795",
+        "peerReviewStatus": "已完成同行評審 (Science)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Steven B. Smith",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 1996 年 65 pN B-DNA 合作過拉伸相變發現，分子在窄力平台下瞬間伸長至原長約 1.7 倍。"
+        },
+        "verifiedClaims": [
+          "雙股 B-DNA 在約 65 pN 張力處發生高度合作性過拉伸相變，伸長至原輪廓長度約 1.7 倍"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "高力區（10–60 pN）須納入材料焓彈性拉伸模量 K0 ≈ 1000–1200 pN"
+          ],
+          "empiricalFindings": [
+            "約 65 pN 處出現寬度僅數 pN 的平坦過拉伸階梯"
+          ],
+          "hypothesesAndModels": [
+            "過拉伸平台究竟進入保留配對的 S-DNA 或發生力致雙股剝離熔解，受鹽度、GC 含量與缺口拓撲共同調控"
+          ]
+        }
+      }
+    ],
+    "formulasAndUnits": [
+      {
+        "formula": "F_{\\text{trap}} = -k_{\\text{trap}} \\Delta x",
+        "unitConsistency": "陷阱剛度 k_trap 單位 pN/nm，位移 Δx 單位 nm，回復力 F_trap 單位 pN (10⁻¹² N)，因次一致",
+        "verified": true
+      },
+      {
+        "formula": "F(x) = \\frac{k_B T}{L_p} \\left[ \\frac{1}{4(1 - x/L_0)^2} - \\frac{1}{4} + \\frac{x}{L_0} \\right]",
+        "unitConsistency": "k_B T 單位 pN·nm（室溫約 4.11 pN·nm），駐留長度 L_p 單位 nm（約 50 nm），括號內為無因次伸長比 x/L_0 函數，總輸出單位 pN",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "Marko–Siggia 蠕蟲鏈（WLC）插值公式耦合可拉伸焓彈性修正與 Sigmoid 合作過拉伸平台函數",
+      "numericalMethod": "分段解析函數平滑銜接低力熵彈性區、焓拉伸區與 65 pN（依鹽度調變 59–68.5 pN）過拉伸相變平台，並實時換算光阱位移 Δx = F / k_trap",
+      "dynamicBehaviorVerified": "當相對伸長比 x/L0 從 0.1 掃描至 1.8 時，張力於低伸長區緩慢上升，於 0.95 處急速爬升至 ~65 pN 後進入 1.03–1.70 平坦過拉伸平台，超過 1.70 後再度陡升",
+      "modelAssumptionsAndLimits": "模擬器以平均場平滑曲線呈現靜態平衡力譜，未納入高速非平衡拉伸下的滯後迴圈（Hysteresis）與單股 DNA 解離動力學細節"
+    },
+    "noFakeCitations": true,
+    "noFictionalReviewers": true
+  },
+  "readability": {
+    "language": "繁體中文",
+    "pedagogyProgression": "光子動量與 pN 尺度對照 -> 散射力與梯度力的幾何平衡 -> WLC 熵彈性與駐留長度 -> 65 pN 合作過拉伸 1.7 倍相變",
+    "technicalTermsDemystified": [
+      {
+        "term": "梯度力 (Gradient Force)",
+        "intuitiveExplanation": "透明小珠把雷射光往旁邊折射時，依照作用力與反作用力原理，小珠自己會被光線往「光最亮的核心焦點」拉回去"
+      },
+      {
+        "term": "熵彈性 (Entropic Elasticity)",
+        "intuitiveExplanation": "像把一條隨意亂捲的毛線拉直：你感受到的回縮拉力不是線材被拉長了，而是分子想回到「形狀最多、最混亂狀態」的熱力學傾向"
+      },
+      {
+        "term": "駐留長度 (Persistence Length, Lp)",
+        "intuitiveExplanation": "雙螺旋分子保持挺直方向的「記憶長度」，對 B-DNA 約為 50 奈米——短於這長度像硬棍，遠長於它就像軟麵條"
+      }
+    ],
+    "toneReview": "清楚連結幾何光學動量與高分子統計熱力學，解釋精準而具實驗室現場感"
+  },
+  "aestheticsAndNarrative": {
+    "avoidFormulaicCliches": "由光子無靜止質量卻具線動量的物理直覺反差直接切入，無空泛套話",
+    "coreQuestion": "一束沒有重量的雷射光，如何在水溶液中成為皮牛頓級的彈簧尺規，並揭示 DNA 從軟線團到 1.7 倍過拉伸的雙重彈性？",
+    "interactiveRole": "OpticalTweezersSimulator 讓讀者同步觀察微球在光學勢阱中的位移、雙螺旋分子的形態展開與即時力–伸長相變平台",
+    "narrativeStyle": "experimental_mechanics",
+    "interactiveType": "optical_tweezers"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "嚴格區分低力熵彈性（構象熵減少）與高力焓彈性／65 pN 合作相變（骨架張力與鹼基重排）的物理主導權轉換",
+    "說明 65 pN 平台在高鹽／閉合端點傾向形成 S-DNA 與在低鹽／缺口條件下傾向力致熔解的雙重機理"
+  ],
+  "unconfirmedLimits": [
+    "極端扭轉應力（超螺旋扭矩）與不同序列 GC 百分比對局部過拉伸微觀結構域分佈的精細耦合仍在前沿研究中"
+  ]
+}

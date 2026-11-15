@@ -1,0 +1,63 @@
+{
+  "articleId": "art-circadian-feedback-oscillator",
+  "slug": "circadian-rhythm-feedback-oscillator",
+  "title": "細胞裡的分子擺輪：從轉錄負回饋到 KaiABC 離體晝夜振盪",
+  "knowledgePoints": [
+    {
+      "id": "kp-circadian-goodwin-delay",
+      "label": "古德溫負回饋與極限環條件",
+      "suggestedQuestion": "細胞裡的基因負回饋迴路需要什麼條件才不會停止擺動、能持續走完 24 小時？",
+      "keywords": [
+        "古德溫模型",
+        "TTFL",
+        "希爾係數",
+        "格里菲斯定理",
+        "極限環"
+      ],
+      "plainExplanation": "單純的負回饋往往只會震盪兩下就停在平衡點。古德溫模型證明，要讓 mRNA 與抑制蛋白維持永不衰減的極限環振盪，系統必須同時具備多步驟串聯的時間延遲，以及足夠陡峭的非線性開關（高希爾係數），讓反應不斷衝過頭而形成循環。",
+      "anchorSentenceId": "sent-50970729"
+    },
+    {
+      "id": "kp-circadian-kaiabc-invitro",
+      "label": "KaiABC 無細胞試管離體振盪",
+      "suggestedQuestion": "沒有 DNA 和基因轉錄，蛋白質在試管裡真的能自己計時 24 小時嗎？",
+      "keywords": [
+        "KaiABC",
+        "離體振盪",
+        "轉譯後振盪器",
+        "藍綠菌",
+        "ATP"
+      ],
+      "plainExplanation": "2005 年中嶋與近藤團隊打破了「時鐘必須靠基因轉錄」的教條：他們把純化的 KaiA、KaiB、KaiC 三種藍綠菌蛋白與 ATP 放進沒有 DNA 與核糖體的試管裡，竟重現了穩定維持多日、週期約 24 小時且具溫度補償的磷酸化節律。",
+      "anchorSentenceId": "sent-d8c5ceac"
+    },
+    {
+      "id": "kp-circadian-ordered-phospho",
+      "label": "秩序化磷酸化循環與 KaiA 螯合",
+      "suggestedQuestion": "KaiA、KaiB、KaiC 三種蛋白質是怎麼在試管裡依序推進而不亂掉的？",
+      "keywords": [
+        "秩序化磷酸化",
+        "Ser431",
+        "Thr432",
+        "KaiA 螯合",
+        "自激酶與磷酸酶"
+      ],
+      "plainExplanation": "KaiC 單體有 S 與 T 兩個磷酸化位點，會沿著 U → T → ST → S → U 單向循環。前半段 KaiA 幫 KaiC 逐步加上磷酸根；一旦轉化成足夠的 S 態，KaiC 就會抓住 KaiB 並把游離 KaiA 全部鎖死，使 KaiC 切換成自我去磷酸化清空狀態，清空後才釋放 KaiA 重新啟動。",
+      "anchorSentenceId": "sent-1118aa81"
+    },
+    {
+      "id": "kp-circadian-temp-compensation",
+      "label": "溫度補償與拮抗活化能平衡",
+      "suggestedQuestion": "一般化學反應升溫十度會快一倍，為什麼生理時鐘發燒時卻不會快轉？",
+      "keywords": [
+        "溫度補償",
+        "Q10 係數",
+        "阿瑞尼斯定律",
+        "活化能平衡",
+        "相位反應曲線"
+      ],
+      "plainExplanation": "生理時鐘並不是靠某個不受溫度影響的魔法酵素，而是演化出彼此拮抗的反應分支：當溫度升高時，推動前進的磷酸化或合成速率與踩煞車的去磷酸化或抑制速率同步提升，兩者效應相互抵銷，使總週期維持 Q10 ≈ 1.0 的恆定。",
+      "anchorSentenceId": "sent-fc1406ef"
+    }
+  ]
+}

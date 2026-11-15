@@ -1,0 +1,143 @@
+{
+  "articleId": "art-orbital-resonance-tidal-heating",
+  "slug": "orbital-resonance-tidal-heating",
+  "editorialCategory": "scientific_principles",
+  "version": 1,
+  "creationModel": "gemini-3.1-pro",
+  "editorialPassDate": "2026-11-14T10:00:00+08:00",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-peale-1979-science",
+        "citation": "Peale, S. J., Cassen, P., & Reynolds, R. T. (1979). \"Melting of Io by Tidal Dissipation.\" Science, 203(4383), 892–894.",
+        "doi": "10.1126/science.203.4383.892",
+        "peerReviewStatus": "已完成同行評審 (Science)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Stanton J. Peale",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 1979 年發表於 Science 之潮汐耗散熔融預言論文，在航海家一號飛掠前數日正確推論埃歐因受迫偏心率產生失控潮汐熔融。"
+        },
+        "verifiedClaims": [
+          "木衛一內部受黏彈潮汐耗散加熱，總功率達 10^14 W（約 100 TW）級別，表面熱通量約 2–3 W/m²（基準約 2.5 W/m²），遠超放射性衰變熱源",
+          "潮汐耗散功率與 (k2/Q) * e^2 成正比，並隨半長軸 a^-6 快速衰減"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "5.2 AU 處太陽輻照度約為地球 1 AU 處的 3.7%–4%（約 50 W/m²）",
+            "地球平均地熱通量約為 0.08 W/m²，埃歐尺度矽酸鹽放射性衰變穩態熱通量僅約 0.01–0.02 W/m²"
+          ],
+          "empiricalFindings": [
+            "航海家一號與後續任務紅外線觀測證實埃歐活躍的矽酸鹽與硫磺火山噴發"
+          ],
+          "hypothesesAndModels": [
+            "均質與分層黏彈麥克斯韋/安德拉德流變模型對內部熔岩海洋深度的參數化估算"
+          ]
+        }
+      },
+      {
+        "id": "ref-yoder-1979-nature",
+        "citation": "Yoder, C. F. (1979). \"How tidal heating in Io drives the galilean orbital resonance locks.\" Nature, 279, 767–770.",
+        "doi": "10.1038/279767a0",
+        "peerReviewStatus": "已完成同行評審 (Nature)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Charles F. Yoder",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實伽利略衛星 4:2:1 拉普拉斯共振鎖定動力學機制，說明外部衛星合相攝動與木星潮汐擴張如何平衡埃歐內部的軌道圓化阻尼。"
+        },
+        "verifiedClaims": [
+          "Io、Europa 與 Ganymede 滿足 n1 - 3n2 + 2n3 = 0 與拉普拉斯共振角 Φ_L = 180°",
+          "共振鎖定持續泵浦維持埃歐受迫偏心率 e ≈ 0.0041，阻擋軌道被潮汐耗散圓化"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "孤立衛星的內部潮汐耗散會將軌道角動量與能量耗散並導致偏心率指數衰減（圓化）"
+          ],
+          "empiricalFindings": [
+            "木衛一與木衛二分別長期維持 e ≈ 0.0041 與 e ≈ 0.009 的非零偏心率"
+          ],
+          "hypothesesAndModels": [
+            "共振演化進入平衡態的長期潮汐 Q 值演化歷史模型"
+          ]
+        }
+      },
+      {
+        "id": "ref-lainey-2009-nature",
+        "citation": "Lainey, V., Arlot, J.-E., Karatekin, Ö., & Van Hoolst, T. (2009). \"Strong tidal dissipation in Io and Jupiter from astrometric observations.\" Nature, 459, 957–959.",
+        "doi": "10.1038/nature08108",
+        "peerReviewStatus": "已完成同行評審 (Nature)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Valéry Lainey",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實百年歷史天體測量資料反演之埃歐真實耗散因子 k2/Q ≈ 0.015 ± 0.003，確認潮汐熱輸出與紅外熱輻射一致。"
+        },
+        "verifiedClaims": [
+          "天體測量直接測得埃歐軌道能量耗散對應 k2/Q ≈ 0.015，證實其處於高度熱耗散平衡態"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "複數二階勒夫數虛部滿足 -Im(k2) = k2/Q"
+          ],
+          "empiricalFindings": [
+            "埃歐與木星之間的潮汐角動量交換速率可由百年位置觀測直接測出"
+          ],
+          "hypothesesAndModels": [
+            "當前共振系統是否處於微幅向內或向外遷移的準穩態之長尺度推演"
+          ]
+        }
+      }
+    ],
+    "formulasAndUnits": [
+      {
+        "formula": "P_{\\text{tidal}} = \\frac{21}{2} \\frac{k_2}{Q} \\frac{G M_J^2 R_I^5 n e^2}{a^6}",
+        "unitConsistency": "G (m³ kg⁻¹ s⁻²) × M_J² (kg²) × R_I⁵ (m⁵) × n (s⁻¹) / a⁶ (m⁶) = kg·m²·s⁻³ = J/s = W；代入 Io 參數與 k2/Q ≈ 0.015 得約 93–100 TW，表面熱通量約 2.24–2.5 W/m²",
+        "verified": true
+      },
+      {
+        "formula": "n_1 - 3 n_2 + 2 n_3 = 0, \\quad \\Phi_L = \\lambda_1 - 3\\lambda_2 + 2\\lambda_3 = 180^\\circ",
+        "unitConsistency": "角速度 n 單位 rad/s（或 °/day），平黃經 λ 單位 rad 或度，兩式線性組合因次完全自洽",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "線性黏彈潮汐耗散功率方程結合雙模態偏心率泵浦／阻尼演化模型",
+      "numericalMethod": "即時軌道開普勒相位積分與偏心率指數圓化微分求解（關閉共振時 e 依岩石耗散率指數衰減）",
+      "dynamicBehaviorVerified": "開啟 4:2:1 共振時受迫偏心率維持於目標基準且埃歐持續輸出 ~100 TW 與 ~2.5 W/m² 熱流；關閉共振後偏心率隨時間衰減趨近零，熱功率回落至 ~0.5 TW 放射性衰變背景",
+      "modelAssumptionsAndLimits": "模擬器採用單一有效 k2/Q 與簡化二維共面軌道幾何，略去高階離心率項、木星帶諧攝動與地函流變溫度回饋耦合"
+    },
+    "noFakeCitations": true,
+    "noFictionalReviewers": true
+  },
+  "readability": {
+    "language": "繁體中文",
+    "pedagogyProgression": "5.2 AU 深空低日照熱預算悖論 -> 動態潮汐形變與岩石黏彈遲滯耗散 -> 4:2:1 拉普拉斯共振抵抗軌道圓化 -> 木衛二冰下海洋與非日照天體生物學意義",
+    "technicalTermsDemystified": [
+      {
+        "term": "潮汐品質因子 Q (Tidal Quality Factor)",
+        "intuitiveExplanation": "衡量行星岩石在被反覆揉捏變形時有多「容易發熱」的倒數指標；Q 越小代表內部摩擦耗散越強，越像揉搓一塊有黏性的橡膠"
+      },
+      {
+        "term": "拉普拉斯共振 (Laplace Resonance)",
+        "intuitiveExplanation": "木衛一、木衛二與木衛三之間 4:2:1 的軌道節拍鎖定，外側兩顆衛星定時透過引力輕推木衛一，像推鞦韆般不讓它的橢圓軌道變圓"
+      },
+      {
+        "term": "軌道圓化 (Orbital Circularization)",
+        "intuitiveExplanation": "內部摩擦消耗能量會讓橢圓軌道逐漸收圓；一旦軌道變成正圓，潮汐隆起不再伸縮，內源加熱就會徹底熄滅"
+      }
+    ],
+    "toneReview": "物理圖像鮮明，數值量級與熱源對比明確，無套話與無依據誇大"
+  },
+  "aestheticsAndNarrative": {
+    "avoidFormulaicCliches": "直接由 5.2 AU 的太陽輻照度平方反比計算與航海家一號觀測反差開篇，避開任何陳腔濫調",
+    "coreQuestion": "在距離太陽超過五個天文單位、日照僅地球百分之四的深空裡，木衛一憑什麼維持百兆瓦的全球火山熔爐？",
+    "interactiveRole": "OrbitalResonanceSimulator 讓讀者切換拉普拉斯 4:2:1 共振鎖定並調整偏心率與品質因子 Q，親眼見證軌道圓化對潮汐功率的斷電效應",
+    "narrativeStyle": "physical_derivation",
+    "interactiveType": "orbital_resonance"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "明確區分 -Im(k2) = k2/Q 的複數勒夫數定義，避免重複除以 Q 造成公式係數錯誤",
+    "嚴格區分潮汐加熱（10^14 W, ~2.5 W/m²）與放射性衰變熱源（~0.5 TW, ~0.01–0.02 W/m²）的物理機制與量級差異"
+  ],
+  "unconfirmedLimits": [
+    "木衛一地函究竟是局部高部分熔融海綿層或全球性岩漿海洋（Magma Ocean），仍待朱諾號近飛重力與磁感應測深持續界定"
+  ]
+}

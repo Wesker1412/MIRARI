@@ -1,0 +1,65 @@
+{
+  "articleId": "art-supershear-earthquake-rupture",
+  "slug": "supershear-earthquake-rupture-mechanics",
+  "title": "超剪切地震斷層破裂：衝破岩石音障的地下馬赫錐",
+  "knowledgePoints": [
+    {
+      "id": "kp-supershear-forbidden-zone",
+      "label": "瑞利波速上限與能量禁區",
+      "suggestedQuestion": "為什麼古典地震學認為斷層破裂的速度不能超過地殼裡的瑞利表面波速？",
+      "keywords": [
+        "瑞利波速",
+        "能量釋放率",
+        "速度禁區",
+        "Mode II 裂紋",
+        "破裂速度"
+      ],
+      "plainExplanation": "在經典平面內剪力破裂理論中，裂紋向前撕裂需要彈性應變能流向尖端；當破裂速度逼近瑞利波速 c_R（約 0.92 倍 S 波速）時，尖端能量釋放率會降為零，而在 c_R 到 c_S 之間更呈現負值禁區，因此破裂無法靠平穩連續加速跨過這道障礙。",
+      "anchorSentenceId": "sent-06145dd6"
+    },
+    {
+      "id": "kp-burridge-andrews-daughter-crack",
+      "label": "Burridge–Andrews 子裂紋躍遷",
+      "suggestedQuestion": "既然存在速度禁區，超剪切地震到底是怎麼「跳過」音障超越 S 波速度的？",
+      "keywords": [
+        "Burridge-Andrews 機制",
+        "子裂紋",
+        "應力比 S",
+        "1.77",
+        "埃舍爾比速度",
+        "超剪切"
+      ],
+      "plainExplanation": "當斷層初始剪應力相當接近岩石強度、使無因次應力比 S 小於 1.77 時，主裂紋前方以 S 波速度搶先奔跑的剪應力尖峰會提前擊穿前方完好岩石，直接引爆一條全新的「子裂紋」。子裂紋合併後便完成不連續的速度跳躍，直接空降至超越 S 波的超剪切區間並趨近 √2 倍 S 波速。",
+      "anchorSentenceId": "sent-b7618b1b"
+    },
+    {
+      "id": "kp-turkey-2023-early-supershear",
+      "label": "2023 土耳其強震極早期超剪切",
+      "suggestedQuestion": "2023 年土耳其卡赫拉曼馬拉什 Mw 7.8 強震中，科學家觀測到了什麼樣的早期超剪切證據？",
+      "keywords": [
+        "卡赫拉曼馬拉什地震",
+        "Mw 7.8",
+        "分支斷層",
+        "1.55 cS",
+        "近場強震站",
+        "東安納托利亞斷層"
+      ],
+      "plainExplanation": "2025 年最新近場強震站波形分析顯示，在 2023 年土耳其 Mw 7.8 主震最初起爆的努爾達吉–帕扎爾哲克分支斷層上，破裂甚至還沒進入主斷層、僅推進極短距離時，速度便驟然跨越 S 波速並躍遷至約 1.55 倍 S 波速的超剪切狀態，解釋了早期極端破壞性動能的來源。",
+      "anchorSentenceId": "sent-33100710"
+    },
+    {
+      "id": "kp-shear-mach-cone-hazard",
+      "label": "剪力馬赫錐與遠場低衰減脈衝",
+      "suggestedQuestion": "超剪切地震產生的地下「馬赫錐」為什麼會讓遠離震央數十公里的城市遭受意外重創？",
+      "keywords": [
+        "剪力馬赫錐",
+        "馬赫半錐角",
+        "非衰減能量",
+        "速度脈衝",
+        "相長干涉"
+      ],
+      "plainExplanation": "當破裂前緣跑得比自己輻射出的 S 波還快，沿途釋放的無數 S 波子波會在切線包絡面上互相疊加成一道銳利的 V 形剪力馬赫錐衝擊波。這股相長干涉波束不會像普通球面地震波那樣隨距離快速衰減，而是把高頻劇烈的地面速度脈衝直接灌向遠方城市。",
+      "anchorSentenceId": "sent-b836d6de"
+    }
+  ]
+}

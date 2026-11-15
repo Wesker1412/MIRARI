@@ -1,0 +1,126 @@
+{
+  "articleId": "art-quantum-surface-code",
+  "slug": "quantum-error-correction-surface-code",
+  "editorialCategory": "journal_interpretation",
+  "version": 1,
+  "creationModel": "gemini-2.5-pro",
+  "editorialPassDate": "2026-11-11T09:00:00+08:00",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-google-willow-2025",
+        "citation": "Google Quantum AI and Collaborators (2025, Epub Dec 2024). \"Quantum error correction below the surface code threshold.\" Nature, 638, 920–926.",
+        "doi": "10.1038/s41586-024-08449-y",
+        "peerReviewStatus": "已完成同行評審 (Nature 2025 正式刊登，2024 年 12 月線上發表)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Google Quantum AI and Collaborators",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 Willow 超導量子處理器表面碼實驗數據：碼距 d = 3 -> 5 -> 7 指數壓制因子 Λ = 2.14 ± 0.02；101 量子位元 d = 7 記憶單循環邏輯錯誤率 0.143% ± 0.003%，邏輯壽命為最佳物理位元之 2.4 ± 0.3 倍；即時解碼器在 d = 5 下循環時間 1.1 μs、平均解碼延遲 63 μs。"
+        },
+        "verifiedClaims": [
+          "在 Willow 超導處理器上，將表面碼碼距由 d=3 擴張至 d=5 與 d=7 時，邏輯錯誤率呈現指數級衰減，錯誤壓制因子達 Λ = 2.14 ± 0.02",
+          "由 101 顆物理量子位元構成的 d=7 記憶單元達成 0.143% ± 0.003% 單週期邏輯錯誤率，記憶壽命超越晶片上最佳物理位元 2.4 ± 0.3 倍",
+          "即時解碼器於 d=5 表面碼運行時維持 1.1 μs 糾錯循環與 63 μs 平均延遲，避免解碼積壓"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "不可複製定理禁止直接備份未知量子疊加態",
+            "旋轉表面碼透過 X 與 Z 穩定子聯合奇偶性測量偵測物理誤差而不破壞邏輯資訊"
+          ],
+          "empiricalFindings": [
+            "Willow 處理器實現 Λ = 2.14 ± 0.02 的跨碼距錯誤壓制與超越損益平衡點之邏輯記憶壽命",
+            "硬體層級存在高能階漏損誤差與宇宙射線相關之突發多量子位元誤差干擾"
+          ],
+          "hypothesesAndModels": [
+            "假設物理誤差呈獨立同分佈時的閾值漸近公式 ε_d ∝ (p / p_th)^((d+1)/2)"
+          ]
+        }
+      },
+      {
+        "id": "ref-fowler-2012",
+        "citation": "Fowler, A. G., Mariantoni, M., Martinis, J. M., & Cleland, A. N. (2012). \"Surface codes: Towards practical large-scale quantum computation.\" Physical Review A, 86(3), 032324.",
+        "doi": "10.1103/PhysRevA.86.032324",
+        "peerReviewStatus": "已完成同行評審 (Physical Review A 表面碼工程標準綜述)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Austin G. Fowler (UC Santa Barbara)",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實二維近鄰耦合表面碼陣列幾何、約 1% 容錯閾值量級與非 Clifford 閘所需之魔術態蒸餾資源估算。"
+        },
+        "verifiedClaims": [
+          "表面碼僅需平面二維最近鄰耦合即可運作，容錯閾值約在 1% 量級",
+          "通用計算仍需格子手術與高開銷魔術態蒸餾才能實現非 Clifford 邏輯閘"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "d × d 資料量子位元與 d² - 1 輔助穩定子構成平面旋轉表面碼",
+            "至少需 (d+1)/2 個不可修正錯誤連接相對邊界才會導致邏輯錯誤"
+          ],
+          "empiricalFindings": [
+            "不同雜訊模型下表面碼之數值模擬容錯閾值與最小權重完美配對解碼表現"
+          ],
+          "hypothesesAndModels": [
+            "大尺度演算法所需上千物理位元編碼單一邏輯位元之架構估算"
+          ]
+        }
+      },
+      {
+        "id": "ref-kitaev-2003",
+        "citation": "Kitaev, A. Y. (2003). \"Fault-tolerant quantum computation by anyons.\" Annals of Physics, 303(1), 2–30.",
+        "doi": "10.1016/S0003-4916(02)00018-0",
+        "peerReviewStatus": "已完成同行評審 (Annals of Physics 拓撲量子糾錯奠基論文)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Alexei Y. Kitaev",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實環面碼與穩定子準粒子激發成對出現之拓撲糾錯數學基礎。"
+        },
+        "verifiedClaims": [
+          "誤差鏈在二維格點內部只會於端點處激發成對穩定子症候群",
+          "拓撲保護使邏輯態對局部小規模擾動具備內稟穩定性"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "X 與 Z 穩定子算符在偶數個共用格點上對易，可同時進行量子非破壞性測量"
+          ],
+          "empiricalFindings": [
+            "環面碼基態簡併度僅由流形拓撲虧格決定"
+          ],
+          "hypothesesAndModels": [
+            "基於非阿貝爾任意子編織之拓撲容錯計算理想模型"
+          ]
+        }
+      }
+    ],
+    "noFakeCitations": true,
+    "noFictionalReviewers": true,
+    "formulasAndUnits": [
+      {
+        "formula": "\\epsilon_d \\approx C \\left( \\frac{p}{p_{\\text{th}}} \\right)^{(d+1)/2} = C \\, \\Lambda^{-(d+1)/2}",
+        "unitConsistency": "物理錯誤率 p、閾值 p_th、邏輯錯誤率 ε_d、壓制因子 Λ 與碼距 d 皆為無因次純數，冪次關係與因次完全自洽",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "旋轉表面碼 X/Z 穩定子奇偶校驗（mod 2 加法）與閾值指數縮放律 ε_L = C · (p / p_th)^((d+1)/2)",
+      "numericalMethod": "即時在 d×d 資料格點與相鄰 X/Z 輔助格點上計算偶數/奇數翻轉奇偶性症候群，並隨物理錯誤率 p 與碼距 d=3, 5, 7 繪製指數壓制曲線",
+      "modelAssumptionsAndLimits": "模擬器簡化為獨立單量子位元 X/Z 泡利錯誤與理想穩定子讀出；真實超導硬體亦包含雙位元閘讀出誤差、能階漏損（Leakage）與空間關聯突發事件"
+    }
+  },
+  "readability": {
+    "technicalTermsDemystified": [
+      "穩定子奇偶性測量：不直接偷看個別量子位元是 0 還是 1，只檢查相鄰四顆位元翻轉次數是奇數還是偶數，藉此避開測量塌縮",
+      "症候群（Syndrome）：當一串位元出錯時，只有錯誤鏈條兩端的穩定子方塊會亮起警報，提示解碼器錯誤發生在哪兩個端點之間",
+      "錯誤壓制因子 Λ：每把表面碼棋盤邊長擴大 2 格時，邏輯錯誤率縮小的倍數；唯有 Λ > 1，才算真正跨過容錯門檻"
+    ]
+  },
+  "aestheticsAndNarrative": {
+    "coreQuestion": "既然連單一未知量子態都無法複製備份，科學家如何靠堆疊不完美的超導零件讓邏輯量子位元越糾越穩？",
+    "interactiveRole": "透過 SurfaceCodeSimulator 讓讀者切換碼距 d=3, 5, 7 並親手在棋盤格點注入位元或相位翻轉，即時目睹成對 X/Z 症候群亮起與跨閾值前後指數壓制曲線的逆轉"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "嚴格區分「容錯量子記憶保存」與「通用容錯量子電腦」，明確指出 Willow 實驗尚不含跨邏輯閘操作與魔術態蒸餾",
+    "明確保留碼距 d=3, 5, 7 的實測壓制因子 Λ = 2.14 ± 0.02、d=7 單循環 0.143% 錯誤率及 1.1 μs / 63 μs 即時解碼數據"
+  ],
+  "unconfirmedLimits": [
+    "在擴展至上千顆物理位元編碼單一邏輯位元的工程尺度時，高能宇宙射線引發的關聯誤差與漏損累積能否持續維持 Λ > 2 仍需下一代晶片驗證"
+  ]
+}

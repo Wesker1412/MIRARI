@@ -1,0 +1,114 @@
+{
+  "articleId": "art-circadian-feedback-oscillator",
+  "slug": "circadian-rhythm-feedback-oscillator",
+  "editorialCategory": "scientific_principles",
+  "version": 1,
+  "creationModel": "gemini-2.5-pro",
+  "editorialPassDate": "2026-11-12T08:00:00+08:00",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-nakajima-2005-science",
+        "citation": "Nakajima, M., Imai, K., Ito, H., Nishiwaki, T., Murayama, Y., Iwasaki, H., Oyama, T., & Kondo, T. (2005). \"Reconstitution of circadian oscillation of cyanobacterial KaiC phosphorylation in vitro.\" Science, 308(5720), 414–415.",
+        "doi": "10.1126/science.1108451",
+        "peerReviewStatus": "已完成同行評審 (Science)",
+        "verifiedClaims": [
+          "僅將純化的藍綠菌 KaiA、KaiB、KaiC 三種蛋白質與 ATP 混合於試管中，無需 DNA、轉錄或轉譯即可自發產生具溫度補償的 24 小時磷酸化振盪"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "離體 KaiABC 系統在不同溫度下仍能保持接近 24 小時的週期（Q10 約 1.0）"
+          ],
+          "empiricalFindings": [
+            "無細胞體系中 KaiC 磷酸化比例在恆溫下持續振盪超過數個晝夜週期"
+          ],
+          "hypothesesAndModels": []
+        }
+      },
+      {
+        "id": "ref-rust-2007-science",
+        "citation": "Rust, M. J., Markson, J. S., Lane, W. S., Fisher, D. S., & O'Shea, E. K. (2007). \"Ordered Phosphorylation Governs Oscillation of a Three-Protein Circadian Clock.\" Science, 318(5851), 809–812.",
+        "doi": "10.1126/science.1148596",
+        "peerReviewStatus": "已完成同行評審 (Science)",
+        "verifiedClaims": [
+          "KaiC 單體上的 Ser431 與 Thr432 位點遵循嚴格的 U -> T -> ST -> S -> U 秩序化磷酸化與去磷酸化循環",
+          "S 態 KaiC 累積後招募 KaiB 並螯合鎖死游離 KaiA，促使 KaiC 切換至自體磷酸酶主導之清空階段"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "雙位點秩序化反應鏈與非線性 KaiA 螯合共同提供了無需轉錄機器的極限環動力學"
+          ],
+          "empiricalFindings": [
+            "質譜定量追蹤四種磷酸化狀態之峰谷相位順序確實為 T 先行、ST 居次、S 殿後"
+          ],
+          "hypothesesAndModels": []
+        }
+      },
+      {
+        "id": "ref-dunlap-1999-cell",
+        "citation": "Dunlap, J. C. (1999). \"Molecular Bases for Circadian Clocks.\" Cell, 96(2), 271–290.",
+        "doi": "10.1016/S0092-8674(00)80566-8",
+        "peerReviewStatus": "已完成同行評審 (Cell 經典綜述)",
+        "verifiedClaims": [
+          "真核生物晝夜節律核心架構建立於轉錄－轉譯負回饋迴路 (TTFL)，包含相位滯後與光線授時重置機制"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "TTFL 需依靠核質輸運與轉譯後修飾累積延遲才能維持自發振盪"
+          ],
+          "empiricalFindings": [],
+          "hypothesesAndModels": []
+        }
+      }
+    ],
+    "noFakeCitations": true,
+    "noFictionalReviewers": true,
+    "formulasAndUnits": [
+      {
+        "formula": "Q_{10} = \\left( \\frac{T_1}{T_2} \\right)^{\\frac{10}{\\Theta_2 - \\Theta_1}}",
+        "unitConsistency": "週期 T₁, T₂ 同為小時 [h]，比值無因次；溫度差 Θ₂ - Θ₁ 單位為 °C 或 K，10/(Θ₂ - Θ₁) 為無因次指數，故 Q₁₀ 為無因次純數",
+        "verified": true
+      },
+      {
+        "formula": "\\frac{dX}{dt} = \\frac{\\alpha_1}{1 + (Z/K)^n} - \\gamma_1 X",
+        "unitConsistency": "左側 dX/dt 為濃度/時間 [μM/h]；合成項 α₁ 與降解項 γ₁ X 同為 [μM/h]；Z/K 與希爾係數 n 均為無因次，完全自洽",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "雙模式耦合常微分方程組：(1) Rust 秩序化四態 KaiC 磷酸化與 S-KaiC 介導 KaiA 螯合方程；(2) 三變數古德溫延遲負回饋方程 (X, Y, Z)",
+      "numericalMethod": "四階龍格-庫塔 (RK4, dt = 0.05 h) 預熱 96 小時後積分 72 小時波形與相平面軌道，同步演進未擾動參考軌道以精確測算光脈衝相位偏移 Δφ",
+      "dynamicBehaviorVerified": "已於 Node 驗證 n = 10 時兩組模型皆穩定維持 24.0 h 極限環振盪；n ≤ 6.5 (KaiABC) 或 n ≤ 8 (Goodwin) 時軌道崩塌收斂至不動點；關閉溫度補償切換為 Q10 = 2.05 時 35°C 週期縮短至約 12 小時",
+      "modelAssumptionsAndLimits": "KaiABC 模型採用單體四態平均場與希爾型螯合近似，並未模擬單一 KaiC 六聚體內部六個單體間的異位構象協同與 ATP 水解酶緩慢周轉率對溫度補償之微觀起源"
+    }
+  },
+  "readability": {
+    "language": "繁體中文",
+    "pedagogyProgression": "Q10 溫度漂移矛盾 -> 真核 TTFL 與古德溫延遲負回饋的數學門檻 -> KaiABC 無細胞試管離體振盪與秩序化磷酸化翻轉 -> 極限環相位反應曲線 (PRC) 與溫度補償平衡",
+    "technicalTermsDemystified": [
+      {
+        "term": "溫度補償 (Q10 ≈ 1.0)",
+        "intuitiveExplanation": "一般化學反應升溫十度速度加倍，生理時鐘卻把加速推進與加速煞車的兩股力量配對成差不多同樣怕熱，溫度一高兩邊一起變快反而互相抵銷，總週期依然穩在 24 小時"
+      },
+      {
+        "term": "古德溫負回饋與希爾係數",
+        "intuitiveExplanation": "要讓分子濃度來回擺盪而不是停死在中點，必須有夠長的傳遞延遲加上夠陡峭的非線性開關，讓系統每一次都稍微衝過頭再折返"
+      },
+      {
+        "term": "秩序化磷酸化 (U → T → ST → S → U)",
+        "intuitiveExplanation": "KaiC 蛋白上的兩個位點像嚴格排隊的打卡機，必須照固定順序依序磷酸化再清空，累積到 S 態時就派 KaiB 鎖住催化推手 KaiA，強迫系統反轉清空"
+      }
+    ]
+  },
+  "aestheticsAndNarrative": {
+    "coreQuestion": "沒有石英晶體振盪器的細胞如何維持 24 小時準確節律，甚至在沒有 DNA 轉錄的試管裡靠三種蛋白自己走時？",
+    "interactiveRole": "CircadianClockSimulator 讓讀者切換 KaiABC 離體蛋白鐘與古德溫 TTFL 模型，調節希爾非線性度 n 觀察極限環生死、注入光脈衝檢視相位偏移，並對比溫度補償與無補償漂移"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "明確呈現格里菲斯定理對等降解率三元古德溫模型需 n > 8 的嚴格閾值，同時點出真實生物體內透過多步延遲與飽和降解降低有效希爾係數門檻",
+    "釐清藍綠菌活體內 KaiABC 轉譯後振盪器與基因轉錄迴路實際上彼此耦合，但離體試管實驗證實純蛋白網路本身已具備獨立起振與溫度補償能力"
+  ],
+  "unconfirmedLimits": [
+    "真核生物細胞中除 TTFL 外，過氧化還原蛋白（Peroxiredoxin）氧化還原節律等非轉錄振盪現象在人體生理中的定量權重仍屬持續研究課題"
+  ]
+}

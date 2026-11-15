@@ -1,0 +1,63 @@
+{
+  "articleId": "art-quantum-surface-code",
+  "slug": "quantum-error-correction-surface-code",
+  "title": "棋盤上的容錯臨界點：表面碼如何讓量子位元越糾越穩？",
+  "knowledgePoints": [
+    {
+      "id": "kp-surface-code-stabilizers",
+      "label": "不可複製定理與穩定子奇偶測量",
+      "suggestedQuestion": "量子態不能像古典資料那樣備份複製，那表面碼是如何察覺量子位元出錯的？",
+      "keywords": [
+        "不可複製定理",
+        "穩定子",
+        "奇偶性測量",
+        "邏輯量子位元",
+        "輔助位元"
+      ],
+      "plainExplanation": "量子力學不允許複製任意未知疊加態，直接讀取個別量子位元又會使其塌縮毀損。表面碼的巧思在於不問「每個位元是 0 還是 1」，而是派輔助位元去檢查相鄰四顆資料位元的「聯合奇偶性」（例如兩兩相加是奇數還是偶數）。這樣既能立刻察覺哪一區發生了翻轉，又完全不會偷看到邏輯資料本身。",
+      "anchorSentenceId": "sent-fdee6daa"
+    },
+    {
+      "id": "kp-surface-code-syndrome-decoding",
+      "label": "X/Z 症候群與邊界跨越容錯機制",
+      "suggestedQuestion": "穩定子亮起異常訊號後，解碼器如何修復誤差？什麼情況下才會糾錯失敗？",
+      "keywords": [
+        "症候群",
+        "位元翻轉",
+        "相位翻轉",
+        "解碼器",
+        "碼距"
+      ],
+      "plainExplanation": "在表面碼棋盤上，Z 穩定子負責抓出位元翻轉（X 誤差），X 穩定子則抓出相位翻轉（Z 誤差）。當一連串資料位元出錯時，只有錯誤鏈條的兩個端點會亮起成對的症候群警報，解碼器只需沿最短路徑配對抵消即可。唯有當錯誤多到連成一條橫跨整個棋盤邊界的長鏈（至少 (d+1)/2 顆位元出錯），解碼器才會誤判而產生邏輯錯誤。",
+      "anchorSentenceId": "sent-23b04d2a"
+    },
+    {
+      "id": "kp-surface-code-threshold-willow",
+      "label": "表面碼容錯閾值與 Willow 指數壓制",
+      "suggestedQuestion": "什麼是「低於表面碼容錯閾值」？為什麼 Λ = 2.14 被視為關鍵突破？",
+      "keywords": [
+        "容錯閾值",
+        "錯誤壓制因子",
+        "Willow 處理器",
+        "碼距擴張",
+        "損益平衡點"
+      ],
+      "plainExplanation": "只有當硬體單顆物理位元與閘操作的出錯率低於容錯閾值（約 1% 量級）時，把棋盤做大（碼距 d 從 3 擴增到 5 再到 7）才不會越接越亂，反而讓邏輯錯誤率呈指數下降。Willow 實驗測得壓制因子 Λ = 2.14 ± 0.02（大於 1 代表跨過門檻），使 101 顆位元構成的 d=7 記憶單循環錯誤率降至 0.143%，壽命超越最佳單顆物理位元 2.4 倍。",
+      "anchorSentenceId": "sent-ddf67178"
+    },
+    {
+      "id": "kp-surface-code-memory-vs-universal",
+      "label": "量子記憶保存與通用計算的距離",
+      "suggestedQuestion": "Willow 跨過閾值之後，是否代表通用容錯量子電腦已經實現了？",
+      "keywords": [
+        "量子記憶",
+        "通用量子計算",
+        "魔術態蒸餾",
+        "漏損誤差",
+        "資源開銷"
+      ],
+      "plainExplanation": "還沒有。Willow 實證的是「原地保存量子態不退相干」的容錯記憶能力，距離能執行複雜演算法的通用容錯量子電腦仍有巨大距離。實作邏輯運算需要跨邏輯位元的雙位元閘與高耗能的魔術態蒸餾，且要把邏輯錯誤率壓低到演算法所需的十億分之一以下，單一邏輯位元仍可能需要上千顆物理位元，並須解決漏損與宇宙射線引發的關聯突發誤差。",
+      "anchorSentenceId": "sent-fb896ea6"
+    }
+  ]
+}

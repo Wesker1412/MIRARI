@@ -1,0 +1,67 @@
+{
+  "articleId": "art-kuramoto-synchronization",
+  "slug": "kuramoto-model-collective-synchronization",
+  "title": "無聲的指揮家：倉本模型與集體同步的臨界相變",
+  "knowledgePoints": [
+    {
+      "id": "kp-kuramoto-order-parameter",
+      "label": "複序參量與平均場牽引",
+      "suggestedQuestion": "倉本模型如何把成千上萬隻螢火蟲彼此的複雜交互作用簡化成一個平均場？",
+      "keywords": [
+        "倉本模型",
+        "複序參量",
+        "平均場",
+        "相位同調度",
+        "極限環",
+        "質心向量"
+      ],
+      "plainExplanation": "把每個振盪子的相位畫在複平面單位圓上，所有點的平均幾何質心就是複序參量 r·exp(iψ)。群體完全混亂時質心留在圓心（r≈0），一致齊步時質心趨近圓周（r→1）。原本繁雜的 N 體耦合方程可化簡為每個振盪子單獨追隨這個集體質心的運動，達成優雅的平均場解耦。",
+      "anchorSentenceId": "sent-25409bf3"
+    },
+    {
+      "id": "kp-kuramoto-critical-threshold",
+      "label": "臨界耦合閾值與鎖相二分",
+      "suggestedQuestion": "為什麼群體同步不是慢慢變整齊，而是在跨過特定門檻後突然出現？",
+      "keywords": [
+        "臨界耦合",
+        "鎖相振盪子",
+        "漂移振盪子",
+        "自洽方程",
+        "固有頻率分佈",
+        "洛倫茲分佈"
+      ],
+      "plainExplanation": "在平均場模型中，固有頻率接近中心的個體容易被集體場捕獲並停止相對漂移（鎖相），而天生太快或太慢的個體則持續繞圈漂移且對同步淨貢獻為零。透過自洽積分求解，只有當耦合強度跨過 Kc = 2/(π·g(0)) 時，無序態才會失穩並瞬間點燃同步。",
+      "anchorSentenceId": "sent-591b2199"
+    },
+    {
+      "id": "kp-kuramoto-nonequilibrium-phase",
+      "label": "非平衡態的二階超臨界相變",
+      "suggestedQuestion": "沒有溫度也沒有能量的振盪子群體，為什麼會展現跟超導體一樣的相變標度律？",
+      "keywords": [
+        "非平衡相變",
+        "超臨界分岔",
+        "臨界指數",
+        "普適性",
+        "朗道阻尼",
+        "二階相變"
+      ],
+      "plainExplanation": "當耦合強度 K 剛超過臨界值 Kc 時，序參量會依循 r ∝ √(K - Kc) 的平方根規律成長，這與平衡態鐵磁體和超導體的 β = 1/2 臨界指數完全相同。奇妙的是，倉本系統沒有溫度也沒有能量函數，純粹憑藉非線性動態反饋就在相位空間複製了二階連續相變。",
+      "anchorSentenceId": "sent-95a2c9ad"
+    },
+    {
+      "id": "kp-kuramoto-power-grid",
+      "label": "電網失步與病理同步風險",
+      "suggestedQuestion": "倉本同步理論如何解釋大停電與癲癇等現實世界現象？",
+      "keywords": [
+        "交流電網",
+        "擺動方程",
+        "失步跳脫",
+        "腦波同步",
+        "心臟起搏",
+        "網路拓撲"
+      ],
+      "plainExplanation": "在交流電網中，各座發電機轉子相當於具轉動慣量的耦合振盪子，必須共同鎖相在 60 赫茲上；一旦關鍵輸電線跳脫使等效耦合跌破臨界閾值，機組便會在數秒內失步引發連鎖大停電。反之在大腦皮層，過度跨越同步閾值則可能將正常節律推向癲癇般的病理性全體同步。",
+      "anchorSentenceId": "sent-5be06e1c"
+    }
+  ]
+}

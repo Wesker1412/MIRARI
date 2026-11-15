@@ -1,0 +1,128 @@
+{
+  "articleId": "art-bz-chemical-oscillator",
+  "slug": "belousov-zhabotinsky-chemical-oscillator",
+  "editorialCategory": "scientific_principles",
+  "version": 1,
+  "creationModel": "gemini-2.5-pro",
+  "editorialPassDate": "2026-11-11T09:00:00+08:00",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-fkn-1972",
+        "citation": "Field, R. J., Kőrös, E., & Noyes, R. M. (1972). \"Oscillations in chemical systems. II. Thorough analysis of temporal oscillation in the bromate-cerium-malonic acid system.\" Journal of the American Chemical Society, 94(25), 8649–8664.",
+        "doi": "10.1021/ja00780a001",
+        "peerReviewStatus": "已完成同行評審 (JACS 經典化學動力學論文)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Richard J. Field",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 FKN 機制對溴酸鹽-鈰離子-丙二酸系統之基元步驟解析，確立 HBrO2 自催化正回饋與 Br- 延遲抑制迴路。"
+        },
+        "verifiedClaims": [
+          "BZ 振盪由中間物 HBrO2 的自催化氧化與 Br- 離子對自催化的閾值抑制交替驅動",
+          "整個反應在熱力學上依賴丙二酸與溴酸鹽儲槽之不可逆消耗，完全符合熱力學第二定律"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "封閉系統於熱力學平衡點附近之細緻平衡禁止持續振盪",
+            "Ce3+ 與 Ce4+ 價態轉換伴隨溶液氧化還原電位與指示劑顏色週期性翻轉"
+          ],
+          "empiricalFindings": [
+            "電極測得溴離子濃度與鈰離子電位呈現週期性弛豫振盪波形"
+          ],
+          "hypothesesAndModels": [
+            "由完整 FKN 基元步驟約化而成之 Oregonator 低維微分方程組模型"
+          ]
+        }
+      },
+      {
+        "id": "ref-zaikin-1970",
+        "citation": "Zaikin, A. N., & Zhabotinsky, A. M. (1970). \"Concentration Wave Propagation in Two-dimensional Liquid-phase Self-oscillating System.\" Nature, 225, 535–537.",
+        "doi": "10.1038/225535b0",
+        "peerReviewStatus": "已完成同行評審 (Nature 二維化學波開創性研究)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "A. N. Zaikin & A. M. Zhabotinsky",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實二維淺層液膜中不衰減濃度波之恆速傳播與對撞湮滅現象。"
+        },
+        "verifiedClaims": [
+          "二維薄層 BZ 溶液能支持恆速無衰減傳播的氧化濃度行波",
+          "兩列化學波因後方伴隨不反應期尾流，在迎頭相撞時不會穿透疊加而是彼此湮滅"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "反應擴散系統中行波由局部化學能量釋放與分子擴散耦合驅動"
+          ],
+          "empiricalFindings": [
+            "培養皿中同心圓靶波與斷裂波前捲曲生成阿基米德螺旋波之光學紀錄"
+          ],
+          "hypothesesAndModels": [
+            "二維可激發介質拓撲相位奇異點與心律不整折返波之統一數學類比"
+          ]
+        }
+      },
+      {
+        "id": "ref-prigogine-1968",
+        "citation": "Prigogine, I., & Lefever, R. (1968). \"Symmetry Breaking Instabilities in Dissipative Systems. II.\" Journal of Chemical Physics, 48(4), 1695–1700.",
+        "doi": "10.1063/1.1668896",
+        "peerReviewStatus": "已完成同行評審 (Journal of Chemical Physics 耗散結構理論基礎)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Ilya Prigogine & René Lefever",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實遠離平衡態之耗散系統透過非線性分岔打破時間對稱性並湧現極限環的熱力學判據。"
+        },
+        "verifiedClaims": [
+          "處於遠離平衡態之開放或高自由能流系統可經由不穩定性分岔形成時間週期秩序",
+          "耗散結構藉由持續產生並向外輸出熵來維持內部動態穩態"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "非平衡態系統中總熵產生率為正值並不阻礙中間變數出現週期性極限環"
+          ],
+          "empiricalFindings": [
+            "Brusselator 模型對霍普夫分岔與空間圖靈斑圖之線性穩定性解析結果"
+          ],
+          "hypothesesAndModels": [
+            "非線性自催化動力學之理想化雙分子反應簡化模型"
+          ]
+        }
+      }
+    ],
+    "noFakeCitations": true,
+    "noFictionalReviewers": true,
+    "formulasAndUnits": [
+      {
+        "formula": "\\frac{\\partial u}{\\partial t} = \\frac{1}{\\varepsilon} \\left( u - u^2 - f v \\frac{u - q}{u + q} \\right) + D_u \\nabla^2 u",
+        "unitConsistency": "無因次時間 t 與無因次濃度 u, v 相容，擴散項 D_u ∇²u 經時空尺度縮放後均化為無因次演化率，各項因次完全一致",
+        "verified": true
+      },
+      {
+        "formula": "\\frac{\\partial v}{\\partial t} = u - v + D_v \\nabla^2 v",
+        "unitConsistency": "無因次抑制劑變化率 ∂v/∂t 與無因次反應項 (u - v) 及縮放擴散項因次一致",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "二維反應擴散 Oregonator / FitzHugh-Nagumo 雙變量可激發動力學偏微分方程組",
+      "numericalMethod": "二維五點拉普拉斯有限差分與顯式尤拉時間推進（CFL 穩定步長控制），同步追蹤單點極限環相軌跡與時間波形",
+      "modelAssumptionsAndLimits": "模擬器採用雙變量無因次約化模型並以週期性或零通量邊界條件處理培養皿邊緣；忽略實際溶液中氣泡攪動對流與高階自由基副反應"
+    }
+  },
+  "readability": {
+    "technicalTermsDemystified": [
+      "耗散結構：就像滾燙水壺裡穩定旋轉的對流環，只要有源源不絕的能量流過，混亂的系統就能在遠離平衡態的地方維持整齊節奏",
+      "極限環（Limit Cycle）：化學濃度在相平面上畫出的穩定閉合軌道，不管一開始試劑比例差多少，最後都會自動收斂到同一個振盪頻率與振幅",
+      "可激發介質：一種處於「一點就著、燒完要休息」狀態的介質，波前相撞不會穿過彼此，斷掉的邊緣還會自己捲成螺旋漩渦"
+    ]
+  },
+  "aestheticsAndNarrative": {
+    "coreQuestion": "熱力學第二定律明明要求萬物單調滑向靜止的化學平衡，為什麼 BZ 溶液卻能在培養皿裡跳出持續一小時的化學脈搏與螺旋波？",
+    "interactiveRole": "透過 ChemicalOscillatorSimulator 讓讀者直接點擊培養皿打破波前催生螺旋波，並透過進料參數 f 與擴散係數 D_u 觀察極限環相平面與 Ce4+/Ce3+ 振盪波形的即時分岔"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "明確澄清 BZ 反應並非違反熱力學第二定律的永動機，其振盪依賴龐大的丙二酸與溴酸鹽高能儲槽或開放進料並持續產熵",
+    "準確區分線性水波的疊加穿透與可激發化學波的碰撞湮滅機制"
+  ],
+  "unconfirmedLimits": [
+    "在微米級微流體腔室或強受限空間中，分子數量漲落會引入隨機拓撲缺陷，此時確定性平均場偏微分方程必須改以化學朗之萬方程描述"
+  ]
+}

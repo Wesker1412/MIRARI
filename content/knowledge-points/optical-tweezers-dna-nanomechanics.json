@@ -1,0 +1,52 @@
+{
+  "articleId": "art-optical-tweezers-dna",
+  "slug": "optical-tweezers-dna-nanomechanics",
+  "title": "光鑷與單分子生物力學：一束雷射如何拉直生命雙螺旋？",
+  "knowledgePoints": [
+    {
+      "id": "kp-optical-trap-gradient-force",
+      "label": "雷射梯度力與光學彈簧",
+      "suggestedQuestion": "沒有質量的光子為什麼不會只把微粒推飛，反而能把微米玻璃珠穩穩抓在焦點中心？",
+      "keywords": [
+        "光鑷",
+        "梯度力",
+        "散射力",
+        "動量守恆",
+        "虎克定律",
+        "亞瑟阿什金"
+      ],
+      "plainExplanation": "透明高折射率微球浸泡在水中時就像一顆微型透鏡。當高聚焦雷射束穿過微球時，靠近光軸中心較強的光線折射後動量方向改變，根據牛頓第三定律，微球會受到一股反作用力將它拉回光強最高的焦點中心；只要光束會聚角夠大，這股梯度回復力就會壓過推力，形成遵守虎克定律的微觀光學彈簧。",
+      "anchorSentenceId": "sent-def6635d"
+    },
+    {
+      "id": "kp-dna-entropic-elasticity-wlc",
+      "label": "DNA 熵彈性與蠕蟲鏈模型",
+      "suggestedQuestion": "輕輕拉直一條捲成線團的 DNA 分子時，光鑷測到的彈力究竟是從哪裡來的？",
+      "keywords": [
+        "熵彈性",
+        "蠕蟲鏈模型",
+        "WLC",
+        "駐留長度",
+        "構象熵",
+        "熱擾動"
+      ],
+      "plainExplanation": "在低於 10 皮牛頓（pN）的拉力下，DNA 骨架上的共價鍵根本還沒被拉長。水分子的劇烈熱碰撞會自然把長鏈敲打成無數種捲曲形狀；當外力把分子拉直，可用的排列形狀大幅減少（熵減），自由能上升而產生想縮回亂團的回復力，可以用特徵剛性長度約 50 奈米的蠕蟲鏈模型精確描述。",
+      "anchorSentenceId": "sent-905bcb84"
+    },
+    {
+      "id": "kp-dna-65pn-overstretching",
+      "label": "65 皮牛頓合作過拉伸相變",
+      "suggestedQuestion": "把雙股 DNA 拉到極限張力 65 皮牛頓（pN）時，為什麼會出現一段長度暴增 1.7 倍的平坦平台？",
+      "keywords": [
+        "過拉伸相變",
+        "65 pN",
+        "S-DNA",
+        "力致熔解",
+        "合作性",
+        "1.7 倍"
+      ],
+      "plainExplanation": "當張力攀升到約 65 pN 臨界點時，標準 B 型雙螺旋會爆發劇烈的合作性結構轉換：在幾乎不增加額外拉力的窄小區間內，螺旋迅速解旋攤平（或依鹽度發生局部雙股剝離），使整條分子總長度瞬間拉長至原始輪廓長度的 1.7 倍，宛如發生一場一維分子相變。",
+      "anchorSentenceId": "sent-09955733"
+    }
+  ]
+}

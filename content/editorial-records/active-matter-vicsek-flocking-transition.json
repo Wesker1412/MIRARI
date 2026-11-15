@@ -1,0 +1,155 @@
+{
+  "articleId": "art-active-matter-vicsek",
+  "slug": "active-matter-vicsek-flocking-transition",
+  "editorialCategory": "scientific_principles",
+  "version": 1,
+  "creationModel": "gemini-2.5-pro",
+  "editorialPassDate": "2026-11-15T09:00:00+08:00",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-vicsek-1995",
+        "citation": "Vicsek, T., Czirók, A., Ben-Jacob, E., Cohen, I., & Shochet, O. (1995). \"Novel Type of Phase Transition in a System of Self-Driven Particles.\" Physical Review Letters, 75(6), 1226–1229.",
+        "doi": "10.1103/PhysRevLett.75.1226",
+        "peerReviewStatus": "已完成同行評審 (Physical Review Letters 1995 年自驅動粒子群集相變奠基論文)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Tamás Vicsek (Eötvös Loránd University)",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 PRL Vol. 75, No. 6, pp. 1226–1229，確認二維週期性邊界恆定速率自驅動粒子對齊規則、均勻標量角度雜訊區間 [-η/2, η/2]、極性序參量 Φ = |Σ v_i| / (N v_0) 定義，以及原論文對有限尺度模擬呈現連續相變之詮釋。"
+        },
+        "verifiedClaims": [
+          "定義了以恆定速率 v_0 移動並依半徑 r 內鄰居平均方向加上均勻雜訊 [-η/2, η/2] 更新航向的極簡群集模型",
+          "在存在有限角度雜訊的二維週期性空間中，當密度足夠且雜訊低於閾值時，群體可自發產生非零極性序參量 Φ"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "極性序參量 Φ = |Σ v_i| / (N v_0) 在完全無序態呈 O(1/√N) 縮放並在高度同向態趨近 1"
+          ],
+          "empiricalFindings": [
+            "小至中等尺度數值模擬顯示從無序到有序遷移的起振現象"
+          ],
+          "hypothesesAndModels": [
+            "原論文基於有限尺寸模擬將此相變詮釋為連續二階相變（後由 Grégoire 與 Chaté 修正為漸近一階相變）"
+          ]
+        }
+      },
+      {
+        "id": "ref-toner-tu-1995",
+        "citation": "Toner, J., & Tu, Y. (1995). \"Long-Range Order in a Two-Dimensional Dynamical XY Model: How Birds Fly Together.\" Physical Review Letters, 75(23), 4326–4329.",
+        "doi": "10.1103/PhysRevLett.75.4326",
+        "peerReviewStatus": "已完成同行評審 (Physical Review Letters 1995 年主動物質連續場流體力學奠基論文)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "John Toner (IBM T. J. Watson Research Center / University of Oregon)",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 PRL Vol. 75, No. 23, pp. 4326–4329，確認打破伽利略不變性的連續粗粒化流體動力學方程、對流輸運項 (v·∇)v 對密度與方向模的耦合機制，以及重整化群分析對二維真實長程有序存在的證明。"
+        },
+        "verifiedClaims": [
+          "建立沒有伽利略不變性的主動物質連續速度與密度流體力學方程",
+          "證明粒子自我運動產生的非線性對流輸運項目將方向資訊跨橫向尺度傳輸，使二維系統得以打破平衡態 Mermin–Wagner 定理限制並穩定存在長程極性有序"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "平衡態 d ≤ 2 連續對稱短程交互作用系統受 Mermin–Wagner 定理限制而無真實長程有序"
+          ],
+          "empiricalFindings": [
+            "動態主動物質在二維呈現各向異性標度與非擴散式的方向資訊傳播"
+          ],
+          "hypothesesAndModels": [
+            "粗粒化連續極性流體動力學與長波長微擾重整化群展開"
+          ]
+        }
+      },
+      {
+        "id": "ref-gregoire-chate-2004",
+        "citation": "Grégoire, G., & Chaté, H. (2004). \"Onset of Collective and Cohesive Motion.\" Physical Review Letters, 92(2), 025702.",
+        "doi": "10.1103/PhysRevLett.92.025702",
+        "peerReviewStatus": "已完成同行評審 (Physical Review Letters 2004 年群集相變階數修正論文)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Guillaume Grégoire (CEA-Saclay)",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 PRL Vol. 92, No. 2, 025702，確認大尺度系統中出現垂直於運動方向之移動高密度團帶（traveling bands）、相共存與不連續一階相變跳變，並區分標量角度雜訊與向量雜訊下有限尺度效應的誤導。"
+        },
+        "verifiedClaims": [
+          "Vicsek et al. (1995) 所觀察到的看似連續相變主要源於系統尺寸過小的有限尺度效應",
+          "在大尺度系統中，於轉變點附近會出現高密度有序移動團帶與低密度無序氣體共存，序參量表現為一階不連續相變"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "有限系統尺寸會平滑化一階相變的不連續跳變並造成類似二階相變的視覺表觀"
+          ],
+          "empiricalFindings": [
+            "大尺度數值模擬明確捕捉到移動高密度團帶結構、相分離共存區與遲滯現象"
+          ],
+          "hypothesesAndModels": [
+            "向量雜訊與標量雜訊規則在漸近大尺度熱力學極限下皆趨向一階團帶不穩定性"
+          ]
+        }
+      },
+      {
+        "id": "ref-cavagna-2010",
+        "citation": "Cavagna, A., Cimarelli, A., Giardina, I., Parisi, G., Santagati, R., Stefanini, F., & Viale, M. (2010). \"Scale-free correlations in starling flocks.\" Proceedings of the National Academy of Sciences (PNAS), 107(26), 11865–11870.",
+        "doi": "10.1073/pnas.1005766107",
+        "peerReviewStatus": "已完成同行評審 (PNAS 2010 年羅馬野生歐椋鳥群三維立體實測論文)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Andrea Cavagna (CNR-ISC / Sapienza University of Rome)",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 PNAS Vol. 107, No. 26, pp. 11865–11870，確認對野生歐椋鳥（Sturnus vulgaris）群體扣除質心速度後之速度漲落空間關聯函數測量，以及關聯長度 ξ 隨鳥群總尺寸 L 呈現線性比例之無尺度關聯實證。"
+        },
+        "verifiedClaims": [
+          "野生歐椋鳥群扣除群體平均速度後的速度漲落關聯長度 ξ 與鳥群線性尺寸 L 呈線性正比（無尺度關聯）",
+          "無尺度關聯解釋了數千隻鳥為何能在無中央領導下以極高保真度完成協同快速轉向，同時該現象奠基於拓撲無度量鄰居交互作用而非固定度量半徑"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "一般短程相互作用系統在遠離二階臨界點時關聯長度 ξ 為獨立於系統大小 L 的微觀常數"
+          ],
+          "empiricalFindings": [
+            "羅馬立體高速攝影重建數百至逾四千隻野生歐椋鳥之三維位置與速度，實測 ξ ∝ L"
+          ],
+          "hypothesesAndModels": [
+            "鳥類透過固定最近鄰居數（約 6–7 隻）的拓撲無度量規則與邊界凝聚力維持穩定群聚"
+          ]
+        }
+      }
+    ],
+    "noFakeCitations": true,
+    "noFictionalReviewers": true,
+    "formulasAndUnits": [
+      {
+        "formula": "\\theta_i(t+\\Delta t) = \\langle \\theta_j(t) \\rangle_{|\\mathbf{r}_i - \\mathbf{r}_j| \\le R} + \\Delta\\theta_i",
+        "unitConsistency": "航向角 θ_i 與隨機角度雜訊 Δθ_i ∈ [-η/2, η/2] 皆為無因次平面角（rad），位置距離 |r_i - r_j| 與度量半徑 R 同具長度因次，左右兩端因次完全一致",
+        "verified": true
+      },
+      {
+        "formula": "\\Phi = \\frac{1}{N v_0} \\left| \\sum_{i=1}^N \\mathbf{v}_i \\right|",
+        "unitConsistency": "分子速度向量和之大小與分母 N v_0 皆具速度因次 [L/T]，比值 Φ ∈ [0, 1] 為無因次極性序參量",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "二維週期性邊界空間 [0, L)² 內 N 個自驅動粒子依 r_i(t+Δt) = r_i(t) + v_0 (cos θ_i, sin θ_i) 與圓周向量平均航向更新 θ_i(t+Δt) = atan2(Σ sin θ_j, Σ cos θ_j) + Δθ_i，其中 Δθ_i ~ Uniform[-η/2, η/2]",
+      "numericalMethod": "採用二維空間網格雜湊（Cell-Linked List，網格尺寸 ≥ R）實現 O(N) 週期性鄰居搜尋，於每幀計算精確圓周平均、更新位置與極性序參量 Φ(t)，並即時繪製粒子航向角著色箭頭、Φ(t) 時間序列與 24 分區極坐標航向玫瑰圖",
+      "modelAssumptionsAndLimits": "模擬器採用標準二維週期性邊界與固定度量半徑 R 的標量角度雜訊 Vicsek 模型，未包含流體或空氣動力尾流耦合，亦未納入真實三維歐椋鳥群的拓撲固定鄰居數規則與開放空間凝聚吸引力"
+    }
+  },
+  "readability": {
+    "technicalTermsDemystified": [
+      "主動物質（Active Matter）：每個成員都在自身尺度就地消耗燃料（如 ATP 或食物代謝能）並化為定向推進運動的系統，因此即使在微觀層級也不遵守時間反演對稱",
+      "極性序參量 Φ：把所有粒子的速度方向箭頭頭尾相接相加後除以總人數 N；完全雜亂時箭頭互相抵銷接近 0，整齊同向飛行時則趨近 1",
+      "對流輸運（Advection）：因為粒子會真的向前飛進新區域，它們能直接把方向情報「帶著走」並傳給遠方新鄰居，這正是二維鳥群不會被熱漲落吹散的秘密",
+      "無尺度關聯（Scale-Free Correlations）：無論鳥群長到 20 公尺還是 100 公尺寬，一隻鳥閃躲老鷹而轉彎的波動都能毫無衰減地傳遍整群，關聯範圍始終跟隨整個鳥群尺寸等比例放大"
+    ]
+  },
+  "aestheticsAndNarrative": {
+    "coreQuestion": "沒有中央指揮官與全局視野的個體群體，究竟憑藉什麼物理機制在二維平面上自發建立長程飛行秩序，又為何會產生移動團帶與無尺度集體轉向？",
+    "interactiveRole": "透過 VicsekFlockingSimulator 讓讀者切換「低雜訊同步飛行」「臨界移動密集團帶」與「高雜訊無序氣體」三種物態，並可顯示單一粒子半徑 R 的鄰居連線或點擊空間施加局部轉向擾動，親眼對比 Φ(t) 時間序列與航向角玫瑰圖的相變躍遷"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "明確釐清 Vicsek et al. (1995) 因有限尺度模擬而誤判為連續相變，並依 Grégoire & Chaté (2004) 精確修正為伴隨移動高密度團帶的一階不連續相變",
+    "嚴格說明 Toner–Tu (1995) 透過非線性對流輸運項 (v·∇)v 耦合密度與方向漲落，藉此繞過平衡態二維 Mermin–Wagner 定理的物理機制",
+    "將基礎 Vicsek 模型的二維週期性固定度量半徑 R 交互作用，與 Cavagna et al. (2010) 實測三維歐椋鳥群的無尺度關聯及拓撲固定鄰居交互作用做出明確模型邊界區分"
+  ],
+  "unconfirmedLimits": [
+    "標準 Vicsek 模擬器未涵蓋三維空間中真實鳥類的空氣動力升力與尾流交互作用，亦未模擬拓撲無度量鄰居與視覺遮蔽效應對團帶穩定性的修正"
+  ]
+}

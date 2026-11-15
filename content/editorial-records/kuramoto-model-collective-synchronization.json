@@ -1,0 +1,144 @@
+{
+  "articleId": "art-kuramoto-synchronization",
+  "slug": "kuramoto-model-collective-synchronization",
+  "editorialCategory": "scientific_principles",
+  "version": 1,
+  "creationModel": "gemini-2.5-pro",
+  "editorialPassDate": "2026-11-13T09:00:00+08:00",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-kuramoto-1975",
+        "citation": "Kuramoto, Y. (1975). \"Self-entrainment of a population of coupled non-linear oscillators.\" International Symposium on Mathematical Problems in Theoretical Physics, Lecture Notes in Physics, Vol. 39, pp. 420–422.",
+        "doi": "10.1007/BFb0013365",
+        "peerReviewStatus": "已完成同行評審 (1975 年理論物理國際研討會論文集奠基文獻)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Yoshiki Kuramoto (Kyoto University)",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 1975 年 Lecture Notes in Physics Vol. 39, pp. 420–422 原始推導，確認全域正弦相位耦合方程與複序參量自洽解構。"
+        },
+        "verifiedClaims": [
+          "提出全域正弦相位耦合微分方程 dθ_i/dt = ω_i + (K/N) Σ sin(θ_j - θ_i)",
+          "引入複序參量 r exp(iψ) 將 N 體交互作用化簡為單體受集體平均場牽引之自洽方程"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "弱耦合極限環振盪子可透過相位約化微擾理論簡化為純相位動力學方程"
+          ],
+          "empiricalFindings": [
+            "有限振盪子數值模擬顯示大於臨界耦合後系統自發湧現宏觀同步序參量"
+          ],
+          "hypothesesAndModels": [
+            "假設全連接均勻圖（All-to-all）且固有頻率滿足單峰對稱連續分佈 g(ω)"
+          ]
+        }
+      },
+      {
+        "id": "ref-strogatz-2000",
+        "citation": "Strogatz, S. H. (2000). \"From Kuramoto to Crawford: exploring the onset of synchronization in populations of coupled oscillators.\" Physica D: Nonlinear Phenomena, 143(1–4), 1–20.",
+        "doi": "10.1016/S0167-2789(00)00094-4",
+        "peerReviewStatus": "已完成同行評審 (Physica D 2000 年權威回顧論文)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Steven H. Strogatz (Cornell University)",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 Physica D Vol. 143, pp. 1–20，確認鎖相與漂移振盪子分解、臨界閾值 K_c = 2/(π g(0))、洛倫茲分佈精確解析解 r = sqrt(1 - 2γ/K) 及超臨界標度律 r ∝ sqrt(K - K_c)。"
+        },
+        "verifiedClaims": [
+          "對稱單峰分佈下的同步起振臨界耦合為 K_c = 2/(π g(0))，於洛倫茲分佈給出精確值 K_c = 2γ",
+          "超越 K_c 後序參量呈二階超臨界分岔成長 r ∝ sqrt(K - K_c)，展現與平均場平衡態相變相同的臨界指數 β = 1/2"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "反對稱漂移振盪子密度在穩態下對序參量實部積分為零"
+          ],
+          "empiricalFindings": [
+            "東南亞螢火蟲同步閃爍、約瑟夫森結陣列與振盪化學反應展現與平均場理論一致的臨界起振特徵"
+          ],
+          "hypothesesAndModels": [
+            "連續體 N → ∞ 極限下將線性穩定性與朗道阻尼譜分析連結"
+          ]
+        }
+      },
+      {
+        "id": "ref-acebron-2005",
+        "citation": "Acebrón, J. A., Bonilla, L. L., Pérez Vicente, C. J., Ritort, F., & Spigler, R. (2005). \"The Kuramoto model: A simple paradigm for synchronization phenomena.\" Reviews of Modern Physics, 77(1), 137–185.",
+        "doi": "10.1103/RevModPhys.77.137",
+        "peerReviewStatus": "已完成同行評審 (Reviews of Modern Physics 2005 年權威綜述)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Juan A. Acebrón",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 RMP Vol. 77, pp. 137–185 關於連續譜朗道阻尼穩定性、二階慣量模型與電網／神經網路應用的數學物理綜述。"
+        },
+        "verifiedClaims": [
+          "非相干態在 K < K_c 時並非由本徵值純實部衰減，而是透過無碰撞等離子體式的朗道阻尼機制達成穩定",
+          "納入轉動慣量與阻尼的二階倉本擴展方程精準對應交流電網發電機轉子擺動方程與同步失穩機制"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "非平衡態耗散系統無保守哈密頓量亦能展現平均場臨界相變行為"
+          ],
+          "empiricalFindings": [
+            "多數現實網路具備局域稀疏拓撲、傳遞延遲或非對稱權重，會修正有效臨界耦合門檻"
+          ],
+          "hypothesesAndModels": [
+            "利用福克-普朗克方程（Fokker-Planck Equation）處理白雜訊驅動下的有限溫度類比擴散"
+          ]
+        }
+      }
+    ],
+    "noFakeCitations": true,
+    "noFictionalReviewers": true,
+    "formulasAndUnits": [
+      {
+        "formula": "\\dot{\\theta}_i = \\omega_i + \\frac{K}{N}\\sum_{j=1}^N \\sin(\\theta_j - \\theta_i)",
+        "unitConsistency": "相位 θ 無因次 (rad)，時間導數 dθ/dt 單位 rad/s，固有頻率 ω_i 與耦合強度 K 單位均為 rad/s，因次完全一致",
+        "verified": true
+      },
+      {
+        "formula": "K_c = \\frac{2}{\\pi g(0)} = 2\\gamma",
+        "unitConsistency": "機率密度 g(ω) 單位為 (rad/s)⁻¹ = s/rad，取倒數後 K_c 與半高寬 γ 單位皆為 rad/s，因次完全自洽",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "N = 60 全連接倉本平均場耦合常微分方程組 dθ_i/dt = ω_i + K r sin(ψ - θ_i)，搭配洛倫茲分位數固有頻率分佈",
+      "numericalMethod": "四階龍格-庫塔 (RK4) 雙步進即時數值積分器 (dt = 0.015) 與單位圓相空間、時間序列及理論分岔曲線三視圖渲染",
+      "dynamicBehaviorVerified": "當 K < 2γ 時振盪子持續漂移且 r(t) 維持於有限尺度雜訊 ~N^(-1/2)；越過 K_c = 2γ 後 r(t) 自發增長並收斂至理論曲線 sqrt(1 - K_c/K)",
+      "modelAssumptionsAndLimits": "模擬器採用 N = 60 確定性洛倫茲分位數抽樣與全連接無延遲假設，因此在 K < K_c 存在有限尺度殘餘漲落，且未包含實際電網之二階轉動慣量項與稀疏網路拓撲"
+    }
+  },
+  "readability": {
+    "language": "繁體中文",
+    "pedagogyProgression": "螢火蟲與節拍器直覺 -> 倉本微分方程與複序參量幾何 -> 鎖相與漂移振盪子推導 Kc -> 非平衡二階超臨界相變 -> 腦波與電網失步應用",
+    "technicalTermsDemystified": [
+      {
+        "term": "複序參量 r·exp(iψ)",
+        "intuitiveExplanation": "把所有繞圈跑的振盪子看成圓周上的質點，它們共同的重心離圓心有多遠（r）就代表整個群體有多同步"
+      },
+      {
+        "term": "鎖相與漂移二分法",
+        "intuitiveExplanation": "節拍跟大家差不多的個體會被集體平均場牽住一起齊步走，天性太快或太慢的離群者則繼續繞圈且對平均步調貢獻相消為零"
+      },
+      {
+        "term": "非平衡超臨界分岔",
+        "intuitiveExplanation": "雖然系統既沒有溫度也沒有保守能量，卻在耦合跨過臨界門檻時展現跟超導體、磁鐵一模一樣的平方根相變起振曲線"
+      }
+    ],
+    "toneReview": "數學推導與物理直覺並重，準確呈現非平衡態動力學相變與平衡態統計物理的深層異同，無套話"
+  },
+  "aestheticsAndNarrative": {
+    "avoidFormulaicCliches": "以多只異質節拍器置於共用木板自發齊步的經典實驗破題，無套話",
+    "coreQuestion": "各自擁有不同固有頻率的龐大振盪子群體，為何會在耦合跨過臨界值 Kc 時突然自發齊步？其數學相變機制如何運作？",
+    "interactiveRole": "KuramotoSyncSimulator 透過即時 RK4 積分在單位圓上展示 60 個振盪子的鎖相捕獲與質心向量成長，並同步對照實測與理論分岔曲線",
+    "narrativeStyle": "first_principles",
+    "interactiveType": "nonlinear_dynamics"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "明確區分平衡態相變（由溫度與自由能極小化驅動）與倉本非平衡同步相變（耗散動力學下的超臨界分岔）",
+    "精確校對洛倫茲分佈參數化 g(0) = 1/(πγ) 對應 K_c = 2γ 與解析式 r = sqrt(1 - K_c/K) 的係數一致性"
+  ],
+  "unconfirmedLimits": [
+    "真實高壓交流電網需採用包含轉動慣量與電導損失的二階擺動方程，可能引發一階不連續跳變或奇異態（Chimera States）",
+    "生物神經與心跳系統存在非對稱脈衝耦合與空間傳導延遲，無法直接套用無延遲正弦相位近似"
+  ]
+}

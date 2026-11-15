@@ -1,0 +1,67 @@
+{
+  "articleId": "art-quantum-tunneling-stm",
+  "slug": "quantum-tunneling-stm-atomic-imaging",
+  "title": "以針尖觸摸電子波：量子穿隧與掃描穿隧顯微鏡的原子成像術",
+  "knowledgePoints": [
+    {
+      "id": "kp-stm-exponential-tunneling",
+      "label": "指數級穿隧靈敏度",
+      "suggestedQuestion": "為什麼 STM 不接觸表面就能分辨比一根頭髮小百萬倍的單原子起伏？",
+      "keywords": [
+        "量子穿隧",
+        "指數衰減",
+        "真空位壘",
+        "功函數",
+        "埃級解析度",
+        "穿隧電流"
+      ],
+      "plainExplanation": "金屬針尖與樣品之間的真空就像一道能量高牆，古典力學下的電子無法翻越，但量子波函數會以指數形式滲透這道位壘。只要兩者間距改變區區 1 埃（0.1 奈米），穿隧電流就會劇變將近十倍，使最尖端突出那一顆原子自動承擔絕大多數電流，達成免透鏡的原子級聚焦。",
+      "anchorSentenceId": "sent-c3cf0835"
+    },
+    {
+      "id": "kp-stm-tersoff-hamann-ldos",
+      "label": "局部電子態密度成像",
+      "suggestedQuestion": "STM 拍出來的原子影像真的是原子核的硬球形狀嗎？",
+      "keywords": [
+        "局部電子態密度",
+        "LDOS",
+        "Tersoff-Hamann",
+        "費米能級",
+        "電子雲",
+        "波函數"
+      ],
+      "plainExplanation": "根據 Tersoff–Hamann 理論，STM 在小偏壓下測量的其實是樣品表面費米能級附近的局部電子態密度（LDOS）輪廓，而不是原子核的幾何硬球。因此吸走電子的氧原子在影像中常呈現凹陷暗坑，切換正負偏壓還能看到不同元素的電子軌域。",
+      "anchorSentenceId": "sent-9976e3a0"
+    },
+    {
+      "id": "kp-stm-scanning-modes",
+      "label": "定高與定電流掃描模式",
+      "suggestedQuestion": "掃描穿隧顯微鏡如何在定高與定電流兩種模式下繪製表面地形？",
+      "keywords": [
+        "定高模式",
+        "定電流模式",
+        "壓電陶瓷",
+        "回饋伺服",
+        "等高面",
+        "LDOS"
+      ],
+      "plainExplanation": "定高模式將針尖鎖死在固定高度快速掃過，記錄電流跨越數個數量級的劇烈震盪，速度極快但容易撞上原子台階；定電流模式則透過壓電回饋迴路即時升降針尖以維持電流恆定，針尖走過的垂直軌跡正好描繪出局部電子態密度的等高面。",
+      "anchorSentenceId": "sent-812a9fa7"
+    },
+    {
+      "id": "kp-stm-quantum-corral",
+      "label": "量子圍欄與電子駐波",
+      "suggestedQuestion": "科學家怎麼用 48 顆鐵原子圍出量子圍欄並拍出電子駐波？",
+      "keywords": [
+        "量子圍欄",
+        "原子操縱",
+        "表面態電子",
+        "駐波",
+        "貝索函數",
+        "銅晶體"
+      ],
+      "plainExplanation": "1993 年物理學家利用 STM 針尖的微弱吸引力，在低溫銅單晶表面將 48 顆鐵原子推擠排列成圓環。這圈鐵原子像圍牆一樣反射只能在表面二維遊走的電子波，形成如池塘漣漪般的同心圓駐波，被 STM 清晰拍下並直接印證電子的波動本性。",
+      "anchorSentenceId": "sent-dda20254"
+    }
+  ]
+}

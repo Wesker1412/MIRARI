@@ -1,0 +1,135 @@
+{
+  "articleId": "art-pta-gravitational-waves",
+  "slug": "pulsar-timing-array-gravitational-waves",
+  "editorialCategory": "journal_interpretation",
+  "version": 1,
+  "creationModel": "claude-opus-4-6-equivalent-mirari-author",
+  "editorialPassDate": "2026-11-15T09:05:00+08:00",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-nanograv-2023",
+        "citation": "Agazie, G., Anumarlapudi, A., Archibald, A. M., et al. (NANOGrav Collaboration) (2023). \"The NANOGrav 15 yr Data Set: Evidence for a Gravitational-wave Background.\" The Astrophysical Journal Letters, 951(1), L8.",
+        "doi": "10.3847/2041-8213/acdac6",
+        "peerReviewStatus": "已完成同行評審 (The Astrophysical Journal Letters 2023 正式刊登)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Gabriella Agazie (University of Wisconsin–Milwaukee / NANOGrav Collaboration)",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 NANOGrav 15 年資料集核心統計結論：自 68 顆毫秒脈衝星資料集中分析 67 顆脈衝星；共同頻譜隨機過程相對單星噪訊模型之貝氏因子 > 10^14；Hellings-Downs 四極空間關聯相對無關聯共同紅噪訊 (CURN) 之貝氏因子約 200–1000（跨貝氏與頻率學檢定約 3–4σ 證據，尚未達 5σ）；固定 γ = 13/3 下特徵應變振幅 A_GWB = 2.4 (+0.7 / -0.6) × 10^-15 (90% credible interval)。同步註記 EPTA/InPTA、PPTA、CPTA 於同期獨立發表吻合證據。"
+        },
+        "verifiedClaims": [
+          "NANOGrav 15 年重力波背景分析涵蓋來自 68 顆脈衝星資料集中的 67 顆毫秒脈衝星",
+          "共同頻譜隨機過程模型相較純單星噪訊模型取得大於 10^14 之貝氏因子",
+          "Hellings–Downs 四極空間關聯相較未關聯共同過程取得約 200–1000 之貝氏因子，對應約 3–4σ 統計顯著性證據（非 5σ 發現）",
+          "在固定理論斜率 γ = 13/3 下，1 yr^-1 參考頻率之特徵應變振幅中位數為 2.4 (+0.7/-0.6) × 10^-15（90% 可信區間）"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "脈衝星計時殘差由同調地球項與互不相關之脈衝星項共同組成",
+            "地面基準時鐘誤差呈現單極關聯，太陽系星曆誤差呈現偶極關聯，而廣義相對論張量重力波背景呈現 Hellings–Downs 四極空間關聯"
+          ],
+          "empiricalFindings": [
+            "NANOGrav 15 年資料集檢出約 3–4σ 之 Hellings–Downs 四極空間關聯證據與 A_GWB = 2.4 (+0.7/-0.6) × 10^-15",
+            "EPTA/InPTA、PPTA 與 CPTA 等獨立 PTA 聯盟於 2023 年同期各自發表吻合的奈赫茲訊號證據"
+          ],
+          "hypothesesAndModels": [
+            "僅憑 15 年自由斜率頻譜尚無法在超大質量黑洞雙星群體與宇宙弦、一階宇宙學相變或純量誘導重力波等早期宇宙假說之間作出最終排除"
+          ]
+        }
+      },
+      {
+        "id": "ref-hellings-downs-1983",
+        "citation": "Hellings, R. W., & Downs, G. S. (1983). \"Upper limits on the isotropic gravitational radiation background from pulsar timing analysis.\" The Astrophysical Journal, 265, L39–L42.",
+        "doi": "10.1086/183954",
+        "peerReviewStatus": "已完成同行評審 (The Astrophysical Journal 1983 奠基理論與觀測論文)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Ronald W. Hellings (Jet Propulsion Laboratory)",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實各向同性非偏振廣義相對論四極重力波背景之空間角重疊簡化函數解析式 Γ(θ_ab) = 1/2 - (1/4)x + (3/2)x ln(x)，x = (1 - cos θ_ab)/2，及其自關聯 Γ(0)=1 至共線極限 Γ(0+)=1/2 之跳變、~82.5°-90° 負值極小區與 Γ(180°)=+0.25 特性。"
+        },
+        "verifiedClaims": [
+          "各向同性非偏振四極重力波背景在兩顆不同脈衝星間之角關聯遵循 Γ(θ_ab) = 1/2 - (1/4)x + (3/2)x ln(x)，其中 x = (1 - cos θ_ab)/2",
+          "脈衝星自關聯包含地球項與脈衝星項故為 Γ(0) = 1，而兩顆不同但方向趨近重疊的脈衝星因脈衝星項不相關使 Γ(0+) = 1/2",
+          "Γ(θ_ab) 在 90° 附近呈現負值（極小值約 -0.152 於 82.5°，90° 處約 -0.145），並於 180° 對蹠方向回升至 +0.25"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "廣義相對論橫向無跡張量平面波沿視線方向積分後僅留下端點地球項與脈衝星項之應變差",
+            "Hellings–Downs 函數為各向同性四極張量背景之幾何重疊積分精確解析解"
+          ],
+          "empiricalFindings": [
+            "1983 年原文最初亦以早期脈衝星計時資料給出奈赫茲重力波能量密度上限"
+          ],
+          "hypothesesAndModels": [
+            "推導假設背景呈統計各向同性、無淨圓偏振且完全遵循廣義相對論張量自由度"
+          ]
+        }
+      },
+      {
+        "id": "ref-rajagopal-romani-1995",
+        "citation": "Rajagopal, M., & Romani, R. W. (1995). \"Ultra-Low-Frequency Gravitational Radiation from Massive Black Hole Binaries.\" The Astrophysical Journal, 446, 543–549.",
+        "doi": "10.1086/175813",
+        "peerReviewStatus": "已完成同行評審 (The Astrophysical Journal 1995 經典理論論文)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Mohan Rajagopal (Stanford University)",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實圓軌道重力波輻射驅動之超大質量黑洞雙星隨機背景特徵應變冪律 h_c(f) = A_GWB (f / yr^-1)^(-2/3) 與對應計時殘差功率譜 S(f) = h_c(f)^2 / (12 π^2 f^3) ∝ f^(-13/3)。"
+        },
+        "verifiedClaims": [
+          "由圓軌道重力輻射主導旋進的超大質量黑洞雙星群體產生特徵應變冪律 h_c(f) ∝ f^(-2/3)",
+          "透過 S(f) = h_c(f)^2 / (12 π^2 f^3) 轉換後，計時殘差單邊功率譜密度遵循冪律指數 γ = 13/3"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "無因次應變頻譜 h_c(f) 與計時殘差功率譜密度 S(f) 之間存在因子 12 π^2 f^3 之反比換算關係"
+          ],
+          "empiricalFindings": [
+            "宇宙學星系併合率與超大質量黑洞質量函數共同決定 A_GWB 之典型天體物理預期量級"
+          ],
+          "hypothesesAndModels": [
+            "標準 γ = 13/3 模型假設雙星維持圓軌道且角動量損失純由四極重力輻射主導，未計入環境恆星散射、氣體盤耦合或高軌道偏心率造成的低頻譜彎曲"
+          ]
+        }
+      }
+    ],
+    "noFakeCitations": true,
+    "noFictionalReviewers": true,
+    "formulasAndUnits": [
+      {
+        "formula": "\\Gamma(\\theta_{ab}) = \\frac{1}{2} - \\frac{1}{4} x + \\frac{3}{2} x \\ln x, \\quad x = \\frac{1 - \\cos\\theta_{ab}}{2} = \\sin^2\\left(\\frac{\\theta_{ab}}{2}\\right)",
+        "unitConsistency": "夾角 θ_ab 為弧度（無因次角度），x 與空間相關函數 Γ(θ_ab) 皆為無因次純數，邊界值 Γ(0+)=0.5、Γ(180°)=0.25 數學自洽",
+        "verified": true
+      },
+      {
+        "formula": "h_c(f) = A_{\\text{GWB}} \\left(\\frac{f}{\\text{yr}^{-1}}\\right)^{-2/3}, \\quad S(f) = \\frac{h_c(f)^2}{12\\pi^2 f^3} \\propto f^{-13/3}",
+        "unitConsistency": "無因次特徵應變 h_c(f) 與振幅 A_GWB 皆無因次；頻率 f 單位為 s^-1（或 yr^-1），因此計時殘差功率譜密度 S(f) 因次為 time^3（如 s^3 或 μs^2 / Hz），完全一致",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "橫向無跡張量天線響應函數 F^+_a(Ω), F^×_a(Ω) 對各向同性天球平穩高斯模態疊加、計時殘差冪律頻譜 S(f_k) ∝ k^(-13/3) 以及 Hellings–Downs 解析曲線 Γ(θ_ab)",
+      "numericalMethod": "於 28 個黃金角近似各向同性天球波向與 10 個諧波頻率上以隨機種子生成雙偏振複高斯重力波模態，分別合成同調地球項與各星獨立脈衝星項及單星噪訊；並計算最高 67 顆脈衝星（2,211 組配對）的最適權重互相關散佈與 12 角距分箱統計",
+      "modelAssumptionsAndLimits": "模擬器採用理想化各向同性、非偏振廣義相對論四極背景與平穩高斯噪訊；未納入單一連續波黑洞雙星造成的空間各向異性、太陽系星曆表參數擬合簡併、星際電漿色散量 (DM) 隨時間變化與脈衝星自轉突變"
+    }
+  },
+  "readability": {
+    "technicalTermsDemystified": [
+      "脈衝到達時間殘差（Timing Residual）：把望遠鏡實際測到的電波脈衝抵達時間，減去扣除自轉減慢、地球公轉與星際延遲後的理論預測時間，剩下來的微小時間漂移",
+      "地球項 vs 脈衝星項：脈衝走過數千光年路程只受頭尾兩端時空扭曲的影響；地球這一端的扭曲讓所有脈衝星同步搖擺，脈衝星那一端的扭曲則因為距離未知而表現為彼此無關的雜訊",
+      "Hellings–Downs 曲線：兩顆脈衝星在天空夾不同角度時，它們時間殘差彼此同進退（正相關）或唱反調（負相關）的理論曲線，形狀由廣義相對論重力波的四極幾何唯一決定"
+    ]
+  },
+  "aestheticsAndNarrative": {
+    "coreQuestion": "當重力波波長橫跨數光年、遠超任何地球實驗室尺度時，天文學家如何把銀河系裡的毫秒脈衝星組合成天線，並靠 Hellings–Downs 曲線確認自己聽見的是奈赫茲宇宙背景？",
+    "interactiveRole": "透過 PulsarTimingSimulator 讓讀者直接在銀河天球投影上拖曳雙脈衝星夾角 θ_ab，同步見證 15 年到達時間殘差從共線同相、90° 附近反相到 180° 對蹠回升的動態切換，並親自調整脈衝星數量（最高 67 顆）與訊噪比觀察分箱散點如何浮現出 Hellings–Downs 四極指紋"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "嚴格區分 3–4σ「證據（Evidence）」與 5σ「發現（Discovery）」，避免將 NANOGrav 2023 成果過度宣稱為已確認發現",
+    "明確保留 Γ(0)=1 自關聯與 Γ(0+)=1/2 雙星共線極限的物理跳變原因（脈衝星項在跨星配對中不相關），並精確標明 67/68 顆脈衝星分析數量與 γ = 13/3 固定斜率條件下 A_GWB = 2.4 (+0.7/-0.6) × 10^-15",
+    "清楚並列超大質量黑洞雙星以外的早期宇宙替代候選源（宇宙弦、相變、純量誘導重力波），且僅提及其他獨立 PTA 聯盟發表吻合證據而不編造未經核實的數值"
+  ],
+  "unconfirmedLimits": [
+    "15 年資料集的自由頻譜斜率仍存在不確定性，尚無法確定訊號是由超大質量黑洞雙星群體單獨主導，抑或混有早期宇宙新物理貢獻",
+    "單一極亮超大質量黑洞雙星若偏離各向同性高斯背景假設，可能導致部分頻率或天區偏離標準 Hellings–Downs 平均值"
+  ]
+}

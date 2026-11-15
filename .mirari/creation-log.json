@@ -1,5 +1,5 @@
 {
-  "lastRunTimestamp": "2026-11-10T09:00:00.000Z",
+  "lastRunTimestamp": "2026-11-15T09:00:00.000Z",
   "scheduledCron": "0 9 * * *",
   "timezone": "Asia/Taipei (UTC+8)",
   "creationModel": "gemini-2.5-pro",
@@ -618,6 +618,248 @@
             "Dill & MacCallum (2012) Science doi:10.1126/science.1219021"
           ],
           "editorialRecordPath": "content/editorial-records/levinthal-paradox-protein-folding-funnel.json"
+        }
+      ]
+    },
+    {
+      "runId": "mirari-auto-run-20261111-0900",
+      "timestamp": "2026-11-11T09:00:00.000Z",
+      "targetCount": 3,
+      "succeededCount": 3,
+      "failedCount": 0,
+      "articles": [
+        {
+          "id": "art-quantum-surface-code",
+          "slug": "quantum-error-correction-surface-code",
+          "title": "棋盤上的容錯臨界點：表面碼如何讓量子位元越糾越穩？",
+          "interactiveComponent": "SurfaceCodeSimulator",
+          "status": "published",
+          "sources": [
+            "Google Quantum AI and Collaborators (2025, Epub Dec 2024). \"Quantum error correction below the surface code threshold.\" Nature, 638, 920–926. doi:10.1038/s41586-024-08449-y",
+            "Fowler, A. G., Mariantoni, M., Martinis, J. M., & Cleland, A. N. (2012). \"Surface codes: Towards practical large-scale quantum computation.\" Physical Review A, 86(3), 032324. doi:10.1103/PhysRevA.86.032324",
+            "Kitaev, A. Y. (2003). \"Fault-tolerant quantum computation by anyons.\" Annals of Physics, 303(1), 2–30. doi:10.1016/S0003-4916(02)00018-0"
+          ],
+          "editorialRecordPath": "content/editorial-records/quantum-error-correction-surface-code.json"
+        },
+        {
+          "id": "art-bz-chemical-oscillator",
+          "slug": "belousov-zhabotinsky-chemical-oscillator",
+          "title": "不會停歇的化學脈搏：BZ 振盪反應與非平衡態激發波",
+          "interactiveComponent": "ChemicalOscillatorSimulator",
+          "status": "published",
+          "sources": [
+            "Field, R. J., Kőrös, E., & Noyes, R. M. (1972). \"Oscillations in chemical systems. II. Thorough analysis of temporal oscillation in the bromate-cerium-malonic acid system.\" Journal of the American Chemical Society, 94(25), 8649–8664. doi:10.1021/ja00780a001",
+            "Zaikin, A. N., & Zhabotinsky, A. M. (1970). \"Concentration Wave Propagation in Two-dimensional Liquid-phase Self-oscillating System.\" Nature, 225, 535–537. doi:10.1038/225535b0",
+            "Prigogine, I., & Lefever, R. (1968). \"Symmetry Breaking Instabilities in Dissipative Systems. II.\" Journal of Chemical Physics, 48(4), 1695–1700. doi:10.1063/1.1668896"
+          ],
+          "editorialRecordPath": "content/editorial-records/belousov-zhabotinsky-chemical-oscillator.json"
+        },
+        {
+          "id": "art-entorhinal-grid-cells",
+          "slug": "entorhinal-grid-cells-spatial-map",
+          "title": "大腦內建的六角測量網：內嗅皮層網格細胞與空間座標系",
+          "interactiveComponent": "GridCellNavigationSimulator",
+          "status": "published",
+          "sources": [
+            "Hafting, T., Fyhn, M., Molden, S., Moser, M.-B., & Moser, E. I. (2005). \"Microstructure of a spatial map in the entorhinal cortex.\" Nature, 436, 801–806. doi:10.1038/nature03721",
+            "Moser, E. I., Kropff, E., & Moser, M.-B. (2008). \"Place Cells, Grid Cells, and the Brain's Spatial Representation System.\" Annual Review of Neuroscience, 31, 69–89. doi:10.1146/annurev.neuro.31.061307.090723",
+            "Burak, Y., & Fiete, I. R. (2009). \"Accurate Path Integration in Continuous Attractor Network Models of Grid Cells.\" PLoS Computational Biology, 5(2), e1000291. doi:10.1371/journal.pcbi.1000291"
+          ],
+          "editorialRecordPath": "content/editorial-records/entorhinal-grid-cells-spatial-map.json"
+        }
+      ]
+    },
+    {
+      "runId": "mirari-auto-run-20261112-0900",
+      "timestamp": "2026-11-12T09:00:00.000Z",
+      "targetCount": 3,
+      "succeededCount": 3,
+      "failedCount": 0,
+      "articles": [
+        {
+          "id": "art-topological-insulators-edge",
+          "slug": "topological-insulators-bulk-boundary",
+          "title": "邊界上的單行道：拓撲絕緣體、陳數與體邊對應",
+          "interactiveComponent": "TopologicalEdgeSimulator",
+          "status": "published",
+          "sources": [
+            "Hasan, M. Z., & Kane, C. L. (2010). \"Colloquium: Topological insulators.\" Reviews of Modern Physics, 82(4), 3045–3067. doi:10.1103/RevModPhys.82.3045",
+            "Haldane, F. D. M., & Raghu, S. (2008). \"Possible Realization of Directional Optical Waveguides in Photonic Crystals with Broken Time-Reversal Symmetry.\" Physical Review Letters, 100(1), 013904. doi:10.1103/PhysRevLett.100.013904",
+            "Wang, Z., Chong, Y., Joannopoulos, J. D., & Soljačić, M. (2009). \"Observation of unidirectional backscattering-immune topological electromagnetic states.\" Nature, 461, 772–775. doi:10.1038/nature08293"
+          ],
+          "editorialRecordPath": "content/editorial-records/topological-insulators-bulk-boundary.json"
+        },
+        {
+          "id": "art-biomolecular-diffusion-af3",
+          "slug": "biomolecular-diffusion-structure-prediction",
+          "title": "從高斯噪聲雲雕琢生命複合物：AlphaFold 3 與全原子擴散生成結構生物學",
+          "interactiveComponent": "MolecularDiffusionSimulator",
+          "status": "published",
+          "sources": [
+            "Abramson, J., Adler, J., Dunger, J., Evans, R., Green, T., Pritzel, A., ... & Jumper, J. M. (2024). \"Accurate structure prediction of biomolecular interactions with AlphaFold 3.\" Nature, 630(8016), 493–500. doi:10.1038/s41586-024-07487-w",
+            "Jumper, J., Evans, R., Pritzel, A., Green, T., Figurnov, M., Ronneberger, O., ... & Hassabis, D. (2021). \"Highly accurate protein structure prediction with AlphaFold.\" Nature, 596(7873), 583–589. doi:10.1038/s41586-021-03819-2",
+            "Song, Y., Sohl-Dickstein, J., Kingma, D. P., Kumar, A., Ermon, S., & Poole, B. (2021). \"Score-Based Generative Modeling through Stochastic Differential Equations.\" ICLR 2021, arXiv:2011.13456. doi:10.48550/arXiv.2011.13456"
+          ],
+          "editorialRecordPath": "content/editorial-records/biomolecular-diffusion-structure-prediction.json"
+        },
+        {
+          "id": "art-circadian-feedback-oscillator",
+          "slug": "circadian-rhythm-feedback-oscillator",
+          "title": "細胞裡的分子擺輪：從轉錄負回饋到 KaiABC 離體晝夜振盪",
+          "interactiveComponent": "CircadianClockSimulator",
+          "status": "published",
+          "sources": [
+            "Nakajima, M., Imai, K., Ito, H., Nishiwaki, T., Murayama, Y., Iwasaki, H., Oyama, T., & Kondo, T. (2005). \"Reconstitution of circadian oscillation of cyanobacterial KaiC phosphorylation in vitro.\" Science, 308(5720), 414–415. doi:10.1126/science.1108451",
+            "Rust, M. J., Markson, J. S., Lane, W. S., Fisher, D. S., & O'Shea, E. K. (2007). \"Ordered Phosphorylation Governs Oscillation of a Three-Protein Circadian Clock.\" Science, 318(5851), 809–812. doi:10.1126/science.1148596",
+            "Dunlap, J. C. (1999). \"Molecular Bases for Circadian Clocks.\" Cell, 96(2), 271–290. doi:10.1016/S0092-8674(00)80566-8"
+          ],
+          "editorialRecordPath": "content/editorial-records/circadian-rhythm-feedback-oscillator.json"
+        }
+      ]
+    },
+    {
+      "runId": "mirari-auto-run-20261113-0900",
+      "timestamp": "2026-11-13T09:00:00.000Z",
+      "targetCount": 3,
+      "succeededCount": 3,
+      "failedCount": 0,
+      "articles": [
+        {
+          "id": "art-quantum-tunneling-stm",
+          "slug": "quantum-tunneling-stm-atomic-imaging",
+          "title": "以針尖觸摸電子波：量子穿隧與掃描穿隧顯微鏡的原子成像術",
+          "interactiveComponent": "StmTunnelingSimulator",
+          "status": "published",
+          "sources": [
+            "Binnig, G., Rohrer, H., Gerber, Ch., & Weibel, E. (1982). \"Surface Studies by Scanning Tunneling Microscopy.\" Physical Review Letters, 49(1), 57–61. doi:10.1103/PhysRevLett.49.57",
+            "Crommie, M. F., Lutz, C. P., & Eigler, D. M. (1993). \"Confinement of Electrons to Quantum Corrals on a Metal Surface.\" Science, 262(5131), 218–220. doi:10.1126/science.262.5131.218",
+            "Tersoff, J., & Hamann, D. R. (1985). \"Theory of the scanning tunneling microscope.\" Physical Review B, 31(2), 805–813. doi:10.1103/PhysRevB.31.805"
+          ],
+          "editorialRecordPath": "content/editorial-records/quantum-tunneling-stm-atomic-imaging.json"
+        },
+        {
+          "id": "art-cof-carbon-capture",
+          "slug": "metal-organic-frameworks-carbon-capture",
+          "title": "把二氧化碳從空氣裡撈出來：網格化學與 COF-999 的吸附熱力學",
+          "interactiveComponent": "MofAdsorptionSimulator",
+          "status": "published",
+          "sources": [
+            "Zhou, Z., Ma, T., Zhang, H., Chheda, S., Li, H., Wang, K., Ehrling, S., Giovine, R., Li, C., Alawadhi, A. H., Abduljawad, M. M., Alawadhi, M. O., Sauer, J., & Yaghi, O. M. (2024). \"Carbon dioxide capture from open air using covalent organic frameworks.\" Nature, 635, 96–101. doi:10.1038/s41586-024-08080-x",
+            "Furukawa, H., Cordova, K. E., O'Keeffe, M., & Yaghi, O. M. (2013). \"The Chemistry and Applications of Metal-Organic Frameworks.\" Science, 341(6149), 1230444. doi:10.1126/science.1230444",
+            "Sanz-Pérez, E. S., Murdock, C. R., Didas, S. A., & Jones, C. W. (2016). \"Direct Capture of CO₂ from Ambient Air.\" Chemical Reviews, 116(19), 11840–11876. doi:10.1021/acs.chemrev.6b00173"
+          ],
+          "editorialRecordPath": "content/editorial-records/metal-organic-frameworks-carbon-capture.json"
+        },
+        {
+          "id": "art-kuramoto-synchronization",
+          "slug": "kuramoto-model-collective-synchronization",
+          "title": "無聲的指揮家：倉本模型與集體同步的臨界相變",
+          "interactiveComponent": "KuramotoSyncSimulator",
+          "status": "published",
+          "sources": [
+            "Strogatz, S. H. (2000). \"From Kuramoto to Crawford: exploring the onset of synchronization in populations of coupled oscillators.\" Physica D: Nonlinear Phenomena, 143(1–4), 1–20. doi:10.1016/S0167-2789(00)00094-4",
+            "Acebrón, J. A., Bonilla, L. L., Pérez Vicente, C. J., Ritort, F., & Spigler, R. (2005). \"The Kuramoto model: A simple paradigm for synchronization phenomena.\" Reviews of Modern Physics, 77(1), 137–185. doi:10.1103/RevModPhys.77.137",
+            "Kuramoto, Y. (1975). \"Self-entrainment of a population of coupled non-linear oscillators.\" International Symposium on Mathematical Problems in Theoretical Physics, Lecture Notes in Physics, Vol. 39, pp. 420–422. doi:10.1007/BFb0013365"
+          ],
+          "editorialRecordPath": "content/editorial-records/kuramoto-model-collective-synchronization.json"
+        }
+      ]
+    },
+    {
+      "runId": "mirari-auto-run-20261114-0900",
+      "timestamp": "2026-11-14T09:00:00.000Z",
+      "targetCount": 3,
+      "succeededCount": 3,
+      "failedCount": 0,
+      "articles": [
+        {
+          "id": "art-orbital-resonance-tidal-heating",
+          "slug": "orbital-resonance-tidal-heating",
+          "title": "拉普拉斯共振與潮汐加熱：冰封深空裡的百兆瓦火山爐心",
+          "interactiveComponent": "OrbitalResonanceSimulator",
+          "status": "published",
+          "sources": [
+            "Peale, S. J., Cassen, P., & Reynolds, R. T. (1979). \"Melting of Io by Tidal Dissipation.\" Science, 203(4383), 892–894. doi:10.1126/science.203.4383.892",
+            "Yoder, C. F. (1979). \"How tidal heating in Io drives the galilean orbital resonance locks.\" Nature, 279, 767–770. doi:10.1038/279767a0",
+            "Lainey, V., Arlot, J.-E., Karatekin, Ö., & Van Hoolst, T. (2009). \"Strong tidal dissipation in Io and Jupiter from astrometric observations.\" Nature, 459, 957–959. doi:10.1038/nature08108"
+          ],
+          "editorialRecordPath": "content/editorial-records/orbital-resonance-tidal-heating.json"
+        },
+        {
+          "id": "art-optical-tweezers-dna",
+          "slug": "optical-tweezers-dna-nanomechanics",
+          "title": "光鑷與單分子生物力學：一束雷射如何拉直生命雙螺旋？",
+          "interactiveComponent": "OpticalTweezersSimulator",
+          "status": "published",
+          "sources": [
+            "Ashkin, A., Dziedzic, J. M., Bjorkholm, J. E., & Chu, S. (1986). \"Observation of a single-beam gradient force optical trap for dielectric particles.\" Optics Letters, 11(5), 288–290. doi:10.1364/OL.11.000288",
+            "Bustamante, C., Marko, J. F., Siggia, E. D., & Smith, S. B. (1994). \"Entropic elasticity of lambda-phage DNA.\" Science, 265(5178), 1599–1600. doi:10.1126/science.8079175",
+            "Smith, S. B., Cui, Y., & Bustamante, C. (1996). \"Overstretching B-DNA: The Elastic Response of Individual Double-Stranded and Single-Stranded DNA Molecules.\" Science, 271(5250), 795–799. doi:10.1126/science.271.5250.795"
+          ],
+          "editorialRecordPath": "content/editorial-records/optical-tweezers-dna-nanomechanics.json"
+        },
+        {
+          "id": "art-supershear-earthquake-rupture",
+          "slug": "supershear-earthquake-rupture-mechanics",
+          "title": "超剪切地震斷層破裂：衝破岩石音障的地下馬赫錐",
+          "interactiveComponent": "FaultRuptureSimulator",
+          "status": "published",
+          "sources": [
+            "Andrews, D. J. (1976). \"Rupture velocity of plane strain shear cracks.\" Journal of Geophysical Research, 81(32), 5679–5687. doi:10.1029/JB081i032p05679",
+            "Dieterich, J. H. (1979). \"Modeling of rock friction: 1. Experimental results and constitutive equations.\" Journal of Geophysical Research: Solid Earth, 84(B5), 2161–2168. doi:10.1029/JB084iB05p02161",
+            "Jia, Z., Jin, Z., Marchandon, M., Ulrich, T., Gabriel, A.-A., Fan, W., Shearer, P., Zou, X., Rekoske, J., Bulut, F., Garagon, A., & Fialko, Y. (2023). \"The complex dynamics of the 2023 Kahramanmaraş, Turkey, Mw 7.8–7.7 earthquake doublet.\" Science, 381(6661), 985–990. doi:10.1126/science.adi0685",
+            "Rosakis, A., Abdelmeguid, M., & Elbanna, A. (2025). \"Near-field evidence for early supershear rupture of the Mw 7.8 Kahramanmaraş earthquake in Turkey.\" Nature Geoscience, 18(6), 534–541. doi:10.1038/s41561-025-01707-2"
+          ],
+          "editorialRecordPath": "content/editorial-records/supershear-earthquake-rupture-mechanics.json"
+        }
+      ]
+    },
+    {
+      "runId": "mirari-auto-run-20261115-0900",
+      "timestamp": "2026-11-15T09:00:00.000Z",
+      "targetCount": 3,
+      "succeededCount": 3,
+      "failedCount": 0,
+      "articles": [
+        {
+          "id": "art-active-matter-vicsek",
+          "slug": "active-matter-vicsek-flocking-transition",
+          "title": "鳥群為何不用總指揮也能整齊轉向？主動物質與 Vicsek 群集相變",
+          "interactiveComponent": "VicsekFlockingSimulator",
+          "status": "published",
+          "sources": [
+            "Vicsek, T., Czirók, A., Ben-Jacob, E., Cohen, I., & Shochet, O. (1995). \"Novel Type of Phase Transition in a System of Self-Driven Particles.\" Physical Review Letters, 75(6), 1226–1229. doi:10.1103/PhysRevLett.75.1226",
+            "Toner, J., & Tu, Y. (1995). \"Long-Range Order in a Two-Dimensional Dynamical XY Model: How Birds Fly Together.\" Physical Review Letters, 75(23), 4326–4329. doi:10.1103/PhysRevLett.75.4326",
+            "Grégoire, G., & Chaté, H. (2004). \"Onset of Collective and Cohesive Motion.\" Physical Review Letters, 92(2), 025702. doi:10.1103/PhysRevLett.92.025702",
+            "Cavagna, A., Cimarelli, A., Giardina, I., Parisi, G., Santagati, R., Stefanini, F., & Viale, M. (2010). \"Scale-free correlations in starling flocks.\" Proceedings of the National Academy of Sciences (PNAS), 107(26), 11865–11870. doi:10.1073/pnas.1005766107"
+          ],
+          "editorialRecordPath": "content/editorial-records/active-matter-vicsek-flocking-transition.json"
+        },
+        {
+          "id": "art-biomolecular-condensates",
+          "slug": "biomolecular-condensates-phase-separation",
+          "title": "無膜胞器如何自己凝聚成型？生物大分子液－液相分離與 Flory-Huggins 熱力學",
+          "interactiveComponent": "PhaseSeparationSimulator",
+          "status": "published",
+          "sources": [
+            "Brangwynne, C. P., Eckmann, C. R., Courson, D. S., Rybarska, A., Hoege, C., Gharakhani, J., Jülicher, F., & Hyman, A. A. (2009). \"Germline P Granules Are Liquid Droplets That Localize by Controlled Dissolution/Condensation.\" Science, 324(5935), 1729–1732. doi:10.1126/science.1172046",
+            "Shin, Y., & Brangwynne, C. P. (2017). \"Liquid phase condensation in cell physiology and disease.\" Science, 357(6357), eaaf4382. doi:10.1126/science.aaf4382",
+            "Banani, S. F., Lee, H. O., Hyman, A. A., & Rosen, M. K. (2017). \"Biomolecular condensates: organizers of cellular biochemistry.\" Nature Reviews Molecular Cell Biology, 18, 285–298. doi:10.1038/nrm.2017.7"
+          ],
+          "editorialRecordPath": "content/editorial-records/biomolecular-condensates-phase-separation.json"
+        },
+        {
+          "id": "art-pta-gravitational-waves",
+          "slug": "pulsar-timing-array-gravitational-waves",
+          "title": "銀河尺度的重力波天線：脈衝星計時陣列與 Hellings-Downs 曲線如何傾聽奈赫茲宇宙背景？",
+          "interactiveComponent": "PulsarTimingSimulator",
+          "status": "published",
+          "sources": [
+            "Agazie, G., Anumarlapudi, A., Archibald, A. M., et al. (NANOGrav Collaboration) (2023). \"The NANOGrav 15 yr Data Set: Evidence for a Gravitational-wave Background.\" The Astrophysical Journal Letters, 951(1), L8. doi:10.3847/2041-8213/acdac6",
+            "Hellings, R. W., & Downs, G. S. (1983). \"Upper limits on the isotropic gravitational radiation background from pulsar timing analysis.\" The Astrophysical Journal, 265, L39–L42. doi:10.1086/183954",
+            "Rajagopal, M., & Romani, R. W. (1995). \"Ultra-Low-Frequency Gravitational Radiation from Massive Black Hole Binaries.\" The Astrophysical Journal, 446, 543–549. doi:10.1086/175813"
+          ],
+          "editorialRecordPath": "content/editorial-records/pulsar-timing-array-gravitational-waves.json"
         }
       ]
     }

@@ -1,0 +1,63 @@
+{
+  "articleId": "art-biomolecular-diffusion-af3",
+  "slug": "biomolecular-diffusion-structure-prediction",
+  "title": "從高斯噪聲雲雕琢生命複合物：AlphaFold 3 與全原子擴散生成結構生物學",
+  "knowledgePoints": [
+    {
+      "id": "kp-af3-beyond-frames",
+      "label": "揚棄剛體框架邁向全原子預測",
+      "suggestedQuestion": "為什麼 AlphaFold 2 無法直接預測小分子藥物或 DNA，而 AlphaFold 3 可以？",
+      "keywords": [
+        "AlphaFold 3",
+        "剛體殘基框架",
+        "不變點注意力",
+        "全原子座標",
+        "分子複合物"
+      ],
+      "plainExplanation": "AlphaFold 2 把每個胺基酸綁定成固定三角形剛體並用扭轉角拼裝側鏈，這套規則在缺乏肽鍵骨架的藥物小分子與核酸上完全失效。AlphaFold 3 徹底拿掉剛體框架，改把蛋白質、核酸與小分子的所有原子一視同仁當成三維點雲來直接生成座標。",
+      "anchorSentenceId": "sent-6c64c5be"
+    },
+    {
+      "id": "kp-af3-pairformer",
+      "label": "輕量化 MSA 與 48 層 Pairformer",
+      "suggestedQuestion": "Pairformer 和 AlphaFold 2 的 Evoformer 相比做了什麼關鍵簡化？",
+      "keywords": [
+        "Pairformer",
+        "Evoformer",
+        "多序列比對",
+        "成對表徵",
+        "共演化訊號"
+      ],
+      "plainExplanation": "AlphaFold 2 的 Evoformer 在 48 層裡反覆運算龐大的多序列比對矩陣；AlphaFold 3 則改為先用短短 4 層 MSA 模組把演化線索壓縮進成對關係表徵，主幹 48 層 Pairformer 專注更新原子或殘基之間的幾何關係，大幅減輕記憶體負擔並容納無演化史的化學小分子。",
+      "anchorSentenceId": "sent-df14caa0"
+    },
+    {
+      "id": "kp-af3-diffusion-multiscale",
+      "label": "多尺度逆向擴散去噪成形",
+      "suggestedQuestion": "全原子擴散模組如何從一團隨機噪聲雲還原出精準的結合口袋？",
+      "keywords": [
+        "擴散模型",
+        "分數匹配",
+        "逆向去噪",
+        "噪聲尺度",
+        "立體化學"
+      ],
+      "plainExplanation": "擴散模組從高維高斯噪聲雲出發逐步去噪：在高噪聲階段先決定蛋白結構域與配體的相對位置，中等噪聲階段勾勒出螺旋與結合口袋凹槽，最後在低噪聲階段精修鍵長、芳香環平面與氫鍵角度。",
+      "anchorSentenceId": "sent-0bb6a0c5"
+    },
+    {
+      "id": "kp-af3-hallucination-limits",
+      "label": "無序區幻覺與靜態快照極限",
+      "suggestedQuestion": "生成式擴散架構帶來了哪些新的幻覺風險與物理限制？",
+      "keywords": [
+        "生成式幻覺",
+        "本質無序區",
+        "交叉蒸餾",
+        "pLDDT",
+        "分子動力學"
+      ],
+      "plainExplanation": "因為擴散模型訓練目標是從噪聲變出合理原子密度，遇到本質上沒有固定形狀的無序蛋白區域時，容易憑空捏造出不存在的假螺旋（幻覺），必須靠交叉蒸餾抑制並檢查 pLDDT 與 PAE；此外它輸出的是靜態平衡快照，不等於完整的分子動力學熱力學軌跡。",
+      "anchorSentenceId": "sent-72064f53"
+    }
+  ]
+}

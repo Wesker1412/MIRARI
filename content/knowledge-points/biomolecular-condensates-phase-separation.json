@@ -1,0 +1,63 @@
+{
+  "articleId": "art-biomolecular-condensates",
+  "slug": "biomolecular-condensates-phase-separation",
+  "title": "無膜胞器如何自己凝聚成型？生物大分子液－液相分離與 Flory-Huggins 熱力學",
+  "knowledgePoints": [
+    {
+      "id": "kp-llps-p-granules-liquid",
+      "label": "P 顆粒的液滴流體行為與溶解－凝聚定位",
+      "suggestedQuestion": "沒有細胞膜包裹的 P 顆粒如何表現得像液滴？胚胎又是如何把它們集中在後端的？",
+      "keywords": [
+        "P 顆粒",
+        "無膜胞器",
+        "液－液相分離",
+        "表面張力",
+        "溶解與凝聚"
+      ],
+      "plainExplanation": "2009 年 Brangwynne 等人觀察秀麗隱杆線蟲受精卵發現，P 顆粒並非堅硬固塊，碰撞時會像油珠一樣融合並在表面張力下迅速弛豫成球形，受水流剪切時還會出現滴落與潤濕現象。更特別的是，它們集中在胚胎後端不是靠馬達把整顆固體搬過去，而是受極性梯度調控，讓細胞前端的蛋白質解散回溶、後端同時過飽和凝聚出來。",
+      "anchorSentenceId": "sent-50f516d1"
+    },
+    {
+      "id": "kp-llps-stickers-spacers",
+      "label": "多價「黏扣－間隔區」與本質無序區",
+      "suggestedQuestion": "為什麼蛋白質的本質無序區（IDR）特別容易促成液－液相分離，而且凝聚後還能維持流動性？",
+      "keywords": [
+        "本質無序區",
+        "黏扣與間隔區",
+        "多價交互作用",
+        "支架蛋白",
+        "可逆交聯"
+      ],
+      "plainExplanation": "這類相分離蛋白質常具有「黏扣－間隔區」的分子設計：沿著柔軟無固定結構的胺基酸長鏈（間隔區），重複鑲嵌著許多微弱吸引位點（黏扣，例如芳香族 π–π 作用或陽離子－π 作用）。單一個黏扣的結合力很弱、隨時會熱解離，但幾十個黏扣串成一條長鏈後，就能集體交織成動態的微米級網狀液滴，既能濃縮特定分子又保持液態交換能力。",
+      "anchorSentenceId": "sent-7594db42"
+    },
+    {
+      "id": "kp-llps-flory-huggins-binodal-spinodal",
+      "label": "Flory-Huggins 熱力學：雙節線與旋節線",
+      "suggestedQuestion": "在相圖上，「雙節線內的成核生長」和「旋節線內的旋節分解」有什麼本質上的不同？",
+      "keywords": [
+        "Flory-Huggins",
+        "雙節線",
+        "旋節線",
+        "成核與生長",
+        "旋節分解"
+      ],
+      "plainExplanation": "Flory-Huggins 理論將混合自由能拆成「平動混合熵（被鏈長 N 削減為 1/N）」與「分子吸引交互作用 χ」。當 χ 跨過臨界點後，雙節線代表稀相與濃相共存的熱力學邊界：在雙節線與旋節線之間的介穩區，溶液需要跨越核化能障才能長出離散液滴並融合；一旦進入自由能曲率轉負（∂²F/∂φ² < 0）的旋節線內側，均勻態會無能障自發裂變，瞬間形成互相貫通的雙連續海綿網絡。",
+      "anchorSentenceId": "sent-c4148187"
+    },
+    {
+      "id": "kp-llps-active-fluid-pathology",
+      "label": "細胞主動調控與液－固病理硬化邊界",
+      "suggestedQuestion": "真實細胞裡的無膜胞器完全等於燒杯裡的平衡態 Flory-Huggins 溶液嗎？它和神經退化疾病有何關聯？",
+      "keywords": [
+        "非平衡主動流體",
+        "ATP 調控",
+        "轉譯後修飾",
+        "FUS",
+        "液－固硬化"
+      ],
+      "plainExplanation": "不是的。經典 Flory-Huggins 描述的是雙組分被動平衡態，照理所有液滴最終會吞併成單一大球；但真實細胞是多組分非平衡主動流體，會消耗 ATP 驅動 RNA 解旋酶與分子伴侶，並用磷酸化等轉譯後修飾動態調整交聯強度。此外，原本具流動性的凝聚體若因老化或 FUS、TDP-43 等蛋白突變而過度鎖死，就可能從液滴轉變為不可逆凝膠或類澱粉纖維聚集體，與 ALS 及額顳葉失智症等疾病相關。",
+      "anchorSentenceId": "sent-afc7e50b"
+    }
+  ]
+}

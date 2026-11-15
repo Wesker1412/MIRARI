@@ -1,0 +1,146 @@
+{
+  "articleId": "art-cof-carbon-capture",
+  "slug": "metal-organic-frameworks-carbon-capture",
+  "editorialCategory": "journal_interpretation",
+  "version": 1,
+  "creationModel": "gemini-2.5-pro",
+  "editorialPassDate": "2026-11-13T09:00:00+08:00",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-zhou-yaghi-2024",
+        "citation": "Zhou, Z., Ma, T., Zhang, H., Chheda, S., Li, H., Wang, K., Ehrling, S., Giovine, R., Li, C., Alawadhi, A. H., Abduljawad, M. M., Alawadhi, M. O., Sauer, J., & Yaghi, O. M. (2024). \"Carbon dioxide capture from open air using covalent organic frameworks.\" Nature, 635, 96–101.",
+        "doi": "10.1038/s41586-024-08080-x",
+        "peerReviewStatus": "已完成同行評審 (Nature 2024, Vol. 635, pp. 96–101)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Zihui Zhou",
+          "seniorAuthor": "Omar M. Yaghi",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 2024 年 Nature Vol. 635, pp. 96–101 原始數據：COF-999 採烯烴鍵結修飾多胺鏈，400 ppm 乾燥條件 0.96 mmol/g、50% 相對濕度 2.05 mmol/g、半飽和約 18.8 分鐘、60°C 再生、柏克萊開放空氣循環逾 100 次無衰退。"
+        },
+        "verifiedClaims": [
+          "烯烴鍵結共價有機骨架 COF-999 修飾多胺鏈後，在 400 ppm CO₂ 下乾燥吸附量達 0.96 mmol/g，於 50% 相對濕度提升至 2.05 mmol/g",
+          "COF-999 於 400 ppm 氣流中約 18.8 分鐘達到半飽和容量，並僅需 60°C 即可完全脫附再生",
+          "在加州柏克萊真實戶外開放空氣中完成超過 100 次連續吸附—脫附循環且無明顯容量衰退"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "從 400 ppm 開放空氣分離純 CO₂ 的等溫熱力學最小功 ΔG_min = RT ln(1/0.0004) ≈ 19.4 kJ/mol (298.15 K)",
+            "無水條件下胺基與 CO₂ 反應遵循 2:1 胺基甲酸酯化學計量，而水氣可促進轉向 1:1 碳酸氫鹽路徑"
+          ],
+          "empiricalFindings": [
+            "COF-999 在 50% 相對濕度下未出現水氣毒化反而容量倍增至 2.05 mmol/g，且展現逾百次開放空氣循環穩定性"
+          ],
+          "hypothesesAndModels": [
+            "固態核磁共振與 DFT 計算對孔道內多胺鏈質子轉移及碳酸氫鹽／胺基甲酸穩定化比例之微觀歸因"
+          ]
+        }
+      },
+      {
+        "id": "ref-furukawa-yaghi-2013",
+        "citation": "Furukawa, H., Cordova, K. E., O'Keeffe, M., & Yaghi, O. M. (2013). \"The Chemistry and Applications of Metal-Organic Frameworks.\" Science, 341(6149), 1230444.",
+        "doi": "10.1126/science.1230444",
+        "peerReviewStatus": "已完成同行評審 (Science 2013 權威綜述論文)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Hiroyasu Furukawa",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實網格化學與 MOF 晶態多孔結構可設計性、超高比表面積與後合成修飾原則。"
+        },
+        "verifiedClaims": [
+          "網格化學透過強幾何導向構建單元組裝高比表面積與可調孔徑之晶態多孔材料"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "MOF 的金屬-配體配位鍵強度與熱／水穩定性之間存在內在化學權衡"
+          ],
+          "empiricalFindings": [
+            "MOF 與 COF 家族在氣體儲存與分離領域展現可編程孔道化學優勢"
+          ],
+          "hypothesesAndModels": [
+            "拓撲網格分類與高通量配體設計準則"
+          ]
+        }
+      },
+      {
+        "id": "ref-sanz-perez-2016",
+        "citation": "Sanz-Pérez, E. S., Murdock, C. R., Didas, S. A., & Jones, C. W. (2016). \"Direct Capture of CO₂ from Ambient Air.\" Chemical Reviews, 116(19), 11840–11876.",
+        "doi": "10.1021/acs.chemrev.6b00173",
+        "peerReviewStatus": "已完成同行評審 (Chemical Reviews 2016 直接空氣捕碳權威綜述)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Eloy S. Sanz-Pérez",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 400 ppm DAC 最小熱力學功、濕氣競爭與傳統物理／化學吸附劑能量對比架構。"
+        },
+        "verifiedClaims": [
+          "開放空氣 400 ppm CO₂ 分離之最小熱力學功約為 19.4 kJ/mol，遠高於煙道氣捕集",
+          "大氣水蒸氣濃度遠高於 CO₂，是限制傳統物理吸附與部分胺基載體穩定性的關鍵難題"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "傳統鹼液吸收法再生須經 ~800–900°C 高溫煆燒，固體胺基吸附劑則具備低溫再生潛力"
+          ],
+          "empiricalFindings": [
+            "不同多孔載體在濕氣與熱循環下的胺基流失與降解速率差異"
+          ],
+          "hypothesesAndModels": [
+            "DAC 系統尺度下接觸器壓降與熱整合的技術經濟估算模型"
+          ]
+        }
+      }
+    ],
+    "noFakeCitations": true,
+    "noFictionalReviewers": true,
+    "formulasAndUnits": [
+      {
+        "formula": "\\Delta G_{\\text{min}} = R T \\ln\\left(\\frac{1}{x_{\\text{CO}_2}}\\right) \\approx 19.4\\text{ kJ/mol}",
+        "unitConsistency": "R 單位 J/(mol·K)，T 單位 K，莫耳分率 x 無因次，乘積為 J/mol = 10⁻³ kJ/mol；在 298.15 K 與 x = 0.0004 下精確得 19.39 kJ/mol",
+        "verified": true
+      },
+      {
+        "formula": "\\ln\\left(\\frac{K(T_2)}{K(T_1)}\\right) = -\\frac{\\Delta H^\\circ}{R}\\left(\\frac{1}{T_2} - \\frac{1}{T_1}\\right)",
+        "unitConsistency": "平衡常數比值為無因次；ΔH° 單位 J/mol，R 單位 J/(mol·K)，1/T 單位 K⁻¹，指數參數完全無因次",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "競爭朗繆爾吸附覆蓋率 θ_CO2(T, |ΔH|) 結合凡特霍夫溫度平衡修正與水氣協同化學計量係數、擬一階動力學曲線 q(t)",
+      "numericalMethod": "基於凡特霍夫解析熱力學平衡與瞬時粒子動力學 Monte-Carlo 佔據模擬雙面板更新",
+      "dynamicBehaviorVerified": "在 25°C 與 0% RH 下收斂於約 0.96 mmol/g；50% RH 時協同係數提升至約 2.05 mmol/g；升溫至 60°C 平衡向左移動觸發脫附再生",
+      "modelAssumptionsAndLimits": "模擬器採用單一等效結合焓與有效水氣協同函數簡化多胺位點之酸鹼微環境異質性，並假設等溫氣流無床層軸向壓降與傳熱延遲"
+    }
+  },
+  "readability": {
+    "language": "繁體中文",
+    "pedagogyProgression": "400 ppm 熱力學最小功與水氣困局 -> MOF 到烯烴 COF-999 設計躍遷 -> 乾燥 0.96 vs 潮濕 2.05 mmol/g 化學計量解析 -> 18.8 分鐘動力學與 60°C 再生 -> 工程放大清醒邊界",
+    "technicalTermsDemystified": [
+      {
+        "term": "網格化學 (Reticular Chemistry)",
+        "intuitiveExplanation": "像用樂高積木組裝分子建築一樣，以幾何形狀確定的有機分子與強鍵結編織出洞口大小精準可控的結晶多孔材料"
+      },
+      {
+        "term": "水氣協同碳酸氫鹽轉化",
+        "intuitiveExplanation": "乾燥時兩個胺基才能合抓一顆二氧化碳，有水氣幫忙傳遞質子時一個胺基就能抓一顆，讓捕碳容量直接翻倍"
+      },
+      {
+        "term": "凡特霍夫熱再生平衡",
+        "intuitiveExplanation": "結合力量越強越容易抓緊，但加熱就越難放手；結合焓調校得剛剛好時，僅需 60°C 溫水等級的熱度就能把二氧化碳逼出來"
+      }
+    ],
+    "toneReview": "忠實呈現 Nature 2024 實驗室克級突破數據，同時明確劃出實驗室驗證與百萬噸級工業化之間的工程距離，嚴謹客觀"
+  },
+  "aestheticsAndNarrative": {
+    "avoidFormulaicCliches": "開篇以煙道氣與開放空氣的分子挑選機率比喻切入熱力學本質，無任何套話",
+    "coreQuestion": "面對僅 400 ppm 的極稀薄空氣與大量水蒸氣競爭，COF-999 如何把「水氣毒化」翻轉為容量倍增與 60°C 低溫再生的熱力學優勢？",
+    "interactiveRole": "MofAdsorptionSimulator 讓讀者即時調控溫度、濕度與結合焓，同時觀察微孔通道內的分子選擇性捕捉以及對齊 Nature 實測基準的動力學曲線",
+    "narrativeStyle": "journal_interpretation",
+    "interactiveType": "adsorption_thermodynamics"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "嚴格區分實驗室克級粉末 100 次柏克萊戶外測試成果與百萬噸級工廠成型接觸器壓降、單體成本等未解工程挑戰",
+    "精確修正 25°C 下 400 ppm 最小熱力學功計算：8.314 × 298.15 × ln(2500) = 19.39 kJ/mol ≈ 19.4 kJ/mol"
+  ],
+  "unconfirmedLimits": [
+    "COF-999 成型為低壓降蜂巢整塊體或塗層中空纖維後的傳質速率與機械磨耗壽命仍待工程放大驗證",
+    "高濃度工業酸性雜質（SO₂、NO₂）在數千次長週期循環下的不可逆胺基硫酸鹽／硝酸鹽毒化風險尚需評估"
+  ]
+}

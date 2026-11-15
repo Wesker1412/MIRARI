@@ -1,0 +1,67 @@
+{
+  "articleId": "art-cof-carbon-capture",
+  "slug": "metal-organic-frameworks-carbon-capture",
+  "title": "把二氧化碳從空氣裡撈出來：網格化學與 COF-999 的吸附熱力學",
+  "knowledgePoints": [
+    {
+      "id": "kp-dac-thermodynamic-limit",
+      "label": "400 ppm 稀薄空氣捕碳極限",
+      "suggestedQuestion": "為什麼直接從戶外空氣捕碳比從發電廠煙囪捕碳困難這麼多？",
+      "keywords": [
+        "直接空氣捕捉",
+        "400 ppm",
+        "混合熵",
+        "熱力學最小功",
+        "水氣競爭",
+        "分壓"
+      ],
+      "plainExplanation": "發電廠煙道氣含有約 10% 至 15% 的二氧化碳，而戶外空氣僅含約 400 ppm（萬分之四），濃縮這團極稀薄氣體的理論熱力學最小功高達每莫耳 19.4 千焦耳，幾乎是煙道氣的四倍；加上空氣中的水蒸氣濃度是二氧化碳的數十倍，極易搶佔吸附材料位點。",
+      "anchorSentenceId": "sent-ea0dedaa"
+    },
+    {
+      "id": "kp-cof999-water-synergy",
+      "label": "水氣協同倍增吸附容量",
+      "suggestedQuestion": "為什麼 COF-999 在 50% 濕度下捕捉二氧化碳的容量反而比乾燥時翻倍？",
+      "keywords": [
+        "COF-999",
+        "多胺鏈",
+        "水氣協同",
+        "胺基甲酸酯",
+        "碳酸氫鹽",
+        "化學計量"
+      ],
+      "plainExplanation": "在乾燥環境下，每抓住 1 個二氧化碳分子需要消耗 2 個胺基位點生成胺基甲酸酯，使 COF-999 容量僅約 0.96 mmol/g；但在 50% 相對濕度下，水分子參與質子轉移並引導形成碳酸氫鹽路徑，讓胺基利用效率從 2:1 提升為 1:1，吸附容量一舉攀升至 2.05 mmol/g。",
+      "anchorSentenceId": "sent-afc0b07f"
+    },
+    {
+      "id": "kp-cof999-low-temp-regeneration",
+      "label": "60°C 低溫再生與動力學",
+      "suggestedQuestion": "COF-999 為什麼只需要 60°C 就能放氣再生，而不像傳統鹼液法需要高溫？",
+      "keywords": [
+        "低溫再生",
+        "結合焓",
+        "凡特霍夫方程",
+        "半飽和時間",
+        "烯烴鍵結",
+        "循環壽命"
+      ],
+      "plainExplanation": "傳統氫氧化鉀吸收法需要 800°C 以上的煆燒高溫才能解離碳酸鈣，耗能巨大。COF-999 以強韌的碳-碳烯烴鍵構築通暢一維奈米孔道，約 18.8 分鐘即可達半飽和，且多胺位點的結合焓落在適中區間，僅需加熱至 60°C 即可釋放二氧化碳並完成逾百次戶外循環。",
+      "anchorSentenceId": "sent-0287cc12"
+    },
+    {
+      "id": "kp-cof999-engineering-gap",
+      "label": "實驗室材料與工程放大邊界",
+      "suggestedQuestion": "COF-999 的 Nature 突破距離百萬噸級商業碳捕捉工廠還有哪些工程難關？",
+      "keywords": [
+        "工程放大",
+        "接觸器壓降",
+        "成型技術",
+        "合成成本",
+        "氣候耐受",
+        "科學邊界"
+      ],
+      "plainExplanation": "實驗室百次戶外循環證明了克級粉末樣品的化學耐用性，但真正放大到百萬噸級氣候工程時，還必須克服將粉末成型為低阻力整塊體以降低鼓風機電耗、壓低芳香單體的精細化工合成成本，以及因應含硫氮氧化物等工業污染空氣的長期耐受挑戰。",
+      "anchorSentenceId": "sent-00beca8d"
+    }
+  ]
+}
