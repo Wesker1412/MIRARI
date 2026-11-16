@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastUpdated": "2026-11-15T09:08:00.000Z",
+  "lastUpdated": "2026-11-16T09:10:00.000Z",
   "editorialMemoryDescription": "MIRARI 自主編輯品質管理記憶庫：記錄近期篇章學科分佈、敘事風格、互動模式與編輯檢查規則，提供每日自主創作管線跨日延續性與防重複依據。",
   "recentArticles": [
     {
@@ -551,6 +551,42 @@
       "coreConcept": "毫秒脈衝星計時陣列地球項／脈衝星項拆解、Hellings-Downs 四極角關聯曲線與 NANOGrav 15 年 3–4σ 證據",
       "pedagogyKey": "解析為何只有 10^-9 Hz 重力波能被跨千年光程捕捉，辨識 Hellings-Downs 從 0^+ 之 0.5 降至 90° 負值之四極空間指紋並審慎界定顯著性",
       "limitsIdentified": "均向非極化廣義相對論四極背景模擬，實測仍需扣除太陽系曆表與星際電漿色散誤差"
+    },
+    {
+      "articleId": "art-altermagnetism-spin-splitting",
+      "slug": "altermagnetism-kramers-spin-splitting",
+      "editorialCategory": "journal_interpretation",
+      "discipline": "凝態物理與自旋電子學",
+      "narrativeStyle": "mechanism_dissection",
+      "interactiveType": "momentum_space_spin",
+      "interactiveComponent": "AltermagnetSpinSimulator",
+      "coreConcept": "交錯磁性自旋群對稱 [C2 || Cn]、無淨磁化非相對論動量相依 d/g-wave 自旋劈裂與 α-MnTe SARPES 解除克萊默斯簡併",
+      "pedagogyKey": "由零淨磁矩與自旋極化能帶看似互斥之悖論切入，透過子晶格配位幾何旋轉對稱直觀化動量空間節線與反節點交替劈裂，並謹慎區分 MnTe 確證與 RuO2 爭議",
+      "limitsIdentified": "有效緊束縛哈密頓量示意能帶，未包含完整第一性原理多軌域 DFT 混合與相對論自旋-軌道耦合微擾"
+    },
+    {
+      "articleId": "art-mammoth-chromoglass",
+      "slug": "woolly-mammoth-3d-genome-chromoglass",
+      "editorialCategory": "journal_interpretation",
+      "discipline": "古基因體學與軟物質高分子物理",
+      "narrativeStyle": "forensic_reconstruction",
+      "interactiveType": "polymer_contact_map",
+      "interactiveComponent": "ChromoglassHiCSimulator",
+      "coreConcept": "52,000 年真猛獁象皮膚 PaleoHi-C 28 條染色體組裝、Xi 四分體結構與脫水跨越玻璃態轉變 T_g 抑制 Stokes–Einstein 擴散的染色質玻璃保存機制",
+      "pedagogyKey": "從極短古 DNA 碎屑何以未散亂混雜的物理謎題破題，引導讀者觀察玻璃態高黏度籠鎖與分形球體 P(s)∝s^-1 接觸矩陣之保存邊界",
+      "limitsIdentified": "粗粒化高分子與籠鎖擴散示範模型，未涵蓋全基因組兆鹼基序列比對與表觀甲基化化學修飾細節"
+    },
+    {
+      "articleId": "art-insect-flight-lev",
+      "slug": "insect-flight-leading-edge-vortex",
+      "editorialCategory": "scientific_principles",
+      "discipline": "生物流體力學與非定常空氣動力學",
+      "narrativeStyle": "thought_experiment",
+      "interactiveType": "vortex_aerodynamics",
+      "interactiveComponent": "InsectFlappingLevSimulator",
+      "coreConcept": "定常固定翼計算誤區澄清、超高攻角前緣渦流 (LEV) 與延遲失速、旋轉環流 (Kramer 效應)、尾流捕獲及低羅斯貝數 Ro=R/c 旋轉排泄穩定準則",
+      "pedagogyKey": "從 1934 年 Magnan 與 Sainte-Laguë 歷史公案出發，將低雷諾數粘滯尺度與高攻角附著低壓渦流可視化，對比提前/對稱/延遲翻轉對升力峰值的決定性影響",
+      "limitsIdentified": "低階非定常空氣動力學與 Lamb–Oseen 合成渦核教學模型，非完整三維流固耦合 Navier–Stokes 計算流體力學求解器"
     }
   ],
   "cumulativeGuidelines": {
@@ -568,14 +604,14 @@
           "displayName": "科學原理與思想實驗",
           "scope": "收錄一般科普、經典科學知識、科學現象、數學原理、理論解釋及思想實驗",
           "purpose": "主要目的是讓讀者理解科學，而非追逐最新消息。不限制物理學，也不要求每篇一定具有思想實驗",
-          "currentArticles": 30
+          "currentArticles": 31
         },
         "journal_interpretation": {
           "displayName": "期刊解讀",
           "scope": "最新科學發現、重要研究成果、研發技術突破及具有話題性的科學事件",
           "selectionCriteria": "以新聞時效性、科學價值與話題性作為選題依據。涵蓋最新學術研究、重大科學發現、技術研發突破、科學機構發布的重要成果及值得公眾關注的科學事件",
           "rigorRule": "不要求每篇都必須以單篇同儕審查論文為主題，但必須核對可信來源，清楚區分：已完成同行審查的研究、尚未同行審查的預印本、機構或企業提出但尚待獨立驗證的成果。不得為了追逐話題性誇大研究結果",
-          "currentArticles": 16
+          "currentArticles": 18
         }
       },
       "classificationPrinciple": "根據文章的主要編輯目的分類：主要在解釋某個科學知識或原理 -> scientific_principles；主要在報導或解讀近期科學發現、研究成果、技術突破或科學事件 -> journal_interpretation。不能僅因引用了新論文就歸類為期刊解讀，不能僅因內容涉及經典科學原理就排除其作為最新研究報導的可能。兩大分類互斥且與學科標籤獨立",

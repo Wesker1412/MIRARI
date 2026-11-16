@@ -1,0 +1,77 @@
+{
+  "articleId": "art-mammoth-chromoglass",
+  "slug": "woolly-mammoth-3d-genome-chromoglass",
+  "title": "五萬兩千年前的染色體玻璃（Chromoglass）：猛獁象三維基因組化石與軟物質玻璃態轉變",
+  "knowledgePoints": [
+    {
+      "id": "kp-fractal-globule-hic",
+      "label": "分形球體與 A/B 區室",
+      "suggestedQuestion": "為什麼兩公尺長的 DNA 塞進細胞核裡不會打結，而且在 Hi-C 熱圖上會形成棋盤格？",
+      "keywords": [
+        "分形球體",
+        "Fractal Globule",
+        "A/B 區室",
+        "染色體領域",
+        "標度律"
+      ],
+      "plainExplanation": "細胞核內的染色質採取不打結、局部緊緻摺疊的「分形球體」構象，使接觸機率遵循 P(s) ∝ s⁻¹ 冪律衰減並劃分出互不糾纏的染色體領域；同時，基因活躍的開放 A 區室與休眠緊縮的 B 區室會各自與同類聚集，在 Hi-C 接觸矩陣中拉出像西洋棋盤一樣的格紋。",
+      "anchorSentenceId": "sent-3ed6923f"
+    },
+    {
+      "id": "kp-paleohic-ligation",
+      "label": "PaleoHi-C 原位鄰近連接",
+      "suggestedQuestion": "古 DNA 已經斷成幾十個鹼基對的短碎屑，PaleoHi-C 要怎麼知道誰和誰在生前靠得很近？",
+      "keywords": [
+        "PaleoHi-C",
+        "原位鄰近連接",
+        "古 DNA",
+        "接觸矩陣",
+        "染色質環"
+      ],
+      "plainExplanation": "PaleoHi-C 不先將細胞核打散溶出，而是在保持原位空間結構的條件下，用針對超短損傷片段優化的分子連接反應，把三維空間裡貼在一起的兩截遠程古 DNA 碎片黏成一條嵌合序列，再藉由高通量定序反推出五萬年前的立體空間接觸地圖。",
+      "anchorSentenceId": "sent-d57b52e2"
+    },
+    {
+      "id": "kp-chromoglass-caging",
+      "label": "染色質玻璃態與籠鎖效應",
+      "suggestedQuestion": "既然 DNA 骨架早就斷光了，為什麼這些短碎片沒有靠布朗運動在五萬年間擴散混雜？",
+      "keywords": [
+        "染色質玻璃態",
+        "Chromoglass",
+        "玻璃態轉變",
+        "籠鎖效應",
+        "Stokes-Einstein"
+      ],
+      "plainExplanation": "猛獁象死後在極寒乾燥的西伯利亞永凍層經歷自發冷凍乾燥，使脫水細胞核跨越玻璃態轉變（T < Tg）。核內濃縮染色質的有效黏度 η_eff 暴增，讓 Stokes–Einstein 擴散係數 D 幾乎歸零，互不相連的短 DNA 碎片被周圍僵硬鄰居物理性「籠鎖」於原地長達五萬兩千年。",
+      "anchorSentenceId": "sent-d2a9068d"
+    },
+    {
+      "id": "kp-tetradic-xi-architecture",
+      "label": "28 條支架與四分體巴氏小體",
+      "suggestedQuestion": "科學家從猛獁象的 PaleoHi-C 地圖裡看到了哪些過去光靠序列定序看不見的新結構？",
+      "keywords": [
+        "28 條染色體支架",
+        "巴氏小體",
+        "去活化 X 染色體",
+        "四分體結構",
+        "染色體組裝"
+      ],
+      "plainExplanation": "研究團隊直接依靠長程空間接觸頻率，不依賴現代大象順序便組裝出完整的 28 條猛獁象染色體尺度支架；更在雌性猛獁象皮膚細胞中，首次發現去活化 X 染色體（巴氏小體 Xi）呈現四個結構域組成的獨特「四分體結構」，不同於人類與小鼠已知的二分體摺疊。",
+      "anchorSentenceId": "sent-e73ca742"
+    },
+    {
+      "id": "kp-paleo-epigenetics-limits",
+      "label": "古表觀調控與保存物理邊界",
+      "suggestedQuestion": "染色質玻璃態能幫我們讀取滅絕動物的基因開關嗎？它又有哪些物理限制？",
+      "keywords": [
+        "古表觀遺傳",
+        "皮膚分化",
+        "凍融循環",
+        "玻璃態轉變溫度",
+        "物理邊界"
+      ],
+      "plainExplanation": "藉由辨識 A/B 區室配置，團隊能偵測猛獁象死前耳後皮膚中與毛髮生長及皮膚分化相關的區室活性特徵；然而這項物理封存高度依賴低溫乾燥不回潮，一旦發生常溫水合或反覆凍融跨過 Tg，三維接觸資訊就會隨碎片擴散不可逆地消融，且它無法修復化學斷裂或作為活體複製藍圖。",
+      "anchorSentenceId": "sent-53f0c8c0"
+    }
+  ]
+}

@@ -125,6 +125,83 @@
     ]
   },
   {
+    "articleId": "art-altermagnetism-spin-splitting",
+    "slug": "altermagnetism-kramers-spin-splitting",
+    "title": "零磁矩卻有強自旋劈裂：交錯磁性與第三種共線磁相的實驗確立",
+    "knowledgePoints": [
+      {
+        "id": "kp-altermagnet-kramers-degeneracy",
+        "label": "傳統反鐵磁為何受克萊默斯簡併保護",
+        "suggestedQuestion": "為什麼傳統反鐵磁體淨磁矩為零，自旋向上和向下的電子能帶卻總是重疊簡併？",
+        "keywords": [
+          "傳統反鐵磁體",
+          "克萊默斯自旋簡併",
+          "空間反演對稱",
+          "晶格平移對稱",
+          "時間反演"
+        ],
+        "plainExplanation": "在傳統反鐵磁晶體中，向上與向下的自旋子晶格可以透過純晶格平移 t 或空間反演 P 結合時間反演 T 完全重合。這兩種對稱操作使動量空間中同一波矢 k 處的自旋向上與向下電子感受到完全相同的週期勢場與交換場，因此非相對論能帶在整個布里淵區處處保持 E↑(k) = E↓(k) 的克萊默斯簡併。",
+        "anchorSentenceId": "sent-c2c75490"
+      },
+      {
+        "id": "kp-altermagnet-spin-group-symmetry",
+        "label": "自旋群理論與交錯磁性 [C2 ∥ Cn] 對稱",
+        "suggestedQuestion": "交錯磁體既沒有淨磁矩，又是靠什麼晶體對稱機制讓相反自旋能帶在動量空間分開？",
+        "keywords": [
+          "自旋群",
+          "交錯磁性",
+          "非磁性配位環境",
+          "晶格旋轉對稱",
+          "交換相互作用"
+        ],
+        "plainExplanation": "在非相對論極限下將自旋空間與晶格空間對稱解耦後，自旋群揭示出第三類共線磁相：交錯磁體的反轉自旋子晶格周圍的非磁性配位原子彼此旋轉錯位，無法靠純平移或空間反演重合，只能靠自旋翻轉 C2 結合晶格旋轉 Cn 或鏡面操作 [C2 ∥ Cn] 疊合。這使向上與向下自旋的等能面在動量空間彼此旋轉錯開，無需重元素強自旋-軌道耦合即可產生源自非相對論交換相互作用的交替自旋劈裂。",
+        "anchorSentenceId": "sent-cff17de5"
+      },
+      {
+        "id": "kp-altermagnet-nodal-harmonics",
+        "label": "動量空間 d-wave / g-wave / i-wave 交替劈裂與節線",
+        "suggestedQuestion": "交錯磁體的 d-wave 和 g-wave 自旋劈裂有什麼差別？為什麼沿某些特定方向看劈裂會歸零？",
+        "keywords": [
+          "d-wave",
+          "g-wave",
+          "節線",
+          "動量相依自旋劈裂",
+          "補償磁矩"
+        ],
+        "plainExplanation": "由於相反自旋子晶格由晶格旋轉或鏡面操作連結，動量相依交換劈裂項 J(k) 必須在該對稱操作下反號，從而在動量空間刻出偶數條劈裂嚴格為零的對稱節面或節線：四方金紅石型模型為具備 2 個節面的 d-wave，六方晶系（如 α-MnTe）為具備 4 個節面的 g-wave，更高階對稱則可呈現 6 個節面的 i-wave。正負劈裂葉瓣在布里淵區內的體積嚴格抵銷，故總磁化強度保持 M = 0。",
+        "anchorSentenceId": "sent-590694ce"
+      },
+      {
+        "id": "kp-altermagnet-mnte-arpes",
+        "label": "α-MnTe 的 ARPES/SARPES 光譜驗證與跨 T_N 行為",
+        "suggestedQuestion": "科學家如何用實驗確定 α-MnTe 的能帶劈裂真的來自交錯磁性，而不是傳統的相對論自旋-軌道耦合？",
+        "keywords": [
+          "α-MnTe",
+          "ARPES",
+          "SARPES",
+          "奈爾溫度",
+          "非相對論起源"
+        ],
+        "plainExplanation": "2024 年研究團隊利用角分辨與自旋分辨光電子能譜（ARPES/SARPES）量測中心對稱共線反鐵磁半導體 α-MnTe（T_N ≈ 307–310 K），在零淨磁化下直接測得約 100–370 meV 量級的 g-wave 動量相依自旋劈裂。該劈裂在自旋-軌道耦合極弱的價帶動量區依然存在，排除了傳統相對論效應；且當溫度升高越過奈爾溫度 T_N 進入順磁相時，劈裂隨磁序瓦解而消失、重新恢復克萊默斯簡併，提供了光譜上的直接實證。",
+        "anchorSentenceId": "sent-2a758820"
+      },
+      {
+        "id": "kp-altermagnet-materials-scrutiny",
+        "label": "已驗證材料與 RuO2 塊材磁序爭議之界線",
+        "suggestedQuestion": "目前有哪些材料確定屬於交錯磁體？為什麼常被作為教科書例子的 RuO2 會有實驗爭議？",
+        "keywords": [
+          "CrSb",
+          "RuO2",
+          "μSR",
+          "自旋分流效應",
+          "材料驗證"
+        ],
+        "plainExplanation": "在實驗確立進展上，六方半導體 α-MnTe 與金屬間化合物 CrSb 已取得多項直接的 ARPES 光譜證據，確認其 g-wave 動量相依自旋劈裂。相對地，早期廣被用來示範 d-wave 理論模型的金紅石氧化物 RuO2，後續針對高品質單晶進行的渺子自旋旋轉（μSR）等塊材探針測試對其本徵長程磁序提出了質疑，顯示在推進自旋電子學應用前仍須嚴格區分理想理論原型與真實塊材磁基態。",
+        "anchorSentenceId": "sent-0aa4db8e"
+      }
+    ]
+  },
+  {
     "articleId": "art-amygdala-memory-encoding",
     "slug": "amygdala-memory-encoding-success",
     "title": "情緒的刻痕：杏仁核特定神經元活動如何預測長久記憶的誕生？",
@@ -1180,6 +1257,101 @@
         ],
         "plainExplanation": "在受傷代價高於資源價值時，穩定點的族群平均收益是 V/2 乘以 (1 - V/C)，低於全員鴿派的 V/2。天擇找到的是沒有個體想單方面偏離的平衡，而不是對大家最有利的安排。",
         "anchorSentenceId": "sent-8cf3f2e7"
+      }
+    ]
+  },
+  {
+    "articleId": "art-insect-flight-lev",
+    "slug": "insect-flight-leading-edge-vortex",
+    "title": "昆蟲飛行的非定常空氣動力學：前緣渦流、延遲失速與旋轉環流",
+    "knowledgePoints": [
+      {
+        "id": "kp-insect-magnan-paradox-reynolds",
+        "label": "1934 年大黃蜂悖論與低雷諾數流場",
+        "suggestedQuestion": "科學家真的曾經證明過大黃蜂違反物理定律嗎？為什麼固定翼公式算不出昆蟲升力？",
+        "keywords": [
+          "大黃蜂悖論",
+          "馬尼昂",
+          "聖拉居",
+          "定常空氣動力學",
+          "雷諾數",
+          "非定常流場"
+        ],
+        "plainExplanation": "1934 年法國學者馬尼昂與聖拉居用固定翼飛機的定常公式計算昆蟲升力時發現數值遠低於體重，但馬尼昂當場即指出這證明「定常公式不適用於高頻振翅」，從未宣稱昆蟲違反物理。在果蠅與蜜蜂所在的低雷諾數流場（Re 約 100 至數千），空氣黏滯感如同稀薄糖漿，必須靠振翅激發非定常渦旋才能產生足夠升力。",
+        "anchorSentenceId": "sent-97fd3927"
+      },
+      {
+        "id": "kp-insect-leading-edge-vortex",
+        "label": "前緣渦流（LEV）與延遲失速",
+        "suggestedQuestion": "一般飛機攻角超過 15 度就會失速，為什麼昆蟲能以 35 到 45 度大攻角揮動翅膀而不失速？",
+        "keywords": [
+          "前緣渦流",
+          "LEV",
+          "延遲失速",
+          "攻角",
+          "天蛾",
+          "展向軸向流"
+        ],
+        "plainExplanation": "艾靈頓等人在 1996 年以煙霧拍攝天蛾振翅，發現翅膀以 35° 至 45° 高攻角下拍時，前緣分離的氣流並未散失，反而捲成一團緊貼翅膀上表面的低壓螺旋渦流——前緣渦流（LEV）。這顆像迷你低壓龍捲風的渦核在翼背製造強烈吸力（延遲失速），同時藉由沿翼展向外的軸向流排泄多餘渦量，使升力係數遠超固定翼極限。",
+        "anchorSentenceId": "sent-c2399ce0"
+      },
+      {
+        "id": "kp-insect-rotational-circulation",
+        "label": "旋轉環流與翻轉時序相位",
+        "suggestedQuestion": "昆蟲在每次拍翅末端快速翻轉翅膀時，會如何像棒球後旋一樣額外改變升力？",
+        "keywords": [
+          "旋轉環流",
+          "克勞默效應",
+          "馬格努斯效應",
+          "Robofly",
+          "提前翻轉",
+          "延遲翻轉"
+        ],
+        "plainExplanation": "狄金森團隊在 1999 年利用礦物油槽中的機器蒼蠅 Robofly 證實，翅膀在行程反轉時繞展向軸線快速翻腕，會透過類似棒球後旋（馬格努斯效應）的克勞默環流改變升力。若在行程結束前「提前翻轉」，旋轉與殘餘移動速度疊加出強大的正向升力峰值；若等到反向移動後才「延遲翻轉」，反而會製造負向升力低谷。",
+        "anchorSentenceId": "sent-d46fa288"
+      },
+      {
+        "id": "kp-insect-wake-capture",
+        "label": "尾流捕獲（Wake Capture）",
+        "suggestedQuestion": "翅膀在折返初期幾乎還沒加速，為什麼會立刻出現第二道升力峰值？",
+        "keywords": [
+          "尾流捕獲",
+          "誘導尾流",
+          "反轉加速",
+          "Robofly",
+          "流場動量"
+        ],
+        "plainExplanation": "翅膀在前一次半拍結束時會在周圍留下旋轉渦旋與向下噴射氣流。當翅膀完成翻轉並逆向啟動時，正好切入這團剛由自己製造出來、仍在原地打轉的陳舊尾流，相當於迎面借用上一拍遺留的氣流動量與局部高流速，因此在翅膀自身還沒加速之前就立刻獲得第二波額外升力峰值。",
+        "anchorSentenceId": "sent-9ffb2dd6"
+      },
+      {
+        "id": "kp-insect-rossby-number-stability",
+        "label": "羅斯貝數 Ro 與繞翼根旋轉穩定機制",
+        "suggestedQuestion": "為什麼二維直線平動的機翼前緣渦流很快會脫落失速，昆蟲繞肩旋轉的翅膀卻能穩穩留住 LEV？",
+        "keywords": [
+          "羅斯貝數",
+          "Ro",
+          "離心加速度",
+          "科氏加速度",
+          "渦流脫落",
+          "卡門渦街"
+        ],
+        "plainExplanation": "連廷克與狄金森（2009）證明，決定前緣渦流能否長期不脫落的關鍵無因次量是羅斯貝數 Ro = R/c（旋轉半徑與弦長之比）。昆蟲翅膀因繞著近在咫尺的翼根旋轉，Ro 僅約 3 至 4，轉動產生的離心與類科氏加速度會把渦量沿翼展向外排泄並抑制脫體，讓 LEV 穩定附著；而在純平動極限（Ro 趨近無窮大），渦流終究會脫落失速。",
+        "anchorSentenceId": "sent-8fd60b6c"
+      },
+      {
+        "id": "kp-insect-clap-and-fling",
+        "label": "拍合與甩開（Clap-and-Fling）",
+        "suggestedQuestion": "體長不到一公釐、空氣黏得像糖漿的極小昆蟲，如何用「拍合與甩開」在一開拍就搶出高升力？",
+        "keywords": [
+          "拍合與甩開",
+          "Clap-and-Fling",
+          "Weis-Fogh",
+          "纓小蜂",
+          "瓦格納延遲"
+        ],
+        "plainExplanation": "在雷諾數低至 10 左右的極小昆蟲（如纓小蜂）身上，魏斯-福於 1973 年發現牠們會在半拍頂點讓雙翼面對面「拍合」擠出氣流，接著保持後緣相接、讓前緣像打開書本般猛烈「甩開」。迅速張開的 V 形低壓縫隙會立刻把空氣吸入並同時建立對稱前緣渦流，繞開一般機翼啟動初期的瓦格納升力延遲。",
+        "anchorSentenceId": "sent-ee920176"
       }
     ]
   },
@@ -2542,6 +2714,83 @@
         ],
         "plainExplanation": "當行星掠過恆星時，邊緣稀薄的大氣層會過濾背後的星光。大氣中的特定分子（如水蒸氣、二氧化碳）會強烈吸收特定紅外波長，使行星在該波長下顯得稍微「大了一圈」。測量不同顏色星光的變暗深度微差，便能精準解析出外星大氣的化學成分。",
         "anchorSentenceId": "sent-f5768fa2"
+      }
+    ]
+  },
+  {
+    "articleId": "art-mammoth-chromoglass",
+    "slug": "woolly-mammoth-3d-genome-chromoglass",
+    "title": "五萬兩千年前的染色體玻璃（Chromoglass）：猛獁象三維基因組化石與軟物質玻璃態轉變",
+    "knowledgePoints": [
+      {
+        "id": "kp-fractal-globule-hic",
+        "label": "分形球體與 A/B 區室",
+        "suggestedQuestion": "為什麼兩公尺長的 DNA 塞進細胞核裡不會打結，而且在 Hi-C 熱圖上會形成棋盤格？",
+        "keywords": [
+          "分形球體",
+          "Fractal Globule",
+          "A/B 區室",
+          "染色體領域",
+          "標度律"
+        ],
+        "plainExplanation": "細胞核內的染色質採取不打結、局部緊緻摺疊的「分形球體」構象，使接觸機率遵循 P(s) ∝ s⁻¹ 冪律衰減並劃分出互不糾纏的染色體領域；同時，基因活躍的開放 A 區室與休眠緊縮的 B 區室會各自與同類聚集，在 Hi-C 接觸矩陣中拉出像西洋棋盤一樣的格紋。",
+        "anchorSentenceId": "sent-3ed6923f"
+      },
+      {
+        "id": "kp-paleohic-ligation",
+        "label": "PaleoHi-C 原位鄰近連接",
+        "suggestedQuestion": "古 DNA 已經斷成幾十個鹼基對的短碎屑，PaleoHi-C 要怎麼知道誰和誰在生前靠得很近？",
+        "keywords": [
+          "PaleoHi-C",
+          "原位鄰近連接",
+          "古 DNA",
+          "接觸矩陣",
+          "染色質環"
+        ],
+        "plainExplanation": "PaleoHi-C 不先將細胞核打散溶出，而是在保持原位空間結構的條件下，用針對超短損傷片段優化的分子連接反應，把三維空間裡貼在一起的兩截遠程古 DNA 碎片黏成一條嵌合序列，再藉由高通量定序反推出五萬年前的立體空間接觸地圖。",
+        "anchorSentenceId": "sent-d57b52e2"
+      },
+      {
+        "id": "kp-chromoglass-caging",
+        "label": "染色質玻璃態與籠鎖效應",
+        "suggestedQuestion": "既然 DNA 骨架早就斷光了，為什麼這些短碎片沒有靠布朗運動在五萬年間擴散混雜？",
+        "keywords": [
+          "染色質玻璃態",
+          "Chromoglass",
+          "玻璃態轉變",
+          "籠鎖效應",
+          "Stokes-Einstein"
+        ],
+        "plainExplanation": "猛獁象死後在極寒乾燥的西伯利亞永凍層經歷自發冷凍乾燥，使脫水細胞核跨越玻璃態轉變（T < Tg）。核內濃縮染色質的有效黏度 η_eff 暴增，讓 Stokes–Einstein 擴散係數 D 幾乎歸零，互不相連的短 DNA 碎片被周圍僵硬鄰居物理性「籠鎖」於原地長達五萬兩千年。",
+        "anchorSentenceId": "sent-d2a9068d"
+      },
+      {
+        "id": "kp-tetradic-xi-architecture",
+        "label": "28 條支架與四分體巴氏小體",
+        "suggestedQuestion": "科學家從猛獁象的 PaleoHi-C 地圖裡看到了哪些過去光靠序列定序看不見的新結構？",
+        "keywords": [
+          "28 條染色體支架",
+          "巴氏小體",
+          "去活化 X 染色體",
+          "四分體結構",
+          "染色體組裝"
+        ],
+        "plainExplanation": "研究團隊直接依靠長程空間接觸頻率，不依賴現代大象順序便組裝出完整的 28 條猛獁象染色體尺度支架；更在雌性猛獁象皮膚細胞中，首次發現去活化 X 染色體（巴氏小體 Xi）呈現四個結構域組成的獨特「四分體結構」，不同於人類與小鼠已知的二分體摺疊。",
+        "anchorSentenceId": "sent-e73ca742"
+      },
+      {
+        "id": "kp-paleo-epigenetics-limits",
+        "label": "古表觀調控與保存物理邊界",
+        "suggestedQuestion": "染色質玻璃態能幫我們讀取滅絕動物的基因開關嗎？它又有哪些物理限制？",
+        "keywords": [
+          "古表觀遺傳",
+          "皮膚分化",
+          "凍融循環",
+          "玻璃態轉變溫度",
+          "物理邊界"
+        ],
+        "plainExplanation": "藉由辨識 A/B 區室配置，團隊能偵測猛獁象死前耳後皮膚中與毛髮生長及皮膚分化相關的區室活性特徵；然而這項物理封存高度依賴低溫乾燥不回潮，一旦發生常溫水合或反覆凍融跨過 Tg，三維接觸資訊就會隨碎片擴散不可逆地消融，且它無法修復化學斷裂或作為活體複製藍圖。",
+        "anchorSentenceId": "sent-53f0c8c0"
       }
     ]
   }

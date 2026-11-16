@@ -1,0 +1,77 @@
+{
+  "articleId": "art-altermagnetism-spin-splitting",
+  "slug": "altermagnetism-kramers-spin-splitting",
+  "title": "零磁矩卻有強自旋劈裂：交錯磁性與第三種共線磁相的實驗確立",
+  "knowledgePoints": [
+    {
+      "id": "kp-altermagnet-kramers-degeneracy",
+      "label": "傳統反鐵磁為何受克萊默斯簡併保護",
+      "suggestedQuestion": "為什麼傳統反鐵磁體淨磁矩為零，自旋向上和向下的電子能帶卻總是重疊簡併？",
+      "keywords": [
+        "傳統反鐵磁體",
+        "克萊默斯自旋簡併",
+        "空間反演對稱",
+        "晶格平移對稱",
+        "時間反演"
+      ],
+      "plainExplanation": "在傳統反鐵磁晶體中，向上與向下的自旋子晶格可以透過純晶格平移 t 或空間反演 P 結合時間反演 T 完全重合。這兩種對稱操作使動量空間中同一波矢 k 處的自旋向上與向下電子感受到完全相同的週期勢場與交換場，因此非相對論能帶在整個布里淵區處處保持 E↑(k) = E↓(k) 的克萊默斯簡併。",
+      "anchorSentenceId": "sent-c2c75490"
+    },
+    {
+      "id": "kp-altermagnet-spin-group-symmetry",
+      "label": "自旋群理論與交錯磁性 [C2 ∥ Cn] 對稱",
+      "suggestedQuestion": "交錯磁體既沒有淨磁矩，又是靠什麼晶體對稱機制讓相反自旋能帶在動量空間分開？",
+      "keywords": [
+        "自旋群",
+        "交錯磁性",
+        "非磁性配位環境",
+        "晶格旋轉對稱",
+        "交換相互作用"
+      ],
+      "plainExplanation": "在非相對論極限下將自旋空間與晶格空間對稱解耦後，自旋群揭示出第三類共線磁相：交錯磁體的反轉自旋子晶格周圍的非磁性配位原子彼此旋轉錯位，無法靠純平移或空間反演重合，只能靠自旋翻轉 C2 結合晶格旋轉 Cn 或鏡面操作 [C2 ∥ Cn] 疊合。這使向上與向下自旋的等能面在動量空間彼此旋轉錯開，無需重元素強自旋-軌道耦合即可產生源自非相對論交換相互作用的交替自旋劈裂。",
+      "anchorSentenceId": "sent-cff17de5"
+    },
+    {
+      "id": "kp-altermagnet-nodal-harmonics",
+      "label": "動量空間 d-wave / g-wave / i-wave 交替劈裂與節線",
+      "suggestedQuestion": "交錯磁體的 d-wave 和 g-wave 自旋劈裂有什麼差別？為什麼沿某些特定方向看劈裂會歸零？",
+      "keywords": [
+        "d-wave",
+        "g-wave",
+        "節線",
+        "動量相依自旋劈裂",
+        "補償磁矩"
+      ],
+      "plainExplanation": "由於相反自旋子晶格由晶格旋轉或鏡面操作連結，動量相依交換劈裂項 J(k) 必須在該對稱操作下反號，從而在動量空間刻出偶數條劈裂嚴格為零的對稱節面或節線：四方金紅石型模型為具備 2 個節面的 d-wave，六方晶系（如 α-MnTe）為具備 4 個節面的 g-wave，更高階對稱則可呈現 6 個節面的 i-wave。正負劈裂葉瓣在布里淵區內的體積嚴格抵銷，故總磁化強度保持 M = 0。",
+      "anchorSentenceId": "sent-590694ce"
+    },
+    {
+      "id": "kp-altermagnet-mnte-arpes",
+      "label": "α-MnTe 的 ARPES/SARPES 光譜驗證與跨 T_N 行為",
+      "suggestedQuestion": "科學家如何用實驗確定 α-MnTe 的能帶劈裂真的來自交錯磁性，而不是傳統的相對論自旋-軌道耦合？",
+      "keywords": [
+        "α-MnTe",
+        "ARPES",
+        "SARPES",
+        "奈爾溫度",
+        "非相對論起源"
+      ],
+      "plainExplanation": "2024 年研究團隊利用角分辨與自旋分辨光電子能譜（ARPES/SARPES）量測中心對稱共線反鐵磁半導體 α-MnTe（T_N ≈ 307–310 K），在零淨磁化下直接測得約 100–370 meV 量級的 g-wave 動量相依自旋劈裂。該劈裂在自旋-軌道耦合極弱的價帶動量區依然存在，排除了傳統相對論效應；且當溫度升高越過奈爾溫度 T_N 進入順磁相時，劈裂隨磁序瓦解而消失、重新恢復克萊默斯簡併，提供了光譜上的直接實證。",
+      "anchorSentenceId": "sent-2a758820"
+    },
+    {
+      "id": "kp-altermagnet-materials-scrutiny",
+      "label": "已驗證材料與 RuO2 塊材磁序爭議之界線",
+      "suggestedQuestion": "目前有哪些材料確定屬於交錯磁體？為什麼常被作為教科書例子的 RuO2 會有實驗爭議？",
+      "keywords": [
+        "CrSb",
+        "RuO2",
+        "μSR",
+        "自旋分流效應",
+        "材料驗證"
+      ],
+      "plainExplanation": "在實驗確立進展上，六方半導體 α-MnTe 與金屬間化合物 CrSb 已取得多項直接的 ARPES 光譜證據，確認其 g-wave 動量相依自旋劈裂。相對地，早期廣被用來示範 d-wave 理論模型的金紅石氧化物 RuO2，後續針對高品質單晶進行的渺子自旋旋轉（μSR）等塊材探針測試對其本徵長程磁序提出了質疑，顯示在推進自旋電子學應用前仍須嚴格區分理想理論原型與真實塊材磁基態。",
+      "anchorSentenceId": "sent-0aa4db8e"
+    }
+  ]
+}

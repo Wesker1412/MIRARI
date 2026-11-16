@@ -1,5 +1,5 @@
 {
-  "lastRunTimestamp": "2026-11-15T09:00:00.000Z",
+  "lastRunTimestamp": "2026-11-16T09:00:00.000Z",
   "scheduledCron": "0 9 * * *",
   "timezone": "Asia/Taipei (UTC+8)",
   "creationModel": "gemini-2.5-pro",
@@ -860,6 +860,55 @@
             "Rajagopal, M., & Romani, R. W. (1995). \"Ultra-Low-Frequency Gravitational Radiation from Massive Black Hole Binaries.\" The Astrophysical Journal, 446, 543–549. doi:10.1086/175813"
           ],
           "editorialRecordPath": "content/editorial-records/pulsar-timing-array-gravitational-waves.json"
+        }
+      ]
+    },
+    {
+      "runId": "mirari-auto-run-20261116-0900",
+      "timestamp": "2026-11-16T09:00:00.000Z",
+      "targetCount": 3,
+      "succeededCount": 3,
+      "failedCount": 0,
+      "articles": [
+        {
+          "id": "art-altermagnetism-spin-splitting",
+          "slug": "altermagnetism-kramers-spin-splitting",
+          "title": "零淨磁矩卻能分裂電子自旋？交錯磁性（Altermagnetism）與第三種共線磁相的實驗確立",
+          "interactiveComponent": "AltermagnetSpinSimulator",
+          "status": "published",
+          "sources": [
+            "Šmejkal, L., Sinova, J., & Jungwirth, T. (2022). \"Beyond Conventional Ferromagnetism and Antiferromagnetism: A Phase with Nonrelativistic Spin and Crystal Rotation Symmetry.\" Physical Review X, 12(3), 031042. doi:10.1103/PhysRevX.12.031042",
+            "Šmejkal, L., Sinova, J., & Jungwirth, T. (2022). \"Emerging Research Landscape of Altermagnetism.\" Physical Review X, 12(4), 040501. doi:10.1103/PhysRevX.12.040501",
+            "Krempaský, J., Šmejkal, L., D'Souza, S. W., et al. (2024). \"Altermagnetic lifting of Kramers spin degeneracy.\" Nature, 626(7999), 517–522. doi:10.1038/s41586-023-06907-7"
+          ],
+          "editorialRecordPath": "content/editorial-records/altermagnetism-kramers-spin-splitting.json"
+        },
+        {
+          "id": "art-mammoth-chromoglass",
+          "slug": "woolly-mammoth-3d-genome-chromoglass",
+          "title": "五萬兩千年前的染色體玻璃：猛獁象皮膚如何凍結出三維基因組結構化石？",
+          "interactiveComponent": "ChromoglassHiCSimulator",
+          "status": "published",
+          "sources": [
+            "Sandoval-Velasco, M., Dudchenko, O., Rodríguez, J. A., Pérez Estrada, C., et al., Gilbert, M. T. P., Marti-Renom, M. A., & Lieberman Aiden, E. (2024). \"Three-dimensional genome architecture persists in a 52,000-year-old woolly mammoth skin sample.\" Cell, 187(14), 3541–3562.e51. doi:10.1016/j.cell.2024.06.002",
+            "Lieberman-Aiden, E., van Berkum, N. L., Williams, L., et al. (2009). \"Comprehensive Mapping of Long-Range Interactions Reveals Folding Principles of the Human Genome.\" Science, 326(5950), 289–293. doi:10.1126/science.1181369"
+          ],
+          "editorialRecordPath": "content/editorial-records/woolly-mammoth-3d-genome-chromoglass.json"
+        },
+        {
+          "id": "art-insect-flight-lev",
+          "slug": "insect-flight-leading-edge-vortex",
+          "title": "為什麼傳統飛機理論會算出大黃蜂飛不起來？昆蟲振翅的前緣渦流與非定常空氣動力學",
+          "interactiveComponent": "InsectFlappingLevSimulator",
+          "status": "published",
+          "sources": [
+            "Magnan, A. (1934). Le Vol des Insectes. Paris: Hermann.",
+            "Ellington, C. P., van den Berg, C., Willmott, A. P., & Thomas, A. L. R. (1996). \"Leading-edge vortices in insect flight.\" Nature, 384(6610), 626–630. doi:10.1038/384626a0",
+            "Dickinson, M. H., Lehmann, F.-O., & Sane, S. P. (1999). \"Wing rotation and the aerodynamic basis of insect flight.\" Science, 284(5422), 1954–1960. doi:10.1126/science.284.5422.1954",
+            "Lentink, D., & Dickinson, M. H. (2009). \"Rotational accelerations stabilize leading edge vortices on revolving fly wings.\" Journal of Experimental Biology, 212(16), 2705–2719. doi:10.1242/jeb.022269",
+            "Weis-Fogh, T. (1973). \"Quick estimates of flight fitness in hovering animals, including novel mechanisms for lift production.\" Journal of Experimental Biology, 59(1), 169–230."
+          ],
+          "editorialRecordPath": "content/editorial-records/insect-flight-leading-edge-vortex.json"
         }
       ]
     }

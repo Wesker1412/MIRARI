@@ -45,6 +45,9 @@ import { CircadianClockSimulator } from '../article/CircadianClockSimulator';
 import { VicsekFlockingSimulator } from '../article/VicsekFlockingSimulator';
 import { PhaseSeparationSimulator } from '../article/PhaseSeparationSimulator';
 import { PulsarTimingSimulator } from '../article/PulsarTimingSimulator';
+import { AltermagnetSpinSimulator } from '../article/AltermagnetSpinSimulator';
+import { ChromoglassHiCSimulator } from '../article/ChromoglassHiCSimulator';
+import { InsectFlappingLevSimulator } from '../article/InsectFlappingLevSimulator';
 
 export interface InteractiveParameterMeta {
   name: string;
@@ -834,6 +837,30 @@ export const INTERACTIVE_COMPONENTS: Record<string, InteractiveComponentMeta> = 
     parameters: [],
     keyConcepts: ['脈衝星計時陣列 (PTA)', 'Hellings-Downs 曲線', '地球項與脈衝星項', '奈赫茲重力波背景', '超大質量雙黑洞'],
     component: PulsarTimingSimulator,
+  },
+  AltermagnetSpinSimulator: {
+    id: 'AltermagnetSpinSimulator',
+    nameZh: '交錯磁性 (Altermagnetism) 自旋群對稱與動量空間劈裂模擬器',
+    descriptionZh: '對照鐵磁體、傳統反鐵磁體與交錯磁體之實空間晶格旋轉反演對稱、動量空間 d/g-wave 等能面自旋劈裂及 ARPES 色散切片，驗證跨過 Néel 溫度時的克萊默斯簡併恢復。',
+    parameters: [],
+    keyConcepts: ['交錯磁性 (Altermagnetism)', '克萊默斯簡併 (Kramers Degeneracy)', '自旋群對稱 (Spin Groups)', 'd-wave 與 g-wave 劈裂', 'α-MnTe SARPES 觀測'],
+    component: AltermagnetSpinSimulator,
+  },
+  ChromoglassHiCSimulator: {
+    id: 'ChromoglassHiCSimulator',
+    nameZh: '染色質玻璃態 (Chromoglass) 籠鎖擴散與 PaleoHi-C 接觸矩陣模擬器',
+    descriptionZh: '互動對照活細胞水合擴散、極寒凍乾玻璃態籠鎖與反覆凍融情境下之 DNA 斷裂高分子演化、即時 64×64 PaleoHi-C 熱圖及 P(s) 標度律曲線。',
+    parameters: [],
+    keyConcepts: ['染色質玻璃態 (Chromoglass)', 'PaleoHi-C 三維基因組', '分形球體 (Fractal Globule)', 'A/B 染色質區室', 'Stokes–Einstein 籠鎖擴散'],
+    component: ChromoglassHiCSimulator,
+  },
+  InsectFlappingLevSimulator: {
+    id: 'InsectFlappingLevSimulator',
+    nameZh: '昆蟲振翅非定常空氣動力學、前緣渦流 (LEV) 與旋轉環流模擬器',
+    descriptionZh: '對照定常固定翼失速、非定常振翅 LEV 附著與 Weis-Fogh 拍合甩開，即時可視化前緣渦核流線、翻轉相位脈衝及羅斯貝數 Ro 穩定邊界與瞬時 C_L(t) 分解曲線。',
+    parameters: [],
+    keyConcepts: ['前緣渦流 (Leading-Edge Vortex)', '延遲失速 (Delayed Stall)', '旋轉環流 (Rotational Circulation)', '尾流捕獲 (Wake Capture)', '羅斯貝數 (Rossby Number)'],
+    component: InsectFlappingLevSimulator,
   },
 };
 
