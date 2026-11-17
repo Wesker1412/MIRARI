@@ -439,7 +439,7 @@
       }
     ],
     "totalWordCount": 1930,
-    "lastIndexedAt": "2026-11-16T01:09:57.193Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.847Z"
   },
   {
     "id": "art-active-matter-vicsek",
@@ -1315,7 +1315,7 @@
       }
     ],
     "totalWordCount": 6268,
-    "lastIndexedAt": "2026-11-16T01:09:57.199Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.852Z"
   },
   {
     "id": "art-altermagnetism-spin-splitting",
@@ -2069,7 +2069,7 @@
       }
     ],
     "totalWordCount": 5790,
-    "lastIndexedAt": "2026-11-16T01:09:57.202Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.858Z"
   },
   {
     "id": "art-amygdala-memory-encoding",
@@ -2605,7 +2605,7 @@
       }
     ],
     "totalWordCount": 2692,
-    "lastIndexedAt": "2026-11-16T01:09:57.208Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.861Z"
   },
   {
     "id": "art-atp-synthase-rotary",
@@ -3287,7 +3287,7 @@
       }
     ],
     "totalWordCount": 3670,
-    "lastIndexedAt": "2026-11-16T01:09:57.211Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.864Z"
   },
   {
     "id": "art-bcs-superconductivity",
@@ -4075,7 +4075,7 @@
       }
     ],
     "totalWordCount": 4019,
-    "lastIndexedAt": "2026-11-16T01:09:57.213Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.866Z"
   },
   {
     "id": "art-bell-inequality-entanglement",
@@ -4815,7 +4815,7 @@
       }
     ],
     "totalWordCount": 4130,
-    "lastIndexedAt": "2026-11-16T01:09:57.216Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.868Z"
   },
   {
     "id": "art-bz-chemical-oscillator",
@@ -5336,7 +5336,7 @@
       }
     ],
     "totalWordCount": 3103,
-    "lastIndexedAt": "2026-11-16T01:09:57.218Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.870Z"
   },
   {
     "id": "art-biomolecular-condensates",
@@ -6138,7 +6138,7 @@
       }
     ],
     "totalWordCount": 5300,
-    "lastIndexedAt": "2026-11-16T01:09:57.220Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.872Z"
   },
   {
     "id": "art-biomolecular-diffusion-af3",
@@ -6611,7 +6611,7 @@
       }
     ],
     "totalWordCount": 3276,
-    "lastIndexedAt": "2026-11-16T01:09:57.221Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.874Z"
   },
   {
     "id": "art-bismuth-sulfide-photovoltaics",
@@ -7243,7 +7243,7 @@
       }
     ],
     "totalWordCount": 2906,
-    "lastIndexedAt": "2026-11-16T01:09:57.223Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.875Z"
   },
   {
     "id": "art-boson-sampling-quantum",
@@ -7959,7 +7959,7 @@
       }
     ],
     "totalWordCount": 3703,
-    "lastIndexedAt": "2026-11-16T01:09:57.225Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.878Z"
   },
   {
     "id": "art-brownian-ratchet-motors",
@@ -8664,7 +8664,7 @@
       }
     ],
     "totalWordCount": 3332,
-    "lastIndexedAt": "2026-11-16T01:09:57.226Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.880Z"
   },
   {
     "id": "art-car-t-immunology",
@@ -9240,7 +9240,7 @@
       }
     ],
     "totalWordCount": 3087,
-    "lastIndexedAt": "2026-11-16T01:09:57.228Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.882Z"
   },
   {
     "id": "art-chandrasekhar-limit",
@@ -9960,7 +9960,7 @@
       }
     ],
     "totalWordCount": 3556,
-    "lastIndexedAt": "2026-11-16T01:09:57.232Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.884Z"
   },
   {
     "id": "art-chaos-double-pendulum",
@@ -10483,7 +10483,7 @@
       }
     ],
     "totalWordCount": 2065,
-    "lastIndexedAt": "2026-11-16T01:09:57.233Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.888Z"
   },
   {
     "id": "art-circadian-feedback-oscillator",
@@ -11018,7 +11018,934 @@
       }
     ],
     "totalWordCount": 3671,
-    "lastIndexedAt": "2026-11-16T01:09:57.234Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.891Z"
+  },
+  {
+    "id": "art-compressed-sensing-l1",
+    "slug": "compressed-sensing-l1-nyquist-recovery",
+    "version": 1,
+    "publishedDate": "2026-11-17",
+    "status": "published",
+    "editorialCategory": "scientific_principles",
+    "narrativeStyle": "geometric_derivation",
+    "format": "depth",
+    "formatBadgeText": "訊號與數學原理",
+    "title": "壓縮感知（Compressed Sensing）：為何高維稀疏訊號能突破奈奎斯特採樣極限？",
+    "subtitle": "從「先採樣再丟棄」的資訊浪費悖論出發，透過 L1 菱形多胞體的凸幾何頂點與隨機不相干投影，拆解稀疏訊號如何僅憑極少測量精確重建",
+    "summary": "傳統奈奎斯特–夏農採樣定理要求採樣頻率至少為訊號最高頻率的兩倍，迫使相機與磁振造影儀先耗費龐大資源錄下數百萬筆數據，再於壓縮階段將九成以上的微小係數直接捨棄。2006 年 Candès、Romberg、Tao 與 Donoho 提出「壓縮感知」理論，證明只要訊號在某個正交基底（如傅立葉或小波域）僅有 K ≪ N 個非零分量，便能以遠少於 N 的 M ~ O(K ln N) 個隨機不相干測量，透過求解凸優化的 ℓ1 範數最小化（Basis Pursuit）達成高機率精確重建。本文從高維凸幾何出發，對比 ℓ1 菱形、ℓ2 圓球與 ℓ0.5 非凸星形的碰撞幾何，並結合瀏覽器內即時執行的 N = 64 ISTA 演算法實驗室與 Lustig 等人（2007）的 Sparse MRI 臨床突破，剖析繞過奈奎斯特極限的數學本質與適用邊界。",
+    "topicIds": [
+      "topic-information-theory",
+      "topic-optics-geometry"
+    ],
+    "tags": [
+      "壓縮感知",
+      "奈奎斯特採樣定理",
+      "L1範數",
+      "凸優化",
+      "稀疏訊號",
+      "Basis Pursuit",
+      "ISTA",
+      "Sparse MRI"
+    ],
+    "difficultyLevel": "intermediate",
+    "interactiveComponent": "CompressedSensingSimulator",
+    "interactiveType": "convex_signal_recovery",
+    "estimatedReadTimeMinutes": 16,
+    "leadParagraph": "每一次你用手機拍下一張千萬畫素的照片，感光元件都老實地讀出了一千多萬個像素的亮度；緊接著不到幾毫秒，JPEG 壓縮演算法就會把這張照片轉換到頻率空間，發現其中絕大多數高頻係數幾乎為零，於是毫不猶豫地把超過九成的數據直接丟進垃圾桶。這構成了現代資訊工程最顯眼的一道荒謬悖論：既然我們早已知道自然界多數訊號本質上高度稀疏，為何感測器還得先辛苦採集全部數據，再大費周章地將它們扔掉？",
+    "quoteLead": "壓縮感知的秘密不在於違反數學方程的自由度，而是利用 L1 菱形多胞體沿座標軸突出的尖銳頂點，在無窮多組滿足欠採樣測量方程的解當中，精準鎖定唯一落在稀疏座標面上的真實訊號。",
+    "authors": [
+      {
+        "name": "MIRARI 資訊理論與應用數學組",
+        "role": "科學撰稿與演算法設計"
+      }
+    ],
+    "references": [
+      {
+        "id": "ref-candes-2006-tit",
+        "citation": "Candès, E. J., Romberg, J., & Tao, T. (2006). \"Robust uncertainty principles: exact signal reconstruction from highly incomplete frequency information.\" IEEE Transactions on Information Theory, 52(2), 489–509.",
+        "doi": "10.1109/TIT.2005.862083"
+      },
+      {
+        "id": "ref-donoho-2006-tit",
+        "citation": "Donoho, D. L. (2006). \"Compressed sensing.\" IEEE Transactions on Information Theory, 52(4), 1289–1306.",
+        "doi": "10.1109/TIT.2006.871582"
+      },
+      {
+        "id": "ref-lustig-2007-mrm",
+        "citation": "Lustig, M., Donoho, D., & Pauly, J. M. (2007). \"Sparse MRI: The application of compressed sensing for rapid MR imaging.\" Magnetic Resonance in Medicine, 58(6), 1182–1195.",
+        "doi": "10.1002/mrm.21391"
+      }
+    ],
+    "contentHash": "81c583394f05fa23f85f61da63098b3e4aef52661395026dd1f3ab331e967c4f",
+    "sections": [
+      {
+        "id": "sec-1-0dcfa3",
+        "title": "一、先全量採樣再丟掉九成：資訊時代的「採樣浪費悖論」",
+        "level": 2,
+        "paragraphs": [
+          "半個多世紀以來，所有數位通訊、醫學影像與感測器設計都奉行同一條鐵律：**奈奎斯特–夏農採樣定理（Nyquist–Shannon Sampling Theorem）**。這條定理告訴我們，若想從離散取樣點毫無失真地還原一段連續訊號，採樣率必須至少達到訊號最高頻寬的兩倍；一旦採樣間隔過疏，高頻成分就會像快速旋轉的車輪在電影鏡頭下出現「倒轉」幻覺一樣，摺疊成低頻區的虛假偽影，也就是所謂的**混疊（Aliasing）**。",
+          "在訊號對頻寬一無所知的假設下，奈奎斯特極限確實無可撼動。但問題在於，現實世界的物理訊號、語音波形、天文電波與醫學影像極少是毫無結構的隨機雜訊。當我們把一段長度為 $N$ 的訊號 $\\mathbf{s} \\in \\mathbb{R}^N$ 投影到某個合適的正交基底（例如傅立葉基底或小波基底 $\\mathbf{\\Psi}$）上時，它往往呈現極強的**稀疏性（Sparsity）**——也就是絕大多數基底係數皆為零（或趨近於零），真正承載訊號資訊的非零分量只有 $K \\ll N$ 個。",
+          "這正是工程實務裡最昂貴的浪費：感測硬體為了遵守奈奎斯特門檻，必須先採集龐大的 $N$ 筆原始數據，隨即在後端軟體壓縮時丟棄其中九成以上的冗餘係數。讀者很自然會反問：既然真正有用的分量只有 $K$ 個，為什麼我們不乾脆只測這 $K$ 個係數就好？困難在於，測量當下我們並不知道那 $K$ 個非零分量究竟藏在 $N$ 個頻率或位置索引中的哪幾個！若是隨意等間距跳著採樣，傳統重建只會製造出滿場的混疊幽靈。",
+          "2006 年，伊曼紐爾·坎德斯（Emmanuel J. Candès）、賈斯汀·羅姆伯格（Justin Romberg）與陶哲軒（Terence Tao）在《IEEE Transactions on Information Theory》發表開創性論文，同時大衛·多諾霍（David L. Donoho）也在同期刊物系統建立起**壓縮感知（Compressed Sensing）**理論架構。他們給出了一個顛覆直覺的答案：只要訊號在某個已知基底下足夠稀疏，我們根本不必預先知道非零係數的位置；只需透過與稀疏基底**不相干（Incoherent）**的隨機投影直接測量遠少於 $N$ 的 $M \\sim O(K \\ln N)$ 個線性組合值，就能將稀疏訊號的完整結構壓縮鎖進低維觀測向量裡，並在事後以多項式時間演算法精確無誤地逆推回來。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-cadf8dd4",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-1-0dcfa3",
+            "sectionTitle": "一、先全量採樣再丟掉九成：資訊時代的「採樣浪費悖論」",
+            "paragraphIndex": 0,
+            "exactQuote": "半個多世紀以來，所有數位通訊、醫學影像與感測器設計都奉行同一條鐵律：**奈奎斯特–夏農採樣定理（Nyquist–Shannon Sampling Theorem）**。",
+            "charStart": 0,
+            "charEnd": 84,
+            "contentHash": "cadf8dd40b6b141bdc398987c2220e28fb1eb74ebd01342959af6fd69991e1f6",
+            "contextNote": "一、先全量採樣再丟掉九成：資訊時代的「採樣浪費悖論」 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-65b47e56",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-1-0dcfa3",
+            "sectionTitle": "一、先全量採樣再丟掉九成：資訊時代的「採樣浪費悖論」",
+            "paragraphIndex": 0,
+            "exactQuote": "這條定理告訴我們，若想從離散取樣點毫無失真地還原一段連續訊號，採樣率必須至少達到訊號最高頻寬的兩倍；一旦採樣間隔過疏，高頻成分就會像快速旋轉的車輪在電影鏡頭下出現「倒轉」幻覺一樣，摺疊成低頻區的虛假偽影，也就是所謂的**混疊（Aliasing）**。",
+            "charStart": 85,
+            "charEnd": 210,
+            "contentHash": "65b47e560ecc9320d95463cb4a4e3f4aab4c90d71b05918295589b552438e2f0",
+            "contextNote": "一、先全量採樣再丟掉九成：資訊時代的「採樣浪費悖論」 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-b2fd9006",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-1-0dcfa3",
+            "sectionTitle": "一、先全量採樣再丟掉九成：資訊時代的「採樣浪費悖論」",
+            "paragraphIndex": 1,
+            "exactQuote": "在訊號對頻寬一無所知的假設下，奈奎斯特極限確實無可撼動。",
+            "charStart": 422,
+            "charEnd": 450,
+            "contentHash": "b2fd9006a6567c6fded8785a9dcd00a27600a8b284c04f731dd12aabf6c652e2",
+            "contextNote": "一、先全量採樣再丟掉九成：資訊時代的「採樣浪費悖論」 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-a02104b5",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-1-0dcfa3",
+            "sectionTitle": "一、先全量採樣再丟掉九成：資訊時代的「採樣浪費悖論」",
+            "paragraphIndex": 1,
+            "exactQuote": "但問題在於，現實世界的物理訊號、語音波形、天文電波與醫學影像極少是毫無結構的隨機雜訊。",
+            "charStart": 451,
+            "charEnd": 494,
+            "contentHash": "a02104b57d683f70802dc216070c584fd7fc269e1920c2c18a435e1e02e91368",
+            "contextNote": "一、先全量採樣再丟掉九成：資訊時代的「採樣浪費悖論」 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-ba7a8282",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-1-0dcfa3",
+            "sectionTitle": "一、先全量採樣再丟掉九成：資訊時代的「採樣浪費悖論」",
+            "paragraphIndex": 1,
+            "exactQuote": "當我們把一段長度為 $N$ 的訊號 $\\mathbf{s} \\in \\mathbb{R}^N$ 投影到某個合適的正交基底（例如傅立葉基底或小波基底 $\\mathbf{\\Psi}$）上時，它往往呈現極強的**稀疏性（Sparsity）**——也就是絕大多數基底係數皆為零（或趨近於零），真正承載訊號資訊的非零分量只有 $K \\ll N$ 個。",
+            "charStart": 495,
+            "charEnd": 665,
+            "contentHash": "ba7a8282f36d826add1f39900825096000fba2fb2884ed98d4e8a82f9c2d6441",
+            "contextNote": "一、先全量採樣再丟掉九成：資訊時代的「採樣浪費悖論」 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-2d77e8a8",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-1-0dcfa3",
+            "sectionTitle": "一、先全量採樣再丟掉九成：資訊時代的「採樣浪費悖論」",
+            "paragraphIndex": 2,
+            "exactQuote": "這正是工程實務裡最昂貴的浪費：感測硬體為了遵守奈奎斯特門檻，必須先採集龐大的 $N$ 筆原始數據，隨即在後端軟體壓縮時丟棄其中九成以上的冗餘係數。",
+            "charStart": 909,
+            "charEnd": 982,
+            "contentHash": "2d77e8a8feccda1d040e5a2146490816e6f588cca0ecb8cfcf395cab61c041ae",
+            "contextNote": "一、先全量採樣再丟掉九成：資訊時代的「採樣浪費悖論」 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-ae5ba803",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-1-0dcfa3",
+            "sectionTitle": "一、先全量採樣再丟掉九成：資訊時代的「採樣浪費悖論」",
+            "paragraphIndex": 2,
+            "exactQuote": "讀者很自然會反問：既然真正有用的分量只有 $K$ 個，為什麼我們不乾脆只測這 $K$ 個係數就好？",
+            "charStart": 983,
+            "charEnd": 1032,
+            "contentHash": "ae5ba803773e5a07157fb0ee6c4308f514532c12a13dada8759dadff5da46a26",
+            "contextNote": "一、先全量採樣再丟掉九成：資訊時代的「採樣浪費悖論」 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-bf0fcfd2",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-1-0dcfa3",
+            "sectionTitle": "一、先全量採樣再丟掉九成：資訊時代的「採樣浪費悖論」",
+            "paragraphIndex": 2,
+            "exactQuote": "困難在於，測量當下我們並不知道那 $K$ 個非零分量究竟藏在 $N$ 個頻率或位置索引中的哪幾個！",
+            "charStart": 1033,
+            "charEnd": 1082,
+            "contentHash": "bf0fcfd29f84ebc0e4ba93d5a2fe13d74c9e6d92820e83fdf235f3e05ec81095",
+            "contextNote": "一、先全量採樣再丟掉九成：資訊時代的「採樣浪費悖論」 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-2a78ce81",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-1-0dcfa3",
+            "sectionTitle": "一、先全量採樣再丟掉九成：資訊時代的「採樣浪費悖論」",
+            "paragraphIndex": 2,
+            "exactQuote": "若是隨意等間距跳著採樣，傳統重建只會製造出滿場的混疊幽靈。",
+            "charStart": 1083,
+            "charEnd": 1112,
+            "contentHash": "2a78ce811556722f264187d2949d09c8928c9caf6e65305d9ffc85af1c1b0dcc",
+            "contextNote": "一、先全量採樣再丟掉九成：資訊時代的「採樣浪費悖論」 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-99b31d69",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-1-0dcfa3",
+            "sectionTitle": "一、先全量採樣再丟掉九成：資訊時代的「採樣浪費悖論」",
+            "paragraphIndex": 3,
+            "exactQuote": "2006 年，伊曼紐爾·坎德斯（Emmanuel J. Candès）、賈斯汀·羅姆伯格（Justin Romberg）與陶哲軒（Terence Tao）在《IEEE Transactions on Information Theory》發表開創性論文，同時大衛·多諾霍（David L. Donoho）也在同期刊物系統建立起**壓縮感知（Compressed Sensing）**理論架構。",
+            "charStart": 1315,
+            "charEnd": 1511,
+            "contentHash": "99b31d69f8b1b8514c78ffd16fe9ed64b9491a1e535c02f8e0b84f24b9afe158",
+            "contextNote": "一、先全量採樣再丟掉九成：資訊時代的「採樣浪費悖論」 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-e1f06222",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-1-0dcfa3",
+            "sectionTitle": "一、先全量採樣再丟掉九成：資訊時代的「採樣浪費悖論」",
+            "paragraphIndex": 3,
+            "exactQuote": "他們給出了一個顛覆直覺的答案：只要訊號在某個已知基底下足夠稀疏，我們根本不必預先知道非零係數的位置；只需透過與稀疏基底**不相干（Incoherent）**的隨機投影直接測量遠少於 $N$ 的 $M \\sim O(K \\ln N)$ 個線性組合值，就能將稀疏訊號的完整結構壓縮鎖進低維觀測向量裡，並在事後以多項式時間演算法精確無誤地逆推回來。",
+            "charStart": 1512,
+            "charEnd": 1683,
+            "contentHash": "e1f062220eafb9c7abeea9af5b0449b0154fd7ad125d28429cffc8e9976e4caa",
+            "contextNote": "一、先全量採樣再丟掉九成：資訊時代的「採樣浪費悖論」 · 第 4 段"
+          }
+        ],
+        "formulas": [],
+        "interactiveComponentId": null
+      },
+      {
+        "id": "sec-2-818766",
+        "title": "二、欠定線性系統與 NP-Hard 組合牆：為何 L0 不可解而 L2 會失真？",
+        "level": 2,
+        "paragraphs": [
+          "把這道物理問題寫成線性代數，我們立刻會撞上一道看似無解的算術死結。設 $\\mathbf{x} \\in \\mathbb{R}^N$ 為訊號在稀疏基底下的展開係數向量（其中僅有 $K$ 個非零項），我們透過感測矩陣 $\\mathbf{\\Phi} \\in \\mathbb{R}^{M \\times N}$ 取得了 $M$ 個測量值：",
+          "$$\\mathbf{y} = \\mathbf{\\Phi} \\mathbf{x}$$",
+          "由於測量數遠小於未知數維度（$M \\ll N$），這是一個**欠定線性系統（Underdetermined Linear System）**——方程式的數量遠少於未知變數的數量，就像只給出兩張側面 X 光投影卻要猜出三維空間裡數十顆彈珠的精確位置。滿足 $\\mathbf{\\Phi}\\mathbf{x} = \\mathbf{y}$ 的解並非只有一個，而是構成一個無窮延伸的 $(N - M)$ 維仿射子空間。",
+          "要在無窮多個候選解當中挑出真正稀疏的那一個，最直接的想法是尋找「非零元素個數最少」的解，也就是最小化向量中非零項的計數——數學上稱為 **$\\ell_0$ 範數（$\\ell_0$ Pseudo-norm）**，記作 $\\|\\mathbf{x}\\|_0$：",
+          "$$\\min_{\\mathbf{x} \\in \\mathbb{R}^N} \\|\\mathbf{x}\\|_0 \\quad \\text{s.t.} \\quad \\mathbf{y} = \\mathbf{\\Phi}\\mathbf{x}$$",
+          "然而，$\\ell_0$ 最小化雖然概念直觀，在計算複雜度上卻是一場災難。因為我們不知道非零項落在哪裡，演算法理論上必須窮舉所有 $\\binom{N}{K}$ 種可能的位置組合逐一檢驗；當訊號長度 $N = 1000$、稀疏度 $K = 50$ 時，組合數早已超越宇宙已知原子總數，使一般性的 $\\ell_0$ 最小化落入 **NP-hard** 組合爆炸的絕壁。",
+          "既然數非零個數算不動，工程師最熟悉的替代方案則是換成**$\\ell_2$ 範數（Euclidean Norm）**，也就是尋找「總能量最小」的解：",
+          "$$\\min_{\\mathbf{x} \\in \\mathbb{R}^N} \\|\\mathbf{x}\\|_2 = \\sqrt{\\sum_{i=1}^N x_i^2} \\quad \\text{s.t.} \\quad \\mathbf{y} = \\mathbf{\\Phi}\\mathbf{x}$$",
+          "$\\ell_2$ 最小化有極為優雅的線性代數解析解（即最小能量偽逆矩陣 $\\hat{\\mathbf{x}}_{\\ell_2} = \\mathbf{\\Phi}^T (\\mathbf{\\Phi}\\mathbf{\\Phi}^T)^{-1} \\mathbf{y}$），計算飛快且凸性完美。但代價是它對稀疏性完全視而不見：為了壓低平方和，它傾向把原本集中在少數尖峰上的能量平均攤分給所有 $N$ 個座標分量，最後給出一團處處非零、模糊失真的稠密假訊號。",
+          "於是科學家站在一道兩難的分岔路口：$\\ell_0$ 精準卻算不出來，$\\ell_2$ 好算卻徹底抹平稀疏結構。真正的突破，來自把目標函數剛好夾在兩者正中間的 **$\\ell_1$ 範數**。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-f13e7aa2",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-2-818766",
+            "sectionTitle": "二、欠定線性系統與 NP-Hard 組合牆：為何 L0 不可解而 L2 會失真？",
+            "paragraphIndex": 0,
+            "exactQuote": "把這道物理問題寫成線性代數，我們立刻會撞上一道看似無解的算術死結。",
+            "charStart": 2053,
+            "charEnd": 2086,
+            "contentHash": "f13e7aa249c6caa68ee62274ce8f2a9571b2b17a2fdb5d8ebca47ede1076149d",
+            "contextNote": "二、欠定線性系統與 NP-Hard 組合牆：為何 L0 不可解而 L2 會失真？ · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-7c3553b9",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-2-818766",
+            "sectionTitle": "二、欠定線性系統與 NP-Hard 組合牆：為何 L0 不可解而 L2 會失真？",
+            "paragraphIndex": 0,
+            "exactQuote": "設 $\\mathbf{x} \\in \\mathbb{R}^N$ 為訊號在稀疏基底下的展開係數向量（其中僅有 $K$ 個非零項），我們透過感測矩陣 $\\mathbf{\\Phi} \\in \\mathbb{R}^{M \\times N}$ 取得了 $M$ 個測量值：",
+            "charStart": 2087,
+            "charEnd": 2217,
+            "contentHash": "7c3553b9b61c9fd1f9ff0bbb4f9135e7c23958ab340871cb8bfb3b3885d76d92",
+            "contextNote": "二、欠定線性系統與 NP-Hard 組合牆：為何 L0 不可解而 L2 會失真？ · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-26bda6bf",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-2-818766",
+            "sectionTitle": "二、欠定線性系統與 NP-Hard 組合牆：為何 L0 不可解而 L2 會失真？",
+            "paragraphIndex": 2,
+            "exactQuote": "由於測量數遠小於未知數維度（$M \\ll N$），這是一個**欠定線性系統（Underdetermined Linear System）**——方程式的數量遠少於未知變數的數量，就像只給出兩張側面 X 光投影卻要猜出三維空間裡數十顆彈珠的精確位置。",
+            "charStart": 2383,
+            "charEnd": 2507,
+            "contentHash": "26bda6bf292d9b521c13e6ad04620e2f43fdfe73428fc9a50ec4e0b2d03b9c88",
+            "contextNote": "二、欠定線性系統與 NP-Hard 組合牆：為何 L0 不可解而 L2 會失真？ · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-a32f9122",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-2-818766",
+            "sectionTitle": "二、欠定線性系統與 NP-Hard 組合牆：為何 L0 不可解而 L2 會失真？",
+            "paragraphIndex": 2,
+            "exactQuote": "滿足 $\\mathbf{\\Phi}\\mathbf{x} = \\mathbf{y}$ 的解並非只有一個，而是構成一個無窮延伸的 $(N - M)$ 維仿射子空間。",
+            "charStart": 2508,
+            "charEnd": 2588,
+            "contentHash": "a32f91226dfbc4af32d7adb9c8de8442347b00bfdc923aee6489a8d4609d8a6e",
+            "contextNote": "二、欠定線性系統與 NP-Hard 組合牆：為何 L0 不可解而 L2 會失真？ · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-12ff597a",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-2-818766",
+            "sectionTitle": "二、欠定線性系統與 NP-Hard 組合牆：為何 L0 不可解而 L2 會失真？",
+            "paragraphIndex": 3,
+            "exactQuote": "要在無窮多個候選解當中挑出真正稀疏的那一個，最直接的想法是尋找「非零元素個數最少」的解，也就是最小化向量中非零項的計數——數學上稱為 **$\\ell_0$ 範數（$\\ell_0$ Pseudo-norm）**，記作 $\\|\\mathbf{x}\\|_0$：",
+            "charStart": 2795,
+            "charEnd": 2922,
+            "contentHash": "12ff597af9940ed6664941fc69ea53d71402e0cccf97209d1ea260a725f28d5b",
+            "contextNote": "二、欠定線性系統與 NP-Hard 組合牆：為何 L0 不可解而 L2 會失真？ · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-442d17ed",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-2-818766",
+            "sectionTitle": "二、欠定線性系統與 NP-Hard 組合牆：為何 L0 不可解而 L2 會失真？",
+            "paragraphIndex": 5,
+            "exactQuote": "然而，$\\ell_0$ 最小化雖然概念直觀，在計算複雜度上卻是一場災難。",
+            "charStart": 3052,
+            "charEnd": 3088,
+            "contentHash": "442d17ed589586ca760b26c56ee25df5c8aa7b520a32bc2473f8131d8b60f30e",
+            "contextNote": "二、欠定線性系統與 NP-Hard 組合牆：為何 L0 不可解而 L2 會失真？ · 第 6 段"
+          },
+          {
+            "sentenceId": "sent-8e505168",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-2-818766",
+            "sectionTitle": "二、欠定線性系統與 NP-Hard 組合牆：為何 L0 不可解而 L2 會失真？",
+            "paragraphIndex": 5,
+            "exactQuote": "因為我們不知道非零項落在哪裡，演算法理論上必須窮舉所有 $\\binom{N}{K}$ 種可能的位置組合逐一檢驗；當訊號長度 $N = 1000$、稀疏度 $K = 50$ 時，組合數早已超越宇宙已知原子總數，使一般性的 $\\ell_0$ 最小化落入 **NP-hard** 組合爆炸的絕壁。",
+            "charStart": 3089,
+            "charEnd": 3234,
+            "contentHash": "8e505168fdcfa354657ddffa633c86eaf64fdd123340f45d69810e307b26e4cc",
+            "contextNote": "二、欠定線性系統與 NP-Hard 組合牆：為何 L0 不可解而 L2 會失真？ · 第 6 段"
+          },
+          {
+            "sentenceId": "sent-57c7f626",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-2-818766",
+            "sectionTitle": "二、欠定線性系統與 NP-Hard 組合牆：為何 L0 不可解而 L2 會失真？",
+            "paragraphIndex": 6,
+            "exactQuote": "既然數非零個數算不動，工程師最熟悉的替代方案則是換成**$\\ell_2$ 範數（Euclidean Norm）**，也就是尋找「總能量最小」的解：",
+            "charStart": 3418,
+            "charEnd": 3491,
+            "contentHash": "57c7f626acf3347cb2765cb43559d80de9e4d453188d0fd889900293fcf97f55",
+            "contextNote": "二、欠定線性系統與 NP-Hard 組合牆：為何 L0 不可解而 L2 會失真？ · 第 7 段"
+          },
+          {
+            "sentenceId": "sent-999cface",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-2-818766",
+            "sectionTitle": "二、欠定線性系統與 NP-Hard 組合牆：為何 L0 不可解而 L2 會失真？",
+            "paragraphIndex": 8,
+            "exactQuote": "$\\ell_2$ 最小化有極為優雅的線性代數解析解（即最小能量偽逆矩陣 $\\hat{\\mathbf{x}}_{\\ell_2} = \\mathbf{\\Phi}^T (\\mathbf{\\Phi}\\mathbf{\\Phi}^T)^{-1} \\mathbf{y}$），計算飛快且凸性完美。",
+            "charStart": 3567,
+            "charEnd": 3707,
+            "contentHash": "999cface45bb3a307b459e83445187fdb6269ad93014cf9d07f49e72aede926b",
+            "contextNote": "二、欠定線性系統與 NP-Hard 組合牆：為何 L0 不可解而 L2 會失真？ · 第 9 段"
+          },
+          {
+            "sentenceId": "sent-5cb3e932",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-2-818766",
+            "sectionTitle": "二、欠定線性系統與 NP-Hard 組合牆：為何 L0 不可解而 L2 會失真？",
+            "paragraphIndex": 8,
+            "exactQuote": "但代價是它對稀疏性完全視而不見：為了壓低平方和，它傾向把原本集中在少數尖峰上的能量平均攤分給所有 $N$ 個座標分量，最後給出一團處處非零、模糊失真的稠密假訊號。",
+            "charStart": 3708,
+            "charEnd": 3789,
+            "contentHash": "5cb3e932770be302e9ee9fd02ae865974d8064a46a0841a14e1cb89952365885",
+            "contextNote": "二、欠定線性系統與 NP-Hard 組合牆：為何 L0 不可解而 L2 會失真？ · 第 9 段"
+          },
+          {
+            "sentenceId": "sent-6d6b2c22",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-2-818766",
+            "sectionTitle": "二、欠定線性系統與 NP-Hard 組合牆：為何 L0 不可解而 L2 會失真？",
+            "paragraphIndex": 9,
+            "exactQuote": "於是科學家站在一道兩難的分岔路口：$\\ell_0$ 精準卻算不出來，$\\ell_2$ 好算卻徹底抹平稀疏結構。",
+            "charStart": 4013,
+            "charEnd": 4068,
+            "contentHash": "6d6b2c22b9f4049873f89144102b5c84496778873065614675e7c1a6bb7cb6a5",
+            "contextNote": "二、欠定線性系統與 NP-Hard 組合牆：為何 L0 不可解而 L2 會失真？ · 第 10 段"
+          },
+          {
+            "sentenceId": "sent-7da01244",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-2-818766",
+            "sectionTitle": "二、欠定線性系統與 NP-Hard 組合牆：為何 L0 不可解而 L2 會失真？",
+            "paragraphIndex": 9,
+            "exactQuote": "真正的突破，來自把目標函數剛好夾在兩者正中間的 **$\\ell_1$ 範數**。",
+            "charStart": 4069,
+            "charEnd": 4109,
+            "contentHash": "7da012448efd01d7f238a5fb067b0f9f1145571610a2086950eae5fadf8af9c0",
+            "contextNote": "二、欠定線性系統與 NP-Hard 組合牆：為何 L0 不可解而 L2 會失真？ · 第 10 段"
+          }
+        ],
+        "formulas": [
+          "$$\\mathbf{y} = \\mathbf{\\Phi} \\mathbf{x}$$",
+          "$$\\min_{\\mathbf{x} \\in \\mathbb{R}^N} \\|\\mathbf{x}\\|_0 \\quad \\text{s.t.} \\quad \\mathbf{y} = \\mathbf{\\Phi}\\mathbf{x}$$",
+          "$$\\min_{\\mathbf{x} \\in \\mathbb{R}^N} \\|\\mathbf{x}\\|_2 = \\sqrt{\\sum_{i=1}^N x_i^2} \\quad \\text{s.t.} \\quad \\mathbf{y} = \\mathbf{\\Phi}\\mathbf{x}$$"
+        ],
+        "interactiveComponentId": null
+      },
+      {
+        "id": "sec-3-91aadc",
+        "title": "三、高維凸幾何的奇蹟：為何 L1 菱形尖角總能精準戳中稀疏座標軸？",
+        "level": 2,
+        "paragraphs": [
+          "為什麼僅僅把平方和換成絕對值總和 $\\|\\mathbf{x}\\|_1 = \\sum_{i=1}^N |x_i|$，亦即求解所謂的 **Basis Pursuit（基底追蹤）**凸優化問題：",
+          "$$\\min_{\\mathbf{x} \\in \\mathbb{R}^N} \\|\\mathbf{x}\\|_1 \\quad \\text{s.t.} \\quad \\mathbf{y} = \\mathbf{\\Phi}\\mathbf{x}$$",
+          "就能奇蹟似地在極高機率下直接鎖定 $\\ell_0$ 的唯一稀疏解？這個問題最深刻、最無可替代的解答不在繁瑣的代數推導裡，而在高維空間的**凸幾何（Convex Geometry）**之中。",
+          "先將高維度簡化到我們雙眼能直接看穿的二維平面 $(x_1, x_2)$。假設未知訊號有兩個分量 $(x_1, x_2)$，但我們只測得一條線性方程式 $a_1 x_1 + a_2 x_2 = b$（代表一條斜穿過第一象限的直線，即所有符合測量結果的欠定解集合）。現在我們要把以原點為中心的「範數球」從半徑 $r = 0$ 開始慢慢吹氣膨脹，直到它的邊界**第一次撞上**這條測量直線——那個最初的接觸點，就是該範數最小化所挑出的答案：",
+          "- **$\\ell_2$ 歐氏圓盤（光滑的圓形氣球）**：滿足 $x_1^2 + x_2^2 \\le r^2$ 的集合是一個處處平滑、沒有任何稜角的圓盤。當圓形氣球慢慢脹大去碰觸那條傾斜的測量直線時，由於圓周完全圓潤，只要直線不是恰好水平或垂直，圓球總是用它平滑的斜邊去親吻直線的內側。結果切點幾乎必定落在 $(x_1 \\neq 0, x_2 \\neq 0)$ 的位置——兩個分量全都非零，稀疏性完全喪失。\n- **$\\ell_1$ 菱形多胞體（尖角朝向座標軸的鑽石晶體）**：滿足 $|x_1| + |x_2| \\le r$ 的集合在二維平面是一個旋轉 $45^\\circ$ 擺放的正方形菱形，它的四個尖銳頂點 $(\\pm r, 0)$ 與 $(0, \\pm r)$ 剛好死死對準 $x_1$ 與 $x_2$ 兩條座標軸！想像你在二維平面上把一顆鑽石菱形從原點等比例吹大去撞向那條傾斜直線：因為四個角比平坦的斜邊突出得多，除了直線斜率剛好等於 $\\pm 1$ 的零測度退化特例外，鑽石菱形永遠會先用它突出的尖角精準戳中直線與某一條座標軸的交點（例如 $(b/a_1, 0)$）——於是另一個座標分量嚴格歸零，稀疏解就這樣自然誕生了！\n- **$\\ell_p$（$0 < p < 1$）非凸星形（內凹的四芒星）**：如果把次方進一步壓低到 $p = 0.5$，集合 $(|x_1|^{0.5} + |x_2|^{0.5})^2 \\le r$ 的側邊會向內凹陷，沿著座標軸伸出比 $\\ell_1$ 更細長的尖刺，確實同樣能戳中稀疏座標軸。但代價極為致命：它的幾何形狀不再是**凸集（Convex Set）**。在數千維甚至數百萬維的真實訊號空間裡，非凸優化佈滿了無數局部極小值的陷阱，數值求解器極易卡死在錯誤的山谷；唯有 $\\ell_1$ 菱形在「保持凸幾何（確保全域唯一最優解可在多項式時間穩定收斂）」與「擁有沿座標軸尖銳頂點（迫使分量歸零）」之間，達成堪稱完美的數學平衡。",
+          "當維度從二維推升到 $N$ 維時，這種幾何差異會以驚人的指數倍率放大。$N$ 維 $\\ell_1$ 球稱為**正交多胞體（Cross-Polytope）**，它的 $2N$ 個頂點精準指向 $N$ 條稀疏單軸，低維邊脊則對應 $K$-稀疏子空間；在這個高維空間裡，隨便切過一張低維隨機超平面，幾乎總是先擦過這顆多胞體極度突出的低維尖刺，而不會撞上它向內退縮的平坦腹面。",
+          "在下方的雙重實驗室中，你可以同時驗證這兩層機制：先在左／上面板親自拖動膨脹半徑 $r$ 與直線傾角 $\\theta$，看著 $\\ell_2$ 圓盤與 $\\ell_1$ 菱形如何各自撞向同一條測量直線；接著再到右／下面板，觀察這個幾何原理如何在 $N = 64$ 的真實一維訊號重建中大顯身手。",
+          "<InteractiveExperiment id=\"CompressedSensingSimulator\" />"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-22cea468",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-3-91aadc",
+            "sectionTitle": "三、高維凸幾何的奇蹟：為何 L1 菱形尖角總能精準戳中稀疏座標軸？",
+            "paragraphIndex": 0,
+            "exactQuote": "為什麼僅僅把平方和換成絕對值總和 $\\|\\mathbf{x}\\|_1 = \\sum_{i=1}^N |x_i|$，亦即求解所謂的 **Basis Pursuit（基底追蹤）**凸優化問題：",
+            "charStart": 4207,
+            "charEnd": 4301,
+            "contentHash": "22cea468d9c87a48094011d79417f480ce6eb177863d10f7b2a3e84295be1186",
+            "contextNote": "三、高維凸幾何的奇蹟：為何 L1 菱形尖角總能精準戳中稀疏座標軸？ · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-91e8902a",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-3-91aadc",
+            "sectionTitle": "三、高維凸幾何的奇蹟：為何 L1 菱形尖角總能精準戳中稀疏座標軸？",
+            "paragraphIndex": 2,
+            "exactQuote": "就能奇蹟似地在極高機率下直接鎖定 $\\ell_0$ 的唯一稀疏解？",
+            "charStart": 4398,
+            "charEnd": 4431,
+            "contentHash": "91e8902a9e5a9f7f7b71e140ba7b5c3b9dd2420dc8e73a123028ce14f1d832f5",
+            "contextNote": "三、高維凸幾何的奇蹟：為何 L1 菱形尖角總能精準戳中稀疏座標軸？ · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-0d3a87ed",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-3-91aadc",
+            "sectionTitle": "三、高維凸幾何的奇蹟：為何 L1 菱形尖角總能精準戳中稀疏座標軸？",
+            "paragraphIndex": 2,
+            "exactQuote": "這個問題最深刻、最無可替代的解答不在繁瑣的代數推導裡，而在高維空間的**凸幾何（Convex Geometry）**之中。",
+            "charStart": 4432,
+            "charEnd": 4493,
+            "contentHash": "0d3a87ed0e5c420f41d3f51572ee796f0838535230e5dabecaad832109aeb1cf",
+            "contextNote": "三、高維凸幾何的奇蹟：為何 L1 菱形尖角總能精準戳中稀疏座標軸？ · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-302631ed",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-3-91aadc",
+            "sectionTitle": "三、高維凸幾何的奇蹟：為何 L1 菱形尖角總能精準戳中稀疏座標軸？",
+            "paragraphIndex": 3,
+            "exactQuote": "先將高維度簡化到我們雙眼能直接看穿的二維平面 $(x_1, x_2)$。",
+            "charStart": 4590,
+            "charEnd": 4626,
+            "contentHash": "302631ed28fcd037b218ce1410a25e982050c9817d2869eddba379b6c3a2886d",
+            "contextNote": "三、高維凸幾何的奇蹟：為何 L1 菱形尖角總能精準戳中稀疏座標軸？ · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-e8e91ef1",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-3-91aadc",
+            "sectionTitle": "三、高維凸幾何的奇蹟：為何 L1 菱形尖角總能精準戳中稀疏座標軸？",
+            "paragraphIndex": 3,
+            "exactQuote": "假設未知訊號有兩個分量 $(x_1, x_2)$，但我們只測得一條線性方程式 $a_1 x_1 + a_2 x_2 = b$（代表一條斜穿過第一象限的直線，即所有符合測量結果的欠定解集合）。",
+            "charStart": 4627,
+            "charEnd": 4722,
+            "contentHash": "e8e91ef1bccd266c6ca9e2e08b9cf7726509aa5936476683d4f71107b453de46",
+            "contextNote": "三、高維凸幾何的奇蹟：為何 L1 菱形尖角總能精準戳中稀疏座標軸？ · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-7b6a569d",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-3-91aadc",
+            "sectionTitle": "三、高維凸幾何的奇蹟：為何 L1 菱形尖角總能精準戳中稀疏座標軸？",
+            "paragraphIndex": 3,
+            "exactQuote": "現在我們要把以原點為中心的「範數球」從半徑 $r = 0$ 開始慢慢吹氣膨脹，直到它的邊界**第一次撞上**這條測量直線——那個最初的接觸點，就是該範數最小化所挑出的答案：",
+            "charStart": 4723,
+            "charEnd": 4809,
+            "contentHash": "7b6a569d1bced24d0996db283a4ecd8060739bcabb2ef81c6516743bbe6fe98c",
+            "contextNote": "三、高維凸幾何的奇蹟：為何 L1 菱形尖角總能精準戳中稀疏座標軸？ · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-e36cf14d",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-3-91aadc",
+            "sectionTitle": "三、高維凸幾何的奇蹟：為何 L1 菱形尖角總能精準戳中稀疏座標軸？",
+            "paragraphIndex": 4,
+            "exactQuote": "- **$\\ell_2$ 歐氏圓盤（光滑的圓形氣球）**：滿足 $x_1^2 + x_2^2 \\le r^2$ 的集合是一個處處平滑、沒有任何稜角的圓盤。",
+            "charStart": 5029,
+            "charEnd": 5106,
+            "contentHash": "e36cf14d41d093a502785acaa235407fe0e22e95ea55c9008d13624cc04736d7",
+            "contextNote": "三、高維凸幾何的奇蹟：為何 L1 菱形尖角總能精準戳中稀疏座標軸？ · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-b06a8f7d",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-3-91aadc",
+            "sectionTitle": "三、高維凸幾何的奇蹟：為何 L1 菱形尖角總能精準戳中稀疏座標軸？",
+            "paragraphIndex": 4,
+            "exactQuote": "當圓形氣球慢慢脹大去碰觸那條傾斜的測量直線時，由於圓周完全圓潤，只要直線不是恰好水平或垂直，圓球總是用它平滑的斜邊去親吻直線的內側。",
+            "charStart": 5107,
+            "charEnd": 5173,
+            "contentHash": "b06a8f7db8986df1b14b340d61015b8300e11ef1d7cfe19a428a1f4e1f423d90",
+            "contextNote": "三、高維凸幾何的奇蹟：為何 L1 菱形尖角總能精準戳中稀疏座標軸？ · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-805b03e9",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-3-91aadc",
+            "sectionTitle": "三、高維凸幾何的奇蹟：為何 L1 菱形尖角總能精準戳中稀疏座標軸？",
+            "paragraphIndex": 4,
+            "exactQuote": "結果切點幾乎必定落在 $(x_1 \\neq 0, x_2 \\neq 0)$ 的位置——兩個分量全都非零，稀疏性完全喪失。",
+            "charStart": 5174,
+            "charEnd": 5234,
+            "contentHash": "805b03e92364cd47415ed02912b79e2f20dcc26bff3110722acdc25104f7ceca",
+            "contextNote": "三、高維凸幾何的奇蹟：為何 L1 菱形尖角總能精準戳中稀疏座標軸？ · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-430682e8",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-3-91aadc",
+            "sectionTitle": "三、高維凸幾何的奇蹟：為何 L1 菱形尖角總能精準戳中稀疏座標軸？",
+            "paragraphIndex": 4,
+            "exactQuote": "- **$\\ell_1$ 菱形多胞體（尖角朝向座標軸的鑽石晶體）**：滿足 $|x_1| + |x_2| \\le r$ 的集合在二維平面是一個旋轉 $45^\\circ$ 擺放的正方形菱形，它的四個尖銳頂點 $(\\pm r, 0)$ 與 $(0, \\pm r)$ 剛好死死對準 $x_1$ 與 $x_2$ 兩條座標軸！",
+            "charStart": 5235,
+            "charEnd": 5393,
+            "contentHash": "430682e8e422dad7e4798b16aa2d82564a584bee5e4e23f7885b7838069fd71d",
+            "contextNote": "三、高維凸幾何的奇蹟：為何 L1 菱形尖角總能精準戳中稀疏座標軸？ · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-8dbe13b6",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-3-91aadc",
+            "sectionTitle": "三、高維凸幾何的奇蹟：為何 L1 菱形尖角總能精準戳中稀疏座標軸？",
+            "paragraphIndex": 4,
+            "exactQuote": "想像你在二維平面上把一顆鑽石菱形從原點等比例吹大去撞向那條傾斜直線：因為四個角比平坦的斜邊突出得多，除了直線斜率剛好等於 $\\pm 1$ 的零測度退化特例外，鑽石菱形永遠會先用它突出的尖角精準戳中直線與某一條座標軸的交點（例如 $(b/a_1, 0)$）——於是另一個座標分量嚴格歸零，稀疏解就這樣自然誕生了！",
+            "charStart": 5394,
+            "charEnd": 5549,
+            "contentHash": "8dbe13b6cb08b1fd054614464667a6729bab195da2f2c3f2094c2cf4c41d8460",
+            "contextNote": "三、高維凸幾何的奇蹟：為何 L1 菱形尖角總能精準戳中稀疏座標軸？ · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-cb77625e",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-3-91aadc",
+            "sectionTitle": "三、高維凸幾何的奇蹟：為何 L1 菱形尖角總能精準戳中稀疏座標軸？",
+            "paragraphIndex": 4,
+            "exactQuote": "- **$\\ell_p$（$0 < p < 1$）非凸星形（內凹的四芒星）**：如果把次方進一步壓低到 $p = 0.5$，集合 $(|x_1|^{0.5} + |x_2|^{0.5})^2 \\le r$ 的側邊會向內凹陷，沿著座標軸伸出比 $\\ell_1$ 更細長的尖刺，確實同樣能戳中稀疏座標軸。",
+            "charStart": 5550,
+            "charEnd": 5700,
+            "contentHash": "cb77625e7ae5277a6a89d806d4feea6b065438661dffae69749d440c9d1e269b",
+            "contextNote": "三、高維凸幾何的奇蹟：為何 L1 菱形尖角總能精準戳中稀疏座標軸？ · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-4602afba",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-3-91aadc",
+            "sectionTitle": "三、高維凸幾何的奇蹟：為何 L1 菱形尖角總能精準戳中稀疏座標軸？",
+            "paragraphIndex": 4,
+            "exactQuote": "但代價極為致命：它的幾何形狀不再是**凸集（Convex Set）**。",
+            "charStart": 5701,
+            "charEnd": 5737,
+            "contentHash": "4602afba7ffa64a145862e2dfdfca654e8995d7e11dde153800ee58e80b454ae",
+            "contextNote": "三、高維凸幾何的奇蹟：為何 L1 菱形尖角總能精準戳中稀疏座標軸？ · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-be4ab769",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-3-91aadc",
+            "sectionTitle": "三、高維凸幾何的奇蹟：為何 L1 菱形尖角總能精準戳中稀疏座標軸？",
+            "paragraphIndex": 4,
+            "exactQuote": "在數千維甚至數百萬維的真實訊號空間裡，非凸優化佈滿了無數局部極小值的陷阱，數值求解器極易卡死在錯誤的山谷；唯有 $\\ell_1$ 菱形在「保持凸幾何（確保全域唯一最優解可在多項式時間穩定收斂）」與「擁有沿座標軸尖銳頂點（迫使分量歸零）」之間，達成堪稱完美的數學平衡。",
+            "charStart": 5738,
+            "charEnd": 5871,
+            "contentHash": "be4ab769e6e3ccba316057911a69cfe5bc514101f04fbd57e4772f422f1f6eec",
+            "contextNote": "三、高維凸幾何的奇蹟：為何 L1 菱形尖角總能精準戳中稀疏座標軸？ · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-edfdb5c7",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-3-91aadc",
+            "sectionTitle": "三、高維凸幾何的奇蹟：為何 L1 菱形尖角總能精準戳中稀疏座標軸？",
+            "paragraphIndex": 5,
+            "exactQuote": "當維度從二維推升到 $N$ 維時，這種幾何差異會以驚人的指數倍率放大。",
+            "charStart": 6711,
+            "charEnd": 6746,
+            "contentHash": "edfdb5c79069f54894eb4582b1cedc7dc5b2661d2424374be5859c7e08b4f9b9",
+            "contextNote": "三、高維凸幾何的奇蹟：為何 L1 菱形尖角總能精準戳中稀疏座標軸？ · 第 6 段"
+          },
+          {
+            "sentenceId": "sent-4ca8af39",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-3-91aadc",
+            "sectionTitle": "三、高維凸幾何的奇蹟：為何 L1 菱形尖角總能精準戳中稀疏座標軸？",
+            "paragraphIndex": 5,
+            "exactQuote": "$N$ 維 $\\ell_1$ 球稱為**正交多胞體（Cross-Polytope）**，它的 $2N$ 個頂點精準指向 $N$ 條稀疏單軸，低維邊脊則對應 $K$-稀疏子空間；在這個高維空間裡，隨便切過一張低維隨機超平面，幾乎總是先擦過這顆多胞體極度突出的低維尖刺，而不會撞上它向內退縮的平坦腹面。",
+            "charStart": 6747,
+            "charEnd": 6896,
+            "contentHash": "4ca8af39037aa833072cffd8a5b41a8bf68c9cd2892cc7f282a20c5d99e5495b",
+            "contextNote": "三、高維凸幾何的奇蹟：為何 L1 菱形尖角總能精準戳中稀疏座標軸？ · 第 6 段"
+          },
+          {
+            "sentenceId": "sent-d850b58f",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-3-91aadc",
+            "sectionTitle": "三、高維凸幾何的奇蹟：為何 L1 菱形尖角總能精準戳中稀疏座標軸？",
+            "paragraphIndex": 6,
+            "exactQuote": "在下方的雙重實驗室中，你可以同時驗證這兩層機制：先在左／上面板親自拖動膨脹半徑 $r$ 與直線傾角 $\\theta$，看著 $\\ell_2$ 圓盤與 $\\ell_1$ 菱形如何各自撞向同一條測量直線；接著再到右／下面板，觀察這個幾何原理如何在 $N = 64$ 的真實一維訊號重建中大顯身手。",
+            "charStart": 7083,
+            "charEnd": 7229,
+            "contentHash": "d850b58f4964288555598dd28c398ac647a00f21d8983b9b5ffa468db0c4ff3b",
+            "contextNote": "三、高維凸幾何的奇蹟：為何 L1 菱形尖角總能精準戳中稀疏座標軸？ · 第 7 段"
+          }
+        ],
+        "formulas": [
+          "$$\\min_{\\mathbf{x} \\in \\mathbb{R}^N} \\|\\mathbf{x}\\|_1 \\quad \\text{s.t.} \\quad \\mathbf{y} = \\mathbf{\\Phi}\\mathbf{x}$$"
+        ],
+        "interactiveComponentId": "CompressedSensingSimulator"
+      },
+      {
+        "id": "sec-4-31cd23",
+        "title": "四、實戰演算法與不相干性：ISTA 軟閾值迭代如何對決混疊假影？",
+        "level": 2,
+        "paragraphs": [
+          "親手操作上方模擬器的面板二，你能馬上體會壓縮感知最核心的兩個實戰條件：**不相干採樣（Incoherent Sampling）**與**閾值去噪迭代**。",
+          "試著先點選「均勻等距欠採樣」，將採樣數設為 $M = 22$（遠低於 $N = 64$）。傳統線性重建的頻譜上立刻會冒出一排高達數十％誤差的假尖峰。這正是奈奎斯特警告過的週期性混疊：當採樣點像等距柵欄一樣規律跳過時，高頻餘弦波與低頻餘弦波在這些固定位置上採取了高度相似甚至重疊的數值，感測矩陣的不同欄之間出現了高度**相干性（Coherence）**，導致重建系統無法區分真訊號與週期幽靈。",
+          "現在切換到「隨機採樣 + $\\ell_2$ 最小能量」，雖然高聳的週期性假尖峰被打散了，整張頻譜卻佈滿了細碎的雜草，相對誤差 RMSE 依舊高達七成以上。因為隨機欠採樣確實把結構化的混疊打碎成了類似白雜訊的**不相干偽噪（Incoherent Artifacts）**，但 $\\ell_2$ 最小能量法沒有辦法把雜訊地板歸零。",
+          "真正讓 $K = 4$ 根真實頻譜尖峰從 $M = 22$ 個隨機點裡破繭而出的，是切換到「隨機採樣 + $\\ell_1$ ISTA」模式。在瀏覽器中，面板二即時執行的正是真實的**迭代收縮閾值演算法（Iterative Shrinkage-Thresholding Algorithm, ISTA）**。為了在測量誤差 $\\|\\mathbf{A}\\mathbf{x} - \\mathbf{y}\\|_2^2$ 與稀疏懲罰 $\\lambda \\|\\mathbf{x}\\|_1$ 之間取得平衡，ISTA 在每一步迭代中交替執行兩件事：",
+          "$$\\mathbf{x}^{(t+1)} = \\mathcal{S}_{\\lambda}\\Big(\\mathbf{x}^{(t)} - \\alpha\\,\\mathbf{A}^T(\\mathbf{A}\\mathbf{x}^{(t)} - \\mathbf{y})\\Big)$$",
+          "其中 $\\mathcal{S}_\\lambda(z) = \\text{sign}(z)\\max(|z| - \\lambda, 0)$ 是極為簡潔的**軟閾值算子（Soft-Thresholding Operator）**——就像用一把高度為 $\\lambda$ 的剃刀橫掃整張頻譜，把隨機採樣產生的低矮不相干噪聲地板全部削平歸零，同時只讓真正高出門檻的稀疏大係數存活下來；存活下來的訊號隨即在下一步重新比對實際量測殘差 $(\\mathbf{A}\\mathbf{x} - \\mathbf{y})$，把剛才被雜訊掩蓋的次強稀疏分量逐步浮現出來。在隨機採樣滿足 Candès–Romberg–Tao 與 Donoho 所刻畫的**有限等距性質（Restricted Isometry Property, RIP）**——亦即感測矩陣 $\\mathbf{A}$ 作用在任意 $K$-稀疏向量上時幾乎能保持其歐氏長度不致崩塌或混淆——的條件下，僅需幾百步迭代，重建相對誤差便驟降至不到 $1\\%$。",
+          "然而，在模擬器裡把稀疏度 $K$ 拉高到 $8$、同時將採樣數 $M$ 壓低到 $16$ 或 $18$，你會目睹重建誤差突然從不到 $1\\%$ 飆升至七八成以上。這不是演算法寫壞了，而是精確再現了多諾霍與坦納（Donoho–Tanner）發現的**相變邊界（Phase Transition Boundary）**：當真實非零係數太多、測量資訊量跌破 $M \\sim O(K \\ln(N/K))$ 的幾何臨界線時，連 $\\ell_1$ 菱形的尖頂也無法再保證先於稠密解撞上測量超空間，稀疏重建會在跨越邊界後迅速失效。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-e934af84",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-4-31cd23",
+            "sectionTitle": "四、實戰演算法與不相干性：ISTA 軟閾值迭代如何對決混疊假影？",
+            "paragraphIndex": 0,
+            "exactQuote": "親手操作上方模擬器的面板二，你能馬上體會壓縮感知最核心的兩個實戰條件：**不相干採樣（Incoherent Sampling）**與**閾值去噪迭代**。",
+            "charStart": 7378,
+            "charEnd": 7455,
+            "contentHash": "e934af84d1090013b2502cbe4711e0a6c7cfa4de3a706b72f2119eab9b857d40",
+            "contextNote": "四、實戰演算法與不相干性：ISTA 軟閾值迭代如何對決混疊假影？ · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-767d271d",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-4-31cd23",
+            "sectionTitle": "四、實戰演算法與不相干性：ISTA 軟閾值迭代如何對決混疊假影？",
+            "paragraphIndex": 1,
+            "exactQuote": "試著先點選「均勻等距欠採樣」，將採樣數設為 $M = 22$（遠低於 $N = 64$）。",
+            "charStart": 7535,
+            "charEnd": 7580,
+            "contentHash": "767d271d5b5136f0cf1e990196379bf48db62de564561d4936b265f3fc481db9",
+            "contextNote": "四、實戰演算法與不相干性：ISTA 軟閾值迭代如何對決混疊假影？ · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-b1812397",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-4-31cd23",
+            "sectionTitle": "四、實戰演算法與不相干性：ISTA 軟閾值迭代如何對決混疊假影？",
+            "paragraphIndex": 1,
+            "exactQuote": "傳統線性重建的頻譜上立刻會冒出一排高達數十％誤差的假尖峰。",
+            "charStart": 7581,
+            "charEnd": 7610,
+            "contentHash": "b1812397ae4834a95c32d6f68dda6cfde6698ff5f8de1ee64daf2600872bf974",
+            "contextNote": "四、實戰演算法與不相干性：ISTA 軟閾值迭代如何對決混疊假影？ · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-4d2525a3",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-4-31cd23",
+            "sectionTitle": "四、實戰演算法與不相干性：ISTA 軟閾值迭代如何對決混疊假影？",
+            "paragraphIndex": 1,
+            "exactQuote": "這正是奈奎斯特警告過的週期性混疊：當採樣點像等距柵欄一樣規律跳過時，高頻餘弦波與低頻餘弦波在這些固定位置上採取了高度相似甚至重疊的數值，感測矩陣的不同欄之間出現了高度**相干性（Coherence）**，導致重建系統無法區分真訊號與週期幽靈。",
+            "charStart": 7611,
+            "charEnd": 7732,
+            "contentHash": "4d2525a3e6b3ffb303fe5a4d50c794966950b81600885f94a2aeab1b6d40c682",
+            "contextNote": "四、實戰演算法與不相干性：ISTA 軟閾值迭代如何對決混疊假影？ · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-6e18fd92",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-4-31cd23",
+            "sectionTitle": "四、實戰演算法與不相干性：ISTA 軟閾值迭代如何對決混疊假影？",
+            "paragraphIndex": 2,
+            "exactQuote": "現在切換到「隨機採樣 + $\\ell_2$ 最小能量」，雖然高聳的週期性假尖峰被打散了，整張頻譜卻佈滿了細碎的雜草，相對誤差 RMSE 依舊高達七成以上。",
+            "charStart": 7930,
+            "charEnd": 8007,
+            "contentHash": "6e18fd92277018664fcdab9ebd369a6152138829a4c8e39f36eadf1204f458d0",
+            "contextNote": "四、實戰演算法與不相干性：ISTA 軟閾值迭代如何對決混疊假影？ · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-5e3fcaee",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-4-31cd23",
+            "sectionTitle": "四、實戰演算法與不相干性：ISTA 軟閾值迭代如何對決混疊假影？",
+            "paragraphIndex": 2,
+            "exactQuote": "因為隨機欠採樣確實把結構化的混疊打碎成了類似白雜訊的**不相干偽噪（Incoherent Artifacts）**，但 $\\ell_2$ 最小能量法沒有辦法把雜訊地板歸零。",
+            "charStart": 8008,
+            "charEnd": 8094,
+            "contentHash": "5e3fcaee9443eabbe49f607e9eb2f0f2ff5dddd636f680661c8554994e6bacde",
+            "contextNote": "四、實戰演算法與不相干性：ISTA 軟閾值迭代如何對決混疊假影？ · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-98b9c356",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-4-31cd23",
+            "sectionTitle": "四、實戰演算法與不相干性：ISTA 軟閾值迭代如何對決混疊假影？",
+            "paragraphIndex": 3,
+            "exactQuote": "真正讓 $K = 4$ 根真實頻譜尖峰從 $M = 22$ 個隨機點裡破繭而出的，是切換到「隨機採樣 + $\\ell_1$ ISTA」模式。",
+            "charStart": 8260,
+            "charEnd": 8330,
+            "contentHash": "98b9c35658201888c712c622e58faee377299aa4f35b0f246179019594c3a2c9",
+            "contextNote": "四、實戰演算法與不相干性：ISTA 軟閾值迭代如何對決混疊假影？ · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-48d0c110",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-4-31cd23",
+            "sectionTitle": "四、實戰演算法與不相干性：ISTA 軟閾值迭代如何對決混疊假影？",
+            "paragraphIndex": 3,
+            "exactQuote": "在瀏覽器中，面板二即時執行的正是真實的**迭代收縮閾值演算法（Iterative Shrinkage-Thresholding Algorithm, ISTA）**。",
+            "charStart": 8331,
+            "charEnd": 8414,
+            "contentHash": "48d0c110ea42edb63235efc04040d29fd7d97aa572089bd22a1dcaa61b21d1cd",
+            "contextNote": "四、實戰演算法與不相干性：ISTA 軟閾值迭代如何對決混疊假影？ · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-3d1d8049",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-4-31cd23",
+            "sectionTitle": "四、實戰演算法與不相干性：ISTA 軟閾值迭代如何對決混疊假影？",
+            "paragraphIndex": 3,
+            "exactQuote": "為了在測量誤差 $\\|\\mathbf{A}\\mathbf{x} - \\mathbf{y}\\|_2^2$ 與稀疏懲罰 $\\lambda \\|\\mathbf{x}\\|_1$ 之間取得平衡，ISTA 在每一步迭代中交替執行兩件事：",
+            "charStart": 8415,
+            "charEnd": 8527,
+            "contentHash": "3d1d80499c36c5d2b3e98fe3d98da21ea2824f016b341a3f5a0ba7e992376596",
+            "contextNote": "四、實戰演算法與不相干性：ISTA 軟閾值迭代如何對決混疊假影？ · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-04503867",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-4-31cd23",
+            "sectionTitle": "四、實戰演算法與不相干性：ISTA 軟閾值迭代如何對決混疊假影？",
+            "paragraphIndex": 5,
+            "exactQuote": "其中 $\\mathcal{S}_\\lambda(z) = \\text{sign}(z)\\max(|z| - \\lambda, 0)$ 是極為簡潔的**軟閾值算子（Soft-Thresholding Operator）**——就像用一把高度為 $\\lambda$ 的剃刀橫掃整張頻譜，把隨機採樣產生的低矮不相干噪聲地板全部削平歸零，同時只讓真正高出門檻的稀疏大係數存活下來；存活下來的訊號隨即在下一步重新比對實際量測殘差 $(\\mathbf{A}\\mathbf{x} - \\mathbf{y})$，把剛才被雜訊掩蓋的次強稀疏分量逐步浮現出來。",
+            "charStart": 8795,
+            "charEnd": 9065,
+            "contentHash": "0450386775f79a3e6a0ffcd89d7acf935fcad00e1ecb4b26f4d1779319a8433b",
+            "contextNote": "四、實戰演算法與不相干性：ISTA 軟閾值迭代如何對決混疊假影？ · 第 6 段"
+          },
+          {
+            "sentenceId": "sent-07332ab7",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-4-31cd23",
+            "sectionTitle": "四、實戰演算法與不相干性：ISTA 軟閾值迭代如何對決混疊假影？",
+            "paragraphIndex": 5,
+            "exactQuote": "在隨機採樣滿足 Candès–Romberg–Tao 與 Donoho 所刻畫的**有限等距性質（Restricted Isometry Property, RIP）**——亦即感測矩陣 $\\mathbf{A}$ 作用在任意 $K$-稀疏向量上時幾乎能保持其歐氏長度不致崩塌或混淆——的條件下，僅需幾百步迭代，重建相對誤差便驟降至不到 $1\\%$。",
+            "charStart": 9066,
+            "charEnd": 9240,
+            "contentHash": "07332ab7718d6d19323bc8bafe9784ac9f8f567801b16db308d9ec700819114f",
+            "contextNote": "四、實戰演算法與不相干性：ISTA 軟閾值迭代如何對決混疊假影？ · 第 6 段"
+          },
+          {
+            "sentenceId": "sent-15a78a74",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-4-31cd23",
+            "sectionTitle": "四、實戰演算法與不相干性：ISTA 軟閾值迭代如何對決混疊假影？",
+            "paragraphIndex": 6,
+            "exactQuote": "然而，在模擬器裡把稀疏度 $K$ 拉高到 $8$、同時將採樣數 $M$ 壓低到 $16$ 或 $18$，你會目睹重建誤差突然從不到 $1\\%$ 飆升至七八成以上。",
+            "charStart": 9687,
+            "charEnd": 9768,
+            "contentHash": "15a78a7491b4d16f9b68430faf845e8a139d376adee648beb354e24c4afcdd3c",
+            "contextNote": "四、實戰演算法與不相干性：ISTA 軟閾值迭代如何對決混疊假影？ · 第 7 段"
+          },
+          {
+            "sentenceId": "sent-1c3c8e55",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-4-31cd23",
+            "sectionTitle": "四、實戰演算法與不相干性：ISTA 軟閾值迭代如何對決混疊假影？",
+            "paragraphIndex": 6,
+            "exactQuote": "這不是演算法寫壞了，而是精確再現了多諾霍與坦納（Donoho–Tanner）發現的**相變邊界（Phase Transition Boundary）**：當真實非零係數太多、測量資訊量跌破 $M \\sim O(K \\ln(N/K))$ 的幾何臨界線時，連 $\\ell_1$ 菱形的尖頂也無法再保證先於稠密解撞上測量超空間，稀疏重建會在跨越邊界後迅速失效。",
+            "charStart": 9769,
+            "charEnd": 9946,
+            "contentHash": "1c3c8e55b2fb7323d0f1ebf45a9d1b0278a367acac47d2488bced920e76ef5fa",
+            "contextNote": "四、實戰演算法與不相干性：ISTA 軟閾值迭代如何對決混疊假影？ · 第 7 段"
+          }
+        ],
+        "formulas": [
+          "$$\\mathbf{x}^{(t+1)} = \\mathcal{S}_{\\lambda}\\Big(\\mathbf{x}^{(t)} - \\alpha\\,\\mathbf{A}^T(\\mathbf{A}\\mathbf{x}^{(t)} - \\mathbf{y})\\Big)$$"
+        ],
+        "interactiveComponentId": null
+      },
+      {
+        "id": "sec-5-595e22",
+        "title": "五、從數學定理到臨床診斷：Sparse MRI 如何改寫磁振造影物理時間？",
+        "level": 2,
+        "paragraphs": [
+          "如果壓縮感知只停留在離散餘弦一維實驗，它頂多是應用數學系黑板上的優美定理；真正讓這套理論走進全球醫院臨床設備的里程碑，是 2007 年麥可·盧斯蒂格（Michael Lustig）、大衛·多諾霍與約翰·保利（John M. Pauly）在《Magnetic Resonance in Medicine》發表的 **Sparse MRI** 研究。",
+          "核磁共振造影（MRI）面臨一項源自量子自旋弛豫與線圈梯度物理的剛性瓶頸：掃描速度受限於電磁梯度切換速度與人體神經刺激安全閾值，很難無限加快，這導致動態心臟造影或兒科檢查常因患者呼吸與移動而產生運動模糊。更關鍵的是，MRI 儀器並不是直接用感光元件拍下器官像素，而是直接量測影像的空間頻率譜——物理學與醫學工程稱之為 **$k$-空間（$k$-space）**。",
+          "這與 Candès–Romberg–Tao 的數學前提不謀而合：MRI 本來就在頻域收集數據，正是最理想的壓縮感知舞台。盧斯蒂格團隊的巧思可以拆解為三個步驟：",
+          "1. **打破等距跳掃的鬼影陷阱**：如果為了省時間而在 $k$-空間等間距跳過一半的相位編碼線，傅立葉逆變換會立即在影像上疊出一個半透明的「鬼影分身」（Coherent Aliasing）。盧斯蒂格團隊改採**變密度隨機欠採樣（Variable-Density Random Undersampling）**——保留密集的低頻中心以穩定整體對比度，而在高頻區域以偽隨機軌跡跳躍取樣，藉此把整齊的鬼影徹底打散成類似白雜訊的微弱不相干偽噪。\n2. **雙重稀疏變換域先驗**：醫學影像在原始像素空間並不稀疏（器官幾乎處處都有亮度），但一旦經過**小波變換（Wavelet Transform）**抽出多尺度紋理，並結合衡量鄰近像素梯度稀疏性的**全變差（Total Variation, TV）**正則項，絕大部分背景與平滑組織的變換係數都集中在零附近。\n3. **非線性 $\\ell_1$ 重建還原診斷細節**：透過求解結合資料一致性與 $\\ell_1$ 小波／TV 稀疏懲罰的非線性凸優化，Sparse MRI 在完全不更換超導磁體硬體的前提下，成功將所需的 $k$-空間採樣量大幅壓縮，把原本耗時數分鐘的臨床掃描縮短至過去的幾分之一。",
+          "從高維多胞體的幾何頂點到醫院裡的快速核磁共振成像，壓縮感知示範了一種極具穿透力的科學思維轉向：它沒有推翻奈奎斯特定理對「任意稠密頻寬訊號」的嚴格下界，而是精準指出現實訊號大多只佔據高維空間裡一條極細的稀疏走廊；只要用不相干隨機投影替我們留住距離資訊，再讓 $\\ell_1$ 凸幾何的尖角領路，少量的測量數據依然足以喚醒藏在高維度裡的清晰真實。當然，工程實務也必須誠實面對這套框架的物理邊界：真實訊號往往只是近似可壓縮而非嚴格 $K$-稀疏，高加速倍率下仍可能抹平極微弱的病灶紋理，且非線性迭代重建對計算延遲與雜訊穩健性的要求，始終考驗著演算法與臨床判讀的雙重把關。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-ea801abf",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-5-595e22",
+            "sectionTitle": "五、從數學定理到臨床診斷：Sparse MRI 如何改寫磁振造影物理時間？",
+            "paragraphIndex": 0,
+            "exactQuote": "如果壓縮感知只停留在離散餘弦一維實驗，它頂多是應用數學系黑板上的優美定理；真正讓這套理論走進全球醫院臨床設備的里程碑，是 2007 年麥可·盧斯蒂格（Michael Lustig）、大衛·多諾霍與約翰·保利（John M. Pauly）在《Magnetic Resonance in Medicine》發表的 **Sparse MRI** 研究。",
+            "charStart": 10207,
+            "charEnd": 10380,
+            "contentHash": "ea801abff25884c5403ad251124c580b678a023d069913bafb514178078d127f",
+            "contextNote": "五、從數學定理到臨床診斷：Sparse MRI 如何改寫磁振造影物理時間？ · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-354131a8",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-5-595e22",
+            "sectionTitle": "五、從數學定理到臨床診斷：Sparse MRI 如何改寫磁振造影物理時間？",
+            "paragraphIndex": 1,
+            "exactQuote": "核磁共振造影（MRI）面臨一項源自量子自旋弛豫與線圈梯度物理的剛性瓶頸：掃描速度受限於電磁梯度切換速度與人體神經刺激安全閾值，很難無限加快，這導致動態心臟造影或兒科檢查常因患者呼吸與移動而產生運動模糊。",
+            "charStart": 10556,
+            "charEnd": 10657,
+            "contentHash": "354131a84d30172f11ff004e6e14ed3403732bae85066712b948313b9bbe7d0c",
+            "contextNote": "五、從數學定理到臨床診斷：Sparse MRI 如何改寫磁振造影物理時間？ · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-5f499f35",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-5-595e22",
+            "sectionTitle": "五、從數學定理到臨床診斷：Sparse MRI 如何改寫磁振造影物理時間？",
+            "paragraphIndex": 1,
+            "exactQuote": "更關鍵的是，MRI 儀器並不是直接用感光元件拍下器官像素，而是直接量測影像的空間頻率譜——物理學與醫學工程稱之為 **$k$-空間（$k$-space）**。",
+            "charStart": 10658,
+            "charEnd": 10737,
+            "contentHash": "5f499f351f4056274bde28b1d74cbea9ce6bbf8553011b78a310ce7b8eef606c",
+            "contextNote": "五、從數學定理到臨床診斷：Sparse MRI 如何改寫磁振造影物理時間？ · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-339a9fb0",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-5-595e22",
+            "sectionTitle": "五、從數學定理到臨床診斷：Sparse MRI 如何改寫磁振造影物理時間？",
+            "paragraphIndex": 2,
+            "exactQuote": "這與 Candès–Romberg–Tao 的數學前提不謀而合：MRI 本來就在頻域收集數據，正是最理想的壓縮感知舞台。",
+            "charStart": 10920,
+            "charEnd": 10980,
+            "contentHash": "339a9fb0be49e651240bf4bdb4ea1169cae8e9af0c0822a649448906a27f190e",
+            "contextNote": "五、從數學定理到臨床診斷：Sparse MRI 如何改寫磁振造影物理時間？ · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-382805e6",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-5-595e22",
+            "sectionTitle": "五、從數學定理到臨床診斷：Sparse MRI 如何改寫磁振造影物理時間？",
+            "paragraphIndex": 2,
+            "exactQuote": "盧斯蒂格團隊的巧思可以拆解為三個步驟：",
+            "charStart": 10981,
+            "charEnd": 11000,
+            "contentHash": "382805e6f8c97303991f62ee834491e7743507b2dca6329e5dad744fec82b124",
+            "contextNote": "五、從數學定理到臨床診斷：Sparse MRI 如何改寫磁振造影物理時間？ · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-a252e120",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-5-595e22",
+            "sectionTitle": "五、從數學定理到臨床診斷：Sparse MRI 如何改寫磁振造影物理時間？",
+            "paragraphIndex": 3,
+            "exactQuote": "1. **打破等距跳掃的鬼影陷阱**：如果為了省時間而在 $k$-空間等間距跳過一半的相位編碼線，傅立葉逆變換會立即在影像上疊出一個半透明的「鬼影分身」（Coherent Aliasing）。",
+            "charStart": 11082,
+            "charEnd": 11178,
+            "contentHash": "a252e1208348aa08d43827a82901afccbd8f7a139d813f89854cab82e46a7358",
+            "contextNote": "五、從數學定理到臨床診斷：Sparse MRI 如何改寫磁振造影物理時間？ · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-6955273d",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-5-595e22",
+            "sectionTitle": "五、從數學定理到臨床診斷：Sparse MRI 如何改寫磁振造影物理時間？",
+            "paragraphIndex": 3,
+            "exactQuote": "盧斯蒂格團隊改採**變密度隨機欠採樣（Variable-Density Random Undersampling）**——保留密集的低頻中心以穩定整體對比度，而在高頻區域以偽隨機軌跡跳躍取樣，藉此把整齊的鬼影徹底打散成類似白雜訊的微弱不相干偽噪。",
+            "charStart": 11179,
+            "charEnd": 11302,
+            "contentHash": "6955273d2044fee505cb8f6a9ea76bc6b69853a4c7cc7123c8383829d6787b45",
+            "contextNote": "五、從數學定理到臨床診斷：Sparse MRI 如何改寫磁振造影物理時間？ · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-6c4bec0f",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-5-595e22",
+            "sectionTitle": "五、從數學定理到臨床診斷：Sparse MRI 如何改寫磁振造影物理時間？",
+            "paragraphIndex": 3,
+            "exactQuote": "2. **雙重稀疏變換域先驗**：醫學影像在原始像素空間並不稀疏（器官幾乎處處都有亮度），但一旦經過**小波變換（Wavelet Transform）**抽出多尺度紋理，並結合衡量鄰近像素梯度稀疏性的**全變差（Total Variation, TV）**正則項，絕大部分背景與平滑組織的變換係數都集中在零附近。",
+            "charStart": 11303,
+            "charEnd": 11459,
+            "contentHash": "6c4bec0f5f35489ec40c69e40866ae0f7a4764a3e8b019e1d64311be44e6156d",
+            "contextNote": "五、從數學定理到臨床診斷：Sparse MRI 如何改寫磁振造影物理時間？ · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-0925418c",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-5-595e22",
+            "sectionTitle": "五、從數學定理到臨床診斷：Sparse MRI 如何改寫磁振造影物理時間？",
+            "paragraphIndex": 3,
+            "exactQuote": "3. **非線性 $\\ell_1$ 重建還原診斷細節**：透過求解結合資料一致性與 $\\ell_1$ 小波／TV 稀疏懲罰的非線性凸優化，Sparse MRI 在完全不更換超導磁體硬體的前提下，成功將所需的 $k$-空間採樣量大幅壓縮，把原本耗時數分鐘的臨床掃描縮短至過去的幾分之一。",
+            "charStart": 11460,
+            "charEnd": 11602,
+            "contentHash": "0925418cd1c68ffe216284e1b151d51304649e4b578ca3e354646854a3b829e2",
+            "contextNote": "五、從數學定理到臨床診斷：Sparse MRI 如何改寫磁振造影物理時間？ · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-a1434811",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-5-595e22",
+            "sectionTitle": "五、從數學定理到臨床診斷：Sparse MRI 如何改寫磁振造影物理時間？",
+            "paragraphIndex": 4,
+            "exactQuote": "從高維多胞體的幾何頂點到醫院裡的快速核磁共振成像，壓縮感知示範了一種極具穿透力的科學思維轉向：它沒有推翻奈奎斯特定理對「任意稠密頻寬訊號」的嚴格下界，而是精準指出現實訊號大多只佔據高維空間裡一條極細的稀疏走廊；只要用不相干隨機投影替我們留住距離資訊，再讓 $\\ell_1$ 凸幾何的尖角領路，少量的測量數據依然足以喚醒藏在高維度裡的清晰真實。",
+            "charStart": 12124,
+            "charEnd": 12295,
+            "contentHash": "a14348110edf828174ff1ec73c9c17c1855d7dbae83ad43070b32d30c570b0cf",
+            "contextNote": "五、從數學定理到臨床診斷：Sparse MRI 如何改寫磁振造影物理時間？ · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-0efe70da",
+            "articleId": "art-compressed-sensing-l1",
+            "sectionId": "sec-5-595e22",
+            "sectionTitle": "五、從數學定理到臨床診斷：Sparse MRI 如何改寫磁振造影物理時間？",
+            "paragraphIndex": 4,
+            "exactQuote": "當然，工程實務也必須誠實面對這套框架的物理邊界：真實訊號往往只是近似可壓縮而非嚴格 $K$-稀疏，高加速倍率下仍可能抹平極微弱的病灶紋理，且非線性迭代重建對計算延遲與雜訊穩健性的要求，始終考驗著演算法與臨床判讀的雙重把關。",
+            "charStart": 12296,
+            "charEnd": 12407,
+            "contentHash": "0efe70da050cc377cc0c758fdb3ac27bb27abdb2eafe94b8d3da5d73f2e8770f",
+            "contextNote": "五、從數學定理到臨床診斷：Sparse MRI 如何改寫磁振造影物理時間？ · 第 5 段"
+          }
+        ],
+        "formulas": [],
+        "interactiveComponentId": null
+      }
+    ],
+    "totalWordCount": 6694,
+    "lastIndexedAt": "2026-11-17T01:09:00.892Z"
   },
   {
     "id": "art-coriolis-geostrophic",
@@ -11691,7 +12618,7 @@
       }
     ],
     "totalWordCount": 3371,
-    "lastIndexedAt": "2026-11-16T01:09:57.236Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.897Z"
   },
   {
     "id": "art-crispr-prime-editing",
@@ -12801,7 +13728,651 @@
       }
     ],
     "totalWordCount": 5882,
-    "lastIndexedAt": "2026-11-16T01:09:57.238Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.899Z"
+  },
+  {
+    "id": "art-drosophila-connectome-flywire",
+    "slug": "drosophila-whole-brain-connectome-flywire",
+    "version": 1,
+    "publishedDate": "2026-11-17",
+    "status": "published",
+    "editorialCategory": "journal_interpretation",
+    "narrativeStyle": "research_interpretation",
+    "format": "depth",
+    "formatBadgeText": "期刊解讀",
+    "journalReference": {
+      "journal": "Nature",
+      "year": 2024,
+      "doi": "10.1038/s41586-024-07558-y",
+      "publishedDate": "2024-10-02"
+    },
+    "title": "五千萬個突觸繪就的果蠅全腦地圖：FlyWire 連結體揭示了什麼，又不能回答什麼？",
+    "subtitle": "從 139,255 個神經元、8,453 種細胞類型與豐富俱樂部樞紐出發，劃定「物理接線圖」與「神經調質動態」之間的科學邊界",
+    "topicIds": [
+      "topic-neuroscience",
+      "topic-computational-neuroscience"
+    ],
+    "tags": [
+      "神經連結體",
+      "FlyWire",
+      "黑腹果蠅",
+      "豐富俱樂部",
+      "神經調質",
+      "計算神經科學"
+    ],
+    "difficultyLevel": "intermediate",
+    "interactiveComponent": "ConnectomeWiringSimulator",
+    "interactiveType": "connectome_graph",
+    "estimatedReadTimeMinutes": 16,
+    "summary": "2024 年 10 月《Nature》封面專題發表了由 FlyWire 聯盟完成的首張成年雌性黑腹果蠅全腦突觸級連結體圖譜，涵蓋 139,255 個經過校對的神經元、超過 5,000 萬個化學突觸，以及系統註釋出的 8,453 種細胞類型（含 4,581 種新定義類型）。結合視覺神經網路對乙醯膽鹼、GABA 與麩胺酸等神經傳遞物質的預測，靜態接線圖進化為有向且帶正負號的權重圖譜，並揭露約 30% 核心樞紐構成的「豐富俱樂部」跨區通訊骨幹。然而，結合 Eve Marder 對神經調質迴路的經典論述，相同的物理電路在不同化學調質增益下仍可切換出迥異行為——連結體是理解腦功能不可或缺的地圖，卻不是唯一決定動態的密碼。",
+    "leadParagraph": "如果我們把一顆大腦裡每一根神經纖維與每一個突觸焊點都精確測繪出來，畫成一張擁有五千萬個接點的完整電路圖，我們就能直接按下計算機的執行鍵，預測這隻動物下一秒會往左轉、振翅起飛，還是停在原地嗎？2024 年 10 月，全球數百位科學家與公民校對員透過 FlyWire 聯盟在《Nature》交出了神經科學史上首張成年動物的完整全腦突觸藍圖——一隻成年雌性黑腹果蠅（Drosophila melanogaster）大腦中的 139,255 個神經元與超過 5,000 萬個化學突觸。這張耗時多年拼接而成的奈米級線路圖，一方面以前所未有的精度揭露了跨腦區的「豐富俱樂部」樞紐結構與帶正負號的有向訊號通道，另一方面也迫使我們直面計算神經科學最深刻的邊界：當所有電線都已攤在眼前，究竟還少了什麼才能讓這張地圖真正活起來？",
+    "quoteLead": "連結體畫出了大腦裡所有鋪設完成的鐵軌與道岔，但究竟哪班列車會鳴笛發車、哪條支線會亮起紅燈，還得由隨時改寫訊號燈門檻的神經調質來調度。",
+    "authors": [
+      {
+        "name": "MIRARI 神經科學組",
+        "role": "撰文與模擬器設計"
+      }
+    ],
+    "references": [
+      {
+        "id": "ref-dorkenwald-2024-flywire",
+        "citation": "Dorkenwald, S., Matsliah, A., Sterling, A. R., Schlegel, P., Yu, S.-C., et al. (FlyWire Consortium) (2024). \"Neuronal wiring diagram of an adult brain.\" Nature, 634(8032), 124–138.",
+        "doi": "10.1038/s41586-024-07558-y"
+      },
+      {
+        "id": "ref-schlegel-2024-typing",
+        "citation": "Schlegel, P., Yin, Y., Bates, A. S., Dorkenwald, S., et al. (FlyWire Consortium) (2024). \"Whole-brain annotation and multi-connectome cell typing of Drosophila.\" Nature, 634(8032), 139–152.",
+        "doi": "10.1038/s41586-024-07686-5"
+      },
+      {
+        "id": "ref-marder-2012-neuromodulation",
+        "citation": "Marder, E. (2012). \"Neuromodulation of neuronal circuits: back to the future.\" Neuron, 76(1), 1–11.",
+        "doi": "10.1016/j.neuron.2012.09.010"
+      }
+    ],
+    "contentHash": "d2e9dce42cd7c19027303b1c9ac0b68499bc3a5f279790297a022d7fa8f8c8b5",
+    "sections": [
+      {
+        "id": "sec-1-c31183",
+        "title": "一、把罌粟種子大小的大腦拆解成五千萬個接點",
+        "level": 2,
+        "paragraphs": [
+          "在神經科學的版圖裡，**神經連結體（Connectome）**就像把整座城市的每一條電纜、每一個十字路口與紅綠燈全部畫進同一張奈米級工程藍圖。自從 1986 年科學家耗費十餘年人工繪製出線蟲（*Caenorhabditis elegans*）僅 302 個神經元的神經系統後，生物學界一直渴望看見「真正擁有複雜視覺、空間導航與飛行決策能力的成年動物全腦」究竟是如何接線的。",
+          "近四十年的等待在 2024 年 10 月迎來里程碑。由普林斯頓大學、劍橋大學與全球數百名研究者共同推動的 FlyWire 聯盟，在《Nature》同期發表兩篇旗艦論文（Dorkenwald et al., 2024；Schlegel et al., 2024），首度完整重建了一隻成年雌性**黑腹果蠅（*Drosophila melanogaster*）**的全腦突觸級接線圖。",
+          "果蠅大腦寬度不到一公釐，體積僅相當於一顆微小的罌粟種子，卻能完成高速視覺避障、嗅覺追蹤、求偶與長期記憶。要看清其中細如髮絲數千分之一的突觸間隙，光學顯微鏡早已無能為力，研究團隊必須動用**連續切片電子顯微影像（Serial-Section Electron Microscopy, EM）**：先將整顆果蠅腦固定包埋，再以超薄切片刀切成數千層奈米級薄片，逐層拍攝高解析電子顯微影像並對齊成三維數位體積。",
+          "面對宛如億萬條義大利麵糾纏在一起的龐大影像，光靠人工描繪需要數千年工時；若全交給人工智慧，演算法又難免把相鄰兩根神經的膜壁誤黏在一起，或把極細的軸突漏接斷開。FlyWire 團隊打造了一套**體積分割與人機協作校對（Volumetric Segmentation & Proofreading）**平台：先由深度卷積神經網路替三維神經分支自動著色分割，再開放全球數百位神經生物學家與受過專業訓練的公民校對員登入雲端介面，像修圖師般手動剪開誤黏的接縫、接回斷裂的枝條。最終，這項浩大工程鎖定了 **139,255 個經過校對的神經元**，以及它們之間超過 **5,000 萬個化學突觸**（精確統計約 $5.45 \\times 10^7$ 個突觸）。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-2a25c7f2",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-1-c31183",
+            "sectionTitle": "一、把罌粟種子大小的大腦拆解成五千萬個接點",
+            "paragraphIndex": 0,
+            "exactQuote": "在神經科學的版圖裡，**神經連結體（Connectome）**就像把整座城市的每一條電纜、每一個十字路口與紅綠燈全部畫進同一張奈米級工程藍圖。",
+            "charStart": 0,
+            "charEnd": 71,
+            "contentHash": "2a25c7f2478303a06b3d518e8e2b6813da1df19027758a5085ae37251b0d6b97",
+            "contextNote": "一、把罌粟種子大小的大腦拆解成五千萬個接點 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-91304c49",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-1-c31183",
+            "sectionTitle": "一、把罌粟種子大小的大腦拆解成五千萬個接點",
+            "paragraphIndex": 0,
+            "exactQuote": "自從 1986 年科學家耗費十餘年人工繪製出線蟲（*Caenorhabditis elegans*）僅 302 個神經元的神經系統後，生物學界一直渴望看見「真正擁有複雜視覺、空間導航與飛行決策能力的成年動物全腦」究竟是如何接線的。",
+            "charStart": 72,
+            "charEnd": 187,
+            "contentHash": "91304c49fd2eeabc3d946d94c835cdfc47b4dca5abfee98ae7c645e688dba451",
+            "contextNote": "一、把罌粟種子大小的大腦拆解成五千萬個接點 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-3a67f9ae",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-1-c31183",
+            "sectionTitle": "一、把罌粟種子大小的大腦拆解成五千萬個接點",
+            "paragraphIndex": 1,
+            "exactQuote": "近四十年的等待在 2024 年 10 月迎來里程碑。",
+            "charStart": 376,
+            "charEnd": 402,
+            "contentHash": "3a67f9ae1fbc8e491d6efca39f635b8b41f760c4816835174e569a625b5ff416",
+            "contextNote": "一、把罌粟種子大小的大腦拆解成五千萬個接點 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-ac8405ac",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-1-c31183",
+            "sectionTitle": "一、把罌粟種子大小的大腦拆解成五千萬個接點",
+            "paragraphIndex": 1,
+            "exactQuote": "由普林斯頓大學、劍橋大學與全球數百名研究者共同推動的 FlyWire 聯盟，在《Nature》同期發表兩篇旗艦論文（Dorkenwald et al., 2024；Schlegel et al., 2024），首度完整重建了一隻成年雌性**黑腹果蠅（*Drosophila melanogaster*）**的全腦突觸級接線圖。",
+            "charStart": 403,
+            "charEnd": 566,
+            "contentHash": "ac8405acd3221b8b44cff238175f311b9a9331c8ecebb81f5ba56b0aed9d14d4",
+            "contextNote": "一、把罌粟種子大小的大腦拆解成五千萬個接點 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-19c5423f",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-1-c31183",
+            "sectionTitle": "一、把罌粟種子大小的大腦拆解成五千萬個接點",
+            "paragraphIndex": 2,
+            "exactQuote": "果蠅大腦寬度不到一公釐，體積僅相當於一顆微小的罌粟種子，卻能完成高速視覺避障、嗅覺追蹤、求偶與長期記憶。",
+            "charStart": 758,
+            "charEnd": 810,
+            "contentHash": "19c5423f1320f2f9a5ff9f76553f1e939e2d1de6aaca4842ad0c0bac62ff17c9",
+            "contextNote": "一、把罌粟種子大小的大腦拆解成五千萬個接點 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-474abd45",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-1-c31183",
+            "sectionTitle": "一、把罌粟種子大小的大腦拆解成五千萬個接點",
+            "paragraphIndex": 2,
+            "exactQuote": "要看清其中細如髮絲數千分之一的突觸間隙，光學顯微鏡早已無能為力，研究團隊必須動用**連續切片電子顯微影像（Serial-Section Electron Microscopy, EM）**：先將整顆果蠅腦固定包埋，再以超薄切片刀切成數千層奈米級薄片，逐層拍攝高解析電子顯微影像並對齊成三維數位體積。",
+            "charStart": 811,
+            "charEnd": 960,
+            "contentHash": "474abd45a592b3e1df97e4d68a4168dab5526fadd22ad48c961a899989a037e2",
+            "contextNote": "一、把罌粟種子大小的大腦拆解成五千萬個接點 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-41bc1c24",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-1-c31183",
+            "sectionTitle": "一、把罌粟種子大小的大腦拆解成五千萬個接點",
+            "paragraphIndex": 3,
+            "exactQuote": "面對宛如億萬條義大利麵糾纏在一起的龐大影像，光靠人工描繪需要數千年工時；若全交給人工智慧，演算法又難免把相鄰兩根神經的膜壁誤黏在一起，或把極細的軸突漏接斷開。",
+            "charStart": 1164,
+            "charEnd": 1243,
+            "contentHash": "41bc1c247374f4f7703983de655dcd3f481866b1edb1bf1cd0858f8fd4be1224",
+            "contextNote": "一、把罌粟種子大小的大腦拆解成五千萬個接點 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-a85306fc",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-1-c31183",
+            "sectionTitle": "一、把罌粟種子大小的大腦拆解成五千萬個接點",
+            "paragraphIndex": 3,
+            "exactQuote": "FlyWire 團隊打造了一套**體積分割與人機協作校對（Volumetric Segmentation & Proofreading）**平台：先由深度卷積神經網路替三維神經分支自動著色分割，再開放全球數百位神經生物學家與受過專業訓練的公民校對員登入雲端介面，像修圖師般手動剪開誤黏的接縫、接回斷裂的枝條。",
+            "charStart": 1244,
+            "charEnd": 1398,
+            "contentHash": "a85306fcc1d279f3bdd891bec51090ae6f22221f62a6a027f6a65333ebd2c7a1",
+            "contextNote": "一、把罌粟種子大小的大腦拆解成五千萬個接點 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-e1f48aa3",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-1-c31183",
+            "sectionTitle": "一、把罌粟種子大小的大腦拆解成五千萬個接點",
+            "paragraphIndex": 3,
+            "exactQuote": "最終，這項浩大工程鎖定了 **139,255 個經過校對的神經元**，以及它們之間超過 **5,000 萬個化學突觸**（精確統計約 $5.45 \\times 10^7$ 個突觸）。",
+            "charStart": 1399,
+            "charEnd": 1490,
+            "contentHash": "e1f48aa35d34606cd4da70526df1b0201a65fe8d0ccc8d0dd204445e2fdcb69c",
+            "contextNote": "一、把罌粟種子大小的大腦拆解成五千萬個接點 · 第 4 段"
+          }
+        ],
+        "formulas": [],
+        "interactiveComponentId": null
+      },
+      {
+        "id": "sec-2-527ffd",
+        "title": "二、不只是「誰連誰」：替地圖標上油門與煞車的有向帶符號網路",
+        "level": 2,
+        "paragraphs": [
+          "早期的神經迴路圖往往只回答「甲細胞有沒有連到乙細胞」，宛如一張只畫出馬路線條卻不標註單行道與紅綠燈的路網圖。但大腦運算的本質取決於訊號方向與正負極性：如果一張電路圖分不清哪顆細胞在踩油門、哪顆細胞在踩煞車，就無法推演任何神經動力學。",
+          "Dorkenwald 等人（2024）在這張果蠅全腦地圖上邁出了決定性的一步——他們利用電子顯微影像中突觸囊泡的幾何外觀與電子密度特徵，訓練影像分類器自動預測每一個突觸所釋放的**神經傳遞物質（Neurotransmitters）**身分（即細胞內用來跨突觸傳遞指令的化學信使分子），並據此將靜態接線轉換成一張**有向帶符號權重圖（Directed Signed Weighted Graph）**。",
+          "在果蠅的中樞大腦中，主要化學信使分工相當鮮明：",
+          "| 神經傳遞物質 | 日常物理意象 | 在果蠅中樞迴路的典型極性 | 網路計算角色 |\n| :--- | :--- | :--- | :--- |\n| **乙醯膽鹼 (ACh)** | 踩下油門加速 | 興奮性（正權重 $+$） | 推動感覺前饋接力與跨腦區激發傳導 |\n| **$\\gamma$-胺基丁酸 (GABA)** | 踩下煞車降速 | 抑制性（負權重 $-$） | 提供側向抑制、增益控制與行為門控關閉 |\n| **麩胺酸 (Glutamate)** | 局部微調閥門 | 中樞多介導氯離子抑制（負權重 $-$） | 參與感覺濾波與局部迴路競爭平衡 |\n| **生物胺調質 (DA / 5-HT / OA)** | 改寫交通號誌倍率 | 調控離子通道與突觸增益 | 切換清醒、探索、警戒與靜止等全腦狀態 |",
+          "當我們把 139,255 個神經元依照解剖區域展開，一條貫穿全腦的模組化處理管線立即浮現：最外層是接收複眼與觸角訊號的**視葉與嗅覺感覺輸入區**，經過中段層層轉換進入負責空間導航的**中央複合體（Central Complex）**與負責聯想學習的**蕈形體（Mushroom Body）**，最終匯聚至猶如高壓電纜束般的**下行神經元（Descending Neurons, DNs）**——這群細胞穿過頸部神經索，直接把腦內決策轉譯成胸腹部的轉向、前行或起飛動作。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-5070a820",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-2-527ffd",
+            "sectionTitle": "二、不只是「誰連誰」：替地圖標上油門與煞車的有向帶符號網路",
+            "paragraphIndex": 0,
+            "exactQuote": "早期的神經迴路圖往往只回答「甲細胞有沒有連到乙細胞」，宛如一張只畫出馬路線條卻不標註單行道與紅綠燈的路網圖。",
+            "charStart": 1817,
+            "charEnd": 1871,
+            "contentHash": "5070a820694b035a4ec15d2887146d7b641b863bd22ec55d4c645f426727078a",
+            "contextNote": "二、不只是「誰連誰」：替地圖標上油門與煞車的有向帶符號網路 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-251c076d",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-2-527ffd",
+            "sectionTitle": "二、不只是「誰連誰」：替地圖標上油門與煞車的有向帶符號網路",
+            "paragraphIndex": 0,
+            "exactQuote": "但大腦運算的本質取決於訊號方向與正負極性：如果一張電路圖分不清哪顆細胞在踩油門、哪顆細胞在踩煞車，就無法推演任何神經動力學。",
+            "charStart": 1872,
+            "charEnd": 1934,
+            "contentHash": "251c076dd8355011aa7b84a67431de5ea20a2cb404e33f0243ca7d3b0c09dc5b",
+            "contextNote": "二、不只是「誰連誰」：替地圖標上油門與煞車的有向帶符號網路 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-25570f98",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-2-527ffd",
+            "sectionTitle": "二、不只是「誰連誰」：替地圖標上油門與煞車的有向帶符號網路",
+            "paragraphIndex": 1,
+            "exactQuote": "Dorkenwald 等人（2024）在這張果蠅全腦地圖上邁出了決定性的一步——他們利用電子顯微影像中突觸囊泡的幾何外觀與電子密度特徵，訓練影像分類器自動預測每一個突觸所釋放的**神經傳遞物質（Neurotransmitters）**身分（即細胞內用來跨突觸傳遞指令的化學信使分子），並據此將靜態接線轉換成一張**有向帶符號權重圖（Directed Signed Weighted Graph）**。",
+            "charStart": 2053,
+            "charEnd": 2253,
+            "contentHash": "25570f988563c7478528d17b16abbdf43f2abb101d23fe3979e458db3958d991",
+            "contextNote": "二、不只是「誰連誰」：替地圖標上油門與煞車的有向帶符號網路 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-957aef01",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-2-527ffd",
+            "sectionTitle": "二、不只是「誰連誰」：替地圖標上油門與煞車的有向帶符號網路",
+            "paragraphIndex": 2,
+            "exactQuote": "在果蠅的中樞大腦中，主要化學信使分工相當鮮明：",
+            "charStart": 2456,
+            "charEnd": 2479,
+            "contentHash": "957aef019d190bb3e17714db85a38ac58ed55701f9be00e56793d3d4d4b55ce6",
+            "contextNote": "二、不只是「誰連誰」：替地圖標上油門與煞車的有向帶符號網路 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-e7b3be02",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-2-527ffd",
+            "sectionTitle": "二、不只是「誰連誰」：替地圖標上油門與煞車的有向帶符號網路",
+            "paragraphIndex": 3,
+            "exactQuote": "| 神經傳遞物質 | 日常物理意象 | 在果蠅中樞迴路的典型極性 | 網路計算角色 |\n| :--- | :--- | :--- | :--- |\n| **乙醯膽鹼 (ACh)** | 踩下油門加速 | 興奮性（正權重 $+$） | 推動感覺前饋接力與跨腦區激發傳導 |\n| **$\\gamma$-胺基丁酸 (GABA)** | 踩下煞車降速 | 抑制性（負權重 $-$） | 提供側向抑制、增益控制與行為門控關閉 |\n| **麩胺酸 (Glutamate)** | 局部微調閥門 | 中樞多介導氯離子抑制（負權重 $-$） | 參與感覺濾波與局部迴路競爭平衡 |\n| **生物胺調質 (DA / 5-HT / OA)** | 改寫交通號誌倍率 | 調控離子通道與突觸增益 | 切換清醒、探索、警戒與靜止等全腦狀態 |",
+            "charStart": 2505,
+            "charEnd": 2864,
+            "contentHash": "e7b3be02e5743ba230c195bf4e1998d26ec86fe481e2ac24b8b21c6aeed0b0e9",
+            "contextNote": "二、不只是「誰連誰」：替地圖標上油門與煞車的有向帶符號網路 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-d0ff4765",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-2-527ffd",
+            "sectionTitle": "二、不只是「誰連誰」：替地圖標上油門與煞車的有向帶符號網路",
+            "paragraphIndex": 4,
+            "exactQuote": "當我們把 139,255 個神經元依照解剖區域展開，一條貫穿全腦的模組化處理管線立即浮現：最外層是接收複眼與觸角訊號的**視葉與嗅覺感覺輸入區**，經過中段層層轉換進入負責空間導航的**中央複合體（Central Complex）**與負責聯想學習的**蕈形體（Mushroom Body）**，最終匯聚至猶如高壓電纜束般的**下行神經元（Descending Neurons, DNs）**——這群細胞穿過頸部神經索，直接把腦內決策轉譯成胸腹部的轉向、前行或起飛動作。",
+            "charStart": 3226,
+            "charEnd": 3461,
+            "contentHash": "d0ff4765077a8e25998e4e0c23b21e99ffa72ae6f72a5be321f278e5910d889e",
+            "contextNote": "二、不只是「誰連誰」：替地圖標上油門與煞車的有向帶符號網路 · 第 5 段"
+          }
+        ],
+        "formulas": [],
+        "interactiveComponentId": null
+      },
+      {
+        "id": "sec-3-793aa7",
+        "title": "三、全腦拓撲的骨幹與驚喜：豐富俱樂部與 8,453 種細胞類型",
+        "level": 2,
+        "paragraphs": [
+          "當整個果蠅大腦被寫成一個巨型有向帶符號鄰接矩陣 $W_{ij}$ 時，網路科學家立刻提出了一個關鍵問題：這 139,255 顆細胞是像平坦網格一樣均勻互連，還是存在少數掌握全域通訊命脈的超級節點？",
+          "拓撲分析給出了明確答案：果蠅大腦呈現強烈的**豐富俱樂部（Rich-Club）**組織架構。如果把神經系統比喻成全球航空網，大多數地方小機場只服務鄰近區域，但有少數大型國際樞紐機場不僅擁有極高的起降航班數（高入度與高出度），而且**這些樞紐彼此之間還鋪設了遠高於隨機期望密度的直飛航線**。在圖論中，當高度數節點 $k$ 之間的子網路連線密度與隨機重連零模型（Null Model）之比大於 1 時，即存在豐富俱樂部效應：",
+          "$$\\Phi_{\\text{norm}}(k) = \\frac{\\Phi(k)}{\\Phi_{\\text{rand}}(k)} > 1$$",
+          "FlyWire 的全腦量測顯示，大約 **30% 的核心樞紐神經元**構成了這座大腦的「豐富俱樂部」骨幹，它們把原本各司其職的視覺、嗅覺、導航與運動模組縫合成緊密互通的單一網路，使資訊僅需極少數突觸跳躍就能橫跨左右腦半球。這項結構一方面賦予大腦極高的跨模態整合效率，另一方面也埋下結構脆弱性——一旦核心樞紐受損，全域通訊效率將比破壞同數量的邊緣感覺細胞更快崩解。",
+          "與此同時，Schlegel 等人（2024）對整顆大腦進行了史上最細緻的細胞戶口普查，根據形態、發育譜系與上下游連結指紋，系統化註釋出 **8,453 種細胞類型（Cell Types）**，其中包含 **4,581 種從未被定義過的全新類型**。更進一步，研究團隊將這張全腦連結體與先前發表的果蠅**半腦連結體（Hemibrain）**進行跨個體比對，發現了一個兼具秩序與彈性的現象：決定核心感官轉換與基本導航演算法的主幹迴路在不同果蠅個體之間展現出極高的演化與發育保守性，彷彿兩台同型號工廠出廠的主機板共用相同的核心佈線；但部分輔助通路與突觸數量則保留了個體發育差異與冗餘備援路徑，為大腦在環境波動下提供容錯空間。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-22c8121a",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-3-793aa7",
+            "sectionTitle": "三、全腦拓撲的骨幹與驚喜：豐富俱樂部與 8,453 種細胞類型",
+            "paragraphIndex": 0,
+            "exactQuote": "當整個果蠅大腦被寫成一個巨型有向帶符號鄰接矩陣 $W_{ij}$ 時，網路科學家立刻提出了一個關鍵問題：這 139,255 顆細胞是像平坦網格一樣均勻互連，還是存在少數掌握全域通訊命脈的超級節點？",
+            "charStart": 3699,
+            "charEnd": 3797,
+            "contentHash": "22c8121a0b838d9b8ba0c6804b653b535d10bd6416f91c5a1b0f28eb0634b8a1",
+            "contextNote": "三、全腦拓撲的骨幹與驚喜：豐富俱樂部與 8,453 種細胞類型 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-ce3c1aa0",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-3-793aa7",
+            "sectionTitle": "三、全腦拓撲的骨幹與驚喜：豐富俱樂部與 8,453 種細胞類型",
+            "paragraphIndex": 1,
+            "exactQuote": "拓撲分析給出了明確答案：果蠅大腦呈現強烈的**豐富俱樂部（Rich-Club）**組織架構。",
+            "charStart": 3898,
+            "charEnd": 3944,
+            "contentHash": "ce3c1aa01968dbe11f1910890bc0d28f93af342f98e550ce0ceaa86c5a893463",
+            "contextNote": "三、全腦拓撲的骨幹與驚喜：豐富俱樂部與 8,453 種細胞類型 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-6937a9f7",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-3-793aa7",
+            "sectionTitle": "三、全腦拓撲的骨幹與驚喜：豐富俱樂部與 8,453 種細胞類型",
+            "paragraphIndex": 1,
+            "exactQuote": "如果把神經系統比喻成全球航空網，大多數地方小機場只服務鄰近區域，但有少數大型國際樞紐機場不僅擁有極高的起降航班數（高入度與高出度），而且**這些樞紐彼此之間還鋪設了遠高於隨機期望密度的直飛航線**。",
+            "charStart": 3945,
+            "charEnd": 4044,
+            "contentHash": "6937a9f7fcf92882418647d9bd9355725ff557f405cd1e2dfd3fcf20831f6c2b",
+            "contextNote": "三、全腦拓撲的骨幹與驚喜：豐富俱樂部與 8,453 種細胞類型 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-da7e7c2f",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-3-793aa7",
+            "sectionTitle": "三、全腦拓撲的骨幹與驚喜：豐富俱樂部與 8,453 種細胞類型",
+            "paragraphIndex": 1,
+            "exactQuote": "在圖論中，當高度數節點 $k$ 之間的子網路連線密度與隨機重連零模型（Null Model）之比大於 1 時，即存在豐富俱樂部效應：",
+            "charStart": 4045,
+            "charEnd": 4111,
+            "contentHash": "da7e7c2f6a12a5da32f07beab5796cab783976a4d8598a0128c3b3a86819ba67",
+            "contextNote": "三、全腦拓撲的骨幹與驚喜：豐富俱樂部與 8,453 種細胞類型 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-3899006b",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-3-793aa7",
+            "sectionTitle": "三、全腦拓撲的骨幹與驚喜：豐富俱樂部與 8,453 種細胞類型",
+            "paragraphIndex": 3,
+            "exactQuote": "FlyWire 的全腦量測顯示，大約 **30% 的核心樞紐神經元**構成了這座大腦的「豐富俱樂部」骨幹，它們把原本各司其職的視覺、嗅覺、導航與運動模組縫合成緊密互通的單一網路，使資訊僅需極少數突觸跳躍就能橫跨左右腦半球。",
+            "charStart": 4325,
+            "charEnd": 4436,
+            "contentHash": "3899006b23df6a01e00219a3621e6c5d51da1242a4d96fadb5bef210688f1b2f",
+            "contextNote": "三、全腦拓撲的骨幹與驚喜：豐富俱樂部與 8,453 種細胞類型 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-9cc3fbbc",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-3-793aa7",
+            "sectionTitle": "三、全腦拓撲的骨幹與驚喜：豐富俱樂部與 8,453 種細胞類型",
+            "paragraphIndex": 3,
+            "exactQuote": "這項結構一方面賦予大腦極高的跨模態整合效率，另一方面也埋下結構脆弱性——一旦核心樞紐受損，全域通訊效率將比破壞同數量的邊緣感覺細胞更快崩解。",
+            "charStart": 4437,
+            "charEnd": 4507,
+            "contentHash": "9cc3fbbcb6adb66cd8f06fd8a688318fdbeacabac3e96419fb56482d62a37001",
+            "contextNote": "三、全腦拓撲的骨幹與驚喜：豐富俱樂部與 8,453 種細胞類型 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-52357198",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-3-793aa7",
+            "sectionTitle": "三、全腦拓撲的骨幹與驚喜：豐富俱樂部與 8,453 種細胞類型",
+            "paragraphIndex": 4,
+            "exactQuote": "與此同時，Schlegel 等人（2024）對整顆大腦進行了史上最細緻的細胞戶口普查，根據形態、發育譜系與上下游連結指紋，系統化註釋出 **8,453 種細胞類型（Cell Types）**，其中包含 **4,581 種從未被定義過的全新類型**。",
+            "charStart": 4691,
+            "charEnd": 4815,
+            "contentHash": "5235719877745ae9977a16885cbbf5b860124c46f43f516960be5378eb24887a",
+            "contextNote": "三、全腦拓撲的骨幹與驚喜：豐富俱樂部與 8,453 種細胞類型 · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-eabcd1e0",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-3-793aa7",
+            "sectionTitle": "三、全腦拓撲的骨幹與驚喜：豐富俱樂部與 8,453 種細胞類型",
+            "paragraphIndex": 4,
+            "exactQuote": "更進一步，研究團隊將這張全腦連結體與先前發表的果蠅**半腦連結體（Hemibrain）**進行跨個體比對，發現了一個兼具秩序與彈性的現象：決定核心感官轉換與基本導航演算法的主幹迴路在不同果蠅個體之間展現出極高的演化與發育保守性，彷彿兩台同型號工廠出廠的主機板共用相同的核心佈線；但部分輔助通路與突觸數量則保留了個體發育差異與冗餘備援路徑，為大腦在環境波動下提供容錯空間。",
+            "charStart": 4816,
+            "charEnd": 5001,
+            "contentHash": "eabcd1e01ccbf3283f27baf34cd3e32e9c823bffef3ef2bccbb0252fb52a836c",
+            "contextNote": "三、全腦拓撲的骨幹與驚喜：豐富俱樂部與 8,453 種細胞類型 · 第 5 段"
+          }
+        ],
+        "formulas": [
+          "$$\\Phi_{\\text{norm}}(k) = \\frac{\\Phi(k)}{\\Phi_{\\text{rand}}(k)} > 1$$"
+        ],
+        "interactiveComponentId": null
+      },
+      {
+        "id": "sec-4-af194d",
+        "title": "四、互動實驗：為什麼相同的接線圖，能跑出截然不同的行為？",
+        "level": 2,
+        "paragraphs": [
+          "了解物理接線結構後，我們可以親手檢驗開篇那道核心科學問題：**只要拿到固定不變的有向帶符號接線矩陣 $W_{ij}$，行為輸出就唯一確定了嗎？**",
+          "在神經調質研究先驅伊芙·馬德（Eve Marder, 2012）於《Neuron》發表的經典洞見中，她用甲殼動物口胃神經節（STG）證明了一個顛覆性的事實：同一份解剖學上完全相同的接線圖，只要浸泡在多巴胺（Dopamine）、血清素（Serotonin）或不同神經肽的化學浴中，改變細胞膜離子通道電導與突觸增益，同一組神經元就能切換出頻率、相位與節律截然不同的運動輸出。",
+          "為了直觀對照 FlyWire 的結構發現與 Marder 的動態邊界，下方模擬器建構了一個簡化 24 節點三層模組有向帶符號模型，並依循漏積分激發速率（Leaky Rate）微分方程即時演化：",
+          "$$\\tau \\frac{d r_i(t)}{dt} = -r_i(t) + \\phi\\!\\left(\\sum_{j=1}^{24} g_{\\text{sign}(W_{ij})}(s)\\, W_{ij}\\, r_j(t) + I_i^{\\text{ext}}(t) - \\theta(s)\\right)$$",
+          "其中 $r_i(t)$ 為神經元 $i$ 的正規化發火率，$\\tau$ 為膜時間常數（單位為秒 $\\text{s}$），$W_{ij}$ 為靜態有向帶符號突觸權重矩陣，無因次增益因子 $g_{\\text{sign}(W_{ij})}(s)$ 與激發門檻 $\\theta(s)$ 則受當前的神經調質狀態 $s$ 與全域抑制增益調控；$\\phi(\\cdot)$ 為無因次飽和激發函數。",
+          "請嘗試在模擬器中做三個實驗：（1）維持相同的感覺脈衝，僅切換「神經調質狀態」，觀察靜態接線圖一字未改下，下行運動輸出如何從探索、避險切換為靜止；（2）調整「全域抑制增益」，體會 GABA/Glu 煞車權重如何重塑訊號過門檻的範圍；（3）直接點擊畫布中帶有金色外環的「豐富俱樂部樞紐」進行虛擬雷射燒灼，對比其與邊緣感覺節點受損時對運動輸出的衝擊差異。",
+          "<InteractiveExperiment id=\"ConnectomeWiringSimulator\" />"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-c6bdea39",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-4-af194d",
+            "sectionTitle": "四、互動實驗：為什麼相同的接線圖，能跑出截然不同的行為？",
+            "paragraphIndex": 0,
+            "exactQuote": "了解物理接線結構後，我們可以親手檢驗開篇那道核心科學問題：**只要拿到固定不變的有向帶符號接線矩陣 $W_{ij}$，行為輸出就唯一確定了嗎？**",
+            "charStart": 5313,
+            "charEnd": 5386,
+            "contentHash": "c6bdea39fdcf1ac4407d1ac079a512ecf7f51e76f1a4ad450d51f80b67c0b8e8",
+            "contextNote": "四、互動實驗：為什麼相同的接線圖，能跑出截然不同的行為？ · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-2465580f",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-4-af194d",
+            "sectionTitle": "四、互動實驗：為什麼相同的接線圖，能跑出截然不同的行為？",
+            "paragraphIndex": 1,
+            "exactQuote": "在神經調質研究先驅伊芙·馬德（Eve Marder, 2012）於《Neuron》發表的經典洞見中，她用甲殼動物口胃神經節（STG）證明了一個顛覆性的事實：同一份解剖學上完全相同的接線圖，只要浸泡在多巴胺（Dopamine）、血清素（Serotonin）或不同神經肽的化學浴中，改變細胞膜離子通道電導與突觸增益，同一組神經元就能切換出頻率、相位與節律截然不同的運動輸出。",
+            "charStart": 5462,
+            "charEnd": 5647,
+            "contentHash": "2465580f03d6dc1a5059251e7a8c519864e1a81a799306ae3f9fc89f6d80b808",
+            "contextNote": "四、互動實驗：為什麼相同的接線圖，能跑出截然不同的行為？ · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-8114bae4",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-4-af194d",
+            "sectionTitle": "四、互動實驗：為什麼相同的接線圖，能跑出截然不同的行為？",
+            "paragraphIndex": 2,
+            "exactQuote": "為了直觀對照 FlyWire 的結構發現與 Marder 的動態邊界，下方模擬器建構了一個簡化 24 節點三層模組有向帶符號模型，並依循漏積分激發速率（Leaky Rate）微分方程即時演化：",
+            "charStart": 5835,
+            "charEnd": 5931,
+            "contentHash": "8114bae46d3b4698d348b513222482a10518583fc3c727bef9a41a5363af0cd7",
+            "contextNote": "四、互動實驗：為什麼相同的接線圖，能跑出截然不同的行為？ · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-6f567329",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-4-af194d",
+            "sectionTitle": "四、互動實驗：為什麼相同的接線圖，能跑出截然不同的行為？",
+            "paragraphIndex": 4,
+            "exactQuote": "其中 $r_i(t)$ 為神經元 $i$ 的正規化發火率，$\\tau$ 為膜時間常數（單位為秒 $\\text{s}$），$W_{ij}$ 為靜態有向帶符號突觸權重矩陣，無因次增益因子 $g_{\\text{sign}(W_{ij})}(s)$ 與激發門檻 $\\theta(s)$ 則受當前的神經調質狀態 $s$ 與全域抑制增益調控；$\\phi(\\cdot)$ 為無因次飽和激發函數。",
+            "charStart": 6030,
+            "charEnd": 6220,
+            "contentHash": "6f5673290f25ed2db23b863666dfc45c4135897e7eb3830f71481744b7c898cd",
+            "contextNote": "四、互動實驗：為什麼相同的接線圖，能跑出截然不同的行為？ · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-dfd26213",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-4-af194d",
+            "sectionTitle": "四、互動實驗：為什麼相同的接線圖，能跑出截然不同的行為？",
+            "paragraphIndex": 5,
+            "exactQuote": "請嘗試在模擬器中做三個實驗：（1）維持相同的感覺脈衝，僅切換「神經調質狀態」，觀察靜態接線圖一字未改下，下行運動輸出如何從探索、避險切換為靜止；（2）調整「全域抑制增益」，體會 GABA/Glu 煞車權重如何重塑訊號過門檻的範圍；（3）直接點擊畫布中帶有金色外環的「豐富俱樂部樞紐」進行虛擬雷射燒灼，對比其與邊緣感覺節點受損時對運動輸出的衝擊差異。",
+            "charStart": 6413,
+            "charEnd": 6587,
+            "contentHash": "dfd26213f61fc3fac72899129c382bd605e2d23dc78018872fa6cdfb1566f756",
+            "contextNote": "四、互動實驗：為什麼相同的接線圖，能跑出截然不同的行為？ · 第 6 段"
+          }
+        ],
+        "formulas": [
+          "$$\\tau \\frac{d r_i(t)}{dt} = -r_i(t) + \\phi\\!\\left(\\sum_{j=1}^{24} g_{\\text{sign}(W_{ij})}(s)\\, W_{ij}\\, r_j(t) + I_i^{\\text{ext}}(t) - \\theta(s)\\right)$$"
+        ],
+        "interactiveComponentId": "ConnectomeWiringSimulator"
+      },
+      {
+        "id": "sec-5-2758d7",
+        "title": "五、科學邊界：連結體只是必要條件，而非充分條件",
+        "level": 2,
+        "paragraphs": [
+          "從你在上方模擬器親眼看見的現象，就能體會為什麼當代計算神經科學家對「拿著連結體就能完全模擬大腦」始終保持審慎態度。結合 FlyWire 論文自身的技術討論與 Marder（2012）的迴路理論，我們必須為這項歷史性成就劃定四條清晰的科學邊界：",
+          "### 1. 靜態拓撲無法自動給出「神經調質」的動態參數\nFlyWire 透過顯微影像與視覺分類器，補上了乙醯膽鹼與 GABA/麩胺酸等主要快傳遞突觸的正負號，這是極大的躍進。然而，多巴胺、血清素與神經肽等**神經調質（Neuromodulation）**往往不透過點對點的對接突觸傳遞，而是採取「體積傳導（Volumetric Transmission）」，像霧氣般彌漫在腦區周圍，即時改變神經元的靜止膜電位、離子通道電導與突觸傳遞增益。換言之，連結體告訴我們哪些細胞「可能」對話，卻無法單獨告訴我們在飢餓、受驚或求偶狀態下，哪幾條通道正在被放大、哪幾條正在被靜音。",
+          "### 2. 電突觸（間隙連接）與神經膠質細胞仍未納入矩陣\n電子顯微鏡影像主要擅長辨識突觸前囊泡與突觸後緻密物質俱全的「化學突觸」。然而大腦中還存在大量直接讓相鄰細胞共享離子電流的**電突觸，即間隙連接（Gap Junctions）**——它們如同兩間房間牆上直接打通的銅製導線，在快速同步放電中扮演關鍵角色，卻在目前的 EM 解析度與自動分割流程下難以完整量化。此外，包覆並調控突觸微環境、參與能量代謝與離子回收的**神經膠質細胞（Glial Cells）**交互作用，也尚未寫入這張五千萬接點的矩陣中。",
+          "### 3. 突觸數量不等於真實生理電導權重\n在目前的圖譜分析裡，研究者常以兩顆神經元之間「化學突觸的數量（Synapse Count）」作為連線權重的近似指標。但在真實電生理層面，樹突分支上的空間位置（靠近胞體還是遠端細枝）、受體亞型密度以及突觸前短期可塑性（Short-Term Plasticity），都可能讓兩個突觸數量相同的連結產生相差數倍的突觸後電流。",
+          "### 4. 單一雌性個體樣本的代表性限制\n儘管 Schlegel 等人（2024）透過與半腦數據的交叉比對確認了核心迴路的跨個體保守性，FlyWire 本身完整測繪的仍然是一隻特定年齡與生活史的**單一隻成年雌性果蠅**。雄性求偶專有迴路、跨個體間神經分支的微觀可塑性，以及不同生理狀態下的細胞類型表現，仍有賴未來更多全腦連結體樣本加入比較。",
+          "正因如此，FlyWire 的真正價值不在於宣告「大腦之謎已經靠一張電路圖終結」，而恰恰在於它替全人類提供了一張前所未有的高解析底圖——從今以後，電生理學家、光遺傳學家與計算理論學者終於不必再在黑暗中摸索誰與誰相連，而能站在這 139,255 個神經元與五千萬個突觸的座標上，真正開始追問那些跨越結構與動態的下一代問題。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-e48dc23f",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-5-2758d7",
+            "sectionTitle": "五、科學邊界：連結體只是必要條件，而非充分條件",
+            "paragraphIndex": 0,
+            "exactQuote": "從你在上方模擬器親眼看見的現象，就能體會為什麼當代計算神經科學家對「拿著連結體就能完全模擬大腦」始終保持審慎態度。",
+            "charStart": 6764,
+            "charEnd": 6821,
+            "contentHash": "e48dc23fc207713c40403675a50fba4e228c5429edd8389d8d7336aa2e299b82",
+            "contextNote": "五、科學邊界：連結體只是必要條件，而非充分條件 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-ffbc9a29",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-5-2758d7",
+            "sectionTitle": "五、科學邊界：連結體只是必要條件，而非充分條件",
+            "paragraphIndex": 0,
+            "exactQuote": "結合 FlyWire 論文自身的技術討論與 Marder（2012）的迴路理論，我們必須為這項歷史性成就劃定四條清晰的科學邊界：",
+            "charStart": 6822,
+            "charEnd": 6886,
+            "contentHash": "ffbc9a29a281b787677f9a7435612823182b7ad8633fcd0c1437637270ea23fd",
+            "contextNote": "五、科學邊界：連結體只是必要條件，而非充分條件 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-3f32620a",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-5-2758d7",
+            "sectionTitle": "五、科學邊界：連結體只是必要條件，而非充分條件",
+            "paragraphIndex": 1,
+            "exactQuote": "### 1. 靜態拓撲無法自動給出「神經調質」的動態參數\nFlyWire 透過顯微影像與視覺分類器，補上了乙醯膽鹼與 GABA/麩胺酸等主要快傳遞突觸的正負號，這是極大的躍進。",
+            "charStart": 7010,
+            "charEnd": 7098,
+            "contentHash": "3f32620abaa1f77a95dfb1aaf993fd6847304455aadc51315957bfc3fba07225",
+            "contextNote": "五、科學邊界：連結體只是必要條件，而非充分條件 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-76b6e37f",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-5-2758d7",
+            "sectionTitle": "五、科學邊界：連結體只是必要條件，而非充分條件",
+            "paragraphIndex": 1,
+            "exactQuote": "然而，多巴胺、血清素與神經肽等**神經調質（Neuromodulation）**往往不透過點對點的對接突觸傳遞，而是採取「體積傳導（Volumetric Transmission）」，像霧氣般彌漫在腦區周圍，即時改變神經元的靜止膜電位、離子通道電導與突觸傳遞增益。",
+            "charStart": 7099,
+            "charEnd": 7231,
+            "contentHash": "76b6e37ff89142833a88d56c2ebef9f8459f5f927b62912ab4014e3dd5b8da92",
+            "contextNote": "五、科學邊界：連結體只是必要條件，而非充分條件 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-fc7c4afa",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-5-2758d7",
+            "sectionTitle": "五、科學邊界：連結體只是必要條件，而非充分條件",
+            "paragraphIndex": 1,
+            "exactQuote": "換言之，連結體告訴我們哪些細胞「可能」對話，卻無法單獨告訴我們在飢餓、受驚或求偶狀態下，哪幾條通道正在被放大、哪幾條正在被靜音。",
+            "charStart": 7232,
+            "charEnd": 7296,
+            "contentHash": "fc7c4afa74b3c4e431180a7f6d98b165432dd8bc8b136f0744c97080e21c900f",
+            "contextNote": "五、科學邊界：連結體只是必要條件，而非充分條件 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-29d601ed",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-5-2758d7",
+            "sectionTitle": "五、科學邊界：連結體只是必要條件，而非充分條件",
+            "paragraphIndex": 2,
+            "exactQuote": "### 2. 電突觸（間隙連接）與神經膠質細胞仍未納入矩陣\n電子顯微鏡影像主要擅長辨識突觸前囊泡與突觸後緻密物質俱全的「化學突觸」。",
+            "charStart": 7583,
+            "charEnd": 7649,
+            "contentHash": "29d601ed0a174c8ffdddd0c920ca6d5bd5a19837df98da2bbb78eb931449fbd6",
+            "contextNote": "五、科學邊界：連結體只是必要條件，而非充分條件 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-e0fbb419",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-5-2758d7",
+            "sectionTitle": "五、科學邊界：連結體只是必要條件，而非充分條件",
+            "paragraphIndex": 2,
+            "exactQuote": "然而大腦中還存在大量直接讓相鄰細胞共享離子電流的**電突觸，即間隙連接（Gap Junctions）**——它們如同兩間房間牆上直接打通的銅製導線，在快速同步放電中扮演關鍵角色，卻在目前的 EM 解析度與自動分割流程下難以完整量化。",
+            "charStart": 7650,
+            "charEnd": 7766,
+            "contentHash": "e0fbb4199c65d2b183d0f92b677e607191c4c090eaa1c792f72c24fda47d612a",
+            "contextNote": "五、科學邊界：連結體只是必要條件，而非充分條件 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-196a1483",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-5-2758d7",
+            "sectionTitle": "五、科學邊界：連結體只是必要條件，而非充分條件",
+            "paragraphIndex": 2,
+            "exactQuote": "此外，包覆並調控突觸微環境、參與能量代謝與離子回收的**神經膠質細胞（Glial Cells）**交互作用，也尚未寫入這張五千萬接點的矩陣中。",
+            "charStart": 7767,
+            "charEnd": 7838,
+            "contentHash": "196a1483352139c88a42e54e301532908b23ef374d835d4ff8a90d4874afdd39",
+            "contextNote": "五、科學邊界：連結體只是必要條件，而非充分條件 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-6c89649b",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-5-2758d7",
+            "sectionTitle": "五、科學邊界：連結體只是必要條件，而非充分條件",
+            "paragraphIndex": 3,
+            "exactQuote": "### 3. 突觸數量不等於真實生理電導權重\n在目前的圖譜分析裡，研究者常以兩顆神經元之間「化學突觸的數量（Synapse Count）」作為連線權重的近似指標。",
+            "charStart": 8094,
+            "charEnd": 8175,
+            "contentHash": "6c89649b80f70f1d0316e73bc100003ad45b7248acc47da87db3f6b6f392d902",
+            "contextNote": "五、科學邊界：連結體只是必要條件，而非充分條件 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-ffd3431e",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-5-2758d7",
+            "sectionTitle": "五、科學邊界：連結體只是必要條件，而非充分條件",
+            "paragraphIndex": 3,
+            "exactQuote": "但在真實電生理層面，樹突分支上的空間位置（靠近胞體還是遠端細枝）、受體亞型密度以及突觸前短期可塑性（Short-Term Plasticity），都可能讓兩個突觸數量相同的連結產生相差數倍的突觸後電流。",
+            "charStart": 8176,
+            "charEnd": 8277,
+            "contentHash": "ffd3431ef99b1825bb9748c04c13b081dabe7722dc9a651663308269183fbe5e",
+            "contextNote": "五、科學邊界：連結體只是必要條件，而非充分條件 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-1f3d6232",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-5-2758d7",
+            "sectionTitle": "五、科學邊界：連結體只是必要條件，而非充分條件",
+            "paragraphIndex": 4,
+            "exactQuote": "### 4. 單一雌性個體樣本的代表性限制\n儘管 Schlegel 等人（2024）透過與半腦數據的交叉比對確認了核心迴路的跨個體保守性，FlyWire 本身完整測繪的仍然是一隻特定年齡與生活史的**單一隻成年雌性果蠅**。",
+            "charStart": 8462,
+            "charEnd": 8574,
+            "contentHash": "1f3d6232e486c3ec98ad909ea57a9c23099416a4532afbe6b2227fcfbb893e84",
+            "contextNote": "五、科學邊界：連結體只是必要條件，而非充分條件 · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-4a15948d",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-5-2758d7",
+            "sectionTitle": "五、科學邊界：連結體只是必要條件，而非充分條件",
+            "paragraphIndex": 4,
+            "exactQuote": "雄性求偶專有迴路、跨個體間神經分支的微觀可塑性，以及不同生理狀態下的細胞類型表現，仍有賴未來更多全腦連結體樣本加入比較。",
+            "charStart": 8575,
+            "charEnd": 8635,
+            "contentHash": "4a15948db334ae3f4dc01351dab2c2d22bccd796b7296a417842982846b76897",
+            "contextNote": "五、科學邊界：連結體只是必要條件，而非充分條件 · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-1d5f51e2",
+            "articleId": "art-drosophila-connectome-flywire",
+            "sectionId": "sec-5-2758d7",
+            "sectionTitle": "五、科學邊界：連結體只是必要條件，而非充分條件",
+            "paragraphIndex": 5,
+            "exactQuote": "正因如此，FlyWire 的真正價值不在於宣告「大腦之謎已經靠一張電路圖終結」，而恰恰在於它替全人類提供了一張前所未有的高解析底圖——從今以後，電生理學家、光遺傳學家與計算理論學者終於不必再在黑暗中摸索誰與誰相連，而能站在這 139,255 個神經元與五千萬個突觸的座標上，真正開始追問那些跨越結構與動態的下一代問題。",
+            "charStart": 8810,
+            "charEnd": 8969,
+            "contentHash": "1d5f51e281c7a7d45437641f7e7fd96402cd1bea94bb2a36e116d56345b6927b",
+            "contextNote": "五、科學邊界：連結體只是必要條件，而非充分條件 · 第 6 段"
+          }
+        ],
+        "formulas": [],
+        "interactiveComponentId": null
+      }
+    ],
+    "totalWordCount": 4740,
+    "lastIndexedAt": "2026-11-17T01:09:00.902Z"
   },
   {
     "id": "art-entorhinal-grid-cells",
@@ -13309,7 +14880,7 @@
       }
     ],
     "totalWordCount": 2970,
-    "lastIndexedAt": "2026-11-16T01:09:57.240Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.905Z"
   },
   {
     "id": "art-eht-polarization-magnetic-fields",
@@ -14108,7 +15679,7 @@
       }
     ],
     "totalWordCount": 4301,
-    "lastIndexedAt": "2026-11-16T01:09:57.244Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.906Z"
   },
   {
     "id": "art-gravitational-waves-kerr",
@@ -14721,7 +16292,7 @@
       }
     ],
     "totalWordCount": 3547,
-    "lastIndexedAt": "2026-11-16T01:09:57.245Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.908Z"
   },
   {
     "id": "art-hawk-dove-ess",
@@ -15722,7 +17293,7 @@
       }
     ],
     "totalWordCount": 2689,
-    "lastIndexedAt": "2026-11-16T01:09:57.249Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.909Z"
   },
   {
     "id": "art-insect-flight-lev",
@@ -16822,7 +18393,7 @@
       }
     ],
     "totalWordCount": 6968,
-    "lastIndexedAt": "2026-11-16T01:09:57.250Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.911Z"
   },
   {
     "id": "art-jwst-cosmos-web-lensing",
@@ -17474,7 +19045,7 @@
       }
     ],
     "totalWordCount": 3591,
-    "lastIndexedAt": "2026-11-16T01:09:57.253Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.914Z"
   },
   {
     "id": "art-kimura-neutral-evolution",
@@ -18340,7 +19911,7 @@
       }
     ],
     "totalWordCount": 4314,
-    "lastIndexedAt": "2026-11-16T01:09:57.255Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.917Z"
   },
   {
     "id": "art-kuramoto-synchronization",
@@ -19063,7 +20634,7 @@
       }
     ],
     "totalWordCount": 4597,
-    "lastIndexedAt": "2026-11-16T01:09:57.256Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.921Z"
   },
   {
     "id": "art-levinthal-paradox-funnel",
@@ -19874,7 +21445,7 @@
       }
     ],
     "totalWordCount": 3540,
-    "lastIndexedAt": "2026-11-16T01:09:57.258Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.924Z"
   },
   {
     "id": "art-magic-angle-graphene",
@@ -20730,7 +22301,7 @@
       }
     ],
     "totalWordCount": 4149,
-    "lastIndexedAt": "2026-11-16T01:09:57.261Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.926Z"
   },
   {
     "id": "art-maxwells-demon-entropy",
@@ -21366,7 +22937,7 @@
       }
     ],
     "totalWordCount": 2262,
-    "lastIndexedAt": "2026-11-16T01:09:57.264Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.928Z"
   },
   {
     "id": "art-cof-carbon-capture",
@@ -22030,7 +23601,7 @@
       }
     ],
     "totalWordCount": 4885,
-    "lastIndexedAt": "2026-11-16T01:09:57.265Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.929Z"
   },
   {
     "id": "art-muon-g-2-discrepancy",
@@ -23254,7 +24825,7 @@
       }
     ],
     "totalWordCount": 7884,
-    "lastIndexedAt": "2026-11-16T01:09:57.267Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.931Z"
   },
   {
     "id": "art-optical-tweezers-dna",
@@ -23790,7 +25361,7 @@
       }
     ],
     "totalWordCount": 3839,
-    "lastIndexedAt": "2026-11-16T01:09:57.270Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.934Z"
   },
   {
     "id": "art-orbital-resonance-tidal-heating",
@@ -24441,7 +26012,7 @@
       }
     ],
     "totalWordCount": 4020,
-    "lastIndexedAt": "2026-11-16T01:09:57.271Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.935Z"
   },
   {
     "id": "art-percolation-phase-transition",
@@ -25582,7 +27153,7 @@
       }
     ],
     "totalWordCount": 5617,
-    "lastIndexedAt": "2026-11-16T01:09:57.275Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.937Z"
   },
   {
     "id": "art-pta-gravitational-waves",
@@ -26335,7 +27906,7 @@
       }
     ],
     "totalWordCount": 5713,
-    "lastIndexedAt": "2026-11-16T01:09:57.277Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.938Z"
   },
   {
     "id": "art-quantum-surface-code",
@@ -26977,7 +28548,7 @@
       }
     ],
     "totalWordCount": 3633,
-    "lastIndexedAt": "2026-11-16T01:09:57.278Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.940Z"
   },
   {
     "id": "art-quantum-hall-anyons",
@@ -27850,7 +29421,7 @@
       }
     ],
     "totalWordCount": 4789,
-    "lastIndexedAt": "2026-11-16T01:09:57.281Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.941Z"
   },
   {
     "id": "art-quantum-tunneling-stm",
@@ -28678,7 +30249,7 @@
       }
     ],
     "totalWordCount": 4935,
-    "lastIndexedAt": "2026-11-16T01:09:57.283Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.946Z"
   },
   {
     "id": "art-rna-world-ribozyme",
@@ -29327,7 +30898,7 @@
       }
     ],
     "totalWordCount": 3321,
-    "lastIndexedAt": "2026-11-16T01:09:57.284Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.948Z"
   },
   {
     "id": "art-snn-neuromorphic-compute",
@@ -29947,7 +31518,967 @@
       }
     ],
     "totalWordCount": 3713,
-    "lastIndexedAt": "2026-11-16T01:09:57.287Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.949Z"
+  },
+  {
+    "id": "art-stochastic-resonance-kramers",
+    "slug": "stochastic-resonance-bistable-noise-amplification",
+    "version": 1,
+    "publishedDate": "2026-11-17",
+    "status": "published",
+    "editorialCategory": "scientific_principles",
+    "narrativeStyle": "historical_detective",
+    "format": "depth",
+    "formatBadgeText": "非線性隨機動力學",
+    "title": "隨機共振：雜訊如何反過來放大微弱訊號與地球冰河期節律？",
+    "subtitle": "從第四紀十萬年冰期懸案、克拉默斯逃逸時間尺度匹配到淡水螯蝦的微弱水流偵測",
+    "summary": "在傳統通訊工程與線性物理學中，隨機雜訊向來是必須層層濾除的敵人。然而 1981 年本齊（Roberto Benzi）、蘇特拉（Alfonso Sutera）與武爾皮亞尼（Angelo Vulpiani）為了破解地球軌道偏心率僅千分之幾的微弱日照變化為何能伴隨十萬年週期冰河期交替，提出了違反直覺的「隨機共振（Stochastic Resonance）」機制。當系統擁有雙穩態勢壘或非線性門檻且週期驅動力低於翻轉閾值時，適度強度的白雜訊能將粒子的克拉默斯平均停留時間調諧至與半個驅動週期匹配（T_Ω / 2 ≈ τ_K(D)），讓輸出端訊雜比呈現先升後降的鐘形共振峰。這項機制隨後也在淡水螯蝦尾扇機械感受器的活體電生理實驗中獲得直接驗證。",
+    "topicIds": [
+      "topic-statistical-physics",
+      "topic-nonlinear-dynamics"
+    ],
+    "tags": [
+      "隨機共振",
+      "克拉默斯逃逸率",
+      "雙穩態勢阱",
+      "朗之萬方程",
+      "米蘭科維奇循環",
+      "非線性動力學"
+    ],
+    "difficultyLevel": "intermediate",
+    "interactiveComponent": "StochasticResonanceSimulator",
+    "interactiveType": "bistable_stochastic_resonance",
+    "estimatedReadTimeMinutes": 15,
+    "leadParagraph": "在訊號工程與精密量測的世界裡，雜訊幾乎是所有干擾的代名詞：工程師設計層層低通濾波器、低溫冷卻偵測器與電磁屏蔽罩，目的只有一個——把無序的隨機漲落壓到最低，好讓微弱的週期訊號浮出水面。然而，這個在線性電路中千真萬確的鐵律，在面對自然界的非線性門檻時卻會徹底反轉。為什麼工程師窮盡一切降噪手段想消滅的白雜訊，在雙穩態山谷與神經元放電閾值之前，反而能搖身一變，成為讓原本永遠跨不過門檻的微弱訊號重見天日的關鍵推手？",
+    "quoteLead": "雜訊本身從不攜帶訊號的節拍，但當非線性勢壘鎖住微弱的週期推力時，恰到好處的隨機搖晃能把勢阱裡的系統準時托上鞍點，讓環境的無序混沌與訊號的隱微節奏在半週期尺度上同頻共振。",
+    "authors": [
+      {
+        "name": "MIRARI 統計物理與非線性動力學組",
+        "role": "科學特約撰稿"
+      }
+    ],
+    "references": [
+      {
+        "id": "ref-benzi-1981-jpa",
+        "citation": "Benzi, R., Sutera, A., & Vulpiani, A. (1981). \"The mechanism of stochastic resonance.\" Journal of Physics A: Mathematical and General, 14(11), L453–L457.",
+        "doi": "10.1088/0305-4470/14/11/006"
+      },
+      {
+        "id": "ref-douglass-1993-nature",
+        "citation": "Douglass, J. K., Wilkens, L., Pantazelou, E., & Moss, F. (1993). \"Noise enhancement of information transfer in crayfish mechanoreceptors by stochastic resonance.\" Nature, 365(6444), 337–340.",
+        "doi": "10.1038/365337a0"
+      },
+      {
+        "id": "ref-gammaitoni-1998-rmp",
+        "citation": "Gammaitoni, L., Hänggi, P., Jung, P., & Marchesoni, F. (1998). \"Stochastic resonance.\" Reviews of Modern Physics, 70(1), 223–287.",
+        "doi": "10.1103/RevModPhys.70.223"
+      }
+    ],
+    "contentHash": "e11e4d6a51e5834f0e133938ab45e4477bf2e38b23f3f52f52d7d61cfdee7d59",
+    "sections": [
+      {
+        "id": "sec-1-93b696",
+        "title": "古氣候懸案：千分之幾的日照微擾，為何掀起十萬年冰河巨浪？",
+        "level": 2,
+        "paragraphs": [
+          "1970 年代末至 1980 年代初，地球科學與統計物理的交界地帶懸著一樁令古氣候學家百思不得其解的謎案。從深海沉積物有孔蟲殼體的氧同位素紀錄中，地質學家早已拼湊出第四紀（過去約兩百多萬年）地球氣候的劇烈脈動：全球平均氣溫以大約**十萬年（$10^5$ 年）**為主導週期，在冰封萬里的冰期與海平面上升的間冰期之間反覆震盪，全球均溫擺幅可達攝氏數度以上。",
+          "從天文力學尋找節拍器時，學者最先鎖定的是塞爾維亞天文學家米盧廷·米蘭科維奇（Milutin Milanković）算出的**地球軌道偏心率（Orbital Eccentricity）**變化——地球繞日軌道在近圓與微橢圓之間拉扯的週期，正好落在約十萬年。然而把數字代進太陽輻射平衡方程後，偵探筆記上卻出現了巨大的量級鴻溝：軌道偏心率改變所引起的地球年平均總太陽輻射量變化，**只有千分之幾（約 $0.1\\%\\text{–}0.2\\%$）的微幅起伏**。這點如羽毛般輕柔的日照微擾，若單純透過線性能量平衡估算，最多只能讓地球溫度改變不到零點幾度，遠不足以單獨跨過冰雪擴張與反射陽光彼此強化的門檻，更不可能獨立掀起全球冰蓋進退的巨浪。",
+          "1981 年，三位義大利物理學家——羅貝托·本齊（Roberto Benzi）、阿方索·蘇特拉（Alfonso Sutera）與安傑洛·武爾皮亞尼（Angelo Vulpiani）——在《Journal of Physics A: Mathematical and General》發表了一篇僅五頁卻改寫非線性隨機動力學版圖的短論，提出了一個近乎異端的物理假說：**地球氣候系統並不嫌棄短期的隨機氣象擾動，反而是靠著「天氣雜訊」把微弱的十萬年軌道節律放大成全球冰期切換。**",
+          "本齊等人把地球全球能量平衡簡化為一個**雙穩態勢阱（Bistable Potential）**——想像一座由兩座深邃山谷與中間一道高聳山脊構成的馬鞍地形：一側山谷代表高反射率、大片大陸被冰雪覆蓋的「冷冰期穩態」，另一側代表海洋吸收大量太陽能的「暖間冰期穩態」。冰雪越多、陽光反射率（反照率）越高、氣溫就越低的正回饋效應，刻出了兩座穩態山谷之間難以直接跨越的能量山脊（勢壘）。微弱的米蘭科維奇偏心率週期訊號，只是讓這座雙谷地形以十萬年為週期極其輕微地左右緩慢傾斜；因為傾斜幅度遠低於把山谷徹底抹平的臨界值，沒有雜訊時，地球氣候只會在原本那座山谷底部微微晃動，永遠翻不過山脊。",
+          "但真實的地球大氣與海洋從不寂靜。日復一日的風暴、季風、聖嬰振盪與洋流亂流，構成了時間尺度遠短於十萬年、無規起伏的**白雜訊（White Noise）**——就像在所有頻率上均勻沙沙作響的收音機靜電雜音。本齊、蘇特拉與武爾皮亞尼證明，只要這股短期氣候雜訊的強度落在恰當區間，就能在十萬年軌道把某一側山谷微微抬高、讓翻越山脊的代價降到最低的那半個週期裡，適時把氣候狀態「踢過山脊」跌入另一座山谷，從而催生出與微弱軌道驅動力同步的劇烈冰期／間冰期跳躍。他們將這套雜訊與微弱週期力協同放大的現象命名為**隨機共振（Stochastic Resonance）**。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-d79f774e",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-1-93b696",
+            "sectionTitle": "古氣候懸案：千分之幾的日照微擾，為何掀起十萬年冰河巨浪？",
+            "paragraphIndex": 0,
+            "exactQuote": "1970 年代末至 1980 年代初，地球科學與統計物理的交界地帶懸著一樁令古氣候學家百思不得其解的謎案。",
+            "charStart": 0,
+            "charEnd": 53,
+            "contentHash": "d79f774e74ed45170e226232f11e78dd396b3276e5cbe4d6776909bae0abc169",
+            "contextNote": "古氣候懸案：千分之幾的日照微擾，為何掀起十萬年冰河巨浪？ · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-8a9e67e4",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-1-93b696",
+            "sectionTitle": "古氣候懸案：千分之幾的日照微擾，為何掀起十萬年冰河巨浪？",
+            "paragraphIndex": 0,
+            "exactQuote": "從深海沉積物有孔蟲殼體的氧同位素紀錄中，地質學家早已拼湊出第四紀（過去約兩百多萬年）地球氣候的劇烈脈動：全球平均氣溫以大約**十萬年（$10^5$ 年）**為主導週期，在冰封萬里的冰期與海平面上升的間冰期之間反覆震盪，全球均溫擺幅可達攝氏數度以上。",
+            "charStart": 54,
+            "charEnd": 178,
+            "contentHash": "8a9e67e4439c6bd92c84113e5f5d874f7f256ae72f2fd77706dadc418cc14d9d",
+            "contextNote": "古氣候懸案：千分之幾的日照微擾，為何掀起十萬年冰河巨浪？ · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-8c103199",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-1-93b696",
+            "sectionTitle": "古氣候懸案：千分之幾的日照微擾，為何掀起十萬年冰河巨浪？",
+            "paragraphIndex": 1,
+            "exactQuote": "從天文力學尋找節拍器時，學者最先鎖定的是塞爾維亞天文學家米盧廷·米蘭科維奇（Milutin Milanković）算出的**地球軌道偏心率（Orbital Eccentricity）**變化——地球繞日軌道在近圓與微橢圓之間拉扯的週期，正好落在約十萬年。",
+            "charStart": 358,
+            "charEnd": 485,
+            "contentHash": "8c1031999ae59e9110260151db71ea155ebd95654ed3044015136768735048fb",
+            "contextNote": "古氣候懸案：千分之幾的日照微擾，為何掀起十萬年冰河巨浪？ · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-b54fa728",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-1-93b696",
+            "sectionTitle": "古氣候懸案：千分之幾的日照微擾，為何掀起十萬年冰河巨浪？",
+            "paragraphIndex": 1,
+            "exactQuote": "然而把數字代進太陽輻射平衡方程後，偵探筆記上卻出現了巨大的量級鴻溝：軌道偏心率改變所引起的地球年平均總太陽輻射量變化，**只有千分之幾（約 $0.1\\%\\text{–}0.2\\%$）的微幅起伏**。",
+            "charStart": 486,
+            "charEnd": 585,
+            "contentHash": "b54fa728fc2030fa31a71ef3f53cf12a38febe9644ee27036a321b6eb05108f6",
+            "contextNote": "古氣候懸案：千分之幾的日照微擾，為何掀起十萬年冰河巨浪？ · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-80b5a9f3",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-1-93b696",
+            "sectionTitle": "古氣候懸案：千分之幾的日照微擾，為何掀起十萬年冰河巨浪？",
+            "paragraphIndex": 1,
+            "exactQuote": "這點如羽毛般輕柔的日照微擾，若單純透過線性能量平衡估算，最多只能讓地球溫度改變不到零點幾度，遠不足以單獨跨過冰雪擴張與反射陽光彼此強化的門檻，更不可能獨立掀起全球冰蓋進退的巨浪。",
+            "charStart": 586,
+            "charEnd": 675,
+            "contentHash": "80b5a9f34ef16b96f13ad64652174e7026c9081c851b22f3ecca28a819d4042e",
+            "contextNote": "古氣候懸案：千分之幾的日照微擾，為何掀起十萬年冰河巨浪？ · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-f33fc5a6",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-1-93b696",
+            "sectionTitle": "古氣候懸案：千分之幾的日照微擾，為何掀起十萬年冰河巨浪？",
+            "paragraphIndex": 2,
+            "exactQuote": "1981 年，三位義大利物理學家——羅貝托·本齊（Roberto Benzi）、阿方索·蘇特拉（Alfonso Sutera）與安傑洛·武爾皮亞尼（Angelo Vulpiani）——在《Journal of Physics A: Mathematical and General》發表了一篇僅五頁卻改寫非線性隨機動力學版圖的短論，提出了一個近乎異端的物理假說：**地球氣候系統並不嫌棄短期的隨機氣象擾動，反而是靠著「天氣雜訊」把微弱的十萬年軌道節律放大成全球冰期切換。**",
+            "charStart": 993,
+            "charEnd": 1230,
+            "contentHash": "f33fc5a6deb0ff188fe3ef944047be262ffb0669d131ee37909cea379ed85912",
+            "contextNote": "古氣候懸案：千分之幾的日照微擾，為何掀起十萬年冰河巨浪？ · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-7d4b5a59",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-1-93b696",
+            "sectionTitle": "古氣候懸案：千分之幾的日照微擾，為何掀起十萬年冰河巨浪？",
+            "paragraphIndex": 3,
+            "exactQuote": "本齊等人把地球全球能量平衡簡化為一個**雙穩態勢阱（Bistable Potential）**——想像一座由兩座深邃山谷與中間一道高聳山脊構成的馬鞍地形：一側山谷代表高反射率、大片大陸被冰雪覆蓋的「冷冰期穩態」，另一側代表海洋吸收大量太陽能的「暖間冰期穩態」。",
+            "charStart": 1470,
+            "charEnd": 1600,
+            "contentHash": "7d4b5a59af7a1f3e2f270e44f21073c388c4babf160e0a71fd652678919fef83",
+            "contextNote": "古氣候懸案：千分之幾的日照微擾，為何掀起十萬年冰河巨浪？ · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-32c3e9bf",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-1-93b696",
+            "sectionTitle": "古氣候懸案：千分之幾的日照微擾，為何掀起十萬年冰河巨浪？",
+            "paragraphIndex": 3,
+            "exactQuote": "冰雪越多、陽光反射率（反照率）越高、氣溫就越低的正回饋效應，刻出了兩座穩態山谷之間難以直接跨越的能量山脊（勢壘）。",
+            "charStart": 1601,
+            "charEnd": 1658,
+            "contentHash": "32c3e9bf786ddc3155b81673d4d3652bfbb2dc7e6b816ec09e145574332f31f9",
+            "contextNote": "古氣候懸案：千分之幾的日照微擾，為何掀起十萬年冰河巨浪？ · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-d8b8a649",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-1-93b696",
+            "sectionTitle": "古氣候懸案：千分之幾的日照微擾，為何掀起十萬年冰河巨浪？",
+            "paragraphIndex": 3,
+            "exactQuote": "微弱的米蘭科維奇偏心率週期訊號，只是讓這座雙谷地形以十萬年為週期極其輕微地左右緩慢傾斜；因為傾斜幅度遠低於把山谷徹底抹平的臨界值，沒有雜訊時，地球氣候只會在原本那座山谷底部微微晃動，永遠翻不過山脊。",
+            "charStart": 1659,
+            "charEnd": 1758,
+            "contentHash": "d8b8a649c2cebc5c4009b079a3ba4e832d6497738b2d5bdd7fd4c916b37ef127",
+            "contextNote": "古氣候懸案：千分之幾的日照微擾，為何掀起十萬年冰河巨浪？ · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-25bb14b3",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-1-93b696",
+            "sectionTitle": "古氣候懸案：千分之幾的日照微擾，為何掀起十萬年冰河巨浪？",
+            "paragraphIndex": 4,
+            "exactQuote": "但真實的地球大氣與海洋從不寂靜。",
+            "charStart": 2047,
+            "charEnd": 2063,
+            "contentHash": "25bb14b36e2d1e091c7baefc1509e69fb80218c5fe50f02875e22315654a6cee",
+            "contextNote": "古氣候懸案：千分之幾的日照微擾，為何掀起十萬年冰河巨浪？ · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-2e570757",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-1-93b696",
+            "sectionTitle": "古氣候懸案：千分之幾的日照微擾，為何掀起十萬年冰河巨浪？",
+            "paragraphIndex": 4,
+            "exactQuote": "日復一日的風暴、季風、聖嬰振盪與洋流亂流，構成了時間尺度遠短於十萬年、無規起伏的**白雜訊（White Noise）**——就像在所有頻率上均勻沙沙作響的收音機靜電雜音。",
+            "charStart": 2064,
+            "charEnd": 2149,
+            "contentHash": "2e570757a080aaa0208259b94d9edb529a992c9c0e775eb19cf436dfa215b5d1",
+            "contextNote": "古氣候懸案：千分之幾的日照微擾，為何掀起十萬年冰河巨浪？ · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-a7e2d48d",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-1-93b696",
+            "sectionTitle": "古氣候懸案：千分之幾的日照微擾，為何掀起十萬年冰河巨浪？",
+            "paragraphIndex": 4,
+            "exactQuote": "本齊、蘇特拉與武爾皮亞尼證明，只要這股短期氣候雜訊的強度落在恰當區間，就能在十萬年軌道把某一側山谷微微抬高、讓翻越山脊的代價降到最低的那半個週期裡，適時把氣候狀態「踢過山脊」跌入另一座山谷，從而催生出與微弱軌道驅動力同步的劇烈冰期／間冰期跳躍。",
+            "charStart": 2150,
+            "charEnd": 2272,
+            "contentHash": "a7e2d48dd6f7105d07be1f76aaeb7bfb00014730fb099b596b18c85c05a931b7",
+            "contextNote": "古氣候懸案：千分之幾的日照微擾，為何掀起十萬年冰河巨浪？ · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-c69f3531",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-1-93b696",
+            "sectionTitle": "古氣候懸案：千分之幾的日照微擾，為何掀起十萬年冰河巨浪？",
+            "paragraphIndex": 4,
+            "exactQuote": "他們將這套雜訊與微弱週期力協同放大的現象命名為**隨機共振（Stochastic Resonance）**。",
+            "charStart": 2273,
+            "charEnd": 2327,
+            "contentHash": "c69f3531d7e6e3866f7e48b570e3c14da9e69ba12e5463a30452e89e1cd17ffd",
+            "contextNote": "古氣候懸案：千分之幾的日照微擾，為何掀起十萬年冰河巨浪？ · 第 5 段"
+          }
+        ],
+        "formulas": [],
+        "interactiveComponentId": null
+      },
+      {
+        "id": "sec-2-fad86b",
+        "title": "打破線性迷思：為何線性系統只會被雜訊毀掉？",
+        "level": 2,
+        "paragraphs": [
+          "在展開數學推導之前，必須先劃清一條絕不容模糊的物理界線：隨機共振**絕不會發生在純線性系統中**。",
+          "試想一個普通的線性彈簧振子或高傳真音響放大器。當你輸入微弱的正弦波訊號 $A \\cos(\\Omega t)$ 並混入互不相關的加性白雜訊 $\\xi(t)$ 時，疊加原理（Superposition Principle）保證了訊號與雜訊各自獨立通過系統、互不幫忙。你在輸入端塞進多少隨機雜訊，輸出端的雜訊基底就等比例抬升多少；輸出端的**訊雜比（Signal-to-Noise Ratio, SNR）**只會隨著雜訊強度 $D$ 的增加而單調下滑，絕無可能半路反彈上升。",
+          "真正翻轉局面的關鍵，在於**非線性勢壘或閾值（Nonlinear Barrier or Threshold）**。在線性世界裡，輸出對輸入的響應是平滑直線，訊號再小都能按比例通過；但在雙穩態系統或神經元這類「全或無」門檻系統中，若沒有跨過臨界門檻 $A_c$，微弱訊號就會被壓抑在單一狀態裡動彈不得，跨態輸出的有效訊號幾乎為零。此時雜訊扮演的不是單純疊加在訊號上的干擾，而是幫助系統跨越門檻的「活化能」；透過勢壘的指數型敏感度，輸入端的微弱週期調變被非線性地轉譯為跳躍機率的週期調變。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-6f8d0878",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-2-fad86b",
+            "sectionTitle": "打破線性迷思：為何線性系統只會被雜訊毀掉？",
+            "paragraphIndex": 0,
+            "exactQuote": "在展開數學推導之前，必須先劃清一條絕不容模糊的物理界線：隨機共振**絕不會發生在純線性系統中**。",
+            "charStart": 2607,
+            "charEnd": 2656,
+            "contentHash": "6f8d08782aae9b3d371855ec91bcc6c7436d8a38f0a81a57a0bfbb0aff38b63d",
+            "contextNote": "打破線性迷思：為何線性系統只會被雜訊毀掉？ · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-2231c82a",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-2-fad86b",
+            "sectionTitle": "打破線性迷思：為何線性系統只會被雜訊毀掉？",
+            "paragraphIndex": 1,
+            "exactQuote": "試想一個普通的線性彈簧振子或高傳真音響放大器。",
+            "charStart": 2708,
+            "charEnd": 2731,
+            "contentHash": "2231c82a6ffda2050af6b7e358bb39a20d09626d1d0016102ecbe68a90cef546",
+            "contextNote": "打破線性迷思：為何線性系統只會被雜訊毀掉？ · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-12112f0d",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-2-fad86b",
+            "sectionTitle": "打破線性迷思：為何線性系統只會被雜訊毀掉？",
+            "paragraphIndex": 1,
+            "exactQuote": "當你輸入微弱的正弦波訊號 $A \\cos(\\Omega t)$ 並混入互不相關的加性白雜訊 $\\xi(t)$ 時，疊加原理（Superposition Principle）保證了訊號與雜訊各自獨立通過系統、互不幫忙。",
+            "charStart": 2732,
+            "charEnd": 2840,
+            "contentHash": "12112f0d6a39588ac846bf3bab6c61f42fbbbdca65aebcb1d0abda2b76b41348",
+            "contextNote": "打破線性迷思：為何線性系統只會被雜訊毀掉？ · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-7cfdfb18",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-2-fad86b",
+            "sectionTitle": "打破線性迷思：為何線性系統只會被雜訊毀掉？",
+            "paragraphIndex": 1,
+            "exactQuote": "你在輸入端塞進多少隨機雜訊，輸出端的雜訊基底就等比例抬升多少；輸出端的**訊雜比（Signal-to-Noise Ratio, SNR）**只會隨著雜訊強度 $D$ 的增加而單調下滑，絕無可能半路反彈上升。",
+            "charStart": 2841,
+            "charEnd": 2944,
+            "contentHash": "7cfdfb181078bd099133312fff9d700dc3af851b7f8559468ae92bf43f7bd257",
+            "contextNote": "打破線性迷思：為何線性系統只會被雜訊毀掉？ · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-64de16d8",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-2-fad86b",
+            "sectionTitle": "打破線性迷思：為何線性系統只會被雜訊毀掉？",
+            "paragraphIndex": 2,
+            "exactQuote": "真正翻轉局面的關鍵，在於**非線性勢壘或閾值（Nonlinear Barrier or Threshold）**。",
+            "charStart": 3181,
+            "charEnd": 3238,
+            "contentHash": "64de16d85774e516f65782e85353b0cb139fc93b98ef8653bbb38e954b4dd60b",
+            "contextNote": "打破線性迷思：為何線性系統只會被雜訊毀掉？ · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-92cb0391",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-2-fad86b",
+            "sectionTitle": "打破線性迷思：為何線性系統只會被雜訊毀掉？",
+            "paragraphIndex": 2,
+            "exactQuote": "在線性世界裡，輸出對輸入的響應是平滑直線，訊號再小都能按比例通過；但在雙穩態系統或神經元這類「全或無」門檻系統中，若沒有跨過臨界門檻 $A_c$，微弱訊號就會被壓抑在單一狀態裡動彈不得，跨態輸出的有效訊號幾乎為零。",
+            "charStart": 3239,
+            "charEnd": 3346,
+            "contentHash": "92cb039102157d57c6078cc01b3ba2dc7caa2fa55590523b7405ebceeb8c8cd9",
+            "contextNote": "打破線性迷思：為何線性系統只會被雜訊毀掉？ · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-bc6c9148",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-2-fad86b",
+            "sectionTitle": "打破線性迷思：為何線性系統只會被雜訊毀掉？",
+            "paragraphIndex": 2,
+            "exactQuote": "此時雜訊扮演的不是單純疊加在訊號上的干擾，而是幫助系統跨越門檻的「活化能」；透過勢壘的指數型敏感度，輸入端的微弱週期調變被非線性地轉譯為跳躍機率的週期調變。",
+            "charStart": 3347,
+            "charEnd": 3425,
+            "contentHash": "bc6c914849488f8ddd3fdfa18f1cffaeed7bcfdfddc7bb2aefd4c0dffd479a2b",
+            "contextNote": "打破線性迷思：為何線性系統只會被雜訊毀掉？ · 第 3 段"
+          }
+        ],
+        "formulas": [],
+        "interactiveComponentId": null
+      },
+      {
+        "id": "sec-3-1a6516",
+        "title": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$",
+        "level": 2,
+        "paragraphs": [
+          "1998 年，盧卡·伽馬托尼（Luca Gammaitoni）、彼得·漢吉（Peter Hänggi）、彼得·榮格（Peter Jung）與法比奧·馬爾凱索尼（Fabio Marchesoni）在《Reviews of Modern Physics》發表長篇綜述，為隨機共振奠定了嚴格的統計物理理論骨架。理解這套機制最純粹的標準模型，是一個浸泡在黏稠流體中、慣性可以忽略不計的粒子——也就是在**過阻尼朗之萬動力學（Overdamped Langevin Dynamics）**支配下的布朗粒子，宛如一顆在濃稠蜂蜜裡滾動的彈珠，任何推力一旦消失便立刻停住，運動速度直接正比於瞬間受力與熱碰撞。",
+          "這顆粒子位於一個對稱的四次方雙穩態勢阱中，受到微弱週期外力與高斯白雜訊的共同驅動，其隨機微分方程寫作：",
+          "$$\\frac{dx}{dt} = a x - b x^3 + A \\cos(\\Omega t) + \\sqrt{2D}\\,\\xi(t)$$",
+          "對應的瞬時含時位能函數為：",
+          "$$U(x, t) = -\\frac{a}{2}x^2 + \\frac{b}{4}x^4 - A x \\cos(\\Omega t)$$",
+          "其中 $a > 0$ 與 $b > 0$ 決定雙谷地形的幾何形狀，$A$ 與 $\\Omega$ 分別是週期訊號的振幅與角頻率（週期 $T_\\Omega = 2\\pi / \\Omega$），而 $D$ 衡量白雜訊 $\\xi(t)$ 的強度（相當於環境的等效溫度）。",
+          "讓我們先關掉雜訊（$D = 0$）與外力（$A = 0$）：位能曲線 $U_0(x) = -\\frac{a}{2}x^2 + \\frac{b}{4}x^4$ 在 $x_\\pm = \\pm \\sqrt{a/b}$ 處形成兩個對稱的谷底，中央 $x = 0$ 處橫亙著一道高度為 $\\Delta U = a^2 / (4b)$ 的勢壘山脊。現在打開微弱週期推力 $A \\cos(\\Omega t)$，勢阱開始像蹺蹺板一樣緩慢左右傾斜。算一算靜態翻轉的臨界門檻：只有當外力振幅超過鞍結點分岔閾值 $A_c = \\sqrt{4 a^3 / (27 b)}$ 時，其中一側的山谷才會徹底消失，讓無雜訊的粒子自動滾向另一側。只要訊號處於**亞閾值（Subthreshold, $A < A_c$）**區間，即使在傾斜最劇烈的時刻，原谷底依然保有局部凹陷與殘餘勢壘——因此若 $D = 0$，粒子只會在出發那側的谷底做微小線性擺盪，**永遠無法跨過 $x = 0$**。",
+          "接下來，暫時把週期外力關掉（$A = 0$），重新打開隨機雜訊 $D > 0$。這正是荷蘭物理學家亨德里克·克拉默斯（Hendrik Kramers）在 1940 年解決化學反應速率問題時的經典場景：谷底粒子受隨機碰撞而偶然累積足夠能量爬過勢壘 $\\Delta U$ 的平均躍遷速率，稱為**克拉默斯逃逸速率（Kramers Escape Rate）**，在過阻尼與弱雜訊（$D \\ll \\Delta U$）條件下滿足指數律：",
+          "$$r_K(D) = \\frac{\\sqrt{U''(x_\\pm)\\,|U''(0)|}}{2\\pi} \\exp\\left(-\\frac{\\Delta U}{D}\\right) = \\frac{\\sqrt{2}\\,a}{2\\pi} \\exp\\left(-\\frac{\\Delta U}{D}\\right)$$",
+          "粒子平均在單一勢阱裡待多久才會隨機翻越一次山脊？這個平均等候時間就是**克拉默斯平均停留時間（Mean Residence Time）** $\\tau_K(D) = 1 / r_K(D)$。",
+          "現在把兩者同時打開——微弱的週期傾斜（$A < A_c$）遇上強弱可調的白雜訊（$D > 0$）。在緩慢調變的半個驅動週期 $T_\\Omega / 2 = \\pi / \\Omega$ 裡，右側勢阱被壓到比左側更低、左向右翻越的門檻變得最淺；而在接下來的下一個半週期裡，左側勢阱反過來變低、右向左翻越最省力。於是共振的黃金條件浮現了——這便是隨機共振的核心**時間尺度匹配（Time-Scale Matching）**條件：",
+          "$$\\frac{T_\\Omega}{2} = \\frac{\\pi}{\\Omega} \\approx \\tau_K(D)$$",
+          "為什麼必須匹配「半週期」而不是整個週期？想像你必須搭上一班每隔 $T_\\Omega$ 小時才在左岸與右岸之間來回開一趟的渡輪，而山谷裡的隨機熱踢擊平均每隔 $\\tau_K(D)$ 時間就送你跨橋一次：",
+          "1. **低雜訊困鎖（$D$ 太小，$\\tau_K \\gg T_\\Omega / 2$）**：熱碰撞太稀少，半週期之內勢阱都已經傾斜到最低點又準備回彈了，粒子還沒等到一次夠強的隨機推力翻過山脊，因此幾乎全程困死在單一勢阱裡。\n2. **最佳時間尺度匹配（$\\tau_K(D) \\approx T_\\Omega / 2$）**：每當週期訊號把對面勢阱壓到最低、山脊降到最矮的那一瞬間，雜訊的隨機等待時間恰好到期！粒子在極高機率下借力翻越勢壘；接著半個週期過去，勢阱反向傾斜，粒子又剛好再借一次隨機踢擊準時翻回原側。微弱的亞閾值訊號，就這樣藉助雜訊的推波助瀾，轉化為幅度高達 $2\\sqrt{a/b}$ 的大幅度週期方波式切換。\n3. **強雜訊淹沒（$D$ 過大，$\\tau_K \\ll T_\\Omega / 2$）**：熱碰撞過於狂暴，粒子在半週期還沒結束前就在兩座山谷之間胡亂來回翻滾好幾十次，週期訊號微弱的傾斜偏好被混亂跳躍徹底抹平，相干性再度喪失。",
+          "正是這三段機制的交替消長，刻出了隨機共振最著名的兩大實驗指紋：其一，輸出訊雜比（SNR）隨雜訊強度 $D$ 呈現**先攀升至峰值再緩緩下降的非單調鐘形曲線（Bell-shaped Curve）**（在兩態絕熱理論近似下，峰值落在 $D \\approx \\Delta U / 2$ 附近）；其二，若統計粒子每次待在同一個勢阱裡的持續時間（停留時間分布），當時間尺度匹配成立時，直方圖不會是無記憶隨機過程那種單調指數衰減，而會在奇數倍半週期 $T_\\Omega / 2,\\, 3T_\\Omega / 2,\\, 5T_\\Omega / 2, \\dots$ 處湧現一排尖銳的**共振峰**。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-484774e9",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-3-1a6516",
+            "sectionTitle": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$",
+            "paragraphIndex": 0,
+            "exactQuote": "1998 年，盧卡·伽馬托尼（Luca Gammaitoni）、彼得·漢吉（Peter Hänggi）、彼得·榮格（Peter Jung）與法比奧·馬爾凱索尼（Fabio Marchesoni）在《Reviews of Modern Physics》發表長篇綜述，為隨機共振奠定了嚴格的統計物理理論骨架。",
+            "charStart": 3670,
+            "charEnd": 3822,
+            "contentHash": "484774e94f8b0e2ee6963a45779af7abc0959fcc3d75d358331adc211c03899a",
+            "contextNote": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$ · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-d9779c9e",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-3-1a6516",
+            "sectionTitle": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$",
+            "paragraphIndex": 0,
+            "exactQuote": "理解這套機制最純粹的標準模型，是一個浸泡在黏稠流體中、慣性可以忽略不計的粒子——也就是在**過阻尼朗之萬動力學（Overdamped Langevin Dynamics）**支配下的布朗粒子，宛如一顆在濃稠蜂蜜裡滾動的彈珠，任何推力一旦消失便立刻停住，運動速度直接正比於瞬間受力與熱碰撞。",
+            "charStart": 3823,
+            "charEnd": 3967,
+            "contentHash": "d9779c9e7a3fcb9989141e81cbb43dddbc19e9e5ed40c4784a33f8db09f9ac6a",
+            "contextNote": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$ · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-99c55520",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-3-1a6516",
+            "sectionTitle": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$",
+            "paragraphIndex": 1,
+            "exactQuote": "這顆粒子位於一個對稱的四次方雙穩態勢阱中，受到微弱週期外力與高斯白雜訊的共同驅動，其隨機微分方程寫作：",
+            "charStart": 4266,
+            "charEnd": 4317,
+            "contentHash": "99c555200a10b1cd768ec69841085cab57fe39f7cdea40c3b266e66654a0b916",
+            "contextNote": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$ · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-d0d584be",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-3-1a6516",
+            "sectionTitle": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$",
+            "paragraphIndex": 3,
+            "exactQuote": "對應的瞬時含時位能函數為：",
+            "charStart": 4371,
+            "charEnd": 4384,
+            "contentHash": "d0d584be3878605ee8e5bab2fa87f49dccdd28c7c5c2889d1139570ae59eb326",
+            "contextNote": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$ · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-76558ef1",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-3-1a6516",
+            "sectionTitle": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$",
+            "paragraphIndex": 5,
+            "exactQuote": "其中 $a > 0$ 與 $b > 0$ 決定雙谷地形的幾何形狀，$A$ 與 $\\Omega$ 分別是週期訊號的振幅與角頻率（週期 $T_\\Omega = 2\\pi / \\Omega$），而 $D$ 衡量白雜訊 $\\xi(t)$ 的強度（相當於環境的等效溫度）。",
+            "charStart": 4400,
+            "charEnd": 4531,
+            "contentHash": "76558ef17b3a0364245bf8f03b2eef755734cadf49a19bb7356a58e0f3f28058",
+            "contextNote": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$ · 第 6 段"
+          },
+          {
+            "sentenceId": "sent-a7a856ec",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-3-1a6516",
+            "sectionTitle": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$",
+            "paragraphIndex": 6,
+            "exactQuote": "讓我們先關掉雜訊（$D = 0$）與外力（$A = 0$）：位能曲線 $U_0(x) = -\\frac{a}{2}x^2 + \\frac{b}{4}x^4$ 在 $x_\\pm = \\pm \\sqrt{a/b}$ 處形成兩個對稱的谷底，中央 $x = 0$ 處橫亙著一道高度為 $\\Delta U = a^2 / (4b)$ 的勢壘山脊。",
+            "charStart": 4665,
+            "charEnd": 4833,
+            "contentHash": "a7a856ec4938df8c5a1534cebd54083759c606556f889f3596c386546377c373",
+            "contextNote": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$ · 第 7 段"
+          },
+          {
+            "sentenceId": "sent-fc155145",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-3-1a6516",
+            "sectionTitle": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$",
+            "paragraphIndex": 6,
+            "exactQuote": "現在打開微弱週期推力 $A \\cos(\\Omega t)$，勢阱開始像蹺蹺板一樣緩慢左右傾斜。",
+            "charStart": 4834,
+            "charEnd": 4881,
+            "contentHash": "fc1551450c0842c3f3b7dfce7375b83a7cecd18f399e4a2617d099fdde8b4ae4",
+            "contextNote": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$ · 第 7 段"
+          },
+          {
+            "sentenceId": "sent-a6449f8e",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-3-1a6516",
+            "sectionTitle": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$",
+            "paragraphIndex": 6,
+            "exactQuote": "算一算靜態翻轉的臨界門檻：只有當外力振幅超過鞍結點分岔閾值 $A_c = \\sqrt{4 a^3 / (27 b)}$ 時，其中一側的山谷才會徹底消失，讓無雜訊的粒子自動滾向另一側。",
+            "charStart": 4882,
+            "charEnd": 4973,
+            "contentHash": "a6449f8eaa710e514558f0a2bfcafa8483945a9c706b98e0a179d8b93d19e007",
+            "contextNote": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$ · 第 7 段"
+          },
+          {
+            "sentenceId": "sent-e3d6929e",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-3-1a6516",
+            "sectionTitle": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$",
+            "paragraphIndex": 6,
+            "exactQuote": "只要訊號處於**亞閾值（Subthreshold, $A < A_c$）**區間，即使在傾斜最劇烈的時刻，原谷底依然保有局部凹陷與殘餘勢壘——因此若 $D = 0$，粒子只會在出發那側的谷底做微小線性擺盪，**永遠無法跨過 $x = 0$**。",
+            "charStart": 4974,
+            "charEnd": 5096,
+            "contentHash": "e3d6929e61ad1902b7a07c5b86b05c4ca6208e8f758f3f4c0aba565bedf3b8b7",
+            "contextNote": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$ · 第 7 段"
+          },
+          {
+            "sentenceId": "sent-314fcf2c",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-3-1a6516",
+            "sectionTitle": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$",
+            "paragraphIndex": 7,
+            "exactQuote": "接下來，暫時把週期外力關掉（$A = 0$），重新打開隨機雜訊 $D > 0$。",
+            "charStart": 5527,
+            "charEnd": 5567,
+            "contentHash": "314fcf2c19cbe1b731823946d97375bf18d8dd706ff07cdb404af81b004709bc",
+            "contextNote": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$ · 第 8 段"
+          },
+          {
+            "sentenceId": "sent-2cb16dea",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-3-1a6516",
+            "sectionTitle": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$",
+            "paragraphIndex": 7,
+            "exactQuote": "這正是荷蘭物理學家亨德里克·克拉默斯（Hendrik Kramers）在 1940 年解決化學反應速率問題時的經典場景：谷底粒子受隨機碰撞而偶然累積足夠能量爬過勢壘 $\\Delta U$ 的平均躍遷速率，稱為**克拉默斯逃逸速率（Kramers Escape Rate）**，在過阻尼與弱雜訊（$D \\ll \\Delta U$）條件下滿足指數律：",
+            "charStart": 5568,
+            "charEnd": 5741,
+            "contentHash": "2cb16dea51dd01067fe98590815c9cf30b8af6bbe3224c35a3a4cfa87534ff28",
+            "contextNote": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$ · 第 8 段"
+          },
+          {
+            "sentenceId": "sent-0e7c0ea6",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-3-1a6516",
+            "sectionTitle": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$",
+            "paragraphIndex": 9,
+            "exactQuote": "粒子平均在單一勢阱裡待多久才會隨機翻越一次山脊？",
+            "charStart": 5957,
+            "charEnd": 5981,
+            "contentHash": "0e7c0ea6a61574bd87023cba7a6980ca7119f47ed68b33be02e2651bc8922abb",
+            "contextNote": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$ · 第 10 段"
+          },
+          {
+            "sentenceId": "sent-26186eec",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-3-1a6516",
+            "sectionTitle": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$",
+            "paragraphIndex": 9,
+            "exactQuote": "這個平均等候時間就是**克拉默斯平均停留時間（Mean Residence Time）** $\\tau_K(D) = 1 / r_K(D)$。",
+            "charStart": 5982,
+            "charEnd": 6053,
+            "contentHash": "26186eec0c16490a8a080c4bb7567af7f63c759659007d39b0be10440e4b1a36",
+            "contextNote": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$ · 第 10 段"
+          },
+          {
+            "sentenceId": "sent-7ef45330",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-3-1a6516",
+            "sectionTitle": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$",
+            "paragraphIndex": 10,
+            "exactQuote": "現在把兩者同時打開——微弱的週期傾斜（$A < A_c$）遇上強弱可調的白雜訊（$D > 0$）。",
+            "charStart": 6151,
+            "charEnd": 6200,
+            "contentHash": "7ef45330dc44f294d928699f017fec15bc3d0b55a4fd781d436316892644bd4e",
+            "contextNote": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$ · 第 11 段"
+          },
+          {
+            "sentenceId": "sent-2d992561",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-3-1a6516",
+            "sectionTitle": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$",
+            "paragraphIndex": 10,
+            "exactQuote": "在緩慢調變的半個驅動週期 $T_\\Omega / 2 = \\pi / \\Omega$ 裡，右側勢阱被壓到比左側更低、左向右翻越的門檻變得最淺；而在接下來的下一個半週期裡，左側勢阱反過來變低、右向左翻越最省力。",
+            "charStart": 6201,
+            "charEnd": 6305,
+            "contentHash": "2d992561bc7098028ac079c031f7aa804c8e15ca4149c5e4700b7333fb367cbe",
+            "contextNote": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$ · 第 11 段"
+          },
+          {
+            "sentenceId": "sent-dcc5cc70",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-3-1a6516",
+            "sectionTitle": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$",
+            "paragraphIndex": 10,
+            "exactQuote": "於是共振的黃金條件浮現了——這便是隨機共振的核心**時間尺度匹配（Time-Scale Matching）**條件：",
+            "charStart": 6306,
+            "charEnd": 6364,
+            "contentHash": "dcc5cc7044f0f2d20ec0a548a0f87c56e6f0a6d4ec1ce8ffb01439dcb390dafd",
+            "contextNote": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$ · 第 11 段"
+          },
+          {
+            "sentenceId": "sent-8e599332",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-3-1a6516",
+            "sectionTitle": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$",
+            "paragraphIndex": 12,
+            "exactQuote": "為什麼必須匹配「半週期」而不是整個週期？",
+            "charStart": 6578,
+            "charEnd": 6598,
+            "contentHash": "8e599332ad8f0a22d220304ed537f3a4652829a879e91fd5122e102cd6288c87",
+            "contextNote": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$ · 第 13 段"
+          },
+          {
+            "sentenceId": "sent-059f7696",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-3-1a6516",
+            "sectionTitle": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$",
+            "paragraphIndex": 12,
+            "exactQuote": "想像你必須搭上一班每隔 $T_\\Omega$ 小時才在左岸與右岸之間來回開一趟的渡輪，而山谷裡的隨機熱踢擊平均每隔 $\\tau_K(D)$ 時間就送你跨橋一次：",
+            "charStart": 6599,
+            "charEnd": 6679,
+            "contentHash": "059f769670489f9c9c38d17174260fe8140277b5cbdaab86895d9a986acad214",
+            "contextNote": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$ · 第 13 段"
+          },
+          {
+            "sentenceId": "sent-80f1b5b2",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-3-1a6516",
+            "sectionTitle": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$",
+            "paragraphIndex": 13,
+            "exactQuote": "1. **低雜訊困鎖（$D$ 太小，$\\tau_K \\gg T_\\Omega / 2$）**：熱碰撞太稀少，半週期之內勢阱都已經傾斜到最低點又準備回彈了，粒子還沒等到一次夠強的隨機推力翻過山脊，因此幾乎全程困死在單一勢阱裡。",
+            "charStart": 6782,
+            "charEnd": 6894,
+            "contentHash": "80f1b5b28b056e9e7140582e2ebfd00cea68291ef0b689fc8696abebfb953edd",
+            "contextNote": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$ · 第 14 段"
+          },
+          {
+            "sentenceId": "sent-01bc3c30",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-3-1a6516",
+            "sectionTitle": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$",
+            "paragraphIndex": 13,
+            "exactQuote": "2. **最佳時間尺度匹配（$\\tau_K(D) \\approx T_\\Omega / 2$）**：每當週期訊號把對面勢阱壓到最低、山脊降到最矮的那一瞬間，雜訊的隨機等待時間恰好到期！",
+            "charStart": 6895,
+            "charEnd": 6987,
+            "contentHash": "01bc3c30d9660c55a61b726e9c2b470f7ba5a188ea58f8d51f3a66277c3b3972",
+            "contextNote": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$ · 第 14 段"
+          },
+          {
+            "sentenceId": "sent-d679ea95",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-3-1a6516",
+            "sectionTitle": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$",
+            "paragraphIndex": 13,
+            "exactQuote": "粒子在極高機率下借力翻越勢壘；接著半個週期過去，勢阱反向傾斜，粒子又剛好再借一次隨機踢擊準時翻回原側。",
+            "charStart": 6988,
+            "charEnd": 7039,
+            "contentHash": "d679ea9575d62c5336ad8bd779024e120918c7900bd70f0a4f43c58327cb8c39",
+            "contextNote": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$ · 第 14 段"
+          },
+          {
+            "sentenceId": "sent-05a1ae74",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-3-1a6516",
+            "sectionTitle": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$",
+            "paragraphIndex": 13,
+            "exactQuote": "微弱的亞閾值訊號，就這樣藉助雜訊的推波助瀾，轉化為幅度高達 $2\\sqrt{a/b}$ 的大幅度週期方波式切換。",
+            "charStart": 7040,
+            "charEnd": 7096,
+            "contentHash": "05a1ae742ab78c2995030bb9f46de439cdce9d6729f608dc5a5684c5980bbb49",
+            "contextNote": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$ · 第 14 段"
+          },
+          {
+            "sentenceId": "sent-d238c56b",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-3-1a6516",
+            "sectionTitle": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$",
+            "paragraphIndex": 13,
+            "exactQuote": "3. **強雜訊淹沒（$D$ 過大，$\\tau_K \\ll T_\\Omega / 2$）**：熱碰撞過於狂暴，粒子在半週期還沒結束前就在兩座山谷之間胡亂來回翻滾好幾十次，週期訊號微弱的傾斜偏好被混亂跳躍徹底抹平，相干性再度喪失。",
+            "charStart": 7097,
+            "charEnd": 7211,
+            "contentHash": "d238c56bf938a03497fc927695d3a3784a1d00345976767a3b97c53563d4da09",
+            "contextNote": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$ · 第 14 段"
+          },
+          {
+            "sentenceId": "sent-eb2cfaf0",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-3-1a6516",
+            "sectionTitle": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$",
+            "paragraphIndex": 14,
+            "exactQuote": "正是這三段機制的交替消長，刻出了隨機共振最著名的兩大實驗指紋：其一，輸出訊雜比（SNR）隨雜訊強度 $D$ 呈現**先攀升至峰值再緩緩下降的非單調鐘形曲線（Bell-shaped Curve）**（在兩態絕熱理論近似下，峰值落在 $D \\approx \\Delta U / 2$ 附近）；其二，若統計粒子每次待在同一個勢阱裡的持續時間（停留時間分布），當時間尺度匹配成立時，直方圖不會是無記憶隨機過程那種單調指數衰減，而會在奇數倍半週期 $T_\\Omega / 2,\\, 3T_\\Omega / 2,\\, 5T_\\Omega / 2, \\dots$ 處湧現一排尖銳的**共振峰**。",
+            "charStart": 7641,
+            "charEnd": 7932,
+            "contentHash": "eb2cfaf082734a18f460febfbe5f0ca091c95bf24714cc5c81ba960be12bd839",
+            "contextNote": "克拉默斯逃逸速率與時間尺度匹配：$T_\\Omega / 2 \\approx \\tau_K(D)$ · 第 15 段"
+          }
+        ],
+        "formulas": [
+          "$$\\frac{dx}{dt} = a x - b x^3 + A \\cos(\\Omega t) + \\sqrt{2D}\\,\\xi(t)$$",
+          "$$U(x, t) = -\\frac{a}{2}x^2 + \\frac{b}{4}x^4 - A x \\cos(\\Omega t)$$",
+          "$$r_K(D) = \\frac{\\sqrt{U''(x_\\pm)\\,|U''(0)|}}{2\\pi} \\exp\\left(-\\frac{\\Delta U}{D}\\right) = \\frac{\\sqrt{2}\\,a}{2\\pi} \\exp\\left(-\\frac{\\Delta U}{D}\\right)$$",
+          "$$\\frac{T_\\Omega}{2} = \\frac{\\pi}{\\Omega} \\approx \\tau_K(D)$$"
+        ],
+        "interactiveComponentId": null
+      },
+      {
+        "id": "sec-4-7c5fc7",
+        "title": "雙穩態隨機共振實驗室：親手調諧雜訊與時間尺度匹配",
+        "level": 2,
+        "paragraphs": [
+          "理論推導揭示了兩個看似矛盾的現象：同一份白雜訊既能把粒子推過亞閾值勢壘，過強時又會摧毀同步。下方的互動實驗室直接以 **Euler–Maruyama 隨機微分方程數值積分器**求解上述過阻尼朗之萬方程（無因次化設定 $a = 1, b = 1$，靜態翻轉門檻 $A_c = \\sqrt{4/27} \\approx 0.385$），並將三個物理視角串聯在同一畫面中。",
+          "你可以依序點擊「低雜訊困鎖」、「最佳隨機共振」與「強雜訊淹沒」三個預設情境，對照動態傾斜勢阱中的彈珠運動、即時軌跡 $x(t)$ 與微弱正弦驅動波形、鐘形 SNR 理論與數值曲線（含線性系統單調衰減對照線），以及停留時間直方圖在 $0.5\\,T_\\Omega$ 處是否湧現尖峰：",
+          "<InteractiveExperiment id=\"StochasticResonanceSimulator\" />",
+          "觀察模擬器裡的細節，你會立刻看穿「線性直覺」為何在這裡失效：在預設振幅 $A = 0.18 < A_c$ 下，切換至「低雜訊困鎖（$D = 0.025$）」時，儘管右側的微弱正弦波持續來回拉扯勢阱傾斜，粒子卻被死死釘在 $-1$ 谷底，跨越 $x = 0$ 的跳躍次數趨近於零，停留時間直方圖空無一物；一旦將雜訊推進至「最佳隨機共振（$D = 0.120$）」，克拉默斯平均停留時間 $\\tau_K \\approx 35.7$ 與半週期 $T_\\Omega / 2 = 36$ 精準對齊，軌跡 $x(t)$ 隨即跟上微弱訊號的節拍大步翻轉，停留時間直方圖在 $\\tau / T_\\Omega = 0.5$ 處高高聳起，雙穩態輸出 SNR 攀升至鐘形曲線頂峰（與虛線標示的線性系統單調下滑曲線形成鮮明對比）；若再將雜訊拉高至「強雜訊淹沒（$D = 0.360$）」，粒子則陷入無序狂跳，在 $\\tau / T_\\Omega \\to 0$ 端堆滿短促的隨機切換，輸出 SNR 隨之跌落。",
+          "你也可以試著調整驅動週期 $T_\\Omega$，並點擊雜訊滑桿下方動態計算的「匹配點 $D$」按鈕，親自驗證「時間尺度匹配點」如何隨著週期變長而往更低雜訊移動。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-87cfa579",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-4-7c5fc7",
+            "sectionTitle": "雙穩態隨機共振實驗室：親手調諧雜訊與時間尺度匹配",
+            "paragraphIndex": 0,
+            "exactQuote": "理論推導揭示了兩個看似矛盾的現象：同一份白雜訊既能把粒子推過亞閾值勢壘，過強時又會摧毀同步。",
+            "charStart": 8226,
+            "charEnd": 8272,
+            "contentHash": "87cfa5799f9b426eb65b728cbb1c9dc04a79ca8e18fa62f6b68264af238354cf",
+            "contextNote": "雙穩態隨機共振實驗室：親手調諧雜訊與時間尺度匹配 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-f34384ca",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-4-7c5fc7",
+            "sectionTitle": "雙穩態隨機共振實驗室：親手調諧雜訊與時間尺度匹配",
+            "paragraphIndex": 0,
+            "exactQuote": "下方的互動實驗室直接以 **Euler–Maruyama 隨機微分方程數值積分器**求解上述過阻尼朗之萬方程（無因次化設定 $a = 1, b = 1$，靜態翻轉門檻 $A_c = \\sqrt{4/27} \\approx 0.385$），並將三個物理視角串聯在同一畫面中。",
+            "charStart": 8273,
+            "charEnd": 8409,
+            "contentHash": "f34384ca43082d66169f833bca07956cbb61d459d960c12005ea08c74cf72e21",
+            "contextNote": "雙穩態隨機共振實驗室：親手調諧雜訊與時間尺度匹配 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-b5245057",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-4-7c5fc7",
+            "sectionTitle": "雙穩態隨機共振實驗室：親手調諧雜訊與時間尺度匹配",
+            "paragraphIndex": 1,
+            "exactQuote": "你可以依序點擊「低雜訊困鎖」、「最佳隨機共振」與「強雜訊淹沒」三個預設情境，對照動態傾斜勢阱中的彈珠運動、即時軌跡 $x(t)$ 與微弱正弦驅動波形、鐘形 SNR 理論與數值曲線（含線性系統單調衰減對照線），以及停留時間直方圖在 $0.5\\,T_\\Omega$ 處是否湧現尖峰：",
+            "charStart": 8594,
+            "charEnd": 8733,
+            "contentHash": "b5245057c6661b4257267d1408fa5f09db4f9428b9da5e4ed1b928ec6deeaac1",
+            "contextNote": "雙穩態隨機共振實驗室：親手調諧雜訊與時間尺度匹配 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-a250e45d",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-4-7c5fc7",
+            "sectionTitle": "雙穩態隨機共振實驗室：親手調諧雜訊與時間尺度匹配",
+            "paragraphIndex": 3,
+            "exactQuote": "觀察模擬器裡的細節，你會立刻看穿「線性直覺」為何在這裡失效：在預設振幅 $A = 0.18 < A_c$ 下，切換至「低雜訊困鎖（$D = 0.025$）」時，儘管右側的微弱正弦波持續來回拉扯勢阱傾斜，粒子卻被死死釘在 $-1$ 谷底，跨越 $x = 0$ 的跳躍次數趨近於零，停留時間直方圖空無一物；一旦將雜訊推進至「最佳隨機共振（$D = 0.120$）」，克拉默斯平均停留時間 $\\tau_K \\approx 35.7$ 與半週期 $T_\\Omega / 2 = 36$ 精準對齊，軌跡 $x(t)$ 隨即跟上微弱訊號的節拍大步翻轉，停留時間直方圖在 $\\tau / T_\\Omega = 0.5$ 處高高聳起，雙穩態輸出 SNR 攀升至鐘形曲線頂峰（與虛線標示的線性系統單調下滑曲線形成鮮明對比）；若再將雜訊拉高至「強雜訊淹沒（$D = 0.360$）」，粒子則陷入無序狂跳，在 $\\tau / T_\\Omega \\to 0$ 端堆滿短促的隨機切換，輸出 SNR 隨之跌落。",
+            "charStart": 8875,
+            "charEnd": 9316,
+            "contentHash": "a250e45dbc2b52599c876a2411fbf4a328ddd9b2d2f81d9e0c7762facab5ed1b",
+            "contextNote": "雙穩態隨機共振實驗室：親手調諧雜訊與時間尺度匹配 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-96f7ccaf",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-4-7c5fc7",
+            "sectionTitle": "雙穩態隨機共振實驗室：親手調諧雜訊與時間尺度匹配",
+            "paragraphIndex": 4,
+            "exactQuote": "你也可以試著調整驅動週期 $T_\\Omega$，並點擊雜訊滑桿下方動態計算的「匹配點 $D$」按鈕，親自驗證「時間尺度匹配點」如何隨著週期變長而往更低雜訊移動。",
+            "charStart": 9760,
+            "charEnd": 9840,
+            "contentHash": "96f7ccaf477b5fd879f9395026f98f1255c664be465a101f2d576806d5047981",
+            "contextNote": "雙穩態隨機共振實驗室：親手調諧雜訊與時間尺度匹配 · 第 5 段"
+          }
+        ],
+        "formulas": [],
+        "interactiveComponentId": "StochasticResonanceSimulator"
+      },
+      {
+        "id": "sec-5-5e736c",
+        "title": "活體實證：淡水螯蝦尾扇神經元如何靠雜訊聽見微弱水流（Nature 1993）",
+        "level": 2,
+        "paragraphs": [
+          "1981 年本齊等人提出隨機共振後，物理學家很快在雙穩態環形雷射與電子施密特觸發器電路中量到了鐘形 SNR 曲線。但一個更迷人的問題接踵而至：在雜訊充斥的真實生物體內，演化是否早已利用這套非線性物理定律來強化感官極限？",
+          "1993 年，美國聖路易密蘇里大學的約翰·道格拉斯（John K. Douglass）、朗·威爾肯斯（Lon Wilkens）、埃萊尼·潘塔澤盧（Eleni Pantazelou）與法蘭克·莫斯（Frank Moss）在《Nature》發表了開創性的電生理實證，把目光投向了一種棲息於渾濁淡水中的甲殼類動物——**克氏原螯蝦（*Procambarus clarkii*，俗稱紅螯蝦或淡水螯蝦）**。",
+          "淡水螯蝦的尾扇（Tailfan）表面密布著對水流極其敏感的**機械感受器剛毛（Mechanoreceptor Hair Cells）**。當水中游過一條掠食性魚類或同類，水面下微弱的週期性水流振動會撥動剛毛，迫使相連的感覺神經元跨過放電閾值、向中樞發射動作電位。然而在自然溪流與池塘裡，水流裡永遠混雜著亂流、落葉與水波折射產生的隨機機械振動雜訊。",
+          "研究團隊巧妙地將單條螯蝦尾扇離體置於精密控制的水槽中，以微電極記錄單一感覺神經元的神經脈衝輸出，並同時施加兩種機械刺激：",
+          "1. 一組極微弱、頻率固定（例如數十赫茲）的**亞閾值週期性水流振動訊號**；\n2. 一組強度可精確調節的**外部隨機機械雜訊**。",
+          "結果精準印證了非線性理論的預測：當外部機械雜訊為零時，神經元幾乎偵測不到那股微弱水流；隨著研究人員逐步調高外加隨機雜訊的強度，感覺神經元的動作電位發射與微弱週期水流的**鎖相程度（Phase-locking）與輸出端訊雜比竟然顯著攀升**，清楚湧現了一座高峰；當雜訊繼續調高超過最適強度後，神經脈衝再度陷入混亂，訊雜比單調下降。這項發表於《Nature》的研究首度在活體感覺神經元層級直接證明：生物感官在演化上並不總是試圖消滅雜訊，在面對極微弱的環境線索時，適度的背景雜訊反而能提升資訊傳遞效率。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-8aae634a",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-5-5e736c",
+            "sectionTitle": "活體實證：淡水螯蝦尾扇神經元如何靠雜訊聽見微弱水流（Nature 1993）",
+            "paragraphIndex": 0,
+            "exactQuote": "1981 年本齊等人提出隨機共振後，物理學家很快在雙穩態環形雷射與電子施密特觸發器電路中量到了鐘形 SNR 曲線。",
+            "charStart": 9923,
+            "charEnd": 9980,
+            "contentHash": "8aae634ad37d295bc3516be7f28fd79ac75548ba069561e5eb2131525b4cd187",
+            "contextNote": "活體實證：淡水螯蝦尾扇神經元如何靠雜訊聽見微弱水流（Nature 1993） · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-2c80d7ed",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-5-5e736c",
+            "sectionTitle": "活體實證：淡水螯蝦尾扇神經元如何靠雜訊聽見微弱水流（Nature 1993）",
+            "paragraphIndex": 0,
+            "exactQuote": "但一個更迷人的問題接踵而至：在雜訊充斥的真實生物體內，演化是否早已利用這套非線性物理定律來強化感官極限？",
+            "charStart": 9981,
+            "charEnd": 10033,
+            "contentHash": "2c80d7ed1463efbdbbdf546abb709e42ca8aea87ca9fa68f4fe9147d14b6d5c5",
+            "contextNote": "活體實證：淡水螯蝦尾扇神經元如何靠雜訊聽見微弱水流（Nature 1993） · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-108f2077",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-5-5e736c",
+            "sectionTitle": "活體實證：淡水螯蝦尾扇神經元如何靠雜訊聽見微弱水流（Nature 1993）",
+            "paragraphIndex": 1,
+            "exactQuote": "1993 年，美國聖路易密蘇里大學的約翰·道格拉斯（John K. Douglass）、朗·威爾肯斯（Lon Wilkens）、埃萊尼·潘塔澤盧（Eleni Pantazelou）與法蘭克·莫斯（Frank Moss）在《Nature》發表了開創性的電生理實證，把目光投向了一種棲息於渾濁淡水中的甲殼類動物——**克氏原螯蝦（*Procambarus clarkii*，俗稱紅螯蝦或淡水螯蝦）**。",
+            "charStart": 10145,
+            "charEnd": 10344,
+            "contentHash": "108f2077319b6624524ceb80171f83223ccd8e16155722589559f80105abd30f",
+            "contextNote": "活體實證：淡水螯蝦尾扇神經元如何靠雜訊聽見微弱水流（Nature 1993） · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-bb84365e",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-5-5e736c",
+            "sectionTitle": "活體實證：淡水螯蝦尾扇神經元如何靠雜訊聽見微弱水流（Nature 1993）",
+            "paragraphIndex": 2,
+            "exactQuote": "淡水螯蝦的尾扇（Tailfan）表面密布著對水流極其敏感的**機械感受器剛毛（Mechanoreceptor Hair Cells）**。",
+            "charStart": 10546,
+            "charEnd": 10615,
+            "contentHash": "bb84365ece9a014681d9343d66167db3edc862e6ab5af0a04f2df3ac2738be55",
+            "contextNote": "活體實證：淡水螯蝦尾扇神經元如何靠雜訊聽見微弱水流（Nature 1993） · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-22e3368e",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-5-5e736c",
+            "sectionTitle": "活體實證：淡水螯蝦尾扇神經元如何靠雜訊聽見微弱水流（Nature 1993）",
+            "paragraphIndex": 2,
+            "exactQuote": "當水中游過一條掠食性魚類或同類，水面下微弱的週期性水流振動會撥動剛毛，迫使相連的感覺神經元跨過放電閾值、向中樞發射動作電位。",
+            "charStart": 10616,
+            "charEnd": 10678,
+            "contentHash": "22e3368e4e8fe12a66c50d4d4d9bbc9899b6639d2e47d20dc9eb2eed47abd349",
+            "contextNote": "活體實證：淡水螯蝦尾扇神經元如何靠雜訊聽見微弱水流（Nature 1993） · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-a52b8f7e",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-5-5e736c",
+            "sectionTitle": "活體實證：淡水螯蝦尾扇神經元如何靠雜訊聽見微弱水流（Nature 1993）",
+            "paragraphIndex": 2,
+            "exactQuote": "然而在自然溪流與池塘裡，水流裡永遠混雜著亂流、落葉與水波折射產生的隨機機械振動雜訊。",
+            "charStart": 10679,
+            "charEnd": 10721,
+            "contentHash": "a52b8f7eab58b766480090a2970946f87915dfe1adf7691a3b0f53c2a557b4c4",
+            "contextNote": "活體實證：淡水螯蝦尾扇神經元如何靠雜訊聽見微弱水流（Nature 1993） · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-d2972004",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-5-5e736c",
+            "sectionTitle": "活體實證：淡水螯蝦尾扇神經元如何靠雜訊聽見微弱水流（Nature 1993）",
+            "paragraphIndex": 3,
+            "exactQuote": "研究團隊巧妙地將單條螯蝦尾扇離體置於精密控制的水槽中，以微電極記錄單一感覺神經元的神經脈衝輸出，並同時施加兩種機械刺激：",
+            "charStart": 10897,
+            "charEnd": 10957,
+            "contentHash": "d2972004f43f140075bac00d9c0e407d6c1423e3fec643469686c6849db22ae8",
+            "contextNote": "活體實證：淡水螯蝦尾扇神經元如何靠雜訊聽見微弱水流（Nature 1993） · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-a6ceb9d7",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-5-5e736c",
+            "sectionTitle": "活體實證：淡水螯蝦尾扇神經元如何靠雜訊聽見微弱水流（Nature 1993）",
+            "paragraphIndex": 4,
+            "exactQuote": "1. 一組極微弱、頻率固定（例如數十赫茲）的**亞閾值週期性水流振動訊號**；\n2. 一組強度可精確調節的**外部隨機機械雜訊**。",
+            "charStart": 11020,
+            "charEnd": 11086,
+            "contentHash": "a6ceb9d7f94f8d8b3b15a3acb705916d06eaaf95a5fc017dd05c709fba27b350",
+            "contextNote": "活體實證：淡水螯蝦尾扇神經元如何靠雜訊聽見微弱水流（Nature 1993） · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-b4d6fa63",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-5-5e736c",
+            "sectionTitle": "活體實證：淡水螯蝦尾扇神經元如何靠雜訊聽見微弱水流（Nature 1993）",
+            "paragraphIndex": 5,
+            "exactQuote": "結果精準印證了非線性理論的預測：當外部機械雜訊為零時，神經元幾乎偵測不到那股微弱水流；隨著研究人員逐步調高外加隨機雜訊的強度，感覺神經元的動作電位發射與微弱週期水流的**鎖相程度（Phase-locking）與輸出端訊雜比竟然顯著攀升**，清楚湧現了一座高峰；當雜訊繼續調高超過最適強度後，神經脈衝再度陷入混亂，訊雜比單調下降。",
+            "charStart": 11155,
+            "charEnd": 11319,
+            "contentHash": "b4d6fa6305c50254a3a8133e3754db77492368ee7585908d7b364c29c6954a72",
+            "contextNote": "活體實證：淡水螯蝦尾扇神經元如何靠雜訊聽見微弱水流（Nature 1993） · 第 6 段"
+          },
+          {
+            "sentenceId": "sent-22385b42",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-5-5e736c",
+            "sectionTitle": "活體實證：淡水螯蝦尾扇神經元如何靠雜訊聽見微弱水流（Nature 1993）",
+            "paragraphIndex": 5,
+            "exactQuote": "這項發表於《Nature》的研究首度在活體感覺神經元層級直接證明：生物感官在演化上並不總是試圖消滅雜訊，在面對極微弱的環境線索時，適度的背景雜訊反而能提升資訊傳遞效率。",
+            "charStart": 11320,
+            "charEnd": 11404,
+            "contentHash": "22385b424b2727119c8b1ead550075472a17f9a1e28faca25217a63f52f63aa7",
+            "contextNote": "活體實證：淡水螯蝦尾扇神經元如何靠雜訊聽見微弱水流（Nature 1993） · 第 6 段"
+          }
+        ],
+        "formulas": [],
+        "interactiveComponentId": null
+      },
+      {
+        "id": "sec-6-cc5b72",
+        "title": "科學邊界與古氣候爭議：隨機共振能解釋全部嗎？",
+        "level": 2,
+        "paragraphs": [
+          "走完從古氣候謎案、克拉默斯逃逸公式到活體神經元的偵探軌跡，我們仍需以嚴謹的科學邊界檢視這項理論的適用範圍與未竟爭議：",
+          "1. **第四紀十萬年冰期循環仍是古氣候學開放問題**：本齊、蘇特拉與武爾皮亞尼 1981 年的論文雖確立了隨機共振作為非線性物理奠基機制的地位，但真實地球第四紀冰期／間冰期為何由十萬年週期主導（古氣候學上著名的「十萬年問題」，100-kyr Problem），學界至今仍有多重物理機制並存討論——包含大型大陸冰蓋自身的緩慢黏彈性沉降與崩解動力學、深海碳循環與大氣二氧化碳濃度變化的長期正負回饋、以及地球傾角（4.1 萬年）與歲差（約 2.3 萬年）週期的非線性鎖頻效應。因此，隨機共振在古氣候學中應被定位為**重要的非線性放大物理假說**，而非唯一或完整的全解釋。\n2. **並未違背熱力學或資訊定律**：隨機共振並沒有「無中生有」創造能量，也沒有打破線性訊號處理中的資訊極限。它是藉由系統非線性勢壘或閾值，將環境雜訊的無序能量轉化為跨越門檻的觸發動力，並僅在**亞閾值弱訊號區**相對於零雜訊時的「全無輸出」實現增益；若原始訊號本身已遠高於切換門檻（$A \\ge A_c$），額外加入雜訊通常只會劣化訊雜比。\n3. **數值模型的簡化尺度**：本文互動模擬器採用的一維過阻尼四次方雙穩態朗之萬方程（Euler–Maruyama 離散步進積分），旨在精確展示時間尺度匹配 $T_\\Omega / 2 \\approx \\tau_K(D)$、停留時間奇半週期共振峰與鐘形 SNR 曲線的普適數學核心；真實的地球氣候耦合大氣海洋環流模型（GCM）以及遵循霍奇金-赫胥黎（Hodgkin–Huxley）電導動力學的生物神經網路，皆包含多維度空間耦合、記憶效應與非白有色雜訊等更豐富結構。",
+          "從十九世紀工程師眼裡一無是處的雜音干擾，到二十世紀末揭示非線性自然世界如何在風暴裡辨識微音的數學鎖鑰，隨機共振告訴我們一個深刻卻樸素的物理事實：面對帶有門檻的世界，絕對的靜默有時反而是訊號的囚籠；適度的隨機起伏，才是喚醒沉睡節律的推手。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-74d05ea6",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-6-cc5b72",
+            "sectionTitle": "科學邊界與古氣候爭議：隨機共振能解釋全部嗎？",
+            "paragraphIndex": 0,
+            "exactQuote": "走完從古氣候謎案、克拉默斯逃逸公式到活體神經元的偵探軌跡，我們仍需以嚴謹的科學邊界檢視這項理論的適用範圍與未竟爭議：",
+            "charStart": 11655,
+            "charEnd": 11713,
+            "contentHash": "74d05ea64c033290433dbbf166ac973ad2be1afc7be0ad4995ab31ef59eaf4fb",
+            "contextNote": "科學邊界與古氣候爭議：隨機共振能解釋全部嗎？ · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-bf3a765a",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-6-cc5b72",
+            "sectionTitle": "科學邊界與古氣候爭議：隨機共振能解釋全部嗎？",
+            "paragraphIndex": 1,
+            "exactQuote": "1. **第四紀十萬年冰期循環仍是古氣候學開放問題**：本齊、蘇特拉與武爾皮亞尼 1981 年的論文雖確立了隨機共振作為非線性物理奠基機制的地位，但真實地球第四紀冰期／間冰期為何由十萬年週期主導（古氣候學上著名的「十萬年問題」，100-kyr Problem），學界至今仍有多重物理機制並存討論——包含大型大陸冰蓋自身的緩慢黏彈性沉降與崩解動力學、深海碳循環與大氣二氧化碳濃度變化的長期正負回饋、以及地球傾角（4.1 萬年）與歲差（約 2.3 萬年）週期的非線性鎖頻效應。",
+            "charStart": 11774,
+            "charEnd": 12010,
+            "contentHash": "bf3a765ab910a577b5be1aff44411ef8cf276cc7d55a940110e30f4cc3ab8026",
+            "contextNote": "科學邊界與古氣候爭議：隨機共振能解釋全部嗎？ · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-1a412a3e",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-6-cc5b72",
+            "sectionTitle": "科學邊界與古氣候爭議：隨機共振能解釋全部嗎？",
+            "paragraphIndex": 1,
+            "exactQuote": "因此，隨機共振在古氣候學中應被定位為**重要的非線性放大物理假說**，而非唯一或完整的全解釋。",
+            "charStart": 12011,
+            "charEnd": 12058,
+            "contentHash": "1a412a3e76ee1b7f1e55abf0766ec5fbe830ed84bda41897b50da82ebc2eb8b2",
+            "contextNote": "科學邊界與古氣候爭議：隨機共振能解釋全部嗎？ · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-66ab7549",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-6-cc5b72",
+            "sectionTitle": "科學邊界與古氣候爭議：隨機共振能解釋全部嗎？",
+            "paragraphIndex": 1,
+            "exactQuote": "2. **並未違背熱力學或資訊定律**：隨機共振並沒有「無中生有」創造能量，也沒有打破線性訊號處理中的資訊極限。",
+            "charStart": 12059,
+            "charEnd": 12115,
+            "contentHash": "66ab75496d58c405ddf42cf818c7617b52f5c5b0b4b9019d93f4efca758937fa",
+            "contextNote": "科學邊界與古氣候爭議：隨機共振能解釋全部嗎？ · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-40165958",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-6-cc5b72",
+            "sectionTitle": "科學邊界與古氣候爭議：隨機共振能解釋全部嗎？",
+            "paragraphIndex": 1,
+            "exactQuote": "它是藉由系統非線性勢壘或閾值，將環境雜訊的無序能量轉化為跨越門檻的觸發動力，並僅在**亞閾值弱訊號區**相對於零雜訊時的「全無輸出」實現增益；若原始訊號本身已遠高於切換門檻（$A \\ge A_c$），額外加入雜訊通常只會劣化訊雜比。",
+            "charStart": 12116,
+            "charEnd": 12232,
+            "contentHash": "40165958875b69c900f52d09e19d8412d869016aba80f22e221f815d5cdef359",
+            "contextNote": "科學邊界與古氣候爭議：隨機共振能解釋全部嗎？ · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-b5a0a9d0",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-6-cc5b72",
+            "sectionTitle": "科學邊界與古氣候爭議：隨機共振能解釋全部嗎？",
+            "paragraphIndex": 1,
+            "exactQuote": "3. **數值模型的簡化尺度**：本文互動模擬器採用的一維過阻尼四次方雙穩態朗之萬方程（Euler–Maruyama 離散步進積分），旨在精確展示時間尺度匹配 $T_\\Omega / 2 \\approx \\tau_K(D)$、停留時間奇半週期共振峰與鐘形 SNR 曲線的普適數學核心；真實的地球氣候耦合大氣海洋環流模型（GCM）以及遵循霍奇金-赫胥黎（Hodgkin–Huxley）電導動力學的生物神經網路，皆包含多維度空間耦合、記憶效應與非白有色雜訊等更豐富結構。",
+            "charStart": 12233,
+            "charEnd": 12466,
+            "contentHash": "b5a0a9d0999ae1a1c53959ada1fcf272b2d335d07668a26033107efb3e869742",
+            "contextNote": "科學邊界與古氣候爭議：隨機共振能解釋全部嗎？ · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-a70dcb0f",
+            "articleId": "art-stochastic-resonance-kramers",
+            "sectionId": "sec-6-cc5b72",
+            "sectionTitle": "科學邊界與古氣候爭議：隨機共振能解釋全部嗎？",
+            "paragraphIndex": 2,
+            "exactQuote": "從十九世紀工程師眼裡一無是處的雜音干擾，到二十世紀末揭示非線性自然世界如何在風暴裡辨識微音的數學鎖鑰，隨機共振告訴我們一個深刻卻樸素的物理事實：面對帶有門檻的世界，絕對的靜默有時反而是訊號的囚籠；適度的隨機起伏，才是喚醒沉睡節律的推手。",
+            "charStart": 13159,
+            "charEnd": 13277,
+            "contentHash": "a70dcb0f28139bf8c60146ed9dec7bc271c30d75ac346b54c42cd25e3c0b4a85",
+            "contextNote": "科學邊界與古氣候爭議：隨機共振能解釋全部嗎？ · 第 3 段"
+          }
+        ],
+        "formulas": [],
+        "interactiveComponentId": null
+      }
+    ],
+    "totalWordCount": 6903,
+    "lastIndexedAt": "2026-11-17T01:09:00.951Z"
   },
   {
     "id": "art-supershear-earthquake-rupture",
@@ -30501,7 +33032,7 @@
       }
     ],
     "totalWordCount": 3511,
-    "lastIndexedAt": "2026-11-16T01:09:57.288Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.956Z"
   },
   {
     "id": "art-thorium-nuclear-clock",
@@ -31084,7 +33615,7 @@
       }
     ],
     "totalWordCount": 3193,
-    "lastIndexedAt": "2026-11-16T01:09:57.289Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.958Z"
   },
   {
     "id": "art-tokamak-elm-instability",
@@ -31921,7 +34452,7 @@
       }
     ],
     "totalWordCount": 2669,
-    "lastIndexedAt": "2026-11-16T01:09:57.290Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.960Z"
   },
   {
     "id": "art-topological-insulators-edge",
@@ -32628,7 +35159,7 @@
       }
     ],
     "totalWordCount": 4049,
-    "lastIndexedAt": "2026-11-16T01:09:57.291Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.961Z"
   },
   {
     "id": "art-turbulence-kolmogorov-cascade",
@@ -33462,7 +35993,7 @@
       }
     ],
     "totalWordCount": 4164,
-    "lastIndexedAt": "2026-11-16T01:09:57.293Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.963Z"
   },
   {
     "id": "art-turing-reaction-diffusion",
@@ -34369,7 +36900,7 @@
       }
     ],
     "totalWordCount": 3346,
-    "lastIndexedAt": "2026-11-16T01:09:57.294Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.965Z"
   },
   {
     "id": "art-exoplanet-transit",
@@ -34898,7 +37429,7 @@
       }
     ],
     "totalWordCount": 1679,
-    "lastIndexedAt": "2026-11-16T01:09:57.295Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.966Z"
   },
   {
     "id": "art-mammoth-chromoglass",
@@ -35700,6 +38231,6 @@
       }
     ],
     "totalWordCount": 5153,
-    "lastIndexedAt": "2026-11-16T01:09:57.298Z"
+    "lastIndexedAt": "2026-11-17T01:09:00.967Z"
   }
 ]

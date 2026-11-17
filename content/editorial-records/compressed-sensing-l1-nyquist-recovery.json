@@ -1,0 +1,151 @@
+{
+  "articleId": "art-compressed-sensing-l1",
+  "slug": "compressed-sensing-l1-nyquist-recovery",
+  "editorialCategory": "scientific_principles",
+  "version": 1,
+  "creationModel": "gemini-3-pro-mirari-author",
+  "editorialPassDate": "2026-11-17T09:10:00+08:00",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-candes-2006-tit",
+        "citation": "Candès, E. J., Romberg, J., & Tao, T. (2006). \"Robust uncertainty principles: exact signal reconstruction from highly incomplete frequency information.\" IEEE Transactions on Information Theory, 52(2), 489–509.",
+        "doi": "10.1109/TIT.2005.862083",
+        "peerReviewStatus": "已完成同行評審 (IEEE Transactions on Information Theory 2006 正式刊登)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Emmanuel J. Candès (California Institute of Technology)",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 IEEE Trans. Inf. Theory 52(2), 489–509 (2006) 核心數學定理：對於長度為 N 且於正交基底下僅有 K ≪ N 個非零係數的稀疏訊號，只需隨機抽取 M ~ O(K ln N) 個頻域測量值並求解凸優化 ℓ1 範數最小化（Basis Pursuit），即能以壓倒性高機率精確重建原始訊號，繞過 ℓ0 最小化之 NP-hard 組合難題。"
+        },
+        "verifiedClaims": [
+          "長度 N 且具 K ≪ N 稀疏度之訊號可由 M ~ O(K ln N) 個隨機頻域測量值經 ℓ1 範數最小化高機率精確重建",
+          "求解凸優化 Basis Pursuit (min ||x||_1 s.t. y = Φx) 可在多項式時間收斂至全域最優，避開 ℓ0 最小化之組合爆炸"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "奈奎斯特–夏農採樣定理對無結構頻寬訊號給出 f_s ≥ 2 f_max 之精確重建下界",
+            "一般性的欠定 ℓ0 最小化問題屬於 NP-hard 計算複雜度類別"
+          ],
+          "empiricalFindings": [
+            "離散餘弦／傅立葉隨機欠採樣實驗於數值上驗證了低採樣率下的精確 ℓ1 重建與均勻採樣混疊失效之對比"
+          ],
+          "hypothesesAndModels": [
+            "精確無誤差重建定理假設嚴格 K-稀疏性與理想無雜訊測量（實際訊號與雜訊環境需放寬為穩定近似恢復界）"
+          ]
+        }
+      },
+      {
+        "id": "ref-donoho-2006-tit",
+        "citation": "Donoho, D. L. (2006). \"Compressed sensing.\" IEEE Transactions on Information Theory, 52(4), 1289–1306.",
+        "doi": "10.1109/TIT.2006.871582",
+        "peerReviewStatus": "已完成同行評審 (IEEE Transactions on Information Theory 2006 正式刊登)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "David L. Donoho (Stanford University)",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 IEEE Trans. Inf. Theory 52(4), 1289–1306 (2006) 壓縮感知理論框架：針對可壓縮與稀疏訊號指出「先全量採樣再捨棄多數係數」的浪費，確立感測端不相干隨機投影與 ℓ1 凸幾何（高維正交多胞體與相變邊界）作為從低維測量 y ∈ R^M 逆推高維訊號的數學基礎。"
+        },
+        "verifiedClaims": [
+          "直接以與稀疏基底不相干之線性測量取得低維向量 y ∈ R^M，可替代先完整採樣再丟棄九成係數的傳統壓縮流程",
+          "高維 ℓ1 球（正交多胞體）幾何特性與相變邊界決定了 M / N 與 K / M 平面上的成功恢復區域"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "高維凸多胞體（Cross-Polytope）頂點與低維面結構可由高斯或隨機正交投影之相交機率精確刻畫"
+          ],
+          "empiricalFindings": [
+            "系統性刻畫出隨 M / N 與 K / M 變化的急劇恢復／失敗相變曲線（Donoho–Tanner 相變）"
+          ],
+          "hypothesesAndModels": [
+            "漸近分析假設訊號維度 N → ∞ 且測量矩陣具備隨機獨立或次高斯／正交不相干特性"
+          ]
+        }
+      },
+      {
+        "id": "ref-lustig-2007-mrm",
+        "citation": "Lustig, M., Donoho, D., & Pauly, J. M. (2007). \"Sparse MRI: The application of compressed sensing for rapid MR imaging.\" Magnetic Resonance in Medicine, 58(6), 1182–1195.",
+        "doi": "10.1002/mrm.21391",
+        "peerReviewStatus": "已完成同行評審 (Magnetic Resonance in Medicine 2007 正式刊登)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Michael Lustig (Stanford University)",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 Magn. Reson. Med. 58(6), 1182–1195 (2007) 醫學影像應用：MRI 本質上直接於頻率空間（k-space）取樣；改用變密度隨機欠採樣將等距鬼影混疊轉化為不相干偽噪，再透過小波域與全變差（Total Variation）ℓ1 正則化重建，無須更換硬體即可大幅縮短掃描時間。"
+        },
+        "verifiedClaims": [
+          "MRI 於 k-空間進行變密度隨機欠採樣可將週期性鬼影混疊轉化為類似白雜訊的不相干偽噪",
+          "結合小波變換與全變差（TV）稀疏先驗之 ℓ1 正則化重建，能在既有硬體條件下顯著減少所需掃描時間"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "傳統 MRI 相位編碼線等距欠採樣會導致影像域週期性摺疊混疊假影（Coherent Aliasing）"
+          ],
+          "empiricalFindings": [
+            "體模與活體臨床 MR 影像實驗證實變密度隨機軌跡結合非線性小波／TV 重建可在加速掃描下保留診斷解剖特徵"
+          ],
+          "hypothesesAndModels": [
+            "醫學影像屬於近似可壓縮（Compressible）而非嚴格 K-稀疏，高加速倍率下極微弱對比細節的保留需仰賴臨床輻射科實證把關"
+          ]
+        }
+      }
+    ],
+    "noFakeCitations": true,
+    "noFictionalReviewers": true,
+    "formulasAndUnits": [
+      {
+        "formula": "\\mathbf{y} = \\mathbf{\\Phi}\\mathbf{x}",
+        "unitConsistency": "感測矩陣 Φ ∈ R^(M×N) 將無因次或歸一化訊號基底係數 x ∈ R^N 映射至量測向量 y ∈ R^M，矩陣乘積維度 (M×N)·(N×1) = (M×1) 嚴格一致",
+        "verified": true
+      },
+      {
+        "formula": "\\min_{\\mathbf{x} \\in \\mathbb{R}^N} \\|\\mathbf{x}\\|_1 \\quad \\text{s.t.} \\quad \\mathbf{y} = \\mathbf{\\Phi}\\mathbf{x}",
+        "unitConsistency": "ℓ1 範數 ||x||_1 = Σ|x_i| 與分量 x_i 具相同量綱（正交變換係數強度單位），約束條件 Φx 與 y 保持相同量測域單位",
+        "verified": true
+      },
+      {
+        "formula": "\\mathbf{x}^{(t+1)} = \\mathcal{S}_{\\lambda}\\Big(\\mathbf{x}^{(t)} - \\alpha\\,\\mathbf{A}^T(\\mathbf{A}\\mathbf{x}^{(t)} - \\mathbf{y})\\Big)",
+        "unitConsistency": "正交子矩陣 A = R_Ω Ψ 滿足 A A^T = I_M（無因次歸一化正交列），梯度步長 α = 1 與軟閾值門檻 λ 皆與係數向量 x 具相同數值尺度",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "面板一：二維約束超平面 a₁x₁ + a₂x₂ = b 下之 ℓ₂ 圓盤 (x₁² + x₂² ≤ r²)、ℓ₁ 菱形 (|x₁| + |x₂| ≤ r) 與 ℓ₀.₅ 非凸星形 ((|x₁|^0.5 + |x₂|^0.5)² ≤ r) 膨脹接觸幾何；面板二：N = 64 正交離散餘弦（DCT-II）基底 A = R_Ω Ψ 與 Basis Pursuit / LASSO 軟閾值迭代 (ISTA)。",
+      "numericalMethod": "面板一以解析投影計算 ℓ₂ 切點 (b·a₁, b·a₂)/(a₁²+a₂²) 與 ℓ₁ 座標軸頂點切點；面板二針對 N = 64、可調稀疏度 K ∈ [2, 8] 與採樣數 M ∈ [10, 48] 預計算正交 DCT-II 矩陣（確保 A A^T = I_M 與 Lipschitz 常數 L = 1），實時執行 450 步具指數衰減閾值延拓之 ISTA 迭代並對照 ℓ₂ 最小能量解 A^T y 與均勻等距欠採樣結果。",
+      "dynamicBehaviorVerified": "面板一於預設 θ = 28° 時 ℓ₂ 圓盤在 r* = 1.40 率先接觸非零混合點 (1.24, 0.66)，ℓ₁ 菱形與 ℓ₀.₅ 星形則在 r* = 1.59 精準以尖角撞擊 x₁ 軸 (1.59, 0.00)；面板二於預設 K = 4, M = 22 時隨機採樣 + ℓ₁ ISTA 達成 < 1% 相對 RMSE 精確重建，而 ℓ₂ 最小能量 (~75% RMSE) 與均勻等距欠採樣 (~80% RMSE) 均失真失效，且當 K 拉高至 8、M 降至 16–18 時 ISTA 如實跨越相變邊界而失效。",
+      "modelAssumptionsAndLimits": "面板一為二維幾何概念原型；面板二採無量測雜訊之理想 N = 64 離散餘弦稀疏模型，未包含真實物理感測器噪聲、連續頻率離網失配（Grid Mismatch）以及真實 MRI 所需之二維／三維小波與全變差（TV）雙重正則化計算成本。"
+    }
+  },
+  "readability": {
+    "language": "繁體中文",
+    "pedagogyProgression": "先全量採樣再丟棄九成的工程浪費悖論 -> 欠定系統下 ℓ0 NP-hard 與 ℓ2 能量彌散之兩難 -> 2D 氣球膨脹幾何推導 ℓ1 菱形尖角撞擊座標軸與高維正交多胞體直覺 -> CompressedSensingSimulator 雙面板即時實驗 -> 不相干採樣、RIP、ISTA 軟閾值與 Donoho–Tanner 相變邊界 -> Lustig et al. (2007) Sparse MRI 臨床實踐與邊界反思",
+    "technicalTermsDemystified": [
+      {
+        "term": "稀疏性 (Sparsity)",
+        "intuitiveExplanation": "把訊號換成傅立葉或小波等合適的語言表達後，絕大多數位置都是安靜的零，只有極少數 K ≪ N 個關鍵位置帶有真實數值"
+      },
+      {
+        "term": "混疊 (Aliasing)",
+        "intuitiveExplanation": "等間隔採樣過疏時，高頻波會在取樣點上偽裝成低頻波，就像電影裡高速旋轉的車輪看起來像在倒轉一樣，在影像裡變成疊影鬼臉"
+      },
+      {
+        "term": "ℓ1 菱形多胞體幾何 (Basis Pursuit)",
+        "intuitiveExplanation": "在二維平面上把氣球吹大直到碰觸測量直線，圓潤的 ℓ2 氣球總是用平滑斜邊同時擦到兩個非零分量，而尖角對準座標軸的 ℓ1 鑽石菱形卻總是用尖角直接戳中單一座標軸，自動把多餘分量歸零"
+      },
+      {
+        "term": "不相干性與軟閾值 (Incoherence & ISTA Soft-Thresholding)",
+        "intuitiveExplanation": "隨機抽樣把整齊的混疊鬼影打碎成低矮雜訊草皮，接著 ISTA 軟閾值算子像一把高度固定為 λ 的剃刀橫掃頻譜，把雜訊草皮整片剃平歸零，只留下真正高聳的稀疏訊號尖峰"
+      }
+    ]
+  },
+  "aestheticsAndNarrative": {
+    "coreQuestion": "在方程式數量遠少於未知數的欠定線性系統中，壓縮感知如何不靠窮舉組合就能從極少隨機測量裡精準鎖定唯一稀疏訊號？",
+    "interactiveRole": "CompressedSensingSimulator 透過面板一讓讀者親手膨脹 ℓ2 圓盤、ℓ1 菱形與 ℓ0.5 星形見證凸幾何尖角碰撞座標軸的奇蹟，並於面板二即時運行 N=64 ISTA 演算法驗證隨機不相干採樣對比均勻混疊與 Donoho–Tanner 相變失效邊界。"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "於正文與模擬器中明確區分「幾何概念原型（2D）」與「高維真實數值驗證（N=64 DCT-II 實時 ISTA）」，並將模擬器置於凸幾何推導核心章節之後形成雙向呼應",
+    "在模擬器面板二實測並保留隨機採樣下當 K 拉高、M 壓低時跨越 Donoho–Tanner 相變邊界的真實重建失敗行為，避免誇大壓縮感知為無條件突破奈奎斯特極限",
+    "核對 ArticleRenderer 標題渲染機制，避免於 ## 章節標題內置入未解析之 $...$ LaTeX 語法，確保網頁 KaTeX 與純文字檢驗完全一致"
+  ],
+  "unconfirmedLimits": [
+    "模擬器採用無量測雜訊之理想嚴格 K-稀疏 DCT-II 模型；現實自然影像與臨床 MRI 屬於近似可壓縮訊號且含感測熱雜訊",
+    "真實 MRI 高加速倍率壓縮感知重建對極微弱低對比病灶的保留能力，須視線圈幾何、正則化權重與臨床判讀驗證而定"
+  ]
+}

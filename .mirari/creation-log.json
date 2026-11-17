@@ -1,5 +1,5 @@
 {
-  "lastRunTimestamp": "2026-11-16T09:00:00.000Z",
+  "lastRunTimestamp": "2026-11-17T09:00:00.000Z",
   "scheduledCron": "0 9 * * *",
   "timezone": "Asia/Taipei (UTC+8)",
   "creationModel": "gemini-2.5-pro",
@@ -909,6 +909,54 @@
             "Weis-Fogh, T. (1973). \"Quick estimates of flight fitness in hovering animals, including novel mechanisms for lift production.\" Journal of Experimental Biology, 59(1), 169–230."
           ],
           "editorialRecordPath": "content/editorial-records/insect-flight-leading-edge-vortex.json"
+        }
+      ]
+    },
+    {
+      "runId": "mirari-auto-run-20261117-0900",
+      "timestamp": "2026-11-17T09:00:00.000Z",
+      "targetCount": 3,
+      "succeededCount": 3,
+      "failedCount": 0,
+      "articles": [
+        {
+          "id": "art-drosophila-connectome-flywire",
+          "slug": "drosophila-whole-brain-connectome-flywire",
+          "title": "五千萬個接點的腦圖譜：FlyWire 果蠅全腦連結體與「靜態電線」之外的動態邊界",
+          "interactiveComponent": "ConnectomeWiringSimulator",
+          "status": "published",
+          "sources": [
+            "Dorkenwald, S., Matsliah, A., Sterling, A. R., Schlegel, P., Yu, S.-C., et al. (FlyWire Consortium) (2024). \"Neuronal wiring diagram of an adult brain.\" Nature, 634(8032), 124–138. doi:10.1038/s41586-024-07558-y",
+            "Schlegel, P., Yin, Y., Bates, A. S., Dorkenwald, S., et al. (FlyWire Consortium) (2024). \"Whole-brain annotation and multi-connectome cell typing of Drosophila.\" Nature, 634(8032), 139–152. doi:10.1038/s41586-024-07686-5",
+            "Marder, E. (2012). \"Neuromodulation of neuronal circuits: back to the future.\" Neuron, 76(1), 1–11. doi:10.1016/j.neuron.2012.09.010"
+          ],
+          "editorialRecordPath": "content/editorial-records/drosophila-whole-brain-connectome-flywire.json"
+        },
+        {
+          "id": "art-compressed-sensing-l1",
+          "slug": "compressed-sensing-l1-nyquist-recovery",
+          "title": "壓縮感知：為什麼只看幾成隨機測量就能精準還原訊號，甚至打破奈奎斯特採樣定額？",
+          "interactiveComponent": "CompressedSensingSimulator",
+          "status": "published",
+          "sources": [
+            "Candès, E. J., Romberg, J., & Tao, T. (2006). \"Robust uncertainty principles: exact signal reconstruction from highly incomplete frequency information.\" IEEE Transactions on Information Theory, 52(2), 489–509. doi:10.1109/TIT.2005.862083",
+            "Donoho, D. L. (2006). \"Compressed sensing.\" IEEE Transactions on Information Theory, 52(4), 1289–1306. doi:10.1109/TIT.2006.871582",
+            "Lustig, M., Donoho, D., & Pauly, J. M. (2007). \"Sparse MRI: The application of compressed sensing for rapid MR imaging.\" Magnetic Resonance in Medicine, 58(6), 1182–1195. doi:10.1002/mrm.21391"
+          ],
+          "editorialRecordPath": "content/editorial-records/compressed-sensing-l1-nyquist-recovery.json"
+        },
+        {
+          "id": "art-stochastic-resonance-kramers",
+          "slug": "stochastic-resonance-bistable-noise-amplification",
+          "title": "雜訊為何能把微弱訊號推過門檻？隨機共振與克拉默斯時間匹配的鐘形反轉",
+          "interactiveComponent": "StochasticResonanceSimulator",
+          "status": "published",
+          "sources": [
+            "Benzi, R., Sutera, A., & Vulpiani, A. (1981). \"The mechanism of stochastic resonance.\" Journal of Physics A: Mathematical and General, 14(11), L453–L457. doi:10.1088/0305-4470/14/11/006",
+            "Gammaitoni, L., Hänggi, P., Jung, P., & Marchesoni, F. (1998). \"Stochastic resonance.\" Reviews of Modern Physics, 70(1), 223–287. doi:10.1103/RevModPhys.70.223",
+            "Douglass, J. K., Wilkens, L., Pantazelou, E., & Moss, F. (1993). \"Noise enhancement of information transfer in crayfish mechanoreceptors by stochastic resonance.\" Nature, 365(6444), 337–340. doi:10.1038/365337a0"
+          ],
+          "editorialRecordPath": "content/editorial-records/stochastic-resonance-bistable-noise-amplification.json"
         }
       ]
     }

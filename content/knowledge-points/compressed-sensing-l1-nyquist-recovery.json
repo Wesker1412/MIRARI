@@ -1,0 +1,77 @@
+{
+  "articleId": "art-compressed-sensing-l1",
+  "slug": "compressed-sensing-l1-nyquist-recovery",
+  "title": "壓縮感知（Compressed Sensing）：為何高維稀疏訊號能突破奈奎斯特採樣極限？",
+  "knowledgePoints": [
+    {
+      "id": "kp-cs-nyquist-sparsity",
+      "label": "稀疏先驗與突破奈奎斯特採樣極限的條件",
+      "suggestedQuestion": "奈奎斯特採樣定理不是規定採樣率必須大於最高頻率的兩倍嗎？壓縮感知憑什麼能用遠少於 N 的樣本精確還原訊號？",
+      "keywords": [
+        "壓縮感知",
+        "奈奎斯特採樣定理",
+        "稀疏性",
+        "不相干投影",
+        "正交基底"
+      ],
+      "plainExplanation": "奈奎斯特極限針對的是對頻寬內結構一無所知的一般訊號；但現實中多數訊號在傅立葉或小波等正交基底下只有極少數 K ≪ N 個非零係數（稀疏性）。Candès–Romberg–Tao 與 Donoho 於 2006 年證明，只要透過與稀疏基底不相干的隨機線性投影，直接取得 M ~ O(K ln N) 個欠採樣測量，就能避免「先全量採樣再丟掉九成」的浪費，並在事後以凸優化精確還原訊號。",
+      "anchorSentenceId": "sent-e1f06222"
+    },
+    {
+      "id": "kp-cs-l0-l2-dilemma",
+      "label": "欠定系統中 ℓ0 組合爆炸與 ℓ2 最小能量的兩難",
+      "suggestedQuestion": "為什麼不直接找非零項最少的 ℓ0 解，或直接用算起來最快的 ℓ2 最小平方能量法來重建欠採樣訊號？",
+      "keywords": [
+        "欠定線性系統",
+        "ℓ0 範數",
+        "NP-hard",
+        "ℓ2 範數",
+        "偽逆矩陣"
+      ],
+      "plainExplanation": "在 M ≪ N 的欠定方程 y = Φx 中存在無窮多組解。直接最小化非零元素個數的 ℓ0 範數需要窮舉所有 C(N, K) 種可能位置，隨維度呈組合爆炸而落入 NP-hard 難題；反之，最小化平方和能量的 ℓ2 範數雖有解析偽逆解且計算極快，卻會把少數尖峰的能量平均攤分到所有 N 個座標上，產生處處非零的模糊稠密假訊號。",
+      "anchorSentenceId": "sent-8e505168"
+    },
+    {
+      "id": "kp-cs-l1-polytope-geometry",
+      "label": "ℓ1 菱形多胞體的凸幾何頂點與非凸 ℓ0.5 的對比",
+      "suggestedQuestion": "為什麼把平方和換成絕對值總和（ℓ1 範數），膨脹球就會剛好撞在稀疏座標軸上？那比 ℓ1 更尖的 ℓ0.5 為什麼不直接拿來用？",
+      "keywords": [
+        "ℓ1 範數",
+        "Basis Pursuit",
+        "凸幾何",
+        "正交多胞體",
+        "非凸優化"
+      ],
+      "plainExplanation": "在二維平面將原點範數球膨脹去碰觸測量直線時，圓潤的 ℓ2 圓盤總是先用平滑斜邊擦到雙分量皆非零的點；而 ℓ1 菱形的四個尖角剛好沿座標軸突出，因此幾乎必定由尖角先戳中座標軸（使另一分量歸零），高維正交多胞體更將此效應指數放大。雖然 p = 0.5 的內凹星形尖刺更細，但它破壞了凸集性質，在高維空間佈滿局部極小值陷阱；唯有 ℓ1（Basis Pursuit）同時保有凸優化的全域可解性與稀疏選取能力。",
+      "anchorSentenceId": "sent-8dbe13b6"
+    },
+    {
+      "id": "kp-cs-incoherence-rip-ista",
+      "label": "不相干採樣、RIP 與 ISTA 軟閾值迭代的相變邊界",
+      "suggestedQuestion": "為什麼均勻跳著採樣會產生嚴重混疊，換成隨機採樣搭配 ISTA 軟閾值迭代就能把真實頻譜救回來？什麼時候又會失效？",
+      "keywords": [
+        "不相干性",
+        "有限等距性質",
+        "ISTA",
+        "軟閾值",
+        "Donoho–Tanner 相變"
+      ],
+      "plainExplanation": "均勻等距欠採樣使不同頻率在固定取樣點產生週期性碰撞（高相干性），造成無法消除的混疊假尖峰；隨機欠採樣則把結構化混疊打散成微弱的不相干偽噪，並在滿足有限等距性質（RIP）時保留稀疏向量的幾何距離。ISTA 演算法透過反覆執行「對齊測量殘差」與「軟閾值剃刀削平低矮偽噪」來收斂至真實稀疏尖峰；但一旦稀疏度 K 過高或測量數 M 跌破 Donoho–Tanner 相變曲線（約 O(K ln(N/K))），重建仍會急劇失效。",
+      "anchorSentenceId": "sent-07332ab7"
+    },
+    {
+      "id": "kp-cs-sparse-mri",
+      "label": "Sparse MRI：k-空間變密度隨機欠採樣與臨床加速",
+      "suggestedQuestion": "壓縮感知如何真正應用在醫院的核磁共振造影（MRI）上，縮短掃描時間卻不更換硬體？",
+      "keywords": [
+        "Sparse MRI",
+        "k-空間",
+        "變密度隨機採樣",
+        "小波變換",
+        "全變差正則化"
+      ],
+      "plainExplanation": "MRI 硬體直接量測影像的空間頻率譜（k-空間），掃描時間與相位編碼採樣線數成正比。Lustig 等人（2007）在 Sparse MRI 中改用變密度隨機欠採樣（密集保留低頻對比度、隨機跳採高頻）將等距鬼影打散為不相干偽噪，再結合醫學影像在小波變換與全變差（TV）域的雙重稀疏先驗求解非線性 ℓ1 優化，在無須改裝磁體下大幅壓縮臨床掃描時間。",
+      "anchorSentenceId": "sent-6955273d"
+    }
+  ]
+}

@@ -48,6 +48,9 @@ import { PulsarTimingSimulator } from '../article/PulsarTimingSimulator';
 import { AltermagnetSpinSimulator } from '../article/AltermagnetSpinSimulator';
 import { ChromoglassHiCSimulator } from '../article/ChromoglassHiCSimulator';
 import { InsectFlappingLevSimulator } from '../article/InsectFlappingLevSimulator';
+import { ConnectomeWiringSimulator } from '../article/ConnectomeWiringSimulator';
+import { CompressedSensingSimulator } from '../article/CompressedSensingSimulator';
+import { StochasticResonanceSimulator } from '../article/StochasticResonanceSimulator';
 
 export interface InteractiveParameterMeta {
   name: string;
@@ -861,6 +864,30 @@ export const INTERACTIVE_COMPONENTS: Record<string, InteractiveComponentMeta> = 
     parameters: [],
     keyConcepts: ['前緣渦流 (Leading-Edge Vortex)', '延遲失速 (Delayed Stall)', '旋轉環流 (Rotational Circulation)', '尾流捕獲 (Wake Capture)', '羅斯貝數 (Rossby Number)'],
     component: InsectFlappingLevSimulator,
+  },
+  ConnectomeWiringSimulator: {
+    id: 'ConnectomeWiringSimulator',
+    nameZh: '果蠅全腦有向連結體 (Connectome)、豐富俱樂部與神經調質狀態模擬器',
+    descriptionZh: '於 24 節點有向帶符號漏積分激發網路中點選虛擬雷射燒灼任意節點或切換多巴胺／GABA 調質增益，即時觀測發火率傳播與 24×24 路徑轉移矩陣重塑。',
+    parameters: [],
+    keyConcepts: ['全腦連結體 (Connectome)', '豐富俱樂部 (Rich-Club Hubs)', '有向帶符號突觸圖譜', '神經調質 (Neuromodulation)', '結構與動態邊界'],
+    component: ConnectomeWiringSimulator,
+  },
+  CompressedSensingSimulator: {
+    id: 'CompressedSensingSimulator',
+    nameZh: '壓縮感知 (Compressed Sensing) 凸幾何與 ISTA 稀疏重建模擬器',
+    descriptionZh: '同步展示二維 ℓ₂ 圓盤 vs ℓ₁ 菱形氣球膨脹切點，並在瀏覽器內實時執行 N=64 正交 DCT-II 稀疏訊號 ISTA 凸優化，對比均勻欠採樣混疊與不相干隨機重建。',
+    parameters: [],
+    keyConcepts: ['壓縮感知 (Compressed Sensing)', 'ℓ₁ 範數凸鬆弛', '限制等距性質 (RIP)', '不相干隨機欠採樣', 'Donoho–Tanner 相變'],
+    component: CompressedSensingSimulator,
+  },
+  StochasticResonanceSimulator: {
+    id: 'StochasticResonanceSimulator',
+    nameZh: '雙穩態隨機共振 (Stochastic Resonance) 克拉默斯逃逸與 SNR 鐘形共振模擬器',
+    descriptionZh: '以 Euler–Maruyama 即時求解過阻尼雙穩態朗之萬方程，聯動傾斜勢能阱粒子跳躍、軌跡同步與非單調鐘形信雜比曲線及奇半週期停留時間共振峰。',
+    parameters: [],
+    keyConcepts: ['隨機共振 (Stochastic Resonance)', '雙穩態勢阱 (Bistable Potential)', '克拉默斯逃逸速率', '時間尺度匹配條件', '非單調鐘形 SNR'],
+    component: StochasticResonanceSimulator,
   },
 };
 

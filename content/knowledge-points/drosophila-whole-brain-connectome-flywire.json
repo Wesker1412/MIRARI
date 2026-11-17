@@ -1,0 +1,102 @@
+{
+  "articleId": "art-drosophila-connectome-flywire",
+  "slug": "drosophila-whole-brain-connectome-flywire",
+  "title": "五千萬個突觸繪就的果蠅全腦地圖：FlyWire 連結體揭示了什麼，又不能回答什麼？",
+  "knowledgePoints": [
+    {
+      "id": "kp-flywire-whole-brain-scale",
+      "label": "成年果蠅全腦突觸級規模",
+      "suggestedQuestion": "FlyWire 果蠅全腦連結體究竟測繪了多少神經元與突觸？是如何重建出來的？",
+      "keywords": [
+        "139255",
+        "五千萬",
+        "化學突觸",
+        "FlyWire",
+        "黑腹果蠅",
+        "電子顯微鏡",
+        "校對"
+      ],
+      "plainExplanation": "FlyWire 聯盟結合高通量連續切片電子顯微影像、AI 自動體積分割與全球數百位科學家和公民校對員的人機協作，首度完成成年雌性黑腹果蠅的全腦接線藍圖，總計鎖定 139,255 個經過校對的神經元與超過 5,000 萬個化學突觸（約 5.45×10^7 個），使研究人員能第一次在單一突觸解析度下追蹤從感覺輸入到運動輸出的完整全腦通路。",
+      "anchorSentenceId": "sent-e1f48aa3"
+    },
+    {
+      "id": "kp-directed-signed-connectome",
+      "label": "有向且帶正負號的突觸圖譜",
+      "suggestedQuestion": "為什麼科學家不只繪製誰連誰，還需要預測每個突觸的神經傳遞物質？",
+      "keywords": [
+        "乙醯膽鹼",
+        "GABA",
+        "麩胺酸",
+        "神經傳遞物質",
+        "有向帶符號",
+        "興奮性",
+        "抑制性"
+      ],
+      "plainExplanation": "只知道兩個神經元相連並不足以推演大腦如何計算，還必須分辨誰踩油門、誰踩煞車。Dorkenwald 等人利用電顯影像中的突觸囊泡外觀訓練視覺分類器，替每個突觸標上乙醯膽鹼（興奮性正權重）或 GABA、麩胺酸（中樞抑制性負權重）等神經傳遞物質身分，讓靜態接線圖進化為可計算正負極性的有向帶符號權重圖。",
+      "anchorSentenceId": "sent-25570f98"
+    },
+    {
+      "id": "kp-rich-club-hubs",
+      "label": "豐富俱樂部（Rich-Club）樞紐骨幹",
+      "suggestedQuestion": "什麼是大腦網路裡的「豐富俱樂部」？為什麼它受損會衝擊全腦通訊？",
+      "keywords": [
+        "豐富俱樂部",
+        "Rich-Club",
+        "樞紐",
+        "跨區通訊",
+        "30%",
+        "拓撲",
+        "核心"
+      ],
+      "plainExplanation": "就像全球航空網裡的國際樞紐機場一樣，FlyWire 全腦分析發現約 30% 的高連接度核心神經元彼此之間也密集直連，構成「豐富俱樂部」通訊骨幹。這群核心樞紐把視葉、嗅覺、中央複合體與下行運動區串聯成高效率的全腦整合網路，但也因此使全域通訊對核心樞紐的損傷特別敏感。",
+      "anchorSentenceId": "sent-3899006b"
+    },
+    {
+      "id": "kp-cell-types-conservation",
+      "label": "8,453 種細胞類型與跨個體保守性",
+      "suggestedQuestion": "果蠅大腦有多少種細胞類型？每隻果蠅的大腦接線都完全一模一樣嗎？",
+      "keywords": [
+        "8453",
+        "4581",
+        "細胞類型",
+        "半腦",
+        "保守性",
+        "冗餘通路",
+        "Schlegel"
+      ],
+      "plainExplanation": "Schlegel 等人依據細胞形態、發育譜系與連結指紋，在 FlyWire 全腦中系統註釋出 8,453 種細胞類型，其中 4,581 種為全新定義。透過與先前發表的半腦連結體跨個體比對，研究顯示負責核心運算的主幹迴路具備高度演化與發育保守性，同時也存在隨個體發育微調變異的冗餘輔助路徑。",
+      "anchorSentenceId": "sent-52357198"
+    },
+    {
+      "id": "kp-neuromodulation-boundary",
+      "label": "連結體是必要而非充分條件：神經調質切換",
+      "suggestedQuestion": "既然已經有完整果蠅連結體，為什麼還不能單靠電路圖預測所有行為？",
+      "keywords": [
+        "神經調質",
+        "多巴胺",
+        "血清素",
+        "必要條件",
+        "充分條件",
+        "Marder",
+        "離子通道"
+      ],
+      "plainExplanation": "正如 Eve Marder 在口胃神經節迴路中證明的，相同的物理接線圖就像同一套鐵路軌道；當多巴胺、血清素或神經肽等神經調質改變離子通道電導與突觸增益時，同一組神經元便能切換出截然不同的節律與行為輸出。因此連結體提供了必要的結構約束，卻不能單獨取代動態生理參數。",
+      "anchorSentenceId": "sent-2465580f"
+    },
+    {
+      "id": "kp-em-gap-junction-glia-limits",
+      "label": "電突觸與膠質細胞的觀測盲區",
+      "suggestedQuestion": "電子顯微連結體目前還有哪些生理結構還沒完整納入？",
+      "keywords": [
+        "間隙連接",
+        "電突觸",
+        "膠質細胞",
+        "單一個體",
+        "雌性果蠅",
+        "科學邊界"
+      ],
+      "plainExplanation": "目前的電子顯微連結體重建主要聚焦於具有明顯囊泡結構的化學突觸，較難完整解析讓細胞直接共用離子電流的電突觸（間隙連接），也尚未把調節突觸微環境與離子平衡的神經膠質細胞交互作用納入接線矩陣，且 FlyWire 樣本來自單一隻雌性果蠅個體。",
+      "anchorSentenceId": "sent-e0fbb419"
+    }
+  ]
+}

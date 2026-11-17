@@ -1,0 +1,156 @@
+{
+  "articleId": "art-drosophila-connectome-flywire",
+  "slug": "drosophila-whole-brain-connectome-flywire",
+  "editorialCategory": "journal_interpretation",
+  "version": 1,
+  "creationModel": "mirari-neuroscience-author",
+  "editorialPassDate": "2026-11-17T01:15:00+08:00",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-dorkenwald-2024-flywire",
+        "citation": "Dorkenwald, S., Matsliah, A., Sterling, A. R., Schlegel, P., Yu, S.-C., et al. (FlyWire Consortium) (2024). \"Neuronal wiring diagram of an adult brain.\" Nature, 634(8032), 124–138.",
+        "doi": "10.1038/s41586-024-07558-y",
+        "peerReviewStatus": "已完成同行評審 (Nature 2024-10-02 正式刊登)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Sven Dorkenwald (Princeton Neuroscience Institute)",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 FlyWire 成年雌性黑腹果蠅全腦連結體核心規模為 139,255 個經校對神經元與超過 5,000 萬個化學突觸（約 5.45×10^7），包含影像分類器預測神經傳遞物質極性與約 30% 核心樞紐構成之豐富俱樂部（Rich-Club）跨區通訊骨幹。"
+        },
+        "verifiedClaims": [
+          "FlyWire 重建完整成年雌性黑腹果蠅全腦，涵蓋 139,255 個經校對神經元及超過 5,000 萬個（~5.45×10^7）化學突觸",
+          "透過視覺分類器對每個突觸預測神經傳遞物質（如乙醯膽鹼、GABA、麩胺酸），形成有向且帶正負號的權重圖譜",
+          "全腦呈現從視葉／觸角感覺區經中央複合體／蕈形體至下行神經元的模組架構，且約 30% 核心樞紐構成豐富俱樂部（Rich-Club）骨幹"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "黑腹果蠅中樞神經系統中乙醯膽鹼主要介導興奮性突觸傳導，GABA 與多數中樞麩胺酸受體通道介導抑制性傳導",
+            "圖論中豐富俱樂部（Rich-Club）指高度數核心節點彼此之間互連密度高於隨機零模型"
+          ],
+          "empiricalFindings": [
+            "首次在完整成年動物全腦尺度透過連續切片電顯與人機校對取得單突觸有向帶符號連接矩陣與豐富俱樂部量化比例"
+          ],
+          "hypothesesAndModels": [
+            "以化學突觸數量作為突觸傳導權重之線性或比例近似，並未直接量測電生理突觸電導強度或體積傳導調質濃度"
+          ]
+        }
+      },
+      {
+        "id": "ref-schlegel-2024-typing",
+        "citation": "Schlegel, P., Yin, Y., Bates, A. S., Dorkenwald, S., et al. (FlyWire Consortium) (2024). \"Whole-brain annotation and multi-connectome cell typing of Drosophila.\" Nature, 634(8032), 139–152.",
+        "doi": "10.1038/s41586-024-07686-5",
+        "peerReviewStatus": "已完成同行評審 (Nature 2024-10-02 正式刊登)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Philipp Schlegel (University of Cambridge / MRC LMB)",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實系統化註釋出 8,453 種細胞類型（其中 4,581 種為新定義類型），並透過跨個體與半腦（Hemibrain）連結體比對揭露核心迴路高度保守性與部分冗餘通路之發育變異。"
+        },
+        "verifiedClaims": [
+          "將全腦 139,255 個神經元系統註釋為 8,453 種細胞類型，其中 4,581 種為新定義類型",
+          "跨 FlyWire 全腦與半腦連結體比對顯示核心腦區細胞類型與主幹接線高度保守，同時存在個體發育變異之冗餘通路"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "昆蟲神經元可依發育神經母細胞譜系（Hemilineage）、形態特徵與突觸連接指紋進行階層分類"
+          ],
+          "empiricalFindings": [
+            "全腦尺度首次實現 8,453 種細胞類型完整編目與跨個體定量比對"
+          ],
+          "hypothesesAndModels": [
+            "將單一雌性全腦與另一隻雌性半腦之重複性延伸推論為物種級普遍結構規範，仍待更多全腦樣本驗證"
+          ]
+        }
+      },
+      {
+        "id": "ref-marder-2012-neuromodulation",
+        "citation": "Marder, E. (2012). \"Neuromodulation of neuronal circuits: back to the future.\" Neuron, 76(1), 1–11.",
+        "doi": "10.1016/j.neuron.2012.09.010",
+        "peerReviewStatus": "已完成同行評審 (Neuron 2012 正式刊登綜述)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Eve Marder (Brandeis University)",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實「連結體是必要條件而非充分條件」之神經迴路邊界論述：多巴胺、血清素與神經肽等調質可透過改變離子通道電導與突觸增益，在相同解剖接線下切換出多種迥異節律與行為輸出。"
+        },
+        "verifiedClaims": [
+          "相同的物理神經迴路在神經調質改變膜電導與突觸效能後，可產生多種截然不同的輸出動態",
+          "解剖連結體無法單獨預測特定生理狀態下的神經調質與環境依存行為"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "神經調質透過 G 蛋白偶聯受體調控離子通道開放機率與突觸可塑性增益"
+          ],
+          "empiricalFindings": [
+            "在甲殼動物口胃神經節中直接記錄到同一小迴路在不同調質下切換多種運動節律"
+          ],
+          "hypothesesAndModels": [
+            "將小迴路的多狀態切換原則外推至全腦尺度連結體之功能解讀架構"
+          ]
+        }
+      }
+    ],
+    "noFakeCitations": true,
+    "noFictionalReviewers": true,
+    "formulasAndUnits": [
+      {
+        "formula": "\\Phi_{\\text{norm}}(k) = \\frac{\\Phi(k)}{\\Phi_{\\text{rand}}(k)} > 1",
+        "unitConsistency": "豐富俱樂部係數 Φ(k) 為度數大於 k 之節點子圖的無因次連線密度比例，與隨機零模型期望密度 Φ_rand(k) 相除後為無因次純數",
+        "verified": true
+      },
+      {
+        "formula": "\\tau \\frac{d r_i(t)}{dt} = -r_i(t) + \\phi\\!\\left(\\sum_{j=1}^{24} g_{\\text{sign}(W_{ij})}(s)\\, W_{ij}\\, r_j(t) + I_i^{\\text{ext}}(t) - \\theta(s)\\right)",
+        "unitConsistency": "膜時間常數 τ 單位為秒 [s]，時間導數 d/dt 單位為 [s^-1]，使左側 τ·dr_i/dt 與右側正規化發火率 r_i(t) 及激活函數 φ(·) 均為無因次量 [0, 1]，方程式兩側因次一致",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "24 節點三層模組有向帶符號漏積分激發速率（Leaky Rate）常微分方程組，結合興奮／抑制符號分離增益 g_exc(s)、g_inh·g_inh_mod(s) 與調質門檻 θ(s)",
+      "numericalMethod": "固定步長顯式歐拉法（dt = 0.016 s, τ = 0.065 s, dt/τ ≈ 0.246 < 1 保證數值穩定性），於 SVG 呈現 24 節點有向帶符號突觸通量並同步以 Canvas 繪製各層平均發火率 r(t) 與 24×24 路徑轉移／靜態權重熱圖",
+      "dynamicBehaviorVerified": "相同 24 節點靜態矩陣 W_ij 下，高多巴胺狀態降低門檻並提高興奮迴響增益而驅動高幅前行／轉向輸出；GABA 過抑制狀態提高煞車增益與門檻而使感覺脈衝在進入 Rich-Club 後迅速衰減；點選燒灼 3 顆 Rich-Club 樞紐明顯切斷跨層整合與運動輸出",
+      "modelAssumptionsAndLimits": "明確標示為簡化 24 節點拓撲示範模型，非 FlyWire 139,255 神經元全尺度實測生物物理模擬，僅用於教學性對比豐富俱樂部樞紐結構與神經調質增益對訊號流的影響"
+    }
+  },
+  "readability": {
+    "language": "繁體中文",
+    "pedagogyProgression": "尖銳科學提問（畫出五千萬接點就能預測行為嗎） -> EM 重建與人機校對規模（139,255 神經元） -> 有向帶符號神經傳遞物質標記 -> 豐富俱樂部 30% 核心樞紐與 8,453 種細胞類型 -> ConnectomeWiringSimulator 親手操控調質與樞紐燒灼 -> 劃定四大科學邊界",
+    "technicalTermsDemystified": [
+      {
+        "term": "神經連結體 (Connectome)",
+        "intuitiveExplanation": "就像把整座城市每一條電纜、十字路口與紅綠燈全部畫進同一張奈米級工程藍圖"
+      },
+      {
+        "term": "有向帶符號權重圖 (Directed Signed Weighted Graph)",
+        "intuitiveExplanation": "不只標出單行道箭頭與路寬，還用正負號區分哪條突觸是踩油門（興奮）或踩煞車（抑制）"
+      },
+      {
+        "term": "豐富俱樂部 (Rich-Club)",
+        "intuitiveExplanation": "如同全球航空網中的國際樞紐機場，少數高連線核心節點彼此之間也密集直飛，構成全腦高速骨幹"
+      },
+      {
+        "term": "神經調質 (Neuromodulation)",
+        "intuitiveExplanation": "在不改鋪任何鐵軌的前提下，由調度中心調整各路口紅綠燈門檻與車廂動力倍率，讓同一條鐵路跑出不同行車模式"
+      },
+      {
+        "term": "電突觸／間隙連接 (Gap Junctions)",
+        "intuitiveExplanation": "如同兩間相鄰房間牆上直接打通的銅製導線，讓離子電流不經化學囊泡直接跨膜同步流通"
+      }
+    ],
+    "toneReview": "嚴謹而具物理直觀，嚴格區分 FlyWire 的靜態接線實證與動態行為預測之間的界線，杜絕公式化套話"
+  },
+  "aestheticsAndNarrative": {
+    "avoidFormulaicCliches": "開篇直擊「五千萬接點電路圖能否預測左右轉」之核心悖論，全篇無任何禁用套話或虛構審訂語彙",
+    "coreQuestion": "如果把一顆果蠅大腦裡 139,255 個神經元與超過五千萬個突觸全部測繪出來，這張有向帶符號接線圖能直接唯一決定動物的行為嗎？",
+    "interactiveRole": "ConnectomeWiringSimulator 讓讀者在同一張不變的 24 節點有向帶符號網路上切換神經調質狀態、調整 GABA/Glu 抑制增益並點選燒灼 Rich-Club 樞紐，親眼驗證『靜態結構相同、動態輸出迥異』的結構－動態邊界",
+    "narrativeStyle": "research_interpretation",
+    "interactiveType": "connectome_graph"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "嚴格區分「靜態神經傳遞物質極性預測」與「即時神經調質動態」：避免將 EM 分類器推論的突觸符號誤述為固定不變的生理電導權重",
+    "補充單一個體與觀測盲區限制：明確指出 FlyWire 數據來自單一成年雌性黑腹果蠅，且尚未完整解析間隙連接（電突觸）與膠質細胞交互作用",
+    "精確對齊模擬器規模宣告：明示模擬器為 24 節點教學拓撲模型，與 139,255 節點實測連結體清楚區隔"
+  ],
+  "unconfirmedLimits": [
+    "單純依據化學突觸數量難以精確推算不同樹突空間位置與受體密度對應之真實生理電導權重",
+    "單一隻雌性果蠅全腦樣本尚無法完整涵蓋性別二態性迴路與跨個體突觸微觀可塑性變異",
+    "電突觸（間隙連接）與神經膠質細胞動態調控尚待新一代高對比造影與多模態記錄整合"
+  ]
+}

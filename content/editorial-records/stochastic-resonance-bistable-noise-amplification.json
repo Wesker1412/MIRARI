@@ -1,0 +1,149 @@
+{
+  "articleId": "art-stochastic-resonance-kramers",
+  "slug": "stochastic-resonance-bistable-noise-amplification",
+  "editorialCategory": "scientific_principles",
+  "version": 1,
+  "creationModel": "gemini-3-pro-mirari-author",
+  "editorialPassDate": "2026-11-17T09:10:00+08:00",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-benzi-1981-jpa",
+        "citation": "Benzi, R., Sutera, A., & Vulpiani, A. (1981). \"The mechanism of stochastic resonance.\" Journal of Physics A: Mathematical and General, 14(11), L453–L457.",
+        "doi": "10.1088/0305-4470/14/11/006",
+        "peerReviewStatus": "已完成同行評審 (Journal of Physics A 1981 正式刊登)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Roberto Benzi (CNR Istituto di Fisica dell'Atmosfera, Roma)",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 Benzi, Sutera & Vulpiani (1981) 提出隨機共振機制的歷史源頭：針對第四紀十萬年冰河期循環中地球軌道偏心率所造成僅千分之幾的太陽輻射微弱週期變化，結合雙穩態能量反照率勢阱與短期氣象／海洋隨機擾動，論證適度雜訊能協助亞閾值週期驅動完成跨阱同步切換。"
+        },
+        "verifiedClaims": [
+          "1981 年本齊、蘇特拉與武爾皮亞尼提出「隨機共振」機制，最初動機為解釋微弱地球軌道偏心率十萬年週期擾動如何放大為劇烈冰期／間冰期交替",
+          "地球軌道偏心率對總太陽輻射量的直接改變僅為千分之幾，本身不足以單獨跨越雙穩態能量反照率勢壘",
+          "結合短期隨機氣候漲落與雙穩態非線性勢阱後，微弱週期傾斜與雜訊協同作用可產生與外力週期同步的大幅度狀態跳躍"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "米蘭科維奇軌道偏心率週期約為十萬年，其直接造成的全球總輻射強迫變化幅度極小（約千分之幾量級）",
+            "冰雪反照率正回饋可使簡化零維或一維能量平衡氣候模型呈現雙穩態勢阱結構"
+          ],
+          "empiricalFindings": [
+            "深海有孔蟲氧同位素紀錄顯示第四紀中晚期氣候以約十萬年冰期／間冰期循環為主導週期"
+          ],
+          "hypothesesAndModels": [
+            "隨機共振是解釋古氣候十萬年循環的重要非線性物理機制假說，但真實第四紀冰期成因仍涉及冰蓋內部動力學、大氣 CO2 與深海碳循環回饋等多重交互作用，並非唯一完整解釋"
+          ]
+        }
+      },
+      {
+        "id": "ref-gammaitoni-1998-rmp",
+        "citation": "Gammaitoni, L., Hänggi, P., Jung, P., & Marchesoni, F. (1998). \"Stochastic resonance.\" Reviews of Modern Physics, 70(1), 223–287.",
+        "doi": "10.1103/RevModPhys.70.223",
+        "peerReviewStatus": "已完成同行評審 (Reviews of Modern Physics 1998 正式刊登)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Luca Gammaitoni (Università di Perugia)",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實雙穩態四次方勢阱過阻尼朗之萬方程 dx/dt = ax - bx^3 + A cos(Ωt) + √(2D)ξ(t)、勢壘高度 ΔU = a^2/(4b)、克拉默斯逃逸率 r_K(D) ∝ exp(-ΔU/D)、半週期時間尺度匹配條件 T_Ω/2 = π/Ω ≈ τ_K(D)、非單調鐘形 SNR 曲線與奇半週期停留時間峰，並嚴格確認純線性系統不會發生隨機共振。"
+        },
+        "verifiedClaims": [
+          "過阻尼四次方雙穩態朗之萬方程中，未受擾動勢壘高度為 ΔU = a^2/(4b)，靜態鞍結點翻轉臨界振幅為 A_c = √(4a^3/(27b))",
+          "克拉默斯逃逸速率滿足 r_K(D) ∝ exp(-ΔU/D)，且當雜訊調諧使平均停留時間 τ_K(D) = 1/r_K 匹配半週期 T_Ω/2 = π/Ω 時，輸出訊雜比呈現先升後降的鐘形共振峰，停留時間直方圖在奇半週期處出現尖峰",
+          "只有非線性雙穩態或閾值系統才會展現隨機共振；純線性系統加入無關加性白雜訊只會單調降低輸出 SNR"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "線性系統遵守疊加原理，加性白雜訊必然單調劣化輸出訊雜比",
+            "克拉默斯逃逸率理論在弱雜訊極限（D ≪ ΔU）下給出熱活化跨勢壘速率的指數標度律"
+          ],
+          "empiricalFindings": [
+            "雙穩態環形雷射與電子施密特觸發器等受控物理系統實驗測得鐘形非單調 SNR 與奇半週期停留時間分布峰"
+          ],
+          "hypothesesAndModels": [
+            "兩態絕熱理論近似假設外力振幅遠小於靜態臨界值（A ≪ A_c）且驅動頻率遠低於勢阱內部弛豫速率（Ω ≪ U''(x_±)）"
+          ]
+        }
+      },
+      {
+        "id": "ref-douglass-1993-nature",
+        "citation": "Douglass, J. K., Wilkens, L., Pantazelou, E., & Moss, F. (1993). \"Noise enhancement of information transfer in crayfish mechanoreceptors by stochastic resonance.\" Nature, 365(6444), 337–340.",
+        "doi": "10.1038/365337a0",
+        "peerReviewStatus": "已完成同行評審 (Nature 1993 正式刊登)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "John K. Douglass (University of Missouri–St. Louis)",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 Douglass et al. (1993) 對克氏原螯蝦（Procambarus clarkii）尾扇機械感受器感覺神經元的電生理實驗：於微弱亞閾值週期水流刺激上疊加受控外部隨機機械雜訊，直接量測動作電位鎖相與訊雜比呈非單調先升後降曲線。"
+        },
+        "verifiedClaims": [
+          "對淡水螯蝦（Procambarus clarkii）尾扇機械感受器神經元施加微弱週期性水流振動與受控外部機械雜訊時，輸出端動作電位訊雜比隨雜訊呈現先升後降的隨機共振特徵",
+          "該實驗首度在活體動物感覺神經元層級直接驗證：生物神經系統可藉由環境背景雜訊提升亞閾值微弱機械訊號的資訊傳遞能力"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "感覺神經元動作電位激發具備非線性膜電位放電閾值"
+          ],
+          "empiricalFindings": [
+            "離體螯蝦尾扇機械感受器在不同強度外部隨機機械雜訊下測得非單調提升的動作電位鎖相與輸出訊雜比"
+          ],
+          "hypothesesAndModels": [
+            "自然棲地水流環境中背景亂流對螯蝦掠食者偵測行為的實際生態增益比例仍受多種神經調制與感官適應機制影響"
+          ]
+        }
+      }
+    ],
+    "noFakeCitations": true,
+    "noFictionalReviewers": true,
+    "formulasAndUnits": [
+      {
+        "formula": "\\frac{dx}{dt} = a x - b x^3 + A \\cos(\\Omega t) + \\sqrt{2D}\\,\\xi(t)",
+        "unitConsistency": "於標準無因次化雙穩態朗之萬方程中，空間座標 x、時間 t、係數 a, b、驅動振幅 A、角頻率 Ω 與雜訊強度 D 均已約化為無因次量（或在物理因次下 [x/t] = [ax] = [bx^3] = [A] = [√(2D)·ξ]，因白雜訊關聯 ⟨ξ(t)ξ(t')⟩ = δ(t-t') 具 [t^-1] 因次，[D] 為 [x^2/t]，與擴散係數因次完全一致）",
+        "verified": true
+      },
+      {
+        "formula": "\\Delta U = \\frac{a^2}{4b}, \\quad A_c = \\sqrt{\\frac{4a^3}{27b}}, \\quad r_K(D) = \\frac{\\sqrt{2}\\,a}{2\\pi} \\exp\\left(-\\frac{\\Delta U}{D}\\right)",
+        "unitConsistency": "位能勢壘高度 ΔU 與雜訊強度 D 在無因次約化單位中具相同能量比因次（類比 k_B T），指數無因次比值 ΔU/D 良定義；臨界振幅 A_c 與外力項 A 同因次；克拉默斯逃逸速率 r_K 因次為 [t^-1]，平均停留時間 τ_K = 1/r_K 與半驅動週期 T_Ω/2 = π/Ω 同具時間因次 [t]",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "一維過阻尼四次方雙穩態朗之萬隨機微分方程 dx/dt = ax - bx^3 + A cos(Ωt) + √(2D)ξ(t)，對應瞬時位能 U(x,t) = -(a/2)x^2 + (b/4)x^4 - Ax cos(Ωt)，無因次參數固定為 a = 1.0, b = 1.0（ΔU = 0.25, A_c ≈ 0.3849）",
+      "numericalMethod": "以 Euler–Maruyama 離散時間積分法（固定步長 Δt = 0.05）搭配 Box–Muller 高斯白雜訊產生器即時演化粒子軌跡；以 ±0.55 施密特觸發跨越門檻記錄雙穩態停留時間直方圖，並透過多種子 Euler–Maruyama 蒙地卡羅期間圖（Periodogram DFT）計算不同雜訊 D 下的門檻輸出 SNR，與 Gammaitoni 等人（1998）兩態絕熱理論曲線及線性系統 1/D 衰減曲線同圖比對",
+      "dynamicBehaviorVerified": "在亞閾值預設 A = 0.18 (< A_c) 與 T_Ω = 72（半週期 36）下：低雜訊困鎖預設 D = 0.025（τ_K ≈ 9.8×10^4 ≫ 36）粒子持續鎖定單側勢阱且跨越次數極低；最佳共振預設 D = 0.120（τ_K ≈ 35.7 ≈ 36）粒子同步隨半週期翻越勢壘，停留時間直方圖在 τ/T_Ω = 0.5 湧現尖峰，輸出 SNR 達鐘形曲線頂點（約 12–13 dB）；強雜訊預設 D = 0.360（τ_K ≈ 8.9 ≪ 36）粒子高頻無序跳躍，停留時間集中於 τ → 0 端且 SNR 明顯回落",
+      "modelAssumptionsAndLimits": "過阻尼一維雙穩態朗之萬方程（Euler–Maruyama）示範模型，展示時間尺度匹配與非單調共振峰機制，未納入三維大氣海洋環流耦合、有色記憶雜訊或神經元多通道霍奇金-赫胥黎（Hodgkin–Huxley）電導動力學"
+    }
+  },
+  "readability": {
+    "language": "繁體中文",
+    "pedagogyProgression": "日常生活與工程降噪直覺的反轉提問 -> 1981 年第四紀十萬年冰河期軌道強迫量級謎案 -> 線性系統與非線性門檻之本質分界 -> 過阻尼朗之萬方程、克拉默斯逃逸速率與 T_Ω/2 ≈ τ_K(D) 時間尺度匹配推導 -> StochasticResonanceSimulator 雙穩態勢阱／軌跡／鐘形 SNR／停留時間互動實驗 -> 1993 年淡水螯蝦尾扇機械感受器活體實證 -> 古氣候十萬年問題與熱力學模型邊界辨析",
+    "technicalTermsDemystified": [
+      {
+        "term": "雙穩態勢阱 (Bistable Potential)",
+        "intuitiveExplanation": "像一座由兩座深谷與中央山脊構成的馬鞍地形，系統在不被外力劇烈推擠時只能安穩待在左谷或右谷其中一側"
+      },
+      {
+        "term": "白雜訊 (White Noise)",
+        "intuitiveExplanation": "在所有頻率上均勻分布的無規隨機起伏，就像老式收音機沒調到電台時沙沙作響的背景靜電雜音"
+      },
+      {
+        "term": "過阻尼朗之萬動力學 (Overdamped Langevin Dynamics)",
+        "intuitiveExplanation": "黏滯阻力遠大於慣性的微觀或巨觀緩慢運動狀態，就像一顆在濃稠蜂蜜裡滾動的彈珠，推力一停就立刻止步"
+      },
+      {
+        "term": "克拉默斯逃逸速率與時間尺度匹配",
+        "intuitiveExplanation": "粒子平均每隔 τ_K 時間才靠隨機碰撞翻越一次山脊；當這段平均等候時間剛好對上外力讓對面山谷降到最低的半週期 T_Ω/2，就會形成節拍最準的跨阱同步"
+      }
+    ]
+  },
+  "aestheticsAndNarrative": {
+    "coreQuestion": "為什麼工程師窮盡一切降噪手段想消滅的白雜訊，在雙穩態山谷與神經元放電閾值之前，反而能搖身一變，成為讓原本永遠跨不過門檻的微弱訊號重見天日的關鍵推手？",
+    "interactiveRole": "StochasticResonanceSimulator 將抽象的隨機微分方程同步具象化為即時傾斜勢阱彈珠、雙穩態軌跡與微弱驅動波對照、以及非單調鐘形 SNR 曲線與停留時間直方圖，讓讀者直接驗證 τ_K(D) ≈ T_Ω/2 時奇半週期同步尖峰與線性系統單調衰減的根本差異"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "明確辨析古氣候學對第四紀十萬年冰期循環成因仍存在冰蓋動力學、大氣 CO2 回饋等多重假說討論，將 Benzi et al. (1981) 精準定位為非線性物理重要機制假說而非唯一全解釋",
+    "在數學與互動模擬中嚴格區隔線性系統單調下降的 SNR 基準線與非線性雙穩態門檻輸出先升後降的鐘形 SNR 共振峰",
+    "精準計算無因次參數 a=1, b=1 下之靜態翻轉門檻 A_c = √(4/27) ≈ 0.385 與克拉默斯時間尺度匹配點 D ≈ 0.120（對應 T_Ω = 72），確保預設情景數值與理論完全吻合"
+  ],
+  "unconfirmedLimits": [
+    "真實地球第四紀十萬年冰河期循環中，隨機共振與冰蓋黏彈性弛豫、深海碳循環等機制的各自貢獻權重仍在古氣候學界持續研究與量化中",
+    "一維過阻尼白雜訊模型忽略了大氣海洋與生物神經網路中的有色時間關聯雜訊與空間多節點耦合效應"
+  ]
+}

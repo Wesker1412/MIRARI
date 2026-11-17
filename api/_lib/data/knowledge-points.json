@@ -956,6 +956,83 @@
     ]
   },
   {
+    "articleId": "art-compressed-sensing-l1",
+    "slug": "compressed-sensing-l1-nyquist-recovery",
+    "title": "壓縮感知（Compressed Sensing）：為何高維稀疏訊號能突破奈奎斯特採樣極限？",
+    "knowledgePoints": [
+      {
+        "id": "kp-cs-nyquist-sparsity",
+        "label": "稀疏先驗與突破奈奎斯特採樣極限的條件",
+        "suggestedQuestion": "奈奎斯特採樣定理不是規定採樣率必須大於最高頻率的兩倍嗎？壓縮感知憑什麼能用遠少於 N 的樣本精確還原訊號？",
+        "keywords": [
+          "壓縮感知",
+          "奈奎斯特採樣定理",
+          "稀疏性",
+          "不相干投影",
+          "正交基底"
+        ],
+        "plainExplanation": "奈奎斯特極限針對的是對頻寬內結構一無所知的一般訊號；但現實中多數訊號在傅立葉或小波等正交基底下只有極少數 K ≪ N 個非零係數（稀疏性）。Candès–Romberg–Tao 與 Donoho 於 2006 年證明，只要透過與稀疏基底不相干的隨機線性投影，直接取得 M ~ O(K ln N) 個欠採樣測量，就能避免「先全量採樣再丟掉九成」的浪費，並在事後以凸優化精確還原訊號。",
+        "anchorSentenceId": "sent-e1f06222"
+      },
+      {
+        "id": "kp-cs-l0-l2-dilemma",
+        "label": "欠定系統中 ℓ0 組合爆炸與 ℓ2 最小能量的兩難",
+        "suggestedQuestion": "為什麼不直接找非零項最少的 ℓ0 解，或直接用算起來最快的 ℓ2 最小平方能量法來重建欠採樣訊號？",
+        "keywords": [
+          "欠定線性系統",
+          "ℓ0 範數",
+          "NP-hard",
+          "ℓ2 範數",
+          "偽逆矩陣"
+        ],
+        "plainExplanation": "在 M ≪ N 的欠定方程 y = Φx 中存在無窮多組解。直接最小化非零元素個數的 ℓ0 範數需要窮舉所有 C(N, K) 種可能位置，隨維度呈組合爆炸而落入 NP-hard 難題；反之，最小化平方和能量的 ℓ2 範數雖有解析偽逆解且計算極快，卻會把少數尖峰的能量平均攤分到所有 N 個座標上，產生處處非零的模糊稠密假訊號。",
+        "anchorSentenceId": "sent-8e505168"
+      },
+      {
+        "id": "kp-cs-l1-polytope-geometry",
+        "label": "ℓ1 菱形多胞體的凸幾何頂點與非凸 ℓ0.5 的對比",
+        "suggestedQuestion": "為什麼把平方和換成絕對值總和（ℓ1 範數），膨脹球就會剛好撞在稀疏座標軸上？那比 ℓ1 更尖的 ℓ0.5 為什麼不直接拿來用？",
+        "keywords": [
+          "ℓ1 範數",
+          "Basis Pursuit",
+          "凸幾何",
+          "正交多胞體",
+          "非凸優化"
+        ],
+        "plainExplanation": "在二維平面將原點範數球膨脹去碰觸測量直線時，圓潤的 ℓ2 圓盤總是先用平滑斜邊擦到雙分量皆非零的點；而 ℓ1 菱形的四個尖角剛好沿座標軸突出，因此幾乎必定由尖角先戳中座標軸（使另一分量歸零），高維正交多胞體更將此效應指數放大。雖然 p = 0.5 的內凹星形尖刺更細，但它破壞了凸集性質，在高維空間佈滿局部極小值陷阱；唯有 ℓ1（Basis Pursuit）同時保有凸優化的全域可解性與稀疏選取能力。",
+        "anchorSentenceId": "sent-8dbe13b6"
+      },
+      {
+        "id": "kp-cs-incoherence-rip-ista",
+        "label": "不相干採樣、RIP 與 ISTA 軟閾值迭代的相變邊界",
+        "suggestedQuestion": "為什麼均勻跳著採樣會產生嚴重混疊，換成隨機採樣搭配 ISTA 軟閾值迭代就能把真實頻譜救回來？什麼時候又會失效？",
+        "keywords": [
+          "不相干性",
+          "有限等距性質",
+          "ISTA",
+          "軟閾值",
+          "Donoho–Tanner 相變"
+        ],
+        "plainExplanation": "均勻等距欠採樣使不同頻率在固定取樣點產生週期性碰撞（高相干性），造成無法消除的混疊假尖峰；隨機欠採樣則把結構化混疊打散成微弱的不相干偽噪，並在滿足有限等距性質（RIP）時保留稀疏向量的幾何距離。ISTA 演算法透過反覆執行「對齊測量殘差」與「軟閾值剃刀削平低矮偽噪」來收斂至真實稀疏尖峰；但一旦稀疏度 K 過高或測量數 M 跌破 Donoho–Tanner 相變曲線（約 O(K ln(N/K))），重建仍會急劇失效。",
+        "anchorSentenceId": "sent-07332ab7"
+      },
+      {
+        "id": "kp-cs-sparse-mri",
+        "label": "Sparse MRI：k-空間變密度隨機欠採樣與臨床加速",
+        "suggestedQuestion": "壓縮感知如何真正應用在醫院的核磁共振造影（MRI）上，縮短掃描時間卻不更換硬體？",
+        "keywords": [
+          "Sparse MRI",
+          "k-空間",
+          "變密度隨機採樣",
+          "小波變換",
+          "全變差正則化"
+        ],
+        "plainExplanation": "MRI 硬體直接量測影像的空間頻率譜（k-空間），掃描時間與相位編碼採樣線數成正比。Lustig 等人（2007）在 Sparse MRI 中改用變密度隨機欠採樣（密集保留低頻對比度、隨機跳採高頻）將等距鬼影打散為不相干偽噪，再結合醫學影像在小波變換與全變差（TV）域的雙重稀疏先驗求解非線性 ℓ1 優化，在無須改裝磁體下大幅壓縮臨床掃描時間。",
+        "anchorSentenceId": "sent-6955273d"
+      }
+    ]
+  },
+  {
     "articleId": "art-coriolis-geostrophic",
     "slug": "coriolis-effect-geostrophic-balance",
     "title": "旋轉星球的隱形偏折：科氏力、地轉平衡與大氣急流",
@@ -1054,6 +1131,108 @@
         ],
         "plainExplanation": "當新編碼寫入一條單鏈後，細胞的天然防衛衛士（錯配修復系統 MMR）會誤以為這是複製錯誤，主動將含有新編碼的鏈條挖除復原。新一代 PEmax 系統透過引入顯性負性 MLH1 蛋白（MLH1dn），在轉染窗口期短暫可逆地壓制修復系統的破壞，使目標編輯產物效率顯著提升，在特定測試位點達到 70% 至 90% 的高整合度。",
         "anchorSentenceId": "sent-d8a2fa1e"
+      }
+    ]
+  },
+  {
+    "articleId": "art-drosophila-connectome-flywire",
+    "slug": "drosophila-whole-brain-connectome-flywire",
+    "title": "五千萬個突觸繪就的果蠅全腦地圖：FlyWire 連結體揭示了什麼，又不能回答什麼？",
+    "knowledgePoints": [
+      {
+        "id": "kp-flywire-whole-brain-scale",
+        "label": "成年果蠅全腦突觸級規模",
+        "suggestedQuestion": "FlyWire 果蠅全腦連結體究竟測繪了多少神經元與突觸？是如何重建出來的？",
+        "keywords": [
+          "139255",
+          "五千萬",
+          "化學突觸",
+          "FlyWire",
+          "黑腹果蠅",
+          "電子顯微鏡",
+          "校對"
+        ],
+        "plainExplanation": "FlyWire 聯盟結合高通量連續切片電子顯微影像、AI 自動體積分割與全球數百位科學家和公民校對員的人機協作，首度完成成年雌性黑腹果蠅的全腦接線藍圖，總計鎖定 139,255 個經過校對的神經元與超過 5,000 萬個化學突觸（約 5.45×10^7 個），使研究人員能第一次在單一突觸解析度下追蹤從感覺輸入到運動輸出的完整全腦通路。",
+        "anchorSentenceId": "sent-e1f48aa3"
+      },
+      {
+        "id": "kp-directed-signed-connectome",
+        "label": "有向且帶正負號的突觸圖譜",
+        "suggestedQuestion": "為什麼科學家不只繪製誰連誰，還需要預測每個突觸的神經傳遞物質？",
+        "keywords": [
+          "乙醯膽鹼",
+          "GABA",
+          "麩胺酸",
+          "神經傳遞物質",
+          "有向帶符號",
+          "興奮性",
+          "抑制性"
+        ],
+        "plainExplanation": "只知道兩個神經元相連並不足以推演大腦如何計算，還必須分辨誰踩油門、誰踩煞車。Dorkenwald 等人利用電顯影像中的突觸囊泡外觀訓練視覺分類器，替每個突觸標上乙醯膽鹼（興奮性正權重）或 GABA、麩胺酸（中樞抑制性負權重）等神經傳遞物質身分，讓靜態接線圖進化為可計算正負極性的有向帶符號權重圖。",
+        "anchorSentenceId": "sent-25570f98"
+      },
+      {
+        "id": "kp-rich-club-hubs",
+        "label": "豐富俱樂部（Rich-Club）樞紐骨幹",
+        "suggestedQuestion": "什麼是大腦網路裡的「豐富俱樂部」？為什麼它受損會衝擊全腦通訊？",
+        "keywords": [
+          "豐富俱樂部",
+          "Rich-Club",
+          "樞紐",
+          "跨區通訊",
+          "30%",
+          "拓撲",
+          "核心"
+        ],
+        "plainExplanation": "就像全球航空網裡的國際樞紐機場一樣，FlyWire 全腦分析發現約 30% 的高連接度核心神經元彼此之間也密集直連，構成「豐富俱樂部」通訊骨幹。這群核心樞紐把視葉、嗅覺、中央複合體與下行運動區串聯成高效率的全腦整合網路，但也因此使全域通訊對核心樞紐的損傷特別敏感。",
+        "anchorSentenceId": "sent-3899006b"
+      },
+      {
+        "id": "kp-cell-types-conservation",
+        "label": "8,453 種細胞類型與跨個體保守性",
+        "suggestedQuestion": "果蠅大腦有多少種細胞類型？每隻果蠅的大腦接線都完全一模一樣嗎？",
+        "keywords": [
+          "8453",
+          "4581",
+          "細胞類型",
+          "半腦",
+          "保守性",
+          "冗餘通路",
+          "Schlegel"
+        ],
+        "plainExplanation": "Schlegel 等人依據細胞形態、發育譜系與連結指紋，在 FlyWire 全腦中系統註釋出 8,453 種細胞類型，其中 4,581 種為全新定義。透過與先前發表的半腦連結體跨個體比對，研究顯示負責核心運算的主幹迴路具備高度演化與發育保守性，同時也存在隨個體發育微調變異的冗餘輔助路徑。",
+        "anchorSentenceId": "sent-52357198"
+      },
+      {
+        "id": "kp-neuromodulation-boundary",
+        "label": "連結體是必要而非充分條件：神經調質切換",
+        "suggestedQuestion": "既然已經有完整果蠅連結體，為什麼還不能單靠電路圖預測所有行為？",
+        "keywords": [
+          "神經調質",
+          "多巴胺",
+          "血清素",
+          "必要條件",
+          "充分條件",
+          "Marder",
+          "離子通道"
+        ],
+        "plainExplanation": "正如 Eve Marder 在口胃神經節迴路中證明的，相同的物理接線圖就像同一套鐵路軌道；當多巴胺、血清素或神經肽等神經調質改變離子通道電導與突觸增益時，同一組神經元便能切換出截然不同的節律與行為輸出。因此連結體提供了必要的結構約束，卻不能單獨取代動態生理參數。",
+        "anchorSentenceId": "sent-2465580f"
+      },
+      {
+        "id": "kp-em-gap-junction-glia-limits",
+        "label": "電突觸與膠質細胞的觀測盲區",
+        "suggestedQuestion": "電子顯微連結體目前還有哪些生理結構還沒完整納入？",
+        "keywords": [
+          "間隙連接",
+          "電突觸",
+          "膠質細胞",
+          "單一個體",
+          "雌性果蠅",
+          "科學邊界"
+        ],
+        "plainExplanation": "目前的電子顯微連結體重建主要聚焦於具有明顯囊泡結構的化學突觸，較難完整解析讓細胞直接共用離子電流的電突觸（間隙連接），也尚未把調節突觸微環境與離子平衡的神經膠質細胞交互作用納入接線矩陣，且 FlyWire 樣本來自單一隻雌性果蠅個體。",
+        "anchorSentenceId": "sent-e0fbb419"
       }
     ]
   },
@@ -2329,6 +2508,83 @@
         ],
         "plainExplanation": "傳統馮紐曼架構運算核心與記憶體物理分離，數據搬移消耗超過 80% 電能。類腦晶片（如天機晶片與 Loihi）將神經突觸權重直接內嵌在分佈式神經核心內部，實現存算一體，核心間僅以非同步微包路由傳遞脈衝事件，從根本上瓦解了長期困擾計算機科學的記憶體牆。",
         "anchorSentenceId": "sent-bf38ebca"
+      }
+    ]
+  },
+  {
+    "articleId": "art-stochastic-resonance-kramers",
+    "slug": "stochastic-resonance-bistable-noise-amplification",
+    "title": "隨機共振：雜訊如何反過來放大微弱訊號與地球冰河期節律？",
+    "knowledgePoints": [
+      {
+        "id": "kp-sr-paleoclimate-origin",
+        "label": "第四紀冰河期與隨機共振的歷史起源",
+        "suggestedQuestion": "為什麼科學家當初會從地球十萬年冰河期循環裡，發現「雜訊能放大微弱訊號」的隨機共振現象？",
+        "keywords": [
+          "隨機共振",
+          "米蘭科維奇循環",
+          "雙穩態勢阱",
+          "冰河期",
+          "Benzi 1981"
+        ],
+        "plainExplanation": "地球繞日軌道偏心率以約十萬年為週期改變，但僅能讓太陽總輻射變化千分之幾，本身遠不足以翻越冰川反照率正回饋門檻。1981 年本齊、蘇特拉與武爾皮亞尼提出隨機共振假說：若將地球氣候視為「冰期」與「間冰期」兩座山谷構成的雙穩態勢阱，短期氣象與海洋白雜訊就能在半週期勢阱傾斜最淺時把系統踢過山脊，放大微弱軌道訊號的節律。",
+        "anchorSentenceId": "sent-f33fc5a6"
+      },
+      {
+        "id": "kp-sr-nonlinear-vs-linear",
+        "label": "為何線性系統無法產生隨機共振",
+        "suggestedQuestion": "所有系統加上白雜訊都能放大微弱訊號嗎？為什麼傳統線性濾波器裡雜訊只會幫倒忙？",
+        "keywords": [
+          "線性系統",
+          "疊加原理",
+          "非線性勢壘",
+          "訊雜比 SNR",
+          "亞閾值訊號"
+        ],
+        "plainExplanation": "純線性系統遵守疊加原理，訊號與雜訊各自獨立通過、互不協力，加入加性白雜訊只會讓輸出端訊雜比隨著雜訊強度 D 單調下降。隨機共振必須仰賴雙穩態勢壘或放電閾值等非線性門檻：當週期輸入低於靜態翻轉閾值 Ac 時，系統在無雜訊下會被困死在單一狀態，唯有適度雜訊能協助跨越勢壘，使輸出訊雜比先升後降。",
+        "anchorSentenceId": "sent-6f8d0878"
+      },
+      {
+        "id": "kp-sr-kramers-timescale-matching",
+        "label": "克拉默斯逃逸時間與半週期時間尺度匹配",
+        "suggestedQuestion": "隨機共振的「最佳雜訊強度」是怎麼決定的？為什麼剛好要匹配半個驅動週期 T_Ω / 2？",
+        "keywords": [
+          "克拉默斯逃逸率",
+          "時間尺度匹配",
+          "過阻尼朗之萬方程",
+          "鐘形 SNR 曲線",
+          "停留時間直方圖"
+        ],
+        "plainExplanation": "在過阻尼雙穩態朗之萬模型中，粒子受雜訊 D 驅動翻越勢壘 ΔU 的克拉默斯逃逸速率滿足 r_K(D) ∝ exp(-ΔU/D)，平均停留時間為 τ_K = 1/r_K。當雜訊調諧至使 τ_K(D) ≈ T_Ω / 2（半個外加週期）時，粒子正好在每次對面勢阱傾斜到最低的瞬間借力跨阱跳躍，使輸出端呈現鐘形非單調訊雜比峰，並在停留時間直方圖的奇半週期 0.5 T_Ω、1.5 T_Ω 處出現尖峰。",
+        "anchorSentenceId": "sent-dcc5cc70"
+      },
+      {
+        "id": "kp-sr-crayfish-mechanoreceptor",
+        "label": "淡水螯蝦尾扇神經元的活體生物物理實證",
+        "suggestedQuestion": "物理學家的方程式在真實生物身上也有用嗎？動物神經系統真的會利用雜訊偵測微弱訊息嗎？",
+        "keywords": [
+          "淡水螯蝦",
+          "機械感受器",
+          "動作電位鎖相",
+          "生物物理",
+          "Douglass 1993"
+        ],
+        "plainExplanation": "1993 年道格拉斯與莫斯等人在《Nature》實驗中，對淡水螯蝦（Procambarus clarkii）尾扇機械感受器神經元施加微弱的亞閾值週期水流振動與可調外部機械雜訊。結果證實加入適度背景雜訊能顯著提升動作電位與微弱水流的鎖相及訊雜比，過強雜訊才再次淹沒訊號，首次在活體神經元直接驗證生物感官可利用隨機共振偵測掠食者微弱水流。",
+        "anchorSentenceId": "sent-b4d6fa63"
+      },
+      {
+        "id": "kp-sr-paleoclimate-limits",
+        "label": "古氣候十萬年問題的科學邊界與未定爭議",
+        "suggestedQuestion": "既然隨機共振能解釋十萬年冰河期跳躍，古氣候學界已經一致公認這就是冰河期的唯一原因了嗎？",
+        "keywords": [
+          "十萬年問題",
+          "冰蓋動力學",
+          "二氧化碳回饋",
+          "科學邊界",
+          "機制假說"
+        ],
+        "plainExplanation": "雖然 1981 年的隨機共振理論開啟了整個非線性物理新領域，但真實地球第四紀十萬年冰期循環的成因在古氣候學界仍是持續研究中的開放問題。真實氣候系統還涉及大型大陸冰蓋自身的黏彈性滯後與崩解動力學、深海碳庫與大氣 CO2 濃度回饋，以及傾角與歲差週期的非線性耦合，因此隨機共振被視為重要物理機制假說之一，而非唯一的完整解釋。",
+        "anchorSentenceId": "sent-bf3a765a"
       }
     ]
   },
