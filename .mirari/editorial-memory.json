@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastUpdated": "2026-11-17T09:09:00.000Z",
+  "lastUpdated": "2026-11-18T09:09:00.000Z",
   "editorialMemoryDescription": "MIRARI 自主編輯品質管理記憶庫：記錄近期篇章學科分佈、敘事風格、互動模式與編輯檢查規則，提供每日自主創作管線跨日延續性與防重複依據。",
   "recentArticles": [
     {
@@ -623,6 +623,42 @@
       "coreConcept": "亞閾值雙穩態朗之萬系統中雜訊輔助跨越勢壘、克拉默斯逃逸時間 τ_K(D) 與外加週期半週期 T_Ω/2 匹配引致之鐘形信雜比共振峰，以及第四紀冰期假說與螯蝦機械感受器實證",
       "pedagogyKey": "以 1981 年第四紀十萬年冰期難題破題，嚴謹區分非線性門檻與純線性系統單調降噪差異，將粒子跳躍與理論/數值雙鐘形 SNR 曲線直接對應",
       "limitsIdentified": "一維過阻尼對稱雙穩態絕熱近似示範模型，真實古氣候十萬年循環仍有冰蓋動力學與碳循環等多機制並存討論"
+    },
+    {
+      "articleId": "art-bridge-rna-is110",
+      "slug": "bridge-rna-is110-programmable-recombination",
+      "editorialCategory": "journal_interpretation",
+      "discipline": "合成生物學與結構分子生物學",
+      "narrativeStyle": "structural_blueprint",
+      "interactiveType": "rna_guided_recombination",
+      "interactiveComponent": "BridgeRnaRecombinaseSimulator",
+      "coreConcept": "IS110/IS621 雙特異性橋接核糖核酸 TBL/DBL 雙環獨立編程、雙二聚體突觸複合體 RuvC–Tnp 催化位點、5′-磷酸絲胺酸共價中間體與霍利迪交叉無 DSB 重組",
+      "pedagogyKey": "對比只能指定單側切點的 CRISPR 與同時夾緊目標／供體兩端的立體拉鍊交換機，配合四態 Cryo-EM 步驟動畫與錯配門控曲線，並嚴謹交代真核適用邊界",
+      "limitsIdentified": "幾何拓撲示範模型（依據 IS621 Cryo-EM 原理），且 2024 原始突破主要驗證於大腸桿菌與體外系統，哺乳類效率尚待優化"
+    },
+    {
+      "articleId": "art-sonoluminescence-sbsl",
+      "slug": "single-bubble-sonoluminescence-cavitation",
+      "editorialCategory": "scientific_principles",
+      "discipline": "空化流體動力學與極端聲學物理",
+      "narrativeStyle": "extreme_scales",
+      "interactiveType": "cavitation_dynamics",
+      "interactiveComponent": "SonoluminescenceBubbleSimulator",
+      "coreConcept": "比耶克內斯聲輻射力懸浮、修正瑞利－普萊塞特方程慣性塌縮、凡得瓦硬核反彈與準絕熱萬度弱電漿軔致輻射、氬氣整流機制與 (Pa, R0) 穩定操作島",
+      "pedagogyKey": "從手指感覺不到溫度的柔和駐波如何濃縮出皮秒閃光的能量跨度切入，配合自適應 RK4 求解器呈現反彈震盪與破除「氣泡核融合」誤解",
+      "limitsIdentified": "球對稱修正瑞利－普萊塞特多方絕熱近似求解器，未涵蓋非球形瑞利－泰勒失穩變形與多組分輻射傳輸計算"
+    },
+    {
+      "articleId": "art-bacterial-chemotaxis",
+      "slug": "bacterial-chemotaxis-temporal-memory",
+      "editorialCategory": "scientific_principles",
+      "discipline": "微生物生物物理與系統控制理論",
+      "narrativeStyle": "biophysical_algorithm",
+      "interactiveType": "chemotaxis_random_walk",
+      "interactiveComponent": "BacterialChemotaxisSimulator",
+      "coreConcept": "Berg–Purcell 計數雜訊與轉動布朗擴散迫使細菌採用 1–4 秒雙極性時間微分記憶、Run-and-Tumble 偏置隨機漫步及 CheR/CheB-P 積分回饋精確適應",
+      "pedagogyKey": "解釋微米尺度細菌為何無法像大動物一樣同時比較左右耳訊號，藉由關掉適應機制立刻飽和失明的對照實驗直觀驗證系統生物學積分控制原理",
+      "limitsIdentified": "二維簡化泊松切換與卷積記憶示範模型，非完整三維鞭毛流體動力學與多受體協同變構 Ising 模型"
     }
   ],
   "cumulativeGuidelines": {
@@ -640,14 +676,14 @@
           "displayName": "科學原理與思想實驗",
           "scope": "收錄一般科普、經典科學知識、科學現象、數學原理、理論解釋及思想實驗",
           "purpose": "主要目的是讓讀者理解科學，而非追逐最新消息。不限制物理學，也不要求每篇一定具有思想實驗",
-          "currentArticles": 33
+          "currentArticles": 35
         },
         "journal_interpretation": {
           "displayName": "期刊解讀",
           "scope": "最新科學發現、重要研究成果、研發技術突破及具有話題性的科學事件",
           "selectionCriteria": "以新聞時效性、科學價值與話題性作為選題依據。涵蓋最新學術研究、重大科學發現、技術研發突破、科學機構發布的重要成果及值得公眾關注的科學事件",
           "rigorRule": "不要求每篇都必須以單篇同儕審查論文為主題，但必須核對可信來源，清楚區分：已完成同行審查的研究、尚未同行審查的預印本、機構或企業提出但尚待獨立驗證的成果。不得為了追逐話題性誇大研究結果",
-          "currentArticles": 19
+          "currentArticles": 20
         }
       },
       "classificationPrinciple": "根據文章的主要編輯目的分類：主要在解釋某個科學知識或原理 -> scientific_principles；主要在報導或解讀近期科學發現、研究成果、技術突破或科學事件 -> journal_interpretation。不能僅因引用了新論文就歸類為期刊解讀，不能僅因內容涉及經典科學原理就排除其作為最新研究報導的可能。兩大分類互斥且與學科標籤獨立",

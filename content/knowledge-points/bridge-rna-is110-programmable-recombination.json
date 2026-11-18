@@ -1,0 +1,93 @@
+{
+  "articleId": "art-bridge-rna-is110",
+  "slug": "bridge-rna-is110-programmable-recombination",
+  "title": "IS110 橋接核糖核酸（Bridge RNA）：單一步驟可編程基因組重排的分子架構",
+  "knowledgePoints": [
+    {
+      "id": "kp-bridge-rna-bispecific",
+      "label": "雙特異性橋接核糖核酸（Bridge RNA）與環化啟動",
+      "suggestedQuestion": "IS110 轉位子是怎麼產生橋接 RNA 的？它和傳統只能認單一目標的 CRISPR 嚮導 RNA 有何不同？",
+      "keywords": [
+        "橋接核糖核酸",
+        "Bridge RNA",
+        "bRNA",
+        "IS110",
+        "IS621",
+        "環狀中間體"
+      ],
+      "plainExplanation": "IS110 家族轉位子從染色體切離並頭尾相接形成環狀中間體時，接縫兩端原本分開的非編碼序列會拼成完整啟動子，進而轉錄出橋接核糖核酸（bRNA）。不同於只能鎖定單一靶點的 CRISPR sgRNA，bRNA 同時具備目標結合環（TBL）與供體結合環（DBL）兩組可獨立編程的內部環，像自帶兩對可更換插頭的立體拉鍊交換機，一次抓握兩條 DNA。",
+      "anchorSentenceId": "sent-18561be3"
+    },
+    {
+      "id": "kp-tbl-dbl-programmable-loops",
+      "label": "TBL／DBL 雙環鹼基配對門控與三種重排拓撲",
+      "suggestedQuestion": "重新編寫 TBL 和 DBL 的序列，為什麼能在單一步驟中分別做到插入、切除與倒位？",
+      "keywords": [
+        "TBL",
+        "DBL",
+        "插入",
+        "切除",
+        "倒位",
+        "AND 邏輯閘門"
+      ],
+      "plainExplanation": "橋接 RNA 仰賴 TBL 與 DBL 各自透過華生－克里克鹼基配對同時鎖定目標 DNA 與供體 DNA，形成雙輸入與門（AND-Gate）熱力學門控；只要任一環出現多個錯配，突觸組裝機率便會急遽下滑。搭配兩個重組位點的空間配置，系統便能在單一步驟內完成環狀供體插入（Insertion）、同向位點間片段切除（Excision）或反向位點間序列 180° 倒位（Inversion）。",
+      "anchorSentenceId": "sent-15299a1d"
+    },
+    {
+      "id": "kp-dimer-of-dimers-synaptic",
+      "label": "雙二聚體突觸複合體與複合 RuvC–Tnp 催化核心",
+      "suggestedQuestion": "為什麼 IS621 重組酶只抓住單一條 DNA 時不會誤剪染色體？",
+      "keywords": [
+        "Cryo-EM",
+        "雙二聚體",
+        "突觸複合體",
+        "RuvC-Tnp",
+        "複合催化位點"
+      ],
+      "plainExplanation": "冷凍電鏡結構顯示，四個 IS621 重組酶單體會組裝成雙二聚體突觸複合體：一對二聚體專責結合 TBL 與目標 DNA，另一對則結合 DBL 與供體 DNA。由於完整的 RuvC–Tnp 催化核心必須跨越兩對二聚體的界面才能拼合完成，只有當 TBL 與 DBL 兩端都精準抓到 DNA 並拉攏對接後，催化位點才會啟動切割，從結構上杜絕單側誤剪。",
+      "anchorSentenceId": "sent-7a009a91"
+    },
+    {
+      "id": "kp-phosphoserine-no-dsb",
+      "label": "5'-磷酸絲胺酸共價中間體與無游離雙股斷裂",
+      "suggestedQuestion": "IS621 切開兩條 DNA 準備互換時，怎麼避免斷頭飄散或引發危險的雙股斷裂修復？",
+      "keywords": [
+        "催化性絲胺酸",
+        "5'-磷酸絲胺酸",
+        "共價中間體",
+        "無游離 DSB",
+        "頂端股切割"
+      ],
+      "plainExplanation": "當複合 RuvC–Tnp 核心啟動時，蛋白上的催化性絲胺酸殘基會親核切開目標與供體 DNA 的頂端股，並立即與切口 5' 端形成共價 5'-磷酸絲胺酸（5'-phosphoserine）化學鍵。這種共價鎖定如同攀岩者的安全扣，把斷端與化學鍵能量牢牢儲存在蛋白質口袋內，全程不暴露游離雙股斷裂，也不需要仰賴宿主的 NHEJ 或 HDR 修復通路。",
+      "anchorSentenceId": "sent-893b1eed"
+    },
+    {
+      "id": "kp-holliday-junction-exchange",
+      "label": "跨二聚體轉酯反應與霍利迪交叉解析",
+      "suggestedQuestion": "頂端股形成共價絲胺酸鎖之後，兩條 DNA 是如何真正完成無痕換股並釋放產物的？",
+      "keywords": [
+        "霍利迪交叉",
+        "Holliday Junction",
+        "轉酯反應",
+        "底端股解析",
+        "無痕重組"
+      ],
+      "plainExplanation": "受共價保護的頂端股 3'-OH 末端會跨越二聚體界面交換伴侶，對另一側的 5'-磷酸絲胺酸鍵發動可逆轉酯反應，在不消耗外源 ATP 下將兩條 DNA 交織成四向的霍利迪交叉（Holliday Junction）中間體。隨後複合體依相同共價機制切開並交換底端股，解析交叉並釋放重組完成的完整 DNA 雙螺旋。",
+      "anchorSentenceId": "sent-daa5f845"
+    },
+    {
+      "id": "kp-eukaryotic-limits-boundaries",
+      "label": "原核實證邊界與真核染色質應用挑戰",
+      "suggestedQuestion": "IS110 橋接 RNA 技術目前已經可以用在人類細胞或基因治療上了嗎？有哪些關鍵限制？",
+      "keywords": [
+        "大腸桿菌",
+        "科學邊界",
+        "染色質可及性",
+        "脫靶特異性",
+        "真核工程挑戰"
+      ],
+      "plainExplanation": "2024 年這兩項《Nature》開創性研究主要是在原核生物大腸桿菌（E. coli）體內與純化蛋白的體外生化重組系統中證實可行。若要推展至人類等真核哺乳類細胞，仍面臨染色質核小體遮蔽難以解旋、較短配對窗口在 30 億鹼基對基因組中的全基因組脫靶特異性，以及 bRNA 核內穩定性與遞送等重大工程挑戰，目前尚未達到直接人體臨床應用的階段。",
+      "anchorSentenceId": "sent-1acae143"
+    }
+  ]
+}

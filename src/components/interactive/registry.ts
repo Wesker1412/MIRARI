@@ -51,6 +51,9 @@ import { InsectFlappingLevSimulator } from '../article/InsectFlappingLevSimulato
 import { ConnectomeWiringSimulator } from '../article/ConnectomeWiringSimulator';
 import { CompressedSensingSimulator } from '../article/CompressedSensingSimulator';
 import { StochasticResonanceSimulator } from '../article/StochasticResonanceSimulator';
+import { BridgeRnaRecombinaseSimulator } from '../article/BridgeRnaRecombinaseSimulator';
+import { SonoluminescenceBubbleSimulator } from '../article/SonoluminescenceBubbleSimulator';
+import { BacterialChemotaxisSimulator } from '../article/BacterialChemotaxisSimulator';
 
 export interface InteractiveParameterMeta {
   name: string;
@@ -888,6 +891,30 @@ export const INTERACTIVE_COMPONENTS: Record<string, InteractiveComponentMeta> = 
     parameters: [],
     keyConcepts: ['隨機共振 (Stochastic Resonance)', '雙穩態勢阱 (Bistable Potential)', '克拉默斯逃逸速率', '時間尺度匹配條件', '非單調鐘形 SNR'],
     component: StochasticResonanceSimulator,
+  },
+  BridgeRnaRecombinaseSimulator: {
+    id: 'BridgeRnaRecombinaseSimulator',
+    nameZh: 'IS110 橋接核糖核酸 (Bridge RNA) 雙環重組突觸複合體模擬器',
+    descriptionZh: '呈現四體重組酶透過目標結合環 (TBL) 與供體結合環 (DBL) 同時夾緊兩條 DNA，經 5′-磷酸絲胺酸共價中間體與霍利迪交叉完成插入、切除與倒位之無 DSB 重組。',
+    parameters: [],
+    keyConcepts: ['橋接核糖核酸 (Bridge RNA)', 'TBL / DBL 雙特異性環', '5′-磷酸絲胺酸共價中間體', '霍利迪交叉 (Holliday Junction)', '無雙股斷裂基因重排'],
+    component: BridgeRnaRecombinaseSimulator,
+  },
+  SonoluminescenceBubbleSimulator: {
+    id: 'SonoluminescenceBubbleSimulator',
+    nameZh: '單氣泡聲致發光 (SBSL) 瑞利－普萊塞特空化塌縮與絕熱壓縮模擬器',
+    descriptionZh: '以自適應步長四階龍格－庫塔法求解修正瑞利－普萊塞特方程，對比 (Pa, R0) 穩定操作島、凡得瓦硬核反彈與皮秒熱致弱電漿閃光峰值。',
+    parameters: [],
+    keyConcepts: ['單氣泡聲致發光 (SBSL)', '瑞利－普萊塞特方程', '凡得瓦硬核排除體積', '氬氣整流假說', '穩定操作島相圖'],
+    component: SonoluminescenceBubbleSimulator,
+  },
+  BacterialChemotaxisSimulator: {
+    id: 'BacterialChemotaxisSimulator',
+    nameZh: '大腸桿菌趨化性 Run-and-Tumble 雙葉時間微分與積分回饋適應模擬器',
+    descriptionZh: '同場模擬記憶偏置漫步、無記憶擴散與失去 CheB/CheR 適應飽和之大腸桿菌群體，結合雙極性脈衝響應卷積核心與轉動布朗擴散極限實驗。',
+    parameters: [],
+    keyConcepts: ['趨化性 (Chemotaxis)', 'Run-and-Tumble 偏置漫步', 'Berg–Purcell 計數雜訊極限', '雙極性脈衝響應核', '積分回饋精確適應'],
+    component: BacterialChemotaxisSimulator,
   },
 };
 

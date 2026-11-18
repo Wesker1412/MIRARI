@@ -1,0 +1,91 @@
+{
+  "articleId": "art-bacterial-chemotaxis",
+  "slug": "bacterial-chemotaxis-temporal-memory",
+  "title": "大腸桿菌的時間微積分：趨化性 Run-and-Tumble 演算法與精確適應",
+  "knowledgePoints": [
+    {
+      "id": "kp-chemotaxis-run-and-tumble",
+      "label": "Run-and-Tumble 偏置隨機漫步",
+      "suggestedQuestion": "沒有大腦與方向盤的大腸桿菌，如何只靠切換直線前進與原地翻滾就爬向食物高峰？",
+      "keywords": [
+        "Run-and-Tumble",
+        "偏置隨機漫步",
+        "趨化性",
+        "鞭毛旋轉",
+        "Berg–Brown 1972"
+      ],
+      "plainExplanation": "Berg 與 Brown（1972）利用三維自動追蹤顯微鏡發現，大腸桿菌不會主動朝食物打舵轉彎，而是交替切換兩種動作：多根鞭毛逆時針束成一束直線前進（Run，平均約 1 秒），以及部分鞭毛順時針反轉散開造成的原地隨機重新定向（Tumble，平均約 0.1 秒）。當牠朝著引誘劑濃度升高的方向游動時，僅透過抑制 Tumble 來拉長 Run 的持續時間；朝濃度降低方向游動時則維持接近基線的翻滾率，統計平均上自然產生朝向食物峰的淨漂移。",
+      "anchorSentenceId": "sent-9a5b9012"
+    },
+    {
+      "id": "kp-berg-purcell-counting-limit",
+      "label": "Berg–Purcell 分子計數極限與空間感測失效",
+      "suggestedQuestion": "為什麼長約兩微米的大腸桿菌不能像大細胞一樣，直接在頭尾兩端比較空間濃度差？",
+      "keywords": [
+        "Berg–Purcell 極限",
+        "泊松計數雜訊",
+        "微米尺度",
+        "空間梯度",
+        "分子擴散"
+      ],
+      "plainExplanation": "Berg 與 Purcell（1977）從擴散統計物理證明，單靠感測球體在整合時間 T 內收集隨機撞擊的擴散分子，其相對測量雜訊下限為 δc / c ~ (D a c T)^(-1/2)。由於大腸桿菌體長僅約 2 μm，頭尾兩端之間的空間濃度差極為微弱，短時間內的分子計數漲落會徹底淹沒梯度訊號；因此細菌必須透過向前游動數秒，將取樣空間基線放大至數十微米並累積積分時間來壓低計數雜訊。",
+      "anchorSentenceId": "sent-95728f8b"
+    },
+    {
+      "id": "kp-rotational-brownian-horizon",
+      "label": "轉動布朗擴散與 1–4 秒記憶窗口妥協",
+      "suggestedQuestion": "既然拉長整合時間可以降低分子計數雜訊，為什麼大腸桿菌不把時間記憶窗口拉長到幾十秒？",
+      "keywords": [
+        "轉動布朗擴散",
+        "Dr",
+        "航向失真",
+        "時間窗口",
+        "熱漲落"
+      ],
+      "plainExplanation": "微米尺寸的細菌在水分子持續熱撞擊下承受極高的轉動布朗擴散係數 D_r = k_B T / (8π η a³) ~ 0.1–0.3 rad²/s。即使完全不翻滾，細菌的直線航向在短短數秒內就會被熱水分子隨機撞偏約一個弧度，導致「十秒前」與「現在」的取樣位置早已不在同一條直線上。計數雜訊（不能太短）與轉動擴散失向（不能太長）兩頭夾殺，逼出了 1–4 秒的最佳時間比較窗口。",
+      "anchorSentenceId": "sent-da7dcd39"
+    },
+    {
+      "id": "kp-biphasic-impulse-differentiator",
+      "label": "雙極性脈衝響應核與帶通時間微分器",
+      "suggestedQuestion": "大腸桿菌細胞內部是用什麼數學形式把過去 3–4 秒的濃度歷史轉換成翻滾機率？",
+      "keywords": [
+        "雙極性脈衝響應",
+        "卷積積分",
+        "帶通時間微分器",
+        "Segall–Block–Berg 1986",
+        "零積分面積"
+      ],
+      "plainExplanation": "Segall、Block 與 Berg（1986）透過拴住鞭毛與微吸管脈衝實驗，測得大腸桿菌的雙葉片脈衝響應核函數 K(t)：刺激後前約 1 秒呈現抑制翻滾的正向快葉瓣，緊接著在 1–4 秒出現符號相反、用來減去過去記憶基線的負向補償葉瓣，且正負積分面積幾乎抵銷（∫ K(t) dt ≈ 0）。這使細胞在任意恆定環境中輸出皆歸零，等同於一台既能過濾高頻分子雜訊、又能提取濃度時間斜率的 3–4 秒帶通時間微分器。",
+      "anchorSentenceId": "sent-8908bf6e"
+    },
+    {
+      "id": "kp-integral-feedback-exact-adaptation",
+      "label": "CheR / CheB-P 積分回饋控制與精確適應",
+      "suggestedQuestion": "環境養分背景濃度相差好幾個數量級時，大腸桿菌為什麼不會飽和失明，還能回到相同翻滾基線？",
+      "keywords": [
+        "精確適應",
+        "積分回饋控制",
+        "CheR",
+        "CheB-P",
+        "Barkai–Leibler 1997"
+      ],
+      "plainExplanation": "Barkai 與 Leibler（1997）發現受體甲基化系統構成了一組精巧的生化積分回饋迴路：甲基轉移酶 CheR 以近似恆定的速率加上甲基提高受體活性，而去甲基酶 CheB-P 只作用於處在活性狀態的受體移除甲基（dm/dt = k_R[R] - k_B[B_p]A）。當系統達到穩態 dm/dt = 0 時，受體穩態活性精確鎖定在 A* = k_R[R] / (k_B[B_p])，完全獨立於外界配體背景濃度，使細菌在橫跨五個數量級的濃度環境中都能自動歸零並保持對相對梯度的靈敏度。",
+      "anchorSentenceId": "sent-eac31ecf"
+    },
+    {
+      "id": "kp-biochemical-network-robustness",
+      "label": "生化網路拓撲的結構強健性",
+      "suggestedQuestion": "細胞內蛋白質數量常有隨機波動，為什麼精確適應不會因為酵素表現量改變就失效？",
+      "keywords": [
+        "結構強健性",
+        "系統生物學",
+        "網路拓撲",
+        "Barkai–Leibler",
+        "無參數微調"
+      ],
+      "plainExplanation": "精確適應的歸零能力並非依賴某幾個酵素濃度恰好被精準微調到脆弱數值，而是直接內建於「CheB-P 僅去甲基化活性受體」這項積分回饋拓撲結構之中。只要甲基化位點尚未觸及飽和上限，無論細胞內各種輔助蛋白或配體總量如何波動數倍，網路都會自動將穩態活性推回固定目標點，展現了系統生物學中著名的結構強健性（Robustness）。",
+      "anchorSentenceId": "sent-1147aeaa"
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "articleId": "art-bacterial-chemotaxis",
+  "slug": "bacterial-chemotaxis-temporal-memory",
+  "editorialCategory": "scientific_principles",
+  "version": 1,
+  "creationModel": "mirari-biophysics-author",
+  "editorialPassDate": "2026-11-18T09:00:00+08:00",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-berg-brown-1972",
+        "citation": "Berg, H. C., & Brown, D. A. (1972). \"Chemotaxis in Escherichia coli analysed by three-dimensional tracking.\" Nature, 239(5374), 500–504.",
+        "doi": "10.1038/239500a0",
+        "peerReviewStatus": "已完成同行評審 (Nature 1972 正式刊登)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Howard C. Berg (University of Colorado, Boulder)",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 Nature Vol. 239, No. 5374, pp. 500–504，確認三維自動追蹤顯微鏡對自由游動大腸桿菌之 Run（直線游動，平均約 1 s）與 Tumble（原地翻滾，平均約 0.1 s）雙態切換觀測，以及在絲胺酸／天門冬胺酸濃度梯度中僅透過抑制翻滾延長上坡 Run 長度、下坡維持近基線翻滾率之偏置隨機漫步機制。"
+        },
+        "verifiedClaims": [
+          "大腸桿菌透過交替切換直線游動（Run，平均約 1 s）與原地隨機重抽航向之翻滾（Tumble，平均約 0.1 s）進行三維探索",
+          "在引誘劑濃度梯度中，細菌並不主動朝高峰轉向，而是僅在濃度升高方向抑制 Tumble 發生機率以延長 Run 持續時間，實現統計偏置隨機漫步"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "微米尺寸細菌處於極低雷諾數流體環境（Re ~ 10^-5 至 10^-4），慣性滑行可忽略",
+            "鞭毛束逆時針（CCW）旋轉成束推進形成 Run，部分鞭毛轉為順時針（CW）旋轉散開導致 Tumble"
+          ],
+          "empiricalFindings": [
+            "三維追蹤顯微鏡直接量測單隻野生型大腸桿菌在均勻介質與絲胺酸梯度中的 Run/Tumble 持續時間分佈與偏轉角統計"
+          ],
+          "hypothesesAndModels": [
+            "在模擬器與宏觀理論分析中常將翻滾轉向角簡化為各向同性或有效均勻重抽，而實測轉向角保留約 68° 平均值之前向持續性"
+          ]
+        }
+      },
+      {
+        "id": "ref-berg-purcell-1977",
+        "citation": "Berg, H. C., & Purcell, E. M. (1977). \"Physics of chemoreception.\" Biophysical Journal, 20(2), 193–219.",
+        "doi": "10.1016/S0006-3495(77)85544-6",
+        "peerReviewStatus": "已完成同行評審 (Biophysical Journal 1977 正式刊登)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Howard C. Berg (University of Colorado, Boulder) & Edward M. Purcell (Harvard University)",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 Biophysical Journal Vol. 20, No. 2, pp. 193–219，確認擴散分子計數之相對誤差物理極限 δc/c ~ (D a c T)^(-1/2)，以及體長約 2 μm 細菌轉動布朗擴散係數 D_r = k_B T / (8π η a³) ~ 0.1–0.3 rad²/s 在數秒內打亂航向的雙重限制，推導出約 1–4 s 時間平均比較窗口之必然性。"
+        },
+        "verifiedClaims": [
+          "半徑 a 的感測球體於時間 T 內測量擴散濃度 c 的相對計數雜訊極限為 δc/c ~ (D a c T)^(-1/2)",
+          "對長僅 L ≈ 2 μm 的大腸桿菌而言，即時空間前後濃度差會被計數漲落淹沒，而轉動布朗擴散 D_r ~ 0.1–0.3 rad²/s 又在數秒內使航向失真，迫使演化選擇 1–4 s 時間比較策略"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "微觀粒子於熱浴溶劑中之轉動布朗擴散遵守愛因斯坦–史托克斯–德拜關係式 D_r = k_B T / (8π η a³)",
+            "理想吸收／取樣表面在三維擴散場中的穩定分子抵達流率正比於 D a c"
+          ],
+          "empiricalFindings": [
+            "與真實大腸桿菌尺寸（~1–2 μm）及水中黏滯係數代換後之數秒時間尺度與實驗測得游動記憶窗口高度吻合"
+          ],
+          "hypothesesAndModels": [
+            "理想化球形感測極限假設受體能無損統計每次新抵達分子之資訊且不受細胞內部訊號轉導雜訊損耗"
+          ]
+        }
+      },
+      {
+        "id": "ref-segall-block-berg-1986",
+        "citation": "Segall, J. E., Block, S. M., & Berg, H. C. (1986). \"Temporal comparisons in bacterial chemotaxis.\" Proceedings of the National Academy of Sciences (PNAS), 83(23), 8987–8991.",
+        "doi": "10.1073/pnas.83.23.8987",
+        "peerReviewStatus": "已完成同行評審 (PNAS 1986 正式刊登)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Jeffrey E. Segall (California Institute of Technology)",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 PNAS Vol. 83, No. 23, pp. 8987–8991，確認以拴住鞭毛（tethered cell）結合微吸管快速濃度脈衝量測出雙極性脈衝響應核函數 K(t)：前 ~1 s 為抑制翻滾之正向快葉瓣，1–4 s 為負向記憶相減葉瓣，且 ∫₀^∞ K(t) dt ≈ 0 構成約 3–4 s 帶通時間微分器。"
+        },
+        "verifiedClaims": [
+          "微吸管短脈衝刺激實驗直接測得大腸桿菌鞭毛馬達偏置具備雙極性（雙葉片）脈衝響應函數 K(t)",
+          "該響應函數在前 ~1 s 出現正向反應，於 1–4 s 出現負向補償葉瓣且正負積分面積幾乎抵銷（∫₀^∞ K(t) dt ≈ 0），實現約 3–4 s 帶通時間微分濾波"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "線性時不變系統中，積分面積為零的雙極性脈衝響應對恆定輸入訊號輸出必為零，專門響應時間變化率"
+          ],
+          "empiricalFindings": [
+            "拴住細胞單鞭毛旋轉逆時針機率對數毫秒引誘劑脈衝的時間響應曲線明確呈現 0–1 s 正瓣與 1–4 s 負瓣"
+          ],
+          "hypothesesAndModels": [
+            "線性卷積核 K(t) 精準刻畫小振幅濃度微擾下之馬達響應，大振幅階躍刺激則涉及受體協同開關的非線性飽和效應"
+          ]
+        }
+      },
+      {
+        "id": "ref-barkai-leibler-1997",
+        "citation": "Barkai, N., & Leibler, S. (1997). \"Robustness in simple biochemical networks.\" Nature, 387(6636), 913–917.",
+        "doi": "10.1038/43199",
+        "peerReviewStatus": "已完成同行評審 (Nature 1997 正式刊登)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Naama Barkai (Princeton University)",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 Nature Vol. 387, No. 6636, pp. 913–917，確認 CheR 恆定速率甲基化與 CheB-P 僅去甲基化活性受體之積分回饋拓撲結構，保證穩態受體活性精確適應回到固定目標值且具備對生化參數變異之結構強健性，支撐跨越多個數量級背景濃度的靈敏趨化能力。"
+        },
+        "verifiedClaims": [
+          "CheR（恆定速率甲基化）與 CheB-P（僅作用於活性受體之去甲基化）構成積分回饋控制系統，在穩態下精確鎖定受體活性而不受背景配體濃度影響",
+          "此精確適應源自生化網路拓撲本身的結構強健性，無需對蛋白質表現量進行脆弱的精確微調即可跨越多個數量級保持感測靈敏度"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "控制論中積分回饋迴路只要積分器狀態未飽和，即可對常數階躍干擾達成零穩態誤差之精確適應"
+          ],
+          "empiricalFindings": [
+            "野生型大腸桿菌在跨越約五個數量級背景濃度後仍可回復至相同的穩態翻滾頻率，而 cheR 或 cheB 突變株則喪失精確適應能力"
+          ],
+          "hypothesesAndModels": [
+            "Barkai–Leibler 兩態動力學模型假設 CheR 處於飽和速率且 CheB-P 專一作用於活性受體構型；真實受體在有限甲基位點（每亞基 4 個主要甲基位點）飽和或極高濃度超出 K_on 後仍會出現部分適應偏差"
+          ]
+        }
+      }
+    ],
+    "noFakeCitations": true,
+    "noFictionalReviewers": true,
+    "formulasAndUnits": [
+      {
+        "formula": "\\frac{\\delta c}{c} \\sim \\frac{1}{\\sqrt{D a c T}}",
+        "unitConsistency": "擴散係數 D 具 [L²/T]，感測尺度 a 具 [L]，分子數密度 c 具 [L⁻³]，積分時間 T 具 [T]；乘積 D a c T 之因次為 [L²/T]·[L]·[L⁻³]·[T] = 無因次（代表時間 T 內抵達的等效獨立分子計數 N_eff），右側開平方根倒數與左側相對濃度誤差 δc/c 均為無因次",
+        "verified": true
+      },
+      {
+        "formula": "D_r = \\frac{k_B T}{8\\pi \\eta a^3}",
+        "unitConsistency": "熱能 k_B T 具能量因次 [M L² T⁻²]，動力黏滯係數 η 具 [M L⁻¹ T⁻¹]，半徑三次方 a³ 具 [L³]；分母 η a³ 具 [M L² T⁻¹]，比值之因次為 [T⁻¹]（即 rad²/s），與轉動擴散係數定義 ⟨Δθ²⟩ = 2 D_r t 完全一致",
+        "verified": true
+      },
+      {
+        "formula": "\\frac{dm}{dt} = k_R [R] - k_B [B_p]\\, A",
+        "unitConsistency": "受體平均甲基化度 m 為無因次計數，左側時間導數 dm/dt 具 [T⁻¹]；右側酵素修飾速率項 k_R[R] 與 k_B[B_p]A 均具單位時間甲基轉移速率因次 [T⁻¹]，穩態解 A* = k_R[R] / (k_B[B_p]) 為無因次受體活性比例",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "二維投影空間 [0, 400]×[0, 290] μm 內，以步長 Δt = 0.05 s 演化 18 隻大腸桿菌（3 種策略各 6 隻）：Run 狀態以速率 v = 24 μm/s 前進並受轉動布朗擴散 dθ = √(2 D_r Δt) N(0,1) 擾動，依瞬時泊松速率 λ(t) 觸發 Tumble（歷時 0.12 s 後隨機重抽航向）。Chemotaxis 組結合對數受體感測、Berg–Purcell 泊松計數漲落、歸一化零積分面積雙葉脈衝核 K(τ) 卷積 y(t) 與 Barkai–Leibler 積分回饋 dm/dt = (A* - A)/τ_adapt；No Adaptation 組關閉甲基化適應且受體依靜態飽和曲線 1/(1 + C/K_d) 運作",
+      "numericalMethod": "使用確定性種子 Mulberry32 PRNG 與 Box–Muller 高斯亂數，固定時間步 Δt = 0.05 s 離散積分 Run-and-Tumble 泊松過程、環狀緩衝區離散卷積（精確去均值確保 ∑ K_k Δt = 0）與高解析度 DPR Canvas 雙面板即時繪圖",
+      "dynamicBehaviorVerified": "在 1× 至 1000× 背景濃度倍率下，Chemotaxis 組透過積分回饋自動抬升甲基化 m(t) 並將穩態活性維持在 A* ≈ 0.35，其群體距峰平均距離顯著收斂至食物源；Unbiased 組維持固定翻滾率呈純二維擴散；No Adaptation 組於高背景（10×–1000×）或高峰附近立刻飽和失明、無法聚集於高峰。調高 D_r 至 0.65 rad²/s 會顯著壓縮航向記憶壽命並降低長記憶窗口之趨化效率",
+      "modelAssumptionsAndLimits": "二維簡化 Run-and-Tumble 泊松切換與雙葉記憶卷積積分模型，展現時間微分與積分回饋適應的物理原理，非三維鞭毛流體力學全尺度模擬；亦未納入真實細胞內有限甲基位點飽和天花板、MWC 受體晶格協同放大或細菌群體消耗養分產生之行進波"
+    }
+  },
+  "readability": {
+    "language": "繁體中文",
+    "pedagogyProgression": "微米低雷諾數游泳直覺與 Berg–Brown (1972) 三維追蹤揭示 Run-and-Tumble -> 為何無法用頭尾空間比較（Berg–Purcell 泊松計數極限與轉動布朗擴散夾殺）-> Segall–Block–Berg (1986) 雙葉脈衝時間微分器與 Barkai–Leibler (1997) 積分回饋精確適應 -> BacterialChemotaxisSimulator 18 隻同場對比實驗 -> 工程控制論連結與物理模型邊界",
+    "technicalTermsDemystified": [
+      {
+        "term": "偏置隨機漫步 (Biased Random Walk)",
+        "intuitiveExplanation": "就像矇眼登山客只能直線往前衝再停下來隨機轉向，唯一的小撇步是聞到香氣變濃時就多跑久一點，背對香氣時照常停下重抽方向，累積起來便自然爬上山頂"
+      },
+      {
+        "term": "泊松計數雜訊 (Poisson Counting Noise)",
+        "intuitiveExplanation": "微觀分子隨機撞擊感測器就像剛開始下雨時在兩塊小磚上數雨滴，時間太短時哪一塊滴得比較多幾乎全憑運氣，根本分辨不出哪邊雨勢比較大"
+      },
+      {
+        "term": "轉動布朗擴散 (Rotational Brownian Diffusion)",
+        "intuitiveExplanation": "微米細菌浸泡在室溫水裡，像一艘無人掌舵的小獨木舟不停被無數水分子冰雹從側邊撞擊，短短幾秒航向就會自己歪掉"
+      },
+      {
+        "term": "雙極性脈衝響應核函數 (Biphasic Impulse Response Kernel)",
+        "intuitiveExplanation": "細胞把「剛聞到的這一秒（正向快葉瓣）」減去「前兩三秒的記憶基線（負向慢葉瓣）」，因為正負面積抵銷，停在原地不動時輸出永遠歸零，專門只感應濃度的變化率"
+      },
+      {
+        "term": "積分回饋控制 (Integral Feedback Control)",
+        "intuitiveExplanation": "類似汽車的定速巡航系統：只要當前活性偏離目標基線，CheR 與 CheB-P 就會持續累積或扣除甲基化調整量，直到誤差徹底歸零才停手"
+      }
+    ]
+  },
+  "aestheticsAndNarrative": {
+    "coreQuestion": "體長僅兩微米、沒有大腦與方向盤的大腸桿菌，為何不能直接比較身體前後的氣味濃淡，而必須靠著「Run-and-Tumble」與「比較這一秒和三秒前」的時間微積分來尋找養分？",
+    "interactiveRole": "BacterialChemotaxisSimulator 在完成 Berg–Purcell 極限、雙葉微分核與積分回饋理論推導後登場，讓讀者在 2D 梯度場同場追蹤 18 隻分屬三種演算法的細菌，透過親手調整轉動擴散 D_r、1×–1000× 背景濃度與記憶窗口尺度，直接驗證時間記憶與精確適應的雙重必要性"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "嚴格區分 Berg & Brown (1972) 實測大腸桿菌僅透過延長濃度上升方向的 Run 時間（而非縮短下降方向的 Run 或主動瞄準轉向角）實現偏置隨機漫步",
+    "完整推導並量化 Berg & Purcell (1977) 分子計數雜訊下限 δc/c ~ (D a c T)^(-1/2) 與轉動布朗擴散 D_r ~ 0.1–0.3 rad²/s 如何共同夾殺出 1–4 s 時間窗口",
+    "確保模擬器中雙葉脈衝響應核函數 K(τ) 在離散緩衝區內精確去均值使 ∑ K_k Δt = 0，並驗證在 1000× 背景倍率下 Chemotaxis 組藉 Barkai–Leibler 積分回饋精確適應而 No Adaptation 組即刻飽和失明"
+  ],
+  "unconfirmedLimits": [
+    "真實大腸桿菌化學受體群具有約 4 個有限甲基化位點上限，當極高濃度超出受體結合飽和上限 K_on 時，生物體內仍會出現部分適應偏差而非無限精確適應",
+    "二維簡化 Run-and-Tumble 與平滑對數感測模型未納入三維螺旋鞭毛流體力學交互作用、CheY-P 超敏馬達蛋白開關協同性及細胞群體消耗梯度形成之行進波"
+  ]
+}

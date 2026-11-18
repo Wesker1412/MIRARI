@@ -439,7 +439,7 @@
       }
     ],
     "totalWordCount": 1930,
-    "lastIndexedAt": "2026-11-17T01:09:00.847Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.130Z"
   },
   {
     "id": "art-active-matter-vicsek",
@@ -1315,7 +1315,7 @@
       }
     ],
     "totalWordCount": 6268,
-    "lastIndexedAt": "2026-11-17T01:09:00.852Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.134Z"
   },
   {
     "id": "art-altermagnetism-spin-splitting",
@@ -2069,7 +2069,7 @@
       }
     ],
     "totalWordCount": 5790,
-    "lastIndexedAt": "2026-11-17T01:09:00.858Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.138Z"
   },
   {
     "id": "art-amygdala-memory-encoding",
@@ -2605,7 +2605,7 @@
       }
     ],
     "totalWordCount": 2692,
-    "lastIndexedAt": "2026-11-17T01:09:00.861Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.141Z"
   },
   {
     "id": "art-atp-synthase-rotary",
@@ -3287,7 +3287,1045 @@
       }
     ],
     "totalWordCount": 3670,
-    "lastIndexedAt": "2026-11-17T01:09:00.864Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.145Z"
+  },
+  {
+    "id": "art-bacterial-chemotaxis",
+    "slug": "bacterial-chemotaxis-temporal-memory",
+    "version": 1,
+    "publishedDate": "2026-11-18",
+    "status": "published",
+    "editorialCategory": "scientific_principles",
+    "narrativeStyle": "biophysical_algorithm",
+    "format": "depth",
+    "formatBadgeText": "生物物理演算法",
+    "title": "大腸桿菌的時間微積分：趨化性 Run-and-Tumble 演算法與精確適應",
+    "subtitle": "從 Berg–Brown 三維單細胞追蹤、Berg–Purcell 分子計數雜訊極限，到雙葉脈衝微積分與 Barkai–Leibler 積分回饋控制",
+    "summary": "只有兩微米長的大腸桿菌沒有大腦、也沒有方向盤，卻能在一片混濁溶液中精準循著胺基酸濃度梯度爬向養分高峰。為什麼牠不能像獵犬一樣在身體頭尾兩端比較氣味濃淡？1977 年 Berg 與 Purcell 從擴散計數雜訊與轉動布朗運動證明了微米尺度空間感測的物理死路，揭示細菌必須把「空間梯度」轉換成「時間微積分」：透過持續約 1 秒的直線 Run 與約 0.1 秒的原地 Tumble 構成偏置隨機漫步，並利用具有零積分面積的雙極性脈衝響應函數比較「這一秒與三秒前」的濃度變化，最後再由 CheR 與 CheB-P 構成的積分回饋迴路實現橫跨五個數量級背景濃度的精確適應。",
+    "topicIds": [
+      "topic-biophysics",
+      "topic-statistical-physics"
+    ],
+    "tags": [
+      "大腸桿菌",
+      "趨化性",
+      "Run-and-Tumble",
+      "Berg–Purcell 極限",
+      "積分回饋控制",
+      "生物物理演算法"
+    ],
+    "difficultyLevel": "intermediate",
+    "interactiveComponent": "BacterialChemotaxisSimulator",
+    "interactiveType": "chemotaxis_random_walk",
+    "estimatedReadTimeMinutes": 16,
+    "leadParagraph": "想像一隻長僅兩微米的大腸桿菌，獨自浸泡在充滿隨機水分子撞擊的微觀水世界裡。牠沒有眼睛、沒有大腦神經迴路，也不像輪船擁有可以精準打舵的方向盤。然而只要水裡滴進一絲絲氨酸或天門冬氨酸，這隻單細胞生物卻能彷彿嗅到烘焙坊香氣的旅人一般，在一連串看似雜亂無章的衝刺與原地打轉之間，穩穩地往食物最濃郁的山頂攀爬。這套歷經數十億年演化淬鍊出的微米演算法，其實是一場對抗熱雜訊與擴散統計極限的時間微積分。",
+    "quoteLead": "當體長不足以在空間裡量出左腳與右腳的差別，生命只好將空間梯度摺疊進記憶裡，靠著比較「這一秒」與「三秒前」的化學滋味，在混沌布朗風暴中算出通往養分的羅盤。",
+    "authors": [
+      {
+        "name": "MIRARI 生物物理與系統生物學組",
+        "role": "科學特約撰稿"
+      }
+    ],
+    "references": [
+      {
+        "id": "ref-berg-brown-1972",
+        "citation": "Berg, H. C., & Brown, D. A. (1972). \"Chemotaxis in Escherichia coli analysed by three-dimensional tracking.\" Nature, 239(5374), 500–504.",
+        "doi": "10.1038/239500a0"
+      },
+      {
+        "id": "ref-berg-purcell-1977",
+        "citation": "Berg, H. C., & Purcell, E. M. (1977). \"Physics of chemoreception.\" Biophysical Journal, 20(2), 193–219.",
+        "doi": "10.1016/S0006-3495(77)85544-6"
+      },
+      {
+        "id": "ref-segall-block-berg-1986",
+        "citation": "Segall, J. E., Block, S. M., & Berg, H. C. (1986). \"Temporal comparisons in bacterial chemotaxis.\" Proceedings of the National Academy of Sciences (PNAS), 83(23), 8987–8991.",
+        "doi": "10.1073/pnas.83.23.8987"
+      },
+      {
+        "id": "ref-barkai-leibler-1997",
+        "citation": "Barkai, N., & Leibler, S. (1997). \"Robustness in simple biochemical networks.\" Nature, 387(6636), 913–917.",
+        "doi": "10.1038/43199"
+      }
+    ],
+    "contentHash": "da657cd5edc1a6f08ec245e97719e00e44c6199c92cfa120fca50acd306d7fb2",
+    "sections": [
+      {
+        "id": "sec-1-9464f5",
+        "title": "矇眼登山客的盲游策略：三維追蹤顯微鏡揭示 Run-and-Tumble",
+        "level": 2,
+        "paragraphs": [
+          "在微米尺度下的流體世界裡，物理法則與人類日常游泳截然不同。對長約 $2\\,\\mu\\text{m}$ 的**大腸桿菌（*Escherichia coli*）**而言，雷諾數（Reynolds Number，衡量流體慣性與黏滯力比值的無因次參數）僅約 $10^{-5}$ 到 $10^{-4}$——這就像一個人在濃稠的糖漿或蜂蜜裡游泳，只要停止划水，慣性滑行距離還不到一顆氫原子的直徑，身體瞬間就會靜止。",
+          "大腸桿菌在這個黏滯世界裡究竟如何尋覓食物？過去顯微鏡只能觀察被壓在玻璃片平面附近游動的細菌，常被邊界效應誤導。直到 1972 年，生物物理學家霍華德·柏格（Howard C. Berg）與道格拉斯·布朗（Douglas A. Brown）在《Nature》發表了劃時代的突破：他們親手打造了一台**三維自動追蹤顯微鏡（Three-Dimensional Tracking Microscope）**，利用伺服馬達即時移動載物台，把單一隻自由游動的大腸桿菌死死鎖定在視野正中央，第一次完整記錄下牠在三度空間裡的真實軌跡。",
+          "追蹤數據揭露了一個出乎意料、極其簡潔的兩態運動模式：大腸桿菌從不像有方向盤的小船那樣「優雅轉彎瞄準食物」，牠的一生只交替切換兩種狀態：",
+          "1. **直線游動（Run）**：當細胞表面數根螺旋狀鞭毛同時以**逆時針（CCW，從後方往前看）**方向旋轉時，幾條鞭毛會自然纏繞成一束螺旋槳，推著細菌沿近似直線向前衝刺，在未受刺激的均勻培養液中平均持續約 $1\\text{ 秒}$。\n2. **原地翻滾（Tumble）**：只要其中一兩根鞭毛的馬達突然反轉為**順時針（CW）**旋轉，原本緊密纏繞的鞭毛束就會瞬間散開，讓細菌在原地亂攪一通、平均持續約 $0.1\\text{ 秒}$ 後結束翻滾；等所有鞭毛再度同步逆時針旋轉時，細菌已經朝向一個全新的隨機方向重新衝刺。",
+          "這就好比一位雙眼被濃霧遮住的矇眼登山客，手裡沒有指南針、也不知道山頂在哪裡，只能先朝眼前某個方向直線快跑一小段路，然後原地閉眼轉幾圈隨便換個新方向再跑。令人驚奇的是，當 Berg 與 Brown 在水中放入胺基酸引誘劑（如絲胺酸 L-serine 或天門冬胺酸 L-aspartate）建立濃度梯度時，他們發現大腸桿菌**並沒有改變每次翻滾後轉向的角度分佈去瞄準高濃度區**，而是執行了一套單純卻威力無窮的**偏置隨機漫步（Biased Random Walk，就像有人偷改了擲骰子或走路步長的規則，讓朝向寶藏方向的每一步都拉長，背離方向時則照舊停下重抽）**：",
+          "- 當細菌朝著引誘劑濃度**升高**的方向游動時，細胞抑制了翻滾機構的觸發機率，**單純拉長「Run」的持續時間**；\n- 當細菌不幸朝著濃度**降低**的方向游動時，牠並不會立刻急煞車或特別加快翻滾，而是大致維持接近未受刺激時的基線翻滾頻率（偶爾略微高於基線）。",
+          "光憑「順風順水就多跑幾步，逆風時照常停下來重抽方向」這條非對稱規則，大量看似盲目的折線軌跡在統計平均下，就會自然產生一股穩定的淨漂移速度，帶著整群細菌精準爬上食物高峰。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-9c2bbde8",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-1-9464f5",
+            "sectionTitle": "矇眼登山客的盲游策略：三維追蹤顯微鏡揭示 Run-and-Tumble",
+            "paragraphIndex": 0,
+            "exactQuote": "在微米尺度下的流體世界裡，物理法則與人類日常游泳截然不同。",
+            "charStart": 0,
+            "charEnd": 29,
+            "contentHash": "9c2bbde8e2ce34d00c242cc249b93dd1994cba884a0bd8dee0b955744feb10e2",
+            "contextNote": "矇眼登山客的盲游策略：三維追蹤顯微鏡揭示 Run-and-Tumble · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-24893f77",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-1-9464f5",
+            "sectionTitle": "矇眼登山客的盲游策略：三維追蹤顯微鏡揭示 Run-and-Tumble",
+            "paragraphIndex": 0,
+            "exactQuote": "對長約 $2\\,\\mu\\text{m}$ 的**大腸桿菌（*Escherichia coli*）**而言，雷諾數（Reynolds Number，衡量流體慣性與黏滯力比值的無因次參數）僅約 $10^{-5}$ 到 $10^{-4}$——這就像一個人在濃稠的糖漿或蜂蜜裡游泳，只要停止划水，慣性滑行距離還不到一顆氫原子的直徑，身體瞬間就會靜止。",
+            "charStart": 30,
+            "charEnd": 201,
+            "contentHash": "24893f7705bfc78548427e2b248a9182903fdda20ebc5aed597de2e824c4211a",
+            "contextNote": "矇眼登山客的盲游策略：三維追蹤顯微鏡揭示 Run-and-Tumble · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-8e653ab9",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-1-9464f5",
+            "sectionTitle": "矇眼登山客的盲游策略：三維追蹤顯微鏡揭示 Run-and-Tumble",
+            "paragraphIndex": 1,
+            "exactQuote": "大腸桿菌在這個黏滯世界裡究竟如何尋覓食物？",
+            "charStart": 404,
+            "charEnd": 425,
+            "contentHash": "8e653ab968e68a268fad284a722705a7bf623474e5c87b484b725b2db3ff5171",
+            "contextNote": "矇眼登山客的盲游策略：三維追蹤顯微鏡揭示 Run-and-Tumble · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-3570df5b",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-1-9464f5",
+            "sectionTitle": "矇眼登山客的盲游策略：三維追蹤顯微鏡揭示 Run-and-Tumble",
+            "paragraphIndex": 1,
+            "exactQuote": "過去顯微鏡只能觀察被壓在玻璃片平面附近游動的細菌，常被邊界效應誤導。",
+            "charStart": 426,
+            "charEnd": 460,
+            "contentHash": "3570df5b2624ac2b4719cfc326280a6820ea4a823f82b1abaaff0ed34a0dd993",
+            "contextNote": "矇眼登山客的盲游策略：三維追蹤顯微鏡揭示 Run-and-Tumble · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-8a0fd17b",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-1-9464f5",
+            "sectionTitle": "矇眼登山客的盲游策略：三維追蹤顯微鏡揭示 Run-and-Tumble",
+            "paragraphIndex": 1,
+            "exactQuote": "直到 1972 年，生物物理學家霍華德·柏格（Howard C. Berg）與道格拉斯·布朗（Douglas A. Brown）在《Nature》發表了劃時代的突破：他們親手打造了一台**三維自動追蹤顯微鏡（Three-Dimensional Tracking Microscope）**，利用伺服馬達即時移動載物台，把單一隻自由游動的大腸桿菌死死鎖定在視野正中央，第一次完整記錄下牠在三度空間裡的真實軌跡。",
+            "charStart": 461,
+            "charEnd": 665,
+            "contentHash": "8a0fd17becc255aed470a48bc30964b334c191840402c796e3ced836b3bdf485",
+            "contextNote": "矇眼登山客的盲游策略：三維追蹤顯微鏡揭示 Run-and-Tumble · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-7ec5e895",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-1-9464f5",
+            "sectionTitle": "矇眼登山客的盲游策略：三維追蹤顯微鏡揭示 Run-and-Tumble",
+            "paragraphIndex": 2,
+            "exactQuote": "追蹤數據揭露了一個出乎意料、極其簡潔的兩態運動模式：大腸桿菌從不像有方向盤的小船那樣「優雅轉彎瞄準食物」，牠的一生只交替切換兩種狀態：",
+            "charStart": 927,
+            "charEnd": 994,
+            "contentHash": "7ec5e89590630c1fb00168426a29de03676cb27a1b367fc41c5884b99e200488",
+            "contextNote": "矇眼登山客的盲游策略：三維追蹤顯微鏡揭示 Run-and-Tumble · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-3f72d864",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-1-9464f5",
+            "sectionTitle": "矇眼登山客的盲游策略：三維追蹤顯微鏡揭示 Run-and-Tumble",
+            "paragraphIndex": 3,
+            "exactQuote": "1. **直線游動（Run）**：當細胞表面數根螺旋狀鞭毛同時以**逆時針（CCW，從後方往前看）**方向旋轉時，幾條鞭毛會自然纏繞成一束螺旋槳，推著細菌沿近似直線向前衝刺，在未受刺激的均勻培養液中平均持續約 $1\\text{ 秒}$。",
+            "charStart": 1064,
+            "charEnd": 1182,
+            "contentHash": "3f72d864a5ae9a6de8d8d291c4ab34b0471ed27a4f0a32a29fe061b92ec0ae7d",
+            "contextNote": "矇眼登山客的盲游策略：三維追蹤顯微鏡揭示 Run-and-Tumble · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-a4fd3e4d",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-1-9464f5",
+            "sectionTitle": "矇眼登山客的盲游策略：三維追蹤顯微鏡揭示 Run-and-Tumble",
+            "paragraphIndex": 3,
+            "exactQuote": "2. **原地翻滾（Tumble）**：只要其中一兩根鞭毛的馬達突然反轉為**順時針（CW）**旋轉，原本緊密纏繞的鞭毛束就會瞬間散開，讓細菌在原地亂攪一通、平均持續約 $0.1\\text{ 秒}$ 後結束翻滾；等所有鞭毛再度同步逆時針旋轉時，細菌已經朝向一個全新的隨機方向重新衝刺。",
+            "charStart": 1183,
+            "charEnd": 1325,
+            "contentHash": "a4fd3e4d11a00ccc40bb0cb91f5053985d4087a89072c04110c2b48ce235a17c",
+            "contextNote": "矇眼登山客的盲游策略：三維追蹤顯微鏡揭示 Run-and-Tumble · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-e82b7eaa",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-1-9464f5",
+            "sectionTitle": "矇眼登山客的盲游策略：三維追蹤顯微鏡揭示 Run-and-Tumble",
+            "paragraphIndex": 4,
+            "exactQuote": "這就好比一位雙眼被濃霧遮住的矇眼登山客，手裡沒有指南針、也不知道山頂在哪裡，只能先朝眼前某個方向直線快跑一小段路，然後原地閉眼轉幾圈隨便換個新方向再跑。",
+            "charStart": 1589,
+            "charEnd": 1665,
+            "contentHash": "e82b7eaa1164eff498d43143280183222e5c729918a788b117cd5f070d25370f",
+            "contextNote": "矇眼登山客的盲游策略：三維追蹤顯微鏡揭示 Run-and-Tumble · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-9a5b9012",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-1-9464f5",
+            "sectionTitle": "矇眼登山客的盲游策略：三維追蹤顯微鏡揭示 Run-and-Tumble",
+            "paragraphIndex": 4,
+            "exactQuote": "令人驚奇的是，當 Berg 與 Brown 在水中放入胺基酸引誘劑（如絲胺酸 L-serine 或天門冬胺酸 L-aspartate）建立濃度梯度時，他們發現大腸桿菌**並沒有改變每次翻滾後轉向的角度分佈去瞄準高濃度區**，而是執行了一套單純卻威力無窮的**偏置隨機漫步（Biased Random Walk，就像有人偷改了擲骰子或走路步長的規則，讓朝向寶藏方向的每一步都拉長，背離方向時則照舊停下重抽）**：",
+            "charStart": 1666,
+            "charEnd": 1871,
+            "contentHash": "9a5b901225b0fea4c41d375dc856b8a2d62bc05284d9b179ca82856fdb51ac46",
+            "contextNote": "矇眼登山客的盲游策略：三維追蹤顯微鏡揭示 Run-and-Tumble · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-97c9ea29",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-1-9464f5",
+            "sectionTitle": "矇眼登山客的盲游策略：三維追蹤顯微鏡揭示 Run-and-Tumble",
+            "paragraphIndex": 5,
+            "exactQuote": "- 當細菌朝著引誘劑濃度**升高**的方向游動時，細胞抑制了翻滾機構的觸發機率，**單純拉長「Run」的持續時間**；\n- 當細菌不幸朝著濃度**降低**的方向游動時，牠並不會立刻急煞車或特別加快翻滾，而是大致維持接近未受刺激時的基線翻滾頻率（偶爾略微高於基線）。",
+            "charStart": 2155,
+            "charEnd": 2287,
+            "contentHash": "97c9ea298d9abdb46756cb1f399ec83eac102dabcf3249152ee53422101da8f2",
+            "contextNote": "矇眼登山客的盲游策略：三維追蹤顯微鏡揭示 Run-and-Tumble · 第 6 段"
+          },
+          {
+            "sentenceId": "sent-e14a66ed",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-1-9464f5",
+            "sectionTitle": "矇眼登山客的盲游策略：三維追蹤顯微鏡揭示 Run-and-Tumble",
+            "paragraphIndex": 6,
+            "exactQuote": "光憑「順風順水就多跑幾步，逆風時照常停下來重抽方向」這條非對稱規則，大量看似盲目的折線軌跡在統計平均下，就會自然產生一股穩定的淨漂移速度，帶著整群細菌精準爬上食物高峰。",
+            "charStart": 2422,
+            "charEnd": 2506,
+            "contentHash": "e14a66ed351559f35d78b38c4b928a04b64730708a342700eb26d86743798598",
+            "contextNote": "矇眼登山客的盲游策略：三維追蹤顯微鏡揭示 Run-and-Tumble · 第 7 段"
+          }
+        ],
+        "formulas": [],
+        "interactiveComponentId": null
+      },
+      {
+        "id": "sec-2-fc3892",
+        "title": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙",
+        "level": 2,
+        "paragraphs": [
+          "讀到這裡，一個深刻的第一性原理問題立刻浮現：許多較大的真核細胞（如變形蟲或白血球）會直接比較細胞前端與後端受體感受到的化學濃度差 $\\Delta c$，再直接朝高濃度那一側爬過去。為什麼大腸桿菌這麼「繞遠路」，不乾脆在自己短短兩微米的身體頭尾兩端各裝一組感測器，直接相減算出梯度方向就好？",
+          "五年後的 1977 年，霍華德·柏格找來諾貝爾物理獎得主愛德華·珀塞爾（Edward M. Purcell）合作，在《Biophysical Journal》發表了生物物理史上最著名的經典論文〈Physics of Chemoreception〉，用純粹的統計物理與擴散定律回答了這個問題：在微米尺度下，**空間前後同時比較是一條物理死路**。",
+          "要看清這道極限，必須先面對微觀世界的第一道銅牆鐵壁——**泊松計數雜訊（Poisson Counting Noise，在微觀感測中指因為分子隨機撞擊抵達時間不固定所產生的統計起伏，就像細雨剛落時在兩塊相鄰小磚頭上數雨滴，短時間內哪塊磚滴到比較多幾乎純屬運氣）**。",
+          "Berg 與 Purcell 推導出一個半徑為 $a$ 的理想感測球體，浸泡在分子擴散係數為 $D$、平均分子數密度為 $c$ 的溶液裡，若在時間窗口 $T$ 內持續計數並平均抵達表面的目標分子，即使受體覆蓋率與計算效率達到物理極限，所能達到的最佳相對濃度測量精度下限仍然受限於：",
+          "$$\\frac{\\delta c}{c} \\sim \\frac{1}{\\sqrt{D a c T}}$$",
+          "把大腸桿菌的真實尺度代進這條 **Berg–Purcell 極限（Berg–Purcell Limit）**，問題就一清二楚了。細菌全長僅 $L \\approx 2\\,\\mu\\text{m}$，如果牠想在短短一次測量時間（比如幾十毫秒）內比較「鼻子」與「尾巴」相差的極微弱空間濃度差 $\\Delta c = L |\\nabla c|$，兩端的濃度差異實在太微小，每一次熱擴散分子隨機撞擊造成的泊松計數漲落 $\\delta c$ 會比真正的空間梯度訊號大上好幾個數量級，訊號瞬間被分子雨滴的隨機雜訊徹底淹沒。",
+          "怎麼辦？公式分母裡的 $T$ 指出了唯一的出路：**拉長空間基線與累積時間平均**。既然身體不能長大到幾十微米，那就靠自己的鞭毛向前直線游動幾秒鐘！當細菌以速率 $v \\approx 20\\text{–}30\\,\\mu\\text{m/s}$ 向前衝刺 $1\\text{–}3$ 秒，牠比較的兩個取樣點之間距離就從體長 $2\\,\\mu\\text{m}$ 瞬間暴增至 $20\\text{–}90\\,\\mu\\text{m}$，訊號差放大了十倍到數十倍，同時累積的分子計數時間 $T$ 也大幅壓低了 $(D a c T)^{-1/2}$ 計數雜訊。",
+          "然而，大自然隨即從另一頭關上了門——這就是微觀世界的第二道枷鎖：**轉動布朗擴散（Rotational Brownian Diffusion，指微米級小顆粒在水分子無休止的熱碰撞下，身體角度像風中無人掌舵的獨木舟一樣不由自主隨機偏轉的現象）**。根據愛因斯坦–史托克斯–德拜關係式，半徑尺度約 $a \\sim 1\\,\\mu\\text{m}$ 的細菌在室溫水中的轉動擴散係數高達：",
+          "$$D_r = \\frac{k_B T}{8\\pi \\eta a^3} \\sim 0.1\\text{–}0.3\\text{ rad}^2/\\text{s}$$",
+          "這裡的 $k_B T$ 是熱能尺度，$\\eta$ 是水的動力黏滯係數。這個數字意味著什麼？即使細菌把鞭毛馬達鎖死、徹底禁止 Tumble 翻滾，周圍熱水分子的隨機撞擊依然會讓牠的航向角產生均方擴散偏移 $\\langle \\Delta \\theta^2 \\rangle \\propto D_r t$；**只要短短幾秒鐘（約 $3\\text{–}5$ 秒），細菌的朝向就會被熱運動撞偏約一個弧度（近 $60^\\circ$）**！",
+          "一旦 Run 游得太長、或是記憶比較窗口拉到十幾秒以上，細菌早已被熱碰撞轉往另一個方向，此時再去比較「現在的濃度」與「十秒前的濃度」，兩者根本不在同一條直線上，過去的記憶便失去了指向性。",
+          "物理定律從兩頭同時夾殺了這隻兩微米的小生命：\n- 比較時間窗口**太短**（遠小於 $1\\text{ 秒}$）：空間位移太小，會被 Berg–Purcell 分子計數雜訊徹底吞沒；\n- 比較時間窗口**太長**（超過數秒）：航向已被轉動布朗擴散撞歪，記憶隨即失效。",
+          "於是演化在兩道物理極限的狹縫之間，逼出了大腸桿菌最精妙的時間窗口：**大約 $1\\text{–}4\\text{ 秒}$ 的時間平均微分**。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-9cf961c9",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-2-fc3892",
+            "sectionTitle": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙",
+            "paragraphIndex": 0,
+            "exactQuote": "讀到這裡，一個深刻的第一性原理問題立刻浮現：許多較大的真核細胞（如變形蟲或白血球）會直接比較細胞前端與後端受體感受到的化學濃度差 $\\Delta c$，再直接朝高濃度那一側爬過去。",
+            "charStart": 2593,
+            "charEnd": 2683,
+            "contentHash": "9cf961c9f7512b3bb378c62ff5a5fb1875c6ca0bfb0654e7ab7628b83d904b63",
+            "contextNote": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-e98d8bc1",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-2-fc3892",
+            "sectionTitle": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙",
+            "paragraphIndex": 0,
+            "exactQuote": "為什麼大腸桿菌這麼「繞遠路」，不乾脆在自己短短兩微米的身體頭尾兩端各裝一組感測器，直接相減算出梯度方向就好？",
+            "charStart": 2684,
+            "charEnd": 2738,
+            "contentHash": "e98d8bc1ec4b92630483c49ed1b4720103f5c49c5df0fbe3ea1599e965acb83e",
+            "contextNote": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-9fdba7e2",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-2-fc3892",
+            "sectionTitle": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙",
+            "paragraphIndex": 1,
+            "exactQuote": "五年後的 1977 年，霍華德·柏格找來諾貝爾物理獎得主愛德華·珀塞爾（Edward M. Purcell）合作，在《Biophysical Journal》發表了生物物理史上最著名的經典論文〈Physics of Chemoreception〉，用純粹的統計物理與擴散定律回答了這個問題：在微米尺度下，**空間前後同時比較是一條物理死路**。",
+            "charStart": 2885,
+            "charEnd": 3057,
+            "contentHash": "9fdba7e23b999241baf9fcf7d33074a77e769d79ecd6cf8b145d5cc9afee75f9",
+            "contextNote": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-c0f9c5c8",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-2-fc3892",
+            "sectionTitle": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙",
+            "paragraphIndex": 2,
+            "exactQuote": "要看清這道極限，必須先面對微觀世界的第一道銅牆鐵壁——**泊松計數雜訊（Poisson Counting Noise，在微觀感測中指因為分子隨機撞擊抵達時間不固定所產生的統計起伏，就像細雨剛落時在兩塊相鄰小磚頭上數雨滴，短時間內哪塊磚滴到比較多幾乎純屬運氣）**。",
+            "charStart": 3232,
+            "charEnd": 3364,
+            "contentHash": "c0f9c5c81cec2e822fbce35894974542ae0099a5826ba24b34bb55248f6cb201",
+            "contextNote": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-27b92817",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-2-fc3892",
+            "sectionTitle": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙",
+            "paragraphIndex": 3,
+            "exactQuote": "Berg 與 Purcell 推導出一個半徑為 $a$ 的理想感測球體，浸泡在分子擴散係數為 $D$、平均分子數密度為 $c$ 的溶液裡，若在時間窗口 $T$ 內持續計數並平均抵達表面的目標分子，即使受體覆蓋率與計算效率達到物理極限，所能達到的最佳相對濃度測量精度下限仍然受限於：",
+            "charStart": 3499,
+            "charEnd": 3639,
+            "contentHash": "27b928175f801bc64ee8f4d3e54cd22793f28e609559b75be7d3c9dcc917bc52",
+            "contextNote": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-daa4973f",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-2-fc3892",
+            "sectionTitle": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙",
+            "paragraphIndex": 5,
+            "exactQuote": "把大腸桿菌的真實尺度代進這條 **Berg–Purcell 極限（Berg–Purcell Limit）**，問題就一清二楚了。",
+            "charStart": 3782,
+            "charEnd": 3846,
+            "contentHash": "daa4973fa6b5e77dfa5975f364c478c58ebe34c46bf2343075b08e169957bf46",
+            "contextNote": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙 · 第 6 段"
+          },
+          {
+            "sentenceId": "sent-95728f8b",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-2-fc3892",
+            "sectionTitle": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙",
+            "paragraphIndex": 5,
+            "exactQuote": "細菌全長僅 $L \\approx 2\\,\\mu\\text{m}$，如果牠想在短短一次測量時間（比如幾十毫秒）內比較「鼻子」與「尾巴」相差的極微弱空間濃度差 $\\Delta c = L |\\nabla c|$，兩端的濃度差異實在太微小，每一次熱擴散分子隨機撞擊造成的泊松計數漲落 $\\delta c$ 會比真正的空間梯度訊號大上好幾個數量級，訊號瞬間被分子雨滴的隨機雜訊徹底淹沒。",
+            "charStart": 3847,
+            "charEnd": 4036,
+            "contentHash": "95728f8b888066537dd1112e3e7543088090539a196593d33f3592e5b315789e",
+            "contextNote": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙 · 第 6 段"
+          },
+          {
+            "sentenceId": "sent-365cca36",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-2-fc3892",
+            "sectionTitle": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙",
+            "paragraphIndex": 6,
+            "exactQuote": "怎麼辦？",
+            "charStart": 4292,
+            "charEnd": 4296,
+            "contentHash": "365cca361acbbda5398e6fcb00523989508a07beb551663ec63ffe48041543e2",
+            "contextNote": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙 · 第 7 段"
+          },
+          {
+            "sentenceId": "sent-d1dbe106",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-2-fc3892",
+            "sectionTitle": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙",
+            "paragraphIndex": 6,
+            "exactQuote": "公式分母裡的 $T$ 指出了唯一的出路：**拉長空間基線與累積時間平均**。",
+            "charStart": 4297,
+            "charEnd": 4335,
+            "contentHash": "d1dbe10601c52801fc14060e6cccc58d526272648be94dc0fbec12383d36440d",
+            "contextNote": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙 · 第 7 段"
+          },
+          {
+            "sentenceId": "sent-dca39df7",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-2-fc3892",
+            "sectionTitle": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙",
+            "paragraphIndex": 6,
+            "exactQuote": "既然身體不能長大到幾十微米，那就靠自己的鞭毛向前直線游動幾秒鐘！",
+            "charStart": 4336,
+            "charEnd": 4368,
+            "contentHash": "dca39df7dca26f8882c06116f96992eaf2427b28a9be34f9ddb5ccf4dcf94f75",
+            "contextNote": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙 · 第 7 段"
+          },
+          {
+            "sentenceId": "sent-8a79337e",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-2-fc3892",
+            "sectionTitle": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙",
+            "paragraphIndex": 6,
+            "exactQuote": "當細菌以速率 $v \\approx 20\\text{–}30\\,\\mu\\text{m/s}$ 向前衝刺 $1\\text{–}3$ 秒，牠比較的兩個取樣點之間距離就從體長 $2\\,\\mu\\text{m}$ 瞬間暴增至 $20\\text{–}90\\,\\mu\\text{m}$，訊號差放大了十倍到數十倍，同時累積的分子計數時間 $T$ 也大幅壓低了 $(D a c T)^{-1/2}$ 計數雜訊。",
+            "charStart": 4369,
+            "charEnd": 4565,
+            "contentHash": "8a79337e03d2a19056b157a7aad2643b11f21f9b48f6035c2073ca56286028e7",
+            "contextNote": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙 · 第 7 段"
+          },
+          {
+            "sentenceId": "sent-fd5d68b2",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-2-fc3892",
+            "sectionTitle": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙",
+            "paragraphIndex": 7,
+            "exactQuote": "然而，大自然隨即從另一頭關上了門——這就是微觀世界的第二道枷鎖：**轉動布朗擴散（Rotational Brownian Diffusion，指微米級小顆粒在水分子無休止的熱碰撞下，身體角度像風中無人掌舵的獨木舟一樣不由自主隨機偏轉的現象）**。",
+            "charStart": 4838,
+            "charEnd": 4961,
+            "contentHash": "fd5d68b287e7c18351d6dd6df2b0617adec61d73ea88fd0bece73778900866bf",
+            "contextNote": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙 · 第 8 段"
+          },
+          {
+            "sentenceId": "sent-e9fa1090",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-2-fc3892",
+            "sectionTitle": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙",
+            "paragraphIndex": 7,
+            "exactQuote": "根據愛因斯坦–史托克斯–德拜關係式，半徑尺度約 $a \\sim 1\\,\\mu\\text{m}$ 的細菌在室溫水中的轉動擴散係數高達：",
+            "charStart": 4962,
+            "charEnd": 5028,
+            "contentHash": "e9fa1090dd6e793adb11687dc06b088cc2579e1bb0b902461507eeccadbdff59",
+            "contextNote": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙 · 第 8 段"
+          },
+          {
+            "sentenceId": "sent-73c43dd6",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-2-fc3892",
+            "sectionTitle": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙",
+            "paragraphIndex": 9,
+            "exactQuote": "這裡的 $k_B T$ 是熱能尺度，$\\eta$ 是水的動力黏滯係數。",
+            "charStart": 5220,
+            "charEnd": 5255,
+            "contentHash": "73c43dd6e0108baafe4c52b42e0008c404fac3f08b4759f8da5f862e1e5ab4da",
+            "contextNote": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙 · 第 10 段"
+          },
+          {
+            "sentenceId": "sent-988e403f",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-2-fc3892",
+            "sectionTitle": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙",
+            "paragraphIndex": 9,
+            "exactQuote": "這個數字意味著什麼？",
+            "charStart": 5256,
+            "charEnd": 5266,
+            "contentHash": "988e403f0a060989eaeb011e1cb4504388269e9ec05c42903982c6f08c260c21",
+            "contextNote": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙 · 第 10 段"
+          },
+          {
+            "sentenceId": "sent-3882c05b",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-2-fc3892",
+            "sectionTitle": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙",
+            "paragraphIndex": 9,
+            "exactQuote": "即使細菌把鞭毛馬達鎖死、徹底禁止 Tumble 翻滾，周圍熱水分子的隨機撞擊依然會讓牠的航向角產生均方擴散偏移 $\\langle \\Delta \\theta^2 \\rangle \\propto D_r t$；**只要短短幾秒鐘（約 $3\\text{–}5$ 秒），細菌的朝向就會被熱運動撞偏約一個弧度（近 $60^\\circ$）**！",
+            "charStart": 5267,
+            "charEnd": 5434,
+            "contentHash": "3882c05b9389aa5de15527072c4e5847de3a6dc746463d91a23d125caa9995c0",
+            "contextNote": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙 · 第 10 段"
+          },
+          {
+            "sentenceId": "sent-da7dcd39",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-2-fc3892",
+            "sectionTitle": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙",
+            "paragraphIndex": 10,
+            "exactQuote": "一旦 Run 游得太長、或是記憶比較窗口拉到十幾秒以上，細菌早已被熱碰撞轉往另一個方向，此時再去比較「現在的濃度」與「十秒前的濃度」，兩者根本不在同一條直線上，過去的記憶便失去了指向性。",
+            "charStart": 5649,
+            "charEnd": 5742,
+            "contentHash": "da7dcd3944e273d7bb4ba2c59f81323ad2f4f50f800a6015c50f6580d777e37d",
+            "contextNote": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙 · 第 11 段"
+          },
+          {
+            "sentenceId": "sent-1c39265b",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-2-fc3892",
+            "sectionTitle": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙",
+            "paragraphIndex": 11,
+            "exactQuote": "物理定律從兩頭同時夾殺了這隻兩微米的小生命：\n- 比較時間窗口**太短**（遠小於 $1\\text{ 秒}$）：空間位移太小，會被 Berg–Purcell 分子計數雜訊徹底吞沒；\n- 比較時間窗口**太長**（超過數秒）：航向已被轉動布朗擴散撞歪，記憶隨即失效。",
+            "charStart": 5838,
+            "charEnd": 5970,
+            "contentHash": "1c39265b7864bbfec74185578352e6a3706b72585a9f108a283d84a58f0fe007",
+            "contextNote": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙 · 第 12 段"
+          },
+          {
+            "sentenceId": "sent-25a5a3e3",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-2-fc3892",
+            "sectionTitle": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙",
+            "paragraphIndex": 12,
+            "exactQuote": "於是演化在兩道物理極限的狹縫之間，逼出了大腸桿菌最精妙的時間窗口：**大約 $1\\text{–}4\\text{ 秒}$ 的時間平均微分**。",
+            "charStart": 6105,
+            "charEnd": 6175,
+            "contentHash": "25a5a3e357b5c73906ed7aa060bc2fe08f1956f0bc93db2872f2400015babab6",
+            "contextNote": "為何不能「用鼻子跟尾巴比」？Berg–Purcell 分子計數極限與轉動布朗障礙 · 第 13 段"
+          }
+        ],
+        "formulas": [
+          "$$\\frac{\\delta c}{c} \\sim \\frac{1}{\\sqrt{D a c T}}$$",
+          "$$D_r = \\frac{k_B T}{8\\pi \\eta a^3} \\sim 0.1\\text{–}0.3\\text{ rad}^2/\\text{s}$$"
+        ],
+        "interactiveComponentId": null
+      },
+      {
+        "id": "sec-3-cb8eb2",
+        "title": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應",
+        "level": 2,
+        "paragraphs": [
+          "既然物理限制迫使細菌必須「用時間換取空間」，沒有神經元的單細胞又是怎麼在細胞質裡執行這套時間微積分的？",
+          "1986 年，傑弗瑞·西格爾（Jeffrey E. Segall）、史蒂芬·布洛克（Steven M. Block）與霍華德·柏格（Howard C. Berg）在《PNAS》發表了一項精巧絕倫的單細胞實驗。他們將單隻大腸桿菌的一根鞭毛透過抗體黏附固定在玻璃蓋玻片上（稱為 Tethered Cell，拴住細胞實驗——鞭毛轉動時整個菌體就會像旋轉木馬一樣反過來跟著旋轉，讓人能直接用肉眼看清馬達順逆時針切換的瞬間），再用一根極細的**微吸管（Micropipette）**在毫秒尺度內精準朝細菌噴出極短暫的引誘劑濃度脈衝。",
+          "記錄下幾百次脈衝後的馬達逆時針轉動偏置變化，研究團隊首度畫出了大腸桿菌著名的**雙極性脈衝響應核函數（Biphasic Impulse Response Kernel，指系統在遭受一次瞬間刺激後，先產生正向反應、緊接著轉為反向補償波動的「雙葉片」記憶曲線）** $K(t)$：",
+          "1. **快正向葉瓣（約 $0\\text{–}1\\text{ 秒}$）**：剛接收到引誘劑上升脈衝的前約 $1\\text{ 秒}$ 內，馬達逆時針（Run）機率急速上升、抑制翻滾；\n2. **慢負向補償葉瓣（約 $1\\text{–}4\\text{ 秒}$）**：緊接著在 $1\\text{–}4\\text{ 秒}$ 之間，曲線穿過零點翻轉為負值，代表細胞把「現在」減去「過去幾秒的記憶基線」；\n3. **正負面積幾乎完全抵銷**：令人驚嘆的是，正葉瓣與負葉瓣曲線下方的總積分幾乎精確歸零：",
+          "$$\\int_0^\\infty K(t)\\,dt \\approx 0$$",
+          "為什麼 $\\int_0^\\infty K(t)\\,dt \\approx 0$ 如此關鍵？當細菌沿著任意濃度歷史 $c(t)$ 前進時，內部的記憶輸出可以寫成受體對數感知訊號 $s(t)$ 與核函數的卷積積分：",
+          "$$y(t) = \\int_0^\\infty K(\\tau)\\, s(t - \\tau)\\,d\\tau$$",
+          "如果環境濃度完全固定不變（$s(t - \\tau) \\equiv s_0$，無論是稀薄還是濃稠），因為 $K(\\tau)$ 的總積分為零，卷積結果 $y(t) = s_0 \\int_0^\\infty K(\\tau)\\,d\\tau \\equiv 0$！唯有當濃度正在隨時間改變時，$y(t)$ 才會偏離零並與近期幾秒的對數變化率 $\\frac{d\\ln c}{dt}$ 成正比。這組約 $3\\text{–}4$ 秒寬的雙葉片核函數，在訊號處理上等價於一台**生物帶通時間微分器（Band-Pass Temporal Differentiator，一種既能過濾極快隨機雜訊、又會自動扣掉靜態背景值、專門提取中段時間斜率的濾波器）**：前 $1\\text{ 秒}$ 的正葉瓣平滑掉瞬時分子計數雜訊，後 $1\\text{–}4\\text{ 秒}$ 的負葉瓣則減去過去基線，算出真正可靠的時間導數。",
+          "但故事還有最後一塊拼圖：大腸桿菌從稀薄的 $10^{-7}\\,\\text{M}$ 一路游到濃稠的 $10^{-2}\\,\\text{M}$ 胺基酸溶液，背景濃度足足跨越了 **5 個數量級**！如果在低濃度剛調好的受體一進入高濃度區就被配體分子全部佔滿、活性死死鎖在極端狀態（就像人突然從黑暗電影院走到烈日當空的大街上徹底白盲一樣），這台微分器就會立刻飽和失靈。更棘手的是，每一隻細菌細胞內的酵素數量都會因基因表現隨機起伏而相差好幾倍，細胞怎麼確保「穩態基線翻滾率」不會因為少一點蛋白質就歪掉？",
+          "1997 年，納瑪·巴爾凱（Naama Barkai）與史丹尼斯拉斯·萊布勒（Stanislas Leibler）在《Nature》發表了系統生物學的奠基之作，揭露了大腸桿菌訊號網路背後的控制論秘密——**積分回饋控制（Integral Feedback Control，一種工程學裡用來徹底消除長期誤差的經典演算法，就像定速巡航系統會不斷累積實際車速與目標車速的誤差，直到完全歸零為止）**與**精確適應（Exact Adaptation）**。",
+          "在大腸桿菌細胞膜上的受體複合物（MCP–CheW–CheA）裡，存在一對互相拮抗的修飾酵素：\n- **CheR（甲基轉移酶）**：以幾乎固定不變的飽和速率，不斷替受體接上甲基（提高受體處於「活性」激酶狀態的傾向，相當於把靈敏度往高濃度區推進）；\n- **CheB-P（磷酸化去甲基酶）**：只會被活性受體磷酸化而活化，而且**專一性地只針對處於「活性狀態」的受體移除甲基**（壓低活性）。",
+          "把受體群體的總平均甲基化程度記作 $m$，活性受體比例記作 $A$（$A$ 越高，游離的 CheY-P 越多，細菌越容易 Tumble 翻滾）。這個生化反應網的動態可以用一條極為簡潔的常微分方程描述：",
+          "$$\\frac{dm}{dt} = k_R [R] - k_B [B_p]\\, A$$",
+          "仔細看這條方程在穩態（$\\frac{dm}{dt} = 0$）時的數學奇蹟：只要受體還沒有觸及物理上有限的甲基位點飽和天花板，**環境配體濃度 $c_0$ 根本沒有出現在穩態條件裡**！系統唯一的穩定平衡點只取決於兩種酵素的速率常數與總量比值：",
+          "$$A^* = \\frac{k_R [R]}{k_B [B_p]}$$",
+          "無論外界的背景胺基酸濃度是 $1\\times$、$100\\times$ 還是 $1000\\times$，只要濃度突然升高把活性 $A$ 瞬間壓低（讓細菌先拉長 Run 衝一波），CheB-P 的去甲基工作就會立刻放慢，於是固定速率工作的 CheR 就會慢慢把受體甲基 $m$ 往上累積，直到重新把受體推回原本的目標活性 $A^*$ 才停止變化。這種由網路拓撲結構本身內建的積分器，使系統展現出驚人的**結構強健性（Robustness）**：即使細胞內各種輔助蛋白濃度變動數倍，精確適應的歸零能力依然絲毫不減，確保細菌在五個數量級的環境跨度中永遠保有對「相對濃度梯度」的敏銳嗅覺。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-1e4357fa",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-3-cb8eb2",
+            "sectionTitle": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應",
+            "paragraphIndex": 0,
+            "exactQuote": "既然物理限制迫使細菌必須「用時間換取空間」，沒有神經元的單細胞又是怎麼在細胞質裡執行這套時間微積分的？",
+            "charStart": 6248,
+            "charEnd": 6299,
+            "contentHash": "1e4357fa5c8909bc8a3b4c810f5cd24848fb2cd7ed57fbf3274a8666686068b4",
+            "contextNote": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-b0cba4cf",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-3-cb8eb2",
+            "sectionTitle": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應",
+            "paragraphIndex": 1,
+            "exactQuote": "1986 年，傑弗瑞·西格爾（Jeffrey E. Segall）、史蒂芬·布洛克（Steven M. Block）與霍華德·柏格（Howard C. Berg）在《PNAS》發表了一項精巧絕倫的單細胞實驗。",
+            "charStart": 6353,
+            "charEnd": 6457,
+            "contentHash": "b0cba4cfc8bffc4851c9f1d19ad54d691ccb363f96b56f7b75e371b080692442",
+            "contextNote": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-2211842f",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-3-cb8eb2",
+            "sectionTitle": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應",
+            "paragraphIndex": 1,
+            "exactQuote": "他們將單隻大腸桿菌的一根鞭毛透過抗體黏附固定在玻璃蓋玻片上（稱為 Tethered Cell，拴住細胞實驗——鞭毛轉動時整個菌體就會像旋轉木馬一樣反過來跟著旋轉，讓人能直接用肉眼看清馬達順逆時針切換的瞬間），再用一根極細的**微吸管（Micropipette）**在毫秒尺度內精準朝細菌噴出極短暫的引誘劑濃度脈衝。",
+            "charStart": 6458,
+            "charEnd": 6615,
+            "contentHash": "2211842faf9f226777a556be39846fa60e3e6cc133883cb801e9d5a45253dedf",
+            "contextNote": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-62f30a83",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-3-cb8eb2",
+            "sectionTitle": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應",
+            "paragraphIndex": 2,
+            "exactQuote": "記錄下幾百次脈衝後的馬達逆時針轉動偏置變化，研究團隊首度畫出了大腸桿菌著名的**雙極性脈衝響應核函數（Biphasic Impulse Response Kernel，指系統在遭受一次瞬間刺激後，先產生正向反應、緊接著轉為反向補償波動的「雙葉片」記憶曲線）** $K(t)$：",
+            "charStart": 6879,
+            "charEnd": 7017,
+            "contentHash": "62f30a83084a4ba6fe03651cadddf7468ac46ce7bd231276cb3556a080237155",
+            "contextNote": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-dcc37b6a",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-3-cb8eb2",
+            "sectionTitle": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應",
+            "paragraphIndex": 3,
+            "exactQuote": "1. **快正向葉瓣（約 $0\\text{–}1\\text{ 秒}$）**：剛接收到引誘劑上升脈衝的前約 $1\\text{ 秒}$ 內，馬達逆時針（Run）機率急速上升、抑制翻滾；\n2. **慢負向補償葉瓣（約 $1\\text{–}4\\text{ 秒}$）**：緊接著在 $1\\text{–}4\\text{ 秒}$ 之間，曲線穿過零點翻轉為負值，代表細胞把「現在」減去「過去幾秒的記憶基線」；\n3. **正負面積幾乎完全抵銷**：令人驚嘆的是，正葉瓣與負葉瓣曲線下方的總積分幾乎精確歸零：",
+            "charStart": 7158,
+            "charEnd": 7402,
+            "contentHash": "dcc37b6a72e5a8a7fc27262afc46ba5096589fc9b6d4cb09589fc10f4fa170d8",
+            "contextNote": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-f844b249",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-3-cb8eb2",
+            "sectionTitle": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應",
+            "paragraphIndex": 5,
+            "exactQuote": "為什麼 $\\int_0^\\infty K(t)\\,dt \\approx 0$ 如此關鍵？",
+            "charStart": 7649,
+            "charEnd": 7693,
+            "contentHash": "f844b24919741b709576577025d87193dd26653228778a7ca8aa521031e87760",
+            "contextNote": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應 · 第 6 段"
+          },
+          {
+            "sentenceId": "sent-4024ad90",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-3-cb8eb2",
+            "sectionTitle": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應",
+            "paragraphIndex": 5,
+            "exactQuote": "當細菌沿著任意濃度歷史 $c(t)$ 前進時，內部的記憶輸出可以寫成受體對數感知訊號 $s(t)$ 與核函數的卷積積分：",
+            "charStart": 7694,
+            "charEnd": 7754,
+            "contentHash": "4024ad90e229479058d96bd3c9fa700fc904248363285f7d9ccfc26c48a27199",
+            "contextNote": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應 · 第 6 段"
+          },
+          {
+            "sentenceId": "sent-b36b94b4",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-3-cb8eb2",
+            "sectionTitle": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應",
+            "paragraphIndex": 7,
+            "exactQuote": "如果環境濃度完全固定不變（$s(t - \\tau) \\equiv s_0$，無論是稀薄還是濃稠），因為 $K(\\tau)$ 的總積分為零，卷積結果 $y(t) = s_0 \\int_0^\\infty K(\\tau)\\,d\\tau \\equiv 0$！",
+            "charStart": 7861,
+            "charEnd": 7986,
+            "contentHash": "b36b94b43fed480472cded7f5cc3ff230506178d3dedf0e826c0e305fd23e06e",
+            "contextNote": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應 · 第 8 段"
+          },
+          {
+            "sentenceId": "sent-f6236406",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-3-cb8eb2",
+            "sectionTitle": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應",
+            "paragraphIndex": 7,
+            "exactQuote": "唯有當濃度正在隨時間改變時，$y(t)$ 才會偏離零並與近期幾秒的對數變化率 $\\frac{d\\ln c}{dt}$ 成正比。",
+            "charStart": 7987,
+            "charEnd": 8050,
+            "contentHash": "f623640621548e5583653aa5ce4755533fdaca5dca8ea51ebf8b21c36c694ead",
+            "contextNote": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應 · 第 8 段"
+          },
+          {
+            "sentenceId": "sent-8908bf6e",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-3-cb8eb2",
+            "sectionTitle": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應",
+            "paragraphIndex": 7,
+            "exactQuote": "這組約 $3\\text{–}4$ 秒寬的雙葉片核函數，在訊號處理上等價於一台**生物帶通時間微分器（Band-Pass Temporal Differentiator，一種既能過濾極快隨機雜訊、又會自動扣掉靜態背景值、專門提取中段時間斜率的濾波器）**：前 $1\\text{ 秒}$ 的正葉瓣平滑掉瞬時分子計數雜訊，後 $1\\text{–}4\\text{ 秒}$ 的負葉瓣則減去過去基線，算出真正可靠的時間導數。",
+            "charStart": 8051,
+            "charEnd": 8257,
+            "contentHash": "8908bf6eb27f54a49f81dc1b104450c06e8d02457a75e59316232afd48375397",
+            "contextNote": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應 · 第 8 段"
+          },
+          {
+            "sentenceId": "sent-91d1939f",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-3-cb8eb2",
+            "sectionTitle": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應",
+            "paragraphIndex": 8,
+            "exactQuote": "但故事還有最後一塊拼圖：大腸桿菌從稀薄的 $10^{-7}\\,\\text{M}$ 一路游到濃稠的 $10^{-2}\\,\\text{M}$ 胺基酸溶液，背景濃度足足跨越了 **5 個數量級**！",
+            "charStart": 8654,
+            "charEnd": 8750,
+            "contentHash": "91d1939fc44f4eba6a64c1215c04d5e0c123800f77aab2a53b2d4413ba40f9ab",
+            "contextNote": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應 · 第 9 段"
+          },
+          {
+            "sentenceId": "sent-215b5828",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-3-cb8eb2",
+            "sectionTitle": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應",
+            "paragraphIndex": 8,
+            "exactQuote": "如果在低濃度剛調好的受體一進入高濃度區就被配體分子全部佔滿、活性死死鎖在極端狀態（就像人突然從黑暗電影院走到烈日當空的大街上徹底白盲一樣），這台微分器就會立刻飽和失靈。",
+            "charStart": 8751,
+            "charEnd": 8835,
+            "contentHash": "215b5828f50f98714c192b294ecd4007c5f4d23535d916f77bbf23cdf34afe50",
+            "contextNote": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應 · 第 9 段"
+          },
+          {
+            "sentenceId": "sent-31cecfac",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-3-cb8eb2",
+            "sectionTitle": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應",
+            "paragraphIndex": 8,
+            "exactQuote": "更棘手的是，每一隻細菌細胞內的酵素數量都會因基因表現隨機起伏而相差好幾倍，細胞怎麼確保「穩態基線翻滾率」不會因為少一點蛋白質就歪掉？",
+            "charStart": 8836,
+            "charEnd": 8902,
+            "contentHash": "31cecfac1d873c78b4836aac48bc43590854707a3570361fa7f5fbaf631a042f",
+            "contextNote": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應 · 第 9 段"
+          },
+          {
+            "sentenceId": "sent-8f630157",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-3-cb8eb2",
+            "sectionTitle": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應",
+            "paragraphIndex": 9,
+            "exactQuote": "1997 年，納瑪·巴爾凱（Naama Barkai）與史丹尼斯拉斯·萊布勒（Stanislas Leibler）在《Nature》發表了系統生物學的奠基之作，揭露了大腸桿菌訊號網路背後的控制論秘密——**積分回饋控制（Integral Feedback Control，一種工程學裡用來徹底消除長期誤差的經典演算法，就像定速巡航系統會不斷累積實際車速與目標車速的誤差，直到完全歸零為止）**與**精確適應（Exact Adaptation）**。",
+            "charStart": 9151,
+            "charEnd": 9375,
+            "contentHash": "8f63015715367687bced3688c1a0acd21ae553eca4a98ddaeb6e1ccd336108f4",
+            "contextNote": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應 · 第 10 段"
+          },
+          {
+            "sentenceId": "sent-2a45d54d",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-3-cb8eb2",
+            "sectionTitle": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應",
+            "paragraphIndex": 10,
+            "exactQuote": "在大腸桿菌細胞膜上的受體複合物（MCP–CheW–CheA）裡，存在一對互相拮抗的修飾酵素：\n- **CheR（甲基轉移酶）**：以幾乎固定不變的飽和速率，不斷替受體接上甲基（提高受體處於「活性」激酶狀態的傾向，相當於把靈敏度往高濃度區推進）；\n- **CheB-P（磷酸化去甲基酶）**：只會被活性受體磷酸化而活化，而且**專一性地只針對處於「活性狀態」的受體移除甲基**（壓低活性）。",
+            "charStart": 9602,
+            "charEnd": 9796,
+            "contentHash": "2a45d54dfef124ba28275f8b269ff020a4ac2bcbd737c1bc89b7b1c97cb214e5",
+            "contextNote": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應 · 第 11 段"
+          },
+          {
+            "sentenceId": "sent-4dcd7d5e",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-3-cb8eb2",
+            "sectionTitle": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應",
+            "paragraphIndex": 11,
+            "exactQuote": "把受體群體的總平均甲基化程度記作 $m$，活性受體比例記作 $A$（$A$ 越高，游離的 CheY-P 越多，細菌越容易 Tumble 翻滾）。",
+            "charStart": 9993,
+            "charEnd": 10065,
+            "contentHash": "4dcd7d5e2347206ec61fb4444e139e9f3d4656a3efd040d51649475c1afa4caf",
+            "contextNote": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應 · 第 12 段"
+          },
+          {
+            "sentenceId": "sent-bb58e6ac",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-3-cb8eb2",
+            "sectionTitle": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應",
+            "paragraphIndex": 11,
+            "exactQuote": "這個生化反應網的動態可以用一條極為簡潔的常微分方程描述：",
+            "charStart": 10066,
+            "charEnd": 10094,
+            "contentHash": "bb58e6ac09789cbce8c7de4489c2c1d41214b4c434093d686fa07ebfa6f2b64b",
+            "contextNote": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應 · 第 12 段"
+          },
+          {
+            "sentenceId": "sent-eac31ecf",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-3-cb8eb2",
+            "sectionTitle": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應",
+            "paragraphIndex": 13,
+            "exactQuote": "仔細看這條方程在穩態（$\\frac{dm}{dt} = 0$）時的數學奇蹟：只要受體還沒有觸及物理上有限的甲基位點飽和天花板，**環境配體濃度 $c_0$ 根本沒有出現在穩態條件裡**！",
+            "charStart": 10197,
+            "charEnd": 10290,
+            "contentHash": "eac31ecf6be55f0c10f9e7daeeda0c2ac9b29d488be175b406fdcd5cdf4734bc",
+            "contextNote": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應 · 第 14 段"
+          },
+          {
+            "sentenceId": "sent-b14ae720",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-3-cb8eb2",
+            "sectionTitle": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應",
+            "paragraphIndex": 13,
+            "exactQuote": "系統唯一的穩定平衡點只取決於兩種酵素的速率常數與總量比值：",
+            "charStart": 10291,
+            "charEnd": 10320,
+            "contentHash": "b14ae720ec12afc9313259675ac22caafaa599a64edacde81d2d3d44d78cb63d",
+            "contextNote": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應 · 第 14 段"
+          },
+          {
+            "sentenceId": "sent-e763ebda",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-3-cb8eb2",
+            "sectionTitle": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應",
+            "paragraphIndex": 15,
+            "exactQuote": "無論外界的背景胺基酸濃度是 $1\\times$、$100\\times$ 還是 $1000\\times$，只要濃度突然升高把活性 $A$ 瞬間壓低（讓細菌先拉長 Run 衝一波），CheB-P 的去甲基工作就會立刻放慢，於是固定速率工作的 CheR 就會慢慢把受體甲基 $m$ 往上累積，直到重新把受體推回原本的目標活性 $A^*$ 才停止變化。",
+            "charStart": 10445,
+            "charEnd": 10617,
+            "contentHash": "e763ebda4443dbf3a507c7da5edc520c04077b30138854c3b9ab4d5df5d09f39",
+            "contextNote": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應 · 第 16 段"
+          },
+          {
+            "sentenceId": "sent-1147aeaa",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-3-cb8eb2",
+            "sectionTitle": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應",
+            "paragraphIndex": 15,
+            "exactQuote": "這種由網路拓撲結構本身內建的積分器，使系統展現出驚人的**結構強健性（Robustness）**：即使細胞內各種輔助蛋白濃度變動數倍，精確適應的歸零能力依然絲毫不減，確保細菌在五個數量級的環境跨度中永遠保有對「相對濃度梯度」的敏銳嗅覺。",
+            "charStart": 10618,
+            "charEnd": 10736,
+            "contentHash": "1147aeaa4e3cdee2225865489ebf936f0d672843884e750e905bd8e147c394fe",
+            "contextNote": "細菌內部的時間微積分：雙極性脈衝響應與積分回饋精確適應 · 第 16 段"
+          }
+        ],
+        "formulas": [
+          "$$\\int_0^\\infty K(t)\\,dt \\approx 0$$",
+          "$$y(t) = \\int_0^\\infty K(\\tau)\\, s(t - \\tau)\\,d\\tau$$",
+          "$$\\frac{dm}{dt} = k_R [R] - k_B [B_p]\\, A$$",
+          "$$A^* = \\frac{k_R [R]}{k_B [B_p]}$$"
+        ],
+        "interactiveComponentId": null
+      },
+      {
+        "id": "sec-4-45e9da",
+        "title": "互動模擬實驗室：在梯度場中比較三種游動演算法",
+        "level": 2,
+        "paragraphs": [
+          "理論推演到此全部會師。下方我們建構了一座二維微流體實驗場，同時追蹤 **18 隻同場出發的大腸桿菌**（分為三組、每組 6 隻），讓你親眼對比三種完全不同的控制演算法在相同濃度梯度下的命運：",
+          "1. **青色組（`Chemotaxis Biased Walk`）**：完整搭載 Segall–Block–Berg 雙葉片脈衝卷積核 $K(\\tau)$（結合 Berg–Purcell 計數雜訊與轉動布朗擴散）以及 Barkai–Leibler 積分回饋甲基化適應 $m(t)$。\n2. **琥珀組（`Unbiased Walk`）**：關閉所有時間記憶與梯度感知，僅以恆定基線翻滾率 $\\lambda_0 = 1.0\\text{ s}^{-1}$ 做純隨機擴散。\n3. **玫紅組（`No Adaptation` 飽和鎖死模式）**：關閉 CheR／CheB-P 積分回饋適應，將受體停留在靜態飽和曲線。在低背景起點附近或許仍有微弱反應，但只要接近高峰或提高背景濃度，受體便立刻飽和失明、無法定位食物峰。",
+          "你可以點擊上方的預設情境按鈕，或手動調節下方的「轉動擴散強度 $D_r$」、「背景基礎濃度倍率（$1\\times$ 至 $1000\\times$）」與「雙葉記憶窗口尺度」，並對照面板二即時更新的雙葉卷積記憶輸出 $y(t)$ 與三組距峰平均距離曲線 $\\langle d(t) \\rangle$：",
+          "<InteractiveExperiment id=\"BacterialChemotaxisSimulator\" />",
+          "建議你在模擬器中親手驗證這三個從物理推導直接預言的關鍵實驗現象：",
+          "- **驗證一：千倍背景濃度下的精確適應（點擊「1000× 高背景精確適應測試」）**：在背景倍率從 $1\\times$ 暴增至 $1000\\times$ 後，青色組細菌的受體甲基化水平 $m(t)$ 會自動墊高並把活性拉回穩態工作點 $A^* \\approx 0.35$，依然穩定沿著對數梯度聚攏於食物高峰；反觀玫紅色的「關閉適應組」，受體在出發瞬間即徹底飽和鎖死，軌跡毫無定向能力，距峰平均距離曲線與純隨機擴散組一樣停留在遠方。\n- **驗證二：轉動布朗擴散與記憶窗口的兩難（點擊「強轉動布朗撞偏 $D_r = 0.65$」並調整「雙葉記憶窗口尺度」）**：當水分子熱撞擊使 $D_r$ 升高、失向時間 $\\tau_{\\text{rot}}$ 縮短至 $1\\text{ 秒}$ 以下時，即使青色組有記憶也會因為航向迅速偏折而使漂移效率下降；若把記憶窗口刻意拉長到 $2.4\\times$（約 $8.6\\text{ 秒}$），過去記憶對應的方向早已過時；反之若把記憶窗口縮到極短的 $0.35\\times$（約 $1.3\\text{ 秒}$）並回到 $1\\times$ 低濃度場，面板二的 $y(t)$ 波形立刻佈滿 Berg–Purcell 分子計數雜訊尖刺，引發大量誤判翻滾。\n- **驗證三：追蹤移動食物源**：將右上角的食物場切換為「移動食物源」，觀察擁有 $3\\text{–}4\\text{ 秒}$ 帶通時間微分記憶的青色細菌群如何透過不斷調整 Run 長度，像有意識的追蹤群一樣緊緊咬住移動的濃度高峰。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-4f8bf3b2",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-4-45e9da",
+            "sectionTitle": "互動模擬實驗室：在梯度場中比較三種游動演算法",
+            "paragraphIndex": 0,
+            "exactQuote": "理論推演到此全部會師。",
+            "charStart": 11029,
+            "charEnd": 11040,
+            "contentHash": "4f8bf3b2bd4307fb28a0ce8ac91c256dcad2671b2d16822c4ff04774ed8158f4",
+            "contextNote": "互動模擬實驗室：在梯度場中比較三種游動演算法 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-9fc2c250",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-4-45e9da",
+            "sectionTitle": "互動模擬實驗室：在梯度場中比較三種游動演算法",
+            "paragraphIndex": 0,
+            "exactQuote": "下方我們建構了一座二維微流體實驗場，同時追蹤 **18 隻同場出發的大腸桿菌**（分為三組、每組 6 隻），讓你親眼對比三種完全不同的控制演算法在相同濃度梯度下的命運：",
+            "charStart": 11041,
+            "charEnd": 11125,
+            "contentHash": "9fc2c25008f6ca48030711a96b2f7012a4eb673870400946992a4b89cfcd4ca0",
+            "contextNote": "互動模擬實驗室：在梯度場中比較三種游動演算法 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-4475e545",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-4-45e9da",
+            "sectionTitle": "互動模擬實驗室：在梯度場中比較三種游動演算法",
+            "paragraphIndex": 1,
+            "exactQuote": "1. **青色組（`Chemotaxis Biased Walk`）**：完整搭載 Segall–Block–Berg 雙葉片脈衝卷積核 $K(\\tau)$（結合 Berg–Purcell 計數雜訊與轉動布朗擴散）以及 Barkai–Leibler 積分回饋甲基化適應 $m(t)$。",
+            "charStart": 11223,
+            "charEnd": 11365,
+            "contentHash": "4475e5450d3e1cfa3136075235dc015c39207dbb6a6a410b048e3e5206e9ef76",
+            "contextNote": "互動模擬實驗室：在梯度場中比較三種游動演算法 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-1adcdce9",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-4-45e9da",
+            "sectionTitle": "互動模擬實驗室：在梯度場中比較三種游動演算法",
+            "paragraphIndex": 1,
+            "exactQuote": "2. **琥珀組（`Unbiased Walk`）**：關閉所有時間記憶與梯度感知，僅以恆定基線翻滾率 $\\lambda_0 = 1.0\\text{ s}^{-1}$ 做純隨機擴散。",
+            "charStart": 11366,
+            "charEnd": 11457,
+            "contentHash": "1adcdce9ffcb9c4cc19651ec81da009f06fe9d553ff05077e048ffeb367ee1bd",
+            "contextNote": "互動模擬實驗室：在梯度場中比較三種游動演算法 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-4efdceb9",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-4-45e9da",
+            "sectionTitle": "互動模擬實驗室：在梯度場中比較三種游動演算法",
+            "paragraphIndex": 1,
+            "exactQuote": "3. **玫紅組（`No Adaptation` 飽和鎖死模式）**：關閉 CheR／CheB-P 積分回饋適應，將受體停留在靜態飽和曲線。",
+            "charStart": 11458,
+            "charEnd": 11528,
+            "contentHash": "4efdceb945200c8700261385ffe935e2335df59903d1031bfa04665eebca9766",
+            "contextNote": "互動模擬實驗室：在梯度場中比較三種游動演算法 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-a2756fa0",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-4-45e9da",
+            "sectionTitle": "互動模擬實驗室：在梯度場中比較三種游動演算法",
+            "paragraphIndex": 1,
+            "exactQuote": "在低背景起點附近或許仍有微弱反應，但只要接近高峰或提高背景濃度，受體便立刻飽和失明、無法定位食物峰。",
+            "charStart": 11529,
+            "charEnd": 11579,
+            "contentHash": "a2756fa076cd320f19d92375be441d03c4a32b9d16c50ac877a4d14112e1a6bd",
+            "contextNote": "互動模擬實驗室：在梯度場中比較三種游動演算法 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-d5a8a0e9",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-4-45e9da",
+            "sectionTitle": "互動模擬實驗室：在梯度場中比較三種游動演算法",
+            "paragraphIndex": 2,
+            "exactQuote": "你可以點擊上方的預設情境按鈕，或手動調節下方的「轉動擴散強度 $D_r$」、「背景基礎濃度倍率（$1\\times$ 至 $1000\\times$）」與「雙葉記憶窗口尺度」，並對照面板二即時更新的雙葉卷積記憶輸出 $y(t)$ 與三組距峰平均距離曲線 $\\langle d(t) \\rangle$：",
+            "charStart": 11937,
+            "charEnd": 12085,
+            "contentHash": "d5a8a0e9ca0eb55fc5a6c57ad3cf411105d869644f7a3966191c4f8fc4922fb1",
+            "contextNote": "互動模擬實驗室：在梯度場中比較三種游動演算法 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-1b974808",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-4-45e9da",
+            "sectionTitle": "互動模擬實驗室：在梯度場中比較三種游動演算法",
+            "paragraphIndex": 4,
+            "exactQuote": "建議你在模擬器中親手驗證這三個從物理推導直接預言的關鍵實驗現象：",
+            "charStart": 12236,
+            "charEnd": 12268,
+            "contentHash": "1b9748082027568402b2d7fba482987fcc118e69d94cf96737411935de6e242b",
+            "contextNote": "互動模擬實驗室：在梯度場中比較三種游動演算法 · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-750dddf0",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-4-45e9da",
+            "sectionTitle": "互動模擬實驗室：在梯度場中比較三種游動演算法",
+            "paragraphIndex": 5,
+            "exactQuote": "- **驗證一：千倍背景濃度下的精確適應（點擊「1000× 高背景精確適應測試」）**：在背景倍率從 $1\\times$ 暴增至 $1000\\times$ 後，青色組細菌的受體甲基化水平 $m(t)$ 會自動墊高並把活性拉回穩態工作點 $A^* \\approx 0.35$，依然穩定沿著對數梯度聚攏於食物高峰；反觀玫紅色的「關閉適應組」，受體在出發瞬間即徹底飽和鎖死，軌跡毫無定向能力，距峰平均距離曲線與純隨機擴散組一樣停留在遠方。",
+            "charStart": 12303,
+            "charEnd": 12519,
+            "contentHash": "750dddf06a8a78221de4dd67ff7dc7bfabc1cb997c04526ef0cc1a8852eb8692",
+            "contextNote": "互動模擬實驗室：在梯度場中比較三種游動演算法 · 第 6 段"
+          },
+          {
+            "sentenceId": "sent-9578fe73",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-4-45e9da",
+            "sectionTitle": "互動模擬實驗室：在梯度場中比較三種游動演算法",
+            "paragraphIndex": 5,
+            "exactQuote": "- **驗證二：轉動布朗擴散與記憶窗口的兩難（點擊「強轉動布朗撞偏 $D_r = 0.65$」並調整「雙葉記憶窗口尺度」）**：當水分子熱撞擊使 $D_r$ 升高、失向時間 $\\tau_{\\text{rot}}$ 縮短至 $1\\text{ 秒}$ 以下時，即使青色組有記憶也會因為航向迅速偏折而使漂移效率下降；若把記憶窗口刻意拉長到 $2.4\\times$（約 $8.6\\text{ 秒}$），過去記憶對應的方向早已過時；反之若把記憶窗口縮到極短的 $0.35\\times$（約 $1.3\\text{ 秒}$）並回到 $1\\times$ 低濃度場，面板二的 $y(t)$ 波形立刻佈滿 Berg–Purcell 分子計數雜訊尖刺，引發大量誤判翻滾。",
+            "charStart": 12520,
+            "charEnd": 12844,
+            "contentHash": "9578fe73870f4c2993a409905a63c49ff3b62b2ad4086a5c862f7db9f75ff835",
+            "contextNote": "互動模擬實驗室：在梯度場中比較三種游動演算法 · 第 6 段"
+          },
+          {
+            "sentenceId": "sent-99d4ee1d",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-4-45e9da",
+            "sectionTitle": "互動模擬實驗室：在梯度場中比較三種游動演算法",
+            "paragraphIndex": 5,
+            "exactQuote": "- **驗證三：追蹤移動食物源**：將右上角的食物場切換為「移動食物源」，觀察擁有 $3\\text{–}4\\text{ 秒}$ 帶通時間微分記憶的青色細菌群如何透過不斷調整 Run 長度，像有意識的追蹤群一樣緊緊咬住移動的濃度高峰。",
+            "charStart": 12845,
+            "charEnd": 12961,
+            "contentHash": "99d4ee1da96b7049d5cbc68c57e6075446e9ab730e1161f62878cd3851526738",
+            "contextNote": "互動模擬實驗室：在梯度場中比較三種游動演算法 · 第 6 段"
+          }
+        ],
+        "formulas": [],
+        "interactiveComponentId": "BacterialChemotaxisSimulator"
+      },
+      {
+        "id": "sec-5-9764a3",
+        "title": "從微米演算法到控制論與模型物理邊界",
+        "level": 2,
+        "paragraphs": [
+          "從 1972 年第一台三維追蹤顯微鏡，到 1997 年寫進系統生物學教科書的積分回饋迴路，大腸桿菌的趨化性告訴我們一個跨越物理與工程的深刻洞見：一個沒有中樞神經、僅靠幾種蛋白質彼此碰撞組成的微米細胞，竟然在熱雜訊與擴散極限的夾縫裡，演化出了與現代控制論（Integral Feedback Control）和訊號處理（Band-Pass Temporal Differentiation）完全等價的演算法。這套機制也成為當代無梯度優化（Gradient-Free Optimization）與微奈米機器人（Micro-swimmer）群體搜尋演算法的重要靈感原型。",
+          "在將這些洞見延伸至真實微生物生態與工程應用之前，我們也必須清楚標定本文推導與互動模擬器的物理適用邊界：",
+          "1. **二維投影簡化與流體力學限制**：真實大腸桿菌游動於三維流體空間，受壁面流體剪力影響會出現圓弧軌跡，且翻滾後的轉向角並非完全均勻隨機（實測平均偏轉角約 $68^\\circ$ 左右，保有微弱前向延續性）。本文互動模擬器採用二維簡化 Run-and-Tumble 泊松切換與雙葉記憶卷積積分模型，旨在清晰展現時間微分與積分回饋適應的物理原理，並非三維鞭毛流體力學（Elastohydrodynamics）全尺度模擬。\n2. **粗粒化受體與馬達模型**：真實 *E. coli* 細胞極區的數千個化學受體會組成高度協同的 Monod–Wyman–Changeux（MWC）感測晶格放大訊號，而鞭毛馬達環上約三十多個 FliM 蛋白亞基對 CheY-P 濃度也具備極陡峭的超敏（Ultrasensitive）Hill 響應。模擬器將這套極精細的分子協同開關簡化為平滑對數感測與單一狀態變數 $m(t)$，並忽略了單一細胞內個別蛋白質分子數稀少時所帶來的內在基因表現隨機性（Intrinsic Gene Expression Noise）。\n3. **靜態與理想化化學場假設**：真實環境中的化學引誘劑羽流往往伴隨微流體剪力、對流亂流撕裂以及細菌群體自身消耗養分所創造的動態行進波（Traveling Chemotactic Bands），這些多體消耗耦合效應不在本篇單一化學源梯度場的模擬範圍之內。",
+          "正因為看清了熱雜訊、擴散隨機性與蛋白質濃度的限制，我們更能體會兩微米生命那套「先跑再比、比完歸零」的時間微積分，在自然演化上究竟有多麼優雅而節制。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-3f4fed75",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-5-9764a3",
+            "sectionTitle": "從微米演算法到控制論與模型物理邊界",
+            "paragraphIndex": 0,
+            "exactQuote": "從 1972 年第一台三維追蹤顯微鏡，到 1997 年寫進系統生物學教科書的積分回饋迴路，大腸桿菌的趨化性告訴我們一個跨越物理與工程的深刻洞見：一個沒有中樞神經、僅靠幾種蛋白質彼此碰撞組成的微米細胞，竟然在熱雜訊與擴散極限的夾縫裡，演化出了與現代控制論（Integral Feedback Control）和訊號處理（Band-Pass Temporal Differentiation）完全等價的演算法。",
+            "charStart": 13622,
+            "charEnd": 13825,
+            "contentHash": "3f4fed7598092c71c99d7ac5a85260a1a91a647b51440f014f4baf79e75bc3ce",
+            "contextNote": "從微米演算法到控制論與模型物理邊界 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-c7215ece",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-5-9764a3",
+            "sectionTitle": "從微米演算法到控制論與模型物理邊界",
+            "paragraphIndex": 0,
+            "exactQuote": "這套機制也成為當代無梯度優化（Gradient-Free Optimization）與微奈米機器人（Micro-swimmer）群體搜尋演算法的重要靈感原型。",
+            "charStart": 13826,
+            "charEnd": 13905,
+            "contentHash": "c7215ece2df4ff92e3fd17e4d0d2c038b53d4c656101a6d853df2c1b8b3d2734",
+            "contextNote": "從微米演算法到控制論與模型物理邊界 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-ac6caa1a",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-5-9764a3",
+            "sectionTitle": "從微米演算法到控制論與模型物理邊界",
+            "paragraphIndex": 1,
+            "exactQuote": "在將這些洞見延伸至真實微生物生態與工程應用之前，我們也必須清楚標定本文推導與互動模擬器的物理適用邊界：",
+            "charStart": 14190,
+            "charEnd": 14241,
+            "contentHash": "ac6caa1a96acaecd8f6ce895bdc0e7e7518f6fb9f0647ad14e7d5c6bb4fc9821",
+            "contextNote": "從微米演算法到控制論與模型物理邊界 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-4632a6d8",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-5-9764a3",
+            "sectionTitle": "從微米演算法到控制論與模型物理邊界",
+            "paragraphIndex": 2,
+            "exactQuote": "1. **二維投影簡化與流體力學限制**：真實大腸桿菌游動於三維流體空間，受壁面流體剪力影響會出現圓弧軌跡，且翻滾後的轉向角並非完全均勻隨機（實測平均偏轉角約 $68^\\circ$ 左右，保有微弱前向延續性）。",
+            "charStart": 14295,
+            "charEnd": 14400,
+            "contentHash": "4632a6d86c1bb8ec922ac4f068d19f27b6efbb09b07f5f75f890dc17656c2d56",
+            "contextNote": "從微米演算法到控制論與模型物理邊界 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-26e2b559",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-5-9764a3",
+            "sectionTitle": "從微米演算法到控制論與模型物理邊界",
+            "paragraphIndex": 2,
+            "exactQuote": "本文互動模擬器採用二維簡化 Run-and-Tumble 泊松切換與雙葉記憶卷積積分模型，旨在清晰展現時間微分與積分回饋適應的物理原理，並非三維鞭毛流體力學（Elastohydrodynamics）全尺度模擬。",
+            "charStart": 14401,
+            "charEnd": 14506,
+            "contentHash": "26e2b559c336feb183429d6c21dc18ad58e650a7263dd14a7b68c5a8daa4622f",
+            "contextNote": "從微米演算法到控制論與模型物理邊界 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-046c45a0",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-5-9764a3",
+            "sectionTitle": "從微米演算法到控制論與模型物理邊界",
+            "paragraphIndex": 2,
+            "exactQuote": "2. **粗粒化受體與馬達模型**：真實 *E. coli* 細胞極區的數千個化學受體會組成高度協同的 Monod–Wyman–Changeux（MWC）感測晶格放大訊號，而鞭毛馬達環上約三十多個 FliM 蛋白亞基對 CheY-P 濃度也具備極陡峭的超敏（Ultrasensitive）Hill 響應。",
+            "charStart": 14507,
+            "charEnd": 14659,
+            "contentHash": "046c45a002d17d501dd69cb6e90ba323b6106d7809c0c2be89e0cfca314cb50a",
+            "contextNote": "從微米演算法到控制論與模型物理邊界 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-feb6040c",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-5-9764a3",
+            "sectionTitle": "從微米演算法到控制論與模型物理邊界",
+            "paragraphIndex": 2,
+            "exactQuote": "模擬器將這套極精細的分子協同開關簡化為平滑對數感測與單一狀態變數 $m(t)$，並忽略了單一細胞內個別蛋白質分子數稀少時所帶來的內在基因表現隨機性（Intrinsic Gene Expression Noise）。",
+            "charStart": 14660,
+            "charEnd": 14767,
+            "contentHash": "feb6040ccceedbd5a1ba37791c5645c64a9ed4387f2e1c99e6679348501b7d40",
+            "contextNote": "從微米演算法到控制論與模型物理邊界 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-6064dfc2",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-5-9764a3",
+            "sectionTitle": "從微米演算法到控制論與模型物理邊界",
+            "paragraphIndex": 2,
+            "exactQuote": "3. **靜態與理想化化學場假設**：真實環境中的化學引誘劑羽流往往伴隨微流體剪力、對流亂流撕裂以及細菌群體自身消耗養分所創造的動態行進波（Traveling Chemotactic Bands），這些多體消耗耦合效應不在本篇單一化學源梯度場的模擬範圍之內。",
+            "charStart": 14768,
+            "charEnd": 14897,
+            "contentHash": "6064dfc2570339809bf5abd5cd4682fb8e2130f08058df4bc2125a0891f49c73",
+            "contextNote": "從微米演算法到控制論與模型物理邊界 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-e21db1da",
+            "articleId": "art-bacterial-chemotaxis",
+            "sectionId": "sec-5-9764a3",
+            "sectionTitle": "從微米演算法到控制論與模型物理邊界",
+            "paragraphIndex": 3,
+            "exactQuote": "正因為看清了熱雜訊、擴散隨機性與蛋白質濃度的限制，我們更能體會兩微米生命那套「先跑再比、比完歸零」的時間微積分，在自然演化上究竟有多麼優雅而節制。",
+            "charStart": 15500,
+            "charEnd": 15573,
+            "contentHash": "e21db1dac6e3235ade5687b849663e8260bc8c6be41c75a8fa818a285d2975a0",
+            "contextNote": "從微米演算法到控制論與模型物理邊界 · 第 4 段"
+          }
+        ],
+        "formulas": [],
+        "interactiveComponentId": null
+      }
+    ],
+    "totalWordCount": 7882,
+    "lastIndexedAt": "2026-11-18T01:11:14.148Z"
   },
   {
     "id": "art-bcs-superconductivity",
@@ -4075,7 +5113,7 @@
       }
     ],
     "totalWordCount": 4019,
-    "lastIndexedAt": "2026-11-17T01:09:00.866Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.160Z"
   },
   {
     "id": "art-bell-inequality-entanglement",
@@ -4815,7 +5853,7 @@
       }
     ],
     "totalWordCount": 4130,
-    "lastIndexedAt": "2026-11-17T01:09:00.868Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.162Z"
   },
   {
     "id": "art-bz-chemical-oscillator",
@@ -5336,7 +6374,7 @@
       }
     ],
     "totalWordCount": 3103,
-    "lastIndexedAt": "2026-11-17T01:09:00.870Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.164Z"
   },
   {
     "id": "art-biomolecular-condensates",
@@ -6138,7 +7176,7 @@
       }
     ],
     "totalWordCount": 5300,
-    "lastIndexedAt": "2026-11-17T01:09:00.872Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.165Z"
   },
   {
     "id": "art-biomolecular-diffusion-af3",
@@ -6611,7 +7649,7 @@
       }
     ],
     "totalWordCount": 3276,
-    "lastIndexedAt": "2026-11-17T01:09:00.874Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.168Z"
   },
   {
     "id": "art-bismuth-sulfide-photovoltaics",
@@ -7243,7 +8281,7 @@
       }
     ],
     "totalWordCount": 2906,
-    "lastIndexedAt": "2026-11-17T01:09:00.875Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.170Z"
   },
   {
     "id": "art-boson-sampling-quantum",
@@ -7959,7 +8997,869 @@
       }
     ],
     "totalWordCount": 3703,
-    "lastIndexedAt": "2026-11-17T01:09:00.878Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.172Z"
+  },
+  {
+    "id": "art-bridge-rna-is110",
+    "slug": "bridge-rna-is110-programmable-recombination",
+    "version": 1,
+    "publishedDate": "2026-11-18",
+    "status": "published",
+    "editorialCategory": "journal_interpretation",
+    "narrativeStyle": "structural_blueprint",
+    "format": "depth",
+    "formatBadgeText": "期刊解讀",
+    "title": "IS110 橋接核糖核酸（Bridge RNA）：單一步驟可編程基因組重排的分子架構",
+    "subtitle": "從原核生物跳躍基因的自我環化密碼到雙二聚體突觸複合體：兩組獨立 RNA 結合環如何不仰賴宿主斷裂修復即重寫大片段 DNA 拓撲？",
+    "summary": "2024 年刊登於《Nature》的背靠背研究揭示，原核生物 IS110 家族轉位子（以大腸桿菌 IS621 為代表）在環化切除後會轉錄出一類非編碼「橋接核糖核酸（Bridge RNA, bRNA）」。不同於僅指定單一目標切點的 CRISPR-Cas9，橋接 RNA 擁有目標結合環（TBL）與供體結合環（DBL）兩組可獨立編程的內部環，能將兩段任意 DNA 同時牽引至雙二聚體突觸複合體的複合 RuvC–Tnp 催化核心，透過催化性絲胺酸與 5'-磷酸絲胺酸共價中間體避開游離雙股斷裂，於單一步驟完成插入、切除與倒位。",
+    "topicIds": [
+      "topic-molecular-biology",
+      "topic-synthetic-biology"
+    ],
+    "tags": [
+      "橋接核糖核酸",
+      "Bridge RNA",
+      "IS110",
+      "IS621",
+      "基因組重排",
+      "Cryo-EM",
+      "霍利迪交叉"
+    ],
+    "difficultyLevel": "intermediate",
+    "interactiveComponent": "BridgeRnaRecombinaseSimulator",
+    "interactiveType": "rna_guided_recombination",
+    "estimatedReadTimeMinutes": 14,
+    "leadParagraph": "長久以來，分子生物學家想要在活體基因組中搬移、刪除或翻轉數千個鹼基對的 DNA 片段，總是受困於工具的「單手限制」：CRISPR-Cas9 像一把由單一導航晶片引導的剪刀，切斷目標雙螺旋後卻只能將斷口交給宿主細胞的修復工人善後。2024 年發表的 IS110 橋接核糖核酸（Bridge RNA）則展現了一套截然不同的立體藍圖——它自帶目標結合環（TBL）與供體結合環（DBL）兩對可更換插頭，將兩條 DNA 同步扣進四聚體突觸複合體，在單一步驟內無痕完成插入、切除與倒位。",
+    "quoteLead": "與其拿剪刀隨機剪開雙鏈後寄望細胞修繕工人補救，IS110 橋接 RNA 更像一座自帶雙頭插槽的分子立體拉鍊交換機，用絲胺酸共價鎖住斷端並直接互換基因組編碼。",
+    "authors": [
+      {
+        "name": "MIRARI 分子生物與合成生物學組",
+        "role": "科學特約撰稿"
+      }
+    ],
+    "references": [
+      {
+        "id": "ref-durrant-2024-nature",
+        "citation": "Durrant, M. G., Perry, N. T., Pai, J. J., Jangid, A. R., Athukoralage, J. S., Hiraizumi, M., McSpedon, J. P., Pawluk, A., Nishimasu, H., Konermann, S., & Hsu, P. D. (2024). \"Bridge RNAs direct programmable recombination of target and donor DNA.\" Nature, 630(8018), 984–993.",
+        "doi": "10.1038/s41586-024-07552-4"
+      },
+      {
+        "id": "ref-hiraizumi-2024-nature",
+        "citation": "Hiraizumi, M., Perry, N. T., Durrant, M. G., Soma, T., Nagahata, N., Okazaki, S., Athukoralage, J. S., Isayama, Y., Pai, J. J., Pawluk, A., Konermann, S., Yamashita, K., Hsu, P. D., & Nishimasu, H. (2024). \"Structural mechanism of bridge RNA-guided recombination.\" Nature, 630(8018), 994–1002.",
+        "doi": "10.1038/s41586-024-07570-2"
+      }
+    ],
+    "contentHash": "1ae0966dffde558491f8ba3e6e9467ab7b641f749d0bfb5e8c9f2e133fd5ed89",
+    "sections": [
+      {
+        "id": "sec-1-bf3d6d",
+        "title": "一、單點剪刀的極限：為何大片段 DNA 重排需要雙手協作",
+        "level": 2,
+        "paragraphs": [
+          "在過去十餘年的基因編輯浪潮中，科學家對 DNA 的操縱能力大多圍繞著「單一靶點識別」演進。以廣為人知的 **CRISPR-Cas9** 為例，它透過單一嚮導 RNA（sgRNA）鎖定基因組上的一處目標序列，並在該處切斷兩條 DNA 骨架形成**雙股斷裂（Double-Strand Break, DSB）**。這套機制猶如拿一把精準的剪刀在紙張上剪開缺口，至於缺口究竟是胡亂黏合、還是照著外源模板修補，則完全取決於宿主細胞內部的非同源末端接合（NHEJ）或同源導向修復（HDR）工人。",
+          "後續問世的**先導編輯（Prime Editing）**雖然大幅降低了對雙股斷裂的依賴，改用缺口酶搭配逆轉錄酶原位「逐字改寫」局部字母，但它受限於逆轉錄模板長度，主要擅長單鹼基替換與數十鹼基對規模的小型編輯。一旦工程目標擴大到**將數千個鹼基對的功能基因盒完整插入特定位點、把染色體上一段多餘區段精準切除，或是將兩個調控模組間的序列原地倒位 $180^\\circ$**，傳統單點導航工具往往力不從心——若只靠兩側各剪一刀再等待宿主隨機縫合，極易引發不可預測的缺失或染色體混亂。",
+          "過去分子生物學家想要執行這類大片段重組，往往只能借用 Cre-loxP 或 Bxb1 等位點特異性重組酶（Site-specific Recombinases）。這些酵素雖然能直接互換兩條 DNA，卻像被焊死的專用鑰匙：它們只能辨識天然演化固定的特定 DNA 序列，無法像 CRISPR 那樣僅靠更換一段 RNA 密碼就隨心所欲改指新的基因組位址。",
+          "2024 年 6 月，Arc Institute 與東京大學研究團隊在《Nature》發表的兩篇背靠背論文徹底改寫了這張工程藍圖。Durrant 等人（2024）在原核生物最常見的轉位子家族之一——**IS110 家族**中（以大腸桿菌的 **IS621** 為核心模型），發現這群看似樸素的跳躍基因早已演化出世上首見的**雙特異性 RNA 引導重組系統**。有別於拿剪刀隨機剪開後交給修繕工人，IS110 像是一座自帶兩對可更換插頭的立體拉鍊交換機，同時扣住目標與供體兩條 DNA 鏈並直接完成無痕交換。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-d2be934e",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-1-bf3d6d",
+            "sectionTitle": "一、單點剪刀的極限：為何大片段 DNA 重排需要雙手協作",
+            "paragraphIndex": 0,
+            "exactQuote": "在過去十餘年的基因編輯浪潮中，科學家對 DNA 的操縱能力大多圍繞著「單一靶點識別」演進。",
+            "charStart": 0,
+            "charEnd": 45,
+            "contentHash": "d2be934e740148973d242acc4abaa7216276bdb536a8fb12a9f29d8933c3e1a0",
+            "contextNote": "一、單點剪刀的極限：為何大片段 DNA 重排需要雙手協作 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-f9bd4bc8",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-1-bf3d6d",
+            "sectionTitle": "一、單點剪刀的極限：為何大片段 DNA 重排需要雙手協作",
+            "paragraphIndex": 0,
+            "exactQuote": "以廣為人知的 **CRISPR-Cas9** 為例，它透過單一嚮導 RNA（sgRNA）鎖定基因組上的一處目標序列，並在該處切斷兩條 DNA 骨架形成**雙股斷裂（Double-Strand Break, DSB）**。",
+            "charStart": 46,
+            "charEnd": 156,
+            "contentHash": "f9bd4bc8e407df4e69a1247b88721ced21a51c68cee187a92908c47c3767e81a",
+            "contextNote": "一、單點剪刀的極限：為何大片段 DNA 重排需要雙手協作 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-24796f44",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-1-bf3d6d",
+            "sectionTitle": "一、單點剪刀的極限：為何大片段 DNA 重排需要雙手協作",
+            "paragraphIndex": 0,
+            "exactQuote": "這套機制猶如拿一把精準的剪刀在紙張上剪開缺口，至於缺口究竟是胡亂黏合、還是照著外源模板修補，則完全取決於宿主細胞內部的非同源末端接合（NHEJ）或同源導向修復（HDR）工人。",
+            "charStart": 157,
+            "charEnd": 244,
+            "contentHash": "24796f44c8f1b84f82ac81752bf29546cab43e9065ac238b80897c1c47386339",
+            "contextNote": "一、單點剪刀的極限：為何大片段 DNA 重排需要雙手協作 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-1d06cd13",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-1-bf3d6d",
+            "sectionTitle": "一、單點剪刀的極限：為何大片段 DNA 重排需要雙手協作",
+            "paragraphIndex": 1,
+            "exactQuote": "後續問世的**先導編輯（Prime Editing）**雖然大幅降低了對雙股斷裂的依賴，改用缺口酶搭配逆轉錄酶原位「逐字改寫」局部字母，但它受限於逆轉錄模板長度，主要擅長單鹼基替換與數十鹼基對規模的小型編輯。",
+            "charStart": 489,
+            "charEnd": 593,
+            "contentHash": "1d06cd1362bfd8a963de7e10fe43411fde25f974849db259452abb444da501a2",
+            "contextNote": "一、單點剪刀的極限：為何大片段 DNA 重排需要雙手協作 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-0f9a1bee",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-1-bf3d6d",
+            "sectionTitle": "一、單點剪刀的極限：為何大片段 DNA 重排需要雙手協作",
+            "paragraphIndex": 1,
+            "exactQuote": "一旦工程目標擴大到**將數千個鹼基對的功能基因盒完整插入特定位點、把染色體上一段多餘區段精準切除，或是將兩個調控模組間的序列原地倒位 $180^\\circ$**，傳統單點導航工具往往力不從心——若只靠兩側各剪一刀再等待宿主隨機縫合，極易引發不可預測的缺失或染色體混亂。",
+            "charStart": 594,
+            "charEnd": 728,
+            "contentHash": "0f9a1beeb29be926cbaecef64cea1f9c9251982c74b2646afb14ba927440469a",
+            "contextNote": "一、單點剪刀的極限：為何大片段 DNA 重排需要雙手協作 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-a9f8fa9a",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-1-bf3d6d",
+            "sectionTitle": "一、單點剪刀的極限：為何大片段 DNA 重排需要雙手協作",
+            "paragraphIndex": 2,
+            "exactQuote": "過去分子生物學家想要執行這類大片段重組，往往只能借用 Cre-loxP 或 Bxb1 等位點特異性重組酶（Site-specific Recombinases）。",
+            "charStart": 969,
+            "charEnd": 1050,
+            "contentHash": "a9f8fa9a6ef400941ab6886645122b10806323e850292c065fee9787dac6917a",
+            "contextNote": "一、單點剪刀的極限：為何大片段 DNA 重排需要雙手協作 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-a243f643",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-1-bf3d6d",
+            "sectionTitle": "一、單點剪刀的極限：為何大片段 DNA 重排需要雙手協作",
+            "paragraphIndex": 2,
+            "exactQuote": "這些酵素雖然能直接互換兩條 DNA，卻像被焊死的專用鑰匙：它們只能辨識天然演化固定的特定 DNA 序列，無法像 CRISPR 那樣僅靠更換一段 RNA 密碼就隨心所欲改指新的基因組位址。",
+            "charStart": 1051,
+            "charEnd": 1144,
+            "contentHash": "a243f6431e8e02ecd0ed5968a05f844c0bd26061ecc54afbc8bdd20cbab4f993",
+            "contextNote": "一、單點剪刀的極限：為何大片段 DNA 重排需要雙手協作 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-1ac73b45",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-1-bf3d6d",
+            "sectionTitle": "一、單點剪刀的極限：為何大片段 DNA 重排需要雙手協作",
+            "paragraphIndex": 3,
+            "exactQuote": "2024 年 6 月，Arc Institute 與東京大學研究團隊在《Nature》發表的兩篇背靠背論文徹底改寫了這張工程藍圖。",
+            "charStart": 1321,
+            "charEnd": 1386,
+            "contentHash": "1ac73b45088f4fbd3339fcf4ea120551c70e6ca747ea012fd81dc703d99b7f36",
+            "contextNote": "一、單點剪刀的極限：為何大片段 DNA 重排需要雙手協作 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-7dcb1c74",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-1-bf3d6d",
+            "sectionTitle": "一、單點剪刀的極限：為何大片段 DNA 重排需要雙手協作",
+            "paragraphIndex": 3,
+            "exactQuote": "Durrant 等人（2024）在原核生物最常見的轉位子家族之一——**IS110 家族**中（以大腸桿菌的 **IS621** 為核心模型），發現這群看似樸素的跳躍基因早已演化出世上首見的**雙特異性 RNA 引導重組系統**。",
+            "charStart": 1387,
+            "charEnd": 1502,
+            "contentHash": "7dcb1c74148fa3ee6e97b957a372ea25281dd7b99014a1ddcfb94c853cbcdf24",
+            "contextNote": "一、單點剪刀的極限：為何大片段 DNA 重排需要雙手協作 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-63df9102",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-1-bf3d6d",
+            "sectionTitle": "一、單點剪刀的極限：為何大片段 DNA 重排需要雙手協作",
+            "paragraphIndex": 3,
+            "exactQuote": "有別於拿剪刀隨機剪開後交給修繕工人，IS110 像是一座自帶兩對可更換插頭的立體拉鍊交換機，同時扣住目標與供體兩條 DNA 鏈並直接完成無痕交換。",
+            "charStart": 1503,
+            "charEnd": 1576,
+            "contentHash": "63df91021b262a83f322b1b29a7388edf0d5dfb5fd14e1906db6e5eb789ad086",
+            "contextNote": "一、單點剪刀的極限：為何大片段 DNA 重排需要雙手協作 · 第 4 段"
+          }
+        ],
+        "formulas": [],
+        "interactiveComponentId": null
+      },
+      {
+        "id": "sec-2-ad582f",
+        "title": "二、雙特異性橋接核糖核酸：TBL 與 DBL 的可編程雙環藍圖",
+        "level": 2,
+        "paragraphs": [
+          "要解讀這座交換機的設計圖，得先從 IS110 轉位子的奇特生命週期看起。不同於多數依賴末端反向重複序列的跳躍基因，IS110 家族在從宿主染色體切離時，會將自身頭尾相接形成一個**環狀 DNA 中間體（Circular Intermediate）**。神奇的事情就發生在這道環化接縫處：當環狀中間體閉合時，原本分別位於轉位子兩端的非編碼序列恰好拼成一組完整啟動子，進而轉錄出一條長度約一百數十個核苷酸的非編碼 RNA——研究團隊將其命名為**橋接核糖核酸（Bridge RNA, bRNA）**（Durrant et al., 2024）。",
+          "這條橋接 RNA 摺疊出極為工整的二級結構，核心包含兩個彼此獨立、皆透過華生－克里克（Watson–Crick）鹼基配對與 DNA 互動的內部環（Internal Loops）：",
+          "1. **目標結合環（Target-Binding Loop, TBL）**：負責掃描並配對宿主基因組上的**目標 DNA 位點（Target DNA）**。它像左側的可更換插頭，決定「要將負載送到基因組的哪個門牌號碼」。\n2. **供體結合環（Donor-Binding Loop, DBL）**：負責抓握並配對即將參與交換的**供體 DNA 位點（Donor DNA）**。它像右側的另一枚獨立插頭，決定「要把哪一段貨櫃或伴侶序列拉進交換站」。",
+          "在熱力學架構上，橋接 RNA 引導重組能否順利跨過活化門檻，取決於 TBL 與 DBL 兩處獨立配對自由能與空間構象張力的總和：",
+          "$$\\Delta G_{\\text{synaptic}} = \\Delta G_{\\text{TBL}} + \\Delta G_{\\text{DBL}} + \\Delta G_{\\text{strain}}$$",
+          "其中 $\\Delta G_{\\text{TBL}}$ 與 $\\Delta G_{\\text{DBL}}$ 分別代表目標結合環與供體結合環和各自互補 DNA 股雜交時釋放的負自由能，而 $\\Delta G_{\\text{strain}}$ 則反映兩條雙螺旋被彎折牽引進蛋白質口袋所需的拓撲應變能。這種「雙輸入與門（AND-Gate）」設計意味著重組酶必須同時獲得兩側的精確配對信號，才會組裝出完整的催化反應中心；只要任一結合環出現數個鹼基錯配，突觸重組機率便會急遽下滑。",
+          "更關鍵的是，僅僅透過重新編寫 TBL 與 DBL 環內的鹼基序列，並搭配兩處重組位點在空間或線性基因組上的相對方向，IS110 系統便能在完全不仰賴宿主細胞雙股斷裂修復途徑的前提下，於單一步驟內執行三種截然不同的大型基因組重排：",
+          "- **插入（Insertion）**：當供體位於獨立環狀質體上且核心位點同向對接時，bRNA 同時鎖定基因組目標與環狀供體，一次性將整段供體序列無痕嵌入基因組。\n- **切除（Excision）**：當同一條 DNA 分子上存在兩個呈現同向排列（Direct Repeat）的重組位點時，TBL 與 DBL 分別扣住兩端位點，將中間夾帶的整段 DNA 環出並釋放，留下乾淨接合的染色體。\n- **倒位（Inversion）**：當同一條 DNA 分子上的兩個重組位點呈現反向排列（Inverted Repeat）時，雙環引導的鏈交換會把中間夾帶的整段基因區段原地翻轉 $180^\\circ$，精準切換基因閱讀方向或啟動子開關。",
+          "你可以在下方的互動模擬器中切換這三種重排拓撲模式，並親手調整 TBL 與 DBL 結合環的鹼基錯配數、相對配向與四階段反應進度，直接觀察雙特異性配對自由能如何門控整個突觸複合體的組裝與無痕換股。",
+          "<InteractiveExperiment id=\"BridgeRnaRecombinaseSimulator\" />"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-25026263",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-2-ad582f",
+            "sectionTitle": "二、雙特異性橋接核糖核酸：TBL 與 DBL 的可編程雙環藍圖",
+            "paragraphIndex": 0,
+            "exactQuote": "要解讀這座交換機的設計圖，得先從 IS110 轉位子的奇特生命週期看起。",
+            "charStart": 1832,
+            "charEnd": 1868,
+            "contentHash": "25026263fa614c8b6c2b3a85cc5db22a30608468f7f3ac9646d8a6ebb2a70293",
+            "contextNote": "二、雙特異性橋接核糖核酸：TBL 與 DBL 的可編程雙環藍圖 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-2ce0899d",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-2-ad582f",
+            "sectionTitle": "二、雙特異性橋接核糖核酸：TBL 與 DBL 的可編程雙環藍圖",
+            "paragraphIndex": 0,
+            "exactQuote": "不同於多數依賴末端反向重複序列的跳躍基因，IS110 家族在從宿主染色體切離時，會將自身頭尾相接形成一個**環狀 DNA 中間體（Circular Intermediate）**。",
+            "charStart": 1869,
+            "charEnd": 1959,
+            "contentHash": "2ce0899d14b8a8ac09501386c96f63c270404727865f5094cfc2eb75a76fdf95",
+            "contextNote": "二、雙特異性橋接核糖核酸：TBL 與 DBL 的可編程雙環藍圖 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-18561be3",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-2-ad582f",
+            "sectionTitle": "二、雙特異性橋接核糖核酸：TBL 與 DBL 的可編程雙環藍圖",
+            "paragraphIndex": 0,
+            "exactQuote": "神奇的事情就發生在這道環化接縫處：當環狀中間體閉合時，原本分別位於轉位子兩端的非編碼序列恰好拼成一組完整啟動子，進而轉錄出一條長度約一百數十個核苷酸的非編碼 RNA——研究團隊將其命名為**橋接核糖核酸（Bridge RNA, bRNA）**（Durrant et al., 2024）。",
+            "charStart": 1960,
+            "charEnd": 2104,
+            "contentHash": "18561be303b297e2369435727c581b3931017e0651f73fb67f088d07dfd3b214",
+            "contextNote": "二、雙特異性橋接核糖核酸：TBL 與 DBL 的可編程雙環藍圖 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-faf0a262",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-2-ad582f",
+            "sectionTitle": "二、雙特異性橋接核糖核酸：TBL 與 DBL 的可編程雙環藍圖",
+            "paragraphIndex": 1,
+            "exactQuote": "這條橋接 RNA 摺疊出極為工整的二級結構，核心包含兩個彼此獨立、皆透過華生－克里克（Watson–Crick）鹼基配對與 DNA 互動的內部環（Internal Loops）：",
+            "charStart": 2377,
+            "charEnd": 2466,
+            "contentHash": "faf0a2628221b1c54928783a691edfe6ce3015066df760b5ac4f20e234afc654",
+            "contextNote": "二、雙特異性橋接核糖核酸：TBL 與 DBL 的可編程雙環藍圖 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-345c1e5f",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-2-ad582f",
+            "sectionTitle": "二、雙特異性橋接核糖核酸：TBL 與 DBL 的可編程雙環藍圖",
+            "paragraphIndex": 2,
+            "exactQuote": "1. **目標結合環（Target-Binding Loop, TBL）**：負責掃描並配對宿主基因組上的**目標 DNA 位點（Target DNA）**。",
+            "charStart": 2558,
+            "charEnd": 2637,
+            "contentHash": "345c1e5f228ac639fde552fc55e3ed441045076c967b978f4c049cfcb3da6208",
+            "contextNote": "二、雙特異性橋接核糖核酸：TBL 與 DBL 的可編程雙環藍圖 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-8add49b5",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-2-ad582f",
+            "sectionTitle": "二、雙特異性橋接核糖核酸：TBL 與 DBL 的可編程雙環藍圖",
+            "paragraphIndex": 2,
+            "exactQuote": "它像左側的可更換插頭，決定「要將負載送到基因組的哪個門牌號碼」。",
+            "charStart": 2638,
+            "charEnd": 2670,
+            "contentHash": "8add49b53d0a383113ebaca979fabd97d36de23be1480ad92cff09584dccbed6",
+            "contextNote": "二、雙特異性橋接核糖核酸：TBL 與 DBL 的可編程雙環藍圖 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-95062140",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-2-ad582f",
+            "sectionTitle": "二、雙特異性橋接核糖核酸：TBL 與 DBL 的可編程雙環藍圖",
+            "paragraphIndex": 2,
+            "exactQuote": "2. **供體結合環（Donor-Binding Loop, DBL）**：負責抓握並配對即將參與交換的**供體 DNA 位點（Donor DNA）**。",
+            "charStart": 2671,
+            "charEnd": 2748,
+            "contentHash": "950621405184c4430d13c1e0dad35254c11cd0d3863d4ca24a9695cba527caeb",
+            "contextNote": "二、雙特異性橋接核糖核酸：TBL 與 DBL 的可編程雙環藍圖 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-f620c8d4",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-2-ad582f",
+            "sectionTitle": "二、雙特異性橋接核糖核酸：TBL 與 DBL 的可編程雙環藍圖",
+            "paragraphIndex": 2,
+            "exactQuote": "它像右側的另一枚獨立插頭，決定「要把哪一段貨櫃或伴侶序列拉進交換站」。",
+            "charStart": 2749,
+            "charEnd": 2784,
+            "contentHash": "f620c8d4914c4e58b2e540ef1c4ffe645003f3b2e28ce2152c74610d1f9ec845",
+            "contextNote": "二、雙特異性橋接核糖核酸：TBL 與 DBL 的可編程雙環藍圖 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-19fe5384",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-2-ad582f",
+            "sectionTitle": "二、雙特異性橋接核糖核酸：TBL 與 DBL 的可編程雙環藍圖",
+            "paragraphIndex": 3,
+            "exactQuote": "在熱力學架構上，橋接 RNA 引導重組能否順利跨過活化門檻，取決於 TBL 與 DBL 兩處獨立配對自由能與空間構象張力的總和：",
+            "charStart": 3011,
+            "charEnd": 3075,
+            "contentHash": "19fe538442f50c7b98da82084ef21dc8eb705afec291762785d111cca2faf660",
+            "contextNote": "二、雙特異性橋接核糖核酸：TBL 與 DBL 的可編程雙環藍圖 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-d9d13f81",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-2-ad582f",
+            "sectionTitle": "二、雙特異性橋接核糖核酸：TBL 與 DBL 的可編程雙環藍圖",
+            "paragraphIndex": 5,
+            "exactQuote": "其中 $\\Delta G_{\\text{TBL}}$ 與 $\\Delta G_{\\text{DBL}}$ 分別代表目標結合環與供體結合環和各自互補 DNA 股雜交時釋放的負自由能，而 $\\Delta G_{\\text{strain}}$ 則反映兩條雙螺旋被彎折牽引進蛋白質口袋所需的拓撲應變能。",
+            "charStart": 3142,
+            "charEnd": 3289,
+            "contentHash": "d9d13f81d2acb3a1b4323421c726d7968a0060d53d63fcc2e238be192dd71715",
+            "contextNote": "二、雙特異性橋接核糖核酸：TBL 與 DBL 的可編程雙環藍圖 · 第 6 段"
+          },
+          {
+            "sentenceId": "sent-15299a1d",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-2-ad582f",
+            "sectionTitle": "二、雙特異性橋接核糖核酸：TBL 與 DBL 的可編程雙環藍圖",
+            "paragraphIndex": 5,
+            "exactQuote": "這種「雙輸入與門（AND-Gate）」設計意味著重組酶必須同時獲得兩側的精確配對信號，才會組裝出完整的催化反應中心；只要任一結合環出現數個鹼基錯配，突觸重組機率便會急遽下滑。",
+            "charStart": 3290,
+            "charEnd": 3377,
+            "contentHash": "15299a1d50555fa05d8396f2bce6b172d17669d9d97fe39e929743b5f08f8676",
+            "contextNote": "二、雙特異性橋接核糖核酸：TBL 與 DBL 的可編程雙環藍圖 · 第 6 段"
+          },
+          {
+            "sentenceId": "sent-84b8ac57",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-2-ad582f",
+            "sectionTitle": "二、雙特異性橋接核糖核酸：TBL 與 DBL 的可編程雙環藍圖",
+            "paragraphIndex": 6,
+            "exactQuote": "更關鍵的是，僅僅透過重新編寫 TBL 與 DBL 環內的鹼基序列，並搭配兩處重組位點在空間或線性基因組上的相對方向，IS110 系統便能在完全不仰賴宿主細胞雙股斷裂修復途徑的前提下，於單一步驟內執行三種截然不同的大型基因組重排：",
+            "charStart": 3614,
+            "charEnd": 3728,
+            "contentHash": "84b8ac57009f14cad79071be545fcd016574de85c1ae3033c2417843ed764536",
+            "contextNote": "二、雙特異性橋接核糖核酸：TBL 與 DBL 的可編程雙環藍圖 · 第 7 段"
+          },
+          {
+            "sentenceId": "sent-1e883c39",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-2-ad582f",
+            "sectionTitle": "二、雙特異性橋接核糖核酸：TBL 與 DBL 的可編程雙環藍圖",
+            "paragraphIndex": 7,
+            "exactQuote": "- **插入（Insertion）**：當供體位於獨立環狀質體上且核心位點同向對接時，bRNA 同時鎖定基因組目標與環狀供體，一次性將整段供體序列無痕嵌入基因組。",
+            "charStart": 3845,
+            "charEnd": 3926,
+            "contentHash": "1e883c39accfaac77e7415c62bb3881d465c0f0ca0d09b29d1221f40f2326f75",
+            "contextNote": "二、雙特異性橋接核糖核酸：TBL 與 DBL 的可編程雙環藍圖 · 第 8 段"
+          },
+          {
+            "sentenceId": "sent-ad17c5e9",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-2-ad582f",
+            "sectionTitle": "二、雙特異性橋接核糖核酸：TBL 與 DBL 的可編程雙環藍圖",
+            "paragraphIndex": 7,
+            "exactQuote": "- **切除（Excision）**：當同一條 DNA 分子上存在兩個呈現同向排列（Direct Repeat）的重組位點時，TBL 與 DBL 分別扣住兩端位點，將中間夾帶的整段 DNA 環出並釋放，留下乾淨接合的染色體。",
+            "charStart": 3927,
+            "charEnd": 4039,
+            "contentHash": "ad17c5e91e415fcb3801f9d71719e59a9ce1a1f46272422ecfc00338e4de9413",
+            "contextNote": "二、雙特異性橋接核糖核酸：TBL 與 DBL 的可編程雙環藍圖 · 第 8 段"
+          },
+          {
+            "sentenceId": "sent-14a8f2bc",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-2-ad582f",
+            "sectionTitle": "二、雙特異性橋接核糖核酸：TBL 與 DBL 的可編程雙環藍圖",
+            "paragraphIndex": 7,
+            "exactQuote": "- **倒位（Inversion）**：當同一條 DNA 分子上的兩個重組位點呈現反向排列（Inverted Repeat）時，雙環引導的鏈交換會把中間夾帶的整段基因區段原地翻轉 $180^\\circ$，精準切換基因閱讀方向或啟動子開關。",
+            "charStart": 4040,
+            "charEnd": 4159,
+            "contentHash": "14a8f2bc02d44c6d0924985149ee2ac3aaab081e940dd8ac57778969f85f8973",
+            "contextNote": "二、雙特異性橋接核糖核酸：TBL 與 DBL 的可編程雙環藍圖 · 第 8 段"
+          },
+          {
+            "sentenceId": "sent-b93d2820",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-2-ad582f",
+            "sectionTitle": "二、雙特異性橋接核糖核酸：TBL 與 DBL 的可編程雙環藍圖",
+            "paragraphIndex": 8,
+            "exactQuote": "你可以在下方的互動模擬器中切換這三種重排拓撲模式，並親手調整 TBL 與 DBL 結合環的鹼基錯配數、相對配向與四階段反應進度，直接觀察雙特異性配對自由能如何門控整個突觸複合體的組裝與無痕換股。",
+            "charStart": 4476,
+            "charEnd": 4573,
+            "contentHash": "b93d2820ac6acc60a5605297b9b2515174648ccd21cc963e87e853b7edf7e946",
+            "contextNote": "二、雙特異性橋接核糖核酸：TBL 與 DBL 的可編程雙環藍圖 · 第 9 段"
+          }
+        ],
+        "formulas": [
+          "$$\\Delta G_{\\text{synaptic}} = \\Delta G_{\\text{TBL}} + \\Delta G_{\\text{DBL}} + \\Delta G_{\\text{strain}}$$"
+        ],
+        "interactiveComponentId": "BridgeRnaRecombinaseSimulator"
+      },
+      {
+        "id": "sec-3-47c353",
+        "title": "三、Cryo-EM 結構藍圖：雙二聚體突觸複合體與複合 RuvC–Tnp 核心",
+        "level": 2,
+        "paragraphs": [
+          "知道橋接 RNA 能用雙環同時抓握兩條 DNA 後，下一個工程謎題隨之浮現：**單靠一條約兩百個胺基酸的小型 IS621 重組酶蛋白，怎麼可能同時容納這麼複雜的 RNA 雙環與兩條雙股 DNA，又如何避免在只抓到一條 DNA 時就誤剪染色體？**",
+          "同期刊登於《Nature》的冷凍電鏡（Cryo-EM）結構解析工作，由 Hiraizumi 等人（2024）在原子解析度層級揭曉了這座分子交換機的裝配秘密。研究團隊捕捉了 IS621 重組酶與橋接 RNA、目標 DNA 及供體 DNA 在反應循環中的多個關鍵構造狀態（涵蓋捕獲前態、切割中間態與鏈交換後態），發現真正的催化機器並不是單體或單純雙體，而是由**四個 IS621 重組酶單體**共同搭起的**雙二聚體突觸複合體（Tetrameric / Dimer-of-Dimers Synaptic Complex）**。",
+          "在這個四聚體藍圖中，分工極為嚴明：",
+          "1. **目標－TBL 二聚體**：其中兩個 IS621 單體組成的二聚體專門包覆橋接 RNA 的 TBL 環以及與之互補的目標 DNA 雙螺旋。\n2. **供體－DBL 二聚體**：另外兩個 IS621 單體組成的二聚體則專門抓握橋接 RNA 的 DBL 環以及供體 DNA 雙螺旋。\n3. **跨二聚體複合催化位點（Composite RuvC–Tnp Catalytic Site）**：每一個 IS621 單體本身只攜帶不完整的催化零件——一部分位於氨基端的 RuvC 樣結構域，另一部分則位於羧基端的 Tnp（轉位酶）螺旋結構域（攜帶著決定性的**催化性絲胺酸殘基，Catalytic Serine**）。當單一二聚體只結合單側 DNA 與單側 RNA 環時，催化口袋並未拼合完成，因此絕對不會擅自下刀。唯有當「目標－TBL 二聚體」與「供體－DBL 二聚體」在空間中彼此靠攏對接成四聚體突觸複合體，跨越兩對二聚體界面的 RuvC 結構域與 Tnp 結構域才會如同齒輪咬合般組裝出完整的複合催化位點。",
+          "這套跨界面拼合架構從根本上解釋了前述的雙特異性門控現象：橋接 RNA 的主幹就像一條精密的分子絞鏈，只有當 TBL 與 DBL 兩端的鹼基配對雙雙穩定就位、把兩組二聚體拉到正確距離與夾角時，複合 RuvC–Tnp 催化核心才會正式通電啟動。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-6e5af00f",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-3-47c353",
+            "sectionTitle": "三、Cryo-EM 結構藍圖：雙二聚體突觸複合體與複合 RuvC–Tnp 核心",
+            "paragraphIndex": 0,
+            "exactQuote": "知道橋接 RNA 能用雙環同時抓握兩條 DNA 後，下一個工程謎題隨之浮現：**單靠一條約兩百個胺基酸的小型 IS621 重組酶蛋白，怎麼可能同時容納這麼複雜的 RNA 雙環與兩條雙股 DNA，又如何避免在只抓到一條 DNA 時就誤剪染色體？**",
+            "charStart": 4673,
+            "charEnd": 4796,
+            "contentHash": "6e5af00f7c34ddb3a8361628635ca6b9eb1f694d904a425913318bd27601d840",
+            "contextNote": "三、Cryo-EM 結構藍圖：雙二聚體突觸複合體與複合 RuvC–Tnp 核心 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-f312c80f",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-3-47c353",
+            "sectionTitle": "三、Cryo-EM 結構藍圖：雙二聚體突觸複合體與複合 RuvC–Tnp 核心",
+            "paragraphIndex": 1,
+            "exactQuote": "同期刊登於《Nature》的冷凍電鏡（Cryo-EM）結構解析工作，由 Hiraizumi 等人（2024）在原子解析度層級揭曉了這座分子交換機的裝配秘密。",
+            "charStart": 4922,
+            "charEnd": 5000,
+            "contentHash": "f312c80f908839e26037f07fa038d72d4b98e96beeb73f471890002609ef18b2",
+            "contextNote": "三、Cryo-EM 結構藍圖：雙二聚體突觸複合體與複合 RuvC–Tnp 核心 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-7a009a91",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-3-47c353",
+            "sectionTitle": "三、Cryo-EM 結構藍圖：雙二聚體突觸複合體與複合 RuvC–Tnp 核心",
+            "paragraphIndex": 1,
+            "exactQuote": "研究團隊捕捉了 IS621 重組酶與橋接 RNA、目標 DNA 及供體 DNA 在反應循環中的多個關鍵構造狀態（涵蓋捕獲前態、切割中間態與鏈交換後態），發現真正的催化機器並不是單體或單純雙體，而是由**四個 IS621 重組酶單體**共同搭起的**雙二聚體突觸複合體（Tetrameric / Dimer-of-Dimers Synaptic Complex）**。",
+            "charStart": 5001,
+            "charEnd": 5184,
+            "contentHash": "7a009a91fb7850864a2169775b95e9f1b6e1b0c474b70774255f6084f5d401a1",
+            "contextNote": "三、Cryo-EM 結構藍圖：雙二聚體突觸複合體與複合 RuvC–Tnp 核心 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-0e61dc2c",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-3-47c353",
+            "sectionTitle": "三、Cryo-EM 結構藍圖：雙二聚體突觸複合體與複合 RuvC–Tnp 核心",
+            "paragraphIndex": 2,
+            "exactQuote": "在這個四聚體藍圖中，分工極為嚴明：",
+            "charStart": 5448,
+            "charEnd": 5465,
+            "contentHash": "0e61dc2c2975dd9b48d78aff71067f650b85a9e83305841d21dd44cef85c9dc3",
+            "contextNote": "三、Cryo-EM 結構藍圖：雙二聚體突觸複合體與複合 RuvC–Tnp 核心 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-95cd9d2c",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-3-47c353",
+            "sectionTitle": "三、Cryo-EM 結構藍圖：雙二聚體突觸複合體與複合 RuvC–Tnp 核心",
+            "paragraphIndex": 3,
+            "exactQuote": "1. **目標－TBL 二聚體**：其中兩個 IS621 單體組成的二聚體專門包覆橋接 RNA 的 TBL 環以及與之互補的目標 DNA 雙螺旋。",
+            "charStart": 5485,
+            "charEnd": 5558,
+            "contentHash": "95cd9d2c213f5168fc312b0917c4fed0b6bcaf36b935f4be54f9d32b664a2c73",
+            "contextNote": "三、Cryo-EM 結構藍圖：雙二聚體突觸複合體與複合 RuvC–Tnp 核心 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-d6541970",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-3-47c353",
+            "sectionTitle": "三、Cryo-EM 結構藍圖：雙二聚體突觸複合體與複合 RuvC–Tnp 核心",
+            "paragraphIndex": 3,
+            "exactQuote": "2. **供體－DBL 二聚體**：另外兩個 IS621 單體組成的二聚體則專門抓握橋接 RNA 的 DBL 環以及供體 DNA 雙螺旋。",
+            "charStart": 5559,
+            "charEnd": 5628,
+            "contentHash": "d6541970a50d096604a0d85eb2a67d3a8acffa8ecbc92a44e7be7e13c9638d59",
+            "contextNote": "三、Cryo-EM 結構藍圖：雙二聚體突觸複合體與複合 RuvC–Tnp 核心 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-32b663db",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-3-47c353",
+            "sectionTitle": "三、Cryo-EM 結構藍圖：雙二聚體突觸複合體與複合 RuvC–Tnp 核心",
+            "paragraphIndex": 3,
+            "exactQuote": "3. **跨二聚體複合催化位點（Composite RuvC–Tnp Catalytic Site）**：每一個 IS621 單體本身只攜帶不完整的催化零件——一部分位於氨基端的 RuvC 樣結構域，另一部分則位於羧基端的 Tnp（轉位酶）螺旋結構域（攜帶著決定性的**催化性絲胺酸殘基，Catalytic Serine**）。",
+            "charStart": 5629,
+            "charEnd": 5793,
+            "contentHash": "32b663db0cbcccf9fcb730527dc5b87653c77d76fb59aab78eed22ee8620d2c1",
+            "contextNote": "三、Cryo-EM 結構藍圖：雙二聚體突觸複合體與複合 RuvC–Tnp 核心 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-29482d4b",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-3-47c353",
+            "sectionTitle": "三、Cryo-EM 結構藍圖：雙二聚體突觸複合體與複合 RuvC–Tnp 核心",
+            "paragraphIndex": 3,
+            "exactQuote": "當單一二聚體只結合單側 DNA 與單側 RNA 環時，催化口袋並未拼合完成，因此絕對不會擅自下刀。",
+            "charStart": 5794,
+            "charEnd": 5843,
+            "contentHash": "29482d4b12eb0497f19f8ab354db784ecbaa445abf6a4532cd92d9e33219064d",
+            "contextNote": "三、Cryo-EM 結構藍圖：雙二聚體突觸複合體與複合 RuvC–Tnp 核心 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-07d9760b",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-3-47c353",
+            "sectionTitle": "三、Cryo-EM 結構藍圖：雙二聚體突觸複合體與複合 RuvC–Tnp 核心",
+            "paragraphIndex": 3,
+            "exactQuote": "唯有當「目標－TBL 二聚體」與「供體－DBL 二聚體」在空間中彼此靠攏對接成四聚體突觸複合體，跨越兩對二聚體界面的 RuvC 結構域與 Tnp 結構域才會如同齒輪咬合般組裝出完整的複合催化位點。",
+            "charStart": 5844,
+            "charEnd": 5942,
+            "contentHash": "07d9760b37e5cd264baa334ea573fdb3f9e486c5296d689d431d2b824f4dd4b9",
+            "contextNote": "三、Cryo-EM 結構藍圖：雙二聚體突觸複合體與複合 RuvC–Tnp 核心 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-803fca8a",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-3-47c353",
+            "sectionTitle": "三、Cryo-EM 結構藍圖：雙二聚體突觸複合體與複合 RuvC–Tnp 核心",
+            "paragraphIndex": 4,
+            "exactQuote": "這套跨界面拼合架構從根本上解釋了前述的雙特異性門控現象：橋接 RNA 的主幹就像一條精密的分子絞鏈，只有當 TBL 與 DBL 兩端的鹼基配對雙雙穩定就位、把兩組二聚體拉到正確距離與夾角時，複合 RuvC–Tnp 催化核心才會正式通電啟動。",
+            "charStart": 6400,
+            "charEnd": 6520,
+            "contentHash": "803fca8a59ec3ee596b41e708683738fa32383ed6faff093719e0756efe3c851",
+            "contextNote": "三、Cryo-EM 結構藍圖：雙二聚體突觸複合體與複合 RuvC–Tnp 核心 · 第 5 段"
+          }
+        ],
+        "formulas": [],
+        "interactiveComponentId": null
+      },
+      {
+        "id": "sec-4-2d7343",
+        "title": "四、絲胺酸共價鎖與霍利迪交叉：避開游離斷裂的無痕換股循環",
+        "level": 2,
+        "paragraphs": [
+          "催化核心組裝完畢後，IS621 突觸複合體必須解決分子遺傳學中最危險的步驟：**切斷兩條 DNA 卻不能讓任何斷頭漂走**。若斷端暴露成游離雙股斷裂，不僅會觸發宿主警報或遺失遺傳物質，更會失去儲存於原始磷酸二酯鍵中的高能化學鍵能量。",
+          "Hiraizumi 等人（2024）的冷凍電鏡結構清楚記錄了 IS621 如何透過四階段鏈交換循環避開這個風險：",
+          "1. **階段一：雙重捕獲與核心二核苷酸對齊**：TBL 與 DBL 分別引導目標 DNA 與供體 DNA 滑入各自二聚體凹槽，將兩條雙螺旋中央極短的保守核心二核苷酸（例如 IS621 偏好的 `CT` 核心）精準對齊在複合 RuvC–Tnp 催化界面中央。\n2. **階段二：頂端股的共價 $5'$-磷酸絲胺酸鎖定**：四聚體內的催化性絲胺酸殘基（如 IS621 中的 Ser241）作為親核試劑，同時攻擊目標 DNA 與供體 DNA 兩者的**頂端股（Top Strands）**。這道切割並非把斷端丟入溶液，而是直接在絲胺酸側鏈羥基與被切開 DNA 的 $5'$-磷酸根之間形成**共價 $5'$-磷酸絲胺酸（$5'$-phosphoserine）中間體**。這就像攀岩者在交換繩索前先把安全扣死死扣在岩壁掛耳上：DNA 的斷端能量被暫時儲存在蛋白質－DNA 共價鍵裡，現場完全沒有暴露游離雙股斷裂。\n3. **階段三：跨二聚體轉酯與霍利迪交叉形成**：緊接著，受蛋白保護的頂端股游離 $3'$-羥基末端跨越二聚體界面交換伴侶——目標 DNA 的 $3'$ 端去攻擊供體 DNA 的共價 $5'$-磷酸絲胺酸鍵，供體 DNA 的 $3'$ 端則去攻擊目標 DNA 的共價 $5'$-磷酸絲胺酸鍵。這組可逆的轉酯反應（Transesterification）在不消耗外源 ATP 的情況下重新縫合頂端股，使兩條 DNA 雙螺旋在突觸中央交織成一個標準的**霍利迪交叉（Holliday Junction）**四向結構。\n4. **階段四：底端股切割解析與無痕釋放**：霍利迪交叉形成後，複合體構象微調並重演相同手法，對兩條仍維持連接的**底端股（Bottom Strands）**進行切斷、交換與再連接，最終解析霍利迪交叉並將重組完成的兩條完整 DNA 雙螺旋釋放離去。",
+          "整個化學循環自始至終維持著「斷一鍵、鎖一鍵、換一位、補一鍵」的守恆節奏，既不必向細胞借用 DNA 連接酶，也不需要動用容易出錯的宿主雙股斷裂修復通路。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-8c0b46df",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-4-2d7343",
+            "sectionTitle": "四、絲胺酸共價鎖與霍利迪交叉：避開游離斷裂的無痕換股循環",
+            "paragraphIndex": 0,
+            "exactQuote": "催化核心組裝完畢後，IS621 突觸複合體必須解決分子遺傳學中最危險的步驟：**切斷兩條 DNA 卻不能讓任何斷頭漂走**。",
+            "charStart": 6643,
+            "charEnd": 6705,
+            "contentHash": "8c0b46df605edee5651609a34cabf5b54aabd55274050ff6a84155d805d3b126",
+            "contextNote": "四、絲胺酸共價鎖與霍利迪交叉：避開游離斷裂的無痕換股循環 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-617e46eb",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-4-2d7343",
+            "sectionTitle": "四、絲胺酸共價鎖與霍利迪交叉：避開游離斷裂的無痕換股循環",
+            "paragraphIndex": 0,
+            "exactQuote": "若斷端暴露成游離雙股斷裂，不僅會觸發宿主警報或遺失遺傳物質，更會失去儲存於原始磷酸二酯鍵中的高能化學鍵能量。",
+            "charStart": 6706,
+            "charEnd": 6760,
+            "contentHash": "617e46ebb7babb7dc18576052776cd8e5fc2a12cd678724bc8f7f87823e4f2c1",
+            "contextNote": "四、絲胺酸共價鎖與霍利迪交叉：避開游離斷裂的無痕換股循環 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-6269b6b7",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-4-2d7343",
+            "sectionTitle": "四、絲胺酸共價鎖與霍利迪交叉：避開游離斷裂的無痕換股循環",
+            "paragraphIndex": 1,
+            "exactQuote": "Hiraizumi 等人（2024）的冷凍電鏡結構清楚記錄了 IS621 如何透過四階段鏈交換循環避開這個風險：",
+            "charStart": 6879,
+            "charEnd": 6935,
+            "contentHash": "6269b6b734416b1bc7c7c53818f97b5232cd2cb0f88fe67afb3ff3dc4215693f",
+            "contextNote": "四、絲胺酸共價鎖與霍利迪交叉：避開游離斷裂的無痕換股循環 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-73f758d1",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-4-2d7343",
+            "sectionTitle": "四、絲胺酸共價鎖與霍利迪交叉：避開游離斷裂的無痕換股循環",
+            "paragraphIndex": 2,
+            "exactQuote": "1. **階段一：雙重捕獲與核心二核苷酸對齊**：TBL 與 DBL 分別引導目標 DNA 與供體 DNA 滑入各自二聚體凹槽，將兩條雙螺旋中央極短的保守核心二核苷酸（例如 IS621 偏好的 `CT` 核心）精準對齊在複合 RuvC–Tnp 催化界面中央。",
+            "charStart": 6994,
+            "charEnd": 7123,
+            "contentHash": "73f758d1502ba06c63c294c91365605de0e6d795fe456dacc8adb9206ebcae93",
+            "contextNote": "四、絲胺酸共價鎖與霍利迪交叉：避開游離斷裂的無痕換股循環 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-fa4e9763",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-4-2d7343",
+            "sectionTitle": "四、絲胺酸共價鎖與霍利迪交叉：避開游離斷裂的無痕換股循環",
+            "paragraphIndex": 2,
+            "exactQuote": "2. **階段二：頂端股的共價 $5'$-磷酸絲胺酸鎖定**：四聚體內的催化性絲胺酸殘基（如 IS621 中的 Ser241）作為親核試劑，同時攻擊目標 DNA 與供體 DNA 兩者的**頂端股（Top Strands）**。",
+            "charStart": 7124,
+            "charEnd": 7237,
+            "contentHash": "fa4e976301fa1a9d27a17e5486c49e7b691b96edb0f8744c75e2592c2bf28c27",
+            "contextNote": "四、絲胺酸共價鎖與霍利迪交叉：避開游離斷裂的無痕換股循環 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-893b1eed",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-4-2d7343",
+            "sectionTitle": "四、絲胺酸共價鎖與霍利迪交叉：避開游離斷裂的無痕換股循環",
+            "paragraphIndex": 2,
+            "exactQuote": "這道切割並非把斷端丟入溶液，而是直接在絲胺酸側鏈羥基與被切開 DNA 的 $5'$-磷酸根之間形成**共價 $5'$-磷酸絲胺酸（$5'$-phosphoserine）中間體**。",
+            "charStart": 7238,
+            "charEnd": 7328,
+            "contentHash": "893b1eed5df5c0fb145a0631dc200b03f1d7a22b982669eb55baa040d77a6600",
+            "contextNote": "四、絲胺酸共價鎖與霍利迪交叉：避開游離斷裂的無痕換股循環 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-6365a920",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-4-2d7343",
+            "sectionTitle": "四、絲胺酸共價鎖與霍利迪交叉：避開游離斷裂的無痕換股循環",
+            "paragraphIndex": 2,
+            "exactQuote": "這就像攀岩者在交換繩索前先把安全扣死死扣在岩壁掛耳上：DNA 的斷端能量被暫時儲存在蛋白質－DNA 共價鍵裡，現場完全沒有暴露游離雙股斷裂。",
+            "charStart": 7329,
+            "charEnd": 7399,
+            "contentHash": "6365a9204fbc0c23b07a8414671c23c17dc4082ca9c2ccecb8dd8013e9c651dd",
+            "contextNote": "四、絲胺酸共價鎖與霍利迪交叉：避開游離斷裂的無痕換股循環 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-72ffceee",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-4-2d7343",
+            "sectionTitle": "四、絲胺酸共價鎖與霍利迪交叉：避開游離斷裂的無痕換股循環",
+            "paragraphIndex": 2,
+            "exactQuote": "3. **階段三：跨二聚體轉酯與霍利迪交叉形成**：緊接著，受蛋白保護的頂端股游離 $3'$-羥基末端跨越二聚體界面交換伴侶——目標 DNA 的 $3'$ 端去攻擊供體 DNA 的共價 $5'$-磷酸絲胺酸鍵，供體 DNA 的 $3'$ 端則去攻擊目標 DNA 的共價 $5'$-磷酸絲胺酸鍵。",
+            "charStart": 7400,
+            "charEnd": 7547,
+            "contentHash": "72ffceeead2539d0df38236a2a3439ca883fff418daa5df51d092a43e98d80da",
+            "contextNote": "四、絲胺酸共價鎖與霍利迪交叉：避開游離斷裂的無痕換股循環 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-daa5f845",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-4-2d7343",
+            "sectionTitle": "四、絲胺酸共價鎖與霍利迪交叉：避開游離斷裂的無痕換股循環",
+            "paragraphIndex": 2,
+            "exactQuote": "這組可逆的轉酯反應（Transesterification）在不消耗外源 ATP 的情況下重新縫合頂端股，使兩條 DNA 雙螺旋在突觸中央交織成一個標準的**霍利迪交叉（Holliday Junction）**四向結構。",
+            "charStart": 7548,
+            "charEnd": 7658,
+            "contentHash": "daa5f8452340b2a73046b075f179470154aa6c55c2fb4003503668b15b764aaf",
+            "contextNote": "四、絲胺酸共價鎖與霍利迪交叉：避開游離斷裂的無痕換股循環 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-0d7de87e",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-4-2d7343",
+            "sectionTitle": "四、絲胺酸共價鎖與霍利迪交叉：避開游離斷裂的無痕換股循環",
+            "paragraphIndex": 2,
+            "exactQuote": "4. **階段四：底端股切割解析與無痕釋放**：霍利迪交叉形成後，複合體構象微調並重演相同手法，對兩條仍維持連接的**底端股（Bottom Strands）**進行切斷、交換與再連接，最終解析霍利迪交叉並將重組完成的兩條完整 DNA 雙螺旋釋放離去。",
+            "charStart": 7659,
+            "charEnd": 7784,
+            "contentHash": "0d7de87ea1d1b48ec26d84451d48e70a3eab5ba6923b0704421d750cb326ce65",
+            "contextNote": "四、絲胺酸共價鎖與霍利迪交叉：避開游離斷裂的無痕換股循環 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-7d3b5f57",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-4-2d7343",
+            "sectionTitle": "四、絲胺酸共價鎖與霍利迪交叉：避開游離斷裂的無痕換股循環",
+            "paragraphIndex": 3,
+            "exactQuote": "整個化學循環自始至終維持著「斷一鍵、鎖一鍵、換一位、補一鍵」的守恆節奏，既不必向細胞借用 DNA 連接酶，也不需要動用容易出錯的宿主雙股斷裂修復通路。",
+            "charStart": 8574,
+            "charEnd": 8649,
+            "contentHash": "7d3b5f57ba9c63687ffc89d9484e8e2c1800aa84d810a09a4bf0c2fd50946174",
+            "contextNote": "四、絲胺酸共價鎖與霍利迪交叉：避開游離斷裂的無痕換股循環 · 第 4 段"
+          }
+        ],
+        "formulas": [],
+        "interactiveComponentId": null
+      },
+      {
+        "id": "sec-5-9ecaa5",
+        "title": "五、從細菌試管到真核染色質：科學邊界與工程挑戰",
+        "level": 2,
+        "paragraphs": [
+          "當一項能「只改一段短 RNA 就直接插入、刪除或翻轉大片段 DNA」的新系統登上期刊封面時，我們更需要精準劃定它目前的實證邊界，區分哪些現象已經過實驗證實、哪些工程瓶頸仍橫亙在前。",
+          "首先必須嚴格確認的是適用物種與實驗場域：Durrant 等人（2024）與 Hiraizumi 等人（2024）的開創性成果，主要是在**原核生物大腸桿菌（*Escherichia coli*）體內重組實驗**以及**純化蛋白與裸露 DNA 的體外生化系統**中證實可行。在細菌基因體內，研究團隊確實透過重新編寫橋接 RNA 的 TBL 與 DBL 序列，成功對任意指定的基因組位點執行了高效率且可預測的插入、切除與倒位，並測得數千種編程變體的序列設計法則。",
+          "然而，若將視角移往人類等**真核哺乳類細胞**，目前仍有數道關鍵生物物理門檻尚待跨越，絕不可將此 2024 年原核突破誇大為已可直接用於人體臨床治療大片段基因重寫：",
+          "- **染色質可及性與核小體阻礙**：細菌染色體相對裸露，而人類細胞核內的 DNA 緊密纏繞在組蛋白八聚體上形成核小體與高階染色質纖維；IS621 這類相對迷你的原核轉位酶本身不具備像 CRISPR-Cas9 那麼強勁的雙螺旋解旋與染色質排開能力，其在真核細胞核內的活性與效率仍需透過蛋白質定向演化或輔助因子工程加以優化。\n- **全基因組脫靶特異性權衡**：單一 Cas9 sgRNA 通常檢查約 20 個核苷酸的互補配對（外加 PAM 序列），而野生型 IS621 的 TBL 與 DBL 分別與目標及供體配對的窗口長度僅約 9 至 14 個核苷酸（含核心序列與側翼區段）。在僅數百萬鹼基對的細菌基因組中，雙環聯動足以提供優異專一性；但若放入長達 30 億鹼基對的人類基因組，如何避免短配對窗口在非目標區發生錯位交叉或非預期重組，是後續擴展結合環長度與演化高保真變體的核心課題。\n- **RNA 摺疊穩定性與核內遞送**：橋接 RNA 仰賴特定二級結構才能精準支撐四聚體組裝，在真核細胞核環境中如何保護 bRNA 不被核酸外切酶降解，並將核糖核蛋白複合體與大型供體 DNA 同步送抵目標細胞核，仍有賴後續合成生物學團隊接力驗證。",
+          "即便距離臨床應用還有相當距離，IS110 橋接核糖核酸的發現仍替分子生物學開了一扇全新的概念之窗：它證明自然界早已在細菌跳躍基因的環化接縫中，寫好了一套由雙特異性非編碼 RNA 直接指揮 DNA 拓撲重排的精簡演算法。從單手拿剪刀的破壞修復，走向雙手協作的無痕拉鍊交換，我們對可編程基因組工程的想像空間，也隨這座雙二聚體突觸藍圖而徹底展開。",
+          "---"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-6024d124",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-5-9ecaa5",
+            "sectionTitle": "五、從細菌試管到真核染色質：科學邊界與工程挑戰",
+            "paragraphIndex": 0,
+            "exactQuote": "當一項能「只改一段短 RNA 就直接插入、刪除或翻轉大片段 DNA」的新系統登上期刊封面時，我們更需要精準劃定它目前的實證邊界，區分哪些現象已經過實驗證實、哪些工程瓶頸仍橫亙在前。",
+            "charStart": 8727,
+            "charEnd": 8817,
+            "contentHash": "6024d124600bcb310c6ac9fd668e522e5a7f4a72193b94927ca852829de82d9d",
+            "contextNote": "五、從細菌試管到真核染色質：科學邊界與工程挑戰 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-1acae143",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-5-9ecaa5",
+            "sectionTitle": "五、從細菌試管到真核染色質：科學邊界與工程挑戰",
+            "paragraphIndex": 1,
+            "exactQuote": "首先必須嚴格確認的是適用物種與實驗場域：Durrant 等人（2024）與 Hiraizumi 等人（2024）的開創性成果，主要是在**原核生物大腸桿菌（*Escherichia coli*）體內重組實驗**以及**純化蛋白與裸露 DNA 的體外生化系統**中證實可行。",
+            "charStart": 8910,
+            "charEnd": 9046,
+            "contentHash": "1acae143b9fcd1eadd7189540231aea290b7e550566cc2a1e1a45ac60ef2a695",
+            "contextNote": "五、從細菌試管到真核染色質：科學邊界與工程挑戰 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-a0b2ed52",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-5-9ecaa5",
+            "sectionTitle": "五、從細菌試管到真核染色質：科學邊界與工程挑戰",
+            "paragraphIndex": 1,
+            "exactQuote": "在細菌基因體內，研究團隊確實透過重新編寫橋接 RNA 的 TBL 與 DBL 序列，成功對任意指定的基因組位點執行了高效率且可預測的插入、切除與倒位，並測得數千種編程變體的序列設計法則。",
+            "charStart": 9047,
+            "charEnd": 9140,
+            "contentHash": "a0b2ed529151a06256b3b11d93151f2bb6c1ed5868ac7e97a8d0bb90de940536",
+            "contextNote": "五、從細菌試管到真核染色質：科學邊界與工程挑戰 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-e0993e4e",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-5-9ecaa5",
+            "sectionTitle": "五、從細菌試管到真核染色質：科學邊界與工程挑戰",
+            "paragraphIndex": 2,
+            "exactQuote": "然而，若將視角移往人類等**真核哺乳類細胞**，目前仍有數道關鍵生物物理門檻尚待跨越，絕不可將此 2024 年原核突破誇大為已可直接用於人體臨床治療大片段基因重寫：",
+            "charStart": 9372,
+            "charEnd": 9454,
+            "contentHash": "e0993e4ec0c736ae7f2a51cd79d648074aab0da14d96fcf8369c2adcedcda5e3",
+            "contextNote": "五、從細菌試管到真核染色質：科學邊界與工程挑戰 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-410078a2",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-5-9ecaa5",
+            "sectionTitle": "五、從細菌試管到真核染色質：科學邊界與工程挑戰",
+            "paragraphIndex": 3,
+            "exactQuote": "- **染色質可及性與核小體阻礙**：細菌染色體相對裸露，而人類細胞核內的 DNA 緊密纏繞在組蛋白八聚體上形成核小體與高階染色質纖維；IS621 這類相對迷你的原核轉位酶本身不具備像 CRISPR-Cas9 那麼強勁的雙螺旋解旋與染色質排開能力，其在真核細胞核內的活性與效率仍需透過蛋白質定向演化或輔助因子工程加以優化。",
+            "charStart": 9539,
+            "charEnd": 9700,
+            "contentHash": "410078a2a7c0b47132ff5c2b230e4278fc8068ffa443a70cfece17f9e3dd4ed6",
+            "contextNote": "五、從細菌試管到真核染色質：科學邊界與工程挑戰 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-548c93b9",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-5-9ecaa5",
+            "sectionTitle": "五、從細菌試管到真核染色質：科學邊界與工程挑戰",
+            "paragraphIndex": 3,
+            "exactQuote": "- **全基因組脫靶特異性權衡**：單一 Cas9 sgRNA 通常檢查約 20 個核苷酸的互補配對（外加 PAM 序列），而野生型 IS621 的 TBL 與 DBL 分別與目標及供體配對的窗口長度僅約 9 至 14 個核苷酸（含核心序列與側翼區段）。",
+            "charStart": 9701,
+            "charEnd": 9828,
+            "contentHash": "548c93b9eb159a344afe1863cd6d9521183b65a155ec74487e41d6a09d6f24b0",
+            "contextNote": "五、從細菌試管到真核染色質：科學邊界與工程挑戰 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-af5df94e",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-5-9ecaa5",
+            "sectionTitle": "五、從細菌試管到真核染色質：科學邊界與工程挑戰",
+            "paragraphIndex": 3,
+            "exactQuote": "在僅數百萬鹼基對的細菌基因組中，雙環聯動足以提供優異專一性；但若放入長達 30 億鹼基對的人類基因組，如何避免短配對窗口在非目標區發生錯位交叉或非預期重組，是後續擴展結合環長度與演化高保真變體的核心課題。",
+            "charStart": 9829,
+            "charEnd": 9931,
+            "contentHash": "af5df94ed9754471db095ee27b8e536c6666872ee5ad18917da4b333d5101942",
+            "contextNote": "五、從細菌試管到真核染色質：科學邊界與工程挑戰 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-fc12132f",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-5-9ecaa5",
+            "sectionTitle": "五、從細菌試管到真核染色質：科學邊界與工程挑戰",
+            "paragraphIndex": 3,
+            "exactQuote": "- **RNA 摺疊穩定性與核內遞送**：橋接 RNA 仰賴特定二級結構才能精準支撐四聚體組裝，在真核細胞核環境中如何保護 bRNA 不被核酸外切酶降解，並將核糖核蛋白複合體與大型供體 DNA 同步送抵目標細胞核，仍有賴後續合成生物學團隊接力驗證。",
+            "charStart": 9932,
+            "charEnd": 10056,
+            "contentHash": "fc12132f2ec279b84999515263f1023e6ccbd7b453a0af99b7f0df2bf834081b",
+            "contextNote": "五、從細菌試管到真核染色質：科學邊界與工程挑戰 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-1c4513df",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-5-9ecaa5",
+            "sectionTitle": "五、從細菌試管到真核染色質：科學邊界與工程挑戰",
+            "paragraphIndex": 4,
+            "exactQuote": "即便距離臨床應用還有相當距離，IS110 橋接核糖核酸的發現仍替分子生物學開了一扇全新的概念之窗：它證明自然界早已在細菌跳躍基因的環化接縫中，寫好了一套由雙特異性非編碼 RNA 直接指揮 DNA 拓撲重排的精簡演算法。",
+            "charStart": 10575,
+            "charEnd": 10684,
+            "contentHash": "1c4513df0208d2f5f7c316a15d07b38c48a5de7c1825fc273ecead283d7461ef",
+            "contextNote": "五、從細菌試管到真核染色質：科學邊界與工程挑戰 · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-39672877",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-5-9ecaa5",
+            "sectionTitle": "五、從細菌試管到真核染色質：科學邊界與工程挑戰",
+            "paragraphIndex": 4,
+            "exactQuote": "從單手拿剪刀的破壞修復，走向雙手協作的無痕拉鍊交換，我們對可編程基因組工程的想像空間，也隨這座雙二聚體突觸藍圖而徹底展開。",
+            "charStart": 10685,
+            "charEnd": 10746,
+            "contentHash": "3967287792967f0e4f3f5dc552e8e59bc0a339807224486b90eb19094b564152",
+            "contextNote": "五、從細菌試管到真核染色質：科學邊界與工程挑戰 · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-cb3f91d5",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-5-9ecaa5",
+            "sectionTitle": "五、從細菌試管到真核染色質：科學邊界與工程挑戰",
+            "paragraphIndex": 5,
+            "exactQuote": "---",
+            "charStart": 10919,
+            "charEnd": 10922,
+            "contentHash": "cb3f91d54eee30e53e35b2b99905f70f169ed549fd78909d3dac2defc9ed8d3b",
+            "contextNote": "五、從細菌試管到真核染色質：科學邊界與工程挑戰 · 第 6 段"
+          }
+        ],
+        "formulas": [],
+        "interactiveComponentId": null
+      },
+      {
+        "id": "sec-6-52833f",
+        "title": "參考文獻",
+        "level": 2,
+        "paragraphs": [
+          "1. **Durrant, M. G., Perry, N. T., Pai, J. J., Jangid, A. R., Athukoralage, J. S., Hiraizumi, M., McSpedon, J. P., Pawluk, A., Nishimasu, H., Konermann, S., & Hsu, P. D.** (2024). \"Bridge RNAs direct programmable recombination of target and donor DNA.\" *Nature*, 630(8018), 984–993. [doi:10.1038/s41586-024-07552-4](https://doi.org/10.1038/s41586-024-07552-4)\n2. **Hiraizumi, M., Perry, N. T., Durrant, M. G., Soma, T., Nagahata, N., Okazaki, S., Athukoralage, J. S., Isayama, Y., Pai, J. J., Pawluk, A., Konermann, S., Yamashita, K., Hsu, P. D., & Nishimasu, H.** (2024). \"Structural mechanism of bridge RNA-guided recombination.\" *Nature*, 630(8018), 994–1002. [doi:10.1038/s41586-024-07570-2](https://doi.org/10.1038/s41586-024-07570-2)"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-722aad0d",
+            "articleId": "art-bridge-rna-is110",
+            "sectionId": "sec-6-52833f",
+            "sectionTitle": "參考文獻",
+            "paragraphIndex": 0,
+            "exactQuote": "1. **Durrant, M. G., Perry, N. T., Pai, J. J., Jangid, A. R., Athukoralage, J. S., Hiraizumi, M., McSpedon, J. P., Pawluk, A., Nishimasu, H., Konermann, S., & Hsu, P. D.** (2024). \"Bridge RNAs direct programmable recombination of target and donor DNA.\" *Nature*, 630(8018), 984–993. [doi:10.1038/s41586-024-07552-4](https://doi.org/10.1038/s41586-024-07552-4)\n2. **Hiraizumi, M., Perry, N. T., Durrant, M. G., Soma, T., Nagahata, N., Okazaki, S., Athukoralage, J. S., Isayama, Y., Pai, J. J., Pawluk, A., Konermann, S., Yamashita, K., Hsu, P. D., & Nishimasu, H.** (2024). \"Structural mechanism of bridge RNA-guided recombination.\" *Nature*, 630(8018), 994–1002. [doi:10.1038/s41586-024-07570-2](https://doi.org/10.1038/s41586-024-07570-2)",
+            "charStart": 10928,
+            "charEnd": 11667,
+            "contentHash": "722aad0dd4f5e3647463b1e0e1cd94c14b90ede4d6b50e1d3319a7aa8acb0d20",
+            "contextNote": "參考文獻 · 第 1 段"
+          }
+        ],
+        "formulas": [],
+        "interactiveComponentId": null
+      }
+    ],
+    "totalWordCount": 6060,
+    "lastIndexedAt": "2026-11-18T01:11:14.176Z"
   },
   {
     "id": "art-brownian-ratchet-motors",
@@ -8664,7 +10564,7 @@
       }
     ],
     "totalWordCount": 3332,
-    "lastIndexedAt": "2026-11-17T01:09:00.880Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.179Z"
   },
   {
     "id": "art-car-t-immunology",
@@ -9240,7 +11140,7 @@
       }
     ],
     "totalWordCount": 3087,
-    "lastIndexedAt": "2026-11-17T01:09:00.882Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.181Z"
   },
   {
     "id": "art-chandrasekhar-limit",
@@ -9960,7 +11860,7 @@
       }
     ],
     "totalWordCount": 3556,
-    "lastIndexedAt": "2026-11-17T01:09:00.884Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.183Z"
   },
   {
     "id": "art-chaos-double-pendulum",
@@ -10483,7 +12383,7 @@
       }
     ],
     "totalWordCount": 2065,
-    "lastIndexedAt": "2026-11-17T01:09:00.888Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.190Z"
   },
   {
     "id": "art-circadian-feedback-oscillator",
@@ -11018,7 +12918,7 @@
       }
     ],
     "totalWordCount": 3671,
-    "lastIndexedAt": "2026-11-17T01:09:00.891Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.193Z"
   },
   {
     "id": "art-compressed-sensing-l1",
@@ -11945,7 +13845,7 @@
       }
     ],
     "totalWordCount": 6694,
-    "lastIndexedAt": "2026-11-17T01:09:00.892Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.196Z"
   },
   {
     "id": "art-coriolis-geostrophic",
@@ -12618,7 +14518,7 @@
       }
     ],
     "totalWordCount": 3371,
-    "lastIndexedAt": "2026-11-17T01:09:00.897Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.198Z"
   },
   {
     "id": "art-crispr-prime-editing",
@@ -13728,7 +15628,7 @@
       }
     ],
     "totalWordCount": 5882,
-    "lastIndexedAt": "2026-11-17T01:09:00.899Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.202Z"
   },
   {
     "id": "art-drosophila-connectome-flywire",
@@ -14372,7 +16272,7 @@
       }
     ],
     "totalWordCount": 4740,
-    "lastIndexedAt": "2026-11-17T01:09:00.902Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.205Z"
   },
   {
     "id": "art-entorhinal-grid-cells",
@@ -14880,7 +16780,7 @@
       }
     ],
     "totalWordCount": 2970,
-    "lastIndexedAt": "2026-11-17T01:09:00.905Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.207Z"
   },
   {
     "id": "art-eht-polarization-magnetic-fields",
@@ -15679,7 +17579,7 @@
       }
     ],
     "totalWordCount": 4301,
-    "lastIndexedAt": "2026-11-17T01:09:00.906Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.209Z"
   },
   {
     "id": "art-gravitational-waves-kerr",
@@ -16292,7 +18192,7 @@
       }
     ],
     "totalWordCount": 3547,
-    "lastIndexedAt": "2026-11-17T01:09:00.908Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.212Z"
   },
   {
     "id": "art-hawk-dove-ess",
@@ -17293,7 +19193,7 @@
       }
     ],
     "totalWordCount": 2689,
-    "lastIndexedAt": "2026-11-17T01:09:00.909Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.214Z"
   },
   {
     "id": "art-insect-flight-lev",
@@ -18393,7 +20293,7 @@
       }
     ],
     "totalWordCount": 6968,
-    "lastIndexedAt": "2026-11-17T01:09:00.911Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.218Z"
   },
   {
     "id": "art-jwst-cosmos-web-lensing",
@@ -19045,7 +20945,7 @@
       }
     ],
     "totalWordCount": 3591,
-    "lastIndexedAt": "2026-11-17T01:09:00.914Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.224Z"
   },
   {
     "id": "art-kimura-neutral-evolution",
@@ -19911,7 +21811,7 @@
       }
     ],
     "totalWordCount": 4314,
-    "lastIndexedAt": "2026-11-17T01:09:00.917Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.226Z"
   },
   {
     "id": "art-kuramoto-synchronization",
@@ -20634,7 +22534,7 @@
       }
     ],
     "totalWordCount": 4597,
-    "lastIndexedAt": "2026-11-17T01:09:00.921Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.227Z"
   },
   {
     "id": "art-levinthal-paradox-funnel",
@@ -21445,7 +23345,7 @@
       }
     ],
     "totalWordCount": 3540,
-    "lastIndexedAt": "2026-11-17T01:09:00.924Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.229Z"
   },
   {
     "id": "art-magic-angle-graphene",
@@ -22301,7 +24201,7 @@
       }
     ],
     "totalWordCount": 4149,
-    "lastIndexedAt": "2026-11-17T01:09:00.926Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.230Z"
   },
   {
     "id": "art-maxwells-demon-entropy",
@@ -22937,7 +24837,7 @@
       }
     ],
     "totalWordCount": 2262,
-    "lastIndexedAt": "2026-11-17T01:09:00.928Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.232Z"
   },
   {
     "id": "art-cof-carbon-capture",
@@ -23601,7 +25501,7 @@
       }
     ],
     "totalWordCount": 4885,
-    "lastIndexedAt": "2026-11-17T01:09:00.929Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.236Z"
   },
   {
     "id": "art-muon-g-2-discrepancy",
@@ -24825,7 +26725,7 @@
       }
     ],
     "totalWordCount": 7884,
-    "lastIndexedAt": "2026-11-17T01:09:00.931Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.238Z"
   },
   {
     "id": "art-optical-tweezers-dna",
@@ -25361,7 +27261,7 @@
       }
     ],
     "totalWordCount": 3839,
-    "lastIndexedAt": "2026-11-17T01:09:00.934Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.240Z"
   },
   {
     "id": "art-orbital-resonance-tidal-heating",
@@ -26012,7 +27912,7 @@
       }
     ],
     "totalWordCount": 4020,
-    "lastIndexedAt": "2026-11-17T01:09:00.935Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.242Z"
   },
   {
     "id": "art-percolation-phase-transition",
@@ -27153,7 +29053,7 @@
       }
     ],
     "totalWordCount": 5617,
-    "lastIndexedAt": "2026-11-17T01:09:00.937Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.244Z"
   },
   {
     "id": "art-pta-gravitational-waves",
@@ -27906,7 +29806,7 @@
       }
     ],
     "totalWordCount": 5713,
-    "lastIndexedAt": "2026-11-17T01:09:00.938Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.247Z"
   },
   {
     "id": "art-quantum-surface-code",
@@ -28548,7 +30448,7 @@
       }
     ],
     "totalWordCount": 3633,
-    "lastIndexedAt": "2026-11-17T01:09:00.940Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.259Z"
   },
   {
     "id": "art-quantum-hall-anyons",
@@ -29421,7 +31321,7 @@
       }
     ],
     "totalWordCount": 4789,
-    "lastIndexedAt": "2026-11-17T01:09:00.941Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.260Z"
   },
   {
     "id": "art-quantum-tunneling-stm",
@@ -30249,7 +32149,7 @@
       }
     ],
     "totalWordCount": 4935,
-    "lastIndexedAt": "2026-11-17T01:09:00.946Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.262Z"
   },
   {
     "id": "art-rna-world-ribozyme",
@@ -30898,7 +32798,1029 @@
       }
     ],
     "totalWordCount": 3321,
-    "lastIndexedAt": "2026-11-17T01:09:00.948Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.264Z"
+  },
+  {
+    "id": "art-sonoluminescence-sbsl",
+    "slug": "single-bubble-sonoluminescence-cavitation",
+    "version": 1,
+    "publishedDate": "2026-11-18",
+    "status": "published",
+    "editorialCategory": "scientific_principles",
+    "narrativeStyle": "extreme_scales",
+    "format": "depth",
+    "formatBadgeText": "空化與極端物理",
+    "title": "單氣泡聲致發光（Single-Bubble Sonoluminescence）：聲波如何將微米氣泡壓縮成發光的極端電漿？",
+    "subtitle": "從比耶克內斯輻射力懸浮、修正瑞利－普萊塞特方程的硬核剎車到氬氣整流與皮秒藍白電漿閃光",
+    "topicIds": [
+      "topic-fluid-dynamics",
+      "topic-thermodynamics"
+    ],
+    "tags": [
+      "單氣泡聲致發光",
+      "空化動力學",
+      "瑞利－普萊塞特方程",
+      "絕熱壓縮",
+      "熱軔致輻射",
+      "氬氣整流",
+      "極端尺度物理"
+    ],
+    "difficultyLevel": "intermediate",
+    "interactiveComponent": "SonoluminescenceBubbleSimulator",
+    "interactiveType": "cavitation_dynamics",
+    "estimatedReadTimeMinutes": 16,
+    "summary": "將一顆直徑僅數微米的氣泡以超音波駐波懸浮在脫氣水燒瓶中央，它會在每個聲學週期膨脹至數十微米後猛烈向內塌縮，並在撞上凡得瓦分子硬核的瞬間釋放出寬度僅數十至數百皮秒的藍白光脈衝。本文根據 Gaitan 等人（1992）的單氣泡突破實驗與 Brenner 等人（2002）的現代物理綜述，推導含凡得瓦硬核與聲輻射阻尼的修正瑞利－普萊塞特方程，解析準絕熱壓縮加熱與熱軔致輻射／複合發光機制、釐清氣泡核融合爭議，並揭開空氣氣泡得以穩定發光的「1% 氬氣整流」與狹窄操作穩定島之謎。",
+    "leadParagraph": "把手伸進一燒杯以 26 千赫茲震盪的超音波水浴裡，你的指尖幾乎感覺不到任何異樣——既不燙手，也聽不見震耳欲聾的巨響，頂多只像一池平靜無波的涼水。然而，若關上實驗室所有的燈，凝視燒瓶正中央一顆肉眼原本完全看不見、直徑僅約四點五微米的微小氣泡，不可思議的景象隨即現身：一粒穩穩懸停在水中的幽藍星點，正以每秒近三萬次的節奏準時閃耀。為什麼連手指都摸不出溫度的柔和超音波駐波，能把水中一粒幾微米的氣泡在幾十皮秒內壓縮成比太陽表面還熾熱的發光火球？",
+    "quoteLead": "聲場並沒有創造任何新能量；它只是像一具無形的球面液壓透鏡，把整座燒瓶裡分散於數公釐波長的微弱機械功，在微秒塌縮的終點聚焦到不足一微米的分子硬核上，將能量密度濃縮跨越十幾個數量級。",
+    "authors": [
+      {
+        "name": "MIRARI 物理與極端尺度組",
+        "role": "科學特約撰稿"
+      }
+    ],
+    "references": [
+      {
+        "id": "ref-gaitan-1992-jasa",
+        "citation": "Gaitan, D. F., Crum, L. A., Church, C. C., & Roy, R. A. (1992). \"Sonoluminescence and bubble dynamics for a single, stable, cavitation bubble.\" The Journal of the Acoustical Society of America, 91(6), 3166–3183.",
+        "doi": "10.1121/1.402855"
+      },
+      {
+        "id": "ref-brenner-2002-rmp",
+        "citation": "Brenner, M. P., Hilgenfeldt, S., & Lohse, D. (2002). \"Single-bubble sonoluminescence.\" Reviews of Modern Physics, 74(2), 425–484.",
+        "doi": "10.1103/RevModPhys.74.425"
+      }
+    ],
+    "contentHash": "83bbf9b22476b8088626b0dce5fb24eff6b5b308e43355054a085d37eb64dacf",
+    "sections": [
+      {
+        "id": "sec-1-5bbdf3",
+        "title": "一、暗室裡的微米藍星：把分散聲能壓縮跨越十幾個數量級",
+        "level": 2,
+        "paragraphs": [
+          "把一瓶預先抽除多餘溶解氣體的純水裝入球形石英燒瓶，在瓶壁貼上壓電換能器，輸入頻率約 $20\\text{–}40\\text{ kHz}$ 的純淨超音波。當聲波頻率恰與燒瓶內部液體共振模態對齊時，燒瓶中央會建立一道穩定的**駐波（Standing Wave）**——壓力振盪最強烈的「壓力波腹點（Pressure Antinode）」正好落在球心。",
+          "如果在波腹點附近注入一顆直徑只有幾微米的氣泡，這顆氣泡照理說應該在浮力作用下緩緩飄向水面。但只要聲壓振幅維持在特定範圍內，駐波對震盪氣泡施加的時間平均聲輻射力——也就是**比耶克內斯輻射力（Bjerknes Force）**——會像一隻無形的手，將氣泡死死按在壓力波腹的中心位置，抵銷向上浮力，讓它宛如一顆被隱形磁力線鎖住的軟木塞般懸停在半空中。",
+          "1992 年，費利佩·蓋坦（D. Felipe Gaitan）、勞倫斯·克拉姆（Lawrence A. Crum）、查爾斯·丘奇（Charles C. Church）與羅納德·羅伊（Ronald A. Roy）在《美國聲學學會期刊》（*JASA*）發表了開創性的單氣泡實驗紀錄。在他們先前於數個隨機氣泡雲中觀測到的閃爍基礎上，蓋坦團隊首度在脫氣水與特定溶解氣體系統裡，穩定捕獲並定量追蹤**單一顆**懸浮空化氣泡的完整運動週期：",
+          "1. **極端節奏**：在頻率約 $20\\text{–}40\\text{ kHz}$、聲壓振幅約 $1.2\\text{–}1.5\\text{ atm}$ 的正弦聲場驅動下，這顆平衡半徑僅數微米的小氣泡，會在每個聲學週期精準重複「慢速膨脹、劇烈內衝塌縮、短暫反彈震盪」的劇本。\n2. **皮秒閃光**：就在氣泡塌縮至最小半徑的最後瞬間，核心會噴發出一記脈衝寬度僅數十至數百皮秒（約 $40\\text{–}350\\text{ ps}$）的極短寬頻光脈衝——在暗室中以肉眼直視，數萬次每秒的頻閃融合成一顆幾乎紋絲不動的藍白色微光星點。\n3. **跨越十幾個數量級的能量濃縮**：從聲場每個水分子微不足道的機械振動能量密度，一路聚焦到發光瞬間氣泡核心釋放的光子能量密度（數電子伏特量級），這顆微米水泡宛如一座全自動週期運轉的微縮能量濃縮器，把平均能量密度集中了超過 $10^{11}$ 至 $10^{12}$ 倍。",
+          "這項名為**單氣泡聲致發光（Single-Bubble Sonoluminescence, SBSL）**的現象，隨即把流體力學、非線性熱力學與電漿光譜學拉進同一個直徑僅數公分的石英燒瓶裡。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-6b732cdb",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-1-5bbdf3",
+            "sectionTitle": "一、暗室裡的微米藍星：把分散聲能壓縮跨越十幾個數量級",
+            "paragraphIndex": 0,
+            "exactQuote": "把一瓶預先抽除多餘溶解氣體的純水裝入球形石英燒瓶，在瓶壁貼上壓電換能器，輸入頻率約 $20\\text{–}40\\text{ kHz}$ 的純淨超音波。",
+            "charStart": 0,
+            "charEnd": 75,
+            "contentHash": "6b732cdbfb30c1349018fcee4e848c43569567e0f3ace0519ccd804089639d02",
+            "contextNote": "一、暗室裡的微米藍星：把分散聲能壓縮跨越十幾個數量級 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-60ef7927",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-1-5bbdf3",
+            "sectionTitle": "一、暗室裡的微米藍星：把分散聲能壓縮跨越十幾個數量級",
+            "paragraphIndex": 0,
+            "exactQuote": "當聲波頻率恰與燒瓶內部液體共振模態對齊時，燒瓶中央會建立一道穩定的**駐波（Standing Wave）**——壓力振盪最強烈的「壓力波腹點（Pressure Antinode）」正好落在球心。",
+            "charStart": 76,
+            "charEnd": 173,
+            "contentHash": "60ef79278f16c50a677b2dcc56720e80f606649d8868ce91d65d92dae0556df8",
+            "contextNote": "一、暗室裡的微米藍星：把分散聲能壓縮跨越十幾個數量級 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-2008b0f0",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-1-5bbdf3",
+            "sectionTitle": "一、暗室裡的微米藍星：把分散聲能壓縮跨越十幾個數量級",
+            "paragraphIndex": 1,
+            "exactQuote": "如果在波腹點附近注入一顆直徑只有幾微米的氣泡，這顆氣泡照理說應該在浮力作用下緩緩飄向水面。",
+            "charStart": 348,
+            "charEnd": 393,
+            "contentHash": "2008b0f05222f02da147549bc48c1aa582e6568e6c8150775e54f813943b0007",
+            "contextNote": "一、暗室裡的微米藍星：把分散聲能壓縮跨越十幾個數量級 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-336217db",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-1-5bbdf3",
+            "sectionTitle": "一、暗室裡的微米藍星：把分散聲能壓縮跨越十幾個數量級",
+            "paragraphIndex": 1,
+            "exactQuote": "但只要聲壓振幅維持在特定範圍內，駐波對震盪氣泡施加的時間平均聲輻射力——也就是**比耶克內斯輻射力（Bjerknes Force）**——會像一隻無形的手，將氣泡死死按在壓力波腹的中心位置，抵銷向上浮力，讓它宛如一顆被隱形磁力線鎖住的軟木塞般懸停在半空中。",
+            "charStart": 394,
+            "charEnd": 522,
+            "contentHash": "336217dbc83f967b702281828cd739b301c9cbecf83641cbb2a757846fcaab5b",
+            "contextNote": "一、暗室裡的微米藍星：把分散聲能壓縮跨越十幾個數量級 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-a452cba7",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-1-5bbdf3",
+            "sectionTitle": "一、暗室裡的微米藍星：把分散聲能壓縮跨越十幾個數量級",
+            "paragraphIndex": 2,
+            "exactQuote": "1992 年，費利佩·蓋坦（D. Felipe Gaitan）、勞倫斯·克拉姆（Lawrence A. Crum）、查爾斯·丘奇（Charles C. Church）與羅納德·羅伊（Ronald A. Roy）在《美國聲學學會期刊》（*JASA*）發表了開創性的單氣泡實驗紀錄。",
+            "charStart": 698,
+            "charEnd": 837,
+            "contentHash": "a452cba730ab56b22b084d7fd4d04a436ac24d7370f970ec0e194a0d6de1c002",
+            "contextNote": "一、暗室裡的微米藍星：把分散聲能壓縮跨越十幾個數量級 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-29f71911",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-1-5bbdf3",
+            "sectionTitle": "一、暗室裡的微米藍星：把分散聲能壓縮跨越十幾個數量級",
+            "paragraphIndex": 2,
+            "exactQuote": "在他們先前於數個隨機氣泡雲中觀測到的閃爍基礎上，蓋坦團隊首度在脫氣水與特定溶解氣體系統裡，穩定捕獲並定量追蹤**單一顆**懸浮空化氣泡的完整運動週期：",
+            "charStart": 838,
+            "charEnd": 913,
+            "contentHash": "29f71911f4dbbfc84b624a9e5ac1383df421cbc82a6926a587afdfab3f54716c",
+            "contextNote": "一、暗室裡的微米藍星：把分散聲能壓縮跨越十幾個數量級 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-8dd72fd1",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-1-5bbdf3",
+            "sectionTitle": "一、暗室裡的微米藍星：把分散聲能壓縮跨越十幾個數量級",
+            "paragraphIndex": 3,
+            "exactQuote": "1. **極端節奏**：在頻率約 $20\\text{–}40\\text{ kHz}$、聲壓振幅約 $1.2\\text{–}1.5\\text{ atm}$ 的正弦聲場驅動下，這顆平衡半徑僅數微米的小氣泡，會在每個聲學週期精準重複「慢速膨脹、劇烈內衝塌縮、短暫反彈震盪」的劇本。",
+            "charStart": 1130,
+            "charEnd": 1267,
+            "contentHash": "8dd72fd17f8427f01f7a14602d6007e37ee1602d5e2ffc0142d00d132e75b7aa",
+            "contextNote": "一、暗室裡的微米藍星：把分散聲能壓縮跨越十幾個數量級 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-21212b9d",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-1-5bbdf3",
+            "sectionTitle": "一、暗室裡的微米藍星：把分散聲能壓縮跨越十幾個數量級",
+            "paragraphIndex": 3,
+            "exactQuote": "2. **皮秒閃光**：就在氣泡塌縮至最小半徑的最後瞬間，核心會噴發出一記脈衝寬度僅數十至數百皮秒（約 $40\\text{–}350\\text{ ps}$）的極短寬頻光脈衝——在暗室中以肉眼直視，數萬次每秒的頻閃融合成一顆幾乎紋絲不動的藍白色微光星點。",
+            "charStart": 1268,
+            "charEnd": 1394,
+            "contentHash": "21212b9db89ad4c37f7e1f33781fd0fe50a0dbbb41b9f9afa9eea0ae01449188",
+            "contextNote": "一、暗室裡的微米藍星：把分散聲能壓縮跨越十幾個數量級 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-bcf994df",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-1-5bbdf3",
+            "sectionTitle": "一、暗室裡的微米藍星：把分散聲能壓縮跨越十幾個數量級",
+            "paragraphIndex": 3,
+            "exactQuote": "3. **跨越十幾個數量級的能量濃縮**：從聲場每個水分子微不足道的機械振動能量密度，一路聚焦到發光瞬間氣泡核心釋放的光子能量密度（數電子伏特量級），這顆微米水泡宛如一座全自動週期運轉的微縮能量濃縮器，把平均能量密度集中了超過 $10^{11}$ 至 $10^{12}$ 倍。",
+            "charStart": 1395,
+            "charEnd": 1533,
+            "contentHash": "bcf994dfd1f8b340839309cd0c285bbfb3ec4c05171fdc16a85a69afaaf07251",
+            "contextNote": "一、暗室裡的微米藍星：把分散聲能壓縮跨越十幾個數量級 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-b60cf4cd",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-1-5bbdf3",
+            "sectionTitle": "一、暗室裡的微米藍星：把分散聲能壓縮跨越十幾個數量級",
+            "paragraphIndex": 4,
+            "exactQuote": "這項名為**單氣泡聲致發光（Single-Bubble Sonoluminescence, SBSL）**的現象，隨即把流體力學、非線性熱力學與電漿光譜學拉進同一個直徑僅數公分的石英燒瓶裡。",
+            "charStart": 1939,
+            "charEnd": 2034,
+            "contentHash": "b60cf4cd0e13ed40e4152f3052017aacd23cb33da714838156dc747b74215d2c",
+            "contextNote": "一、暗室裡的微米藍星：把分散聲能壓縮跨越十幾個數量級 · 第 5 段"
+          }
+        ],
+        "formulas": [],
+        "interactiveComponentId": null
+      },
+      {
+        "id": "sec-2-9d0b99",
+        "title": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮",
+        "level": 2,
+        "paragraphs": [
+          "一顆原本與水溫相同（約 $293\\text{ K}$）的小氣泡，究竟如何靠不到兩大氣壓的聲波在水中點燃上萬度高溫？答案完全寫在支配球對稱**空化（Cavitation）**氣泡半徑 $R(t)$ 隨時間演化的非線性微分方程之中。所謂空化，是指液體在局部負壓拉扯下撕開微米空腔、隨後於正壓恢復時因慣性猛烈內衝塌縮的現象，宛如在無聲水體裡反覆張合的微型真空彈簧。",
+          "在麥可·布倫納（Michael P. Brenner）、薩沙·希爾根費爾特（Sascha Hilgenfeldt）與德特勒夫·羅澤（Detlef Lohse）於 2002 年在《現代物理評論》（*Reviews of Modern Physics*）發表的權威綜述中，這條經過現代修正的**瑞利－普萊塞特方程（Modified Rayleigh–Plesset Equation）**寫作：",
+          "$$R\\ddot{R} + \\frac{3}{2}\\dot{R}^2 = \\frac{1}{\\rho}\\left[ \\left(P_0 + \\frac{2\\sigma}{R_0}\\right)\\left(\\frac{R_0^3 - h^3}{R^3 - h^3}\\right)^\\gamma - \\frac{2\\sigma}{R} - \\frac{4\\mu \\dot{R}}{R} - P_0 - P_a\\sin(\\omega t) \\right] + \\frac{R}{\\rho c_l}\\frac{d}{dt}P_g(R)$$",
+          "這條看似龐雜的方程式，其實忠實刻畫了「整片周圍冷水」與「內部一小團氣體」之間一場極度不對稱的角力：",
+          "- **左側慣性引擎（$R\\ddot{R} + \\frac{3}{2}\\dot{R}^2$）**：別忘了氣泡裡幾乎沒有質量，真正被加速推動的是氣泡外側那一大團液態水（密度 $\\rho \\approx 998\\ \\text{kg/m}^3$）。當半徑 $R$ 急遽縮小時，外圍水殼向中心匯聚，幾何收斂迫使氣泡壁內衝速度 $|\\dot{R}|$ 呈幾何級數暴衝。\n- **凡得瓦硬核排除體積（$h^3$）**：當氣體被壓縮到接近分子自身體積時，它不能無限縮小成數學奇異點。方程中引入了**凡得瓦硬核半徑（van der Waals Hard-Core Radius）** $h$（對於氬氣核心，典型比值約 $h \\approx R_0 / 8.86$），就像把海綿死命捏到分子彼此緊貼、再也擠不出任何空隙的極限硬核心。當 $R \\to h$ 時，括號裡的氣壓項 $P_g(R) = (P_0 + 2\\sigma/R_0)\\left(\\frac{R_0^3 - h^3}{R^3 - h^3}\\right)^\\gamma$ 會如銅牆鐵壁般瞬間飆升至數萬大氣壓，將超音速內衝的水殼硬生生煞停並反彈。\n- **表面張力與黏滯阻尼（$-\\frac{2\\sigma}{R} - \\frac{4\\mu\\dot{R}}{R}$）**：表面張力 $\\sigma$ 試圖把氣泡拉縮，黏滯係數 $\\mu$ 則磨耗邊界運動動能。\n- **聲輻射阻尼（$+\\frac{R}{\\rho c_l}\\frac{d}{dt}P_g(R)$）**：其中 $c_l \\approx 1481\\ \\text{m/s}$ 是水中的聲速。這項由液體微弱可壓縮性產生的修正項，物理意義十分直觀：當氣泡劇烈塌縮與反彈時，氣壓劇變會向四周水體發射出球面壓力波，把一部分機械能當成聲波輻射帶走，成為主塌縮之後迅速平息反彈震盪的關鍵剎車。",
+          "為什麼看似溫柔的 $P_a \\approx 1.35\\ \\text{atm}$ 聲波能造成如此恐怖的塌縮？關鍵在於兩階段的巨大尺度不對稱：",
+          "1. **負壓拉長蓄勢（$\\sim 15\\,\\mu\\text{s}$）**：在駐波聲壓轉負（低於 $1\\text{ atm}$ 環境靜壓 $P_0$）的半個週期裡，外部水壓甚至降為負張力，平衡半徑原本僅 $R_0 \\approx 4.5\\,\\mu\\text{m}$ 的小氣泡一口氣被拉扯膨脹至最大半徑 $R_{\\max} \\approx 35\\text{–}50\\,\\mu\\text{m}$（體積放大超過五百倍），氣泡內部幾乎變成接近真空的低壓腔，把大量勢能儲存在周圍抬升的液體裡。\n2. **慣性失控塌縮與準絕熱加熱（$< 1\\,\\mu\\text{s}$）**：當聲波轉回正壓時，四周水體在超過一平方公分一公斤的壓差推動下，無阻攔地往近乎真空的空腔中心崩塌。塌縮末期氣泡壁內衝速度輕鬆突破氣體聲速（超音速內衝），在最後幾十奈秒內完成壓縮。由於壓縮時間遠短於氣體熱傳導散入冷水所需的擴散時間，內部氣體經歷了近乎完美的**準絕熱壓縮（Quasi-Adiabatic Compression）**——所有機械壓縮功來不及逃逸，全數灌進這小撮氣體的內能中，依照多方熱力學關係 $T \\propto (R_0^3 - h^3)^{\\gamma - 1} / (R^3 - h^3)^{\\gamma - 1}$，將核心溫度一舉推升至 **$10,000\\text{–}20,000\\text{ K}$** 的極端水準，甚至比太陽表面約 $5,800\\text{ K}$ 的光球層更加熾熱！",
+          "隨後，氣泡撞上凡得瓦硬核反彈，並因為來不及在半週期內消耗所有動能，在主塌縮之後緊接上演三到六次快速衰減的阻尼反彈震盪（Afterbounces），直到聲輻射與黏滯阻尼把它平息回待命狀態，準備迎接下一個聲學週期。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-fddbe148",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-2-9d0b99",
+            "sectionTitle": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮",
+            "paragraphIndex": 0,
+            "exactQuote": "一顆原本與水溫相同（約 $293\\text{ K}$）的小氣泡，究竟如何靠不到兩大氣壓的聲波在水中點燃上萬度高溫？",
+            "charStart": 2132,
+            "charEnd": 2189,
+            "contentHash": "fddbe148ea9100c47fd0a255d3bd4d932e6bda5fcf49d763f9f820a0f4badc4d",
+            "contextNote": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-ee32343e",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-2-9d0b99",
+            "sectionTitle": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮",
+            "paragraphIndex": 0,
+            "exactQuote": "答案完全寫在支配球對稱**空化（Cavitation）**氣泡半徑 $R(t)$ 隨時間演化的非線性微分方程之中。",
+            "charStart": 2190,
+            "charEnd": 2247,
+            "contentHash": "ee32343eda131eaebc56c821928cca3e39494b1f0b075ecfdbdd649c819d2dbc",
+            "contextNote": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-5c31348a",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-2-9d0b99",
+            "sectionTitle": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮",
+            "paragraphIndex": 0,
+            "exactQuote": "所謂空化，是指液體在局部負壓拉扯下撕開微米空腔、隨後於正壓恢復時因慣性猛烈內衝塌縮的現象，宛如在無聲水體裡反覆張合的微型真空彈簧。",
+            "charStart": 2248,
+            "charEnd": 2313,
+            "contentHash": "5c31348a90fe88da31556c79ea5db4b59652bc4981234f9393758c48882f3ddf",
+            "contextNote": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-4281d31f",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-2-9d0b99",
+            "sectionTitle": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮",
+            "paragraphIndex": 1,
+            "exactQuote": "在麥可·布倫納（Michael P. Brenner）、薩沙·希爾根費爾特（Sascha Hilgenfeldt）與德特勒夫·羅澤（Detlef Lohse）於 2002 年在《現代物理評論》（*Reviews of Modern Physics*）發表的權威綜述中，這條經過現代修正的**瑞利－普萊塞特方程（Modified Rayleigh–Plesset Equation）**寫作：",
+            "charStart": 2495,
+            "charEnd": 2690,
+            "contentHash": "4281d31f91470c1bbc725870966b431f9ac87fc28938a3ccee7d3079bbfa74da",
+            "contextNote": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-e1356042",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-2-9d0b99",
+            "sectionTitle": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮",
+            "paragraphIndex": 3,
+            "exactQuote": "這條看似龐雜的方程式，其實忠實刻畫了「整片周圍冷水」與「內部一小團氣體」之間一場極度不對稱的角力：",
+            "charStart": 2888,
+            "charEnd": 2937,
+            "contentHash": "e1356042baedcc202651470089f78f87d9902110a877db60bdb312050f0710d3",
+            "contextNote": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-cdd34c66",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-2-9d0b99",
+            "sectionTitle": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮",
+            "paragraphIndex": 4,
+            "exactQuote": "- **左側慣性引擎（$R\\ddot{R} + \\frac{3}{2}\\dot{R}^2$）**：別忘了氣泡裡幾乎沒有質量，真正被加速推動的是氣泡外側那一大團液態水（密度 $\\rho \\approx 998\\ \\text{kg/m}^3$）。",
+            "charStart": 2989,
+            "charEnd": 3110,
+            "contentHash": "cdd34c66d996fe9f556f6835457579f375c55f17242eb13c3bfa1763a1f7653a",
+            "contextNote": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮 · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-9027346f",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-2-9d0b99",
+            "sectionTitle": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮",
+            "paragraphIndex": 4,
+            "exactQuote": "當半徑 $R$ 急遽縮小時，外圍水殼向中心匯聚，幾何收斂迫使氣泡壁內衝速度 $|\\dot{R}|$ 呈幾何級數暴衝。",
+            "charStart": 3111,
+            "charEnd": 3169,
+            "contentHash": "9027346f537df711e6f3585f4d41840e7ab10daeaa69ef56f0b2bbfe3849cc4b",
+            "contextNote": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮 · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-21ea05bd",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-2-9d0b99",
+            "sectionTitle": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮",
+            "paragraphIndex": 4,
+            "exactQuote": "- **凡得瓦硬核排除體積（$h^3$）**：當氣體被壓縮到接近分子自身體積時，它不能無限縮小成數學奇異點。",
+            "charStart": 3170,
+            "charEnd": 3224,
+            "contentHash": "21ea05bd0c2aa6ad169e490820903f5b0816c0a2d3eb1c0c3933440051bcfc7d",
+            "contextNote": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮 · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-489ab2cc",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-2-9d0b99",
+            "sectionTitle": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮",
+            "paragraphIndex": 4,
+            "exactQuote": "方程中引入了**凡得瓦硬核半徑（van der Waals Hard-Core Radius）** $h$（對於氬氣核心，典型比值約 $h \\approx R_0 / 8.86$），就像把海綿死命捏到分子彼此緊貼、再也擠不出任何空隙的極限硬核心。",
+            "charStart": 3225,
+            "charEnd": 3348,
+            "contentHash": "489ab2ccc90acca3e86f0c10a519f8df6c0b49a459a95610b50afced5c19cabb",
+            "contextNote": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮 · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-977556d7",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-2-9d0b99",
+            "sectionTitle": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮",
+            "paragraphIndex": 4,
+            "exactQuote": "當 $R \\to h$ 時，括號裡的氣壓項 $P_g(R) = (P_0 + 2\\sigma/R_0)\\left(\\frac{R_0^3 - h^3}{R^3 - h^3}\\right)^\\gamma$ 會如銅牆鐵壁般瞬間飆升至數萬大氣壓，將超音速內衝的水殼硬生生煞停並反彈。",
+            "charStart": 3349,
+            "charEnd": 3487,
+            "contentHash": "977556d7c292775a70f8e0bd2bb8427ca605f5aaf5f73f5cb03130a5e1a21ed4",
+            "contextNote": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮 · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-37ca437a",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-2-9d0b99",
+            "sectionTitle": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮",
+            "paragraphIndex": 4,
+            "exactQuote": "- **表面張力與黏滯阻尼（$-\\frac{2\\sigma}{R} - \\frac{4\\mu\\dot{R}}{R}$）**：表面張力 $\\sigma$ 試圖把氣泡拉縮，黏滯係數 $\\mu$ 則磨耗邊界運動動能。",
+            "charStart": 3488,
+            "charEnd": 3593,
+            "contentHash": "37ca437aee8eeff9490f2160288885f7b7d5e67c393899758a137e2f86e3b02e",
+            "contextNote": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮 · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-09bb6268",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-2-9d0b99",
+            "sectionTitle": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮",
+            "paragraphIndex": 4,
+            "exactQuote": "- **聲輻射阻尼（$+\\frac{R}{\\rho c_l}\\frac{d}{dt}P_g(R)$）**：其中 $c_l \\approx 1481\\ \\text{m/s}$ 是水中的聲速。",
+            "charStart": 3594,
+            "charEnd": 3688,
+            "contentHash": "09bb62687b34826a1a1b92ddbbc3adbeef8a8f657c6345bd96f3e9fe1757b54a",
+            "contextNote": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮 · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-08b68018",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-2-9d0b99",
+            "sectionTitle": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮",
+            "paragraphIndex": 4,
+            "exactQuote": "這項由液體微弱可壓縮性產生的修正項，物理意義十分直觀：當氣泡劇烈塌縮與反彈時，氣壓劇變會向四周水體發射出球面壓力波，把一部分機械能當成聲波輻射帶走，成為主塌縮之後迅速平息反彈震盪的關鍵剎車。",
+            "charStart": 3689,
+            "charEnd": 3784,
+            "contentHash": "08b68018a6c1b5b45ac3692988926ffc866eb15e6f6965fc1ccc2bec30b36b4d",
+            "contextNote": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮 · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-eb76c350",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-2-9d0b99",
+            "sectionTitle": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮",
+            "paragraphIndex": 5,
+            "exactQuote": "為什麼看似溫柔的 $P_a \\approx 1.35\\ \\text{atm}$ 聲波能造成如此恐怖的塌縮？",
+            "charStart": 4578,
+            "charEnd": 4631,
+            "contentHash": "eb76c350b7a5a263a2a5bbae9883ce02a6a3905d1542565396c409a8b9eff741",
+            "contextNote": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮 · 第 6 段"
+          },
+          {
+            "sentenceId": "sent-53ce948d",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-2-9d0b99",
+            "sectionTitle": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮",
+            "paragraphIndex": 5,
+            "exactQuote": "關鍵在於兩階段的巨大尺度不對稱：",
+            "charStart": 4632,
+            "charEnd": 4648,
+            "contentHash": "53ce948dc062ff512b15d841ec1c355b4699cf22e1aa460a83d62041fb5b35cb",
+            "contextNote": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮 · 第 6 段"
+          },
+          {
+            "sentenceId": "sent-eec05bbf",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-2-9d0b99",
+            "sectionTitle": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮",
+            "paragraphIndex": 6,
+            "exactQuote": "1. **負壓拉長蓄勢（$\\sim 15\\,\\mu\\text{s}$）**：在駐波聲壓轉負（低於 $1\\text{ atm}$ 環境靜壓 $P_0$）的半個週期裡，外部水壓甚至降為負張力，平衡半徑原本僅 $R_0 \\approx 4.5\\,\\mu\\text{m}$ 的小氣泡一口氣被拉扯膨脹至最大半徑 $R_{\\max} \\approx 35\\text{–}50\\,\\mu\\text{m}$（體積放大超過五百倍），氣泡內部幾乎變成接近真空的低壓腔，把大量勢能儲存在周圍抬升的液體裡。",
+            "charStart": 4720,
+            "charEnd": 4961,
+            "contentHash": "eec05bbf6e73fa0752fc86a87562197170f75f62af56e6610cdd230469f48106",
+            "contextNote": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮 · 第 7 段"
+          },
+          {
+            "sentenceId": "sent-1e7c6d14",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-2-9d0b99",
+            "sectionTitle": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮",
+            "paragraphIndex": 6,
+            "exactQuote": "2. **慣性失控塌縮與準絕熱加熱（$< 1\\,\\mu\\text{s}$）**：當聲波轉回正壓時，四周水體在超過一平方公分一公斤的壓差推動下，無阻攔地往近乎真空的空腔中心崩塌。",
+            "charStart": 4962,
+            "charEnd": 5050,
+            "contentHash": "1e7c6d143e5675f57fd6cd9d6ea9dc4ee92121a68fd4edd70a52282fae2d66cb",
+            "contextNote": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮 · 第 7 段"
+          },
+          {
+            "sentenceId": "sent-77e2ccac",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-2-9d0b99",
+            "sectionTitle": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮",
+            "paragraphIndex": 6,
+            "exactQuote": "塌縮末期氣泡壁內衝速度輕鬆突破氣體聲速（超音速內衝），在最後幾十奈秒內完成壓縮。",
+            "charStart": 5051,
+            "charEnd": 5091,
+            "contentHash": "77e2ccace5d41509b5ecaa767239820a0fd46020458e4a06ecd027d07cf63e7c",
+            "contextNote": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮 · 第 7 段"
+          },
+          {
+            "sentenceId": "sent-f6fa3716",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-2-9d0b99",
+            "sectionTitle": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮",
+            "paragraphIndex": 6,
+            "exactQuote": "由於壓縮時間遠短於氣體熱傳導散入冷水所需的擴散時間，內部氣體經歷了近乎完美的**準絕熱壓縮（Quasi-Adiabatic Compression）**——所有機械壓縮功來不及逃逸，全數灌進這小撮氣體的內能中，依照多方熱力學關係 $T \\propto (R_0^3 - h^3)^{\\gamma - 1} / (R^3 - h^3)^{\\gamma - 1}$，將核心溫度一舉推升至 **$10,000\\text{–}20,000\\text{ K}$** 的極端水準，甚至比太陽表面約 $5,800\\text{ K}$ 的光球層更加熾熱！",
+            "charStart": 5092,
+            "charEnd": 5361,
+            "contentHash": "f6fa37164a8700e096fa5167ff0317db9aad13e66adb25032b32bc40284e519f",
+            "contextNote": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮 · 第 7 段"
+          },
+          {
+            "sentenceId": "sent-daa5e2f6",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-2-9d0b99",
+            "sectionTitle": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮",
+            "paragraphIndex": 7,
+            "exactQuote": "隨後，氣泡撞上凡得瓦硬核反彈，並因為來不及在半週期內消耗所有動能，在主塌縮之後緊接上演三到六次快速衰減的阻尼反彈震盪（Afterbounces），直到聲輻射與黏滯阻尼把它平息回待命狀態，準備迎接下一個聲學週期。",
+            "charStart": 6003,
+            "charEnd": 6108,
+            "contentHash": "daa5e2f6d941110b8fc4120c189c617ddfac16fb7c51b7564c813793cf86e4c1",
+            "contextNote": "二、瑞利－普萊塞特方程：從膨脹蓄勢到撞上凡得瓦硬核的暴力塌縮 · 第 8 段"
+          }
+        ],
+        "formulas": [
+          "$$R\\ddot{R} + \\frac{3}{2}\\dot{R}^2 = \\frac{1}{\\rho}\\left[ \\left(P_0 + \\frac{2\\sigma}{R_0}\\right)\\left(\\frac{R_0^3 - h^3}{R^3 - h^3}\\right)^\\gamma - \\frac{2\\sigma}{R} - \\frac{4\\mu \\dot{R}}{R} - P_0 - P_a\\sin(\\omega t) \\right] + \\frac{R}{\\rho c_l}\\frac{d}{dt}P_g(R)$$"
+        ],
+        "interactiveComponentId": null
+      },
+      {
+        "id": "sec-3-0667b7",
+        "title": "三、動手實驗室：求解修正瑞利－普萊塞特方程與空化相空間",
+        "level": 2,
+        "paragraphs": [
+          "紙上的微分方程把膨脹、超音速塌縮與硬核煞車壓縮在同一行數學符號裡；現在我們把這條方程式放進即時的**自適應步長四階龍格－庫塔（Adaptive RK4）數值求解器**中，直接觀察極端尺度的時間演變。",
+          "在下方模擬器中，左側面板以空間剖面即時放大共振腔波腹點處的微米氣泡——你可以對照虛線標示的平衡半徑 $R_0$、最大膨脹邊界 $R_{\\max}$ 與最內圈的紅色凡得瓦硬核 $h$，並追蹤角落 $(P_a, R_0)$ 相空間穩定島的位置；右側面板則將同一聲學週期（$26.5\\text{ kHz}$）的正規化半徑 $R(t)/R_0$、對數核心溫度 $T(t)$ 與駐波驅動聲壓 $P_a\\sin(\\omega t)$ 同步疊畫。你可以切換預設情境或親手拖曳滑桿，驗證「未達空化閾值」、「穩定聲致發光島」與「形狀不穩定撕裂風險區」的物理分界：",
+          "<InteractiveExperiment id=\"SonoluminescenceBubbleSimulator\" />",
+          "實地操作模擬器裡的幾組參數，三個深刻而反直覺的物理事實會立刻浮出水面：",
+          "- **主塌縮後的阻尼反彈震盪（Afterbounces）**：切換至「穩定聲致發光島（$1.35\\text{ atm}, 4.5\\,\\mu\\text{m}$）」並開啟慢動作，觀察右側面板藍色半徑曲線在主塌縮尖谷撞底之後，並非立刻躺平，而是連續彈跳出好幾道振幅遞減的餘震波峰。若沒有方程末尾的聲輻射阻尼項把能量以球面聲波（左側向外擴散的藍色波圈）帶走，這些反彈會更劇烈地消耗或擾亂下一個週期。\n- **為什麼純氦氣（$\\gamma = 5/3$）光很暗？** 氦氣明明擁有單原子最高絕熱指數 $\\gamma = 5/3$，看似最容易被絕熱加熱；但點擊切換成「純氦氣」後，由於氦分子極輕、熱導率高達氬氣的八倍以上，在塌縮後半段大量熱能順著邊界迅速滲漏進周圍冰水裡，大幅壓低實際峰值溫度與光脈衝強度。\n- **為什麼純氮氣也撐不起明亮的穩態閃光？** 切換至「純氮氣」時，雙原子分子不僅有額外的轉動與振動自由度（$\\gamma = 1.40$）吃掉壓縮能，高溫下更會引發吸熱的分子解離與化學消耗，使核心溫度與發光效率遠不如單原子氬氣核心。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-2d894849",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-3-0667b7",
+            "sectionTitle": "三、動手實驗室：求解修正瑞利－普萊塞特方程與空化相空間",
+            "paragraphIndex": 0,
+            "exactQuote": "紙上的微分方程把膨脹、超音速塌縮與硬核煞車壓縮在同一行數學符號裡；現在我們把這條方程式放進即時的**自適應步長四階龍格－庫塔（Adaptive RK4）數值求解器**中，直接觀察極端尺度的時間演變。",
+            "charStart": 6216,
+            "charEnd": 6315,
+            "contentHash": "2d89484957bb705be572d5bdbd3014fbe3af453bfdb1e942b60100a628c485f9",
+            "contextNote": "三、動手實驗室：求解修正瑞利－普萊塞特方程與空化相空間 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-11b7b5cc",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-3-0667b7",
+            "sectionTitle": "三、動手實驗室：求解修正瑞利－普萊塞特方程與空化相空間",
+            "paragraphIndex": 1,
+            "exactQuote": "在下方模擬器中，左側面板以空間剖面即時放大共振腔波腹點處的微米氣泡——你可以對照虛線標示的平衡半徑 $R_0$、最大膨脹邊界 $R_{\\max}$ 與最內圈的紅色凡得瓦硬核 $h$，並追蹤角落 $(P_a, R_0)$ 相空間穩定島的位置；右側面板則將同一聲學週期（$26.5\\text{ kHz}$）的正規化半徑 $R(t)/R_0$、對數核心溫度 $T(t)$ 與駐波驅動聲壓 $P_a\\sin(\\omega t)$ 同步疊畫。",
+            "charStart": 6417,
+            "charEnd": 6633,
+            "contentHash": "11b7b5cc8e97079ea3eaae0665470153d9aadd646435df5c87c30562252dd542",
+            "contextNote": "三、動手實驗室：求解修正瑞利－普萊塞特方程與空化相空間 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-1e2421b0",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-3-0667b7",
+            "sectionTitle": "三、動手實驗室：求解修正瑞利－普萊塞特方程與空化相空間",
+            "paragraphIndex": 1,
+            "exactQuote": "你可以切換預設情境或親手拖曳滑桿，驗證「未達空化閾值」、「穩定聲致發光島」與「形狀不穩定撕裂風險區」的物理分界：",
+            "charStart": 6634,
+            "charEnd": 6690,
+            "contentHash": "1e2421b0d19c27b86c4df42608cdd54a5399d575855e6a2abb194f5a8f2cb311",
+            "contextNote": "三、動手實驗室：求解修正瑞利－普萊塞特方程與空化相空間 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-f43ccb8a",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-3-0667b7",
+            "sectionTitle": "三、動手實驗室：求解修正瑞利－普萊塞特方程與空化相空間",
+            "paragraphIndex": 3,
+            "exactQuote": "實地操作模擬器裡的幾組參數，三個深刻而反直覺的物理事實會立刻浮出水面：",
+            "charStart": 6965,
+            "charEnd": 7000,
+            "contentHash": "f43ccb8a16fadb16c06310a0cabdde85fe466038eed921ab3aa50acc83b7ea55",
+            "contextNote": "三、動手實驗室：求解修正瑞利－普萊塞特方程與空化相空間 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-b7c3a3da",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-3-0667b7",
+            "sectionTitle": "三、動手實驗室：求解修正瑞利－普萊塞特方程與空化相空間",
+            "paragraphIndex": 4,
+            "exactQuote": "- **主塌縮後的阻尼反彈震盪（Afterbounces）**：切換至「穩定聲致發光島（$1.35\\text{ atm}, 4.5\\,\\mu\\text{m}$）」並開啟慢動作，觀察右側面板藍色半徑曲線在主塌縮尖谷撞底之後，並非立刻躺平，而是連續彈跳出好幾道振幅遞減的餘震波峰。",
+            "charStart": 7038,
+            "charEnd": 7176,
+            "contentHash": "b7c3a3dab68deae5ab05ecb790f850789d4e89b6ad96e45c72d6cffeb7f05874",
+            "contextNote": "三、動手實驗室：求解修正瑞利－普萊塞特方程與空化相空間 · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-79b32631",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-3-0667b7",
+            "sectionTitle": "三、動手實驗室：求解修正瑞利－普萊塞特方程與空化相空間",
+            "paragraphIndex": 4,
+            "exactQuote": "若沒有方程末尾的聲輻射阻尼項把能量以球面聲波（左側向外擴散的藍色波圈）帶走，這些反彈會更劇烈地消耗或擾亂下一個週期。",
+            "charStart": 7177,
+            "charEnd": 7235,
+            "contentHash": "79b3263148f42cd6ae50bec1c4885fcd762a4f8beec5d53dd24d6d742eda7ea8",
+            "contextNote": "三、動手實驗室：求解修正瑞利－普萊塞特方程與空化相空間 · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-8a2d0d49",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-3-0667b7",
+            "sectionTitle": "三、動手實驗室：求解修正瑞利－普萊塞特方程與空化相空間",
+            "paragraphIndex": 4,
+            "exactQuote": "- **為什麼純氦氣（$\\gamma = 5/3$）光很暗？**",
+            "charStart": 7236,
+            "charEnd": 7268,
+            "contentHash": "8a2d0d49720ad4c97829405c2ff068b3eff18064825f36c631203c53d89d3ae0",
+            "contextNote": "三、動手實驗室：求解修正瑞利－普萊塞特方程與空化相空間 · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-e7ea56f9",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-3-0667b7",
+            "sectionTitle": "三、動手實驗室：求解修正瑞利－普萊塞特方程與空化相空間",
+            "paragraphIndex": 4,
+            "exactQuote": "氦氣明明擁有單原子最高絕熱指數 $\\gamma = 5/3$，看似最容易被絕熱加熱；但點擊切換成「純氦氣」後，由於氦分子極輕、熱導率高達氬氣的八倍以上，在塌縮後半段大量熱能順著邊界迅速滲漏進周圍冰水裡，大幅壓低實際峰值溫度與光脈衝強度。",
+            "charStart": 7269,
+            "charEnd": 7387,
+            "contentHash": "e7ea56f972f86fdd93cb3601965486f13e6b2077d9f630693acfe038f5180579",
+            "contextNote": "三、動手實驗室：求解修正瑞利－普萊塞特方程與空化相空間 · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-65888af4",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-3-0667b7",
+            "sectionTitle": "三、動手實驗室：求解修正瑞利－普萊塞特方程與空化相空間",
+            "paragraphIndex": 4,
+            "exactQuote": "- **為什麼純氮氣也撐不起明亮的穩態閃光？**",
+            "charStart": 7388,
+            "charEnd": 7412,
+            "contentHash": "65888af4f40835a5382155b3a0a25979d6b8fc881c8f1e0f6d3754efeaffd0d9",
+            "contextNote": "三、動手實驗室：求解修正瑞利－普萊塞特方程與空化相空間 · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-8aa4c9c3",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-3-0667b7",
+            "sectionTitle": "三、動手實驗室：求解修正瑞利－普萊塞特方程與空化相空間",
+            "paragraphIndex": 4,
+            "exactQuote": "切換至「純氮氣」時，雙原子分子不僅有額外的轉動與振動自由度（$\\gamma = 1.40$）吃掉壓縮能，高溫下更會引發吸熱的分子解離與化學消耗，使核心溫度與發光效率遠不如單原子氬氣核心。",
+            "charStart": 7413,
+            "charEnd": 7506,
+            "contentHash": "8aa4c9c359852825d3e2855c17e4fd6764a7dc5265dde2a3403dcca2009c6a5d",
+            "contextNote": "三、動手實驗室：求解修正瑞利－普萊塞特方程與空化相空間 · 第 5 段"
+          }
+        ],
+        "formulas": [],
+        "interactiveComponentId": "SonoluminescenceBubbleSimulator"
+      },
+      {
+        "id": "sec-4-b2648c",
+        "title": "四、光從何而來？熱致弱電漿輻射與「氣泡核融合」爭議的科學澄清",
+        "level": 2,
+        "paragraphs": [
+          "溫度飆破一萬至兩萬克氏溫標（$10,000\\text{–}20,000\\text{ K}$）的微米氣泡核心裡，氣體已經不再只是純粹的中性分子碰撞。這團極端高溫高密度的氣體會發生**部分熱電離（Partial Thermal Ionization）**，轉化為一顆壽命僅數百皮秒的**弱電漿（Weakly Ionized Plasma）**。",
+          "根據蓋坦（1992）的光譜量測與布倫納、希爾根費爾特及羅澤（2002）的輻射傳輸分析，單氣泡聲致發光之所以呈現從可見光藍端一路延伸至深紫外光（受限於水體自身在 $\\sim 190\\text{ nm}$ 以下的強吸收）的平滑連續光譜，而非孤立尖銳的原子譜線，其核心發光機制來自兩種極端電漿輻射：",
+          "1. **熱軔致輻射（Thermal Bremsstrahlung）**：在熱電離釋放出的自由電子高速穿梭於高密度氣泡核心時，每當掠過帶正電離子或中性原子的局域電場，電子軌跡被迫急轉彎減速。帶電粒子只要加速或減速就會向外拋出電磁波——電子宛如在密集原子障礙場中不斷急踩剎車，將動能轉化為寬頻連續光譜光子。\n2. **電子－原子／離子複合輻射（Recombination Radiation）**：高速自由電子在塌縮高密度瞬間被離子重新捕獲回束縛態時，多餘的能量同樣以連續譜光子形式瞬間釋放。",
+          "因為塌縮轉折點極端尖銳，氣溫僅在撞擊硬核前後的數十至數百皮秒（$40\\text{–}350\\text{ ps}$）內足以維持顯著電離度；一旦水殼反彈膨脹、溫度驟降，電漿立刻熄滅並復歸透明氣體。",
+          "這裡必須劃下一條極為嚴格的科學界線，正面回應科學史上最著名的爭議之一：**單氣泡聲致發光會觸發核融合嗎？**",
+          "在 2000 年代初期，曾有研究團隊宣稱在丙酮等有機溶劑空化氣泡實驗中測得「氣泡核融合（Bubble Fusion / Sonofusion）」產生的中子與氚訊號，一度引發媒體轟動。然而，隨後多座獨立國家級與大學實驗室在更嚴密的背景輻射遮蔽、多通道中子能譜與符合計數檢驗下，**始終無法獨立重現**聲致空化氣泡產生核融合反應的關鍵證據。",
+          "以現今經過充分同行評審檢驗的標準熱力學與電漿物理共識而言：典型水中單氣泡聲致發光核心所達到的溫度為 **$10,000\\text{–}20,000\\text{ K}$**（相當於約 $1\\text{–}2\\text{ eV}$ 的熱動能），這足以使惰性氣體部分電離並發出強烈的熱軔致與複合紫外／藍白光，但距離克服原子核庫侖排斥障壁所需的千萬度級熱核融合門檻（數千至上萬電子伏特），依然相差**三個以上的數量級**。因此，目前物理學界明確否定誇大的「氣泡核融合」宣稱，將單氣泡聲致發光穩固歸因於極端高溫熱致弱電漿輻射現象。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-0bde0f27",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-4-b2648c",
+            "sectionTitle": "四、光從何而來？熱致弱電漿輻射與「氣泡核融合」爭議的科學澄清",
+            "paragraphIndex": 0,
+            "exactQuote": "溫度飆破一萬至兩萬克氏溫標（$10,000\\text{–}20,000\\text{ K}$）的微米氣泡核心裡，氣體已經不再只是純粹的中性分子碰撞。",
+            "charStart": 7976,
+            "charEnd": 8049,
+            "contentHash": "0bde0f27e3b717fb1a8fc588bd0d24417a8cad98439610f1fa8233cb355232be",
+            "contextNote": "四、光從何而來？熱致弱電漿輻射與「氣泡核融合」爭議的科學澄清 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-25b4425f",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-4-b2648c",
+            "sectionTitle": "四、光從何而來？熱致弱電漿輻射與「氣泡核融合」爭議的科學澄清",
+            "paragraphIndex": 0,
+            "exactQuote": "這團極端高溫高密度的氣體會發生**部分熱電離（Partial Thermal Ionization）**，轉化為一顆壽命僅數百皮秒的**弱電漿（Weakly Ionized Plasma）**。",
+            "charStart": 8050,
+            "charEnd": 8147,
+            "contentHash": "25b4425f2079d3088c07b741b6686f03f28a9d40572efce558671f4f643ece67",
+            "contextNote": "四、光從何而來？熱致弱電漿輻射與「氣泡核融合」爭議的科學澄清 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-5b99bd7e",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-4-b2648c",
+            "sectionTitle": "四、光從何而來？熱致弱電漿輻射與「氣泡核融合」爭議的科學澄清",
+            "paragraphIndex": 1,
+            "exactQuote": "根據蓋坦（1992）的光譜量測與布倫納、希爾根費爾特及羅澤（2002）的輻射傳輸分析，單氣泡聲致發光之所以呈現從可見光藍端一路延伸至深紫外光（受限於水體自身在 $\\sim 190\\text{ nm}$ 以下的強吸收）的平滑連續光譜，而非孤立尖銳的原子譜線，其核心發光機制來自兩種極端電漿輻射：",
+            "charStart": 8320,
+            "charEnd": 8466,
+            "contentHash": "5b99bd7e41764ed624133bda983f4e8527b242a336dbbdf2470bb0ba11ff2394",
+            "contextNote": "四、光從何而來？熱致弱電漿輻射與「氣泡核融合」爭議的科學澄清 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-a8b8b048",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-4-b2648c",
+            "sectionTitle": "四、光從何而來？熱致弱電漿輻射與「氣泡核融合」爭議的科學澄清",
+            "paragraphIndex": 2,
+            "exactQuote": "1. **熱軔致輻射（Thermal Bremsstrahlung）**：在熱電離釋放出的自由電子高速穿梭於高密度氣泡核心時，每當掠過帶正電離子或中性原子的局域電場，電子軌跡被迫急轉彎減速。",
+            "charStart": 8615,
+            "charEnd": 8710,
+            "contentHash": "a8b8b048c11cfd50448f61a2af504ced5c959b19dffc52588f5ea7af197ed17e",
+            "contextNote": "四、光從何而來？熱致弱電漿輻射與「氣泡核融合」爭議的科學澄清 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-72bd36ab",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-4-b2648c",
+            "sectionTitle": "四、光從何而來？熱致弱電漿輻射與「氣泡核融合」爭議的科學澄清",
+            "paragraphIndex": 2,
+            "exactQuote": "帶電粒子只要加速或減速就會向外拋出電磁波——電子宛如在密集原子障礙場中不斷急踩剎車，將動能轉化為寬頻連續光譜光子。",
+            "charStart": 8711,
+            "charEnd": 8768,
+            "contentHash": "72bd36ab828a23d88f22c0bd87fbb4af95e95ddddabbac94fd280e09a995de20",
+            "contextNote": "四、光從何而來？熱致弱電漿輻射與「氣泡核融合」爭議的科學澄清 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-98c4bb89",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-4-b2648c",
+            "sectionTitle": "四、光從何而來？熱致弱電漿輻射與「氣泡核融合」爭議的科學澄清",
+            "paragraphIndex": 2,
+            "exactQuote": "2. **電子－原子／離子複合輻射（Recombination Radiation）**：高速自由電子在塌縮高密度瞬間被離子重新捕獲回束縛態時，多餘的能量同樣以連續譜光子形式瞬間釋放。",
+            "charStart": 8769,
+            "charEnd": 8861,
+            "contentHash": "98c4bb897364c4fb0b65d5b5e024c977f13e6109dd9fe53770726a180587631f",
+            "contextNote": "四、光從何而來？熱致弱電漿輻射與「氣泡核融合」爭議的科學澄清 · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-ed19f4b2",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-4-b2648c",
+            "sectionTitle": "四、光從何而來？熱致弱電漿輻射與「氣泡核融合」爭議的科學澄清",
+            "paragraphIndex": 3,
+            "exactQuote": "因為塌縮轉折點極端尖銳，氣溫僅在撞擊硬核前後的數十至數百皮秒（$40\\text{–}350\\text{ ps}$）內足以維持顯著電離度；一旦水殼反彈膨脹、溫度驟降，電漿立刻熄滅並復歸透明氣體。",
+            "charStart": 9109,
+            "charEnd": 9205,
+            "contentHash": "ed19f4b264c0a0d88c76b6fe44f5c0455a60c6c9c8bcd8164727835c667d7ec4",
+            "contextNote": "四、光從何而來？熱致弱電漿輻射與「氣泡核融合」爭議的科學澄清 · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-3ce9136d",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-4-b2648c",
+            "sectionTitle": "四、光從何而來？熱致弱電漿輻射與「氣泡核融合」爭議的科學澄清",
+            "paragraphIndex": 4,
+            "exactQuote": "這裡必須劃下一條極為嚴格的科學界線，正面回應科學史上最著名的爭議之一：**單氣泡聲致發光會觸發核融合嗎？**",
+            "charStart": 9304,
+            "charEnd": 9358,
+            "contentHash": "3ce9136d9eb5e0df233e883217890745bb8f8ca511b7d7faaf0f53e4e19eb7d9",
+            "contextNote": "四、光從何而來？熱致弱電漿輻射與「氣泡核融合」爭議的科學澄清 · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-c1defde1",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-4-b2648c",
+            "sectionTitle": "四、光從何而來？熱致弱電漿輻射與「氣泡核融合」爭議的科學澄清",
+            "paragraphIndex": 5,
+            "exactQuote": "在 2000 年代初期，曾有研究團隊宣稱在丙酮等有機溶劑空化氣泡實驗中測得「氣泡核融合（Bubble Fusion / Sonofusion）」產生的中子與氚訊號，一度引發媒體轟動。",
+            "charStart": 9415,
+            "charEnd": 9506,
+            "contentHash": "c1defde171e0ff931ab83e9974cd3de99d40d36ad9b2fd7a8ab08e5db34ef890",
+            "contextNote": "四、光從何而來？熱致弱電漿輻射與「氣泡核融合」爭議的科學澄清 · 第 6 段"
+          },
+          {
+            "sentenceId": "sent-d83fcb4b",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-4-b2648c",
+            "sectionTitle": "四、光從何而來？熱致弱電漿輻射與「氣泡核融合」爭議的科學澄清",
+            "paragraphIndex": 5,
+            "exactQuote": "然而，隨後多座獨立國家級與大學實驗室在更嚴密的背景輻射遮蔽、多通道中子能譜與符合計數檢驗下，**始終無法獨立重現**聲致空化氣泡產生核融合反應的關鍵證據。",
+            "charStart": 9507,
+            "charEnd": 9584,
+            "contentHash": "d83fcb4bc9ecc71fff90d4e9260091076ba9293dbbe080005e7e02a7a65c49ae",
+            "contextNote": "四、光從何而來？熱致弱電漿輻射與「氣泡核融合」爭議的科學澄清 · 第 6 段"
+          },
+          {
+            "sentenceId": "sent-2e5f0f16",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-4-b2648c",
+            "sectionTitle": "四、光從何而來？熱致弱電漿輻射與「氣泡核融合」爭議的科學澄清",
+            "paragraphIndex": 6,
+            "exactQuote": "以現今經過充分同行評審檢驗的標準熱力學與電漿物理共識而言：典型水中單氣泡聲致發光核心所達到的溫度為 **$10,000\\text{–}20,000\\text{ K}$**（相當於約 $1\\text{–}2\\text{ eV}$ 的熱動能），這足以使惰性氣體部分電離並發出強烈的熱軔致與複合紫外／藍白光，但距離克服原子核庫侖排斥障壁所需的千萬度級熱核融合門檻（數千至上萬電子伏特），依然相差**三個以上的數量級**。",
+            "charStart": 9755,
+            "charEnd": 9962,
+            "contentHash": "2e5f0f166306083f743025f2701be3de39acf6c39ac96be5f930d71d18d96469",
+            "contextNote": "四、光從何而來？熱致弱電漿輻射與「氣泡核融合」爭議的科學澄清 · 第 7 段"
+          },
+          {
+            "sentenceId": "sent-b8b7a5ad",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-4-b2648c",
+            "sectionTitle": "四、光從何而來？熱致弱電漿輻射與「氣泡核融合」爭議的科學澄清",
+            "paragraphIndex": 6,
+            "exactQuote": "因此，目前物理學界明確否定誇大的「氣泡核融合」宣稱，將單氣泡聲致發光穩固歸因於極端高溫熱致弱電漿輻射現象。",
+            "charStart": 9963,
+            "charEnd": 10016,
+            "contentHash": "b8b7a5adeca92a66aa8623fb5cc0c21a7158be7d1a44f1ea7af812a46d0b055f",
+            "contextNote": "四、光從何而來？熱致弱電漿輻射與「氣泡核融合」爭議的科學澄清 · 第 7 段"
+          }
+        ],
+        "formulas": [],
+        "interactiveComponentId": null
+      },
+      {
+        "id": "sec-5-883a0d",
+        "title": "五、氬氣整流之謎與極窄操作島：為何只有 $1\\%$ 的氬氣拯救了發光氣泡？",
+        "level": 2,
+        "paragraphs": [
+          "1990 年代中期，實驗室裡曾流傳一個令人百思不解的怪現象：如果你把空氣溶進脫氣水裡，單氣泡聲致發光可以穩定閃耀好幾個小時；但如果你費盡心思買來超高純度的**純氮氣**或**純氧氣**溶進水裡再做完全一樣的實驗，氣泡竟然會急速縮小、消失，或者完全無法穩定點亮！相反地，只要在純氮氣中混入區區 **$1\\%$ 的氬氣（Argon）**，這顆發光小藍星就奇蹟般地復活了！",
+          "這道懸案直到布倫納、希爾根費爾特與羅澤等人在 1997 至 2002 年提出**氬氣整流假說（Argon Rectification Hypothesis）**，才迎來極為漂亮的物理化學解答。想像空氣氣泡內部是一座高溫高壓的微縮化學反應爐，經歷每個週期一萬多度的洗禮後，氣體命運截然不同：",
+          "1. **主動氣體的自我毀滅**：在超過數千度的高溫塌縮瞬間，空氣中的氮氣（$\\text{N}_2$）與氧氣（$\\text{O}_2$）會被高溫撕裂解離，並與蒸發進氣泡裡的水蒸氣自由基劇烈反應，生成 $\\text{NO}$、$\\text{NO}_2$ 與硝酸（$\\text{HNO}_3$）等極易溶於水的氮氧化物。氣泡一反彈回冷水接觸面，這些反應產物就像方糖掉進水裡般瞬間溶入周圍液體並被永久排出清除。\n2. **惰性氬氣的整流累積**：空氣裡本來只佔大約 **$1\\%$** 的單原子惰性氣體**氬氣（Ar）**，既不會解離，也絕不與水蒸氣發生化學反應。於是隨著每一個空化週期，原本佔據 $99\\%$ 的氮氧分子不斷被高溫燃燒溶走，而殘存的氬氣卻藉著**整流擴散（Rectified Diffusion）**效應——氣泡膨脹到最大表面積時（內部壓力極低）從水裡吸收微量氬氣，縮到最小表面積時只來得及排出更少氣體，形同一具單向氣體幫浦——一點一滴地累積、純化，最終竟然反客為主，把原本一顆空氣氣泡「精餾」成一顆**幾乎純由氬氣主導的核心**！",
+          "更令人屏息的，是這個穩定發光狀態在參數空間裡所佔據的脆弱版圖。把所有可能的聲壓振幅 $P_a$ 與氣泡平衡半徑 $R_0$ 畫成一張相圖，單氣泡聲致發光並不是隨便調整音箱功率就能點亮的常態，它只能存活在一座極其狹窄的**穩定操作島（Stable Parameter Island）**裡：",
+          "- **下方邊界（整流擴散溶解極限）**：如果聲壓 $P_a$ 太低，氣泡膨脹幅度不足，單向吸入氣體的速度追不上表面張力把氣體逼溶進水裡的速度；結果氣泡會在幾秒內越縮越小，最終徹底溶解消失（或僅做不發光的線性微振盪）。\n- **上方邊界（參數／瑞利－泰勒形狀不穩定性）**：如果把聲壓 $P_a$ 調得太高，或者讓平衡半徑 $R_0$ 太大，當較重的液態水殼在反彈轉折點猛烈推擠急剎較輕的內部氣體時，完美的球對稱邊界再也維持不住。界面會觸發**瑞利－泰勒不穩定性（Rayleigh–Taylor Instability）**與多週期參數共振變形——氣泡表面長出劇烈凹陷與水射流，像過度充氣又被猛戳的肥皂泡般當場撕裂破碎。",
+          "只有同時閃過下方「溶解滅頂」與上方「撕裂瓦解」兩道懸崖，並剛好受惠於那 $1\\%$ 氬氣的化學惰性保護，這顆微米小氣泡才得以在暗室裡年復一年地準時亮起。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-8dc4beaa",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-5-883a0d",
+            "sectionTitle": "五、氬氣整流之謎與極窄操作島：為何只有 $1\\%$ 的氬氣拯救了發光氣泡？",
+            "paragraphIndex": 0,
+            "exactQuote": "1990 年代中期，實驗室裡曾流傳一個令人百思不解的怪現象：如果你把空氣溶進脫氣水裡，單氣泡聲致發光可以穩定閃耀好幾個小時；但如果你費盡心思買來超高純度的**純氮氣**或**純氧氣**溶進水裡再做完全一樣的實驗，氣泡竟然會急速縮小、消失，或者完全無法穩定點亮！",
+            "charStart": 10279,
+            "charEnd": 10409,
+            "contentHash": "8dc4beaa9067cd32f3eb6335386f9792c974f846ef4e23ae431d71fe7a497caa",
+            "contextNote": "五、氬氣整流之謎與極窄操作島：為何只有 $1\\%$ 的氬氣拯救了發光氣泡？ · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-7421e4d7",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-5-883a0d",
+            "sectionTitle": "五、氬氣整流之謎與極窄操作島：為何只有 $1\\%$ 的氬氣拯救了發光氣泡？",
+            "paragraphIndex": 0,
+            "exactQuote": "相反地，只要在純氮氣中混入區區 **$1\\%$ 的氬氣（Argon）**，這顆發光小藍星就奇蹟般地復活了！",
+            "charStart": 10410,
+            "charEnd": 10463,
+            "contentHash": "7421e4d75197ec32cc94c446e330e046ebd989987ad5b80e334cdb7aad68e22a",
+            "contextNote": "五、氬氣整流之謎與極窄操作島：為何只有 $1\\%$ 的氬氣拯救了發光氣泡？ · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-4fdeabaa",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-5-883a0d",
+            "sectionTitle": "五、氬氣整流之謎與極窄操作島：為何只有 $1\\%$ 的氬氣拯救了發光氣泡？",
+            "paragraphIndex": 1,
+            "exactQuote": "這道懸案直到布倫納、希爾根費爾特與羅澤等人在 1997 至 2002 年提出**氬氣整流假說（Argon Rectification Hypothesis）**，才迎來極為漂亮的物理化學解答。",
+            "charStart": 10649,
+            "charEnd": 10745,
+            "contentHash": "4fdeabaab9a2db0789fdf75248f782376891b4767f0705fe364c5f95d6900f62",
+            "contextNote": "五、氬氣整流之謎與極窄操作島：為何只有 $1\\%$ 的氬氣拯救了發光氣泡？ · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-69ce7968",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-5-883a0d",
+            "sectionTitle": "五、氬氣整流之謎與極窄操作島：為何只有 $1\\%$ 的氬氣拯救了發光氣泡？",
+            "paragraphIndex": 1,
+            "exactQuote": "想像空氣氣泡內部是一座高溫高壓的微縮化學反應爐，經歷每個週期一萬多度的洗禮後，氣體命運截然不同：",
+            "charStart": 10746,
+            "charEnd": 10794,
+            "contentHash": "69ce7968f8ff24f6288db6c2c4d0b4dc3eb8429d80e9e5cff8c5a859522ba70e",
+            "contextNote": "五、氬氣整流之謎與極窄操作島：為何只有 $1\\%$ 的氬氣拯救了發光氣泡？ · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-388a085f",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-5-883a0d",
+            "sectionTitle": "五、氬氣整流之謎與極窄操作島：為何只有 $1\\%$ 的氬氣拯救了發光氣泡？",
+            "paragraphIndex": 2,
+            "exactQuote": "1. **主動氣體的自我毀滅**：在超過數千度的高溫塌縮瞬間，空氣中的氮氣（$\\text{N}_2$）與氧氣（$\\text{O}_2$）會被高溫撕裂解離，並與蒸發進氣泡裡的水蒸氣自由基劇烈反應，生成 $\\text{NO}$、$\\text{NO}_2$ 與硝酸（$\\text{HNO}_3$）等極易溶於水的氮氧化物。",
+            "charStart": 10941,
+            "charEnd": 11098,
+            "contentHash": "388a085f11344fdc78cfa63c6a71d81eaea9fa523887a72324df9bf4b3905b88",
+            "contextNote": "五、氬氣整流之謎與極窄操作島：為何只有 $1\\%$ 的氬氣拯救了發光氣泡？ · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-f44b4a6b",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-5-883a0d",
+            "sectionTitle": "五、氬氣整流之謎與極窄操作島：為何只有 $1\\%$ 的氬氣拯救了發光氣泡？",
+            "paragraphIndex": 2,
+            "exactQuote": "氣泡一反彈回冷水接觸面，這些反應產物就像方糖掉進水裡般瞬間溶入周圍液體並被永久排出清除。",
+            "charStart": 11099,
+            "charEnd": 11143,
+            "contentHash": "f44b4a6b831fffb581c5c5895239dc82fcac805c3d0eee98d3dfa25c26e4a766",
+            "contextNote": "五、氬氣整流之謎與極窄操作島：為何只有 $1\\%$ 的氬氣拯救了發光氣泡？ · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-d7d95570",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-5-883a0d",
+            "sectionTitle": "五、氬氣整流之謎與極窄操作島：為何只有 $1\\%$ 的氬氣拯救了發光氣泡？",
+            "paragraphIndex": 2,
+            "exactQuote": "2. **惰性氬氣的整流累積**：空氣裡本來只佔大約 **$1\\%$** 的單原子惰性氣體**氬氣（Ar）**，既不會解離，也絕不與水蒸氣發生化學反應。",
+            "charStart": 11144,
+            "charEnd": 11220,
+            "contentHash": "d7d95570a57554ea1f4b9fed8e04e269c12d7a51ec6427d7dd3de02c25536b65",
+            "contextNote": "五、氬氣整流之謎與極窄操作島：為何只有 $1\\%$ 的氬氣拯救了發光氣泡？ · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-46a07d63",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-5-883a0d",
+            "sectionTitle": "五、氬氣整流之謎與極窄操作島：為何只有 $1\\%$ 的氬氣拯救了發光氣泡？",
+            "paragraphIndex": 2,
+            "exactQuote": "於是隨著每一個空化週期，原本佔據 $99\\%$ 的氮氧分子不斷被高溫燃燒溶走，而殘存的氬氣卻藉著**整流擴散（Rectified Diffusion）**效應——氣泡膨脹到最大表面積時（內部壓力極低）從水裡吸收微量氬氣，縮到最小表面積時只來得及排出更少氣體，形同一具單向氣體幫浦——一點一滴地累積、純化，最終竟然反客為主，把原本一顆空氣氣泡「精餾」成一顆**幾乎純由氬氣主導的核心**！",
+            "charStart": 11221,
+            "charEnd": 11414,
+            "contentHash": "46a07d63c4c392234b17646625388a19aecb487dd045dd67aeb305cb92339d28",
+            "contextNote": "五、氬氣整流之謎與極窄操作島：為何只有 $1\\%$ 的氬氣拯救了發光氣泡？ · 第 3 段"
+          },
+          {
+            "sentenceId": "sent-d028c957",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-5-883a0d",
+            "sectionTitle": "五、氬氣整流之謎與極窄操作島：為何只有 $1\\%$ 的氬氣拯救了發光氣泡？",
+            "paragraphIndex": 3,
+            "exactQuote": "更令人屏息的，是這個穩定發光狀態在參數空間裡所佔據的脆弱版圖。",
+            "charStart": 11888,
+            "charEnd": 11919,
+            "contentHash": "d028c9571c374e9bdd12b19b582ee92d82f739cead4ac174fb4b20cd782f2be2",
+            "contextNote": "五、氬氣整流之謎與極窄操作島：為何只有 $1\\%$ 的氬氣拯救了發光氣泡？ · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-43cbdcfc",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-5-883a0d",
+            "sectionTitle": "五、氬氣整流之謎與極窄操作島：為何只有 $1\\%$ 的氬氣拯救了發光氣泡？",
+            "paragraphIndex": 3,
+            "exactQuote": "把所有可能的聲壓振幅 $P_a$ 與氣泡平衡半徑 $R_0$ 畫成一張相圖，單氣泡聲致發光並不是隨便調整音箱功率就能點亮的常態，它只能存活在一座極其狹窄的**穩定操作島（Stable Parameter Island）**裡：",
+            "charStart": 11920,
+            "charEnd": 12033,
+            "contentHash": "43cbdcfc136e8c2dc00109aa25e976239b80f3183fa0e97ac662bbd7ce67645b",
+            "contextNote": "五、氬氣整流之謎與極窄操作島：為何只有 $1\\%$ 的氬氣拯救了發光氣泡？ · 第 4 段"
+          },
+          {
+            "sentenceId": "sent-8ce5f22e",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-5-883a0d",
+            "sectionTitle": "五、氬氣整流之謎與極窄操作島：為何只有 $1\\%$ 的氬氣拯救了發光氣泡？",
+            "paragraphIndex": 4,
+            "exactQuote": "- **下方邊界（整流擴散溶解極限）**：如果聲壓 $P_a$ 太低，氣泡膨脹幅度不足，單向吸入氣體的速度追不上表面張力把氣體逼溶進水裡的速度；結果氣泡會在幾秒內越縮越小，最終徹底溶解消失（或僅做不發光的線性微振盪）。",
+            "charStart": 12180,
+            "charEnd": 12289,
+            "contentHash": "8ce5f22e68a4e24fc9762c95c6852217131dbe6b2fb7b61722b8f8cfcae23487",
+            "contextNote": "五、氬氣整流之謎與極窄操作島：為何只有 $1\\%$ 的氬氣拯救了發光氣泡？ · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-c9eb7d19",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-5-883a0d",
+            "sectionTitle": "五、氬氣整流之謎與極窄操作島：為何只有 $1\\%$ 的氬氣拯救了發光氣泡？",
+            "paragraphIndex": 4,
+            "exactQuote": "- **上方邊界（參數／瑞利－泰勒形狀不穩定性）**：如果把聲壓 $P_a$ 調得太高，或者讓平衡半徑 $R_0$ 太大，當較重的液態水殼在反彈轉折點猛烈推擠急剎較輕的內部氣體時，完美的球對稱邊界再也維持不住。",
+            "charStart": 12290,
+            "charEnd": 12395,
+            "contentHash": "c9eb7d1907ae8806062c24fc04bb04491afd3cb5497211a6817dbc9d70c33e79",
+            "contextNote": "五、氬氣整流之謎與極窄操作島：為何只有 $1\\%$ 的氬氣拯救了發光氣泡？ · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-9726255e",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-5-883a0d",
+            "sectionTitle": "五、氬氣整流之謎與極窄操作島：為何只有 $1\\%$ 的氬氣拯救了發光氣泡？",
+            "paragraphIndex": 4,
+            "exactQuote": "界面會觸發**瑞利－泰勒不穩定性（Rayleigh–Taylor Instability）**與多週期參數共振變形——氣泡表面長出劇烈凹陷與水射流，像過度充氣又被猛戳的肥皂泡般當場撕裂破碎。",
+            "charStart": 12396,
+            "charEnd": 12491,
+            "contentHash": "9726255e54b5f535d1fb4e2edb52958a0687add102bc312956c7ca47a2be2cd0",
+            "contextNote": "五、氬氣整流之謎與極窄操作島：為何只有 $1\\%$ 的氬氣拯救了發光氣泡？ · 第 5 段"
+          },
+          {
+            "sentenceId": "sent-fffd2b1d",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-5-883a0d",
+            "sectionTitle": "五、氬氣整流之謎與極窄操作島：為何只有 $1\\%$ 的氬氣拯救了發光氣泡？",
+            "paragraphIndex": 5,
+            "exactQuote": "只有同時閃過下方「溶解滅頂」與上方「撕裂瓦解」兩道懸崖，並剛好受惠於那 $1\\%$ 氬氣的化學惰性保護，這顆微米小氣泡才得以在暗室裡年復一年地準時亮起。",
+            "charStart": 12804,
+            "charEnd": 12880,
+            "contentHash": "fffd2b1d9b01510fa3cefcc35d0f12e66f47cb8e342aadfb2e169a04d89ceed3",
+            "contextNote": "五、氬氣整流之謎與極窄操作島：為何只有 $1\\%$ 的氬氣拯救了發光氣泡？ · 第 6 段"
+          }
+        ],
+        "formulas": [],
+        "interactiveComponentId": null
+      },
+      {
+        "id": "sec-6-42ed95",
+        "title": "六、物理邊界與模型極限：從一維球對稱近似到真實三維空化流體",
+        "level": 2,
+        "paragraphs": [
+          "透過修正瑞利－普萊塞特方程與自適應數值積分，我們已經掌握單氣泡聲致發光跨越十幾個數量級能量濃縮的主幹機制；然而，任何嚴謹的物理模型都必須清楚標註自身的簡化邊界：",
+          "1. **球對稱與空間均勻近似**：本文討論與互動模擬器採用的修正瑞利－普萊塞特方程，假設氣泡始終維持完美球對稱，且內部氣壓與溫度在整個氣泡半徑內空間均勻分布（多方絕熱近似）。在真實極端塌縮過程中，氣泡內部的氣體動力學可能演化出向心聚焦的球面內衝激波，並受水蒸氣蒸發冷凝與邊界層熱傳導梯度修正。\n2. **形狀不穩定性的判定邊界**：模擬器中的 $(P_a, R_0)$ 相空間穩定島與撕裂風險警示，係依據球對稱解的膨脹倍率及文獻經驗穩定邊界做出的狀態分類，並未直接對球諧函數擾動進行耦合偏微分方程演化或追蹤射流碎裂。\n3. **輻射傳輸與多組分電漿化學**：真實光譜細節（如深紫外吸收截斷、離子連續譜與微弱原子譜線）必須透過完整耦合電漿電離平衡（Saha 方程）、化學動力學與輻射傳輸方程才能定量重現。",
+          "即便如此，這座不到一顆沙粒百分之一大小的微米發光水泡，依然以其乾淨俐落的對稱性提醒著我們：在流體慣性與熱力學的交會處，最溫和的聲波只要找對節奏與幾何焦點，也能在冷水中短暫點亮接近恆星表面溫度的微觀火花。"
+        ],
+        "sentences": [
+          {
+            "sentenceId": "sent-bc0914ca",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-6-42ed95",
+            "sectionTitle": "六、物理邊界與模型極限：從一維球對稱近似到真實三維空化流體",
+            "paragraphIndex": 0,
+            "exactQuote": "透過修正瑞利－普萊塞特方程與自適應數值積分，我們已經掌握單氣泡聲致發光跨越十幾個數量級能量濃縮的主幹機制；然而，任何嚴謹的物理模型都必須清楚標註自身的簡化邊界：",
+            "charStart": 12959,
+            "charEnd": 13039,
+            "contentHash": "bc0914ca118e224def00cb9271a22dae001f528e7f7be9180535e7e279a21318",
+            "contextNote": "六、物理邊界與模型極限：從一維球對稱近似到真實三維空化流體 · 第 1 段"
+          },
+          {
+            "sentenceId": "sent-051aa2e6",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-6-42ed95",
+            "sectionTitle": "六、物理邊界與模型極限：從一維球對稱近似到真實三維空化流體",
+            "paragraphIndex": 1,
+            "exactQuote": "1. **球對稱與空間均勻近似**：本文討論與互動模擬器採用的修正瑞利－普萊塞特方程，假設氣泡始終維持完美球對稱，且內部氣壓與溫度在整個氣泡半徑內空間均勻分布（多方絕熱近似）。",
+            "charStart": 13122,
+            "charEnd": 13210,
+            "contentHash": "051aa2e6a905d4aa3966da43ce404601e7cbe6f5e7fbf6ce3eca3f74e668f032",
+            "contextNote": "六、物理邊界與模型極限：從一維球對稱近似到真實三維空化流體 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-b54c20d0",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-6-42ed95",
+            "sectionTitle": "六、物理邊界與模型極限：從一維球對稱近似到真實三維空化流體",
+            "paragraphIndex": 1,
+            "exactQuote": "在真實極端塌縮過程中，氣泡內部的氣體動力學可能演化出向心聚焦的球面內衝激波，並受水蒸氣蒸發冷凝與邊界層熱傳導梯度修正。",
+            "charStart": 13211,
+            "charEnd": 13270,
+            "contentHash": "b54c20d07c953e182fb136d04e3be7da384530cbe61597d676df403282579e38",
+            "contextNote": "六、物理邊界與模型極限：從一維球對稱近似到真實三維空化流體 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-9b29966f",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-6-42ed95",
+            "sectionTitle": "六、物理邊界與模型極限：從一維球對稱近似到真實三維空化流體",
+            "paragraphIndex": 1,
+            "exactQuote": "2. **形狀不穩定性的判定邊界**：模擬器中的 $(P_a, R_0)$ 相空間穩定島與撕裂風險警示，係依據球對稱解的膨脹倍率及文獻經驗穩定邊界做出的狀態分類，並未直接對球諧函數擾動進行耦合偏微分方程演化或追蹤射流碎裂。",
+            "charStart": 13271,
+            "charEnd": 13382,
+            "contentHash": "9b29966fe7e0bdb3be299aadd6e8b08fed03267765f6dba6cef1eb3bee4f0b64",
+            "contextNote": "六、物理邊界與模型極限：從一維球對稱近似到真實三維空化流體 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-351b07c2",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-6-42ed95",
+            "sectionTitle": "六、物理邊界與模型極限：從一維球對稱近似到真實三維空化流體",
+            "paragraphIndex": 1,
+            "exactQuote": "3. **輻射傳輸與多組分電漿化學**：真實光譜細節（如深紫外吸收截斷、離子連續譜與微弱原子譜線）必須透過完整耦合電漿電離平衡（Saha 方程）、化學動力學與輻射傳輸方程才能定量重現。",
+            "charStart": 13383,
+            "charEnd": 13475,
+            "contentHash": "351b07c2c0af3b5e5e9d073a26954abb828ee9b5a98379dbf8063ac21e2cfe23",
+            "contextNote": "六、物理邊界與模型極限：從一維球對稱近似到真實三維空化流體 · 第 2 段"
+          },
+          {
+            "sentenceId": "sent-8f72ec14",
+            "articleId": "art-sonoluminescence-sbsl",
+            "sectionId": "sec-6-42ed95",
+            "sectionTitle": "六、物理邊界與模型極限：從一維球對稱近似到真實三維空化流體",
+            "paragraphIndex": 2,
+            "exactQuote": "即便如此，這座不到一顆沙粒百分之一大小的微米發光水泡，依然以其乾淨俐落的對稱性提醒著我們：在流體慣性與熱力學的交會處，最溫和的聲波只要找對節奏與幾何焦點，也能在冷水中短暫點亮接近恆星表面溫度的微觀火花。",
+            "charStart": 13830,
+            "charEnd": 13931,
+            "contentHash": "8f72ec1445db7e842ab33c7f39c305dcf88edab82dea3f1bae9d95ba7336d061",
+            "contextNote": "六、物理邊界與模型極限：從一維球對稱近似到真實三維空化流體 · 第 3 段"
+          }
+        ],
+        "formulas": [],
+        "interactiveComponentId": null
+      }
+    ],
+    "totalWordCount": 7202,
+    "lastIndexedAt": "2026-11-18T01:11:14.265Z"
   },
   {
     "id": "art-snn-neuromorphic-compute",
@@ -31518,7 +34440,7 @@
       }
     ],
     "totalWordCount": 3713,
-    "lastIndexedAt": "2026-11-17T01:09:00.949Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.267Z"
   },
   {
     "id": "art-stochastic-resonance-kramers",
@@ -32478,7 +35400,7 @@
       }
     ],
     "totalWordCount": 6903,
-    "lastIndexedAt": "2026-11-17T01:09:00.951Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.270Z"
   },
   {
     "id": "art-supershear-earthquake-rupture",
@@ -33032,7 +35954,7 @@
       }
     ],
     "totalWordCount": 3511,
-    "lastIndexedAt": "2026-11-17T01:09:00.956Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.273Z"
   },
   {
     "id": "art-thorium-nuclear-clock",
@@ -33615,7 +36537,7 @@
       }
     ],
     "totalWordCount": 3193,
-    "lastIndexedAt": "2026-11-17T01:09:00.958Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.275Z"
   },
   {
     "id": "art-tokamak-elm-instability",
@@ -34452,7 +37374,7 @@
       }
     ],
     "totalWordCount": 2669,
-    "lastIndexedAt": "2026-11-17T01:09:00.960Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.277Z"
   },
   {
     "id": "art-topological-insulators-edge",
@@ -35159,7 +38081,7 @@
       }
     ],
     "totalWordCount": 4049,
-    "lastIndexedAt": "2026-11-17T01:09:00.961Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.279Z"
   },
   {
     "id": "art-turbulence-kolmogorov-cascade",
@@ -35993,7 +38915,7 @@
       }
     ],
     "totalWordCount": 4164,
-    "lastIndexedAt": "2026-11-17T01:09:00.963Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.281Z"
   },
   {
     "id": "art-turing-reaction-diffusion",
@@ -36900,7 +39822,7 @@
       }
     ],
     "totalWordCount": 3346,
-    "lastIndexedAt": "2026-11-17T01:09:00.965Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.284Z"
   },
   {
     "id": "art-exoplanet-transit",
@@ -37429,7 +40351,7 @@
       }
     ],
     "totalWordCount": 1679,
-    "lastIndexedAt": "2026-11-17T01:09:00.966Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.288Z"
   },
   {
     "id": "art-mammoth-chromoglass",
@@ -38231,6 +41153,6 @@
       }
     ],
     "totalWordCount": 5153,
-    "lastIndexedAt": "2026-11-17T01:09:00.967Z"
+    "lastIndexedAt": "2026-11-18T01:11:14.293Z"
   }
 ]

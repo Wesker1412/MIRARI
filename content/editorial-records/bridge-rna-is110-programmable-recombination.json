@@ -1,0 +1,122 @@
+{
+  "articleId": "art-bridge-rna-is110",
+  "slug": "bridge-rna-is110-programmable-recombination",
+  "editorialCategory": "journal_interpretation",
+  "version": 1,
+  "creationModel": "mirari-editorial-molecular-biology-author",
+  "editorialPassDate": "2026-11-18T09:05:00+08:00",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-durrant-2024-nature",
+        "citation": "Durrant, M. G., Perry, N. T., Pai, J. J., Jangid, A. R., Athukoralage, J. S., Hiraizumi, M., McSpedon, J. P., Pawluk, A., Nishimasu, H., Konermann, S., & Hsu, P. D. (2024). \"Bridge RNAs direct programmable recombination of target and donor DNA.\" Nature, 630(8018), 984–993.",
+        "doi": "10.1038/s41586-024-07552-4",
+        "peerReviewStatus": "已完成同行評審 (Nature 2024 正式刊登)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Matthew G. Durrant",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實論文出處為 Nature 630(8018), 984–993 (2024), DOI 10.1038/s41586-024-07552-4。證實原核生物 IS110 家族轉位子（以大腸桿菌 IS621 為主要研究模型）在切除環化形成之接縫處表現非編碼橋接核糖核酸（Bridge RNA, bRNA），其內含目標結合環（TBL）與供體結合環（DBL）兩組可獨立透過鹼基配對重新編程的內部環，可在大腸桿菌體內與體外生化重組系統中不仰賴宿主雙股斷裂修復途徑即於單一步驟完成插入、切除與倒位。"
+        },
+        "verifiedClaims": [
+          "IS110 家族轉位子（以 E. coli IS621 為代表）環化後轉錄產生之非編碼橋接核糖核酸（Bridge RNA, bRNA）具有目標結合環（TBL）與供體結合環（DBL）兩個可獨立編程的內部鹼基配對環",
+          "透過分別重新編寫 TBL 與 DBL 序列，可同時指定目標 DNA 與供體 DNA，於單一步驟直接執行 DNA 序列之精準插入（Insertion）、切除（Excision）與倒位（Inversion）",
+          "此重組機制不依賴宿主細胞之非同源末端接合（NHEJ）或同源修復（HDR）雙股斷裂修復通路",
+          "2024 年該研究主要於原核大腸桿菌（E. coli）體內實驗及純化體外生化反應系統中證實其可編程性與序列設計法則"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "CRISPR-Cas9 藉由單一嚮導 RNA 指定單一目標雙股斷裂位點，後續編輯結果依賴宿主細胞內源修復通路",
+            "經典絲胺酸／酪胺酸位點特異性重組酶（如 Cre、Bxb1）雖能直接執行 DNA 交換，但受限於固定的蛋白－DNA 辨識序列而難以單靠核酸序列重新編程"
+          ],
+          "empiricalFindings": [
+            "IS621 橋接 RNA 的 TBL 與 DBL 可獨立重新設計並於 E. coli 體內與體外重組反應中精準導引大片段插入、切除與倒位",
+            "高通量序列設計實驗測得橋接 RNA 雙環鹼基配對容錯率與核心二核苷酸偏好規則"
+          ],
+          "hypothesesAndModels": [
+            "橋接 RNA 雙環鹼基配對自由能與突觸組裝門檻之間的熱力學雙輸入與門（AND-Gate）近似模型，及其延伸至真核細胞工程化優化的長期潛力"
+          ]
+        }
+      },
+      {
+        "id": "ref-hiraizumi-2024-nature",
+        "citation": "Hiraizumi, M., Perry, N. T., Durrant, M. G., Soma, T., Nagahata, N., Okazaki, S., Athukoralage, J. S., Isayama, Y., Pai, J. J., Pawluk, A., Konermann, S., Yamashita, K., Hsu, P. D., & Nishimasu, H. (2024). \"Structural mechanism of bridge RNA-guided recombination.\" Nature, 630(8018), 994–1002.",
+        "doi": "10.1038/s41586-024-07570-2",
+        "peerReviewStatus": "已完成同行評審 (Nature 2024 正式刊登)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Masahiro Hiraizumi",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實論文出處為 Nature 630(8018), 994–1002 (2024), DOI 10.1038/s41586-024-07570-2。透過冷凍電鏡（Cryo-EM）解析 IS621 突觸複合體於反應循環不同階段之結構，揭示四個重組酶單體組裝成雙二聚體（dimer-of-dimers）突觸複合體，並於跨二聚體界面形成複合 RuvC–Tnp 催化位點，利用催化性絲胺酸殘基切割目標與供體頂端股生成共價 5'-磷酸絲胺酸中間體，經轉酯形成霍利迪交叉後再解析底端股。"
+        },
+        "verifiedClaims": [
+          "四個 IS621 重組酶單體與橋接 RNA、目標 DNA 及供體 DNA 組裝為雙二聚體突觸複合體，其中一對二聚體專責結合 TBL 與目標 DNA，另一對二聚體專責結合 DBL 與供體 DNA",
+          "跨二聚體界面拼合形成複合 RuvC–Tnp 催化位點，確保兩組二聚體對接後才啟動催化切割",
+          "催化性絲胺酸殘基對目標與供體 DNA 頂端股進行親核切割並形成共價 5'-磷酸絲胺酸中間體，鎖住斷端後進行互換再連接以生成霍利迪交叉（Holliday Junction），隨後切割底端股並解離完成重組"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "RuvC 樣核酸酶結構域與絲胺酸重組酶共價磷酸絲胺酸鍵結機制在細菌轉位與重組中的基本化學反應原理",
+            "霍利迪交叉（Holliday Junction）作為四向鏈交換重組中間體的標準拓撲構型"
+          ],
+          "empiricalFindings": [
+            "Cryo-EM 密度圖直接解析出 IS621 雙二聚體架構、TBL/DBL 各自與雙股 DNA 之鹼基配對幾何、跨界面複合 RuvC–Tnp 口袋以及頂端股共價 5'-磷酸絲胺酸與霍利迪交叉態"
+          ],
+          "hypothesesAndModels": [
+            "從捕獲前態、共價頂端股切割中間態、霍利迪交叉交換到最終底端股解析的連續四態構象演進動力學模型"
+          ]
+        }
+      }
+    ],
+    "noFakeCitations": true,
+    "noFictionalReviewers": true,
+    "formulasAndUnits": [
+      {
+        "formula": "\\Delta G_{\\text{synaptic}} = \\Delta G_{\\text{TBL}} + \\Delta G_{\\text{DBL}} + \\Delta G_{\\text{strain}}",
+        "unitConsistency": "各項自由能（配對結合自由能 ΔG_TBL、ΔG_DBL 與構象應變能 ΔG_strain）均採莫耳自由能單位 [kcal/mol]，加減運算量綱完全一致",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "以兩獨立結合環熱力學自由能加成 ΔG_pair = ΔG_TBL + ΔG_DBL + ΔG_strain 與雙輸入與門邏輯機率 P_rec = P_max · [1 + exp((ΔG_TBL − ΔG_thresh)/RT_eff)]⁻¹ · [1 + exp((ΔG_DBL − ΔG_thresh)/RT_eff)]⁻¹ 量化 TBL／DBL 錯配數（0–4 nt）與拓撲應變對突觸複合體組裝與鏈交換的門控效應",
+      "numericalMethod": "離散四階段反應推進（Cryo-EM 捕獲態、5'-磷酸絲胺酸共價切割態、霍利迪交叉交換態、底端股解析釋放態）配合即時反應自由能剖面繪製與 P_rec 錯配敏感度曲線數值求值",
+      "modelAssumptionsAndLimits": "明確標註為「催化機制幾何與拓撲示範模型（依據 IS621 Cryo-EM 三態結構原理建構），非完整全原子分子動力學模擬」；自由能參數為展現雙環門控邏輯之理論近似，未涵蓋真核細胞核小體阻礙、DNA 超螺旋張力動態及全基因組序列上下文動力學差異"
+    }
+  },
+  "readability": {
+    "language": "繁體中文",
+    "pedagogyProgression": "CRISPR 與先導編輯單點操作極限 -> IS110 環化轉錄橋接 RNA 發現 -> TBL／DBL 雙環獨立編程與三種拓撲結果 -> 互動模擬器雙向驗證 -> Cryo-EM 雙二聚體與複合 RuvC–Tnp 核心 -> 5'-磷酸絲胺酸共價鎖與霍利迪交叉四態循環 -> 原核實證邊界與真核工程挑戰",
+    "technicalTermsDemystified": [
+      {
+        "term": "橋接核糖核酸（Bridge RNA, bRNA）",
+        "intuitiveExplanation": "有別於拿剪刀隨機剪開後交給修繕工人，IS110 像是一座自帶兩對可更換插頭的立體拉鍊交換機，同時扣住目標與供體兩條 DNA 鏈並直接互換"
+      },
+      {
+        "term": "目標結合環（TBL）與供體結合環（DBL）",
+        "intuitiveExplanation": "bRNA 上兩枚各自獨立的可更換插頭：TBL 決定「基因組上的門牌號碼」，DBL 決定「要拉進交換站的貨櫃序列」"
+      },
+      {
+        "term": "複合 RuvC–Tnp 催化位點",
+        "intuitiveExplanation": "像拆成兩半的安全開關，只有當目標二聚體與供體二聚體同時抓對 DNA 並對接咬合時，開關才會拼合通電，避免只抓到一條鏈就誤剪染色體"
+      },
+      {
+        "term": "共價 5'-磷酸絲胺酸（5'-phosphoserine）中間體",
+        "intuitiveExplanation": "如同攀岩者在交換繩索前先把安全扣死死扣在岩壁掛耳上，將切開的 DNA 斷端鎖進蛋白質共價鍵中，不讓任何游離雙股斷裂暴露在外"
+      },
+      {
+        "term": "霍利迪交叉（Holliday Junction）",
+        "intuitiveExplanation": "兩條雙股螺旋在頂端股互換伴侶再接合後交織而成的四向十字路口中間體，隨後再切開交換底端股即可解離出完整重組產物"
+      }
+    ]
+  },
+  "aestheticsAndNarrative": {
+    "coreQuestion": "如果不再依賴宿主細胞危險又隨機的雙股斷裂修復工人，單靠一條可編程的非編碼 RNA，究竟要如何同時抓住兩段任意 DNA 並在單一步驟內無痕重排大片段基因組拓撲？",
+    "interactiveRole": "BridgeRnaRecombinaseSimulator 讓讀者切換插入、切除與倒位三種重組拓撲，即時對 TBL 與 DBL 施加 0–4 nt 鹼基錯配並步進 Cryo-EM 四階段鏈交換循環，同時看見雙二聚體幾何構象與熱力學自由能門檻如何同步決定重組機率 P_rec。"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "嚴格區分 2024 年 Durrant 與 Hiraizumi 兩篇 Nature 論文之實證範圍，明確標註現有結果主要確立於原核 E. coli 與體外生化系統，避免將真核哺乳類細胞轉化與臨床大片段基因治療描繪為已實現",
+    "修正解析器對粗體問句分段之邊界切分，確保所有段落與標記符在 DOM 與句子索引中 100% 無殘留 Markdown 符號且所有句子 ID 唯一"
+  ],
+  "unconfirmedLimits": [
+    "IS110／IS621 系統在人類等真核細胞核內面對緻密染色質與核小體阻礙時的重組效率仍待蛋白質工程優化與系統性驗證",
+    "TBL 與 DBL 各自僅約十餘個核苷酸之配對窗口在 30 億鹼基對哺乳類基因組中的全基因組脫靶特異性與非預期重組風險尚待擴展窗口與演化驗證"
+  ]
+}

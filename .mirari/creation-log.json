@@ -1,5 +1,5 @@
 {
-  "lastRunTimestamp": "2026-11-17T09:00:00.000Z",
+  "lastRunTimestamp": "2026-11-18T09:00:00.000Z",
   "scheduledCron": "0 9 * * *",
   "timezone": "Asia/Taipei (UTC+8)",
   "creationModel": "gemini-2.5-pro",
@@ -957,6 +957,53 @@
             "Douglass, J. K., Wilkens, L., Pantazelou, E., & Moss, F. (1993). \"Noise enhancement of information transfer in crayfish mechanoreceptors by stochastic resonance.\" Nature, 365(6444), 337–340. doi:10.1038/365337a0"
           ],
           "editorialRecordPath": "content/editorial-records/stochastic-resonance-bistable-noise-amplification.json"
+        }
+      ]
+    },
+    {
+      "runId": "mirari-auto-run-20261118-0900",
+      "timestamp": "2026-11-18T09:00:00.000Z",
+      "targetCount": 3,
+      "succeededCount": 3,
+      "failedCount": 0,
+      "articles": [
+        {
+          "id": "art-bridge-rna-is110",
+          "slug": "bridge-rna-is110-programmable-recombination",
+          "title": "一把 RNA 同時抓緊目標與供體：IS110 橋接核糖核酸如何執行單步可編程基因組重排？",
+          "interactiveComponent": "BridgeRnaRecombinaseSimulator",
+          "status": "published",
+          "sources": [
+            "Durrant, M. G., Perry, N. T., Pai, J. J., Jangid, A. R., Athukoralage, J. S., Hiraizumi, M., McSpedon, J. P., Pawluk, A., Nishimasu, H., Konermann, S., & Hsu, P. D. (2024). \"Bridge RNAs direct programmable recombination of target and donor DNA.\" Nature, 630(8018), 984–993. doi:10.1038/s41586-024-07552-4",
+            "Hiraizumi, M., Perry, N. T., Durrant, M. G., Soma, T., Nagahata, N., Okazaki, S., Athukoralage, J. S., Isayama, Y., Pai, J. J., Pawluk, A., Konermann, S., Yamashita, K., Hsu, P. D., & Nishimasu, H. (2024). \"Structural mechanism of bridge RNA-guided recombination.\" Nature, 630(8018), 994–1002. doi:10.1038/s41586-024-07570-2"
+          ],
+          "editorialRecordPath": "content/editorial-records/bridge-rna-is110-programmable-recombination.json"
+        },
+        {
+          "id": "art-sonoluminescence-sbsl",
+          "slug": "single-bubble-sonoluminescence-cavitation",
+          "title": "水中的皮秒微型星辰：單氣泡聲致發光與空化塌縮的極端壓縮物理",
+          "interactiveComponent": "SonoluminescenceBubbleSimulator",
+          "status": "published",
+          "sources": [
+            "Gaitan, D. F., Crum, L. A., Church, C. C., & Roy, R. A. (1992). \"Sonoluminescence and bubble dynamics for a single, stable, cavitation bubble.\" The Journal of the Acoustical Society of America, 91(6), 3166–3183. doi:10.1121/1.402855",
+            "Brenner, M. P., Hilgenfeldt, S., & Lohse, D. (2002). \"Single-bubble sonoluminescence.\" Reviews of Modern Physics, 74(2), 425–484. doi:10.1103/RevModPhys.74.425"
+          ],
+          "editorialRecordPath": "content/editorial-records/single-bubble-sonoluminescence-cavitation.json"
+        },
+        {
+          "id": "art-bacterial-chemotaxis",
+          "slug": "bacterial-chemotaxis-temporal-memory",
+          "title": "沒有大腦的微積分泳者：大腸桿菌如何靠四秒記憶與 Run-and-Tumble 演算法逆流尋糧？",
+          "interactiveComponent": "BacterialChemotaxisSimulator",
+          "status": "published",
+          "sources": [
+            "Berg, H. C., & Brown, D. A. (1972). \"Chemotaxis in Escherichia coli analysed by three-dimensional tracking.\" Nature, 239(5374), 500–504. doi:10.1038/239500a0",
+            "Berg, H. C., & Purcell, E. M. (1977). \"Physics of chemoreception.\" Biophysical Journal, 20(2), 193–219. doi:10.1016/S0006-3495(77)85544-6",
+            "Segall, J. E., Block, S. M., & Berg, H. C. (1986). \"Temporal comparisons in bacterial chemotaxis.\" Proceedings of the National Academy of Sciences (PNAS), 83(23), 8987–8991. doi:10.1073/pnas.83.23.8987",
+            "Barkai, N., & Leibler, S. (1997). \"Robustness in simple biochemical networks.\" Nature, 387(6636), 913–917. doi:10.1038/43199"
+          ],
+          "editorialRecordPath": "content/editorial-records/bacterial-chemotaxis-temporal-memory.json"
         }
       ]
     }

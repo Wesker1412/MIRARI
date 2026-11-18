@@ -306,6 +306,97 @@
     ]
   },
   {
+    "articleId": "art-bacterial-chemotaxis",
+    "slug": "bacterial-chemotaxis-temporal-memory",
+    "title": "大腸桿菌的時間微積分：趨化性 Run-and-Tumble 演算法與精確適應",
+    "knowledgePoints": [
+      {
+        "id": "kp-chemotaxis-run-and-tumble",
+        "label": "Run-and-Tumble 偏置隨機漫步",
+        "suggestedQuestion": "沒有大腦與方向盤的大腸桿菌，如何只靠切換直線前進與原地翻滾就爬向食物高峰？",
+        "keywords": [
+          "Run-and-Tumble",
+          "偏置隨機漫步",
+          "趨化性",
+          "鞭毛旋轉",
+          "Berg–Brown 1972"
+        ],
+        "plainExplanation": "Berg 與 Brown（1972）利用三維自動追蹤顯微鏡發現，大腸桿菌不會主動朝食物打舵轉彎，而是交替切換兩種動作：多根鞭毛逆時針束成一束直線前進（Run，平均約 1 秒），以及部分鞭毛順時針反轉散開造成的原地隨機重新定向（Tumble，平均約 0.1 秒）。當牠朝著引誘劑濃度升高的方向游動時，僅透過抑制 Tumble 來拉長 Run 的持續時間；朝濃度降低方向游動時則維持接近基線的翻滾率，統計平均上自然產生朝向食物峰的淨漂移。",
+        "anchorSentenceId": "sent-9a5b9012"
+      },
+      {
+        "id": "kp-berg-purcell-counting-limit",
+        "label": "Berg–Purcell 分子計數極限與空間感測失效",
+        "suggestedQuestion": "為什麼長約兩微米的大腸桿菌不能像大細胞一樣，直接在頭尾兩端比較空間濃度差？",
+        "keywords": [
+          "Berg–Purcell 極限",
+          "泊松計數雜訊",
+          "微米尺度",
+          "空間梯度",
+          "分子擴散"
+        ],
+        "plainExplanation": "Berg 與 Purcell（1977）從擴散統計物理證明，單靠感測球體在整合時間 T 內收集隨機撞擊的擴散分子，其相對測量雜訊下限為 δc / c ~ (D a c T)^(-1/2)。由於大腸桿菌體長僅約 2 μm，頭尾兩端之間的空間濃度差極為微弱，短時間內的分子計數漲落會徹底淹沒梯度訊號；因此細菌必須透過向前游動數秒，將取樣空間基線放大至數十微米並累積積分時間來壓低計數雜訊。",
+        "anchorSentenceId": "sent-95728f8b"
+      },
+      {
+        "id": "kp-rotational-brownian-horizon",
+        "label": "轉動布朗擴散與 1–4 秒記憶窗口妥協",
+        "suggestedQuestion": "既然拉長整合時間可以降低分子計數雜訊，為什麼大腸桿菌不把時間記憶窗口拉長到幾十秒？",
+        "keywords": [
+          "轉動布朗擴散",
+          "Dr",
+          "航向失真",
+          "時間窗口",
+          "熱漲落"
+        ],
+        "plainExplanation": "微米尺寸的細菌在水分子持續熱撞擊下承受極高的轉動布朗擴散係數 D_r = k_B T / (8π η a³) ~ 0.1–0.3 rad²/s。即使完全不翻滾，細菌的直線航向在短短數秒內就會被熱水分子隨機撞偏約一個弧度，導致「十秒前」與「現在」的取樣位置早已不在同一條直線上。計數雜訊（不能太短）與轉動擴散失向（不能太長）兩頭夾殺，逼出了 1–4 秒的最佳時間比較窗口。",
+        "anchorSentenceId": "sent-da7dcd39"
+      },
+      {
+        "id": "kp-biphasic-impulse-differentiator",
+        "label": "雙極性脈衝響應核與帶通時間微分器",
+        "suggestedQuestion": "大腸桿菌細胞內部是用什麼數學形式把過去 3–4 秒的濃度歷史轉換成翻滾機率？",
+        "keywords": [
+          "雙極性脈衝響應",
+          "卷積積分",
+          "帶通時間微分器",
+          "Segall–Block–Berg 1986",
+          "零積分面積"
+        ],
+        "plainExplanation": "Segall、Block 與 Berg（1986）透過拴住鞭毛與微吸管脈衝實驗，測得大腸桿菌的雙葉片脈衝響應核函數 K(t)：刺激後前約 1 秒呈現抑制翻滾的正向快葉瓣，緊接著在 1–4 秒出現符號相反、用來減去過去記憶基線的負向補償葉瓣，且正負積分面積幾乎抵銷（∫ K(t) dt ≈ 0）。這使細胞在任意恆定環境中輸出皆歸零，等同於一台既能過濾高頻分子雜訊、又能提取濃度時間斜率的 3–4 秒帶通時間微分器。",
+        "anchorSentenceId": "sent-8908bf6e"
+      },
+      {
+        "id": "kp-integral-feedback-exact-adaptation",
+        "label": "CheR / CheB-P 積分回饋控制與精確適應",
+        "suggestedQuestion": "環境養分背景濃度相差好幾個數量級時，大腸桿菌為什麼不會飽和失明，還能回到相同翻滾基線？",
+        "keywords": [
+          "精確適應",
+          "積分回饋控制",
+          "CheR",
+          "CheB-P",
+          "Barkai–Leibler 1997"
+        ],
+        "plainExplanation": "Barkai 與 Leibler（1997）發現受體甲基化系統構成了一組精巧的生化積分回饋迴路：甲基轉移酶 CheR 以近似恆定的速率加上甲基提高受體活性，而去甲基酶 CheB-P 只作用於處在活性狀態的受體移除甲基（dm/dt = k_R[R] - k_B[B_p]A）。當系統達到穩態 dm/dt = 0 時，受體穩態活性精確鎖定在 A* = k_R[R] / (k_B[B_p])，完全獨立於外界配體背景濃度，使細菌在橫跨五個數量級的濃度環境中都能自動歸零並保持對相對梯度的靈敏度。",
+        "anchorSentenceId": "sent-eac31ecf"
+      },
+      {
+        "id": "kp-biochemical-network-robustness",
+        "label": "生化網路拓撲的結構強健性",
+        "suggestedQuestion": "細胞內蛋白質數量常有隨機波動，為什麼精確適應不會因為酵素表現量改變就失效？",
+        "keywords": [
+          "結構強健性",
+          "系統生物學",
+          "網路拓撲",
+          "Barkai–Leibler",
+          "無參數微調"
+        ],
+        "plainExplanation": "精確適應的歸零能力並非依賴某幾個酵素濃度恰好被精準微調到脆弱數值，而是直接內建於「CheB-P 僅去甲基化活性受體」這項積分回饋拓撲結構之中。只要甲基化位點尚未觸及飽和上限，無論細胞內各種輔助蛋白或配體總量如何波動數倍，網路都會自動將穩態活性推回固定目標點，展現了系統生物學中著名的結構強健性（Robustness）。",
+        "anchorSentenceId": "sent-1147aeaa"
+      }
+    ]
+  },
+  {
     "articleId": "art-bcs-superconductivity",
     "slug": "bcs-superconductivity-cooper-pairs",
     "title": "零電阻與完美抗磁：BCS 理論與庫柏對的玻色凝聚",
@@ -679,6 +770,99 @@
         ],
         "plainExplanation": "多光子在多模式分束網絡中傳播時，量子物理定律天然且即時地在輸出端完成了極其複雜的矩陣積和式採樣分佈。經典超級電腦若要生成完全相同的機率分佈樣本，需要耗費上萬年枚舉海量矩陣狀態；而光子網絡幾微秒就能吐出一個真隨機樣本，在無容錯量子纠錯前提下率先證明了量子加速優勢。",
         "anchorSentenceId": "sent-7ce66929"
+      }
+    ]
+  },
+  {
+    "articleId": "art-bridge-rna-is110",
+    "slug": "bridge-rna-is110-programmable-recombination",
+    "title": "IS110 橋接核糖核酸（Bridge RNA）：單一步驟可編程基因組重排的分子架構",
+    "knowledgePoints": [
+      {
+        "id": "kp-bridge-rna-bispecific",
+        "label": "雙特異性橋接核糖核酸（Bridge RNA）與環化啟動",
+        "suggestedQuestion": "IS110 轉位子是怎麼產生橋接 RNA 的？它和傳統只能認單一目標的 CRISPR 嚮導 RNA 有何不同？",
+        "keywords": [
+          "橋接核糖核酸",
+          "Bridge RNA",
+          "bRNA",
+          "IS110",
+          "IS621",
+          "環狀中間體"
+        ],
+        "plainExplanation": "IS110 家族轉位子從染色體切離並頭尾相接形成環狀中間體時，接縫兩端原本分開的非編碼序列會拼成完整啟動子，進而轉錄出橋接核糖核酸（bRNA）。不同於只能鎖定單一靶點的 CRISPR sgRNA，bRNA 同時具備目標結合環（TBL）與供體結合環（DBL）兩組可獨立編程的內部環，像自帶兩對可更換插頭的立體拉鍊交換機，一次抓握兩條 DNA。",
+        "anchorSentenceId": "sent-18561be3"
+      },
+      {
+        "id": "kp-tbl-dbl-programmable-loops",
+        "label": "TBL／DBL 雙環鹼基配對門控與三種重排拓撲",
+        "suggestedQuestion": "重新編寫 TBL 和 DBL 的序列，為什麼能在單一步驟中分別做到插入、切除與倒位？",
+        "keywords": [
+          "TBL",
+          "DBL",
+          "插入",
+          "切除",
+          "倒位",
+          "AND 邏輯閘門"
+        ],
+        "plainExplanation": "橋接 RNA 仰賴 TBL 與 DBL 各自透過華生－克里克鹼基配對同時鎖定目標 DNA 與供體 DNA，形成雙輸入與門（AND-Gate）熱力學門控；只要任一環出現多個錯配，突觸組裝機率便會急遽下滑。搭配兩個重組位點的空間配置，系統便能在單一步驟內完成環狀供體插入（Insertion）、同向位點間片段切除（Excision）或反向位點間序列 180° 倒位（Inversion）。",
+        "anchorSentenceId": "sent-15299a1d"
+      },
+      {
+        "id": "kp-dimer-of-dimers-synaptic",
+        "label": "雙二聚體突觸複合體與複合 RuvC–Tnp 催化核心",
+        "suggestedQuestion": "為什麼 IS621 重組酶只抓住單一條 DNA 時不會誤剪染色體？",
+        "keywords": [
+          "Cryo-EM",
+          "雙二聚體",
+          "突觸複合體",
+          "RuvC-Tnp",
+          "複合催化位點"
+        ],
+        "plainExplanation": "冷凍電鏡結構顯示，四個 IS621 重組酶單體會組裝成雙二聚體突觸複合體：一對二聚體專責結合 TBL 與目標 DNA，另一對則結合 DBL 與供體 DNA。由於完整的 RuvC–Tnp 催化核心必須跨越兩對二聚體的界面才能拼合完成，只有當 TBL 與 DBL 兩端都精準抓到 DNA 並拉攏對接後，催化位點才會啟動切割，從結構上杜絕單側誤剪。",
+        "anchorSentenceId": "sent-7a009a91"
+      },
+      {
+        "id": "kp-phosphoserine-no-dsb",
+        "label": "5'-磷酸絲胺酸共價中間體與無游離雙股斷裂",
+        "suggestedQuestion": "IS621 切開兩條 DNA 準備互換時，怎麼避免斷頭飄散或引發危險的雙股斷裂修復？",
+        "keywords": [
+          "催化性絲胺酸",
+          "5'-磷酸絲胺酸",
+          "共價中間體",
+          "無游離 DSB",
+          "頂端股切割"
+        ],
+        "plainExplanation": "當複合 RuvC–Tnp 核心啟動時，蛋白上的催化性絲胺酸殘基會親核切開目標與供體 DNA 的頂端股，並立即與切口 5' 端形成共價 5'-磷酸絲胺酸（5'-phosphoserine）化學鍵。這種共價鎖定如同攀岩者的安全扣，把斷端與化學鍵能量牢牢儲存在蛋白質口袋內，全程不暴露游離雙股斷裂，也不需要仰賴宿主的 NHEJ 或 HDR 修復通路。",
+        "anchorSentenceId": "sent-893b1eed"
+      },
+      {
+        "id": "kp-holliday-junction-exchange",
+        "label": "跨二聚體轉酯反應與霍利迪交叉解析",
+        "suggestedQuestion": "頂端股形成共價絲胺酸鎖之後，兩條 DNA 是如何真正完成無痕換股並釋放產物的？",
+        "keywords": [
+          "霍利迪交叉",
+          "Holliday Junction",
+          "轉酯反應",
+          "底端股解析",
+          "無痕重組"
+        ],
+        "plainExplanation": "受共價保護的頂端股 3'-OH 末端會跨越二聚體界面交換伴侶，對另一側的 5'-磷酸絲胺酸鍵發動可逆轉酯反應，在不消耗外源 ATP 下將兩條 DNA 交織成四向的霍利迪交叉（Holliday Junction）中間體。隨後複合體依相同共價機制切開並交換底端股，解析交叉並釋放重組完成的完整 DNA 雙螺旋。",
+        "anchorSentenceId": "sent-daa5f845"
+      },
+      {
+        "id": "kp-eukaryotic-limits-boundaries",
+        "label": "原核實證邊界與真核染色質應用挑戰",
+        "suggestedQuestion": "IS110 橋接 RNA 技術目前已經可以用在人類細胞或基因治療上了嗎？有哪些關鍵限制？",
+        "keywords": [
+          "大腸桿菌",
+          "科學邊界",
+          "染色質可及性",
+          "脫靶特異性",
+          "真核工程挑戰"
+        ],
+        "plainExplanation": "2024 年這兩項《Nature》開創性研究主要是在原核生物大腸桿菌（E. coli）體內與純化蛋白的體外生化重組系統中證實可行。若要推展至人類等真核哺乳類細胞，仍面臨染色質核小體遮蔽難以解旋、較短配對窗口在 30 億鹼基對基因組中的全基因組脫靶特異性，以及 bRNA 核內穩定性與遞送等重大工程挑戰，目前尚未達到直接人體臨床應用的階段。",
+        "anchorSentenceId": "sent-1acae143"
       }
     ]
   },
@@ -2453,6 +2637,111 @@
         ],
         "plainExplanation": "現代所有活細胞用來合成蛋白質的生命工廠——核糖體，其核心催化中心（肽醯轉移酶活性口袋）在 18 埃範圍內完全找不到任何蛋白質氨基酸殘基，百分之百由 23S rRNA 核苷酸鏈折疊而成。這項晶體學突破證明蛋白質是古老核酶的產物，核糖體本身就是遠古 RNA 世界留存在現代生命體的活體化石。",
         "anchorSentenceId": "sent-6b56b523"
+      }
+    ]
+  },
+  {
+    "articleId": "art-sonoluminescence-sbsl",
+    "slug": "single-bubble-sonoluminescence-cavitation",
+    "title": "單氣泡聲致發光（Single-Bubble Sonoluminescence）：聲波如何將微米氣泡壓縮成發光的極端電漿？",
+    "knowledgePoints": [
+      {
+        "id": "kp-sbsl-bjerknes-levitation",
+        "label": "比耶克內斯輻射力與單氣泡懸浮實驗",
+        "suggestedQuestion": "水中的微米氣泡不是應該因為浮力飄到水面嗎？實驗室是如何把單一氣泡穩穩固定在燒瓶正中央發光的？",
+        "keywords": [
+          "比耶克內斯輻射力",
+          "駐波波腹",
+          "單氣泡聲致發光",
+          "Gaitan 1992",
+          "皮秒光脈衝"
+        ],
+        "plainExplanation": "在充滿脫氣水的球形共振燒瓶中，頻率約 20–40 kHz、聲壓振幅 1.2–1.5 atm 的超音波駐波會在球心形成壓力波腹點。駐波對振盪氣泡施加的時間平均聲輻射力（比耶克內斯輻射力）能精準抵銷浮力，將單一微米氣泡懸浮於波腹中心，使其每個週期準時釋放 40–350 皮秒的寬頻藍白光脈衝。",
+        "anchorSentenceId": "sent-336217db"
+      },
+      {
+        "id": "kp-sbsl-rayleigh-plesset-hardcore",
+        "label": "修正瑞利－普萊塞特方程與凡得瓦硬核剎車",
+        "suggestedQuestion": "氣泡在慣性塌縮時為什麼不會一路縮成半徑為零的數學奇異點？聲輻射阻尼項又扮演什麼角色？",
+        "keywords": [
+          "瑞利－普萊塞特方程",
+          "凡得瓦硬核",
+          "聲輻射阻尼",
+          "阻尼反彈震盪",
+          "空化動力學"
+        ],
+        "plainExplanation": "在修正瑞利－普萊塞特方程中，真正驅動塌縮的慣性來自氣泡外圍密集的液態水殼；當半徑被壓縮至接近分子自身佔據的凡得瓦硬核半徑 h（約 R0/8.86）時，內部氣壓會急遽飆升而強行煞停並反彈。方程末端的聲輻射阻尼項則描述反彈時向水體發射球面壓力波帶走能量，使氣泡在數次阻尼反彈震盪後迅速平息。",
+        "anchorSentenceId": "sent-977556d7"
+      },
+      {
+        "id": "kp-sbsl-adiabatic-heating",
+        "label": "負壓膨脹蓄勢與準絕熱壓縮極端升溫",
+        "suggestedQuestion": "只有一點三大氣壓的溫和聲波，為什麼能把室溫水中幾微米的氣泡加熱到一兩萬度高溫？",
+        "keywords": [
+          "準絕熱壓縮",
+          "超音速內衝",
+          "空化",
+          "能量濃縮",
+          "Rmax/R0"
+        ],
+        "plainExplanation": "在聲場負壓半週期，氣泡被拉長膨脹至 35–50 微米（體積放大數百倍），宛如把周圍抬升的液體蓄滿勢能；一旦轉回正壓，水殼向近乎真空的空腔高速內衝並突破氣體聲速。因為最後壓縮過程遠快於熱導散時間，壓縮功幾乎來不及散熱便全數轉為氣體內能，將核心準絕熱加熱至約 10,000–20,000 K。",
+        "anchorSentenceId": "sent-f6fa3716"
+      },
+      {
+        "id": "kp-sbsl-plasma-bremsstrahlung",
+        "label": "弱電漿熱軔致輻射與複合發光機制",
+        "suggestedQuestion": "氣泡裡的高溫氣體發出的是哪一種光？為什麼光譜是平滑的藍白連續光而不是單一元素的譜線？",
+        "keywords": [
+          "弱電漿",
+          "熱軔致輻射",
+          "複合輻射",
+          "寬頻連續光譜",
+          "部分熱電離"
+        ],
+        "plainExplanation": "在撞擊硬核前後的數十至數百皮秒內，核心溫度達 10,000–20,000 K 使氣體部分熱電離為弱電漿。自由電子在密集原子與離子電場中急轉減速所拋出的「熱軔致輻射」，加上自由電子被離子重新捕獲的「複合輻射」，共同形成了從可見藍光延伸至深紫外光的平滑寬頻連續光譜。",
+        "anchorSentenceId": "sent-25b4425f"
+      },
+      {
+        "id": "kp-sbsl-bubble-fusion-debunk",
+        "label": "為何「氣泡核融合」爭議未獲學界承認",
+        "suggestedQuestion": "單氣泡聲致發光既然比太陽表面還熱，真的能像過去新聞說的那樣用來達成桌上核融合嗎？",
+        "keywords": [
+          "氣泡核融合爭議",
+          "科學邊界",
+          "庫侖障壁",
+          "獨立重現",
+          "熱動能 eV"
+        ],
+        "plainExplanation": "2000 年代初期曾有丙酮空化氣泡宣稱測得核融合中子，但後續多個獨立實驗室在嚴密屏蔽與偵測下始終無法重現。標準水中單氣泡聲致發光的峰值溫度約 10,000–20,000 K（熱動能僅約 1–2 eV），與克服原子核庫侖排斥障壁所需的千萬度級熱核融合門檻仍相差三個以上數量級，學界共識為熱致弱電漿輻射。",
+        "anchorSentenceId": "sent-2e5f0f16"
+      },
+      {
+        "id": "kp-sbsl-argon-rectification",
+        "label": "氬氣整流假說：為何純氮氣反而點不亮？",
+        "suggestedQuestion": "空氣裡九成九都是氮氣和氧氣，為什麼改用純氮氣做實驗反而無法穩定發光，非要那 1% 的氬氣才行？",
+        "keywords": [
+          "氬氣整流",
+          "整流擴散",
+          "氮氧化物溶出",
+          "惰性氣體",
+          "純氦氣熱導"
+        ],
+        "plainExplanation": "在每個萬度高溫塌縮瞬間，氣泡裡的氮氣與氧氣會解離並與水蒸氣反應生成極易溶於水的 NOₓ 與 HNO₃，隨即被周圍冷水洗除；唯獨空氣中僅佔 1% 的化學惰性氬氣既不解離也不反應，透過「整流擴散」（膨脹吸氣多、縮小排氣少）逐週期累積純化，最終主導整顆穩定發光的氣泡核心。",
+        "anchorSentenceId": "sent-46a07d63"
+      },
+      {
+        "id": "kp-sbsl-stability-island",
+        "label": "極窄 (Pa, R0) 操作穩定島與形狀不穩定性",
+        "suggestedQuestion": "只要把超音波音量不斷開大，氣泡就會越來越亮嗎？為什麼穩定聲致發光只能出現在很窄的參數窗口？",
+        "keywords": [
+          "穩定操作島",
+          "瑞利－泰勒不穩定性",
+          "溶解極限",
+          "參數相空間",
+          "Brenner 2002"
+        ],
+        "plainExplanation": "單氣泡聲致發光僅存活於極窄的聲壓振幅 Pa 與平衡半徑 R0 穩定島內：下方受限於整流擴散溶解極限，聲壓過低時氣泡會逐步溶入水中或只做微弱振盪；上方則遭遇參數共振與瑞利－泰勒形狀不穩定性，過強驅動或過大半徑會使重水殼在急剎反彈時撕裂球面氣泡，導致碎裂熄滅。",
+        "anchorSentenceId": "sent-43cbdcfc"
       }
     ]
   },
