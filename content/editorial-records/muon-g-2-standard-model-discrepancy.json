@@ -115,6 +115,31 @@
             "不同 HVP 計算架構（格點第一性原理 vs e+e- 截面色散）之系統誤差歸因模型"
           ]
         }
+      },
+      {
+        "id": "ref-cmd3-2024-prl",
+        "citation": "Ignatov, F., et al. (CMD-3 Collaboration) (2024). \"Measurement of the Pion Form Factor with CMD-3 Detector and Its Implication to the Hadronic Contribution to Muon (g-2).\" Physical Review Letters, 132(23), 231903.",
+        "doi": "10.1103/PhysRevLett.132.231903",
+        "peerReviewStatus": "已完成同行評審 (Physical Review Letters 2024 年發表，2023 年初先行發布實驗數據)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "F. Ignatov (CMD-3 Collaboration)",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 PRL Vol. 132, No. 23, 231903 (2024)：CMD-3 探測器測量的是正負電子湮滅產生雙帶電 π 介子截面 (e+e- -> pi+pi- / π介子形狀因子)，而非雙開子截面；該測量結果高於 BaBar 與 KLOE 等先前測量，縮小了對比格點 QCD 的張力。"
+        },
+        "verifiedClaims": [
+          "CMD-3 測量通道為 e+e- -> pi+pi- 雙帶電 π 介子產生截面，高於 BaBar 與 KLOE 的先前相關測量結果"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "雙帶電 π 介子對 (pi+pi-) 貢獻是低能強子真空極化色散積分的最大單一通道"
+          ],
+          "empiricalFindings": [
+            "CMD-3 於 0.32–1.2 GeV 能區測得之 e+e- -> pi+pi- 截面系統性高於先前多數實驗"
+          ],
+          "hypothesesAndModels": [
+            "CMD-3 與 BaBar/KLOE 等先前實驗之間系統誤差差異的原因目前尚待釐清"
+          ]
+        }
       }
     ],
     "noFakeCitations": true,
@@ -154,6 +179,7 @@
     "interactiveRole": "透過 MuonPrecessionSimulator 讓讀者親自調節磁場強度，切換 2023 世界實驗平均（FNAL Runs 1–3 + BNL E821）、WP2020 傳統色散理論與 BMW 格點超算模型，親眼看見相對 WP2020 的約 5.1σ 歷史偏差如何在調製曲線中顯現，並直觀感受格點修正如何讓理論曲線與實驗重新貼合"
   },
   "issuesIdentifiedAndCorrected": [
+    "Phase 8 補正 CMD-3 測量粒子通道錯誤：將第 229 行誤植的「雙開子截面」更正為「雙帶電 π 介子產生截面（e+e- -> pi+pi-）高於先前 BaBar 與 KLOE 的相關測量結果」，並補入 Ignatov et al. (2024) PRL 132, 231903 (doi:10.1103/PhysRevLett.132.231903)",
     "修正 2023 年 5.1σ 科學歸屬：明確說明約 5.1σ 為 2023 年費米實驗室 Runs 1–3 與布魯克黑文 E821 合併所得世界實驗平均（116592059(22)×10⁻¹¹）對比 WP2020 標準模型理論預測的歷史偏差，而非 Fermilab 單獨測量（116592055(24)×10⁻¹¹）的比較結果",
     "明確區分費米實驗室最終測量精度（127 ppb，a_mu^FNAL = 1165920705(148)×10⁻¹²）與全球實驗綜合平均精度（124 ppb，a_mu^World = 1165920715(145)×10⁻¹²），補入 Aguillard et al. (2025) PRL 135, 101802 (doi:10.1103/7clf-sm2v) 與標準 references citation 格式",
     "將摘要、導言、知識點 (kp-muon-fermilab-discrepancy) 與模擬器標示統一校正為歷史比較基準：說明 5.1σ 為 2023 年實驗對比 WP2020 舊理論基準的歷史偏差，非磁矩測量值亦非 2025 年理論 (arXiv:2505.21476, Aliberti et al., 2025) 下的現行顯著度",
