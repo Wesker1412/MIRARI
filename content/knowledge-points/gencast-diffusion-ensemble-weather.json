@@ -1,0 +1,91 @@
+{
+  "articleId": "art-gencast-diffusion-weather",
+  "slug": "gencast-diffusion-ensemble-weather",
+  "title": "GenCast 擴散集合預報：條件擴散模型如何重塑 15 天全球機率氣象預報？",
+  "knowledgePoints": [
+    {
+      "id": "kp-gencast-chaos-ensemble",
+      "label": "渾沌分岔與集合預報必要性",
+      "suggestedQuestion": "為什麼天氣預報超過一週後，氣象局不能只相信單一一次運算結果？",
+      "keywords": [
+        "洛倫茨",
+        "混沌理論",
+        "可預報時限",
+        "集合預報",
+        "初值誤差"
+      ],
+      "plainExplanation": "大氣是高度非線性的流體系統，初期觀測網抓不到的微小氣壓或風速誤差會在幾天內呈指數倍放大。超過約 10 至 14 天後單一決定論軌跡會失去準頭，因此必須替初值加上微小擾動，同時派出多條分身成員跑出「機率走廊」。",
+      "anchorSentenceId": "sent-df34b83a"
+    },
+    {
+      "id": "kp-gencast-mse-blurring",
+      "label": "均方誤差回歸的雙峰模糊效應",
+      "suggestedQuestion": "為什麼用均方誤差訓練的 AI 氣象模型會把幾天後的颱風眼糊成一片微風？",
+      "keywords": [
+        "均方誤差",
+        "模糊效應",
+        "雙重懲罰",
+        "條件平均",
+        "極端天氣漏報"
+      ],
+      "plainExplanation": "當颱風面臨「西行登陸」或「北轉遠離」兩種分岔可能時，被迫輸出單張答案又用均方誤差計分的模型，為了避免猜錯邊被重罰，會把兩條強風暴路徑相加取平均，結果在兩者中間抹出一塊風速減半、現實中根本不會出現的模糊低壓帶。",
+      "anchorSentenceId": "sent-3e908cf4"
+    },
+    {
+      "id": "kp-gencast-icosahedral-mesh",
+      "label": "球面二十面體網格消除極區變形",
+      "suggestedQuestion": "GenCast 為什麼不直接用長方形經緯網格運算，而要投影到二十面體球面網格？",
+      "keywords": [
+        "二十面體球面網格",
+        "圖轉換器",
+        "0.25 度解析度",
+        "極區變形",
+        "空間幾何"
+      ],
+      "plainExplanation": "經緯度攤成平面時，越靠近南北極網格被擠得越窄小。GenCast 把 0.25° 全球資料投影到類似足球正三角形拼接的球面二十面體網格上，再用圖轉換器傳遞訊息，讓赤道到兩極擁有均勻一致的幾何鄰居關係，能同時捕捉颱風眼牆與全球長波。",
+      "anchorSentenceId": "sent-7dd072ae"
+    },
+    {
+      "id": "kp-gencast-conditional-diffusion",
+      "label": "自回歸條件擴散去噪採樣",
+      "suggestedQuestion": "GenCast 如何靠前兩刻大氣狀態與高斯雜訊，一步步生成 15 天預報？",
+      "keywords": [
+        "條件擴散模型",
+        "自回歸步進",
+        "逆向去噪",
+        "聯合機率分布",
+        "12 小時步長"
+      ],
+      "plainExplanation": "GenCast 以每 12 小時一步接力推算 15 天（360 小時）。每一步都把前兩刻（t 與 t-12h）的大氣當作條件錨點，從一團高斯隨機雜訊雪花出發，透過迭代去噪把雜訊雕琢成保有銳利鋒面與氣旋結構的 12 小時後狀態；換個雜訊種子就能採樣出另一條獨立分岔。",
+      "anchorSentenceId": "sent-51ad9c79"
+    },
+    {
+      "id": "kp-gencast-crps-benchmark",
+      "label": "97.2% 指標超越與八分鐘單卡推論",
+      "suggestedQuestion": "在 2019 年測試集中，GenCast 相較於物理超級電腦系統 ECMWF ENS 表現如何？",
+      "keywords": [
+        "ECMWF ENS",
+        "CRPS",
+        "Brier Skill Score",
+        "TPU v5",
+        "1,320 項指標"
+      ],
+      "plainExplanation": "在 2019 年獨立測試集的 0.25° 全球 15 天預報中，橫跨不同氣壓層變數與提前期的 1,320 項評估指標裡，GenCast 在 97.2% 的項目超越世界頂尖物理集合系統 ECMWF ENS；而且單顆 Google Cloud TPU v5 僅需約 8 分鐘即可產出一個完整的 15 天預報成員。",
+      "anchorSentenceId": "sent-ce369294"
+    },
+    {
+      "id": "kp-gencast-era5-conservation-limits",
+      "label": "資料同化依賴與物理守恆邊界",
+      "suggestedQuestion": "既然 GenCast 準確率極高，它是否已經能完全取代物理氣象方程與觀測系統？",
+      "keywords": [
+        "ERA5",
+        "資料同化",
+        "守恆定律",
+        "分布外極端事件",
+        "科學邊界"
+      ],
+      "plainExplanation": "目前還不行。GenCast 訓練與起報仍依賴物理模式結合全球觀測同化生成的 ERA5 再分析資料與初始化場；此外，神經網路權重沒有硬性寫入質量、總能量或角動量守恆定律，面對氣候變遷下突破歷史紀錄的分布外極端天氣與物理因果歸因仍存在開放挑戰。",
+      "anchorSentenceId": "sent-cb7df5a7"
+    }
+  ]
+}

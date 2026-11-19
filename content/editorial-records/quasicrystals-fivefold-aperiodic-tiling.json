@@ -1,0 +1,146 @@
+{
+  "articleId": "art-quasicrystals-aperiodic",
+  "slug": "quasicrystals-fivefold-aperiodic-tiling",
+  "editorialCategory": "scientific_principles",
+  "version": 1,
+  "creationModel": "gemini-3-pro-mirari-author",
+  "editorialPassDate": "2026-11-19T09:10:00+08:00",
+  "scientificVerification": {
+    "primarySources": [
+      {
+        "id": "ref-shechtman-1984-prl",
+        "citation": "Shechtman, D., Blech, I., Gratias, D., & Cahn, J. W. (1984). \"Metallic Phase with Long-Range Orientational Order and No Translational Symmetry.\" Physical Review Letters, 53(20), 1951–1953.",
+        "doi": "10.1103/PhysRevLett.53.1951",
+        "peerReviewStatus": "已完成同行評審 (Physical Review Letters 1984 正式刊登)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Dan Shechtman (Technion / National Bureau of Standards)",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 PRL 53(20), 1951–1953 (1984)：作者在急速凝固鋁－錳（Al86Mn14）合金中測得兼具鋒利布拉格繞射斑點與正二十面體點群對稱（包含十重／五重、三重與二重軸）之金屬相，證明固體可在缺乏平移週期對稱下擁有長程取向有序。"
+        },
+        "verifiedClaims": [
+          "1982 年（1984 年正式發表於 PRL）於急速凝固 Al86Mn14 合金電子繞射實驗中觀測到尖銳十重（正二十面體五重對稱）布拉格亮斑",
+          "晶體學限制定理僅在假設二維或三維平移週期性時禁止 n=5 及 n≥7 旋轉對稱，該樣品透過放棄平移週期性而保留長程取向序"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "二維與三維布拉菲週期晶格因旋轉矩陣跡 2cos(2π/n) 須為整數，僅允許 n = 1, 2, 3, 4, 6 次旋轉對稱",
+            "彈性繞射遵循弗里德爾定律 I(-q) = I(q)，使五重取向對稱呈現十重繞射斑點對稱"
+          ],
+          "empiricalFindings": [
+            "Al86Mn14 急速淬火微粒呈現銳利離散電子繞射斑點與正二十面體點群對稱"
+          ],
+          "hypothesesAndModels": [
+            "二十面體相之微觀原子佔位細節依結構族系不同，可由高維週期模型或團簇裝飾模型進一步參數化"
+          ]
+        }
+      },
+      {
+        "id": "ref-levine-1984-prl",
+        "citation": "Levine, D., & Steinhardt, P. J. (1984). \"Quasicrystals: A New Class of Ordered Structures.\" Physical Review Letters, 53(26), 2477–2480.",
+        "doi": "10.1103/PhysRevLett.53.2477",
+        "peerReviewStatus": "已完成同行評審 (Physical Review Letters 1984 正式刊登)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "Dov Levine (University of Pennsylvania)",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 PRL 53(26), 2477–2480 (1984)：正式提出「準晶（Quasicrystal）」概念與準週期長程有序數學分類，說明非週期準週期結構仍可產生離散且尖銳之 δ-函數布拉格繞射峰。"
+        },
+        "verifiedClaims": [
+          "提出準晶（Quasicrystal）作為區別於週期晶體與非晶玻璃的新一類有序固體結構",
+          "高維切分投影與準週期序（如與黃金比例 φ = (1+√5)/2 相關之 Penrose 密鋪）可將高維週期倒晶格投影為低維物理空間中的離散銳利布拉格繞射峰"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "傅立葉投影－切片定理保證高維週期母晶格搭配有界橫向接受視窗，在物理倒空間仍維持離散 δ-函數布拉格峰分佈"
+          ],
+          "empiricalFindings": [
+            "準晶模型計算出之五重／十重結構因子亮斑位置與強度分佈與謝赫特曼鋁錳合金繞射圖譜一致"
+          ],
+          "hypothesesAndModels": [
+            "理想數學準晶為零溫度完美高維投影，真實金屬準晶可能含相位子（Phason）應變與熱擾動展寬"
+          ]
+        }
+      },
+      {
+        "id": "ref-smith-2024-monotile",
+        "citation": "Smith, D., Myers, J. S., Kaplan, C. S., & Goodman-Strauss, C. (2024). \"An aperiodic monotile.\" Combinatorial Theory, 4(1), 6.",
+        "doi": "10.5070/C64163843",
+        "peerReviewStatus": "已完成同行評審 (Combinatorial Theory 2024 正式刊登，2023 年預印本 arXiv:2303.10798)",
+        "citationAudit": {
+          "verifiedFirstAuthor": "David Smith (Independent Researcher, Yorkshire, UK)",
+          "originalPublicationPageVerified": true,
+          "auditNotes": "核實 Combinatorial Theory 4(1), 6 (2024)：大衛·史密斯與邁爾斯、卡普蘭、古德曼－史特勞斯以兩套獨立證明確認由 8 個風箏拼接成的 13 邊形「帽子（The Hat）」為連通非週期單磚，解開幾何學「愛因斯坦（Ein Stein）」單磚問題；並於後續脈絡提出無須鏡射翻面的手性曲邊單磚「幽靈（Spectre）」。"
+        },
+        "verifiedClaims": [
+          "13 邊形「帽子（The Hat）」單靠單一種形狀（允許旋轉與鏡射）即可無縫鋪滿無限平面且嚴格禁止任何平移週期對稱",
+          "「愛因斯坦問題」源自德文 Ein Stein（一塊石頭），與彭羅斯雙磚密鋪不同，帽子與無須鏡射的幽靈（Spectre）單磚僅用單一形狀即鎖定非週期性"
+        ],
+        "distinctions": {
+          "establishedKnowledge": [
+            "彭羅斯 1974 年非週期密鋪需使用兩塊地磚並搭配局部匹配規則來禁止週期平移"
+          ],
+          "empiricalFindings": [
+            "帽子多邊形經由組合替代結構與多邊形幾何變形兩套獨立證明確立其嚴格非週期單磚性質"
+          ],
+          "hypothesesAndModels": [
+            "手性單磚「幽靈（Spectre）」透過修改帽子邊界曲率或配對邊規則排除鏡射對稱，相關物理系統自組裝實現仍在探索中"
+          ]
+        }
+      }
+    ],
+    "noFakeCitations": true,
+    "noFictionalReviewers": true,
+    "formulasAndUnits": [
+      {
+        "formula": "\\operatorname{tr}(R_\\theta) = 2\\cos\\left(\\frac{2\\pi}{n}\\right) \\in \\mathbb{Z}",
+        "unitConsistency": "二維旋轉矩陣之跡與整數旋轉階數 n 皆為無因次純數，方程式兩側因次一致",
+        "verified": true
+      },
+      {
+        "formula": "S(\\mathbf{q}) = \\sum_{j=1}^{N} e^{-i \\mathbf{q} \\cdot \\mathbf{r}_j}, \\qquad I(\\mathbf{q}) \\propto |S(\\mathbf{q})|^2",
+        "unitConsistency": "實空間原子位置向量 r_j 因次為長度 [a₀]（或 [m]），倒空間散射波矢 q 因次為倒長度 [a₀⁻¹]（或 [m⁻¹]），內積 q·r_j 為無因次相位弧度；結構因子 S(q) 為無因次振幅疊加",
+        "verified": true
+      }
+    ],
+    "simulationValidation": {
+      "governingEquations": "二維與一維離散傅立葉結構因子 S(q) = ∑_{j=1}^N exp(-i q·r_j) 及 |S(q)|²/N²；週期模式採用 C4/C6 布拉菲晶格；準晶模式採用 5 維對偶等價之 Robinson 三角形 5 代展開生成 Penrose P3 格點，以及 4 維整數晶格 Z⁴ 正交八邊形視窗切分投影生成 Ammann–Beenker 格點；2D→1D 視角採用 Z² 格點沿傾角 θ 與垂向帶寬 W 正交投影",
+      "numericalMethod": "透過可分離複數矩陣乘積在 112×112 倒空間網格即時計算二維結構因子 |S(q)|²，並以對數動態範圍壓縮與中心透射光束遮罩（Beam Stop）呈現；1D 切分投影沿 260 個 q_∥ 取樣點計算一維繞射譜",
+      "dynamicBehaviorVerified": "四方與六方晶體模式展現 C4/C6 離散峰；Penrose 模式實測強峰呈嚴格 10 重對稱（I(0°)=I(36°) 遠大於峰谷 I(18°)）；Ammann–Beenker 模式呈嚴格 8 重對稱；非晶態玻璃呈各向同性瀰散環；2D→1D 切分投影在有理斜率（1/1、3/5）下產生週期重複 L/S 鏈與等距峰，在黃金斜率 1/φ 下產生非週期 Fibonacci 鏈與尖銳準週期峰",
+      "modelAssumptionsAndLimits": "明確標註為實空間有限尺度點陣（數百個格點）之離散結構因子計算，真實準晶宏觀樣本之布拉格峰寬度將更趨近極窄 δ 函數；未納入多重動力學繞射散射效應與三維晶體熱原子 Debye-Waller 因子"
+    }
+  },
+  "readability": {
+    "language": "繁體中文",
+    "pedagogyProgression": "浴室正五邊形地磚縫隙的日常幾何直覺與 Al86Mn14 十重繞射星芒的科學衝突 -> 晶體學限制定理的兩步向量幾何推導 -> 準晶概念與高維切分投影機制如何兼顧非週期與鋒利布拉格峰 -> QuasicrystalDiffractionSimulator 即時結構因子對照驗證 -> 歷史半世紀愛因斯坦單磚「帽子」與「幽靈」的幾何收尾 -> 1992 年 IUCr 晶體定義重寫",
+    "technicalTermsDemystified": [
+      {
+        "term": "布拉格繞射斑點 (Bragg Diffraction Spots)",
+        "intuitiveExplanation": "電子波穿過有序原子陣列時彼此建設性干涉加強，在偵測螢幕上凝聚成像夜間星座般孤立、針尖般銳利的亮點，代表原子在長距離上步調一致"
+      },
+      {
+        "term": "晶體學限制定理 (Crystallographic Restriction Theorem)",
+        "intuitiveExplanation": "當結構必須靠基本磁磚平移重複填滿空間時，旋轉角度在數學上只能容許 1、2、3、4、6 重對稱，就像正五邊形地磚永遠無法無縫鋪滿浴室地板"
+      },
+      {
+        "term": "高維切分投影法 (Cut-and-Project Method)",
+        "intuitiveExplanation": "把四維、五維或六維空間裡完全整齊週期排列的超晶格，用一條帶有無理數斜率（如黃金比例）的狹長切片穿過並投影到我們的低維世界，誕生出不重複卻高度有序的準晶"
+      },
+      {
+        "term": "愛因斯坦問題 (Einstein Problem / Ein Stein)",
+        "intuitiveExplanation": "名稱並非指物理學家愛因斯坦，而是德文「一塊石頭」的雙關語，追問是否能只用單一種形狀的地磚就逼使無限平面只能鋪出永不週期重複的圖案"
+      }
+    ]
+  },
+  "aestheticsAndNarrative": {
+    "coreQuestion": "連經驗豐富的泥水匠都知道正五邊形永遠鋪不滿浴室地板，為何鋁錳合金裡的原子卻能在完全沒有平移重複的前提下，在電子顯微鏡下轟出如結晶般鋒利的十重星芒？",
+    "interactiveRole": "QuasicrystalDiffractionSimulator 不播放預錄圖檔，而是直接讀取左側實空間週期晶格、Penrose 十重準晶、Ammann–Beenker 八重準晶與非晶玻璃座標，即時在瀏覽器計算傅立葉結構因子 |S(q)|²，並提供 2D→1D 高維切片傾角滑桿，讓讀者親自切換有理與黃金無理斜率來驗證布拉格峰的誕生與寬度收斂"
+  },
+  "issuesIdentifiedAndCorrected": [
+    "嚴格區分實空間五重取向對稱與繞射圖譜十重對稱的因果關係（源於彈性散射弗里德爾定律 I(-q) = I(q) 使五重軸與中心反演結合呈十重亮斑）",
+    "精準查證並釐清愛因斯坦問題（Ein Stein = 一塊石頭）與大衛·史密斯等人於 2024 年 Combinatorial Theory 發表之「帽子（The Hat）」需鏡射翻面與後續「幽靈（Spectre）」無須翻面的差異",
+    "在模擬器介面與文章段落明確標註有限尺度點陣計算與真實宏觀樣本 δ-函數布拉格峰寬度之理論差異"
+  ],
+  "unconfirmedLimits": [
+    "現實金屬準晶合金高溫穩定相形成機制究係能量最低基態主導抑或高溫組態熵穩定主導，隨合金成分（如 Al-Mn 亞穩態相 vs Al-Cu-Fe 穩定相）而異",
+    "「帽子」與「幽靈」非週期單磚幾何目前主要為二維數學存在性定理，其對應之微觀原子間勢能自組裝實現仍在材料物理探索中"
+  ]
+}

@@ -54,6 +54,9 @@ import { StochasticResonanceSimulator } from '../article/StochasticResonanceSimu
 import { BridgeRnaRecombinaseSimulator } from '../article/BridgeRnaRecombinaseSimulator';
 import { SonoluminescenceBubbleSimulator } from '../article/SonoluminescenceBubbleSimulator';
 import { BacterialChemotaxisSimulator } from '../article/BacterialChemotaxisSimulator';
+import { GenCastEnsembleSimulator } from '../article/GenCastEnsembleSimulator';
+import { QuasicrystalDiffractionSimulator } from '../article/QuasicrystalDiffractionSimulator';
+import { MarcusElectronTransferSimulator } from '../article/MarcusElectronTransferSimulator';
 
 export interface InteractiveParameterMeta {
   name: string;
@@ -915,6 +918,30 @@ export const INTERACTIVE_COMPONENTS: Record<string, InteractiveComponentMeta> = 
     parameters: [],
     keyConcepts: ['趨化性 (Chemotaxis)', 'Run-and-Tumble 偏置漫步', 'Berg–Purcell 計數雜訊極限', '雙極性脈衝響應核', '積分回饋精確適應'],
     component: BacterialChemotaxisSimulator,
+  },
+  GenCastEnsembleSimulator: {
+    id: 'GenCastEnsembleSimulator',
+    nameZh: 'GenCast 條件擴散氣象集合與決定論模糊效應對照模擬器',
+    descriptionZh: '以二維雙路徑氣旋分岔流場對比 MSE 決定論模糊平均、傳統物理集合微擾與條件擴散反覆去噪步驟 (k: 20 → 0)，同步追蹤 Day 1–15 CRPS 與離散度校準曲線。',
+    parameters: [],
+    keyConcepts: ['GenCast 條件擴散模型', '二十面體球面網格', 'MSE 雙重懲罰模糊效應', 'CRPS 機率評分', '集合離散度－誤差校準'],
+    component: GenCastEnsembleSimulator,
+  },
+  QuasicrystalDiffractionSimulator: {
+    id: 'QuasicrystalDiffractionSimulator',
+    nameZh: '準晶 (Quasicrystals)、高維切分投影與實時布拉格繞射結構因子模擬器',
+    descriptionZh: '於瀏覽器內即時計算四方／六方週期晶體、Penrose 十重與 Ammann–Beenker 八重準晶及非晶態玻璃的二維結構因子 |S(q)|²，並支援 2D→1D 投影斜率連續調諧。',
+    parameters: [],
+    keyConcepts: ['準晶 (Quasicrystals)', '晶體學限制定理', '高維切分投影 (Cut-and-Project)', '布拉格繞射結構因子', '非週期單磚 (Einstein Monotile)'],
+    component: QuasicrystalDiffractionSimulator,
+  },
+  MarcusElectronTransferSimulator: {
+    id: 'MarcusElectronTransferSimulator',
+    nameZh: '馬庫斯電子轉移理論、雙自由能拋物線交點與倒置區鐘形速率模擬器',
+    descriptionZh: '聯動繪製反應物與產物簡諧自由能拋物線交點 ΔG‡ = (λ + ΔG°)²/(4λ) 與對數速率鐘形倒置曲線，展示驅動力超越重組能後的反常減速與光合反應中心單向抑制。',
+    parameters: [],
+    keyConcepts: ['馬庫斯電子轉移理論', '法蘭克－康登原理', '重組能 λ', '馬庫斯倒置區 (Inverted Region)', '光合反應中心電荷分離'],
+    component: MarcusElectronTransferSimulator,
   },
 };
 

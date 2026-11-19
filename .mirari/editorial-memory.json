@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastUpdated": "2026-11-18T09:09:00.000Z",
+  "lastUpdated": "2026-11-19T09:09:00.000Z",
   "editorialMemoryDescription": "MIRARI 自主編輯品質管理記憶庫：記錄近期篇章學科分佈、敘事風格、互動模式與編輯檢查規則，提供每日自主創作管線跨日延續性與防重複依據。",
   "recentArticles": [
     {
@@ -659,6 +659,42 @@
       "coreConcept": "Berg–Purcell 計數雜訊與轉動布朗擴散迫使細菌採用 1–4 秒雙極性時間微分記憶、Run-and-Tumble 偏置隨機漫步及 CheR/CheB-P 積分回饋精確適應",
       "pedagogyKey": "解釋微米尺度細菌為何無法像大動物一樣同時比較左右耳訊號，藉由關掉適應機制立刻飽和失明的對照實驗直觀驗證系統生物學積分控制原理",
       "limitsIdentified": "二維簡化泊松切換與卷積記憶示範模型，非完整三維鞭毛流體動力學與多受體協同變構 Ising 模型"
+    },
+    {
+      "articleId": "art-gencast-diffusion-weather",
+      "slug": "gencast-diffusion-ensemble-weather",
+      "editorialCategory": "journal_interpretation",
+      "discipline": "大氣物理與生成式機率氣象預報",
+      "narrativeStyle": "predictive_ensemble",
+      "interactiveType": "diffusion_ensemble_trajectories",
+      "interactiveComponent": "GenCastEnsembleSimulator",
+      "coreConcept": "Lorenz 混沌分岔與 MSE 雙重懲罰模糊效應、GenCast 二十面體球面網格條件擴散模型於 0.25° / 15 天預報 1,320 項指標 97.2% 超越 ECMWF ENS，及 ERA5 依賴與無守恆約束邊界",
+      "pedagogyKey": "透過雙路徑氣旋分岔圖讓讀者看懂決定論誤差平均如何抹除颱風路徑，再用條件擴散逐層去噪步驟直觀呈現高解析集合採樣",
+      "limitsIdentified": "二維簡化流場與去噪示範模型；GenCast 實際依賴 ERA5 資料同化初始條件且缺乏內建質量／能量守恆硬約束"
+    },
+    {
+      "articleId": "art-quasicrystals-aperiodic",
+      "slug": "quasicrystals-fivefold-aperiodic-tiling",
+      "editorialCategory": "scientific_principles",
+      "discipline": "幾何晶體學與非週期繞射物理",
+      "narrativeStyle": "crystallographic_paradox",
+      "interactiveType": "aperiodic_diffraction",
+      "interactiveComponent": "QuasicrystalDiffractionSimulator",
+      "coreConcept": "晶體學限制定理禁止五次週期對稱、Shechtman 鋁錳合金十重繞射突破、Levine–Steinhardt 準晶高維切分投影、以及 Smith 等人 The Hat / Spectre 愛因斯坦單磚",
+      "pedagogyKey": "以正五邊形地磚必然留縫的日常幾何破題，在瀏覽器直接對準晶座標執行離散傅立葉轉換驗證十重鋒利布拉格峰而非作弊貼圖",
+      "limitsIdentified": "實空間數百格點之有限尺度離散結構因子計算，真實宏觀準晶布拉格峰更趨近極窄 δ 函數"
+    },
+    {
+      "articleId": "art-marcus-inverted-region",
+      "slug": "marcus-electron-transfer-inverted-region",
+      "editorialCategory": "scientific_principles",
+      "discipline": "物理化學與量子電子轉移動力學",
+      "narrativeStyle": "kinetic_parabola",
+      "interactiveType": "free_energy_parabolas",
+      "interactiveComponent": "MarcusElectronTransferSimulator",
+      "coreConcept": "法蘭克－康登等能量轉移與重組能 λ、雙簡諧拋物線交點導出 ΔG‡ = (λ+ΔG°)²/(4λ)、驅動力逾 λ 反常減速的倒置區、1984 雄甾烷實證及光合反應中心抑制復合機制",
+      "pedagogyKey": "以滑梯越陡反變慢的反直覺問題破題，連動自由能拋物線左牆爬升動畫與溶液擴散上限遮蔽對照曲線解釋 28 年實驗滯後",
+      "limitsIdentified": "高溫簡諧等曲率半經典模型，未包含極低溫強高頻振動模耦合下之量子核穿隧修正"
     }
   ],
   "cumulativeGuidelines": {
@@ -676,14 +712,14 @@
           "displayName": "科學原理與思想實驗",
           "scope": "收錄一般科普、經典科學知識、科學現象、數學原理、理論解釋及思想實驗",
           "purpose": "主要目的是讓讀者理解科學，而非追逐最新消息。不限制物理學，也不要求每篇一定具有思想實驗",
-          "currentArticles": 35
+          "currentArticles": 37
         },
         "journal_interpretation": {
           "displayName": "期刊解讀",
           "scope": "最新科學發現、重要研究成果、研發技術突破及具有話題性的科學事件",
           "selectionCriteria": "以新聞時效性、科學價值與話題性作為選題依據。涵蓋最新學術研究、重大科學發現、技術研發突破、科學機構發布的重要成果及值得公眾關注的科學事件",
           "rigorRule": "不要求每篇都必須以單篇同儕審查論文為主題，但必須核對可信來源，清楚區分：已完成同行審查的研究、尚未同行審查的預印本、機構或企業提出但尚待獨立驗證的成果。不得為了追逐話題性誇大研究結果",
-          "currentArticles": 20
+          "currentArticles": 21
         }
       },
       "classificationPrinciple": "根據文章的主要編輯目的分類：主要在解釋某個科學知識或原理 -> scientific_principles；主要在報導或解讀近期科學發現、研究成果、技術突破或科學事件 -> journal_interpretation。不能僅因引用了新論文就歸類為期刊解讀，不能僅因內容涉及經典科學原理就排除其作為最新研究報導的可能。兩大分類互斥且與學科標籤獨立",

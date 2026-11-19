@@ -1522,6 +1522,97 @@
     ]
   },
   {
+    "articleId": "art-gencast-diffusion-weather",
+    "slug": "gencast-diffusion-ensemble-weather",
+    "title": "GenCast 擴散集合預報：條件擴散模型如何重塑 15 天全球機率氣象預報？",
+    "knowledgePoints": [
+      {
+        "id": "kp-gencast-chaos-ensemble",
+        "label": "渾沌分岔與集合預報必要性",
+        "suggestedQuestion": "為什麼天氣預報超過一週後，氣象局不能只相信單一一次運算結果？",
+        "keywords": [
+          "洛倫茨",
+          "混沌理論",
+          "可預報時限",
+          "集合預報",
+          "初值誤差"
+        ],
+        "plainExplanation": "大氣是高度非線性的流體系統，初期觀測網抓不到的微小氣壓或風速誤差會在幾天內呈指數倍放大。超過約 10 至 14 天後單一決定論軌跡會失去準頭，因此必須替初值加上微小擾動，同時派出多條分身成員跑出「機率走廊」。",
+        "anchorSentenceId": "sent-df34b83a"
+      },
+      {
+        "id": "kp-gencast-mse-blurring",
+        "label": "均方誤差回歸的雙峰模糊效應",
+        "suggestedQuestion": "為什麼用均方誤差訓練的 AI 氣象模型會把幾天後的颱風眼糊成一片微風？",
+        "keywords": [
+          "均方誤差",
+          "模糊效應",
+          "雙重懲罰",
+          "條件平均",
+          "極端天氣漏報"
+        ],
+        "plainExplanation": "當颱風面臨「西行登陸」或「北轉遠離」兩種分岔可能時，被迫輸出單張答案又用均方誤差計分的模型，為了避免猜錯邊被重罰，會把兩條強風暴路徑相加取平均，結果在兩者中間抹出一塊風速減半、現實中根本不會出現的模糊低壓帶。",
+        "anchorSentenceId": "sent-3e908cf4"
+      },
+      {
+        "id": "kp-gencast-icosahedral-mesh",
+        "label": "球面二十面體網格消除極區變形",
+        "suggestedQuestion": "GenCast 為什麼不直接用長方形經緯網格運算，而要投影到二十面體球面網格？",
+        "keywords": [
+          "二十面體球面網格",
+          "圖轉換器",
+          "0.25 度解析度",
+          "極區變形",
+          "空間幾何"
+        ],
+        "plainExplanation": "經緯度攤成平面時，越靠近南北極網格被擠得越窄小。GenCast 把 0.25° 全球資料投影到類似足球正三角形拼接的球面二十面體網格上，再用圖轉換器傳遞訊息，讓赤道到兩極擁有均勻一致的幾何鄰居關係，能同時捕捉颱風眼牆與全球長波。",
+        "anchorSentenceId": "sent-7dd072ae"
+      },
+      {
+        "id": "kp-gencast-conditional-diffusion",
+        "label": "自回歸條件擴散去噪採樣",
+        "suggestedQuestion": "GenCast 如何靠前兩刻大氣狀態與高斯雜訊，一步步生成 15 天預報？",
+        "keywords": [
+          "條件擴散模型",
+          "自回歸步進",
+          "逆向去噪",
+          "聯合機率分布",
+          "12 小時步長"
+        ],
+        "plainExplanation": "GenCast 以每 12 小時一步接力推算 15 天（360 小時）。每一步都把前兩刻（t 與 t-12h）的大氣當作條件錨點，從一團高斯隨機雜訊雪花出發，透過迭代去噪把雜訊雕琢成保有銳利鋒面與氣旋結構的 12 小時後狀態；換個雜訊種子就能採樣出另一條獨立分岔。",
+        "anchorSentenceId": "sent-51ad9c79"
+      },
+      {
+        "id": "kp-gencast-crps-benchmark",
+        "label": "97.2% 指標超越與八分鐘單卡推論",
+        "suggestedQuestion": "在 2019 年測試集中，GenCast 相較於物理超級電腦系統 ECMWF ENS 表現如何？",
+        "keywords": [
+          "ECMWF ENS",
+          "CRPS",
+          "Brier Skill Score",
+          "TPU v5",
+          "1,320 項指標"
+        ],
+        "plainExplanation": "在 2019 年獨立測試集的 0.25° 全球 15 天預報中，橫跨不同氣壓層變數與提前期的 1,320 項評估指標裡，GenCast 在 97.2% 的項目超越世界頂尖物理集合系統 ECMWF ENS；而且單顆 Google Cloud TPU v5 僅需約 8 分鐘即可產出一個完整的 15 天預報成員。",
+        "anchorSentenceId": "sent-ce369294"
+      },
+      {
+        "id": "kp-gencast-era5-conservation-limits",
+        "label": "資料同化依賴與物理守恆邊界",
+        "suggestedQuestion": "既然 GenCast 準確率極高，它是否已經能完全取代物理氣象方程與觀測系統？",
+        "keywords": [
+          "ERA5",
+          "資料同化",
+          "守恆定律",
+          "分布外極端事件",
+          "科學邊界"
+        ],
+        "plainExplanation": "目前還不行。GenCast 訓練與起報仍依賴物理模式結合全球觀測同化生成的 ERA5 再分析資料與初始化場；此外，神經網路權重沒有硬性寫入質量、總能量或角動量守恆定律，面對氣候變遷下突破歷史紀錄的分布外極端天氣與物理因果歸因仍存在開放挑戰。",
+        "anchorSentenceId": "sent-cb7df5a7"
+      }
+    ]
+  },
+  {
     "articleId": "art-gravitational-waves-kerr",
     "slug": "gravitational-waves-kerr-black-hole",
     "title": "穿透事件視界的重力迴響：重力波克爾黑洞無毛定理檢驗",
@@ -1993,6 +2084,111 @@
         ],
         "plainExplanation": "傳統超導需要笨重的低溫聲子輔助配對，而高溫銅氧化物機制因化學雜質紛亂而爭論四十年。魔角石墨烯是純粹由碳原子構成的乾淨晶體，只需微調閘極電壓注入少許載子，莫特絕緣體兩側就會自發湧現一模一樣的超導穹頂，為人類提供了可即時調諧、無化學雜質干擾的理想量子超導沙盒。",
         "anchorSentenceId": "sent-a7789b14"
+      }
+    ]
+  },
+  {
+    "articleId": "art-marcus-inverted-region",
+    "slug": "marcus-electron-transfer-inverted-region",
+    "title": "推力越強，反應反而越慢？馬庫斯電子轉移理論與自由能拋物線倒置區",
+    "knowledgePoints": [
+      {
+        "id": "kp-marcus-franck-condon-isoenergetic",
+        "label": "法蘭克－康登原理與等能量過渡態",
+        "suggestedQuestion": "電子在飛秒間就跳過去了，為什麼還需要先等周圍龐大的溶劑分子與原子核排好隊？",
+        "keywords": [
+          "法蘭克－康登原理",
+          "垂直躍遷",
+          "等能量過渡態",
+          "熱漲落",
+          "電子質量"
+        ],
+        "plainExplanation": "電子的質量比水分子輕上超過三萬倍，在供體與受體之間穿隧躍遷僅需飛秒（10⁻¹⁵ s）；相形之下，原子核振動與極性溶劑偶極轉向極化需要數十飛秒至皮秒以上，電子跳躍瞬間周圍環境宛如凍結。為同時滿足法蘭克－康登垂直躍遷與無輻射能量守恆，必須先靠環境熱漲落把反應物與溶劑扭曲到與產物態「等能量、等核構型」的共同交點，電子才能無聲躍遷。",
+        "anchorSentenceId": "sent-48e72a88"
+      },
+      {
+        "id": "kp-marcus-reorganization-energy",
+        "label": "重組能 λ 與內外層介電拆解",
+        "suggestedQuestion": "什麼是馬庫斯理論中的重組能 λ？為什麼改變溶劑極性會劇烈改變反應高峰位置？",
+        "keywords": [
+          "重組能",
+          "內層重組能",
+          "外層溶劑重組能",
+          "光學介電常數",
+          "靜態介電常數"
+        ],
+        "plainExplanation": "重組能 λ 是將反應物及其周圍溶劑極化場從反應物平衡構型強制扭曲成產物平衡構型、但電子尚未轉移時所需的自由能代價。它由供體與受體鍵長鍵角變形的內層重組能 λ_i，以及極性溶劑慢速偶極重新取向的外層介電重組能 λ_o 構成；因此強極性溶劑（如乙腈或水）會大幅拉高 λ_o，而低極性疏水蛋白質環境則能顯著壓低 λ。",
+        "anchorSentenceId": "sent-1e5b5aae"
+      },
+      {
+        "id": "kp-marcus-parabola-activation",
+        "label": "簡諧拋物線交點與馬庫斯活化能公式",
+        "suggestedQuestion": "活化自由能公式 ΔG‡ = (λ + ΔG°)² / (4λ) 是怎麼從兩條拋物線相交推導出來的？",
+        "keywords": [
+          "自由能拋物線",
+          "馬庫斯公式",
+          "反應座標",
+          "無壘極大值",
+          "非絕熱速率"
+        ],
+        "plainExplanation": "沿集體溶劑與核極化反應座標 q（反應物谷底在 q=0，產物谷底在 q=1），反應物 G_R(q)=λq² 與產物 G_P(q)=λ(q-1)²+ΔG° 可近似為曲率相等的簡諧二次拋物線。令兩者相等求交點，兩邊的二次項 λ(q‡)² 彼此消去，解得交點座標 q‡ = (λ + ΔG°)/(2λ)，代回 G_R(q) 即嚴格導出活化能 ΔG‡ = (λ + ΔG°)²/(4λ)，在 -ΔG° = λ 時交點恰好穿過反應物谷底使 ΔG‡ = 0。",
+        "anchorSentenceId": "sent-96d5c442"
+      },
+      {
+        "id": "kp-marcus-inverted-region",
+        "label": "馬庫斯倒置區：交點爬上左牆的反直覺減速",
+        "suggestedQuestion": "為什麼放熱驅動力 -ΔG° 超過重組能 λ 之後，電子轉移速率反而會開始下降？",
+        "keywords": [
+          "馬庫斯倒置區",
+          "正常區",
+          "負反應座標",
+          "活化能回升",
+          "鐘形曲線"
+        ],
+        "plainExplanation": "當放熱驅動力 -ΔG° 小於重組能 λ（正常區）時，交點落在反應物拋物線右壁，放熱越多交點越接近谷底、反應越快；一旦 -ΔG° 超過 λ，產物谷底沉得太深，導致交點 q‡ < 0 跨越谷底並反過來爬上反應物拋物線的左側高牆。此時為了湊出等能量垂直躍遷點，環境必須朝反方向大幅熱漲落爬牆，活化能 ΔG‡ 重新攀升，形成越放熱越慢的鐘形倒置區。",
+        "anchorSentenceId": "sent-ee1a25f1"
+      },
+      {
+        "id": "kp-mcc-androstane-1984",
+        "label": "擴散平頂遮蔽與 1984 年雄甾烷剛性橋聯實證",
+        "suggestedQuestion": "馬庫斯在 1956 年就預言了倒置區，為什麼實驗室足足等了 28 年才拍到完整的鐘形曲線？",
+        "keywords": [
+          "雙分子擴散極限",
+          "Miller–Calcaterra–Closs 1984",
+          "雄甾烷間隔基",
+          "MTHF 溶劑",
+          "分子內長程轉移"
+        ],
+        "plainExplanation": "在傳統自由擴散的溶液中，一旦內稟電子轉移速率高於分子彼此碰撞接近的速率，表觀反應速度就會撞上「雙分子擴散天花板」而一片平坦，徹底掩蓋高 -ΔG° 區的速率下降。1984 年 Miller、Calcaterra 與 Closs 利用剛性類固醇骨架（雄甾烷）把聯苯基團供體與多種受體鎖死在固定距離進行分子內長程轉移，徹底繞開擴散限制，在 MTHF 溶劑中清晰測出跨越 λ 後速率驟降的經典鐘形倒置曲線。",
+        "anchorSentenceId": "sent-4df7f63a"
+      },
+      {
+        "id": "kp-photosynthesis-charge-separation",
+        "label": "光合作用反應中心的單向電化學棘輪",
+        "suggestedQuestion": "植物與光合細菌如何利用馬庫斯倒置區，防止好不容易吸收來的太陽能立刻短路復合？",
+        "keywords": [
+          "光合作用反應中心",
+          "電荷分離",
+          "電荷復合",
+          "單向棘輪",
+          "Marcus–Sutin 1985"
+        ],
+        "plainExplanation": "Marcus 與 Sutin（1985）指出，光合作用反應中心巧妙利用兩條拋物線打造單向防回跳棘輪：多級順向電荷分離的驅動力 -ΔG° 貼近蛋白質環境重組能 λ（無壘峰頂），在皮秒內高速完成；同時疏水蛋白質口袋大幅壓低外層重組能 λ（約 0.25–0.5 eV），讓能量落差極大的逆向電荷復合（-ΔG° ≫ λ）深陷馬庫斯倒置區，拖慢回跳數個數量級以鎖住太陽能。",
+        "anchorSentenceId": "sent-9faa6ca7"
+      },
+      {
+        "id": "kp-quantum-nuclear-tunneling-limit",
+        "label": "高頻振動模量子核穿隧與簡諧模型邊界",
+        "suggestedQuestion": "真實分子在馬庫斯倒置區的速率下降，為什麼往往比經典拋物線公式預言的平緩一些？",
+        "keywords": [
+          "量子核穿隧",
+          "高頻分子內振動",
+          "強絕熱耦合",
+          "理論邊界",
+          "指數尾"
+        ],
+        "plainExplanation": "經典與半經典馬庫斯公式假設所有原子核與溶劑自由度皆處於高溫古典極限且呈等曲率簡諧拋物線。但在有機分子裡存在頻率極高的化學鍵伸縮振動（ħω ≫ k_B T），在極低溫或深倒置區下，原子核可直接透過量子穿隧進入產物振動激發態，把多餘放熱轉為振動量子，使倒置區速率衰減呈現比純高斯拋物線平緩的指數尾；若電子耦合過強則進入溶劑弛豫控制的絕熱極限。",
+        "anchorSentenceId": "sent-3b4c9eab"
       }
     ]
   },
@@ -2585,6 +2781,97 @@
         ],
         "plainExplanation": "1993 年物理學家利用 STM 針尖的微弱吸引力，在低溫銅單晶表面將 48 顆鐵原子推擠排列成圓環。這圈鐵原子像圍牆一樣反射只能在表面二維遊走的電子波，形成如池塘漣漪般的同心圓駐波，被 STM 清晰拍下並直接印證電子的波動本性。",
         "anchorSentenceId": "sent-dda20254"
+      }
+    ]
+  },
+  {
+    "articleId": "art-quasicrystals-aperiodic",
+    "slug": "quasicrystals-fivefold-aperiodic-tiling",
+    "title": "打破晶體學五重對稱禁令：準晶（Quasicrystals）、高維投影與「愛因斯坦」單磚密鋪",
+    "knowledgePoints": [
+      {
+        "id": "kp-quasicrystal-shechtman-tenfold",
+        "label": "謝赫特曼 1982 年鋁錳合金十重繞射發現",
+        "suggestedQuestion": "丹·謝赫特曼在 1982 年到底在鋁錳合金的電子繞射圖裡看到了什麼，為什麼會讓傳統晶體學家難以置信？",
+        "keywords": [
+          "謝赫特曼",
+          "Al86Mn14",
+          "布拉格繞射",
+          "十重對稱",
+          "正二十面體"
+        ],
+        "plainExplanation": "1982 年丹·謝赫特曼在急速凝固的鋁－錳合金（Al86Mn14）電子顯微鏡繞射圖中，觀察到一圈整齊排列的十個鋒利布拉格亮斑，並確認顆粒具備正二十面體的五重、三重與二重對稱。銳利的亮斑代表原子具有長程相干干涉，但五重／十重對稱在當時只承認週期晶格的古典晶體學定義下被視為不可能存在。",
+        "anchorSentenceId": "sent-d56b8e5e"
+      },
+      {
+        "id": "kp-crystallographic-restriction",
+        "label": "晶體學限制定理與五重對稱禁令",
+        "suggestedQuestion": "為什麼傳統週期晶體只允許 1、2、3、4、6 次旋轉對稱，卻絕對容不下 5 次或 7 次以上的旋轉對稱？",
+        "keywords": [
+          "晶體學限制定理",
+          "旋轉矩陣跡",
+          "平移週期性",
+          "正五邊形密鋪",
+          "布拉菲晶格"
+        ],
+        "plainExplanation": "在同時要求空間平移週期重複的二維或三維晶格裡，任何讓晶格重合的旋轉矩陣必須滿足跡 2cos(2π/n) 為整數（三維為 1 + 2cos(2π/n) 為整數）。由於餘弦值介於 -1 與 1 之間，該數值只能取 -2, -1, 0, 1, 2，精確鎖定 n = 1, 2, 3, 4, 6；對於 n = 5（2cos 72° ≈ 0.618）或 n ≥ 7，幾何上必然留下縫隙或重疊而無法週期鋪滿空間。",
+        "anchorSentenceId": "sent-a2adb24d"
+      },
+      {
+        "id": "kp-quasicrystal-cut-and-project",
+        "label": "準晶長程有序與高維切分投影法",
+        "suggestedQuestion": "既然準晶沒有重複的晶胞週期，為什麼電子束打上去還是能像單晶一樣產生鋒利的布拉格亮斑，而不是糊成玻璃光暈？",
+        "keywords": [
+          "準晶",
+          "高維切分投影",
+          "黃金比例",
+          "費氏鏈",
+          "結構因子"
+        ],
+        "plainExplanation": "多夫·萊文與保羅·史坦哈特指出長程有序不等於週期平移重複：準晶具備長程取向有序與準週期性，可視為高維週期晶格（如 2D→1D、4D→2D、5D→2D 或 6D→3D）沿黃金比例等無理數斜率切開並投影到物理空間的產物。因為母晶格在高維空間具備嚴格週期性，其高維倒晶格也隨之投影為物理倒空間中密集卻離散的尖銳布拉格峰，完全不同於非晶態玻璃的模糊瀰散環。",
+        "anchorSentenceId": "sent-02fb41cd"
+      },
+      {
+        "id": "kp-friedel-five-to-tenfold",
+        "label": "高維母晶格投影與繞射圖中的十重對稱",
+        "suggestedQuestion": "為什麼準晶的實空間對稱常被稱為「五重對稱」，在電子繞射圖裡數起來卻有「十個」對稱亮斑？",
+        "keywords": [
+          "弗里德爾定律",
+          "結構因子",
+          "六維超立方",
+          "Penrose 密鋪",
+          "Ammann-Beenker 密鋪"
+        ],
+        "plainExplanation": "彈性電子或 X 光繞射量測的是結構因子平方振幅 I(q) ∝ |S(q)|²，根據弗里德爾定律，只要沒有吸收效應，繞射圖天然具備中心反演對稱 I(-q) = I(q)。當實空間結構具備五重旋轉對稱時，每條五重軸的反方向也會出現等強度的對偶峰，於是繞射譜上自然呈現 5 × 2 = 10 重對稱亮斑；謝赫特曼的二十面體準晶正是六維超立方晶格向三維空間無理數投影的表現。",
+        "anchorSentenceId": "sent-2daae7b1"
+      },
+      {
+        "id": "kp-einstein-monotile-hat-spectre",
+        "label": "「愛因斯坦」單磚問題與帽子／幽靈非週期單磚",
+        "suggestedQuestion": "幾何學裡的「愛因斯坦」單磚跟物理學家愛因斯坦有關嗎？「帽子」和「幽靈」地磚突破了什麼紀錄？",
+        "keywords": [
+          "愛因斯坦問題",
+          "Ein Stein",
+          "非週期單磚",
+          "帽子多邊形",
+          "幽靈單磚"
+        ],
+        "plainExplanation": "「愛因斯坦問題（Einstein Problem）」源於德文 Ein Stein（意為「一塊石頭」），尋找僅靠單一種形狀的連通地磚就只能鋪出永不週期重複平面的幾何解答。彭羅斯在 1974 年將磚塊減至兩塊（胖瘦雙菱形或鳶形飛鏢），而 2023–2024 年大衛·史密斯等人正式證明的 13 邊形「帽子（The Hat）」只需一種形狀（含旋轉與翻面）即可強迫非週期密鋪，其無須翻面的曲邊版本「幽靈（Spectre）」更實現了純手性的非週期單磚。",
+        "anchorSentenceId": "sent-033364e2"
+      },
+      {
+        "id": "kp-iucr-crystal-redefinition",
+        "label": "1992 年國際晶體學聯合會對「晶體」的重新定義",
+        "suggestedQuestion": "準晶被證實之後，科學界最後是如何修改教科書上對「晶體」的正式定義？",
+        "keywords": [
+          "IUCr",
+          "晶體定義修訂",
+          "離散繞射圖譜",
+          "平移對稱",
+          "凝聚態秩序"
+        ],
+        "plainExplanation": "1992 年國際晶體學聯合會（IUCr）正式放棄「晶體必須具有三維週期性平移重複」的百年狹義條件，將晶體重新定義為「任何本質上呈現離散繞射圖譜的固體」。這項修訂讓傳統週期晶體成為有理切片下的特例，並把展現五重、八重、十重對稱的準晶正式納入晶體科學版圖。",
+        "anchorSentenceId": "sent-f7e8d835"
       }
     ]
   },

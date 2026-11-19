@@ -1,5 +1,5 @@
 {
-  "lastRunTimestamp": "2026-11-18T09:00:00.000Z",
+  "lastRunTimestamp": "2026-11-19T09:00:00.000Z",
   "scheduledCron": "0 9 * * *",
   "timezone": "Asia/Taipei (UTC+8)",
   "creationModel": "gemini-2.5-pro",
@@ -1004,6 +1004,53 @@
             "Barkai, N., & Leibler, S. (1997). \"Robustness in simple biochemical networks.\" Nature, 387(6636), 913–917. doi:10.1038/43199"
           ],
           "editorialRecordPath": "content/editorial-records/bacterial-chemotaxis-temporal-memory.json"
+        }
+      ]
+    },
+    {
+      "runId": "mirari-auto-run-20261119-0900",
+      "timestamp": "2026-11-19T09:00:00.000Z",
+      "targetCount": 3,
+      "succeededCount": 3,
+      "failedCount": 0,
+      "articles": [
+        {
+          "id": "art-gencast-diffusion-weather",
+          "slug": "gencast-diffusion-ensemble-weather",
+          "title": "用雜訊去噪畫出十五天後的颱風走廊：GenCast 條件擴散模型如何重塑全球機率氣象預報？",
+          "interactiveComponent": "GenCastEnsembleSimulator",
+          "status": "published",
+          "sources": [
+            "Price, I., Sanchez-Gonzalez, A., Alet, F., Andersson, T. R., El-Kadi, A., Masters, D., Ewalds, T., Stott, J., Mohamed, S., Battaglia, P., Lam, R., & Willson, M. (2025). \"Probabilistic weather forecasting with machine learning.\" Nature, 637(8044), 84–90. doi:10.1038/s41586-024-08252-9",
+            "Lorenz, E. N. (1963). \"Deterministic Nonperiodic Flow.\" Journal of the Atmospheric Sciences, 20(2), 130–141. doi:10.1175/1520-0469(1963)020<0130:DNF>2.0.CO;2"
+          ],
+          "editorialRecordPath": "content/editorial-records/gencast-diffusion-ensemble-weather.json"
+        },
+        {
+          "id": "art-quasicrystals-aperiodic",
+          "slug": "quasicrystals-fivefold-aperiodic-tiling",
+          "title": "打破晶體學五重對稱禁令：準晶、高維切分投影與「愛因斯坦」單磚非週期密鋪",
+          "interactiveComponent": "QuasicrystalDiffractionSimulator",
+          "status": "published",
+          "sources": [
+            "Shechtman, D., Blech, I., Gratias, D., & Cahn, J. W. (1984). \"Metallic Phase with Long-Range Orientational Order and No Translational Symmetry.\" Physical Review Letters, 53(20), 1951–1953. doi:10.1103/PhysRevLett.53.1951",
+            "Levine, D., & Steinhardt, P. J. (1984). \"Quasicrystals: A New Class of Ordered Structures.\" Physical Review Letters, 53(26), 2477–2480. doi:10.1103/PhysRevLett.53.2477",
+            "Smith, D., Myers, J. S., Kaplan, C. S., & Goodman-Strauss, C. (2024). \"An aperiodic monotile.\" Combinatorial Theory, 4(1), 6. doi:10.5070/C64163843"
+          ],
+          "editorialRecordPath": "content/editorial-records/quasicrystals-fivefold-aperiodic-tiling.json"
+        },
+        {
+          "id": "art-marcus-inverted-region",
+          "slug": "marcus-electron-transfer-inverted-region",
+          "title": "推力越強，反應反而越慢？馬庫斯電子轉移理論與自由能拋物線倒置區",
+          "interactiveComponent": "MarcusElectronTransferSimulator",
+          "status": "published",
+          "sources": [
+            "Marcus, R. A. (1956). \"On the Theory of Oxidation-Reduction Reactions Involving Electron Transfer. I.\" The Journal of Chemical Physics, 24(5), 966–978. doi:10.1063/1.1742723",
+            "Miller, J. R., Calcaterra, L. T., & Closs, G. L. (1984). \"Intramolecular long-distance electron transfer in radical anions. The effects of free energy and solvent on the reaction rates.\" Journal of the American Chemical Society, 106(10), 3047–3049. doi:10.1021/ja00322a058",
+            "Marcus, R. A., & Sutin, N. (1985). \"Electron transfers in chemistry and biology.\" Biochimica et Biophysica Acta (BBA) — Reviews on Bioenergetics, 811(3), 265–322. doi:10.1016/0304-4173(85)90014-X"
+          ],
+          "editorialRecordPath": "content/editorial-records/marcus-electron-transfer-inverted-region.json"
         }
       ]
     }
